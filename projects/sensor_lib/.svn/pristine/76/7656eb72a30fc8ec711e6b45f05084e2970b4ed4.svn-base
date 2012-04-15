@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorLib", "SensorLib\SensorLib.csproj", "{71ED45A3-C348-4143-9B9F-F55F77350D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorLib.Base", "SensorLib.Base\SensorLib.Base.csproj", "{FD4C84FB-ECA4-462D-BB34-7D652B5E18F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorLib.ThoughtTechnologies", "SensorLib.ThoughtTechnologies\SensorLib.ThoughtTechnologies.csproj", "{A9D740CA-11B0-47EE-AEC5-298FD0C57584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorLib.Xna", "SensorLib.Xna\SensorLib.Xna.csproj", "{DCA5D1FC-5DFE-4105-BD0A-C56E6BD5DB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorLib.Mindset", "SensorLib.Mindset\SensorLib.Mindset.csproj", "{6F70D759-D90A-45C0-880E-1E15118C6C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorLib.Tobii", "SensorLib.Tobii\SensorLib.Tobii.csproj", "{5269D438-F3A9-46D5-B980-70A95AD348AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71ED45A3-C348-4143-9B9F-F55F77350D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71ED45A3-C348-4143-9B9F-F55F77350D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71ED45A3-C348-4143-9B9F-F55F77350D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71ED45A3-C348-4143-9B9F-F55F77350D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4C84FB-ECA4-462D-BB34-7D652B5E18F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4C84FB-ECA4-462D-BB34-7D652B5E18F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4C84FB-ECA4-462D-BB34-7D652B5E18F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4C84FB-ECA4-462D-BB34-7D652B5E18F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D740CA-11B0-47EE-AEC5-298FD0C57584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D740CA-11B0-47EE-AEC5-298FD0C57584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D740CA-11B0-47EE-AEC5-298FD0C57584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D740CA-11B0-47EE-AEC5-298FD0C57584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCA5D1FC-5DFE-4105-BD0A-C56E6BD5DB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA5D1FC-5DFE-4105-BD0A-C56E6BD5DB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA5D1FC-5DFE-4105-BD0A-C56E6BD5DB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA5D1FC-5DFE-4105-BD0A-C56E6BD5DB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F70D759-D90A-45C0-880E-1E15118C6C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F70D759-D90A-45C0-880E-1E15118C6C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F70D759-D90A-45C0-880E-1E15118C6C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F70D759-D90A-45C0-880E-1E15118C6C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5269D438-F3A9-46D5-B980-70A95AD348AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5269D438-F3A9-46D5-B980-70A95AD348AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5269D438-F3A9-46D5-B980-70A95AD348AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5269D438-F3A9-46D5-B980-70A95AD348AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

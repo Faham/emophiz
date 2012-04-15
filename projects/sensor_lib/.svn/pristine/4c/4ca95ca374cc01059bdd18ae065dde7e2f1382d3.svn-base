@@ -1,0 +1,1833 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (31e1bcf0).
+//
+// TTLLiveCtrl.tlh
+//
+// C++ source equivalent of Win32 type library ..\..\..\..\TTLLiveCtrl.dll
+// compiler-generated file created 03/29/06 at 19:20:14 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("7b97d6d7-4bc0-4bf3-8fba-8112a1a387d5"))
+/* dual interface */ ITTLLiveText;
+struct /* coclass */ TTLLiveText;
+struct __declspec(uuid("b8bf3523-0a10-44ad-9ef5-f16a02ea9fb1"))
+/* dispinterface */ _ITTLLiveEvents;
+struct __declspec(uuid("f2e91452-6cb9-4260-9b38-d74916fd4c00"))
+/* dispinterface */ _ITTLLiveInternalEvents;
+struct __declspec(uuid("76beb351-c68b-4643-bc77-f9487b6d43d6"))
+/* dispinterface */ _ITTLChannelEvents;
+struct /* coclass */ TTLChannel;
+struct __declspec(uuid("b6d48972-ae83-421f-b97d-913a839b6651"))
+/* dual interface */ ITTLChannel;
+struct /* coclass */ TTLLive;
+struct __declspec(uuid("5037f1e7-3676-4306-8c82-23dc12133098"))
+/* dual interface */ ITTLLive;
+struct __declspec(uuid("6748fb1b-25c8-4d29-9661-afcc3e8eb445"))
+/* dual interface */ ITTLLive2;
+struct __declspec(uuid("6230156f-9dc2-4079-a86e-f6f1f765b74f"))
+/* dual interface */ ITTLEncoder;
+struct __declspec(uuid("6c0141af-afc8-4b1d-881c-558baf994155"))
+/* dispinterface */ _ITTLEncoderEvents;
+struct /* coclass */ TTLEncoder;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ITTLLiveText, __uuidof(ITTLLiveText));
+_COM_SMARTPTR_TYPEDEF(_ITTLLiveEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(_ITTLLiveInternalEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(_ITTLChannelEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(ITTLChannel, __uuidof(ITTLChannel));
+_COM_SMARTPTR_TYPEDEF(ITTLLive, __uuidof(ITTLLive));
+_COM_SMARTPTR_TYPEDEF(ITTLLive2, __uuidof(ITTLLive2));
+_COM_SMARTPTR_TYPEDEF(ITTLEncoder, __uuidof(ITTLEncoder));
+_COM_SMARTPTR_TYPEDEF(_ITTLEncoderEvents, __uuidof(IDispatch));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("7b97d6d7-4bc0-4bf3-8fba-8112a1a387d5"))
+ITTLLiveText : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetPhysicalChannelText (
+        enum TTLAPI_CHANNELS eValue );
+    _bstr_t GetRecordingModeText (
+        enum TTLAPI_RECORDING_MODES eValue );
+    _bstr_t GetSensorTypeText (
+        enum TTLAPI_SENSOR_TYPES eValue );
+    _bstr_t GetEncoderModelTypeText (
+        enum TTLAPI_ENCODER_MODEL_TYPES eValue );
+    _bstr_t GetSensorStateText (
+        enum TTLAPI_SENSOR_STATES eValue );
+    _bstr_t GetSynchronizationStateText (
+        enum TTLAPI_SYNC_STATES eValue );
+    _bstr_t GetImpedanceCheckResultText (
+        enum TTLAPI_IMPCHECK_RESULTS eValue );
+    _bstr_t GetDecryptionStateText (
+        enum TTLAPI_DECRYPTION_STATES eValue );
+    _bstr_t GetEncoderStateText (
+        enum TTLAPI_ENCODER_STATES eValue );
+    _bstr_t GetConnectionTypeText (
+        enum TTLAPI_CONNECTION_TYPES eValue );
+    _bstr_t GetProtocolTypeText (
+        enum TTLAPI_PROTOCOL_TYPES eValue );
+    _bstr_t GetUnitTypeText (
+        enum TTLAPI_UNIT_TYPES eValue );
+    _bstr_t GetPlaybackModeText (
+        enum TTLAPI_PLAYBACK_MODES eValue );
+    _bstr_t GetEventTypeText (
+        enum TTLAPI_EVENT_TYPES eValue );
+    _bstr_t GetEventHorizonText (
+        enum TTLAPI_EVENT_HORIZON_MODES eValue );
+    _bstr_t GetConnectionCommandText (
+        enum TTLAPI_OPENCONNECTIONS_CMD_BITS eValue );
+    _bstr_t GetNotificationActiveBitText (
+        enum TTLAPI_NOTIFICATION_ACTIVE_BITS eValue );
+    _bstr_t GetNotificationMessageText (
+        enum TTLAPI_NOTIFICATION_MESSAGES eValue );
+    _bstr_t GetImpCheckCalculationTypeText (
+        enum TTLAPI_IMPCHECK_CALCULATION_TYPES eValue );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetPhysicalChannelText (
+        enum TTLAPI_CHANNELS eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetRecordingModeText (
+        enum TTLAPI_RECORDING_MODES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetSensorTypeText (
+        enum TTLAPI_SENSOR_TYPES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetEncoderModelTypeText (
+        enum TTLAPI_ENCODER_MODEL_TYPES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetSensorStateText (
+        enum TTLAPI_SENSOR_STATES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetSynchronizationStateText (
+        enum TTLAPI_SYNC_STATES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetImpedanceCheckResultText (
+        enum TTLAPI_IMPCHECK_RESULTS eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetDecryptionStateText (
+        enum TTLAPI_DECRYPTION_STATES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetEncoderStateText (
+        enum TTLAPI_ENCODER_STATES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetConnectionTypeText (
+        enum TTLAPI_CONNECTION_TYPES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetProtocolTypeText (
+        enum TTLAPI_PROTOCOL_TYPES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetUnitTypeText (
+        enum TTLAPI_UNIT_TYPES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetPlaybackModeText (
+        enum TTLAPI_PLAYBACK_MODES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetEventTypeText (
+        enum TTLAPI_EVENT_TYPES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetEventHorizonText (
+        enum TTLAPI_EVENT_HORIZON_MODES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetConnectionCommandText (
+        enum TTLAPI_OPENCONNECTIONS_CMD_BITS eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetNotificationActiveBitText (
+        enum TTLAPI_NOTIFICATION_ACTIVE_BITS eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetNotificationMessageText (
+        enum TTLAPI_NOTIFICATION_MESSAGES eValue,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetImpCheckCalculationTypeText (
+        enum TTLAPI_IMPCHECK_CALCULATION_TYPES eValue,
+        BSTR * pVal ) = 0;
+};
+
+enum TTLAPI_CHANNELS
+{
+    TTLAPI_CHANNEL_A = 0,
+    TTLAPI_CHANNEL_B = 1,
+    TTLAPI_CHANNEL_C = 2,
+    TTLAPI_CHANNEL_D = 3,
+    TTLAPI_CHANNEL_E = 4,
+    TTLAPI_CHANNEL_F = 5,
+    TTLAPI_CHANNEL_G = 6,
+    TTLAPI_CHANNEL_H = 7,
+    TTLAPI_CHANNEL_I = 8,
+    TTLAPI_CHANNEL_J = 9
+};
+
+enum TTLAPI_RECORDING_MODES
+{
+    TTLAPI_RECM_RAW = 0,
+    TTLAPI_RECM_SSF = 1,
+    TTLAPI_RECM_CSV = 2
+};
+
+enum TTLAPI_SENSOR_TYPES
+{
+    TTLAPI_SENS_TYPE_ENCODER_OFFLINE = -1,
+    TTLAPI_SENS_TYPE_UNKNOWN = 0,
+    TTLAPI_SENS_TYPE_UNCONNECTED = 1,
+    TTLAPI_SENS_TYPE_EEG = 2,
+    TTLAPI_SENS_TYPE_HR_BVP = 4,
+    TTLAPI_SENS_TYPE_SKIN_CONDUCTANCE = 5,
+    TTLAPI_SENS_TYPE_EKG_Z = 6,
+    TTLAPI_SENS_TYPE_EEG_Z = 7,
+    TTLAPI_SENS_TYPE_MYOSCAN = 8,
+    TTLAPI_SENS_TYPE_MYOSCAN_PRO_400 = 9,
+    TTLAPI_SENS_TYPE_RESPIRATION = 10,
+    TTLAPI_SENS_TYPE_MYOSCAN_Z_HR = 11,
+    TTLAPI_SENS_TYPE_MYOSCAN_Z = 12,
+    TTLAPI_SENS_TYPE_GONIOMETER = 13,
+    TTLAPI_SENS_TYPE_FORCE = 14,
+    TTLAPI_SENS_TYPE_MYOSCAN_PRO_1600W = 15,
+    TTLAPI_SENS_TYPE_VOLT_ISOLATOR = 16,
+    TTLAPI_SENS_TYPE_TEMPERATURE = 17,
+    TTLAPI_SENS_TYPE_MYOTRAC_INTERNAL = 128,
+    TTLAPI_SENS_TYPE_MYOTRAC3_INTERNAL = 129,
+    TTLAPI_SENS_TYPE_MYOTRAC3_ZC = 130
+};
+
+enum TTLAPI_ENCODER_MODEL_TYPES
+{
+    TTLAPI_ET_UNKNOWN = 0,
+    TTLAPI_ET_MYOTRAC3 = 1,
+    TTLAPI_ET_MYOTRAC3G = 2,
+    TTLAPI_ET_PROCOMPPLUS = 3,
+    TTLAPI_ET_PROCOMP2 = 4,
+    TTLAPI_ET_INFINITI_PRO = 5,
+    TTLAPI_ET_INFINITI_FLEX = 6,
+    TTLAPI_ET_INFINITI_MYOTRAC = 7,
+    TTLAPI_ET_INFINITI_U_CONTROL = 8,
+    TTLAPI_ET_INFINITY_PRO = 5,
+    TTLAPI_ET_INFINITY_FLEX = 6
+};
+
+enum TTLAPI_SENSOR_STATES
+{
+    TTLAPI_SENS_ST_ENCODER_OFFLINE = -1,
+    TTLAPI_SENS_ST_UNCONNECTED = 0,
+    TTLAPI_SENS_ST_NORMAL = 1,
+    TTLAPI_SENS_ST_CAL_IN_PROGRESS = 2,
+    TTLAPI_SENS_ST_IC_IN_PROGRESS = 3,
+    TTLAPI_SENS_ST_IC_TRIGGER = 4
+};
+
+enum TTLAPI_SYNC_STATES
+{
+    TTLAPI_SST_FAILED_RETRYING = -4,
+    TTLAPI_SST_FAILED_TIMEOUT = -3,
+    TTLAPI_SST_FAILED_OFFLINE = -2,
+    TTLAPI_SST_FAILED = -1,
+    TTLAPI_SST_NOT_STARTED = 0,
+    TTLAPI_SST_IN_PROGRESS = 1,
+    TTLAPI_SST_SUCCEEDED = 2
+};
+
+enum TTLAPI_IMPCHECK_RESULTS
+{
+    TTLAPI_IMPCHECK_ELECTRODE_PLUS = 0,
+    TTLAPI_IMPCHECK_ELECTRODE_MINUS = 1,
+    TTLAPI_IMPCHECK_ELECTRODE_REF = 2,
+    TTLAPI_IMPCHECK_PAIRS_PLUS_REF = 3,
+    TTLAPI_IMPCHECK_PAIRS_MINUS_REF = 4,
+    TTLAPI_IMPCHECK_PAIRS_PLUS_MINUS = 5,
+    TTLAPI_IMPCHECK_MAX_RESULT = 6
+};
+
+enum TTLAPI_DECRYPTION_STATES
+{
+    TTLAPI_DECRYPTION_STATE_SYNCHRONIZING = 0,
+    TTLAPI_DECRYPTION_STATE_PASS_THROUGH = 1,
+    TTLAPI_DECRYPTION_STATE_CANT_DECRYPT = 2,
+    TTLAPI_DECRYPTION_STATE_DECRYPTING = 3,
+    TTLAPI_DECRYPTION_STATE_NOT_DECRYPTING = 4
+};
+
+enum TTLAPI_ENCODER_STATES
+{
+    TTLAPI_ENC_ST_OFFLINE = -1,
+    TTLAPI_ENC_ST_DETECTING = 1,
+    TTLAPI_ENC_ST_ONLINE = 2
+};
+
+enum TTLAPI_CONNECTION_TYPES
+{
+    TTLAPI_CT_UNKNOWN = 0,
+    TTLAPI_CT_COM = 1,
+    TTLAPI_CT_USB = 2,
+    TTLAPI_CT_TELEMETRY = 3,
+    TTLAPI_CT_UDP = 4,
+    TTLAPI_CT_TCP = 5,
+    TTLAPI_CT_FILE = 6,
+    TTLAPI_CT_SSF_FILE = 7,
+    TTLAPI_CT_HID = 8,
+    TTLAPI_CT_HCIBT = 9
+};
+
+enum TTLAPI_PROTOCOL_TYPES
+{
+    TTLAPI_PROT_UNKNOWN = 0,
+    TTLAPI_PROT_ADAPTIVE = 1,
+    TTLAPI_PROT_BIOGRAPH = 2,
+    TTLAPI_PROT_BIORESEARCH = 3,
+    TTLAPI_PROT_EEG_SPECTRUM = 4,
+    TTLAPI_PROT_MYOTRAC3 = 5,
+    TTLAPI_PROT_INFINITI_PRO = 6,
+    TTLAPI_PROT_INFINITI_FLEX = 7,
+    TTLAPI_PROT_INFINITI_CF_RECORDED = 8,
+    TTLAPI_PROT_INFINITI_MYOTRAC = 9,
+    TTLAPI_PROT_INFINITY_PRO = 6,
+    TTLAPI_PROT_INFINITY_FLEX = 7
+};
+
+enum TTLAPI_UNIT_TYPES
+{
+    TTLAPI_UT_PERCENT = 2,
+    TTLAPI_UT_SENSVOLT = 3,
+    TTLAPI_UT_VRMS = 4,
+    TTLAPI_UT_DEGC = 5,
+    TTLAPI_UT_DEGF = 6,
+    TTLAPI_UT_DEGREE = 7,
+    TTLAPI_UT_SIEMENS = 8,
+    TTLAPI_UT_COUNT = 9,
+    TTLAPI_UT_ENCVOLT = 10,
+    TTLAPI_UT_PU = 11,
+    TTLAPI_UT_SENSMVOLT = 12,
+    TTLAPI_UT_SENSUVOLT = 13,
+    TTLAPI_UT_MVRMS = 14,
+    TTLAPI_UT_UVRMS = 15,
+    TTLAPI_UT_USIEMENS = 16
+};
+
+enum TTLAPI_PLAYBACK_MODES
+{
+    TTLAPI_PBM_STOP = 0,
+    TTLAPI_PBM_ONCE = 1,
+    TTLAPI_PBM_LOOP = 2
+};
+
+enum TTLAPI_EVENT_TYPES
+{
+    TTLAPI_EVT_EVENT_SWITCH = 1,
+    TTLAPI_EVT_SENSOR_STATE_CHANGE = 2,
+    TTLAPI_EVT_ENCODER_STATE_CHANGE = 3,
+    TTLAPI_EVT_SYNC_STATE_CHANGE = 4,
+    TTLAPI_EVT_EVENT_SWITCH_OFF = 5,
+    TTLAPI_EVT_SENSOR_REMOVED = 6,
+    TTLAPI_EVT_DATA_GAP = 7
+};
+
+enum TTLAPI_EVENT_HORIZON_MODES
+{
+    TTLAPI_EHM_TICKS = 0,
+    TTLAPI_EHM_SAMPLES = 1
+};
+
+enum TTLAPI_OPENCONNECTIONS_CMD_BITS
+{
+    TTLAPI_OCCMD_AUTODETECT = 1,
+    TTLAPI_OCCMD_KEEPEXISTING = 2,
+    TTLAPI_OCCMD_COM1 = 4,
+    TTLAPI_OCCMD_COM2 = 8,
+    TTLAPI_OCCMD_COM3 = 16,
+    TTLAPI_OCCMD_COM4 = 32,
+    TTLAPI_OCCMD_COM5 = 64,
+    TTLAPI_OCCMD_COM6 = 128,
+    TTLAPI_OCCMD_COM7 = 256,
+    TTLAPI_OCCMD_COM8 = 512,
+    TTLAPI_OCCMD_TTUSB0 = 1024,
+    TTLAPI_OCCMD_TTUSB1 = 2048,
+    TTLAPI_OCCMD_TTUSB2 = 4096,
+    TTLAPI_OCCMD_TTUSB3 = 8192,
+    TTLAPI_OCCMD_SIMULATOR = 16384,
+    TTLAPI_OCCMD_INF_MYOTRAC = 16384,
+    TTLAPI_OCCMD_UDP = 32768,
+    TTLAPI_OCCMD_TCP = 65536,
+    TTLAPI_OCCMD_HCIBT = 131072,
+    TTLAPI_OCCMD_COM9_256 = 262144,
+    TTLAPI_OCCMD_FORCE_ADAPTIVE = 268435456,
+    TTLAPI_OCCMD_FORCE_BIOGRAPH = 536870912,
+    TTLAPI_OCCMD_FORCE_BIORESEARCH = 805306368,
+    TTLAPI_OCCMD_FORCE_EEG_SPECTRUM = 1073741824,
+    TTLAPI_OCCMD_FORCE_MYOTRAC3 = 1342177280,
+    TTLAPI_OCCMD_FORCE_INFINITI_PRO = 1610612736,
+    TTLAPI_OCCMD_FORCE_INFINITI_FLEX = 1879048192,
+    TTLAPI_OCCMD_FORCE_INFINITI_MYOTRAC = -1879048192
+};
+
+enum TTLAPI_NOTIFICATION_ACTIVE_BITS
+{
+    TTLAPI_ON_CHANNEL_DATA_ACTIVE = 16,
+    TTLAPI_ON_EVENT_SWITCH_ACTIVE = 32,
+    TTLAPI_ON_SENSOR_STATE_CHANGE_ACTIVE = 64,
+    TTLAPI_ON_ENCODER_STATE_CHANGE_ACTIVE = 128,
+    TTLAPI_ON_DATA_OVERFLOW_ACTIVE = 256,
+    TTLAPI_ON_DATA_ERROR_ACTIVE = 512,
+    TTLAPI_ON_DATA_TIMEOUT_ACTIVE = 1024,
+    TTLAPI_ON_IMP_CHECK_RESULTS_ACTIVE = 2048,
+    TTLAPI_ON_SYNC_STATE_CHANGE = 4096,
+    TTLAPI_ON_EVENT_SWITCH_OFF = 8192,
+    TTLAPI_ON_DATA_GAP = 16384,
+    TTLAPI_ON_TICKSAHEAD_UPDATE = 32768,
+    TTLAPI_ON_EVENT_OUTPUT_FAILURE = 65536
+};
+
+enum TTLAPI_NOTIFICATION_MESSAGES
+{
+    TTLAPI_WM_ON_CHANNEL_DATA = 32869,
+    TTLAPI_WM_ON_EVENT_SWITCH = 32870,
+    TTLAPI_WM_ON_SENSOR_STATE_CHANGE = 32871,
+    TTLAPI_WM_ON_ENCODER_STATE_CHANGE = 32872,
+    TTLAPI_WM_ON_DATA_OVERFLOW = 32873,
+    TTLAPI_WM_ON_DATA_ERROR = 32874,
+    TTLAPI_WM_ON_DATA_TIMEOUT = 32875,
+    TTLAPI_WM_ON_IMP_CHECK_RESULTS = 32876,
+    TTLAPI_WM_ON_SYNC_STATE_CHANGE = 32877,
+    TTLAPI_WM_ON_EVENT_SWITCH_OFF = 32878,
+    TTLAPI_WM_ON_DATA_GAP = 32879,
+    TTALPI_WM_ON_TICKSAHEAD_UPDATE = 32880,
+    TTLAPI_WM_ON_EVENT_OUTPUT_FAILURE = 32881
+};
+
+enum TTLAPI_IMPCHECK_CALCULATION_TYPES
+{
+    TTLAPI_IMPCHECK_TYPE_RESISTIVE = 0,
+    TTLAPI_IMPCHECK_TYPE_TOTAL = 1
+};
+
+struct __declspec(uuid("4bd54ee8-d59e-4a09-bea2-dfe10b650237"))
+TTLLiveText;
+    // [ default ] interface ITTLLiveText
+
+struct __declspec(uuid("b8bf3523-0a10-44ad-9ef5-f16a02ea9fb1"))
+_ITTLLiveEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT ChannelData (
+        long liChannelHND,
+        long liSamplesCount );
+    HRESULT EventSwitch (
+        long liEncoderHND,
+        long liTickCount );
+    HRESULT SensorStateChange (
+        long liChannelHND,
+        long liNewState );
+    HRESULT EncoderStateChange (
+        long liEncoderHND,
+        long liNewState );
+    HRESULT DataOverflow (
+        long liChannelHND,
+        long liReserved );
+    HRESULT DataError (
+        long liEncoderHND,
+        long liReserved );
+    HRESULT DataTimeOut (
+        long liEncoderHND );
+    HRESULT ImpCheckResults (
+        long liChannelHND,
+        long liReserved );
+    HRESULT SyncStateChange (
+        long liNewState,
+        long liReserved );
+    HRESULT EventSwitchOff (
+        long liEncoderHND,
+        long liTickCount );
+    HRESULT DataGap (
+        long liEncoderHND,
+        long liGapStart,
+        long liGapSize );
+    HRESULT TicksAheadUpdate (
+        long liEncoderHND );
+    HRESULT EventOutputFailure (
+        long liEncoderHND,
+        long bRequestedState );
+};
+
+struct __declspec(uuid("f2e91452-6cb9-4260-9b38-d74916fd4c00"))
+_ITTLLiveInternalEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT ChannelDestroyed (
+        long liHND );
+    HRESULT EncoderDestroyed (
+        long liHND );
+};
+
+struct __declspec(uuid("76beb351-c68b-4643-bc77-f9487b6d43d6"))
+_ITTLChannelEvents : IDispatch
+{};
+
+struct __declspec(uuid("b258a2f0-3992-4e5d-9cc6-ab4db03553b8"))
+TTLChannel;
+    // [ default ] interface ITTLChannel
+    // [ default, source ] dispinterface _ITTLChannelEvents
+
+struct __declspec(uuid("b6d48972-ae83-421f-b97d-913a839b6651"))
+ITTLChannel : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetAutoZero,put=PutAutoZero))
+    float AutoZero;
+    __declspec(property(get=GetActive,put=PutActive))
+    long Active;
+    __declspec(property(get=GetEncoderHND))
+    long EncoderHND;
+    __declspec(property(get=GetPhysicalIndex))
+    long PhysicalIndex;
+    __declspec(property(get=GetNominalSampleRate))
+    float NominalSampleRate;
+    __declspec(property(get=GetNotification,put=PutNotification))
+    long Notification;
+    __declspec(property(get=GetSamplesAvailable))
+    long SamplesAvailable;
+    __declspec(property(get=GetSensorConnected))
+    long SensorConnected;
+    __declspec(property(get=GetUnitType,put=PutUnitType))
+    enum TTLAPI_UNIT_TYPES UnitType;
+    __declspec(property(get=GetSensorID))
+    enum TTLAPI_SENSOR_TYPES SensorID;
+    __declspec(property(get=GetSensorState))
+    enum TTLAPI_SENSOR_STATES SensorState;
+    __declspec(property(get=GetForceSensor,put=PutForceSensor))
+    long ForceSensor;
+    __declspec(property(get=GetOffset,put=PutOffset))
+    float Offset;
+    __declspec(property(get=GetSensorType,put=PutSensorType))
+    enum TTLAPI_SENSOR_TYPES SensorType;
+    __declspec(property(get=GetImpCheckAge))
+    float ImpCheckAge;
+    __declspec(property(get=GetImpCheckResults))
+    float ImpCheckResults[];
+    __declspec(property(get=GetScale,put=PutScale))
+    float Scale;
+    __declspec(property(get=GetNextSampleTicks))
+    long NextSampleTicks;
+    __declspec(property(get=GetEventHorizon,put=PutEventHorizon))
+    long EventHorizon[];
+    __declspec(property(get=GetEventType))
+    enum TTLAPI_EVENT_TYPES EventType;
+    __declspec(property(get=GetEventCount))
+    long EventCount;
+    __declspec(property(get=GetEventTicks))
+    long EventTicks;
+    __declspec(property(get=GetEventLength))
+    long EventLength;
+    __declspec(property(get=GetHND))
+    long HND;
+    __declspec(property(get=GetShortReadMask,put=PutShortReadMask))
+    long ShortReadMask;
+    __declspec(property(get=GetEventInsertionMask,put=PutEventInsertionMask))
+    long EventInsertionMask;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    float GetAutoZero ( );
+    void PutAutoZero (
+        float pVal );
+    long GetActive ( );
+    void PutActive (
+        long pVal );
+    long GetEncoderHND ( );
+    long GetPhysicalIndex ( );
+    float GetNominalSampleRate ( );
+    long GetNotification ( );
+    void PutNotification (
+        long pliNotification );
+    long GetSamplesAvailable ( );
+    long GetSensorConnected ( );
+    enum TTLAPI_UNIT_TYPES GetUnitType ( );
+    void PutUnitType (
+        enum TTLAPI_UNIT_TYPES pVal );
+    enum TTLAPI_SENSOR_TYPES GetSensorID ( );
+    enum TTLAPI_SENSOR_STATES GetSensorState ( );
+    long GetForceSensor ( );
+    void PutForceSensor (
+        long pVal );
+    float GetOffset ( );
+    void PutOffset (
+        float pVal );
+    enum TTLAPI_SENSOR_TYPES GetSensorType ( );
+    void PutSensorType (
+        enum TTLAPI_SENSOR_TYPES pVal );
+    float GetImpCheckAge ( );
+    float GetImpCheckResults (
+        enum TTLAPI_IMPCHECK_RESULTS liResultIndex );
+    float GetScale ( );
+    void PutScale (
+        float pVal );
+    HRESULT Drop ( );
+    long ReadData (
+        float * pfBuffer,
+        long * pliMaxSamples );
+    _variant_t ReadDataVT (
+        long liMaxSamples );
+    long GetNextSampleTicks ( );
+    long PeekFirstEvent ( );
+    long PeekNextEvent ( );
+    long GetEventHorizon (
+        enum TTLAPI_EVENT_HORIZON_MODES eMode );
+    enum TTLAPI_EVENT_TYPES GetEventType ( );
+    long GetEventCount ( );
+    long GetEventTicks ( );
+    long GetEventLength ( );
+    long GetHND ( );
+    long GetShortReadMask ( );
+    void PutShortReadMask (
+        long pVal );
+    long GetEventInsertionMask ( );
+    void PutEventInsertionMask (
+        long pVal );
+    void PutEventHorizon (
+        enum TTLAPI_EVENT_HORIZON_MODES eMode,
+        long pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_AutoZero (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_AutoZero (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_Active (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_Active (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_EncoderHND (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PhysicalIndex (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_NominalSampleRate (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_Notification (
+        long * pliNotification ) = 0;
+    virtual HRESULT __stdcall put_Notification (
+        long pliNotification ) = 0;
+    virtual HRESULT __stdcall get_SamplesAvailable (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_SensorConnected (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_UnitType (
+        enum TTLAPI_UNIT_TYPES * pVal ) = 0;
+    virtual HRESULT __stdcall put_UnitType (
+        enum TTLAPI_UNIT_TYPES pVal ) = 0;
+    virtual HRESULT __stdcall get_SensorID (
+        enum TTLAPI_SENSOR_TYPES * pVal ) = 0;
+    virtual HRESULT __stdcall get_SensorState (
+        enum TTLAPI_SENSOR_STATES * pVal ) = 0;
+    virtual HRESULT __stdcall get_ForceSensor (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ForceSensor (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_Offset (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_Offset (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_SensorType (
+        enum TTLAPI_SENSOR_TYPES * pVal ) = 0;
+    virtual HRESULT __stdcall put_SensorType (
+        enum TTLAPI_SENSOR_TYPES pVal ) = 0;
+    virtual HRESULT __stdcall get_ImpCheckAge (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_ImpCheckResults (
+        enum TTLAPI_IMPCHECK_RESULTS liResultIndex,
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_Scale (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_Scale (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall raw_Drop ( ) = 0;
+    virtual HRESULT __stdcall raw_ReadData (
+        float * pfBuffer,
+        long * pliMaxSamples,
+        long * pliResult ) = 0;
+    virtual HRESULT __stdcall raw_ReadDataVT (
+        long liMaxSamples,
+        VARIANT * pvarBuffer ) = 0;
+    virtual HRESULT __stdcall get_NextSampleTicks (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_PeekFirstEvent (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_PeekNextEvent (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_EventHorizon (
+        enum TTLAPI_EVENT_HORIZON_MODES eMode,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_EventType (
+        enum TTLAPI_EVENT_TYPES * pVal ) = 0;
+    virtual HRESULT __stdcall get_EventCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_EventTicks (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_EventLength (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_HND (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_ShortReadMask (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ShortReadMask (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_EventInsertionMask (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_EventInsertionMask (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall put_EventHorizon (
+        enum TTLAPI_EVENT_HORIZON_MODES eMode,
+        long pVal ) = 0;
+};
+
+struct __declspec(uuid("897b372a-f588-4143-aa5d-3414d1dbc42e"))
+TTLLive;
+    // interface ITTLLive
+    // [ default ] interface ITTLLive2
+    // [ default, source ] dispinterface _ITTLLiveEvents
+    // [ source ] dispinterface _ITTLLiveInternalEvents
+
+struct __declspec(uuid("5037f1e7-3676-4306-8c82-23dc12133098"))
+ITTLLive : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetEncoderCount))
+    long EncoderCount;
+    __declspec(property(get=GetChannelCount))
+    long ChannelCount;
+    __declspec(property(get=GetVersion))
+    long Version;
+    __declspec(property(get=GetBatteryLevelPct))
+    float BatteryLevelPct[];
+    __declspec(property(get=GetConnectionName))
+    _bstr_t ConnectionName[];
+    __declspec(property(get=GetConnectionType))
+    long ConnectionType[];
+    __declspec(property(get=GetEncoderChannelCount))
+    long EncoderChannelCount[];
+    __declspec(property(get=GetEncoderModelName))
+    _bstr_t EncoderModelName[];
+    __declspec(property(get=GetEncoderModelType,put=PutEncoderModelType))
+    long EncoderModelType[];
+    __declspec(property(get=GetFirmwareVersion))
+    long FirmwareVersion[];
+    __declspec(property(get=GetHardwareVersion))
+    long HardwareVersion[];
+    __declspec(property(get=GetProtocolType))
+    long ProtocolType[];
+    __declspec(property(get=GetSensorStatus))
+    long SensorStatus[];
+    __declspec(property(get=GetSerialNumber))
+    _bstr_t SerialNumber[];
+    __declspec(property(get=GetAutoZero,put=PutAutoZero))
+    float AutoZero[];
+    __declspec(property(get=GetChannelActive,put=PutChannelActive))
+    long ChannelActive[];
+    __declspec(property(get=GetChannelEncoderHND))
+    long ChannelEncoderHND[];
+    __declspec(property(get=GetChannelPhysicalIndex))
+    long ChannelPhysicalIndex[];
+    __declspec(property(get=GetNominalSampleRate))
+    float NominalSampleRate[];
+    __declspec(property(get=GetNotification,put=PutNotification))
+    long Notification[];
+    __declspec(property(get=GetSamplesAvailable))
+    long SamplesAvailable[];
+    __declspec(property(get=GetSensorConnected))
+    long SensorConnected[];
+    __declspec(property(get=GetUnitType,put=PutUnitType))
+    long UnitType[];
+    __declspec(property(get=GetFirstChannelHND,put=PutFirstChannelHND))
+    long FirstChannelHND[];
+    __declspec(property(get=GetEncoderID))
+    long EncoderID[];
+    __declspec(property(get=GetNotificationMask,put=PutNotificationMask))
+    long NotificationMask;
+    __declspec(property(get=GetEventInsertionMask,put=PutEventInsertionMask))
+    long EventInsertionMask[];
+    __declspec(property(get=GetSensorID))
+    long SensorID[];
+    __declspec(property(get=GetSensorState))
+    long SensorState[];
+    __declspec(property(get=GetEncoderState))
+    long EncoderState[];
+    __declspec(property(get=GetForceSensor,put=PutForceSensor))
+    long ForceSensor[];
+    __declspec(property(get=GetChannelOffset,put=PutChannelOffset))
+    float ChannelOffset[];
+    __declspec(property(get=GetSensorType,put=PutSensorType))
+    long SensorType[];
+    __declspec(property(get=GetImpCheckType,put=PutImpCheckType))
+    long ImpCheckType;
+    __declspec(property(get=GetImpCheckAge))
+    float ImpCheckAge[];
+    __declspec(property(get=GetImpCheckResults))
+    float ImpCheckResults[][];
+    __declspec(property(get=GetEncoderTime))
+    DATE EncoderTime[];
+    __declspec(property(get=GetEncoderTimeAdjustment))
+    DATE EncoderTimeAdjustment[];
+    __declspec(property(get=GetPlaybackMode,put=PutPlaybackMode))
+    long PlaybackMode[];
+    __declspec(property(get=GetPlaybackStart,put=PutPlaybackStart))
+    long PlaybackStart[];
+    __declspec(property(get=GetPlaybackEnd,put=PutPlaybackEnd))
+    long PlaybackEnd[];
+    __declspec(property(get=GetPlaybackPosition,put=PutPlaybackPosition))
+    long PlaybackPosition[];
+    __declspec(property(get=GetPlaybackSpeed,put=PutPlaybackSpeed))
+    float PlaybackSpeed[];
+    __declspec(property(get=GetSwitchState,put=PutSwitchState))
+    long SwitchState[];
+    __declspec(property(get=GetBatteryLevelVolt))
+    float BatteryLevelVolt[];
+    __declspec(property(get=GetBatteryTimeLeft))
+    float BatteryTimeLeft[];
+    __declspec(property(get=GetChannelScale,put=PutChannelScale))
+    float ChannelScale[];
+    __declspec(property(get=GetEventInputState))
+    long EventInputState[];
+    __declspec(property(get=GetTickRate))
+    float TickRate[];
+    __declspec(property(get=GetDecryptionState))
+    long DecryptionState[];
+    __declspec(property(get=GetProtocolName))
+    _bstr_t ProtocolName[];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetEncoderCount ( );
+    long GetChannelCount ( );
+    long GetVersion ( );
+    float GetBatteryLevelPct (
+        long liEncoderHND );
+    _bstr_t GetConnectionName (
+        long liEncoderHND );
+    long GetConnectionType (
+        long liEncoderHND );
+    long GetEncoderChannelCount (
+        long liEncoderHND );
+    _bstr_t GetEncoderModelName (
+        long liEncoderHND );
+    long GetEncoderModelType (
+        long liEncoderHND );
+    long GetFirmwareVersion (
+        long liEncoderHND );
+    long GetHardwareVersion (
+        long liEncoderHND );
+    long GetProtocolType (
+        long liEncoderHND );
+    long GetSensorStatus (
+        long liEncoderHND );
+    _bstr_t GetSerialNumber (
+        long liEncoderHND );
+    float GetAutoZero (
+        long liChannelHND );
+    void PutAutoZero (
+        long liChannelHND,
+        float pfSeconds );
+    long GetChannelActive (
+        long liChannelHND );
+    void PutChannelActive (
+        long liChannelHND,
+        long pbActive );
+    long GetChannelEncoderHND (
+        long liChannelHND );
+    long GetChannelPhysicalIndex (
+        long liChannelHND );
+    float GetNominalSampleRate (
+        long liChannelHND );
+    long GetNotification (
+        long liChannelHND );
+    void PutNotification (
+        long liChannelHND,
+        long pliNotification );
+    long GetSamplesAvailable (
+        long liChannelHND );
+    long GetSensorConnected (
+        long liChannelHND );
+    long GetUnitType (
+        long liChannelHND );
+    void PutUnitType (
+        long liChannelHND,
+        long pliUnitType );
+    HRESULT RegisterClientThreadId (
+        long liThreadHND );
+    HRESULT AssignEncoderHND (
+        _bstr_t bstrSerialNumber,
+        long liNewEncoderHND );
+    HRESULT CloseConnection (
+        long liEncoderHND );
+    HRESULT CloseConnections ( );
+    long GetFirstEncoderHND ( );
+    long GetNextEncoderHND ( );
+    long OpenConnection (
+        _bstr_t bstrDeviceName,
+        long liPollingInterval );
+    HRESULT OpenConnections (
+        long libmCommand,
+        long liPollingInterval,
+        long * plibmScanned,
+        long * plibmDetected );
+    HRESULT AddChannel (
+        long liEncoderHND,
+        long liPhysicalChannelIndex,
+        long * pliChannelHND );
+    HRESULT AutoSetupChannels ( );
+    HRESULT DropChannel (
+        long liChannelHND );
+    HRESULT DropChannels ( );
+    long GetFirstChannelHND ( );
+    long GetNextChannelHND ( );
+    long ReadChannelData (
+        long liChannelHND,
+        float * pfBuffer,
+        long * pliMaxSamples );
+    _variant_t ReadChannelDataVT (
+        long liChannelHND,
+        long liMaxSamples );
+    HRESULT StartChannels ( );
+    HRESULT StopChannels ( );
+    long GetFirstChannelHND (
+        long liEncoderHND );
+    void PutFirstChannelHND (
+        long liEncoderHND,
+        long pliFirstChannelHND );
+    long GetEncoderID (
+        long liEncoderHND );
+    long GetNotificationMask ( );
+    void PutNotificationMask (
+        long pliMask );
+    long GetEventInsertionMask (
+        long liChannelHND );
+    void PutEventInsertionMask (
+        long liChannelHND,
+        long pVal );
+    long GetSensorID (
+        long liChannelHND );
+    long GetSensorState (
+        long liChannelHND );
+    long GetEncoderState (
+        long liEncoderHND );
+    long GetForceSensor (
+        long liChannelHND );
+    void PutForceSensor (
+        long liChannelHND,
+        long pbForceSensor );
+    float GetChannelOffset (
+        long liChannelHND );
+    void PutChannelOffset (
+        long liChannelHND,
+        float pVal );
+    long GetSensorType (
+        long liChannelHND );
+    void PutSensorType (
+        long liChannelHND,
+        long pliSensorType );
+    long GetImpCheckType ( );
+    void PutImpCheckType (
+        long pliImpCheckType );
+    float GetImpCheckAge (
+        long liChannelHND );
+    float GetImpCheckResults (
+        long liChannelHND,
+        long liResultIndex );
+    HRESULT StartRecord (
+        long liEncoderHND,
+        _bstr_t bstrFilename );
+    HRESULT StopRecord (
+        long liEncoderHND );
+    DATE GetEncoderTime (
+        long liEncoderHND );
+    DATE GetEncoderTimeAdjustment (
+        long liEncoderHND );
+    long GetPlaybackMode (
+        long liEncoderHND );
+    void PutPlaybackMode (
+        long liEncoderHND,
+        long pVal );
+    long GetPlaybackStart (
+        long liEncoderHND );
+    void PutPlaybackStart (
+        long liEncoderHND,
+        long pVal );
+    long GetPlaybackEnd (
+        long liEncoderHND );
+    void PutPlaybackEnd (
+        long liEncoderHND,
+        long pVal );
+    long GetPlaybackPosition (
+        long liEncoderHND );
+    void PutPlaybackPosition (
+        long liEncoderHND,
+        long pVal );
+    float GetPlaybackSpeed (
+        long liEncoderHND );
+    void PutPlaybackSpeed (
+        long liEncoderHND,
+        float pVal );
+    long GetSwitchState (
+        long liEncoderHND );
+    void PutSwitchState (
+        long liEncoderHND,
+        long pVal );
+    float GetBatteryLevelVolt (
+        long liEncoderHND );
+    float GetBatteryTimeLeft (
+        long liEncoderHND );
+    float GetChannelScale (
+        long liChannelHND );
+    void PutChannelScale (
+        long liChannelHND,
+        float pVal );
+    long GetEventInputState (
+        long liEncoderHND );
+    float GetTickRate (
+        long liEncoderHND );
+    long GetDecryptionState (
+        long liEncoderHND );
+    HRESULT UnlockDecryption (
+        long liEncoderHND,
+        long liUnlockValue );
+    void PutEncoderModelType (
+        long liEncoderHND,
+        long pliEncoderModelType );
+    _bstr_t GetProtocolName (
+        long liEncoderHND );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_EncoderCount (
+        long * pliEncoderCount ) = 0;
+    virtual HRESULT __stdcall get_ChannelCount (
+        long * pliChannelCount ) = 0;
+    virtual HRESULT __stdcall get_Version (
+        long * plibmVersion ) = 0;
+    virtual HRESULT __stdcall get_BatteryLevelPct (
+        long liEncoderHND,
+        float * pfBatteryLevelPct ) = 0;
+    virtual HRESULT __stdcall get_ConnectionName (
+        long liEncoderHND,
+        BSTR * pbstrConnectionName ) = 0;
+    virtual HRESULT __stdcall get_ConnectionType (
+        long liEncoderHND,
+        long * pliConnectionType ) = 0;
+    virtual HRESULT __stdcall get_EncoderChannelCount (
+        long liEncoderHND,
+        long * pliEncoderChannelCount ) = 0;
+    virtual HRESULT __stdcall get_EncoderModelName (
+        long liEncoderHND,
+        BSTR * pbstrEncoderModelName ) = 0;
+    virtual HRESULT __stdcall get_EncoderModelType (
+        long liEncoderHND,
+        long * pliEncoderModelType ) = 0;
+    virtual HRESULT __stdcall get_FirmwareVersion (
+        long liEncoderHND,
+        long * plibmFirmwareVersion ) = 0;
+    virtual HRESULT __stdcall get_HardwareVersion (
+        long liEncoderHND,
+        long * plibmHardwareVersion ) = 0;
+    virtual HRESULT __stdcall get_ProtocolType (
+        long liEncoderHND,
+        long * pliProtocolType ) = 0;
+    virtual HRESULT __stdcall get_SensorStatus (
+        long liEncoderHND,
+        long * plibmSensorStatus ) = 0;
+    virtual HRESULT __stdcall get_SerialNumber (
+        long liEncoderHND,
+        BSTR * pbstrSerialNumber ) = 0;
+    virtual HRESULT __stdcall get_AutoZero (
+        long liChannelHND,
+        float * pfSeconds ) = 0;
+    virtual HRESULT __stdcall put_AutoZero (
+        long liChannelHND,
+        float pfSeconds ) = 0;
+    virtual HRESULT __stdcall get_ChannelActive (
+        long liChannelHND,
+        long * pbActive ) = 0;
+    virtual HRESULT __stdcall put_ChannelActive (
+        long liChannelHND,
+        long pbActive ) = 0;
+    virtual HRESULT __stdcall get_ChannelEncoderHND (
+        long liChannelHND,
+        long * pliEncoderHND ) = 0;
+    virtual HRESULT __stdcall get_ChannelPhysicalIndex (
+        long liChannelHND,
+        long * pliPhysicalIndex ) = 0;
+    virtual HRESULT __stdcall get_NominalSampleRate (
+        long liChannelHND,
+        float * pfNominalSampleRate ) = 0;
+    virtual HRESULT __stdcall get_Notification (
+        long liChannelHND,
+        long * pliNotification ) = 0;
+    virtual HRESULT __stdcall put_Notification (
+        long liChannelHND,
+        long pliNotification ) = 0;
+    virtual HRESULT __stdcall get_SamplesAvailable (
+        long liChannelHND,
+        long * pliSamplesAvailable ) = 0;
+    virtual HRESULT __stdcall get_SensorConnected (
+        long liChannelHND,
+        long * pbSensorConnected ) = 0;
+    virtual HRESULT __stdcall get_UnitType (
+        long liChannelHND,
+        long * pliUnitType ) = 0;
+    virtual HRESULT __stdcall put_UnitType (
+        long liChannelHND,
+        long pliUnitType ) = 0;
+    virtual HRESULT __stdcall raw_RegisterClientThreadId (
+        long liThreadHND ) = 0;
+    virtual HRESULT __stdcall raw_AssignEncoderHND (
+        BSTR bstrSerialNumber,
+        long liNewEncoderHND ) = 0;
+    virtual HRESULT __stdcall raw_CloseConnection (
+        long liEncoderHND ) = 0;
+    virtual HRESULT __stdcall raw_CloseConnections ( ) = 0;
+    virtual HRESULT __stdcall raw_GetFirstEncoderHND (
+        long * pliFirstEncoderHND ) = 0;
+    virtual HRESULT __stdcall raw_GetNextEncoderHND (
+        long * pliNextEncoderHND ) = 0;
+    virtual HRESULT __stdcall raw_OpenConnection (
+        BSTR bstrDeviceName,
+        long liPollingInterval,
+        long * liNewEncoderHND ) = 0;
+    virtual HRESULT __stdcall raw_OpenConnections (
+        long libmCommand,
+        long liPollingInterval,
+        long * plibmScanned,
+        long * plibmDetected ) = 0;
+    virtual HRESULT __stdcall raw_AddChannel (
+        long liEncoderHND,
+        long liPhysicalChannelIndex,
+        long * pliChannelHND ) = 0;
+    virtual HRESULT __stdcall raw_AutoSetupChannels ( ) = 0;
+    virtual HRESULT __stdcall raw_DropChannel (
+        long liChannelHND ) = 0;
+    virtual HRESULT __stdcall raw_DropChannels ( ) = 0;
+    virtual HRESULT __stdcall raw_GetFirstChannelHND (
+        long * pliFirstChannelHND ) = 0;
+    virtual HRESULT __stdcall raw_GetNextChannelHND (
+        long * pliNextChannelHND ) = 0;
+    virtual HRESULT __stdcall raw_ReadChannelData (
+        long liChannelHND,
+        float * pfBuffer,
+        long * pliMaxSamples,
+        long * pliResult ) = 0;
+    virtual HRESULT __stdcall raw_ReadChannelDataVT (
+        long liChannelHND,
+        long liMaxSamples,
+        VARIANT * pvarBuffer ) = 0;
+    virtual HRESULT __stdcall raw_StartChannels ( ) = 0;
+    virtual HRESULT __stdcall raw_StopChannels ( ) = 0;
+    virtual HRESULT __stdcall get_FirstChannelHND (
+        long liEncoderHND,
+        long * pliFirstChannelHND ) = 0;
+    virtual HRESULT __stdcall put_FirstChannelHND (
+        long liEncoderHND,
+        long pliFirstChannelHND ) = 0;
+    virtual HRESULT __stdcall get_EncoderID (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_NotificationMask (
+        long * pliMask ) = 0;
+    virtual HRESULT __stdcall put_NotificationMask (
+        long pliMask ) = 0;
+    virtual HRESULT __stdcall get_EventInsertionMask (
+        long liChannelHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_EventInsertionMask (
+        long liChannelHND,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SensorID (
+        long liChannelHND,
+        long * pliSensorID ) = 0;
+    virtual HRESULT __stdcall get_SensorState (
+        long liChannelHND,
+        long * pliSensorState ) = 0;
+    virtual HRESULT __stdcall get_EncoderState (
+        long liEncoderHND,
+        long * pliEncoderState ) = 0;
+    virtual HRESULT __stdcall get_ForceSensor (
+        long liChannelHND,
+        long * pbForceSensor ) = 0;
+    virtual HRESULT __stdcall put_ForceSensor (
+        long liChannelHND,
+        long pbForceSensor ) = 0;
+    virtual HRESULT __stdcall get_ChannelOffset (
+        long liChannelHND,
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_ChannelOffset (
+        long liChannelHND,
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_SensorType (
+        long liChannelHND,
+        long * pliSensorType ) = 0;
+    virtual HRESULT __stdcall put_SensorType (
+        long liChannelHND,
+        long pliSensorType ) = 0;
+    virtual HRESULT __stdcall get_ImpCheckType (
+        long * pliImpCheckType ) = 0;
+    virtual HRESULT __stdcall put_ImpCheckType (
+        long pliImpCheckType ) = 0;
+    virtual HRESULT __stdcall get_ImpCheckAge (
+        long liChannelHND,
+        float * pfImpCheckAge ) = 0;
+    virtual HRESULT __stdcall get_ImpCheckResults (
+        long liChannelHND,
+        long liResultIndex,
+        float * pfImpCheckResult ) = 0;
+    virtual HRESULT __stdcall raw_StartRecord (
+        long liEncoderHND,
+        BSTR bstrFilename ) = 0;
+    virtual HRESULT __stdcall raw_StopRecord (
+        long liEncoderHND ) = 0;
+    virtual HRESULT __stdcall get_EncoderTime (
+        long liEncoderHND,
+        DATE * pVal ) = 0;
+    virtual HRESULT __stdcall get_EncoderTimeAdjustment (
+        long liEncoderHND,
+        DATE * pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackMode (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackMode (
+        long liEncoderHND,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackStart (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackStart (
+        long liEncoderHND,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackEnd (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackEnd (
+        long liEncoderHND,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackPosition (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackPosition (
+        long liEncoderHND,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackSpeed (
+        long liEncoderHND,
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackSpeed (
+        long liEncoderHND,
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_SwitchState (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_SwitchState (
+        long liEncoderHND,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_BatteryLevelVolt (
+        long liEncoderHND,
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_BatteryTimeLeft (
+        long liEncoderHND,
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_ChannelScale (
+        long liChannelHND,
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_ChannelScale (
+        long liChannelHND,
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_EventInputState (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_TickRate (
+        long liEncoderHND,
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_DecryptionState (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_UnlockDecryption (
+        long liEncoderHND,
+        long liUnlockValue ) = 0;
+    virtual HRESULT __stdcall put_EncoderModelType (
+        long liEncoderHND,
+        long pliEncoderModelType ) = 0;
+    virtual HRESULT __stdcall get_ProtocolName (
+        long liEncoderHND,
+        BSTR * pbstrProtocolName ) = 0;
+};
+
+struct __declspec(uuid("6748fb1b-25c8-4d29-9661-afcc3e8eb445"))
+ITTLLive2 : ITTLLive
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetSyncState))
+    enum TTLAPI_SYNC_STATES SyncState;
+    __declspec(property(get=GetGapChannelFill,put=PutGapChannelFill))
+    long GapChannelFill;
+    __declspec(property(get=GetGapChannelForceFill,put=PutGapChannelForceFill))
+    long GapChannelForceFill;
+    __declspec(property(get=GetGapEncoderFill,put=PutGapEncoderFill))
+    long GapEncoderFill;
+    __declspec(property(get=GetGapEncoderOfflineFill,put=PutGapEncoderOfflineFill))
+    long GapEncoderOfflineFill;
+    __declspec(property(get=GetGapEncoderLateFill,put=PutGapEncoderLateFill))
+    long GapEncoderLateFill;
+    __declspec(property(get=GetSyncSendTrigger,put=PutSyncSendTrigger))
+    long SyncSendTrigger;
+    __declspec(property(get=GetSyncWaitTrigger,put=PutSyncWaitTrigger))
+    long SyncWaitTrigger;
+    __declspec(property(get=GetSyncSendPeriodic,put=PutSyncSendPeriodic))
+    long SyncSendPeriodic;
+    __declspec(property(get=GetSyncProcessPeriodic,put=PutSyncProcessPeriodic))
+    long SyncProcessPeriodic;
+    __declspec(property(get=GetSyncSendPeriodicInterval,put=PutSyncSendPeriodicInterval))
+    long SyncSendPeriodicInterval;
+    __declspec(property(get=GetSyncTimeout,put=PutSyncTimeout))
+    long SyncTimeout;
+    __declspec(property(get=GetMasterEncoder))
+    ITTLEncoderPtr MasterEncoder;
+    __declspec(property(get=GetDebugBuild))
+    long DebugBuild;
+    __declspec(property(get=GetGlobalTickRate))
+    long GlobalTickRate;
+    __declspec(property(get=GetMasterEncoderHND,put=PutMasterEncoderHND))
+    long MasterEncoderHND;
+    __declspec(property(get=GetGapFillValue,put=PutGapFillValue))
+    float GapFillValue;
+    __declspec(property(get=GetTTUSB_SN))
+    _bstr_t TTUSB_SN[];
+    __declspec(property(get=GetTTUSB_FirmwareVersion))
+    long TTUSB_FirmwareVersion[];
+    __declspec(property(get=GetMinTicksAvailable))
+    long MinTicksAvailable;
+    __declspec(property(get=GetGapLateFillLatency,put=PutGapLateFillLatency))
+    long GapLateFillLatency;
+    __declspec(property(get=GetShortReadMask,put=PutShortReadMask))
+    long ShortReadMask;
+    __declspec(property(get=GetChannel))
+    ITTLChannelPtr Channel[];
+    __declspec(property(get=GetEncoder))
+    ITTLEncoderPtr Encoder[];
+    __declspec(property(get=GetForcedProtocol,put=PutForcedProtocol))
+    long ForcedProtocol;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetGlobalTickRate ( );
+    long GetMasterEncoderHND ( );
+    void PutMasterEncoderHND (
+        long pVal );
+    float GetGapFillValue ( );
+    void PutGapFillValue (
+        float pVal );
+    _bstr_t GetTTUSB_SN (
+        long liEncoderHND );
+    long GetTTUSB_FirmwareVersion (
+        long liEncoderHND );
+    long GetMinTicksAvailable ( );
+    long GetShortReadMask ( );
+    void PutShortReadMask (
+        long pVal );
+    ITTLChannelPtr GetChannel (
+        long liChannelHND );
+    ITTLEncoderPtr GetEncoder (
+        long liEncoderHND );
+    long GetForcedProtocol ( );
+    void PutForcedProtocol (
+        long pVal );
+    enum TTLAPI_SYNC_STATES GetSyncState ( );
+    long GetGapChannelFill ( );
+    void PutGapChannelFill (
+        long pVal );
+    long GetGapChannelForceFill ( );
+    void PutGapChannelForceFill (
+        long pVal );
+    long GetGapEncoderFill ( );
+    void PutGapEncoderFill (
+        long pVal );
+    long GetGapEncoderOfflineFill ( );
+    void PutGapEncoderOfflineFill (
+        long pVal );
+    long GetGapEncoderLateFill ( );
+    void PutGapEncoderLateFill (
+        long pVal );
+    long GetGapLateFillLatency ( );
+    void PutGapLateFillLatency (
+        long pVal );
+    long GetSyncSendTrigger ( );
+    void PutSyncSendTrigger (
+        long pVal );
+    long GetSyncWaitTrigger ( );
+    void PutSyncWaitTrigger (
+        long pVal );
+    long GetSyncSendPeriodic ( );
+    void PutSyncSendPeriodic (
+        long pVal );
+    long GetSyncProcessPeriodic ( );
+    void PutSyncProcessPeriodic (
+        long pVal );
+    long GetSyncSendPeriodicInterval ( );
+    void PutSyncSendPeriodicInterval (
+        long pVal );
+    long GetSyncTimeout ( );
+    void PutSyncTimeout (
+        long pVal );
+    ITTLEncoderPtr GetMasterEncoder ( );
+    long GetDebugBuild ( );
+    ITTLChannelPtr GetFirstChannel ( );
+    ITTLChannelPtr GetNextChannel ( );
+    ITTLEncoderPtr GetFirstEncoder ( );
+    ITTLEncoderPtr GetNextEncoder ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_GlobalTickRate (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_MasterEncoderHND (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_MasterEncoderHND (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_GapFillValue (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_GapFillValue (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_TTUSB_SN (
+        long liEncoderHND,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_TTUSB_FirmwareVersion (
+        long liEncoderHND,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_MinTicksAvailable (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_ShortReadMask (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ShortReadMask (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_Channel (
+        long liChannelHND,
+        struct ITTLChannel * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Encoder (
+        long liEncoderHND,
+        struct ITTLEncoder * * pVal ) = 0;
+    virtual HRESULT __stdcall get_ForcedProtocol (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ForcedProtocol (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SyncState (
+        enum TTLAPI_SYNC_STATES * pVal ) = 0;
+    virtual HRESULT __stdcall get_GapChannelFill (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_GapChannelFill (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_GapChannelForceFill (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_GapChannelForceFill (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_GapEncoderFill (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_GapEncoderFill (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_GapEncoderOfflineFill (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_GapEncoderOfflineFill (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_GapEncoderLateFill (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_GapEncoderLateFill (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_GapLateFillLatency (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_GapLateFillLatency (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SyncSendTrigger (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_SyncSendTrigger (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SyncWaitTrigger (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_SyncWaitTrigger (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SyncSendPeriodic (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_SyncSendPeriodic (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SyncProcessPeriodic (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_SyncProcessPeriodic (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SyncSendPeriodicInterval (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_SyncSendPeriodicInterval (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SyncTimeout (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_SyncTimeout (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_MasterEncoder (
+        struct ITTLEncoder * * pVal ) = 0;
+    virtual HRESULT __stdcall get_DebugBuild (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetFirstChannel (
+        struct ITTLChannel * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetNextChannel (
+        struct ITTLChannel * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetFirstEncoder (
+        struct ITTLEncoder * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetNextEncoder (
+        struct ITTLEncoder * * pVal ) = 0;
+};
+
+struct __declspec(uuid("6230156f-9dc2-4079-a86e-f6f1f765b74f"))
+ITTLEncoder : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetBatteryLevelPct))
+    float BatteryLevelPct;
+    __declspec(property(get=GetConnectionName))
+    _bstr_t ConnectionName;
+    __declspec(property(get=GetConnectionType))
+    enum TTLAPI_CONNECTION_TYPES ConnectionType;
+    __declspec(property(get=GetPhysicalChannelCount))
+    long PhysicalChannelCount;
+    __declspec(property(get=GetModelName))
+    _bstr_t ModelName;
+    __declspec(property(get=GetModelType,put=PutModelType))
+    enum TTLAPI_ENCODER_MODEL_TYPES ModelType;
+    __declspec(property(get=GetFirmwareVersion))
+    long FirmwareVersion;
+    __declspec(property(get=GetHardwareVersion))
+    long HardwareVersion;
+    __declspec(property(get=GetProtocolType))
+    enum TTLAPI_PROTOCOL_TYPES ProtocolType;
+    __declspec(property(get=GetProtocolName))
+    _bstr_t ProtocolName;
+    __declspec(property(get=GetState))
+    enum TTLAPI_ENCODER_STATES State;
+    __declspec(property(get=GetID))
+    long ID;
+    __declspec(property(get=GetFirstChannelHND,put=PutFirstChannelHND))
+    long FirstChannelHND;
+    __declspec(property(get=GetSerialNumber))
+    _bstr_t SerialNumber;
+    __declspec(property(get=GetSensorStatus))
+    long SensorStatus;
+    __declspec(property(get=GetTTUSB_SN))
+    _bstr_t TTUSB_SN;
+    __declspec(property(get=GetTTUSB_FirmwareVersion))
+    long TTUSB_FirmwareVersion;
+    __declspec(property(get=GetTime))
+    DATE Time;
+    __declspec(property(get=GetTimeAdjustment))
+    DATE TimeAdjustment;
+    __declspec(property(get=GetPlaybackMode,put=PutPlaybackMode))
+    enum TTLAPI_PLAYBACK_MODES PlaybackMode;
+    __declspec(property(get=GetPlaybackStart,put=PutPlaybackStart))
+    long PlaybackStart;
+    __declspec(property(get=GetPlaybackEnd,put=PutPlaybackEnd))
+    long PlaybackEnd;
+    __declspec(property(get=GetPlaybackPosition,put=PutPlaybackPosition))
+    long PlaybackPosition;
+    __declspec(property(get=GetPlaybackSpeed,put=PutPlaybackSpeed))
+    float PlaybackSpeed;
+    __declspec(property(get=GetSwitchState,put=PutSwitchState))
+    long SwitchState;
+    __declspec(property(get=GetBatteryLevelVolt))
+    float BatteryLevelVolt;
+    __declspec(property(get=GetBatteryTimeLeft))
+    float BatteryTimeLeft;
+    __declspec(property(get=GetEventInputState))
+    long EventInputState;
+    __declspec(property(get=GetTickRate))
+    float TickRate;
+    __declspec(property(get=GetDecryptionState))
+    enum TTLAPI_DECRYPTION_STATES DecryptionState;
+    __declspec(property(get=GetStreamQuality))
+    float StreamQuality;
+    __declspec(property(get=GetHND,put=PutHND))
+    long HND;
+    __declspec(property(get=GetTicksAhead))
+    float TicksAhead;
+    __declspec(property(get=GetTimeoutPeriod,put=PutTimeoutPeriod))
+    long TimeoutPeriod;
+    __declspec(property(get=GetEventOutputState,put=PutEventOutputState))
+    long EventOutputState;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    float GetBatteryLevelPct ( );
+    _bstr_t GetConnectionName ( );
+    enum TTLAPI_CONNECTION_TYPES GetConnectionType ( );
+    long GetPhysicalChannelCount ( );
+    _bstr_t GetModelName ( );
+    enum TTLAPI_ENCODER_MODEL_TYPES GetModelType ( );
+    void PutModelType (
+        enum TTLAPI_ENCODER_MODEL_TYPES pVal );
+    long GetFirmwareVersion ( );
+    long GetHardwareVersion ( );
+    enum TTLAPI_PROTOCOL_TYPES GetProtocolType ( );
+    _bstr_t GetProtocolName ( );
+    enum TTLAPI_ENCODER_STATES GetState ( );
+    long GetID ( );
+    long GetFirstChannelHND ( );
+    void PutFirstChannelHND (
+        long pVal );
+    _bstr_t GetSerialNumber ( );
+    long GetSensorStatus ( );
+    _bstr_t GetTTUSB_SN ( );
+    long GetTTUSB_FirmwareVersion ( );
+    DATE GetTime ( );
+    DATE GetTimeAdjustment ( );
+    enum TTLAPI_PLAYBACK_MODES GetPlaybackMode ( );
+    void PutPlaybackMode (
+        enum TTLAPI_PLAYBACK_MODES pVal );
+    long GetPlaybackStart ( );
+    void PutPlaybackStart (
+        long pVal );
+    long GetPlaybackEnd ( );
+    void PutPlaybackEnd (
+        long pVal );
+    long GetPlaybackPosition ( );
+    void PutPlaybackPosition (
+        long pVal );
+    float GetPlaybackSpeed ( );
+    void PutPlaybackSpeed (
+        float pVal );
+    long GetSwitchState ( );
+    void PutSwitchState (
+        long pVal );
+    float GetBatteryLevelVolt ( );
+    float GetBatteryTimeLeft ( );
+    long GetEventInputState ( );
+    float GetTickRate ( );
+    enum TTLAPI_DECRYPTION_STATES GetDecryptionState ( );
+    float GetStreamQuality ( );
+    long GetHND ( );
+    void PutHND (
+        long pVal );
+    HRESULT CloseConnection ( );
+    HRESULT AddChannel (
+        enum TTLAPI_CHANNELS ePhysicalChannelIndex,
+        long * pliChannelHND );
+    HRESULT StartRecord (
+        _bstr_t bstrFilename,
+        enum TTLAPI_RECORDING_MODES eRecordingMode );
+    HRESULT StopRecord ( );
+    HRESULT UnlockDecryption (
+        long liUnlockValue );
+    float GetTicksAhead ( );
+    long GetTimeoutPeriod ( );
+    void PutTimeoutPeriod (
+        long pVal );
+    long GetEventOutputState ( );
+    void PutEventOutputState (
+        long pVal );
+    HRESULT SendSyncPulse ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_BatteryLevelPct (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_ConnectionName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_ConnectionType (
+        enum TTLAPI_CONNECTION_TYPES * pVal ) = 0;
+    virtual HRESULT __stdcall get_PhysicalChannelCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_ModelName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_ModelType (
+        enum TTLAPI_ENCODER_MODEL_TYPES * pVal ) = 0;
+    virtual HRESULT __stdcall put_ModelType (
+        enum TTLAPI_ENCODER_MODEL_TYPES pVal ) = 0;
+    virtual HRESULT __stdcall get_FirmwareVersion (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_HardwareVersion (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_ProtocolType (
+        enum TTLAPI_PROTOCOL_TYPES * pVal ) = 0;
+    virtual HRESULT __stdcall get_ProtocolName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_State (
+        enum TTLAPI_ENCODER_STATES * pVal ) = 0;
+    virtual HRESULT __stdcall get_ID (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_FirstChannelHND (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_FirstChannelHND (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_SerialNumber (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_SensorStatus (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_TTUSB_SN (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_TTUSB_FirmwareVersion (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_Time (
+        DATE * pVal ) = 0;
+    virtual HRESULT __stdcall get_TimeAdjustment (
+        DATE * pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackMode (
+        enum TTLAPI_PLAYBACK_MODES * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackMode (
+        enum TTLAPI_PLAYBACK_MODES pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackStart (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackStart (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackEnd (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackEnd (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackPosition (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackPosition (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_PlaybackSpeed (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_PlaybackSpeed (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_SwitchState (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_SwitchState (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_BatteryLevelVolt (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_BatteryTimeLeft (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_EventInputState (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_TickRate (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_DecryptionState (
+        enum TTLAPI_DECRYPTION_STATES * pVal ) = 0;
+    virtual HRESULT __stdcall get_StreamQuality (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_HND (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_HND (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall raw_CloseConnection ( ) = 0;
+    virtual HRESULT __stdcall raw_AddChannel (
+        enum TTLAPI_CHANNELS ePhysicalChannelIndex,
+        long * pliChannelHND ) = 0;
+    virtual HRESULT __stdcall raw_StartRecord (
+        BSTR bstrFilename,
+        enum TTLAPI_RECORDING_MODES eRecordingMode ) = 0;
+    virtual HRESULT __stdcall raw_StopRecord ( ) = 0;
+    virtual HRESULT __stdcall raw_UnlockDecryption (
+        long liUnlockValue ) = 0;
+    virtual HRESULT __stdcall get_TicksAhead (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall get_TimeoutPeriod (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_TimeoutPeriod (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_EventOutputState (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_EventOutputState (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall raw_SendSyncPulse ( ) = 0;
+};
+
+struct __declspec(uuid("6c0141af-afc8-4b1d-881c-558baf994155"))
+_ITTLEncoderEvents : IDispatch
+{};
+
+struct __declspec(uuid("9efc77b0-6e72-4a42-92ef-3cc5efeb128a"))
+TTLEncoder;
+    // [ default ] interface ITTLEncoder
+    // [ default, source ] dispinterface _ITTLEncoderEvents
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_TTLLiveCtrlLib =
+    {0xea85d9b2,0xb3f3,0x43f4,{0xad,0xf5,0x25,0x66,0x69,0xa8,0x3d,0x06}};
+extern "C" const GUID __declspec(selectany) IID_ITTLLiveText =
+    {0x7b97d6d7,0x4bc0,0x4bf3,{0x8f,0xba,0x81,0x12,0xa1,0xa3,0x87,0xd5}};
+extern "C" const GUID __declspec(selectany) CLSID_TTLLiveText =
+    {0x4bd54ee8,0xd59e,0x4a09,{0xbe,0xa2,0xdf,0xe1,0x0b,0x65,0x02,0x37}};
+extern "C" const GUID __declspec(selectany) DIID__ITTLLiveEvents =
+    {0xb8bf3523,0x0a10,0x44ad,{0x9e,0xf5,0xf1,0x6a,0x02,0xea,0x9f,0xb1}};
+extern "C" const GUID __declspec(selectany) DIID__ITTLLiveInternalEvents =
+    {0xf2e91452,0x6cb9,0x4260,{0x9b,0x38,0xd7,0x49,0x16,0xfd,0x4c,0x00}};
+extern "C" const GUID __declspec(selectany) DIID__ITTLChannelEvents =
+    {0x76beb351,0xc68b,0x4643,{0xbc,0x77,0xf9,0x48,0x7b,0x6d,0x43,0xd6}};
+extern "C" const GUID __declspec(selectany) CLSID_TTLChannel =
+    {0xb258a2f0,0x3992,0x4e5d,{0x9c,0xc6,0xab,0x4d,0xb0,0x35,0x53,0xb8}};
+extern "C" const GUID __declspec(selectany) IID_ITTLChannel =
+    {0xb6d48972,0xae83,0x421f,{0xb9,0x7d,0x91,0x3a,0x83,0x9b,0x66,0x51}};
+extern "C" const GUID __declspec(selectany) CLSID_TTLLive =
+    {0x897b372a,0xf588,0x4143,{0xaa,0x5d,0x34,0x14,0xd1,0xdb,0xc4,0x2e}};
+extern "C" const GUID __declspec(selectany) IID_ITTLLive =
+    {0x5037f1e7,0x3676,0x4306,{0x8c,0x82,0x23,0xdc,0x12,0x13,0x30,0x98}};
+extern "C" const GUID __declspec(selectany) IID_ITTLLive2 =
+    {0x6748fb1b,0x25c8,0x4d29,{0x96,0x61,0xaf,0xcc,0x3e,0x8e,0xb4,0x45}};
+extern "C" const GUID __declspec(selectany) IID_ITTLEncoder =
+    {0x6230156f,0x9dc2,0x4079,{0xa8,0x6e,0xf6,0xf1,0xf7,0x65,0xb7,0x4f}};
+extern "C" const GUID __declspec(selectany) DIID__ITTLEncoderEvents =
+    {0x6c0141af,0xafc8,0x4b1d,{0x88,0x1c,0x55,0x8b,0xaf,0x99,0x41,0x55}};
+extern "C" const GUID __declspec(selectany) CLSID_TTLEncoder =
+    {0x9efc77b0,0x6e72,0x4a42,{0x92,0xef,0x3c,0xc5,0xef,0xeb,0x12,0x8a}};
+
+//
+// Wrapper method implementations
+//
+
+#include "TTLLiveCtrl.tli"
+
+#pragma pack(pop)

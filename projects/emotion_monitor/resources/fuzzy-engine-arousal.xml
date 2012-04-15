@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<FUNCTION_BLOCK>
+  <VAR_INPUT NAME="GSR" TYPE="REAL" RANGE="0 100" />
+  <VAR_INPUT NAME="HR" TYPE="REAL" RANGE="0 100" />
+  <VAR_OUTPUT NAME="Arousal" TYPE="REAL" RANGE="0 100" />
+  <FUZZIFY NAME="GSR">
+    <TERM NAME="Low" POINTS="0 0 0 32" />
+    <TERM NAME="Middle-Low" POINTS="22 44 44 64" />
+    <TERM NAME="Middle-High" POINTS="44 64 64 84" />
+    <TERM NAME="High" POINTS="64 84 100 100" />
+  </FUZZIFY>
+  <FUZZIFY NAME="HR">
+    <TERM NAME="Low" POINTS="0 0 0 40" />
+    <TERM NAME="Middle" POINTS="25 57 57 88" />
+    <TERM NAME="High" POINTS="72 100 100 100" />
+  </FUZZIFY>
+  <DEFUZZIFY METHOD="CoG" ACCU="MAX" NAME="Arousal">
+    <TERM NAME="Low" POINTS="0 0 0 33.33" />
+    <TERM NAME="Middle-Low" POINTS="0 33.33 33.33 66.66" />
+    <TERM NAME="Middle-High" POINTS="33.33 66.66 66.66 100" />
+    <TERM NAME="High" POINTS="66.66 100 100 100" />
+  </DEFUZZIFY>
+  <RULEBLOCK AND="MIN" OR="MAX">
+    <RULE NUMBER="1" TEXT="IF (GSR IS High) THEN Arousal IS High" />
+    <RULE NUMBER="2" TEXT="IF (GSR IS Middle-High) THEN Arousal IS Middle-High" />
+    <RULE NUMBER="3" TEXT="IF (GSR IS Middle-Low) THEN Arousal IS Middle-Low" />
+    <RULE NUMBER="4" TEXT="IF (GSR IS Low) THEN Arousal IS Low" />
+    <RULE NUMBER="5" TEXT="IF (HR IS Low) THEN Arousal IS Low" />
+    <RULE NUMBER="6" TEXT="IF (HR IS High) THEN Arousal IS High" />
+    <RULE NUMBER="7" TEXT="IF (GSR IS Low) AND (HR IS High) THEN Arousal IS Middle-Low" />
+    <RULE NUMBER="8" TEXT="IF (GSR IS High) AND (HR IS Low) THEN Arousal IS Middle-High" />
+    <RULE NUMBER="9" TEXT="IF (GSR IS High) AND (HR IS Middle) THEN Arousal IS High" />
+    <RULE NUMBER="10" TEXT="IF (GSR IS Middle-High) AND (HR IS Middle) THEN Arousal IS Middle-High" />
+    <RULE NUMBER="11" TEXT="IF (GSR IS Middle-Low) AND (HR IS Middle) THEN Arousal IS Middle-Low" />
+  </RULEBLOCK>
+</FUNCTION_BLOCK>

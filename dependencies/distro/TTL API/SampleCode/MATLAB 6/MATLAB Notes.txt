@@ -1,0 +1,21 @@
+MATLAB Notes
+
+  Three m-files are provided:  
+
+  1- mInitTTL.m
+  2- ttltestNEW.m
+  3- mDestroyTTL.m
+
+ttltestNew is a "function", the other two are m-file scripts. They are called directly from the Matlab command window in the order specified above.
+
+The mInitTTL.m script initializes the ActiveX object and returns a handle called TTLLive to the global workspace.  
+
+The ttltestNEW function takes that handle as input parameter, connects to the encoder and starts to read and plot streaming data from channels C and D.   The output of the function is a data array (allData) containing the samples collected from both channels.   
+
+The mDestroyTLL.m script will release the handle to the ActiveX object.
+
+Thought Technology Ltd. 
+TTLAPI SDK
+July 7th 2005
+
+
