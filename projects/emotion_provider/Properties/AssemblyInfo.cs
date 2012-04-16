@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Emotion Monitor")]
-[assembly: AssemblyDescription("Monitors emotional state through EmotionProvider")]
+[assembly: AssemblyTitle("EmotionProvider")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("University of Saskatchewan")]
-[assembly: AssemblyProduct("Emophiz")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("EmotionProvider")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fc47af20-75e5-4999-bfa4-80d73c71866d")]
+[assembly: Guid("5f95551a-9356-4a10-b3ce-420c41b3d77b")]
 
 // Version information for an assembly consists of the following four values:
 //

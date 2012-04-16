@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<FUNCTION_BLOCK>
+  <VAR_INPUT NAME="Arousal" TYPE="REAL" RANGE="0 100" />
+  <VAR_INPUT NAME="Valence" TYPE="REAL" RANGE="0 100" />
+  <VAR_OUTPUT NAME="Fun" TYPE="REAL" RANGE="0 100" />
+  <FUZZIFY NAME="Arousal">
+    <TERM NAME="Very-Low" POINTS="0 0 10 20" />
+    <TERM NAME="Low" POINTS="10 20 30 40" />
+    <TERM NAME="Middle-Low" POINTS="30 40 45 55" />
+    <TERM NAME="High" POINTS="45 55 60 70" />
+    <TERM NAME="Middle-High" POINTS="60 70 80 90" />
+    <TERM NAME="Very-High" POINTS="80 90 100 100" />
+  </FUZZIFY>
+  <FUZZIFY NAME="Valence">
+    <TERM NAME="Very-Low" POINTS="0 0 10 20" />
+    <TERM NAME="Low" POINTS="10 20 30 40" />
+    <TERM NAME="Middle-Low" POINTS="30 40 45 55" />
+    <TERM NAME="High" POINTS="45 55 60 70" />
+    <TERM NAME="Middle-High" POINTS="60 70 80 90" />
+    <TERM NAME="Very-High" POINTS="80 90 100 100" />
+  </FUZZIFY>
+  <DEFUZZIFY METHOD="CoG" ACCU="MAX" NAME="Fun">
+    <TERM NAME="Very-Low" POINTS="0 0 5 15" />
+    <TERM NAME="Low" POINTS="0 15 30 40" />
+    <TERM NAME="Middle" POINTS="30 40 60 70" />
+    <TERM NAME="High" POINTS="60 70 100 100" />
+  </DEFUZZIFY>
+  <RULEBLOCK AND="MIN" OR="MAX">
+    <RULE NUMBER="1" TEXT="IF (Arousal IS Low OR Arousal IS Middle-Low OR Arousal IS High OR Arousal IS Middle-High OR Arousal IS Very-High) AND (Valence IS Middle-High) THEN Fun IS Low" />
+    <RULE NUMBER="2" TEXT="IF (Arousal IS Very-Low OR Arousal IS Middle-Low OR Arousal IS High OR Arousal IS Middle-High OR Arousal IS Very-High) AND (Valence IS Middle-High) THEN Fun IS Low" />
+    <RULE NUMBER="3" TEXT="IF (Arousal IS Low OR Arousal IS Middle-Low OR Arousal IS High OR Arousal IS Middle-High OR Arousal IS Very-High) AND (Valence IS High) THEN Fun IS Middle" />
+    <RULE NUMBER="4" TEXT="IF (Valence IS Very-Low) THEN Fun IS Very-Low" />
+    <RULE NUMBER="5" TEXT="IF (Valence IS Low) THEN Fun IS Very-Low" />
+    <RULE NUMBER="6" TEXT="IF (Arousal IS Very-Low) AND (Valence IS Middle-High) THEN Fun IS Very-Low" />
+    <RULE NUMBER="7" TEXT="IF (Arousal IS Low) AND (Valence IS Middle-High) THEN Fun IS Very-Low" />
+    <RULE NUMBER="8" TEXT="IF (Arousal IS Very-Low) AND (Valence IS High) THEN Fun IS Low" />
+    <RULE NUMBER="9" TEXT="IF (Valence IS Middle-Low) THEN Fun IS Very-Low" />
+    <RULE NUMBER="10" TEXT="IF (Valence IS Very-High) THEN Fun IS High" />
+  </RULEBLOCK>
+</FUNCTION_BLOCK>

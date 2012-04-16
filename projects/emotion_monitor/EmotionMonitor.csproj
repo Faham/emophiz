@@ -8,8 +8,8 @@
     <ProjectGuid>{3573D39E-8893-4774-BECA-959A13E7E32C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>emophyz</RootNamespace>
-    <AssemblyName>emophyz</AssemblyName>
+    <RootNamespace>emophiz</RootNamespace>
+    <AssemblyName>EmotionMonitor</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -46,16 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\BaseMeasure.cs" />
-    <Compile Include="src\external\dotfuzzy\FuzzyEngine.cs" />
-    <Compile Include="src\external\dotfuzzy\FuzzyRule.cs" />
-    <Compile Include="src\external\dotfuzzy\FuzzyRuleCollection.cs" />
-    <Compile Include="src\external\dotfuzzy\LinguisticVariable.cs" />
-    <Compile Include="src\external\dotfuzzy\LinguisticVariableCollection.cs" />
-    <Compile Include="src\external\dotfuzzy\MembershipFunction.cs" />
-    <Compile Include="src\external\dotfuzzy\MembershipFunctionCollection.cs" />
-    <Compile Include="src\ISensorListener.cs" />
-    <Compile Include="src\SensorProvider.cs" />
     <Compile Include="src\forms\SensorMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,13 +78,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\sensor_lib\SensorLib.Base\SensorLib.Base.csproj">
-      <Project>{FD4C84FB-ECA4-462D-BB34-7D652B5E18F1}</Project>
-      <Name>SensorLib.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\sensor_lib\SensorLib.ThoughtTechnologies\SensorLib.ThoughtTechnologies.csproj">
-      <Project>{A9D740CA-11B0-47EE-AEC5-298FD0C57584}</Project>
-      <Name>SensorLib.ThoughtTechnologies</Name>
+    <ProjectReference Include="..\emotion_provider\EmotionProvider.csproj">
+      <Project>{2E27E6A0-3BEB-488A-BA2F-FCDDD54768DC}</Project>
+      <Name>EmotionProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\sp_perf_chart\SpPerfChart.csproj">
       <Project>{F2FF6C46-A791-4CAE-AB46-BD1A37F3FCD7}</Project>

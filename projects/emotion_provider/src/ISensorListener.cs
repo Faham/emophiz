@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace emophyz
+namespace emophiz
 {
 	public enum Message
 	{

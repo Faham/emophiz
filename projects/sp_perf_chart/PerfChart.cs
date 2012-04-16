@@ -61,7 +61,7 @@ namespace SpPerfChart
         // Keep only a maximum MAX_VALUE_COUNT amount of values; This will allow
         private const int MAX_VALUE_COUNT = 512;
         // Draw a background grid with a fixed line spacing
-        private const int GRID_SPACING = 16;
+        private float gridSpacing = 16;
 
         #endregion
 
@@ -192,9 +192,8 @@ namespace SpPerfChart
         public void AddValue(decimal value) {
             if (scaleMode == ScaleMode.Absolute && value > 100M)
                 throw new Exception(String.Format("Values greater then 100 not allowed in ScaleMode: Absolute ({0})", value));
-
-
-            switch (timerMode) {
+				
+			switch (timerMode) {
                 case TimerMode.Disabled:
                     ChartAppend(value);
                     Invalidate();
@@ -238,8 +237,8 @@ namespace SpPerfChart
 
             // Calculate horizontal grid offset for "scrolling" effect
             gridScrollOffset += valueSpacing;
-            if (gridScrollOffset > GRID_SPACING)
-                gridScrollOffset = gridScrollOffset % GRID_SPACING;
+            if (gridScrollOffset > gridSpacing)
+                gridScrollOffset = gridScrollOffset % (int)gridSpacing;
         }
 
 
@@ -352,15 +351,38 @@ namespace SpPerfChart
             }
 
             // Draw current relative maximum value stirng
-            if (scaleMode == ScaleMode.Relative) {
+            if (scaleMode == ScaleMode.Relative) 
+			{
                 SolidBrush sb = new SolidBrush(perfChartStyle.ChartLinePen.Color);
-                g.DrawString(currentMaxValue.ToString(), this.Font, sb, 4.0f, 2.0f);
-            }
+				g.DrawString(currentMaxValue.ToString(), this.Font, sb, 4.0f, 2.0f);
+			}
+
+			//Faham:
+			int y_offset = 12;
+			SolidBrush _sb = new SolidBrush(perfChartStyle.ChartLinePen.Color);
+			for (int i = 0; i < Messages.Count; ++i)
+			    g.DrawString(Messages[i].ToString(), this.Font, _sb, 4.0f, i * y_offset + 2.0f);
+
+			if (numberedHorizentalGrid)
+			{
+				SolidBrush sb = new SolidBrush(perfChartStyle.HorizontalGridPen.Color);
+				float x = this.Width - 20.0f;
+				float unit_y = this.Height / numberCount;
+				float unit_value = maxValue / numberCount;
+				for (int i = 0; i < numberCount; ++i)
+					g.DrawString((maxValue - unit_value * i).ToString(), this.Font, sb, x, unit_y * i + this.Height / 70.0f);
+			}
+			///////
 
             // Draw Border on top
             ControlPaint.DrawBorder3D(g, 0, 0, Width, Height, b3dstyle);
         }
-
+		
+		//Faham
+		private float maxValue = 100.0f;
+		private bool numberedHorizentalGrid = true;
+		private int numberCount = 10;
+		public System.Collections.ArrayList Messages = new System.Collections.ArrayList();
 
         private void DrawAverageLine(Graphics g) {
             for (int i = 0; i < visibleValues; i++)
@@ -385,14 +407,15 @@ namespace SpPerfChart
 
             // Draw all visible, vertical gridlines (if wanted)
             if (perfChartStyle.ShowVerticalGridLines) {
-                for (int i = Width - gridScrollOffset; i >= 0; i -= GRID_SPACING) {
+                for (int i = Width - gridScrollOffset; i >= 0; i -= (int)gridSpacing) {
                     g.DrawLine(perfChartStyle.VerticalGridPen.Pen, i, 0, i, Height);
                 }
             }
 
             // Draw all visible, horizontal gridlines (if wanted)
             if (perfChartStyle.ShowHorizontalGridLines) {
-                for (int i = 0; i < Height; i += GRID_SPACING) {
+				for (int i = 0; i < Height; i += (int)gridSpacing)
+				{
                     g.DrawLine(perfChartStyle.HorizontalGridPen.Pen, 0, i, Width, i);
                 }
             }
@@ -419,6 +442,8 @@ namespace SpPerfChart
             base.OnResize(e);
 
             Invalidate();
+
+			gridSpacing = this.Height / numberCount;
         }
 
         #endregion

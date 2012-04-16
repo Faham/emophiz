@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<BoredomCTION_BLOCK>
+  <VAR_INPUT NAME="Arousal" TYPE="REAL" RANGE="0 100" />
+  <VAR_INPUT NAME="Valence" TYPE="REAL" RANGE="0 100" />
+  <VAR_OUTPUT NAME="Boredom" TYPE="REAL" RANGE="0 100" />
+  <FUZZIFY NAME="Arousal">
+    <TERM NAME="Very-Low" POINTS="0 0 10 20" />
+    <TERM NAME="Low" POINTS="10 20 30 40" />
+    <TERM NAME="Middle-Low" POINTS="30 40 45 55" />
+    <TERM NAME="High" POINTS="45 55 60 70" />
+    <TERM NAME="Middle-High" POINTS="60 70 80 90" />
+    <TERM NAME="Very-High" POINTS="80 90 100 100" />
+  </FUZZIFY>
+  <FUZZIFY NAME="Valence">
+    <TERM NAME="Very-Low" POINTS="0 0 10 20" />
+    <TERM NAME="Low" POINTS="10 20 30 40" />
+    <TERM NAME="Middle-Low" POINTS="30 40 45 55" />
+    <TERM NAME="High" POINTS="45 55 60 70" />
+    <TERM NAME="Middle-High" POINTS="60 70 80 90" />
+    <TERM NAME="Very-High" POINTS="80 90 100 100" />
+  </FUZZIFY>
+  <DEFUZZIFY METHOD="CoG" ACCU="MAX" NAME="Boredom">
+    <TERM NAME="Very-Low" POINTS="0 0 5 15" />
+    <TERM NAME="Low" POINTS="0 15 30 40" />
+    <TERM NAME="Middle" POINTS="30 40 60 70" />
+    <TERM NAME="High" POINTS="60 70 100 100" />
+  </DEFUZZIFY>
+  <RULEBLOCK AND="MIN" OR="MAX">
+    <RULE NUMBER="1" TEXT="IF (Valence IS High) THEN Boredom IS Very-Low" />
+    <RULE NUMBER="2" TEXT="IF (Valence IS Very-High) THEN Boredom IS Very-Low" />
+    <RULE NUMBER="3" TEXT="IF (Valence IS Middle-High) THEN Boredom IS Very-Low" />
+    <RULE NUMBER="4" TEXT="IF (Arousal IS Middle-Low) AND (Valence IS Middle-Low) THEN Boredom IS Low" />
+    <RULE NUMBER="5" TEXT="IF (Arousal IS Middle-Low) AND (Valence IS Low) THEN Boredom IS Middle" />
+    <RULE NUMBER="6" TEXT="IF (Arousal IS Low) AND (Valence IS Low) THEN Boredom IS Middle" />
+    <RULE NUMBER="7" TEXT="IF (Arousal IS Low) AND (Valence IS Middle-Low) THEN Boredom IS Middle" />
+    <RULE NUMBER="8" TEXT="IF (Arousal IS Middle-Low) AND (Valence IS Very-Low) THEN Boredom IS High" />
+    <RULE NUMBER="9" TEXT="IF (Arousal IS Low) AND (Valence IS Very-Low) THEN Boredom IS High" />
+    <RULE NUMBER="10" TEXT="IF (Arousal IS Very-Low) AND (Valence IS Very-Low) THEN Boredom IS High" />
+    <RULE NUMBER="11" TEXT="IF (Arousal IS Very-Low) AND (Valence IS Low) THEN Boredom IS High" />
+    <RULE NUMBER="12" TEXT="IF (Arousal IS Very-Low) AND (Valence IS Middle-Low) THEN Boredom IS High" />
+    <RULE NUMBER="13" TEXT="IF (Arousal IS Middle-High) THEN Boredom IS Very-Low" />
+    <RULE NUMBER="14" TEXT="IF (Arousal IS High) THEN Boredom IS Very-Low" />
+    <RULE NUMBER="15" TEXT="IF (Arousal IS Very-High) THEN Boredom IS Very-Low" />
+    <RULE NUMBER="16" TEXT="IF (Arousal IS Very-Low) AND (Valence IS High) THEN Boredom IS Low" />
+    <RULE NUMBER="17" TEXT="IF (Arousal IS Low) AND (Valence IS Middle-High) THEN Boredom IS Low" />
+    <RULE NUMBER="18" TEXT="IF (Arousal IS Very-Low) AND (Valence IS Middle-High) THEN Boredom IS Middle" />
+  </RULEBLOCK>
+</BoredomCTION_BLOCK>

@@ -7,35 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace emophyz
+namespace emophiz
 {
 	public partial class m_frmEmotionMonitor : Form, ISensorListener
 	{
 		private SensorProvider m_provider;
+		private bool m_plot_emotion = false;
+		private Log m_log = new Log();
 
 		public m_frmEmotionMonitor()
 		{
+			System.IO.StreamWriter testfile = new System.IO.StreamWriter("test.log", false);
+			testfile.WriteLine("test2");
+			testfile.Close();
+
+			m_log.Message("Initializing EmotionMonitor");
 			InitializeComponent();
 
-			m_provider = SensorProvider.getSingleton();
+			m_provider = new SensorProvider(m_log);
 			m_provider.AddListener(this);
 			if (m_provider.Connected)
 				OnConnect();
 
 			updateSpeedLabel();
 
-			m_backgroundWorker.RunWorkerAsync();
-
-			m_plotGSR.TimerInterval = 1000;
-			m_plotGSR.ScaleMode = SpPerfChart.ScaleMode.Relative;
-			m_plotHR.ScaleMode = SpPerfChart.ScaleMode.Relative;
-			m_plotEKGFrown.ScaleMode = SpPerfChart.ScaleMode.Relative;
-			m_plotEKGSmile.ScaleMode = SpPerfChart.ScaleMode.Relative;
-			m_plotArousal.ScaleMode = SpPerfChart.ScaleMode.Relative;
-			m_plotValence.ScaleMode = SpPerfChart.ScaleMode.Relative;
-			m_plotFun.ScaleMode = SpPerfChart.ScaleMode.Relative;
-			m_plotExcitement.ScaleMode = SpPerfChart.ScaleMode.Relative;
-			m_plotBoredom.ScaleMode = SpPerfChart.ScaleMode.Relative;
+			m_plotGSR.Messages.Add("GSR");
+			m_plotGSR.Messages.Add("Current");
+			m_plotGSR.Messages.Add("Min");
+			m_plotGSR.Messages.Add("Max");
+			m_plotHR.Messages.Add("HR");
+			m_plotHR.Messages.Add("Current");
+			m_plotHR.Messages.Add("Min");
+			m_plotHR.Messages.Add("Max");
+			m_plotEKGFrown.Messages.Add("EKGFrown");
+			m_plotEKGFrown.Messages.Add("Current");
+			m_plotEKGFrown.Messages.Add("Min");
+			m_plotEKGFrown.Messages.Add("Max");
+			m_plotEKGSmile.Messages.Add("EKGSmile");
+			m_plotEKGSmile.Messages.Add("Current");
+			m_plotEKGSmile.Messages.Add("Min");
+			m_plotEKGSmile.Messages.Add("Max");
+			m_plotArousal.Messages.Add("Arousal");
+			m_plotValence.Messages.Add("Valence");
+			m_plotFun.Messages.Add("Fun");
+			m_plotExcitement.Messages.Add("Excitement");
+			m_plotBoredom.Messages.Add("Boredom");
+			m_log.Message("EmotionMonitor initialized");
 		}
 
 		private void button_connect_Click(object sender, EventArgs e)
@@ -51,13 +68,13 @@ namespace emophyz
 			switch (msg)
 			{
 				case Message.Connecting:
-					button_connect.Text = "Connecting";
+					m_btnConnect.Text = "Connecting";
 					break;
 				case Message.Connected:
 					OnConnect();
 					break;
 				case Message.Disconnected:
-					button_connect.Text = "Connect";
+					OnDisconnect();
 					break;
 				case Message.SensorData:
 					break;
@@ -68,9 +85,17 @@ namespace emophyz
 			}
 		}
 
+		void OnDisconnect()
+		{
+			m_btnConnect.Text = "&Connect";
+			m_plot_emotion = false;
+		}
+
 		void OnConnect()
 		{
-			button_connect.Text = "Disconnect";
+			m_btnConnect.Text = "&Disconnect";
+			m_plot_emotion = true;
+			m_backgroundWorker.RunWorkerAsync();
 		}
 
 		private void bgWorkerDoWork(object sender, DoWorkEventArgs e)
@@ -81,20 +106,57 @@ namespace emophyz
 		private void bgWorkerWorkComplete(object sender, RunWorkerCompletedEventArgs e)
 		{
 			updatePlots();
-			m_backgroundWorker.RunWorkerAsync(m_trcbWorkerWait.Value);
+			if (m_plot_emotion)
+				m_backgroundWorker.RunWorkerAsync(m_trcbWorkerWait.Value);
 		}
 
 		private void updatePlots()
 		{
-			m_plotGSR.AddValue(m_provider.GSR);
-			m_plotHR.AddValue(m_provider.HR);
-			m_plotEKGFrown.AddValue(m_provider.EKGFrown); 
-			m_plotEKGSmile.AddValue(m_provider.EKGSmile); 
-			m_plotArousal.AddValue(m_provider.Arousal); 
-			m_plotValence.AddValue(m_provider.Valence); 
-			m_plotFun.AddValue(m_provider.Fun);
-			m_plotExcitement.AddValue(m_provider.Excitement); 
-			m_plotBoredom.AddValue(m_provider.Boredom); 
+			try
+			{
+				m_plotGSR.AddValue(m_provider.GSR);
+				m_plotGSR.Messages[0] = "GSR: " + m_provider.GSR.ToString();
+				m_plotGSR.Messages[1] = "Current: " + m_provider.CurGSR.ToString();
+				m_plotGSR.Messages[2] =  "Min: " + m_provider.MinGSR.ToString();
+				m_plotGSR.Messages[3] =  "Max: " + m_provider.MaxGSR.ToString();
+
+				m_plotHR.AddValue(m_provider.HR);
+				m_plotHR.Messages[0] = "HR: " + m_provider.HR.ToString();
+				m_plotHR.Messages[1] = "Current: " + m_provider.CurHR.ToString();
+				m_plotHR.Messages[2] = "Min: " + m_provider.MinHR.ToString();
+				m_plotHR.Messages[3] = "Max: " + m_provider.MaxHR.ToString();
+
+				m_plotEKGFrown.AddValue(m_provider.EKGFrown);
+				m_plotEKGFrown.Messages[0] = "EKGFrown: " + m_provider.EKGFrown.ToString();
+				m_plotEKGFrown.Messages[1] = "Current: " + m_provider.CurEKGFrown.ToString();
+				m_plotEKGFrown.Messages[2] = "Min: " + m_provider.MinEKGFrown.ToString();
+				m_plotEKGFrown.Messages[3] = "Max: " + m_provider.MaxEKGFrown.ToString();
+	
+				m_plotEKGSmile.AddValue(m_provider.EKGSmile);
+				m_plotEKGSmile.Messages[0] = "EKGSmile: " + m_provider.EKGSmile.ToString();
+				m_plotEKGSmile.Messages[1] = "Current: " + m_provider.CurEKGSmile.ToString();
+				m_plotEKGSmile.Messages[2] = "Min: " + m_provider.MinEKGSmile.ToString();
+				m_plotEKGSmile.Messages[3] = "Max: " + m_provider.MaxEKGSmile.ToString();
+				
+				m_plotArousal.AddValue(m_provider.Arousal);
+				m_plotArousal.Messages[0] = "Arousal: " + m_provider.Arousal.ToString();
+
+				m_plotValence.AddValue(m_provider.Valence);
+				m_plotValence.Messages[0] = "Valence: " + m_provider.Valence.ToString();
+				
+				m_plotFun.AddValue(m_provider.Fun);
+				m_plotFun.Messages[0] = "Fun: " + m_provider.Fun.ToString();
+				
+				m_plotExcitement.AddValue(m_provider.Excitement);
+				m_plotExcitement.Messages[0] = "Excitement: " + m_provider.Excitement.ToString();
+				
+				m_plotBoredom.AddValue(m_provider.Boredom);
+				m_plotBoredom.Messages[0] = "Boredom: " + m_provider.Boredom.ToString();
+			}
+			catch (System.Exception ex)
+			{
+				System.Windows.Forms.MessageBox.Show(ex.Message);
+			}
 		}
 
 		private void updateSpeedLabel()
