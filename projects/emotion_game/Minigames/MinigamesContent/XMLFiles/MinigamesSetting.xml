@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MinigamesLibrary.MinigamesXMLStructure">
+    <LIBRARY_userInformationIconPosition>10 10</LIBRARY_userInformationIconPosition>
+    <LIBRARY_minigameHeaderPosition>100 50 400 50 700 50 1000 50</LIBRARY_minigameHeaderPosition>
+    <LIBRARY_nonadaptivePuzzlePositions>100 200 100 300 100 400 100 500 100 600 100 700</LIBRARY_nonadaptivePuzzlePositions>
+    <LIBRARY_adaptivePuzzlePositions>160 200 160 300 160 400 160 500 160 600 160 700</LIBRARY_adaptivePuzzlePositions>
+    <LIBRARY_nonadaptiveClickAndHackPositions>400 200 400 300 400 400 400 500 400 600 400 700</LIBRARY_nonadaptiveClickAndHackPositions>
+    <LIBRARY_adaptiveClickAndHackPositions>460 200 460 300 460 400 460 500 460 600 460 700</LIBRARY_adaptiveClickAndHackPositions>
+    <LIBRARY_nonadaptiveElectrisPositions>700 200 700 300 700 400</LIBRARY_nonadaptiveElectrisPositions>
+    <LIBRARY_adaptiveElectrisPositions>760 200 760 300 760 400</LIBRARY_adaptiveElectrisPositions>
+    <LIBRARY_walldestroyerMinigamePositions>1030 200 1030 300 1030 400</LIBRARY_walldestroyerMinigamePositions>
+    
+    <LIBRARY_minigameHeaderIconSize>100</LIBRARY_minigameHeaderIconSize>
+    <LIBRARY_minigameIconSize>40</LIBRARY_minigameIconSize>
+    <LIBRARY_puzzle_NumberOfDisksLst>3 4 5 6 7 8</LIBRARY_puzzle_NumberOfDisksLst>
+    <LIBRARY_puzzleDisks>
+      <Item>
+        <_degrees>10 20 30</_degrees>
+      </Item>
+      <Item>
+        <_degrees>10 20 30 40</_degrees>
+      </Item>
+      <Item>
+        <_degrees>10 20 30 40 50</_degrees>
+      </Item>
+      <Item>
+        <_degrees>10 20 30 40 50 60</_degrees>
+      </Item>
+      <Item>
+        <_degrees>10 20 30 40 50 60 70</_degrees>
+      </Item>
+      <Item>
+        <_degrees>10 20 30 40 50 60 70 80</_degrees>
+      </Item>
+    </LIBRARY_puzzleDisks>
+    <LIBRARY_puzzleDefaultRotationSpeed>1</LIBRARY_puzzleDefaultRotationSpeed>
+    
+    <LIBRARY_nodePositions>
+      <Item>
+        <_position>10 20 10 100 10 270 10 350 10 440 10 550 10 640 100 20 100 100 100 270</_position>
+      </Item>
+    </LIBRARY_nodePositions>
+    <LIBRARY_smallNodeSize>30 50</LIBRARY_smallNodeSize>
+    <LIBRARY_largeNodeSize>50 80</LIBRARY_largeNodeSize>
+    <LIBRARY_hackBtnSize>50 50</LIBRARY_hackBtnSize>
+
+    <LIBRARY_tetrisCellPositions>463 720 537 720 611 720 685 700 759 700</LIBRARY_tetrisCellPositions>
+    <LIBRARY_numberOfRows>16</LIBRARY_numberOfRows>
+    <LIBRARY_numberOfColumns>5</LIBRARY_numberOfColumns>
+    <LIBRARY_cellWidth>74</LIBRARY_cellWidth>
+    <LIBRARY_cellHeight>40</LIBRARY_cellHeight>
+    <LIBRARY_electrisPattern>4 1 5 2 1</LIBRARY_electrisPattern>
+    <LIBRARY_fallingDelay>180</LIBRARY_fallingDelay>
+    
+    <LIBRARY_brickPositions>
+      30 10 140 10 250 10 360 10 470 10 580 10 690 10 800 10 910 10 1020 10 1130 10
+      30 60 140 60 250 60 360 60 470 60 580 60 690 60 800 60 910 60 1020 60 1130 60
+      30 110 140 110 250 110 360 110 470 110 580 110 690 110 800 110 910 110 1020 110 1130 110
+      30 160 140 160 250 160 360 160 470 160 580 160 690 160 800 160 910 160 1020 160 1130 160
+      30 210 140 210 250 210 360 210 470 210 580 210 690 210 800 210 910 210 1020 210 1130 210
+      30 260 140 260 250 260 360 260 470 260 580 260 690 260 800 260 910 260 1020 260 1130 260
+    </LIBRARY_brickPositions>
+    <LIBRARY_brickSize>100 40</LIBRARY_brickSize>
+    <LIBRARY_numberOfBricksInARow>11</LIBRARY_numberOfBricksInARow>
+    <LIBRARY_ballPosition>70</LIBRARY_ballPosition>
+    <LIBRARY_ballSize>50</LIBRARY_ballSize>
+    <LIBRARY_boardPosition>20</LIBRARY_boardPosition>
+    <LIBRARY_boardSize>80 20</LIBRARY_boardSize>
+    <LIBRARY_boardSpeed>10</LIBRARY_boardSpeed>
+    <LIBRARY_ballSpeed>5</LIBRARY_ballSpeed>
+    <LIBRARY_compassHandleAngleSpeed>1</LIBRARY_compassHandleAngleSpeed>
+    <LIBRARY_defaultBoardSpeed>5</LIBRARY_defaultBoardSpeed>
+    <LIBRARY_defaultEmotionValue>5</LIBRARY_defaultEmotionValue>
+    <LIBRARY_maxEmotionValue>10</LIBRARY_maxEmotionValue>
+    <LIBRARY_isMotionDebugEnabled>1</LIBRARY_isMotionDebugEnabled>
+      
+  
+</Asset>
+</XnaContent>

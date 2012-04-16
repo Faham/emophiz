@@ -11,6 +11,9 @@ projects/sensor_lib/SensorLib.Xna/bin
 projects/sensor_lib/SensorLibBasicExample/SensorLibBasicExample/bin
 projects/sensor_lib/SensorLibTesting/SensorLibTesting/bin
 projects/sensor_lib/Testing/DeviceTests/DeviceTests/bin
+projects/emotion_game/Minigames/Minigames/bin
+projects/emotion_game/Minigames/MinigamesContent/bin
+projects/emotion_game/MinigamesLibrary/bin
 
 obj
 projects/emotion_monitor/obj
@@ -24,9 +27,16 @@ projects/sensor_lib/SensorLib.Xna/obj
 projects/sensor_lib/SensorLibBasicExample/SensorLibBasicExample/obj
 projects/sensor_lib/SensorLibTesting/SensorLibTesting/obj
 projects/sensor_lib/Testing/DeviceTests/DeviceTests/obj
+projects/emotion_game/Minigames/Minigames/obj
+projects/emotion_game/Minigames/MinigamesContent/obj
+projects/emotion_game/MinigamesLibrary/obj
+
+projects/emotion_game/Minigames/MinigamesContent/Log
 
 # User configuration files #
 *.suo
+*.user
+*.cachefile
 
 # OS generated files #
 .DS_Store*
