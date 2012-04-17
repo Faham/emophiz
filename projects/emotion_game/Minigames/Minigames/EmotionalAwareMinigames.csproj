@@ -60,9 +60,8 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="C3.XNA.Primitives2D, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\x86\Debug\C3.XNA.Primitives2D.dll</HintPath>
+    <Reference Include="C3.XNA.Primitives2D">
+      <HintPath>bin\x86\C3.XNA.Primitives2D.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <Private>False</Private>
@@ -136,6 +135,7 @@
     <Compile Include="MiniGamesCore.cs" />
     <Compile Include="SingeltonClasses\CLICKANDHACKSHAREDDATA.cs" />
     <Compile Include="SingeltonClasses\ELECTRISSHAREDDATA.cs" />
+    <Compile Include="SingeltonClasses\LOG.cs" />
     <Compile Include="SingeltonClasses\MINIGAMESDATA.cs" />
     <Compile Include="SingeltonClasses\OBJECTS.cs" />
     <Compile Include="SingeltonClasses\PUZZLESHAREDDATA.cs" />

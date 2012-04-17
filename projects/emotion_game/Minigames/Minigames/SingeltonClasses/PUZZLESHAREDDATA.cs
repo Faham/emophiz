@@ -26,6 +26,7 @@ namespace Minigames.SingeltonClasses
         public bool[] _isActive;
 
         public int _defaultSpeed;
+        public int _currentActiveRing;
         public double _currentSpeed;
         public int _degreeOfFreedom;
         public bool _currentGameResult;
@@ -58,6 +59,7 @@ namespace Minigames.SingeltonClasses
             //reset the game status
             _currentGameResult = false;
             _currentSpeed = _defaultSpeed;
+            _currentActiveRing = -1;
 
             if (PUZZLESHAREDDATA.Instance._currentPuzzleType == PuzzleTypeEnum.nonadaptivePuzzle3Disks_TAG)
             {

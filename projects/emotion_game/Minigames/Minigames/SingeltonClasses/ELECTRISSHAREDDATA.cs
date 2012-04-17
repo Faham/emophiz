@@ -27,7 +27,7 @@ namespace Minigames.SingeltonClasses
             public ELECTRISSHAREDDATA.TextureEnum _texture;
             public Point _index;
             public bool _isItFixed;
-
+            
             //constructor
             public Cell(Vector2 position, Point index, ELECTRISSHAREDDATA.TextureEnum texture, bool empty, bool isFixed)
             {
@@ -44,6 +44,7 @@ namespace Minigames.SingeltonClasses
 
         public ElectrisTypeEnum _currentElectrisType;
         public bool _currentGameResult;
+        public bool _isGameStarted;
         public int _currentNumberOfRows;
         public List<int> _pattern;
         
@@ -59,6 +60,7 @@ namespace Minigames.SingeltonClasses
         public int _numberOfFinishedRows;
         public bool _isSpacePressed;
         public string _electrisLogStr;
+        public int _logDelayCounter;
 
         //constructor
         private ELECTRISSHAREDDATA()
@@ -88,10 +90,12 @@ namespace Minigames.SingeltonClasses
             //reset the game status
             _currentGameResult = false;
             _isSpacePressed = false;
+            _isGameStarted = false;
 
             //reset the speed
             _keyboardDelay = 10;
             _currentFallingDelay = _fallingDelay;
+            _logDelayCounter = 0;
 
             //reset the game status
             _currentGameResult = false;

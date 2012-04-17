@@ -39,6 +39,32 @@ namespace Minigames.PhysicsLogicClasses
         //Update function
         public void Update(KeyboardState keyboard)
         {
+            if (!ELECTRISSHAREDDATA.Instance._isGameStarted)
+            {
+                _currentCellIndex.X = 15;
+                _currentCellIndex.Y = 2;
+                ELECTRISSHAREDDATA.Instance._isGameStarted = true;
+            }
+            
+            #region log
+            if (ELECTRISSHAREDDATA.Instance._logDelayCounter > 60)
+            {
+                LOG.Instance._logType = LOG.LogTypeEnum.informationLog;
+                LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
+                //message = current component + position of current component + current falling delay + game result;
+                LOG.Instance._message = ELECTRISSHAREDDATA.Instance._cells[_currentCellIndex.X, _currentCellIndex.Y]._texture.ToString() + "\t";
+                LOG.Instance._message += _currentCellIndex.X.ToString() + "," + _currentCellIndex.Y.ToString() + "\t";
+                LOG.Instance._message += ELECTRISSHAREDDATA.Instance._currentFallingDelay.ToString() + "\t";
+                LOG.Instance._message += ELECTRISSHAREDDATA.Instance._currentGameResult.ToString();
+                MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
+                System.Console.WriteLine(LOG.Instance.SerializeToString());
+
+                ELECTRISSHAREDDATA.Instance._logDelayCounter = 0;
+            }
+            else
+                ELECTRISSHAREDDATA.Instance._logDelayCounter++;
+            #endregion
+            
             #region update_falling_delay
             if (!ELECTRISSHAREDDATA.Instance._isSpacePressed)
             {

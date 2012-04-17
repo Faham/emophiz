@@ -32,8 +32,22 @@ namespace Minigames.PhysicsLogicClasses
         //update function
         public void Update(KeyboardState keyboard)
         {
-            //detect the key hits
-
+            #region log
+            /*
+            LOG.Instance._logType = LOG.LogTypeEnum.informationLog;
+            LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
+            //message = current position of ball + current position of board + ball initial speed + current ball speed + current board speed + current number of bricks + game result;
+            LOG.Instance._message = WALLDESTROYERSHAREDDATA.Instance._ballPosition.X.ToString() + "," + WALLDESTROYERSHAREDDATA.Instance._ballPosition.Y.ToString() + "\t";
+            LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._boardPosition.X.ToString() + "," + WALLDESTROYERSHAREDDATA.Instance._boardPosition.Y.ToString() + "\t";
+            LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed.ToString() + "\t";
+            LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X.ToString() + "," + WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y.ToString() + "\t";
+            LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._currentNumberOfBricks.ToString() + "\t";
+            LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._currentGameResult.ToString();
+            MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
+            System.Console.WriteLine(LOG.Instance.SerializeToString());
+            */
+            #endregion
+            
             #region Quit_Hit
             if (keyboard.IsKeyDown(Keys.Escape))
             {

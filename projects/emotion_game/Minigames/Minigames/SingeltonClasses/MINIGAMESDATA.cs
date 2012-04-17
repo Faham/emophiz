@@ -6,10 +6,14 @@ using Microsoft.Xna.Framework;
 
 namespace Minigames.SingeltonClasses
 {
-    class MINIGAMESDATA
+    public class MINIGAMESDATA
     {
         //static instance to be shared
         private static MINIGAMESDATA instance;
+
+        //log
+        public emophiz.Log _log;
+
 
         //minigame variables
         public bool _isMinigameRunning;
@@ -38,8 +42,6 @@ namespace Minigames.SingeltonClasses
        
         public MinigamesEnum _currentMiniGame;
 
-        //log variables
-        public string _log;
         public bool _isLogEnabled;
         //emotions variables
         public bool _isMotionDebuggEnabled;
@@ -56,7 +58,7 @@ namespace Minigames.SingeltonClasses
             _currentMinigameRequiredTime = 0;
             _isDataRecorderEnabled = false;
             _gameTime = new GameTime();
-            _log = "";
+            _log = new emophiz.Log("minigames.log");
             _isLogEnabled = false;
         }
 
