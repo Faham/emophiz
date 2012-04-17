@@ -34,15 +34,6 @@ namespace emophiz
 			}
 		}
 
-		public enum Operation : byte
-		{
-			None = 0,
-			Normalize = 1,
-			Shift = 1 << 1,
-			Lowpass = 1 << 2,
-			Highpass = 1 << 3,
-		}
-
 		public string Name = "Unknown";
 		public double Maximum = double.MinValue;
 		public double Minimum = double.MaxValue;
@@ -50,7 +41,11 @@ namespace emophiz
 		public double Lowpass = double.MaxValue;
 		public double Shift = 0.0;
 
-		public byte Operations;
+		public bool EnableCalibrate = false;
+		public bool EnableNormalize = false;
+		public bool EnableShift = false;
+		public bool EnableLowpass = false;
+		public bool EnableHighpass = false;
 		private double m_current = 0.0;
 		private double m_previous = 0.0;
 		private double m_transformed = 0.0;
@@ -99,12 +94,20 @@ namespace emophiz
 			Type = type;
 		}
 
-		private void doNormalize()
+		private void doCalibrate()
 		{
 			if (m_transformed < Minimum)
 				Minimum = m_transformed;
 			if (m_transformed > Maximum)
 				Maximum = m_transformed;
+		}
+
+		private void doNormalize()
+		{
+			if (m_transformed > Maximum)
+				m_transformed = Maximum;
+			else if (m_transformed < Minimum)
+				m_transformed = Minimum;
 
 			if (Maximum - Minimum > 0.00001) //first time, max would be equal to min
 				m_transformed = (m_transformed - Minimum) * 100 / (Maximum - Minimum);
@@ -133,16 +136,19 @@ namespace emophiz
 		{
 			m_transformed = m_current;
 
-			if ((Operations & (byte)Operation.Shift) != 0)
+			if (EnableCalibrate)
+				doCalibrate();
+
+			if (EnableShift)
 				doShift();
 
-			if ((Operations & (byte)Operation.Highpass) != 0)
+			if (EnableHighpass)
 				doHighpass();
 
-			if ((Operations & (byte)Operation.Lowpass) != 0)
+			if (EnableLowpass)
 				doLowpass();
 
-			if ((Operations & (byte)Operation.Normalize) != 0)
+			if (EnableNormalize)
 				doNormalize();
 		}
 	}

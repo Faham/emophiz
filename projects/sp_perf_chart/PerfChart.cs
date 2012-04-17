@@ -190,9 +190,11 @@ namespace SpPerfChart
         /// </summary>
         /// <param name="value">progress value</param>
         public void AddValue(double value) {
-            if (scaleMode == ScaleMode.Absolute && value > 100)
-                throw new Exception(String.Format("Values greater then 100 not allowed in ScaleMode: Absolute ({0})", value));
-				
+			if (scaleMode == ScaleMode.Absolute && value > 100)
+			{
+				//value = 100;
+				throw new Exception(String.Format("Values greater then 100 not allowed in ScaleMode: Absolute ({0})", value));
+			}	
 			switch (timerMode) {
                 case TimerMode.Disabled:
                     ChartAppend(value);

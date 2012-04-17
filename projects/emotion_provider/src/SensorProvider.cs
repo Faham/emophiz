@@ -108,7 +108,7 @@ namespace emophiz
 			InformListeners(Message.Connected, null);
 
 			string sensor_type = sensorTypeToStr(SensorType.BVP);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.B, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.BVP);
@@ -116,7 +116,7 @@ namespace emophiz
 
 			sensor_type = sensorTypeToStr(SensorType.HR);
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.HR);
-			m_signals[sensor_type].Operations = (byte)Signal.Operation.Normalize;
+			m_signals[sensor_type].EnableNormalize = true;
 
 			m_bvp = m_signals[sensorTypeToStr(SensorType.BVP)];
 
@@ -134,19 +134,21 @@ namespace emophiz
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.GSR);
-			m_signals[sensor_type].Operations = (byte)Signal.Operation.Normalize;
+			m_signals[sensor_type].EnableNormalize = true;
 
 			sensor_type = sensorTypeToStr(SensorType.EKGSmile);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EKGSmile);
+			m_signals[sensor_type].EnableNormalize = true;
 
 			sensor_type = sensorTypeToStr(SensorType.EKGFrown);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.E, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type] .Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EKGFrown);
+			m_signals[sensor_type].EnableNormalize = true;
 			
 			return true;
 		}

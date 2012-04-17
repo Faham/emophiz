@@ -114,44 +114,45 @@ namespace emophiz
 		{
 			try
 			{
+				string double_formats = "{0:0.##}";
 				m_plotGSR.AddValue(m_provider.GSR.Transformed);
-				m_plotGSR.Messages[0] = "GSR: " + m_provider.GSR.Transformed.ToString();
-				m_plotGSR.Messages[1] = "Current: " + m_provider.GSR.Current.ToString();
-				m_plotGSR.Messages[2] = "Min: " + m_provider.GSR.Minimum.ToString();
-				m_plotGSR.Messages[3] = "Max: " + m_provider.GSR.Maximum.ToString();
+				m_plotGSR.Messages[0] = "GSR: " + String.Format(double_formats, m_provider.GSR.Transformed);
+				m_plotGSR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.GSR.Current);
+				m_plotGSR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.GSR.Minimum);
+				m_plotGSR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.GSR.Maximum);
 
 				m_plotHR.AddValue(m_provider.HR.Transformed);
-				m_plotHR.Messages[0] = "HR: " + m_provider.HR.Transformed.ToString();
-				m_plotHR.Messages[1] = "Current: " + m_provider.HR.Current.ToString();
-				m_plotHR.Messages[2] = "Min: " + m_provider.HR.Minimum.ToString();
-				m_plotHR.Messages[3] = "Max: " + m_provider.HR.Maximum.ToString();
+				m_plotHR.Messages[0] = "HR: " + String.Format(double_formats, m_provider.HR.Transformed);
+				m_plotHR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.HR.Current);
+				m_plotHR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.HR.Minimum);
+				m_plotHR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.HR.Maximum);
 
 				m_plotEKGFrown.AddValue(m_provider.EKGFrown.Transformed);
-				m_plotEKGFrown.Messages[0] = "EKGFrown: " + m_provider.EKGFrown.Transformed.ToString();
-				m_plotEKGFrown.Messages[1] = "Current: " + m_provider.EKGFrown.Current.ToString();
-				m_plotEKGFrown.Messages[2] = "Min: " + m_provider.EKGFrown.Minimum.ToString();
-				m_plotEKGFrown.Messages[3] = "Max: " + m_provider.EKGFrown.Maximum.ToString();
+				m_plotEKGFrown.Messages[0] = "EKGFrown: " + String.Format(double_formats, m_provider.EKGFrown.Transformed);
+				m_plotEKGFrown.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EKGFrown.Current);
+				m_plotEKGFrown.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EKGFrown.Minimum);
+				m_plotEKGFrown.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EKGFrown.Maximum);
 	
 				m_plotEKGSmile.AddValue(m_provider.EKGSmile.Transformed);
-				m_plotEKGSmile.Messages[0] = "EKGSmile: " + m_provider.EKGSmile.Transformed.ToString();
-				m_plotEKGSmile.Messages[1] = "Current: " + m_provider.EKGSmile.Current.ToString();
-				m_plotEKGSmile.Messages[2] = "Min: " + m_provider.EKGSmile.Minimum.ToString();
-				m_plotEKGSmile.Messages[3] = "Max: " + m_provider.EKGSmile.Maximum.ToString();
+				m_plotEKGSmile.Messages[0] = "EKGSmile: " + String.Format(double_formats, m_provider.EKGSmile.Transformed);
+				m_plotEKGSmile.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EKGSmile.Current);
+				m_plotEKGSmile.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EKGSmile.Minimum);
+				m_plotEKGSmile.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EKGSmile.Maximum);
 				
 				m_plotArousal.AddValue(m_provider.Arousal);
-				m_plotArousal.Messages[0] = "Arousal: " + m_provider.Arousal.ToString();
+				m_plotArousal.Messages[0] = "Arousal: " + String.Format(double_formats, m_provider.Arousal);
 
 				m_plotValence.AddValue(m_provider.Valence);
-				m_plotValence.Messages[0] = "Valence: " + m_provider.Valence.ToString();
+				m_plotValence.Messages[0] = "Valence: " + String.Format(double_formats, m_provider.Valence);
 				
 				m_plotFun.AddValue(m_provider.Fun);
-				m_plotFun.Messages[0] = "Fun: " + m_provider.Fun.ToString();
+				m_plotFun.Messages[0] = "Fun: " + String.Format(double_formats, m_provider.Fun);
 				
 				m_plotExcitement.AddValue(m_provider.Excitement);
-				m_plotExcitement.Messages[0] = "Excitement: " + m_provider.Excitement.ToString();
+				m_plotExcitement.Messages[0] = "Excitement: " + String.Format(double_formats, m_provider.Excitement);
 				
 				m_plotBoredom.AddValue(m_provider.Boredom);
-				m_plotBoredom.Messages[0] = "Boredom: " + m_provider.Boredom.ToString();
+				m_plotBoredom.Messages[0] = "Boredom: " + String.Format(double_formats, m_provider.Boredom);
 			}
 			catch (System.Exception ex)
 			{
@@ -168,6 +169,82 @@ namespace emophiz
 		private void m_trcbWorkerWait_ValueChanged(object sender, EventArgs e)
 		{
 			updateSpeedLabel();
+		}
+
+		private SpPerfChart.PerfChart m_selectedPlot = null;
+		private System.Drawing.Color m_defaultPlotBGColor = System.Drawing.SystemColors.ControlDark;
+		private System.Drawing.Color m_selectedPlotBGColor = System.Drawing.Color.DarkMagenta;
+
+		private void unselectPlot()
+		{
+			if (m_selectedPlot == null)
+				return;
+
+			Signal signal = getSignal(m_selectedPlot);
+			signal.EnableCalibrate = false;
+			m_selectedPlot.PerfChartStyle.BackgroundColorBottom = m_defaultPlotBGColor;
+			m_selectedPlot.PerfChartStyle.BackgroundColorTop = m_defaultPlotBGColor;
+			m_selectedPlot.Invalidate();
+			m_selectedPlot = null;
+			m_chbxCalibrate.Enabled = false;
+		}
+
+		private void selectPlot(SpPerfChart.PerfChart plot)
+		{
+			if (!m_provider.Connected)
+				return;
+
+			m_selectedPlot = plot;
+			m_selectedPlot.PerfChartStyle.BackgroundColorBottom = m_selectedPlotBGColor;
+			m_selectedPlot.PerfChartStyle.BackgroundColorTop = m_selectedPlotBGColor;
+			m_selectedPlot.Invalidate();
+			m_chbxCalibrate.Enabled = true;
+		}
+
+		private void sensorPlotClick(object sender, EventArgs e)
+		{
+			if (!m_provider.Connected)
+				return;
+
+			SpPerfChart.PerfChart plot = (SpPerfChart.PerfChart)sender;
+
+			if (m_selectedPlot == plot)
+			{
+				unselectPlot();
+				return;
+			}
+
+			if (plot == m_plotGSR || plot == m_plotHR || plot == m_plotEKGSmile || plot == m_plotEKGFrown)
+			{
+				unselectPlot();
+				selectPlot(plot);
+			}
+		}
+
+		private Signal getSignal(SpPerfChart.PerfChart plot)
+		{
+			if (plot == m_plotGSR)
+				return m_provider.GSR;
+			else if (plot == m_plotHR)
+				return m_provider.HR;
+			else if (plot == m_plotEKGSmile)
+				return m_provider.EKGSmile;
+			else if (plot == m_plotEKGFrown)
+				return m_provider.EKGFrown;
+
+			return null;
+		}
+
+		private void chbxCalibrateCheckedChanged(object sender, EventArgs e)
+		{
+			if(m_selectedPlot == null)
+				return;
+
+			Signal signal = getSignal(m_selectedPlot);
+			if (m_chbxCalibrate.Checked)
+				signal.EnableCalibrate = true;
+			else
+				signal.EnableCalibrate = false;
 		}
 	}
 }

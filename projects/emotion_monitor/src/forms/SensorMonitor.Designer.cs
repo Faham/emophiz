@@ -84,6 +84,8 @@
 			this.m_grpbxSensors = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+			this.m_chbxCalibrate = new System.Windows.Forms.CheckBox();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.m_trcbWorkerWait)).BeginInit();
 			this.m_grpbxEmotions.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -139,6 +141,7 @@
 			this.m_plotGSR.TabIndex = 3;
 			this.m_plotGSR.TimerInterval = 100;
 			this.m_plotGSR.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotGSR.Click += new System.EventHandler(this.sensorPlotClick);
 			// 
 			// m_backgroundWorker
 			// 
@@ -203,6 +206,7 @@
 			this.m_plotHR.TabIndex = 11;
 			this.m_plotHR.TimerInterval = 100;
 			this.m_plotHR.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotHR.Click += new System.EventHandler(this.sensorPlotClick);
 			// 
 			// m_plotValence
 			// 
@@ -413,6 +417,7 @@
 			this.m_plotEKGFrown.TabIndex = 25;
 			this.m_plotEKGFrown.TimerInterval = 100;
 			this.m_plotEKGFrown.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotEKGFrown.Click += new System.EventHandler(this.sensorPlotClick);
 			// 
 			// m_plotEKGSmile
 			// 
@@ -448,6 +453,7 @@
 			this.m_plotEKGSmile.TabIndex = 23;
 			this.m_plotEKGSmile.TimerInterval = 100;
 			this.m_plotEKGSmile.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotEKGSmile.Click += new System.EventHandler(this.sensorPlotClick);
 			// 
 			// m_grpbxEmotions
 			// 
@@ -556,11 +562,39 @@
 			this.tableLayoutPanel4.Size = new System.Drawing.Size(992, 566);
 			this.tableLayoutPanel4.TabIndex = 29;
 			// 
+			// m_chbxCalibrate
+			// 
+			this.m_chbxCalibrate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.m_chbxCalibrate.Appearance = System.Windows.Forms.Appearance.Button;
+			this.m_chbxCalibrate.AutoSize = true;
+			this.m_chbxCalibrate.Enabled = false;
+			this.m_chbxCalibrate.Location = new System.Drawing.Point(807, 588);
+			this.m_chbxCalibrate.Name = "m_chbxCalibrate";
+			this.m_chbxCalibrate.Size = new System.Drawing.Size(58, 23);
+			this.m_chbxCalibrate.TabIndex = 30;
+			this.m_chbxCalibrate.Text = "Calibrate";
+			this.m_chbxCalibrate.UseVisualStyleBackColor = true;
+			this.m_chbxCalibrate.CheckedChanged += new System.EventHandler(this.chbxCalibrateCheckedChanged);
+			// 
+			// checkBox2
+			// 
+			this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBox2.Appearance = System.Windows.Forms.Appearance.Button;
+			this.checkBox2.AutoSize = true;
+			this.checkBox2.Location = new System.Drawing.Point(871, 588);
+			this.checkBox2.Name = "checkBox2";
+			this.checkBox2.Size = new System.Drawing.Size(52, 23);
+			this.checkBox2.TabIndex = 31;
+			this.checkBox2.Text = "Record";
+			this.checkBox2.UseVisualStyleBackColor = true;
+			// 
 			// m_frmEmotionMonitor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1016, 623);
+			this.Controls.Add(this.checkBox2);
+			this.Controls.Add(this.m_chbxCalibrate);
 			this.Controls.Add(this.tableLayoutPanel4);
 			this.Controls.Add(this.m_lblPlotSpeed);
 			this.Controls.Add(this.m_trcbWorkerWait);
@@ -603,6 +637,8 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+		private System.Windows.Forms.CheckBox m_chbxCalibrate;
+		private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 
