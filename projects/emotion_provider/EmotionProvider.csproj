@@ -52,6 +52,7 @@
     <Compile Include="src\ISensorListener.cs" />
     <Compile Include="src\Log.cs" />
     <Compile Include="src\SensorProvider.cs" />
+    <Compile Include="src\Signal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\sensor_lib\SensorLib.Base\SensorLib.Base.csproj">

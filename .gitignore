@@ -37,6 +37,7 @@ projects/emotion_game/Minigames/MinigamesContent/Log
 *.suo
 *.user
 *.cachefile
+*.log
 
 # OS generated files #
 .DS_Store*

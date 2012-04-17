@@ -73,11 +73,11 @@ namespace SpPerfChart
         // Horizontal value space in Pixels
         private int valueSpacing = 5;
         // The currently highest displayed value, required for Relative Scale Mode
-        private decimal currentMaxValue = 0;
+        private double currentMaxValue = 0;
         // Offset value for the scrolling grid
         private int gridScrollOffset = 0;
         // The current average value
-        private decimal averageValue = 0;
+        private double averageValue = 0;
         // Border Style
         private Border3DStyle b3dstyle = Border3DStyle.Sunken;
         // Scale mode for value aspect ratio
@@ -85,9 +85,9 @@ namespace SpPerfChart
         // Timer Mode
         private TimerMode timerMode;
         // List of stored values
-        private List<decimal> drawValues = new List<decimal>(MAX_VALUE_COUNT);
+        private List<double> drawValues = new List<double>(MAX_VALUE_COUNT);
         // Value queue for Timer Modes
-        private Queue<decimal> waitingValues = new Queue<decimal>();
+        private Queue<double> waitingValues = new Queue<double>();
         // Style and Design
         private PerfChartStyle perfChartStyle;
 
@@ -189,8 +189,8 @@ namespace SpPerfChart
         /// Adds a value to the Chart Line
         /// </summary>
         /// <param name="value">progress value</param>
-        public void AddValue(decimal value) {
-            if (scaleMode == ScaleMode.Absolute && value > 100M)
+        public void AddValue(double value) {
+            if (scaleMode == ScaleMode.Absolute && value > 100)
                 throw new Exception(String.Format("Values greater then 100 not allowed in ScaleMode: Absolute ({0})", value));
 				
 			switch (timerMode) {
@@ -218,7 +218,7 @@ namespace SpPerfChart
         /// Add value to the queue for a timed refresh
         /// </summary>
         /// <param name="value"></param>
-        private void AddValueToQueue(decimal value) {
+        private void AddValueToQueue(double value) {
             waitingValues.Enqueue(value);
         }
 
@@ -227,7 +227,7 @@ namespace SpPerfChart
         /// Appends value <paramref name="value"/> to the chart (without redrawing)
         /// </summary>
         /// <param name="value">performance value</param>
-        private void ChartAppend(decimal value) {
+        private void ChartAppend(double value) {
             // Insert at first position; Negative values are flatten to 0 (zero)
             drawValues.Insert(0, Math.Max(value, 0));
 
@@ -255,7 +255,7 @@ namespace SpPerfChart
                 else if (timerMode == TimerMode.SynchronizedAverage ||
                          timerMode == TimerMode.SynchronizedSum) {
                     // appendValue variable is used for calculating the average or sum value
-                    decimal appendValue = Decimal.Zero;
+                    double appendValue = 0;
                     int valueCount = waitingValues.Count;
 
                     while (waitingValues.Count > 0)
@@ -263,7 +263,7 @@ namespace SpPerfChart
 
                     // Calculate Average value in SynchronizedAverage Mode
                     if (timerMode == TimerMode.SynchronizedAverage)
-                        appendValue = appendValue / (decimal)valueCount;
+                        appendValue = appendValue / (double)valueCount;
 
                     // Finally append the value
                     ChartAppend(appendValue);
@@ -271,7 +271,7 @@ namespace SpPerfChart
             }
             else {
                 // Always add 0 (Zero) if there are no values in the queue
-                ChartAppend(Decimal.Zero);
+                ChartAppend(0);
             }
 
             // Refresh the Chart
@@ -284,8 +284,8 @@ namespace SpPerfChart
         /// </summary>
         /// <param name="value">performance value</param>
         /// <returns>vertical Point position in Pixels</returns>
-        private int CalcVerticalPosition(decimal value) {
-            decimal result = Decimal.Zero;
+        private int CalcVerticalPosition(double value) {
+            double result = 0;
 
             if (scaleMode == ScaleMode.Absolute)
                 result = value * this.Height / 100;
@@ -302,8 +302,8 @@ namespace SpPerfChart
         /// Returns the currently highest (displayed) value, for Relative ScaleMode
         /// </summary>
         /// <returns></returns>
-        private decimal GetHighestValueForRelativeMode() {
-            decimal maxValue = 0;
+        private double GetHighestValueForRelativeMode() {
+            double maxValue = 0;
 
             for (int i = 0; i < visibleValues; i++) {
                 // Set if higher then previous max value

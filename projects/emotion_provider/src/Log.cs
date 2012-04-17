@@ -18,7 +18,15 @@ namespace emophiz
 			Information,
 			Warning,
 			Error,
-			Fatal
+			Fatal,
+		};
+
+		public enum Details
+		{
+			Raw,
+			Short,
+			Standard,
+			Descriptive,
 		};
 
 		public Log(string filname = "Emotion.Log")
@@ -56,19 +64,45 @@ namespace emophiz
 			return System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff");
 		}
 
-		public void Message(String message, Priority priority = Priority.Information)
+		public void Message(String message, Priority priority = Priority.Information, Details detail = Details.Standard)
 		{
-			System.Diagnostics.StackTrace st = new System.Diagnostics.StackTrace(0, true);
-			System.Diagnostics.StackFrame sf = st.GetFrame(1);
-			string fl = sf.GetFileName();
-			if (fl.Length > 30)
-				fl = "..." + fl.Substring(fl.Length - 30);
-			m_messages.Enqueue(GetTimestamp()
-				+ "\t" + "File: " + fl
-				+ "\t" + "Line: " + sf.GetFileLineNumber()
-				+ "\t" + "Function: " + sf.GetMethod().Name
-				+ "\t" + "Priority: " + System.Enum.GetName(typeof(Priority), priority)
-				+ "\t" + "Message: " + message);
+			switch (detail)
+			{
+				case Details.Raw:
+					m_messages.Enqueue(message);
+					break;
+				case Details.Short:
+					m_messages.Enqueue(GetTimestamp() + "\t" + message);
+					break;
+				case Details.Standard:
+					{
+						System.Diagnostics.StackTrace st = new System.Diagnostics.StackTrace(0, true);
+						System.Diagnostics.StackFrame sf = st.GetFrame(1);
+						string fl = sf.GetFileName();
+						if (fl.Length > 30)
+							fl = "..." + fl.Substring(fl.Length - 30);
+						m_messages.Enqueue(GetTimestamp()
+							+ "\t" + "Priority: " + System.Enum.GetName(typeof(Priority), priority)
+							+ "\t" + "Message: " + message);
+					}
+					break;
+				case Details.Descriptive:
+				default:
+					{
+						System.Diagnostics.StackTrace st = new System.Diagnostics.StackTrace(0, true);
+						System.Diagnostics.StackFrame sf = st.GetFrame(1);
+						string fl = sf.GetFileName();
+						if (fl.Length > 30)
+							fl = "..." + fl.Substring(fl.Length - 30);
+						m_messages.Enqueue(GetTimestamp()
+							+ "\t" + "File: " + fl
+							+ "\t" + "Line: " + sf.GetFileLineNumber()
+							+ "\t" + "Function: " + sf.GetMethod().Name
+							+ "\t" + "Priority: " + System.Enum.GetName(typeof(Priority), priority)
+							+ "\t" + "Message: " + message);
+					}
+					break;
+			}
 		}
 	}
 }

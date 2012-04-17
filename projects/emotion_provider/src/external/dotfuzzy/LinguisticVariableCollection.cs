@@ -49,9 +49,9 @@ namespace DotFuzzy
                 }
             }
 
-            if (linguisticVariable == null)
-                throw new Exception("LinguisticVariable not found: " + linguisticVariableName);
-            else
+			//if (linguisticVariable == null)
+			//    throw new Exception("LinguisticVariable not found: " + linguisticVariableName);
+			//else
                 return linguisticVariable;
         }
 

@@ -114,29 +114,29 @@ namespace emophiz
 		{
 			try
 			{
-				m_plotGSR.AddValue(m_provider.GSR);
-				m_plotGSR.Messages[0] = "GSR: " + m_provider.GSR.ToString();
-				m_plotGSR.Messages[1] = "Current: " + m_provider.CurGSR.ToString();
-				m_plotGSR.Messages[2] =  "Min: " + m_provider.MinGSR.ToString();
-				m_plotGSR.Messages[3] =  "Max: " + m_provider.MaxGSR.ToString();
+				m_plotGSR.AddValue(m_provider.GSR.Transformed);
+				m_plotGSR.Messages[0] = "GSR: " + m_provider.GSR.Transformed.ToString();
+				m_plotGSR.Messages[1] = "Current: " + m_provider.GSR.Current.ToString();
+				m_plotGSR.Messages[2] = "Min: " + m_provider.GSR.Minimum.ToString();
+				m_plotGSR.Messages[3] = "Max: " + m_provider.GSR.Maximum.ToString();
 
-				m_plotHR.AddValue(m_provider.HR);
-				m_plotHR.Messages[0] = "HR: " + m_provider.HR.ToString();
-				m_plotHR.Messages[1] = "Current: " + m_provider.CurHR.ToString();
-				m_plotHR.Messages[2] = "Min: " + m_provider.MinHR.ToString();
-				m_plotHR.Messages[3] = "Max: " + m_provider.MaxHR.ToString();
+				m_plotHR.AddValue(m_provider.HR.Transformed);
+				m_plotHR.Messages[0] = "HR: " + m_provider.HR.Transformed.ToString();
+				m_plotHR.Messages[1] = "Current: " + m_provider.HR.Current.ToString();
+				m_plotHR.Messages[2] = "Min: " + m_provider.HR.Minimum.ToString();
+				m_plotHR.Messages[3] = "Max: " + m_provider.HR.Maximum.ToString();
 
-				m_plotEKGFrown.AddValue(m_provider.EKGFrown);
-				m_plotEKGFrown.Messages[0] = "EKGFrown: " + m_provider.EKGFrown.ToString();
-				m_plotEKGFrown.Messages[1] = "Current: " + m_provider.CurEKGFrown.ToString();
-				m_plotEKGFrown.Messages[2] = "Min: " + m_provider.MinEKGFrown.ToString();
-				m_plotEKGFrown.Messages[3] = "Max: " + m_provider.MaxEKGFrown.ToString();
+				m_plotEKGFrown.AddValue(m_provider.EKGFrown.Transformed);
+				m_plotEKGFrown.Messages[0] = "EKGFrown: " + m_provider.EKGFrown.Transformed.ToString();
+				m_plotEKGFrown.Messages[1] = "Current: " + m_provider.EKGFrown.Current.ToString();
+				m_plotEKGFrown.Messages[2] = "Min: " + m_provider.EKGFrown.Minimum.ToString();
+				m_plotEKGFrown.Messages[3] = "Max: " + m_provider.EKGFrown.Maximum.ToString();
 	
-				m_plotEKGSmile.AddValue(m_provider.EKGSmile);
-				m_plotEKGSmile.Messages[0] = "EKGSmile: " + m_provider.EKGSmile.ToString();
-				m_plotEKGSmile.Messages[1] = "Current: " + m_provider.CurEKGSmile.ToString();
-				m_plotEKGSmile.Messages[2] = "Min: " + m_provider.MinEKGSmile.ToString();
-				m_plotEKGSmile.Messages[3] = "Max: " + m_provider.MaxEKGSmile.ToString();
+				m_plotEKGSmile.AddValue(m_provider.EKGSmile.Transformed);
+				m_plotEKGSmile.Messages[0] = "EKGSmile: " + m_provider.EKGSmile.Transformed.ToString();
+				m_plotEKGSmile.Messages[1] = "Current: " + m_provider.EKGSmile.Current.ToString();
+				m_plotEKGSmile.Messages[2] = "Min: " + m_provider.EKGSmile.Minimum.ToString();
+				m_plotEKGSmile.Messages[3] = "Max: " + m_provider.EKGSmile.Maximum.ToString();
 				
 				m_plotArousal.AddValue(m_provider.Arousal);
 				m_plotArousal.Messages[0] = "Arousal: " + m_provider.Arousal.ToString();

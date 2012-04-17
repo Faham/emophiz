@@ -2,49 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SensorLib.ThoughtTechnologies;
 
 namespace emophiz
 {
 	public class SensorProvider
 	{
 		private bool m_connected = false;
-		ITtlEncoder m_encoder = null;
-		Dictionary<string, ITtlSensor> m_sensors = new Dictionary<string, ITtlSensor>();
-		List<ISensorListener> m_listeners = new List<ISensorListener>();
+		private SensorLib.ThoughtTechnologies.ITtlEncoder m_encoder = null;
+		private Dictionary<string, SensorLib.ThoughtTechnologies.ITtlSensor> m_sensors = new Dictionary<string, SensorLib.ThoughtTechnologies.ITtlSensor>();
+		private List<ISensorListener> m_listeners = new List<ISensorListener>();
+		private Dictionary<string, Signal> m_signals = new Dictionary<string, Signal>();
 
-		private double m_hr, m_gsr, m_ekg_frown, m_ekg_smile;
-		private double m_hr_cur, m_gsr_cur, m_ekg_frown_cur, m_ekg_smile_cur;
-		private double m_hr_min, m_gsr_min, m_ekg_frown_min, m_ekg_smile_min;
-		private double m_hr_max, m_gsr_max, m_ekg_frown_max, m_ekg_smile_max;
 		private double m_arousal, m_valence;
 		private double m_fun, m_boredom, m_excitement;
 
-		public decimal CurGSR { get { return (decimal)m_gsr_cur; } }
-		public decimal MinGSR { get { return (decimal)m_gsr_min; } }
-		public decimal MaxGSR { get { return (decimal)m_gsr_max; } }
+		public Signal GSR { get { return m_signals[sensorTypeToStr(SensorType.GSR)]; } }
+		public Signal HR { get { return m_signals[sensorTypeToStr(SensorType.HR)]; } }
+		public Signal EKGFrown { get { return m_signals[sensorTypeToStr(SensorType.EKGFrown)]; } }
+		public Signal EKGSmile { get { return m_signals[sensorTypeToStr(SensorType.EKGSmile)]; } }
 
-		public decimal CurHR { get { return (decimal)m_hr_cur; } }
-		public decimal MinHR { get { return (decimal)m_hr_min; } }
-		public decimal MaxHR { get { return (decimal)m_hr_max; } }
-
-		public decimal CurEKGFrown { get { return (decimal)m_ekg_frown_cur; } }
-		public decimal MinEKGFrown { get { return (decimal)m_ekg_frown_min; } }
-		public decimal MaxEKGFrown { get { return (decimal)m_ekg_frown_max; } }
-
-		public decimal CurEKGSmile { get { return (decimal)m_ekg_smile_cur; } }
-		public decimal MinEKGSmile { get { return (decimal)m_ekg_smile_min; } }
-		public decimal MaxEKGSmile { get { return (decimal)m_ekg_smile_max; } }
-
-		public decimal GSR { get { return (decimal)m_gsr; } }
-		public decimal HR { get { return (decimal)m_hr; } }
-		public decimal EKGFrown { get { return (decimal)m_ekg_frown; } }
-		public decimal EKGSmile { get { return (decimal)m_ekg_smile; } }
-		public decimal Arousal { get { return (decimal)m_arousal; } }
-		public decimal Valence { get { return (decimal)m_valence; } }
-		public decimal Fun { get { return (decimal)m_fun; } }
-		public decimal Boredom { get { return (decimal)m_boredom; } }
-		public decimal Excitement { get { return (decimal)m_excitement; } }
+		public double Arousal { get { return m_arousal; } }
+		public double Valence { get { return m_valence; } }
+		public double Fun { get { return m_fun; } }
+		public double Boredom { get { return m_boredom; } }
+		public double Excitement { get { return m_excitement; } }
 
 		//fuzzy variables
 		DotFuzzy.FuzzyEngine m_fuzzyEngineArousal = new DotFuzzy.FuzzyEngine();
@@ -53,13 +34,20 @@ namespace emophiz
 		DotFuzzy.FuzzyEngine m_fuzzyEngineBoredom = new DotFuzzy.FuzzyEngine();
 		DotFuzzy.FuzzyEngine m_fuzzyEngineExcitement = new DotFuzzy.FuzzyEngine();
 
+		System.DateTime m_last_heartbeat_time = System.DateTime.Now;
+		System.DateTime m_current_heartbeat_time = System.DateTime.Now;
+		double m_last_rise;
+		bool m_derivative_change = false;
+		Signal m_bvp;
+
 		public enum SensorType
 		{
 			Unknown = 0,
+			BVP,
 			HR,
 			GSR,
-			EMGSmile,
-			EMGFrown,
+			EKGSmile,
+			EKGFrown,
 			Count
 		}
 
@@ -71,9 +59,6 @@ namespace emophiz
 				m_log = new Log();
 			else
 				m_log = _log;
-
-			m_hr_min = m_gsr_min = m_ekg_frown_min = m_ekg_smile_min = float.MaxValue;
-			m_hr_max = m_gsr_max = m_ekg_frown_max = m_ekg_smile_max = float.MinValue;
 
 			InitFuzzyEngines();
 		}
@@ -103,11 +88,13 @@ namespace emophiz
 			}
 		}
 
+		private SensorLib.Filters.RealTime.LinearFilter m_filterBaselineRemover;
+
 		public bool Connect()
 		{
 			InformListeners(Message.Connecting, null);
 
-			ITtlEncoderInfo[] encoderInfos = TtlEncoder.GetEncoders();
+			SensorLib.ThoughtTechnologies.ITtlEncoderInfo[] encoderInfos = SensorLib.ThoughtTechnologies.TtlEncoder.GetEncoders();
 
 			if (encoderInfos.Count() < 1)
 			{
@@ -116,29 +103,50 @@ namespace emophiz
 				return false;
 			}
 
-			m_encoder = TtlEncoder.Connect(encoderInfos.First());
+			m_encoder = SensorLib.ThoughtTechnologies.TtlEncoder.Connect(encoderInfos.First());
 			m_connected = true;
 			InformListeners(Message.Connected, null);
 
-			string sensor_type = sensorTypeToStr(SensorType.HR);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, Channel.B, false);
+			string sensor_type = sensorTypeToStr(SensorType.BVP);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.B, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
+			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.BVP);
+			//m_signals[sensor_type].Operations = (byte)Signal.Operation.Normalize;
 
-			//SensorLib.Filters.RealTime.Normalizer m_filter_normalizer = new SensorLib.Filters.RealTime.Normalizer();
+			sensor_type = sensorTypeToStr(SensorType.HR);
+			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.HR);
+			m_signals[sensor_type].Operations = (byte)Signal.Operation.Normalize;
+
+			m_bvp = m_signals[sensorTypeToStr(SensorType.BVP)];
+
+			////////how to work with filters.
+			SensorLib.Filters.FilterOrderSpec spec = new SensorLib.Filters.FilterOrderSpec();
+			spec.BandType = SensorLib.Filters.BandType.HighPass;
+			spec.FilterType = SensorLib.Filters.IirFilterType.Butterworth;
+			spec.CornerFreqs = new SensorLib.Util.Pair<double, double>(System.Math.PI / 16.0, 0.0);
+			spec.Order = 8;
+			m_filterBaselineRemover = SensorLib.Filters.FilterCreation.FilterFactory.CreateIirFilter(spec);
+			/////////
 
 			sensor_type = sensorTypeToStr(SensorType.GSR);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, Channel.C, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.C, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
-			sensor_type = sensorTypeToStr(SensorType.EMGSmile);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, Channel.D, false);
+			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.GSR);
+			m_signals[sensor_type].Operations = (byte)Signal.Operation.Normalize;
+
+			sensor_type = sensorTypeToStr(SensorType.EKGSmile);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
-			sensor_type = sensorTypeToStr(SensorType.EMGFrown);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, Channel.E, false);
+			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EKGSmile);
+
+			sensor_type = sensorTypeToStr(SensorType.EKGFrown);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.E, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type] .Start();
+			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EKGFrown);
 			
 			return true;
 		}
@@ -148,7 +156,7 @@ namespace emophiz
 			if (null == m_encoder)
 				return;
 
-			for (Dictionary<string, ITtlSensor>.Enumerator itr = m_sensors.GetEnumerator(); itr.MoveNext(); )
+			for (Dictionary<string, SensorLib.ThoughtTechnologies.ITtlSensor>.Enumerator itr = m_sensors.GetEnumerator(); itr.MoveNext(); )
 				itr.Current.Value.Stop();
 
 			m_encoder.Dispose();
@@ -180,86 +188,45 @@ namespace emophiz
 			m_log.Message("Fuzzy engines initialized");
 		}
 
-		private double normalizeGSR(double val)
+		private void UpdateHR()
 		{
-			m_gsr_cur = val;
-			if (val < m_gsr_min)
-				m_gsr_min = val;
-			if (val > m_gsr_max)
-				m_gsr_max = val;
-
-			if (m_gsr_max - m_gsr_min < 0.001f)
-				return 0.0f;
-			else
-				return (val - m_gsr_min) * 100 / (m_gsr_max - m_gsr_min);
-		}
-
-		private double normalizeHR(double val)
-		{
-			m_hr_cur = val;
-			if (val < m_hr_min)
-				m_hr_min = val;
-			if (val > m_hr_max)
-				m_hr_max = val;
-
-			if (m_hr_max - m_hr_min < 0.001f)
-				return 0.0f;
-			else
-				return (val - m_hr_min) * 100 / (m_hr_max - m_hr_min);
-		}
-
-		private double normalizeEKGFrown(double val)
-		{
-			m_ekg_frown_cur = val;
-			if (val < m_ekg_frown_min)
-				m_ekg_frown_min = val;
-			if (val > m_ekg_frown_max)
-				m_ekg_frown_max = val;
-
-			if (m_ekg_frown_max - m_ekg_frown_min < 0.001f)
-				return 0.0f;
-			else
-				return (val - m_ekg_frown_min) * 100 / (m_ekg_frown_max - m_ekg_frown_min);
-		}
-
-		private double normalizeEKGSmile(double val)
-		{
-			m_ekg_smile_cur = val;
-			if (val < m_ekg_smile_min)
-				m_ekg_smile_min = val;
-			if (val > m_ekg_smile_max)
-				m_ekg_smile_max = val;
-
-			if (m_ekg_smile_max - m_ekg_smile_min < 0.001f)
-				return 0.0f;
-			else
-				return (val - m_ekg_smile_min) * 100 / (m_ekg_smile_max - m_ekg_smile_min);
+			double _current_rise = m_bvp.Current - m_bvp.Previous;
+			if (m_last_rise * _current_rise < 0)
+			{
+				if (!m_derivative_change)
+					m_derivative_change = true;
+				else
+				{
+					//One HeartBeat!
+					m_derivative_change = false;
+					m_last_heartbeat_time = m_current_heartbeat_time;
+					m_current_heartbeat_time = System.DateTime.Now;
+					System.TimeSpan delta_time = m_current_heartbeat_time - m_last_heartbeat_time;
+					m_signals[sensorTypeToStr(SensorType.HR)].Current = 60000.0 / delta_time.TotalMilliseconds;
+				}
+			}
+			m_last_rise = _current_rise;
 		}
 
 		private void sensor_DataAvailable(SensorLib.Sensors.ISensor<float> sensor, float[] data)
 		{
 			try
 			{
-				switch (sensorStrToType(sensor.Name))
-				{
-				case SensorType.HR:
-					m_hr = normalizeHR(sensor.CurrentValue);
-					m_fuzzyEngineArousal.LinguisticVariableCollection.Find("HR").InputValue = m_hr;
-					m_fuzzyEngineValence.LinguisticVariableCollection.Find("HR").InputValue = m_hr;
-					break;
-				case SensorType.GSR:
-					m_gsr = normalizeGSR(sensor.CurrentValue);
-					m_fuzzyEngineArousal.LinguisticVariableCollection.Find("GSR").InputValue = m_gsr;
-					break;
-				case SensorType.EMGSmile:
-					m_ekg_smile = normalizeEKGSmile(sensor.CurrentValue);
-					m_fuzzyEngineValence.LinguisticVariableCollection.Find("EMGsmile").InputValue = m_ekg_smile;
-					break;
-				case SensorType.EMGFrown:
-					m_ekg_frown = normalizeEKGFrown(sensor.CurrentValue);
-					m_fuzzyEngineValence.LinguisticVariableCollection.Find("EMGfrown").InputValue = m_ekg_frown;
-					break;
-				}
+				Signal signal;
+				if (!m_signals.TryGetValue(sensor.Name, out signal))
+					throw new Exception("This type of sensor isn't supported: " + sensor.Name);
+				signal.Current = sensor.CurrentValue;
+
+				if (sensorStrToType(sensor.Name) == SensorType.BVP)
+					UpdateHR();
+
+				DotFuzzy.LinguisticVariable var = m_fuzzyEngineArousal.LinguisticVariableCollection.Find(signal.Name);
+				if (var != null)
+					var.InputValue = signal.Transformed;
+
+				var = m_fuzzyEngineValence.LinguisticVariableCollection.Find(signal.Name);
+				if (var != null)
+					var.InputValue = signal.Transformed;
 
 				// Phase 1
 				m_valence = m_fuzzyEngineValence.Defuzzify();
@@ -283,6 +250,5 @@ namespace emophiz
 				System.Windows.Forms.MessageBox.Show(e.Message);
 			}
 		}
-
 	}
 }
