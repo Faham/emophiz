@@ -20,6 +20,9 @@ namespace Minigames
     {
         GraphicsDeviceManager _graphics;
         SpriteBatch _spriteBatch;
+        
+        
+        
 
         //mouse and keyboard object
         MouseState _mouse;
@@ -49,7 +52,7 @@ namespace Minigames
             _graphics.ApplyChanges();
 
             //make it full screen
-            _graphics.IsFullScreen = true;
+            //_graphics.IsFullScreen = true;
             IsMouseVisible = true;
             IsFixedTimeStep = false;
             TargetElapsedTime = TimeSpan.FromSeconds(1.0/60.0);
@@ -66,6 +69,9 @@ namespace Minigames
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            
+            
 
             //set the shared instance
             OBJECTS.Instance._sharedContent = Content;

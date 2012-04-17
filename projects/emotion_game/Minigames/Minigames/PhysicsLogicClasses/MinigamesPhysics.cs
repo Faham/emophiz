@@ -18,6 +18,9 @@ namespace Minigames.PhysicsLogicClasses
         public enum DirectionsEnum { Right = 1, Left, Up, Down };
         public enum EnvironmentEnum { portal_TAG = 1, minigame_TAG};
 
+        //log
+        emophiz.Log _log;
+
         //
         //physics classes of other environments
         //
@@ -26,12 +29,18 @@ namespace Minigames.PhysicsLogicClasses
         ElectrisPhysics _electris;
         WallDestroyerPhysics _wallDestroyer;
 
+        
+
         public MinigamesPhysics()
         {
             _puzzle = new PuzzlePhysics();
             _clickAndHack = new ClickAndHackPhysics();
             _electris = new ElectrisPhysics();
             _wallDestroyer = new WallDestroyerPhysics();
+  
+            //log object
+            _log = new emophiz.Log();
+
         }
 
 
@@ -42,6 +51,19 @@ namespace Minigames.PhysicsLogicClasses
         /// <param name="environment"></param>
         public void Move(Microsoft.Xna.Framework.Input.KeyboardState keyState)
         {
+            //log
+            #region
+            if (keyState.GetPressedKeys().Length > 0)
+            {
+                LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
+                LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
+                LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
+                LOG.Instance._message = keyState.GetPressedKeys()[0].ToString();
+                _log.Message(LOG.Instance.SerializeToString());
+                System.Console.WriteLine(LOG.Instance.SerializeToString());
+            }
+            #endregion
+
             //check the update the emotions based on keyboard inputs
             if (MINIGAMESDATA.Instance._isMinigameRunning)
             {
