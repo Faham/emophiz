@@ -32,15 +32,28 @@ namespace Minigames.PhysicsLogicClasses
         //update function
         public void Update(KeyboardState keyboard)
         {
+            
+            #region update_bricks
+            if (WALLDESTROYERSHAREDDATA.Instance._totalNumberOfBricks - WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks <= WALLDESTROYERSHAREDDATA.Instance._numberOfBricksInARow)
+            {
+                //bricks are less than 33% so check the fun
+                if (MINIGAMESDATA.Instance._fun >= 7)
+                {
+                    WALLDESTROYERSHAREDDATA.Instance.AddBrick();
+                }
+            }
+            #endregion
+            
             #region log
             /*
             LOG.Instance._logType = LOG.LogTypeEnum.informationLog;
             LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
-            //message = current position of ball + current position of board + ball initial speed + current ball speed + current board speed + current number of bricks + game result;
+            //message = current position of ball + current position of board + ball initial speed + current ball speed  + handle speed + current board speed + current number of bricks + game result;
             LOG.Instance._message = WALLDESTROYERSHAREDDATA.Instance._ballPosition.X.ToString() + "," + WALLDESTROYERSHAREDDATA.Instance._ballPosition.Y.ToString() + "\t";
             LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._boardPosition.X.ToString() + "," + WALLDESTROYERSHAREDDATA.Instance._boardPosition.Y.ToString() + "\t";
             LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed.ToString() + "\t";
             LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X.ToString() + "," + WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y.ToString() + "\t";
+            LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleSpeed.ToString() + "\t";
             LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._currentNumberOfBricks.ToString() + "\t";
             LOG.Instance._message += WALLDESTROYERSHAREDDATA.Instance._currentGameResult.ToString();
             MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
@@ -146,7 +159,7 @@ namespace Minigames.PhysicsLogicClasses
                 WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += WALLDESTROYERSHAREDDATA.Instance._currentGameResult ? "1" : "0";
                 WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += "\t";
             }
-            if (WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks == WALLDESTROYERSHAREDDATA.Instance._currentNumberOfBricks)
+            if (WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks == WALLDESTROYERSHAREDDATA.Instance._totalNumberOfBricks)
             {
                 WALLDESTROYERSHAREDDATA.Instance._currentGameResult = true;
                 //set the minigame status
@@ -171,12 +184,57 @@ namespace Minigames.PhysicsLogicClasses
             _BallAndBrickCollision result = new _BallAndBrickCollision();
             result.brickIndex = -1;
             int counter = 0;
-            //For the sake of optimization: checks to see whether the ball is in the brick's area or not
-            if (position.Y <= WALLDESTROYERSHAREDDATA.Instance._brickLst[WALLDESTROYERSHAREDDATA.Instance._currentNumberOfBricks-1]._position.Y + WALLDESTROYERSHAREDDATA.Instance._brickSize.Y)
+            //get the center of the circle
+            Point center = new Point((int)(position.X + size / 2), (int)(position.Y + size / 2));
+            //detect collision of ball with bottom of bricks
+            foreach (WALLDESTROYERSHAREDDATA.Brick brick in WALLDESTROYERSHAREDDATA.Instance._brickLst)
             {
-                //get the center of the circle
-                Point center = new Point((int)(position.X + size / 2), (int)(position.Y + size / 2));
-                //detect collision of ball with bottom of bricks
+                //detect up side collision
+                Rectangle targetRect = new Rectangle((int)brick._position.X,
+                    (int)brick._position.Y,
+                    (int)WALLDESTROYERSHAREDDATA.Instance._brickSize.X,
+                    (int)WALLDESTROYERSHAREDDATA.Instance._brickSize.Y);
+
+                if (targetRect.Intersects(new Rectangle((int)position.X, (int)position.Y, size, size))
+                    && !brick._isHit)
+                {
+                    Rectangle collisionRect = Rectangle.Intersect(targetRect, new Rectangle((int)position.X, (int)position.Y, size, size));
+                    if (collisionRect.Width >= collisionRect.Height)
+                    {
+                        if (center.Y >= targetRect.Y + targetRect.Height / 2)//up side brick
+                        {
+                            result.brickIndex = counter;
+                            result.collisionType = _CollisionTypesEnum.ballAndUpBrick_TAG;
+                            break;
+                        }
+                        else
+                        {
+                            result.brickIndex = counter;
+                            result.collisionType = _CollisionTypesEnum.ballAndBottomBrick_TAG;
+                            break;
+                        }
+                    }
+                    else if (collisionRect.Width < collisionRect.Height)
+                    {
+                        if (center.X <= targetRect.X + targetRect.Width / 2)//right side brick
+                        {
+                            result.brickIndex = counter;
+                            result.collisionType = _CollisionTypesEnum.ballAndRightBrick_TAG;
+                            break;
+                        }
+                        else
+                        {
+                            result.brickIndex = counter;
+                            result.collisionType = _CollisionTypesEnum.ballAndLeftBrick_TAG;
+                            break;
+                        }
+                    }
+                }
+                counter++;
+            }
+            
+                
+                /*
                 for (int i = 0; i < WALLDESTROYERSHAREDDATA.Instance._currentNumberOfBricks; i++)
                 {
                     //detect up side collision
@@ -222,7 +280,8 @@ namespace Minigames.PhysicsLogicClasses
                     }    
                     counter++;
                 }
-            }
+                 */
+            
             return result;
         }
         
@@ -309,7 +368,7 @@ namespace Minigames.PhysicsLogicClasses
                     WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed = WALLDESTROYERSHAREDDATA.Instance._defaultBoardSpeed;
                 }
 
-                //set the speed
+                //set the speed based on emotions
                 WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X = (float)Math.Abs((WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Cos(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian))) * Math.Sign(WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X);
                 WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Sin(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
             }

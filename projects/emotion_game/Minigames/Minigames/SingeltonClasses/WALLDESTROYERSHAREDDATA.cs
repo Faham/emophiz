@@ -62,6 +62,7 @@ namespace Minigames.SingeltonClasses
         public int _numberOfAvailableBalls;
         public int _numberOfHitBricks;
         public string _wallDestroyerLogStr;
+        public int _totalNumberOfBricks;
 
         //constructor
         private WALLDESTROYERSHAREDDATA()
@@ -103,6 +104,7 @@ namespace Minigames.SingeltonClasses
             _currentBoardSpeed = _defaultBoardSpeed;
             _numberOfBalls = 0;
             _numberOfHitBricks = 0;
+            
 
             //reset the compass handle angle
             _compassHnadleAngleInt = -90;
@@ -115,26 +117,39 @@ namespace Minigames.SingeltonClasses
             //set the current number of bricks
             if (WALLDESTROYERSHAREDDATA.Instance._currentWallDestroyerType == WALLDESTROYERSHAREDDATA.WallDestroyerTypesEnum.wallDestroyer1_TAG)
             {
-                _currentNumberOfBricks = _numberOfBricksInARow * 2;
-                _numberOfAvailableBalls = 1;
+                _currentNumberOfBricks = _numberOfBricksInARow;
+                _totalNumberOfBricks = _currentNumberOfBricks;
+                _numberOfAvailableBalls = 10;
             }
             else if (WALLDESTROYERSHAREDDATA.Instance._currentWallDestroyerType == WALLDESTROYERSHAREDDATA.WallDestroyerTypesEnum.wallDestroyer2_TAG)
             {
-                _currentNumberOfBricks = _numberOfBricksInARow * 4;
-                _numberOfAvailableBalls = 2;
+                _currentNumberOfBricks = _numberOfBricksInARow * 2;
+                _totalNumberOfBricks = _currentNumberOfBricks;
+                _numberOfAvailableBalls = 20;
             }
             else
             {
-                _currentNumberOfBricks = _numberOfBricksInARow * 6;
-                _numberOfAvailableBalls = 3;
+                _currentNumberOfBricks = _numberOfBricksInARow * 3;
+                _totalNumberOfBricks = _currentNumberOfBricks;
+                _numberOfAvailableBalls = 30;
             }
 
             //reset the brick list
             _brickLst.Clear();
+            int index = 0;
             foreach (Vector2 pos in WALLDESTROYERSHAREDDATA.Instance._brickPositionsLst)
             {
-                Brick tempBrick = new Brick(pos, false);
-                _brickLst.Add(tempBrick);
+                if (index < _currentNumberOfBricks)
+                {
+                    Brick tempBrick = new Brick(pos, false);
+                    _brickLst.Add(tempBrick);
+                }
+                else
+                {
+                    Brick tempBrick = new Brick(pos, true);
+                    _brickLst.Add(tempBrick);
+                }
+                index++;
             }
 
             //log
@@ -153,6 +168,39 @@ namespace Minigames.SingeltonClasses
             _boardPosition = new Vector2(OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Width / 2, OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Height - _boardHorizontalposition);
             //reset the ball state
             _isBallActive = true;
+        }
+
+        //add brick method to add one more row of bricks
+        public void AddBrick()
+        {
+            //add bricks
+            for (int i = _brickLst.Count - 1; i >= 0 ; i--)
+            {
+                if (!_brickLst[i]._isHit)
+                {
+                    _brickLst[i + _numberOfBricksInARow]._isHit = false;
+                    _brickLst[i]._isHit = true;
+                }
+                if (i < _numberOfBricksInARow)
+                {
+                    _brickLst[i]._isHit = false;
+                }
+            }
+            //increase the number of total bricks
+            _totalNumberOfBricks += _numberOfBricksInARow;
+
+            /*
+            //increase the number of bricks
+            _currentNumberOfBricks = _numberOfBricksInARow * 2;
+            _totalNumberOfBricks += _numberOfBricksInARow;
+
+            _brickLst.Clear();
+            foreach (Vector2 pos in WALLDESTROYERSHAREDDATA.Instance._brickPositionsLst)
+            {
+                Brick tempBrick = new Brick(pos, false);
+                _brickLst.Add(tempBrick);
+            }
+            */
         }
     }
 }

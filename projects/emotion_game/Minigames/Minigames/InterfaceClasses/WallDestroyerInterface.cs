@@ -49,12 +49,20 @@ namespace Minigames.InterfaceClasses
                 Color.White);
 
             //draw bricks
+            foreach (WALLDESTROYERSHAREDDATA.Brick brick in obj._brickLst)
+            {
+                if (!brick._isHit)
+                    OBJECTS.Instance._sharedSpriteBatch.Draw(_brickTexture,
+                        new Rectangle((int)brick._position.X, (int)brick._position.Y, (int)obj._brickSize.X, (int)obj._brickSize.Y), Color.White);
+            }
+            /*
             for (int i = 0; i < obj._currentNumberOfBricks; i++)
 			{
 			    if (!obj._brickLst[i]._isHit)
                     OBJECTS.Instance._sharedSpriteBatch.Draw(_brickTexture, 
                         new Rectangle((int)obj._brickLst[i]._position.X, (int)obj._brickLst[i]._position.Y, (int)obj._brickSize.X, (int)obj._brickSize.Y), Color.White);
 			}
+            */
             
             //draw the ball
             if (WALLDESTROYERSHAREDDATA.Instance._isBallActive)
