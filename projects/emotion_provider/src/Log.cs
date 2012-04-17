@@ -64,7 +64,7 @@ namespace emophiz
 			return System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff");
 		}
 
-		public void Message(String message, Priority priority = Priority.Information, Details detail = Details.Standard)
+		public void Message(String message, Details detail = Details.Standard, Priority priority = Priority.Information)
 		{
 			switch (detail)
 			{
