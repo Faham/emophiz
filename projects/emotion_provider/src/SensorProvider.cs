@@ -18,6 +18,7 @@ namespace emophiz
 
 		public Signal GSR { get { return m_signals[sensorTypeToStr(SensorType.GSR)]; } }
 		public Signal HR { get { return m_signals[sensorTypeToStr(SensorType.HR)]; } }
+		public Signal BVP { get { return m_signals[sensorTypeToStr(SensorType.BVP)]; } }
 		public Signal EKGFrown { get { return m_signals[sensorTypeToStr(SensorType.EKGFrown)]; } }
 		public Signal EKGSmile { get { return m_signals[sensorTypeToStr(SensorType.EKGSmile)]; } }
 
@@ -108,11 +109,11 @@ namespace emophiz
 			InformListeners(Message.Connected, null);
 
 			string sensor_type = sensorTypeToStr(SensorType.BVP);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.B, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.BVP);
-			//m_signals[sensor_type].Operations = (byte)Signal.Operation.Normalize;
+			m_signals[sensor_type].EnableNormalize = true;
 
 			sensor_type = sensorTypeToStr(SensorType.HR);
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.HR);

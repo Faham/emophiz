@@ -120,13 +120,19 @@ namespace emophiz
 				m_plotGSR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.GSR.Current);
 				m_plotGSR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.GSR.Minimum);
 				m_plotGSR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.GSR.Maximum);
-
+				//*/
+				m_plotHR.AddValue(m_provider.BVP.Transformed);
+				m_plotHR.Messages[0] = "BVP: " + String.Format(double_formats, m_provider.BVP.Transformed);
+				m_plotHR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.BVP.Current);
+				m_plotHR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.BVP.Minimum);
+				m_plotHR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.BVP.Maximum);
+				/*/
 				m_plotHR.AddValue(m_provider.HR.Transformed);
 				m_plotHR.Messages[0] = "HR: " + String.Format(double_formats, m_provider.HR.Transformed);
 				m_plotHR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.HR.Current);
 				m_plotHR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.HR.Minimum);
 				m_plotHR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.HR.Maximum);
-
+				//*/
 				m_plotEKGFrown.AddValue(m_provider.EKGFrown.Transformed);
 				m_plotEKGFrown.Messages[0] = "EKGFrown: " + String.Format(double_formats, m_provider.EKGFrown.Transformed);
 				m_plotEKGFrown.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EKGFrown.Current);
@@ -162,8 +168,7 @@ namespace emophiz
 
 		private void updateSpeedLabel()
 		{
-			double spd = 1000 / m_trcbWorkerWait.Value;
-			m_lblPlotSpeed.Text = "Speed: " + spd.ToString() + " fps";
+			m_lblPlotSpeed.Text = "Speed: " + m_trcbWorkerWait.Value + " milisecond";
 		}
 
 		private void m_trcbWorkerWait_ValueChanged(object sender, EventArgs e)
@@ -171,54 +176,15 @@ namespace emophiz
 			updateSpeedLabel();
 		}
 
-		private SpPerfChart.PerfChart m_selectedPlot = null;
-		private System.Drawing.Color m_defaultPlotBGColor = System.Drawing.SystemColors.ControlDark;
-		private System.Drawing.Color m_selectedPlotBGColor = System.Drawing.Color.DarkMagenta;
-
-		private void unselectPlot()
-		{
-			if (m_selectedPlot == null)
-				return;
-
-			Signal signal = getSignal(m_selectedPlot);
-			signal.EnableCalibrate = false;
-			m_selectedPlot.PerfChartStyle.BackgroundColorBottom = m_defaultPlotBGColor;
-			m_selectedPlot.PerfChartStyle.BackgroundColorTop = m_defaultPlotBGColor;
-			m_selectedPlot.Invalidate();
-			m_selectedPlot = null;
-			m_chbxCalibrate.Enabled = false;
-		}
-
-		private void selectPlot(SpPerfChart.PerfChart plot)
-		{
-			if (!m_provider.Connected)
-				return;
-
-			m_selectedPlot = plot;
-			m_selectedPlot.PerfChartStyle.BackgroundColorBottom = m_selectedPlotBGColor;
-			m_selectedPlot.PerfChartStyle.BackgroundColorTop = m_selectedPlotBGColor;
-			m_selectedPlot.Invalidate();
-			m_chbxCalibrate.Enabled = true;
-		}
-
 		private void sensorPlotClick(object sender, EventArgs e)
 		{
-			if (!m_provider.Connected)
+			if (!m_provider.Connected || !m_chbxCalibrate.Checked)
 				return;
 
 			SpPerfChart.PerfChart plot = (SpPerfChart.PerfChart)sender;
 
-			if (m_selectedPlot == plot)
-			{
-				unselectPlot();
-				return;
-			}
-
 			if (plot == m_plotGSR || plot == m_plotHR || plot == m_plotEKGSmile || plot == m_plotEKGFrown)
-			{
-				unselectPlot();
-				selectPlot(plot);
-			}
+				enableCalibrate(plot, !plot.Highlighted);
 		}
 
 		private Signal getSignal(SpPerfChart.PerfChart plot)
@@ -226,7 +192,7 @@ namespace emophiz
 			if (plot == m_plotGSR)
 				return m_provider.GSR;
 			else if (plot == m_plotHR)
-				return m_provider.HR;
+				return m_provider.BVP;
 			else if (plot == m_plotEKGSmile)
 				return m_provider.EKGSmile;
 			else if (plot == m_plotEKGFrown)
@@ -235,16 +201,21 @@ namespace emophiz
 			return null;
 		}
 
-		private void chbxCalibrateCheckedChanged(object sender, EventArgs e)
+		private void enableCalibrate(SpPerfChart.PerfChart plot, bool calibrate)
 		{
-			if(m_selectedPlot == null)
-				return;
+			plot.Highlighted = calibrate;
+			getSignal(plot).EnableCalibrate = calibrate;
+			plot.Invalidate();
+		}
 
-			Signal signal = getSignal(m_selectedPlot);
-			if (m_chbxCalibrate.Checked)
-				signal.EnableCalibrate = true;
-			else
-				signal.EnableCalibrate = false;
+		private void m_chbxCalibrate_CheckedChanged(object sender, EventArgs e)
+		{
+			if (!m_provider.Connected)
+				return;
+			enableCalibrate(m_plotGSR, false);
+			enableCalibrate(m_plotHR, false);
+			enableCalibrate(m_plotEKGSmile, false);
+			enableCalibrate(m_plotEKGFrown, false);
 		}
 	}
 }

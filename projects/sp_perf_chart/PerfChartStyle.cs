@@ -17,6 +17,8 @@ namespace SpPerfChart
 
         private Color backgroundColorTop = Color.DarkGreen;
         private Color backgroundColorBottom = Color.DarkGreen;
+		private Color backgroundColorTopHighlighted = Color.DarkMagenta;
+		private Color backgroundColorBottomHighlighted = Color.DarkMagenta;
 
         private bool showVerticalGridLines = true;
         private bool showHorizontalGridLines = true;
@@ -78,6 +80,16 @@ namespace SpPerfChart
         public Color BackgroundColorBottom {
             get { return backgroundColorBottom; }
             set { backgroundColorBottom = value; }
+        }
+        
+        public Color BackgroundColorTopHighlighted {
+			get { return backgroundColorTopHighlighted; }
+			set { backgroundColorTopHighlighted = value; }
+        }
+
+		public Color BackgroundColorBottomHighlighted {
+			get { return backgroundColorBottomHighlighted; }
+			set { backgroundColorBottomHighlighted = value; }
         }
     }
 

@@ -41,7 +41,27 @@ namespace emophiz
 		public double Lowpass = double.MaxValue;
 		public double Shift = 0.0;
 
-		public bool EnableCalibrate = false;
+		private bool m_enableCalibrate = false;
+		public bool EnableCalibrate 
+		{
+			get
+			{
+				return m_enableCalibrate;
+			}
+			set
+			{
+				m_enableCalibrate = value;
+				if (m_enableCalibrate)
+					resetMinMax();
+			}
+		}
+		
+		private void resetMinMax()
+		{
+			Maximum = double.MinValue;
+			Minimum = double.MaxValue;
+		}
+
 		public bool EnableNormalize = false;
 		public bool EnableShift = false;
 		public bool EnableLowpass = false;
@@ -104,14 +124,14 @@ namespace emophiz
 
 		private void doNormalize()
 		{
-			if (m_transformed > Maximum)
-				m_transformed = Maximum;
-			else if (m_transformed < Minimum)
-				m_transformed = Minimum;
-
 			if (Maximum - Minimum > 0.00001) //first time, max would be equal to min
 				m_transformed = (m_transformed - Minimum) * 100 / (Maximum - Minimum);
 			else
+				m_transformed = 0.0;
+
+			if (m_transformed > 100.0)
+				m_transformed = 100.0;
+			else if (m_transformed < 0.0)
 				m_transformed = 0.0;
 		}
 
