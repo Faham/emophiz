@@ -82,6 +82,7 @@ namespace Minigames.InterfaceClasses
         public void Draw()
         {
             OBJECTS sharedData = OBJECTS.Instance;
+            //draw rings and hint (just in case)
             if (PUZZLESHAREDDATA.Instance._currentNumberOfDisks == 3)
             {
                 sharedData._sharedSpriteBatch.Draw(_puzzle3disksBackgroundTexture, new Rectangle(0, 0,
@@ -100,6 +101,15 @@ namespace Minigames.InterfaceClasses
                             new Vector2(_puzzle3disksTextures[i].Width / 2, _puzzle3disksTextures[i].Height / 2),
                             SpriteEffects.None,
                             0);
+                    if (PUZZLESHAREDDATA.Instance._isHintActive && i == _puzzle3disksTextures.Length - 1)
+                    {
+                        sharedData._sharedSpriteBatch.Draw(_puzzle3disksTextures[i],
+                            new Rectangle(PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize),
+                                new Color(255, 255, 255, 200));
+                    }
                 }
             }
             else if (PUZZLESHAREDDATA.Instance._currentNumberOfDisks == 4)
@@ -120,6 +130,15 @@ namespace Minigames.InterfaceClasses
                             new Vector2(_puzzle4disksTextures[i].Width / 2, _puzzle4disksTextures[i].Height / 2),
                             SpriteEffects.None,
                             0);
+                    if (PUZZLESHAREDDATA.Instance._isHintActive && i == _puzzle4disksTextures.Length - 1)
+                    {
+                        sharedData._sharedSpriteBatch.Draw(_puzzle4disksTextures[i],
+                            new Rectangle(PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize),
+                                new Color(255, 255, 255, 200));
+                    }
                 }
             }
             else if (PUZZLESHAREDDATA.Instance._currentNumberOfDisks == 5)
@@ -140,6 +159,15 @@ namespace Minigames.InterfaceClasses
                             new Vector2(_puzzle5disksTextures[i].Width / 2, _puzzle5disksTextures[i].Height / 2),
                             SpriteEffects.None,
                             0);
+                    if (PUZZLESHAREDDATA.Instance._isHintActive && i == _puzzle5disksTextures.Length - 1)
+                    {
+                        sharedData._sharedSpriteBatch.Draw(_puzzle5disksTextures[i],
+                            new Rectangle(PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize),
+                                new Color(255, 255, 255, 200));
+                    }
                 }
             }
             else if (PUZZLESHAREDDATA.Instance._currentNumberOfDisks == 6)
@@ -160,7 +188,17 @@ namespace Minigames.InterfaceClasses
                             new Vector2(_puzzle6disksTextures[i].Width / 2, _puzzle6disksTextures[i].Height / 2),
                             SpriteEffects.None,
                             0);
+                    if (PUZZLESHAREDDATA.Instance._isHintActive && i == _puzzle6disksTextures.Length - 1)
+                    {
+                        sharedData._sharedSpriteBatch.Draw(_puzzle6disksTextures[i],
+                            new Rectangle(PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize),
+                                new Color(255, 255, 255, 200));
+                    }
                 }
+                
             }
             else if (PUZZLESHAREDDATA.Instance._currentNumberOfDisks == 7)
             {
@@ -180,7 +218,17 @@ namespace Minigames.InterfaceClasses
                             new Vector2(_puzzle7disksTextures[i].Width / 2, _puzzle7disksTextures[i].Height / 2),
                             SpriteEffects.None,
                             0);
+                    if (PUZZLESHAREDDATA.Instance._isHintActive && i == _puzzle7disksTextures.Length - 1)
+                    {
+                        sharedData._sharedSpriteBatch.Draw(_puzzle7disksTextures[i],
+                            new Rectangle(PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize),
+                                new Color(255, 255, 255, 200));
+                    }
                 }
+                
             }
             else if (PUZZLESHAREDDATA.Instance._currentNumberOfDisks == 8)
             {
@@ -200,9 +248,18 @@ namespace Minigames.InterfaceClasses
                             new Vector2(_puzzle8disksTextures[i].Width / 2, _puzzle8disksTextures[i].Height / 2),
                             SpriteEffects.None,
                             0);
+                    if (PUZZLESHAREDDATA.Instance._isHintActive && i == _puzzle8disksTextures.Length - 1)
+                    {
+                        sharedData._sharedSpriteBatch.Draw(_puzzle8disksTextures[i],
+                            new Rectangle(PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintPosition,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize,
+                                PUZZLESHAREDDATA.Instance._puzzleHintSize),
+                                new Color(255, 255, 255, 200));
+                    }
                 }
+                
             }
-
 
             //draw emotion value
             if (MINIGAMESDATA.Instance._isMotionDebuggEnabled)

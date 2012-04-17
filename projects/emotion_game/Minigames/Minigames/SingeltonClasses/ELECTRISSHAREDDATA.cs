@@ -61,6 +61,7 @@ namespace Minigames.SingeltonClasses
         public bool _isSpacePressed;
         public string _electrisLogStr;
         public int _logDelayCounter;
+        
 
         //constructor
         private ELECTRISSHAREDDATA()

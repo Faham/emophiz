@@ -29,6 +29,10 @@ namespace MinigamesLibrary
         public List<int> LIBRARY_puzzle_NumberOfDisksLst;
         public List<PuzzleDisk> LIBRARY_puzzleDisks;
         public int LIBRARY_puzzleDefaultRotationSpeed;
+        public int LIBRARY_puzzleHintPosition;
+        public int LIBRARY_puzzleHintSize;
+        public int LIBRARY_puzzleHintGapDelay;
+        public int LIBRARY_puzzleHintDelay;
 
         public List<Node> LIBRARY_nodePositions;
         public Vector2 LIBRARY_smallNodeSize;

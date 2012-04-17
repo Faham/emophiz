@@ -35,6 +35,10 @@
       </Item>
     </LIBRARY_puzzleDisks>
     <LIBRARY_puzzleDefaultRotationSpeed>1</LIBRARY_puzzleDefaultRotationSpeed>
+    <LIBRARY_puzzleHintPosition>50</LIBRARY_puzzleHintPosition>
+    <LIBRARY_puzzleHintSize>200</LIBRARY_puzzleHintSize>
+    <LIBRARY_puzzleHintGapDelay>15</LIBRARY_puzzleHintGapDelay>
+    <LIBRARY_puzzleHintDelay>2</LIBRARY_puzzleHintDelay>
     
     <LIBRARY_nodePositions>
       <Item>

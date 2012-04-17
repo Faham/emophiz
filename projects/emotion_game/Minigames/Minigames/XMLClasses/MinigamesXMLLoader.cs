@@ -49,6 +49,11 @@ namespace Minigames.XMLClasses
             PUZZLESHAREDDATA.Instance._puzzleTypes = _minigamesSharedContent.LIBRARY_puzzle_NumberOfDisksLst;
             PUZZLESHAREDDATA.Instance._puzzleDisksDegrees = _minigamesSharedContent.LIBRARY_puzzleDisks;
             PUZZLESHAREDDATA.Instance._defaultSpeed = _minigamesSharedContent.LIBRARY_puzzleDefaultRotationSpeed;
+            PUZZLESHAREDDATA.Instance._puzzleHintPosition = _minigamesSharedContent.LIBRARY_puzzleHintPosition;
+            PUZZLESHAREDDATA.Instance._puzzleHintSize = _minigamesSharedContent.LIBRARY_puzzleHintSize;
+            PUZZLESHAREDDATA.Instance._puzzleHintGapDelay = _minigamesSharedContent.LIBRARY_puzzleHintGapDelay * 60;
+            PUZZLESHAREDDATA.Instance._puzzleHintDelay = _minigamesSharedContent.LIBRARY_puzzleHintDelay * 60;
+
 
             //loads hackAComputer data
             CLICKANDHACKSHAREDDATA.Instance._nodePositions = _minigamesSharedContent.LIBRARY_nodePositions;

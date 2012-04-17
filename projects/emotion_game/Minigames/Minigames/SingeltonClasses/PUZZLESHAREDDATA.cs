@@ -33,6 +33,18 @@ namespace Minigames.SingeltonClasses
         public PuzzleTypeEnum _currentPuzzleType;
         public string _puzzleLogStr;
 
+        public int _puzzleHintPosition;
+        public int _puzzleHintSize;
+        public bool _isHintActive;
+        public int _puzzleHintGapDelay;
+        public int _puzzleHintDelay;
+
+        public int _puzzleHintGapDelayCounter;
+        public int _puzzleHintDelayCounter;
+
+        public bool _puzzleHintGapDelayFlag;
+        public bool _puzzleHintDelayFlag;
+
         //constructor
         private PUZZLESHAREDDATA()
         {
@@ -58,8 +70,13 @@ namespace Minigames.SingeltonClasses
         {
             //reset the game status
             _currentGameResult = false;
+            _isHintActive = false;
             _currentSpeed = _defaultSpeed;
             _currentActiveRing = -1;
+            _puzzleHintGapDelayCounter = _puzzleHintGapDelay;
+            _puzzleHintDelayCounter = _puzzleHintDelay;
+            _puzzleHintGapDelayFlag = false;
+            _puzzleHintDelayFlag = false;
 
             if (PUZZLESHAREDDATA.Instance._currentPuzzleType == PuzzleTypeEnum.nonadaptivePuzzle3Disks_TAG)
             {

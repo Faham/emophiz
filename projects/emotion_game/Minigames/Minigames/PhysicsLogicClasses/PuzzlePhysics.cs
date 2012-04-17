@@ -37,11 +37,41 @@ namespace Minigames.PhysicsLogicClasses
             #endregion
 
             #region update_rotation_speed
-            int emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._excitement;
+            //int emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._excitement;
+            int emotion = MINIGAMESDATA.Instance._excitement;
             if (emotion > 0)
                 PUZZLESHAREDDATA.Instance._currentSpeed = (double)PUZZLESHAREDDATA.Instance._defaultSpeed * emotion / MINIGAMESDATA.Instance._maxEmotionValue;
             else
                 PUZZLESHAREDDATA.Instance._currentSpeed= 0.1;//remember to talk about it!             
+            #endregion
+
+            #region hint
+            if (MINIGAMESDATA.Instance._excitement <= 3)
+            {
+                if (PUZZLESHAREDDATA.Instance._puzzleHintGapDelayCounter <=  PUZZLESHAREDDATA.Instance._puzzleHintDelay
+                    && PUZZLESHAREDDATA.Instance._puzzleHintGapDelayCounter > 0)
+                {
+                    //acitvate the hint
+                    PUZZLESHAREDDATA.Instance._isHintActive = true;
+                    //set the counter
+                    PUZZLESHAREDDATA.Instance._puzzleHintGapDelayCounter--;
+                }
+                else
+	            {
+                    //acitvate the hint
+                    PUZZLESHAREDDATA.Instance._isHintActive = false;
+                    //set the counter
+                    if (PUZZLESHAREDDATA.Instance._puzzleHintGapDelayCounter == 0)
+                        PUZZLESHAREDDATA.Instance._puzzleHintGapDelayCounter = PUZZLESHAREDDATA.Instance._puzzleHintGapDelay;
+                    else
+                        PUZZLESHAREDDATA.Instance._puzzleHintGapDelayCounter--;
+	            }
+            }
+            else
+            {
+                //deactivate the hint
+                PUZZLESHAREDDATA.Instance._isHintActive = false;
+            }
             #endregion
 
             #region Detect_Number_Hit
