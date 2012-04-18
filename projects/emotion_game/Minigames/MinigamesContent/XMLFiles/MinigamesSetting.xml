@@ -34,7 +34,7 @@
         <_degrees>10 20 30 40 50 60 70 80</_degrees>
       </Item>
     </LIBRARY_puzzleDisks>
-    <LIBRARY_puzzleDefaultRotationSpeed>1</LIBRARY_puzzleDefaultRotationSpeed>
+    <LIBRARY_puzzleDefaultRotationSpeed>0.5</LIBRARY_puzzleDefaultRotationSpeed>
     <LIBRARY_puzzleHintPosition>50</LIBRARY_puzzleHintPosition>
     <LIBRARY_puzzleHintSize>200</LIBRARY_puzzleHintSize>
     <LIBRARY_puzzleHintGapDelay>15</LIBRARY_puzzleHintGapDelay>
@@ -55,7 +55,7 @@
     <LIBRARY_cellWidth>74</LIBRARY_cellWidth>
     <LIBRARY_cellHeight>40</LIBRARY_cellHeight>
     <LIBRARY_electrisPattern>4 1 5 2 1</LIBRARY_electrisPattern>
-    <LIBRARY_fallingDelay>180</LIBRARY_fallingDelay>
+    <LIBRARY_fallingDelay>60</LIBRARY_fallingDelay>
     
     <LIBRARY_brickPositions>
       30 10 140 10 250 10 360 10 470 10 580 10 690 10 800 10 910 10 1020 10 1130 10

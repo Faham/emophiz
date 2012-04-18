@@ -47,7 +47,7 @@ namespace Minigames.PhysicsLogicClasses
             }
             
             #region log
-            if (ELECTRISSHAREDDATA.Instance._logDelayCounter > 60)
+            if (ELECTRISSHAREDDATA.Instance._logDelayCounter > 60 && MINIGAMESDATA.Instance._isAdaptationEnabled)
             {
                 LOG.Instance._logType = LOG.LogTypeEnum.informationLog;
                 LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
@@ -66,14 +66,17 @@ namespace Minigames.PhysicsLogicClasses
             #endregion
             
             #region update_falling_delay
-            if (!ELECTRISSHAREDDATA.Instance._isSpacePressed)
+            if (MINIGAMESDATA.Instance._isAdaptationEnabled)
             {
-                int emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._frustration;
-                if (emotion > 0)
-                    ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._fallingDelay * 1 / emotion;
-                else
+                if (!ELECTRISSHAREDDATA.Instance._isSpacePressed)
                 {
-                    ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._fallingDelay;
+                    int emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._frustration;
+                    if (emotion > 0)
+                        ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._fallingDelay - emotion*3;
+                    else
+                    {
+                        ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._fallingDelay;
+                    }
                 }
             }
             #endregion

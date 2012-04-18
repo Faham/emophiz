@@ -53,7 +53,7 @@ namespace Minigames.PhysicsLogicClasses
         {
             //log
             #region
-            if (keyState.GetPressedKeys().Length > 0)
+            if (keyState.GetPressedKeys().Length > 0 && MINIGAMESDATA.Instance._isAdaptationEnabled)
             {
                 LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
                 LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
@@ -145,6 +145,26 @@ namespace Minigames.PhysicsLogicClasses
                 //check for the minigames
                 MINIGAMESDATA sharedData = MINIGAMESDATA.Instance;
 
+                //adaptationIcon
+                Rectangle enableAdaptationRect = new Rectangle((int)MINIGAMESDATA.Instance._userInformationIconPisition.X + 40,
+                        (int)MINIGAMESDATA.Instance._userInformationIconPisition.Y,
+                        MINIGAMESDATA.Instance._minigameIconSize, MINIGAMESDATA.Instance._minigameIconSize);
+                if (enableAdaptationRect.Contains((int)target.X, (int)target.Y))
+                {
+                    MINIGAMESDATA.Instance._isAdaptationEnabled = false;
+                }
+                else
+                {
+                    Rectangle disableAdaptationRect = new Rectangle((int)MINIGAMESDATA.Instance._userInformationIconPisition.X + 40,
+                        (int)MINIGAMESDATA.Instance._userInformationIconPisition.Y + MINIGAMESDATA.Instance._minigameIconSize,
+                        MINIGAMESDATA.Instance._minigameIconSize, MINIGAMESDATA.Instance._minigameIconSize);
+                    if (disableAdaptationRect.Contains((int)target.X, (int)target.Y))
+                    {
+                        //disable logging
+                        MINIGAMESDATA.Instance._isAdaptationEnabled = true;
+                    }
+                }
+                
                 //user information icon
                 Rectangle enableLogRect = new Rectangle((int)MINIGAMESDATA.Instance._userInformationIconPisition.X,
                         (int)MINIGAMESDATA.Instance._userInformationIconPisition.Y,

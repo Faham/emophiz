@@ -19,6 +19,7 @@ namespace Minigames.SingeltonClasses
         public bool _isMinigameRunning;
         public int _currentMinigameRequiredTime;
         public bool _isDataRecorderEnabled;
+        public bool _isAdaptationEnabled;
 
         public Vector2 _userInformationIconPisition;
         public List<Microsoft.Xna.Framework.Vector2> _minigameHeaderPositions;
@@ -60,6 +61,7 @@ namespace Minigames.SingeltonClasses
             _gameTime = new GameTime();
             _log = new emophiz.Log("minigames.log");
             _isLogEnabled = false;
+            _isAdaptationEnabled = true;
         }
 
         //public get function
@@ -98,9 +100,12 @@ namespace Minigames.SingeltonClasses
         //
         public void ResetEmotions(int defaultValue)
         {
-            MINIGAMESDATA.Instance._excitement = defaultValue;
-            MINIGAMESDATA.Instance._frustration = defaultValue;
-            MINIGAMESDATA.Instance._fun = defaultValue;
+            if (MINIGAMESDATA.Instance._isAdaptationEnabled)
+            {
+                MINIGAMESDATA.Instance._excitement = defaultValue;
+                MINIGAMESDATA.Instance._frustration = defaultValue;
+                MINIGAMESDATA.Instance._fun = defaultValue;
+            }
         }
 
         //

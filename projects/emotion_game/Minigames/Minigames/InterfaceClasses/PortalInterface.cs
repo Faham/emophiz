@@ -24,6 +24,8 @@ namespace Minigames.InterfaceClasses
         Texture2D _backgroundTexture;
         Texture2D _startLogTexture;
         Texture2D _stopLogTexture;
+        Texture2D _enableAdaptationTexture;
+        Texture2D _disableAdaptationTexture;
 
         Texture2D[] _headerTexturesArray;
         Texture2D[] _nonadaptivePuzzleTexturesArray;
@@ -45,7 +47,9 @@ namespace Minigames.InterfaceClasses
             _backgroundTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\background");
             _startLogTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\startLog");
             _stopLogTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\stopLog");
-            
+            _enableAdaptationTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\enableAdaptation");
+            _disableAdaptationTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\disableAdaptation");
+
             _headerTexturesArray = new Texture2D[3];
             _nonadaptiveBrickoutTexturesArray = new Texture2D[3];
             _nonadaptiveElectrisTexturesArray = new Texture2D[3];
@@ -83,7 +87,20 @@ namespace Minigames.InterfaceClasses
                 OBJECTS.Instance._sharedSpriteBatch.Draw(_backgroundTexture,
                     new Rectangle(0, 0, _backgroundTexture.Width,
                         OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Height), Color.White);
-                
+                //draw adaptation icon
+                if (MINIGAMESDATA.Instance._isAdaptationEnabled)
+                    OBJECTS.Instance._sharedSpriteBatch.Draw(_enableAdaptationTexture,
+                        new Rectangle((int)MINIGAMESDATA.Instance._userInformationIconPisition.X + 40,
+                            (int)MINIGAMESDATA.Instance._userInformationIconPisition.Y,
+                            MINIGAMESDATA.Instance._minigameIconSize, MINIGAMESDATA.Instance._minigameIconSize),
+                            Color.White);
+                else
+                    OBJECTS.Instance._sharedSpriteBatch.Draw(_disableAdaptationTexture,
+                        new Rectangle((int)MINIGAMESDATA.Instance._userInformationIconPisition.X + 40,
+                            (int)MINIGAMESDATA.Instance._userInformationIconPisition.Y + MINIGAMESDATA.Instance._minigameIconSize,
+                            MINIGAMESDATA.Instance._minigameIconSize, MINIGAMESDATA.Instance._minigameIconSize),
+                            Color.White); 
+
                 //draw the user information icon
                 if (!MINIGAMESDATA.Instance._isLogEnabled)
                     OBJECTS.Instance._sharedSpriteBatch.Draw(_startLogTexture,

@@ -23,12 +23,13 @@ namespace MinigamesLibrary
         public List<Vector2> LIBRARY_adaptiveElectrisPositions;
         public List<Vector2> LIBRARY_walldestroyerMinigamePositions;
         
+        
 
         public int LIBRARY_minigameHeaderIconSize;
         public int LIBRARY_minigameIconSize;
         public List<int> LIBRARY_puzzle_NumberOfDisksLst;
         public List<PuzzleDisk> LIBRARY_puzzleDisks;
-        public int LIBRARY_puzzleDefaultRotationSpeed;
+        public double LIBRARY_puzzleDefaultRotationSpeed;
         public int LIBRARY_puzzleHintPosition;
         public int LIBRARY_puzzleHintSize;
         public int LIBRARY_puzzleHintGapDelay;

@@ -25,7 +25,7 @@ namespace Minigames.SingeltonClasses
         public int _currentNumberOfDisks;
         public bool[] _isActive;
 
-        public int _defaultSpeed;
+        public double _defaultSpeed;
         public int _currentActiveRing;
         public double _currentSpeed;
         public int _degreeOfFreedom;

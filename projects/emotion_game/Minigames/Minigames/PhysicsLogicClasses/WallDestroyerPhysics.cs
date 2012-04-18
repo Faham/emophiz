@@ -20,7 +20,8 @@ namespace Minigames.PhysicsLogicClasses
             public int brickIndex;
             public _CollisionTypesEnum collisionType;
         }
-        //temporary position of ball to prevent collision s
+
+        //temporary position of ball to prevent collisions
         Vector2 _tempPosition;
 
         //constructor
@@ -32,16 +33,25 @@ namespace Minigames.PhysicsLogicClasses
         //update function
         public void Update(KeyboardState keyboard)
         {
-            
-            #region update_bricks
-            if (WALLDESTROYERSHAREDDATA.Instance._totalNumberOfBricks - WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks <= WALLDESTROYERSHAREDDATA.Instance._numberOfBricksInARow)
+            #region update_bricks_And_log
+            if (MINIGAMESDATA.Instance._isAdaptationEnabled)
             {
-                //bricks are less than 33% so check the fun
-                if (MINIGAMESDATA.Instance._fun >= 7)
+                if (WALLDESTROYERSHAREDDATA.Instance._totalNumberOfBricks - WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks <= WALLDESTROYERSHAREDDATA.Instance._numberOfBricksInARow)
                 {
-                    WALLDESTROYERSHAREDDATA.Instance.AddBrick();
+                    //bricks are less than 33% so check the fun
+                    if (MINIGAMESDATA.Instance._fun >= 7)
+                    {
+                        WALLDESTROYERSHAREDDATA.Instance.AddBrick();
+                    }
                 }
             }
+            /*
+            LOG.Instance._logType = LOG.LogTypeEnum.informationLog;
+            LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
+            LOG.Instance._message = "One more row is added!";
+            MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
+            System.Console.WriteLine(LOG.Instance.SerializeToString());
+            */
             #endregion
             
             #region log
@@ -232,56 +242,6 @@ namespace Minigames.PhysicsLogicClasses
                 }
                 counter++;
             }
-            
-                
-                /*
-                for (int i = 0; i < WALLDESTROYERSHAREDDATA.Instance._currentNumberOfBricks; i++)
-                {
-                    //detect up side collision
-                    Rectangle targetRect = new Rectangle((int)WALLDESTROYERSHAREDDATA.Instance._brickLst[i]._position.X,
-                        (int)WALLDESTROYERSHAREDDATA.Instance._brickLst[i]._position.Y,
-                        (int)WALLDESTROYERSHAREDDATA.Instance._brickSize.X,
-                        (int)WALLDESTROYERSHAREDDATA.Instance._brickSize.Y);
-                    
-                    if (targetRect.Intersects(new Rectangle((int)position.X, (int)position.Y, size, size))
-                        && !WALLDESTROYERSHAREDDATA.Instance._brickLst[i]._isHit)
-                    {
-                        Rectangle collisionRect = Rectangle.Intersect(targetRect, new Rectangle((int)position.X, (int)position.Y, size, size));
-                        if (collisionRect.Width >= collisionRect.Height)
-                        {
-                            if (center.Y > targetRect.Y + targetRect.Height / 2)//up side brick
-                            {
-                                result.brickIndex = counter;
-                                result.collisionType = _CollisionTypesEnum.ballAndUpBrick_TAG;
-                                break;
-                            }
-                            else
-                            {
-                                result.brickIndex = counter;
-                                result.collisionType = _CollisionTypesEnum.ballAndBottomBrick_TAG;
-                                break;
-                            }
-                        }
-                        else if (collisionRect.Width < collisionRect.Height)
-                        {
-                            if (center.X < targetRect.X + targetRect.Width / 2)//right side brick
-                            {
-                                result.brickIndex = counter;
-                                result.collisionType = _CollisionTypesEnum.ballAndRightBrick_TAG;
-                                break;
-                            }
-                            else
-                            {
-                                result.brickIndex = counter;
-                                result.collisionType = _CollisionTypesEnum.ballAndLeftBrick_TAG;
-                                break;
-                            }
-                        }                        
-                    }    
-                    counter++;
-                }
-                 */
-            
             return result;
         }
         
@@ -369,8 +329,15 @@ namespace Minigames.PhysicsLogicClasses
                 }
 
                 //set the speed based on emotions
-                WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X = (float)Math.Abs((WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Cos(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian))) * Math.Sign(WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X);
-                WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Sin(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
+                if (MINIGAMESDATA.Instance._isAdaptationEnabled)
+                {
+                    WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X = (float)Math.Abs((WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Cos(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian))) * Math.Sign(WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X);
+                    WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Sin(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
+                }
+                else
+                {
+                    WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y *= -1;
+                }
             }
             else if (collision == _CollisionTypesEnum.ballAndUpBrick_TAG
                 || collision == _CollisionTypesEnum.ballAndBottomBrick_TAG)
