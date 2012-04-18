@@ -72,7 +72,7 @@ namespace Minigames.InterfaceClasses
             if (MINIGAMESDATA.Instance._isMotionDebuggEnabled)
             {
                 Primitives2D.FillRectangle(OBJECTS.Instance._sharedSpriteBatch, new Rectangle(40, 50, 40, 30), Color.Black);
-                OBJECTS.Instance._sharedSpriteBatch.DrawString(_emotionValueFont, MINIGAMESDATA.Instance._frustration.ToString(), new Vector2(50, 50), Color.White);
+                OBJECTS.Instance._sharedSpriteBatch.DrawString(_emotionValueFont, MINIGAMESDATA.Instance._boredom.ToString(), new Vector2(50, 50), Color.White);
             }
         }
     }

@@ -87,9 +87,9 @@ namespace Minigames.PhysicsLogicClasses
                             MINIGAMESDATA.Instance._fun++;
                         }
                         else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG
-                                && MINIGAMESDATA.Instance._frustration < 10)
+                                && MINIGAMESDATA.Instance._boredom < 10)
                         {
-                            MINIGAMESDATA.Instance._frustration++;
+                            MINIGAMESDATA.Instance._boredom++;
                         }
                     }
                     else if (keyState.IsKeyDown(Keys.Down))
@@ -105,9 +105,9 @@ namespace Minigames.PhysicsLogicClasses
                             MINIGAMESDATA.Instance._fun--;
                         }
                         else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG
-                                && MINIGAMESDATA.Instance._frustration > 1)
+                                && MINIGAMESDATA.Instance._boredom > 1)
                         {
-                            MINIGAMESDATA.Instance._frustration--;
+                            MINIGAMESDATA.Instance._boredom--;
                         }
                     }
                 }

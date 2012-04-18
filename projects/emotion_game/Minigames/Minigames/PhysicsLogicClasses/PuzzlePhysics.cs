@@ -40,7 +40,7 @@ namespace Minigames.PhysicsLogicClasses
             if (MINIGAMESDATA.Instance._isAdaptationEnabled)
             {
                 //int emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._excitement;
-                int emotion = MINIGAMESDATA.Instance._excitement;
+                double emotion = MINIGAMESDATA.Instance._excitement;
                 if (emotion > 0)
                     PUZZLESHAREDDATA.Instance._currentSpeed = (double)PUZZLESHAREDDATA.Instance._defaultSpeed * emotion / MINIGAMESDATA.Instance._maxEmotionValue;
                 else

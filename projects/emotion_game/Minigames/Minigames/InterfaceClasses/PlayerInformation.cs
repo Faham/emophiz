@@ -41,7 +41,11 @@ namespace Minigames.InterfaceClasses
             
             //dispose the form
             this.Close();
+
+
         }
+        
+        
 
     }
 }

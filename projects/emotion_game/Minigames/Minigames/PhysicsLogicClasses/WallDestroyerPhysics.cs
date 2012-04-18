@@ -316,11 +316,11 @@ namespace Minigames.PhysicsLogicClasses
             else if (collision == _CollisionTypesEnum.board_TAG)
             {
                 //set the new ball initial speed
-                int emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._fun;
+                double emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._fun;
                 if (emotion > 0)
                 {
-                    WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed = emotion;
-                    WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed = emotion;
+                    WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed = (int)emotion;
+                    WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed = (int)emotion;
                 }
                 else
                 {

@@ -70,9 +70,9 @@ namespace Minigames.PhysicsLogicClasses
             {
                 if (!ELECTRISSHAREDDATA.Instance._isSpacePressed)
                 {
-                    int emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._frustration;
+                    double emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._boredom;
                     if (emotion > 0)
-                        ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._fallingDelay - emotion*3;
+                        ELECTRISSHAREDDATA.Instance._currentFallingDelay = (int)(ELECTRISSHAREDDATA.Instance._fallingDelay - emotion*3);
                     else
                     {
                         ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._fallingDelay;

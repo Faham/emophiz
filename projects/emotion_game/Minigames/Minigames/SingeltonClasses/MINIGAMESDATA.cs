@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using System.Xml;
 
 namespace Minigames.SingeltonClasses
 {
@@ -48,9 +49,9 @@ namespace Minigames.SingeltonClasses
         public bool _isMotionDebuggEnabled;
         public int _defaultEmotionValue;
         public int _maxEmotionValue;
-        public int _fun;
-        public int _frustration;
-        public int _excitement;
+        public double _fun;
+        public double _boredom;
+        public double _excitement;
 
         //constructor
         private MINIGAMESDATA()
@@ -103,7 +104,7 @@ namespace Minigames.SingeltonClasses
             if (MINIGAMESDATA.Instance._isAdaptationEnabled)
             {
                 MINIGAMESDATA.Instance._excitement = defaultValue;
-                MINIGAMESDATA.Instance._frustration = defaultValue;
+                MINIGAMESDATA.Instance._boredom = defaultValue;
                 MINIGAMESDATA.Instance._fun = defaultValue;
             }
         }
@@ -127,9 +128,15 @@ namespace Minigames.SingeltonClasses
         //
         public bool Log()
         {
+            string path;
+            //path = System.IO.Path.GetDirectoryName(
+            //System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            
             USERINFORMATION info = USERINFORMATION.Instance;
+            #region minigame_internal_log
             string logStr = "";
             //user information
+            logStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
             logStr += info._participantID.ToString() + "\t";
             logStr += info._firstName + "\t";
             logStr += info._lastName + "\t";
@@ -143,10 +150,9 @@ namespace Minigames.SingeltonClasses
             logStr += WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr;
             //puzzle
             logStr += PUZZLESHAREDDATA.Instance._puzzleLogStr;
-
             try
             {
-                string filename = @"C:\Users\amin\Documents\Visual Studio 2010\Projects\EmotionalAwareMinigames\Minigames\MinigamesContent\Log\" + USERINFORMATION.Instance._participantID.ToString() + ".txt";
+                string filename = @"...\log\" + USERINFORMATION.Instance._participantID.ToString() + ".txt";
                 System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
                 logStr += "\n";
                 file.WriteLine(logStr);
@@ -157,6 +163,46 @@ namespace Minigames.SingeltonClasses
                 System.Console.WriteLine(e.ToString());
                 return false;
             }
+            #endregion
+
+            #region emoophiz_participant_log
+            try
+            {
+                using (XmlWriter writer = XmlWriter.Create(@"...\log\" + USERINFORMATION.Instance._participantID.ToString() + ".xml"))
+	            {
+                    writer.WriteStartDocument();
+                    writer.WriteStartElement("Participant");
+                    
+                    writer.WriteElementString("Date", System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff"));
+                    writer.WriteElementString("ID", info._participantID.ToString());
+                    writer.WriteElementString("FirstName", info._firstName);
+                    writer.WriteElementString("LastName", info._lastName);
+                    writer.WriteElementString("Age", info._age.ToString());
+                    writer.WriteElementString("Hand", info._DominantHand);
+                    writer.WriteElementString("FieldStudy", info._fieldOfStudy);
+                    writer.WriteElementString("Gender", info._gender);
+                    
+	                writer.WriteEndElement();
+	                writer.WriteEndDocument();
+	            }
+            }
+            catch (Exception exp)
+            {
+                try
+                {
+                    string filename = @"...\log\" + "userInformationError.txt";
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+                    logStr = exp.ToString();
+                    file.WriteLine(logStr);
+                    file.Close();
+                }
+                catch (Exception e)
+                {
+                    System.Console.WriteLine(e.ToString());
+                    return false;
+                }
+            }
+            #endregion
             return true;
         }
     }
