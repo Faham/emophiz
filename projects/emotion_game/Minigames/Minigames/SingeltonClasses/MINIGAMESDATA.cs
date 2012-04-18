@@ -128,10 +128,6 @@ namespace Minigames.SingeltonClasses
         //
         public bool Log()
         {
-            string path;
-            //path = System.IO.Path.GetDirectoryName(
-            //System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-            
             USERINFORMATION info = USERINFORMATION.Instance;
             #region minigame_internal_log
             string logStr = "";
