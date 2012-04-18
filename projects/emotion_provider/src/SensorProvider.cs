@@ -16,11 +16,13 @@ namespace emophiz
 		private double m_arousal, m_valence;
 		private double m_fun, m_boredom, m_excitement;
 
+		public SensorLib.ThoughtTechnologies.ITtlEncoder Encoder { get { return m_encoder; } }
+
 		public Signal GSR { get { return m_signals[sensorTypeToStr(SensorType.GSR)]; } }
 		public Signal HR { get { return m_signals[sensorTypeToStr(SensorType.HR)]; } }
 		public Signal BVP { get { return m_signals[sensorTypeToStr(SensorType.BVP)]; } }
-		public Signal EKGFrown { get { return m_signals[sensorTypeToStr(SensorType.EKGFrown)]; } }
-		public Signal EKGSmile { get { return m_signals[sensorTypeToStr(SensorType.EKGSmile)]; } }
+		public Signal EMGFrown { get { return m_signals[sensorTypeToStr(SensorType.EMGFrown)]; } }
+		public Signal EMGSmile { get { return m_signals[sensorTypeToStr(SensorType.EMGSmile)]; } }
 
 		public double Arousal { get { return m_arousal; } }
 		public double Valence { get { return m_valence; } }
@@ -47,8 +49,8 @@ namespace emophiz
 			BVP,
 			HR,
 			GSR,
-			EKGSmile,
-			EKGFrown,
+			EMGSmile,
+			EMGFrown,
 			Count
 		}
 
@@ -114,12 +116,13 @@ namespace emophiz
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.BVP);
 			m_signals[sensor_type].EnableNormalize = true;
+			m_bvp = m_signals[sensorTypeToStr(SensorType.BVP)];
 
 			sensor_type = sensorTypeToStr(SensorType.HR);
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.HR);
 			m_signals[sensor_type].EnableNormalize = true;
-
-			m_bvp = m_signals[sensorTypeToStr(SensorType.BVP)];
+			m_signals[sensor_type].EnableSmoothe = true;
+			m_signals[sensor_type].SmootheWindow = 4;
 
 			////////how to work with filters.
 			SensorLib.Filters.FilterOrderSpec spec = new SensorLib.Filters.FilterOrderSpec();
@@ -131,25 +134,31 @@ namespace emophiz
 			/////////
 
 			sensor_type = sensorTypeToStr(SensorType.GSR);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.C, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.GSR);
 			m_signals[sensor_type].EnableNormalize = true;
+			m_signals[sensor_type].EnableSmoothe = true;
+			m_signals[sensor_type].SmootheWindow = 32 * 5; //frequecy * second
 
-			sensor_type = sensorTypeToStr(SensorType.EKGSmile);
+			sensor_type = sensorTypeToStr(SensorType.EMGSmile);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
-			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EKGSmile);
+			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EMGSmile);
 			m_signals[sensor_type].EnableNormalize = true;
+			m_signals[sensor_type].EnableSmoothe = true;
+			m_signals[sensor_type].SmootheWindow = 4;
 
-			sensor_type = sensorTypeToStr(SensorType.EKGFrown);
+			sensor_type = sensorTypeToStr(SensorType.EMGFrown);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.E, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type] .Start();
-			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EKGFrown);
+			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EMGFrown);
 			m_signals[sensor_type].EnableNormalize = true;
+			m_signals[sensor_type].EnableSmoothe = true;
+			m_signals[sensor_type].SmootheWindow = 4;
 			
 			return true;
 		}
@@ -218,7 +227,11 @@ namespace emophiz
 				Signal signal;
 				if (!m_signals.TryGetValue(sensor.Name, out signal))
 					throw new Exception("This type of sensor isn't supported: " + sensor.Name);
-				signal.Current = sensor.CurrentValue;
+				
+				//if (sensorStrToType(sensor.Name) == SensorType.GSR)
+				//    signal.Current = m_filterBaselineRemover.FilterData((float)sensor.CurrentValue)[0];
+				//else
+					signal.Current = sensor.CurrentValue;
 
 				if (sensorStrToType(sensor.Name) == SensorType.BVP)
 					UpdateHR();

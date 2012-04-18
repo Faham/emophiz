@@ -11,8 +11,8 @@ namespace emophiz
 		{
 			Unknown,
 			GSR,
-			EKGSmile,
-			EKGFrown,
+			EMGSmile,
+			EMGFrown,
 			HR,
 			BVP,
 		}
@@ -25,10 +25,10 @@ namespace emophiz
 					return SignalType.HR;
 				case SensorProvider.SensorType.GSR:
 					return SignalType.GSR;
-				case SensorProvider.SensorType.EKGSmile:
-					return SignalType.EKGSmile;
-				case SensorProvider.SensorType.EKGFrown:
-					return SignalType.EKGFrown;
+				case SensorProvider.SensorType.EMGSmile:
+					return SignalType.EMGSmile;
+				case SensorProvider.SensorType.EMGFrown:
+					return SignalType.EMGFrown;
 				default:
 					return SignalType.Unknown;
 			}
@@ -66,6 +66,11 @@ namespace emophiz
 		public bool EnableShift = false;
 		public bool EnableLowpass = false;
 		public bool EnableHighpass = false;
+		public bool EnableSmoothe = false;
+
+		public int SmootheWindow = 4;
+		private System.Collections.Queue m_history = new System.Collections.Queue();
+
 		private double m_current = 0.0;
 		private double m_previous = 0.0;
 		private double m_transformed = 0.0;
@@ -92,6 +97,9 @@ namespace emophiz
 			{
 				m_previous = m_current;
 				m_current = value;
+				if (m_history.Count == SmootheWindow)
+					m_history.Dequeue();
+				m_history.Enqueue(m_current);
 				Transform();
 			}
 			get
@@ -152,6 +160,14 @@ namespace emophiz
 				m_transformed = Lowpass;
 		}
 
+		private void doSmoothe()
+		{
+			m_transformed = 0;
+			for (System.Collections.IEnumerator itr = m_history.GetEnumerator(); itr.MoveNext(); )
+				m_transformed += (double)itr.Current;
+			m_transformed /= m_history.Count;
+		}
+
 		public void Transform()
 		{
 			m_transformed = m_current;
@@ -167,6 +183,9 @@ namespace emophiz
 
 			if (EnableLowpass)
 				doLowpass();
+
+			if (EnableSmoothe)
+				doSmoothe();
 
 			if (EnableNormalize)
 				doNormalize();
