@@ -276,12 +276,12 @@ namespace emophiz
 				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
 				m_boredom.Current = m_fuzzyEngineBoredom.Defuzzify();
 
-				m_log.Message(signal.Serialize());
-				m_log.Message(m_arousal.Serialize());
-				m_log.Message(m_valence.Serialize());
-				m_log.Message(m_fun.Serialize());
-				m_log.Message(m_excitement.Serialize());
-				m_log.Message(m_boredom.Serialize());
+				m_log.Message(signal.Serialize(), Log.Details.Short);
+				m_log.Message(m_arousal.Serialize(), Log.Details.Short);
+				m_log.Message(m_valence.Serialize(), Log.Details.Short);
+				m_log.Message(m_fun.Serialize(), Log.Details.Short);
+				m_log.Message(m_excitement.Serialize(), Log.Details.Short);
+				m_log.Message(m_boredom.Serialize(), Log.Details.Short);
 			}
 			catch (Exception e)
 			{

@@ -207,7 +207,7 @@ namespace emophiz
 					, this.Maximum
 					, this.Shift);
 
-			return "";
+			return ret;
 		}
 	}
 }
