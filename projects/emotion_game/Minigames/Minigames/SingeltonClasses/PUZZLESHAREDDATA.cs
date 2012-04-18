@@ -32,7 +32,7 @@ namespace Minigames.SingeltonClasses
         public bool _currentGameResult;
         public PuzzleTypeEnum _currentPuzzleType;
         public string _puzzleLogStr;
-
+		public int _inputCounter;
         public int _puzzleHintPosition;
         public int _puzzleHintSize;
         public bool _isHintActive;
@@ -73,6 +73,7 @@ namespace Minigames.SingeltonClasses
             _isHintActive = false;
             _currentSpeed = _defaultSpeed;
             _currentActiveRing = -1;
+			_inputCounter = 0;
             _puzzleHintGapDelayCounter = _puzzleHintGapDelay;
             _puzzleHintDelayCounter = _puzzleHintDelay;
             _puzzleHintGapDelayFlag = false;

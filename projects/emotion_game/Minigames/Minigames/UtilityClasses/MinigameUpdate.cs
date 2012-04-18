@@ -25,7 +25,7 @@ namespace Minigames.UtilityClasses
 
         }
 
-        public void Update(KeyboardState key)
+        public void Update(GamePadState key)
         {
             if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
             {

@@ -122,21 +122,39 @@ namespace Minigames.PhysicsLogicClasses
             //invoke the update function of the minigames
             if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
             {
-                _puzzle.Update(keyState);
+                
             }
             else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG)
             {
-                _electris.Update(keyState);
+               
             }
             else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG)
             {
-                _wallDestroyer.Update(keyState);
+                
             }
             else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.clickAndHack_TAG)
             {
-                _clickAndHack.KeyboardUdpate(keyState);
+               
             }
         }
+
+		public void UpdateGamepad(GamePadState gamepadState)
+		{
+			//invoke the update function of the minigames
+			if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
+			{
+				_puzzle.Update(gamepadState);
+			}
+			else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG)
+			{
+				_electris.Update(gamepadState);
+			}
+			else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG)
+			{
+				_wallDestroyer.Update(gamepadState);
+			}
+		}
+		
 
         /// <summary>
         /// This function handles all the mouse events

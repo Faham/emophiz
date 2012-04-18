@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace Minigames.SingeltonClasses
 {
-    public class MINIGAMESDATA
+	public class MINIGAMESDATA /*: emophiz.ISensorListener*/
     {
         //static instance to be shared
         private static MINIGAMESDATA instance;
@@ -63,7 +63,47 @@ namespace Minigames.SingeltonClasses
             _log = new emophiz.Log("minigames.log");
             _isLogEnabled = false;
             _isAdaptationEnabled = true;
+
+			m_emotionMonitor = new emophiz.m_frmEmotionMonitor();
+			m_emotionMonitor.Show();
+			//if (false)
+			//    initEmotionProvider();
         }
+
+		private emophiz.m_frmEmotionMonitor m_emotionMonitor;
+
+		//private emophiz.SensorProvider m_emotionProvider;
+		//private emophiz.Log m_emotionLog = new emophiz.Log("myEmotion.log");
+
+		//private void initEmotionProvider()
+		//{
+		//    m_emotionProvider = new emophiz.SensorProvider(m_emotionLog);
+		//    m_emotionProvider.AddListener(this);
+		//    m_emotionProvider.Connect();
+		//}
+
+		//bool m_emotionConnected = false;
+
+		//public void OnMessage(emophiz.Message msg, Object value)
+		//{
+		//    switch (msg)
+		//    {
+		//        case emophiz.Message.Connecting:
+		//            break;
+		//        case emophiz.Message.Connected:
+		//            m_emotionConnected = true;
+		//            break;
+		//        case emophiz.Message.Disconnected:
+		//            m_emotionConnected = false;
+		//            break;
+		//        case emophiz.Message.SensorData:
+		//            break;
+		//        case emophiz.Message.Arousal:
+		//            break;
+		//        case emophiz.Message.Valence:
+		//            break;
+		//    }
+		//}
 
         //public get function
         public static MINIGAMESDATA Instance
@@ -115,12 +155,12 @@ namespace Minigames.SingeltonClasses
         public void UpdateEmtoions()
         {
             //Updating the following variables
-            /*
-                public int _fun;
-                public int _frustration;
-                public int _excitement; 
-            */
-
+			if (m_emotionMonitor.EmotionEngine.Connected)
+			{
+				_fun = m_emotionMonitor.EmotionEngine.Fun.Transformed / 10.0;
+				_boredom = m_emotionMonitor.EmotionEngine.Boredom.Transformed / 10.0;
+				_excitement = m_emotionMonitor.EmotionEngine.Excitement.Transformed / 10.0; 
+			}
         }
 
         //

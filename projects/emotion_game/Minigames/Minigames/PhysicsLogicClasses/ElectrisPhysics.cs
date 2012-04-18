@@ -37,7 +37,7 @@ namespace Minigames.PhysicsLogicClasses
         }
 
         //Update function
-        public void Update(KeyboardState keyboard)
+        public void Update(GamePadState keyboard)
         {
             if (!ELECTRISSHAREDDATA.Instance._isGameStarted)
             {
@@ -84,7 +84,7 @@ namespace Minigames.PhysicsLogicClasses
 
             #region Space_Hit
             //check the keyboard
-            if (keyboard.IsKeyDown(Keys.Space) && !ELECTRISSHAREDDATA.Instance._isSpacePressed)
+            if (keyboard.IsButtonDown(Buttons.X) && !ELECTRISSHAREDDATA.Instance._isSpacePressed)
             {
                 ELECTRISSHAREDDATA.Instance._isSpacePressed = true;
                 _isChangable = false;
@@ -94,9 +94,9 @@ namespace Minigames.PhysicsLogicClasses
             #endregion
 
             #region Quit_Hit
-            if (keyboard.IsKeyDown(Keys.Escape))
+			if (keyboard.IsButtonDown(Buttons.B))
             {
-                //check for the game result
+				//check for the game result
                 ELECTRISSHAREDDATA.Instance._currentGameResult = false;
                 //set the minigame status
                 MINIGAMESDATA.Instance._isMinigameRunning = false;
@@ -119,7 +119,7 @@ namespace Minigames.PhysicsLogicClasses
             _moveRoghtAndLeftCounter++;
 
             #region Right_Lerft_Keys_Hit
-            if (keyboard.IsKeyDown(Keys.Right))
+            if (keyboard.IsButtonDown(Buttons.DPadRight))
             {
                 if (_moveRoghtAndLeftCounter > ELECTRISSHAREDDATA.Instance._keyboardDelay)
                 {
@@ -127,7 +127,7 @@ namespace Minigames.PhysicsLogicClasses
                     _moveRoghtAndLeftCounter = 0;
                 }    
             }
-            else if (keyboard.IsKeyDown(Keys.Left))
+			else if (keyboard.IsButtonDown(Buttons.DPadLeft))
             {
                 if (_moveRoghtAndLeftCounter > ELECTRISSHAREDDATA.Instance._keyboardDelay)
                 {

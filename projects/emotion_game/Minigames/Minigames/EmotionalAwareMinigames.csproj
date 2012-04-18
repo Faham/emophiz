@@ -150,6 +150,10 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\emotion_monitor\EmotionMonitor.csproj">
+      <Project>{3573D39E-8893-4774-BECA-959A13E7E32C}</Project>
+      <Name>EmotionMonitor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\emotion_provider\EmotionProvider.csproj">
       <Project>{2E27E6A0-3BEB-488A-BA2F-FCDDD54768DC}</Project>
       <Name>EmotionProvider</Name>

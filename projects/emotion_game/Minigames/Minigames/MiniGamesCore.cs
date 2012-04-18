@@ -27,6 +27,7 @@ namespace Minigames
         //mouse and keyboard object
         MouseState _mouse;
         KeyboardState _keyboard;
+		GamePadState _gamepadState;
 
         //minigame physics object
         MinigamesPhysics _physics;
@@ -45,10 +46,10 @@ namespace Minigames
             Content.RootDirectory = "Content";
 
             //ask for the current screen resolution
-            _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-            _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            //_graphics.PreferredBackBufferWidth = 1280;
-            //_graphics.PreferredBackBufferHeight = 800;
+             //_graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            //_graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+            _graphics.PreferredBackBufferWidth = 1280;
+            _graphics.PreferredBackBufferHeight = 800;
             _graphics.ApplyChanges();
 
             //make it full screen
@@ -62,7 +63,9 @@ namespace Minigames
 
         protected override void Initialize()
         {
-            base.Initialize();
+			//initialize the gamepad state
+			
+			base.Initialize();
         }
 
         protected override void LoadContent()
@@ -83,9 +86,7 @@ namespace Minigames
             _minigamesXMLLoader.Load(@"XMLFiles\MinigamesSetting");
 
             //set the minigamedata shared data class
-            MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
-
-            //initialize the interface object
+             MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
             _interface = new PortalInterface();
 
             //initialize the physics object
@@ -107,11 +108,13 @@ namespace Minigames
             MINIGAMESDATA.Instance.UpdateEmtoions();
 
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            //    this.Exit();
 
+			_gamepadState = GamePad.GetState(PlayerIndex.One);
             _mouse = Mouse.GetState();
             _keyboard = Keyboard.GetState();
+			
 
             #region mouse_click
             
@@ -133,7 +136,10 @@ namespace Minigames
             }
             #endregion
 
-            base.Update(gameTime);
+			#region handle_gamepad_inputs
+				_physics.UpdateGamepad(_gamepadState);
+			#endregion
+			base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)

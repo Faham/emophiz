@@ -13,15 +13,13 @@ namespace emophiz
 	{
 		private SensorProvider m_provider;
 		private bool m_plot_emotion = false;
-		private Log m_log = new Log();
+		private Log m_log = new Log("SensorMonitor.log");
 		Dictionary<string, SpPerfChart.PerfChart> m_sensorPlots = new Dictionary<string, SpPerfChart.PerfChart>();
+
+		public SensorProvider EmotionEngine { get { return m_provider; }  }
 
 		public m_frmEmotionMonitor()
 		{
-			System.IO.StreamWriter testfile = new System.IO.StreamWriter("test.log", false);
-			testfile.WriteLine("test2");
-			testfile.Close();
-
 			m_log.Message("Initializing EmotionMonitor");
 			InitializeComponent();
 
