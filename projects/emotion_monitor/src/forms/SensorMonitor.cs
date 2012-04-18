@@ -14,6 +14,7 @@ namespace emophiz
 		private SensorProvider m_provider;
 		private bool m_plot_emotion = false;
 		private Log m_log = new Log();
+		Dictionary<string, SpPerfChart.PerfChart> m_sensorPlots = new Dictionary<string, SpPerfChart.PerfChart>();
 
 		public m_frmEmotionMonitor()
 		{
@@ -31,22 +32,37 @@ namespace emophiz
 
 			updateSpeedLabel();
 
-			m_plotGSR.Messages.Add("GSR");
-			m_plotGSR.Messages.Add("Current");
-			m_plotGSR.Messages.Add("Min");
-			m_plotGSR.Messages.Add("Max");
-			m_plotHR.Messages.Add("HR");
-			m_plotHR.Messages.Add("Current");
-			m_plotHR.Messages.Add("Min");
-			m_plotHR.Messages.Add("Max");
-			m_plotEKGFrown.Messages.Add("EKGFrown");
-			m_plotEKGFrown.Messages.Add("Current");
-			m_plotEKGFrown.Messages.Add("Min");
-			m_plotEKGFrown.Messages.Add("Max");
-			m_plotEKGSmile.Messages.Add("EKGSmile");
-			m_plotEKGSmile.Messages.Add("Current");
-			m_plotEKGSmile.Messages.Add("Min");
-			m_plotEKGSmile.Messages.Add("Max");
+			m_sensorPlots["HR"] = m_plotHR;
+			m_sensorPlots["GSR"] = m_plotGSR;
+			m_sensorPlots["BVP"] = m_plotBVP;
+			m_sensorPlots["EMGSmile"] = m_plotEMGSmile;
+			m_sensorPlots["EMGFrown"] = m_plotEMGFrown;
+
+			foreach (KeyValuePair<string, SpPerfChart.PerfChart> item in m_sensorPlots)
+			{
+				SpPerfChart.PerfChart plot = (SpPerfChart.PerfChart)item.Value;
+				plot.Messages.Add(item.Key);
+				plot.Messages.Add("Current");
+				plot.Messages.Add("Min");
+				plot.Messages.Add("Max");
+			}
+
+			//m_plotGSR.Messages.Add("GSR");
+			//m_plotGSR.Messages.Add("Current");
+			//m_plotGSR.Messages.Add("Min");
+			//m_plotGSR.Messages.Add("Max");
+			//m_plotHR.Messages.Add("HR");
+			//m_plotHR.Messages.Add("Current");
+			//m_plotHR.Messages.Add("Min");
+			//m_plotHR.Messages.Add("Max");
+			//m_plotEMGFrown.Messages.Add("EMGFrown");
+			//m_plotEMGFrown.Messages.Add("Current");
+			//m_plotEMGFrown.Messages.Add("Min");
+			//m_plotEMGFrown.Messages.Add("Max");
+			//m_plotEMGSmile.Messages.Add("EMGSmile");
+			//m_plotEMGSmile.Messages.Add("Current");
+			//m_plotEMGSmile.Messages.Add("Min");
+			//m_plotEMGSmile.Messages.Add("Max");
 			m_plotArousal.Messages.Add("Arousal");
 			m_plotValence.Messages.Add("Valence");
 			m_plotFun.Messages.Add("Fun");
@@ -87,12 +103,18 @@ namespace emophiz
 
 		void OnDisconnect()
 		{
+			m_prgbrBatteryLevel.Value = 0;
+			m_lblBatteryLevel.Text = "No Connected";
+
 			m_btnConnect.Text = "&Connect";
 			m_plot_emotion = false;
 		}
 
 		void OnConnect()
 		{
+			m_prgbrBatteryLevel.Value = (int)m_provider.Encoder.GetBatteryPercentage();
+			m_lblBatteryLevel.Text = String.Format("Battery level: {0}%", m_prgbrBatteryLevel.Value);
+
 			m_btnConnect.Text = "&Disconnect";
 			m_plot_emotion = true;
 			m_backgroundWorker.RunWorkerAsync();
@@ -120,30 +142,30 @@ namespace emophiz
 				m_plotGSR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.GSR.Current);
 				m_plotGSR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.GSR.Minimum);
 				m_plotGSR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.GSR.Maximum);
-				//*/
-				m_plotHR.AddValue(m_provider.BVP.Transformed);
-				m_plotHR.Messages[0] = "BVP: " + String.Format(double_formats, m_provider.BVP.Transformed);
-				m_plotHR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.BVP.Current);
-				m_plotHR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.BVP.Minimum);
-				m_plotHR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.BVP.Maximum);
-				/*/
+				
+				m_plotBVP.AddValue(m_provider.BVP.Transformed);
+				m_plotBVP.Messages[0] = "BVP: " + String.Format(double_formats, m_provider.BVP.Transformed);
+				m_plotBVP.Messages[1] = "Current: " + String.Format(double_formats, m_provider.BVP.Current);
+				m_plotBVP.Messages[2] = "Min: " + String.Format(double_formats, m_provider.BVP.Minimum);
+				m_plotBVP.Messages[3] = "Max: " + String.Format(double_formats, m_provider.BVP.Maximum);
+				
 				m_plotHR.AddValue(m_provider.HR.Transformed);
 				m_plotHR.Messages[0] = "HR: " + String.Format(double_formats, m_provider.HR.Transformed);
 				m_plotHR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.HR.Current);
 				m_plotHR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.HR.Minimum);
 				m_plotHR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.HR.Maximum);
-				//*/
-				m_plotEKGFrown.AddValue(m_provider.EKGFrown.Transformed);
-				m_plotEKGFrown.Messages[0] = "EKGFrown: " + String.Format(double_formats, m_provider.EKGFrown.Transformed);
-				m_plotEKGFrown.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EKGFrown.Current);
-				m_plotEKGFrown.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EKGFrown.Minimum);
-				m_plotEKGFrown.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EKGFrown.Maximum);
+				
+				m_plotEMGFrown.AddValue(m_provider.EMGFrown.Transformed);
+				m_plotEMGFrown.Messages[0] = "EMGFrown: " + String.Format(double_formats, m_provider.EMGFrown.Transformed);
+				m_plotEMGFrown.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EMGFrown.Current);
+				m_plotEMGFrown.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EMGFrown.Minimum);
+				m_plotEMGFrown.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGFrown.Maximum);
 	
-				m_plotEKGSmile.AddValue(m_provider.EKGSmile.Transformed);
-				m_plotEKGSmile.Messages[0] = "EKGSmile: " + String.Format(double_formats, m_provider.EKGSmile.Transformed);
-				m_plotEKGSmile.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EKGSmile.Current);
-				m_plotEKGSmile.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EKGSmile.Minimum);
-				m_plotEKGSmile.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EKGSmile.Maximum);
+				m_plotEMGSmile.AddValue(m_provider.EMGSmile.Transformed);
+				m_plotEMGSmile.Messages[0] = "EMGSmile: " + String.Format(double_formats, m_provider.EMGSmile.Transformed);
+				m_plotEMGSmile.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EMGSmile.Current);
+				m_plotEMGSmile.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EMGSmile.Minimum);
+				m_plotEMGSmile.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGSmile.Maximum);
 				
 				m_plotArousal.AddValue(m_provider.Arousal);
 				m_plotArousal.Messages[0] = "Arousal: " + String.Format(double_formats, m_provider.Arousal);
@@ -183,7 +205,7 @@ namespace emophiz
 
 			SpPerfChart.PerfChart plot = (SpPerfChart.PerfChart)sender;
 
-			if (plot == m_plotGSR || plot == m_plotHR || plot == m_plotEKGSmile || plot == m_plotEKGFrown)
+			if (getSignal(plot) != null)
 				enableCalibrate(plot, !plot.Highlighted);
 		}
 
@@ -192,11 +214,13 @@ namespace emophiz
 			if (plot == m_plotGSR)
 				return m_provider.GSR;
 			else if (plot == m_plotHR)
+				return m_provider.HR;
+			else if (plot == m_plotBVP)
 				return m_provider.BVP;
-			else if (plot == m_plotEKGSmile)
-				return m_provider.EKGSmile;
-			else if (plot == m_plotEKGFrown)
-				return m_provider.EKGFrown;
+			else if (plot == m_plotEMGSmile)
+				return m_provider.EMGSmile;
+			else if (plot == m_plotEMGFrown)
+				return m_provider.EMGFrown;
 
 			return null;
 		}
@@ -214,8 +238,8 @@ namespace emophiz
 				return;
 			enableCalibrate(m_plotGSR, false);
 			enableCalibrate(m_plotHR, false);
-			enableCalibrate(m_plotEKGSmile, false);
-			enableCalibrate(m_plotEKGFrown, false);
+			enableCalibrate(m_plotEMGSmile, false);
+			enableCalibrate(m_plotEMGFrown, false);
 		}
 	}
 }

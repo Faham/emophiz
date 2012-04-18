@@ -82,6 +82,14 @@
       <Project>{2E27E6A0-3BEB-488A-BA2F-FCDDD54768DC}</Project>
       <Name>EmotionProvider</Name>
     </ProjectReference>
+    <ProjectReference Include="..\sensor_lib\SensorLib.Base\SensorLib.Base.csproj">
+      <Project>{FD4C84FB-ECA4-462D-BB34-7D652B5E18F1}</Project>
+      <Name>SensorLib.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sensor_lib\SensorLib.ThoughtTechnologies\SensorLib.ThoughtTechnologies.csproj">
+      <Project>{A9D740CA-11B0-47EE-AEC5-298FD0C57584}</Project>
+      <Name>SensorLib.ThoughtTechnologies</Name>
+    </ProjectReference>
     <ProjectReference Include="..\sp_perf_chart\SpPerfChart.csproj">
       <Project>{F2FF6C46-A791-4CAE-AB46-BD1A37F3FCD7}</Project>
       <Name>SpPerfChart</Name>
