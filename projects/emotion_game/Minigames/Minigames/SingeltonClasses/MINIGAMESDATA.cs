@@ -15,6 +15,11 @@ namespace Minigames.SingeltonClasses
         //log
         public emophiz.Log _log;
 
+        //fuzzy engine resources
+        public string _fuzzyEnginResources;
+
+        //input timestamp
+        TimeSpan _inputTimeSpan;
 
         //minigame variables
         public bool _isMinigameRunning;
@@ -52,6 +57,7 @@ namespace Minigames.SingeltonClasses
         public double _fun;
         public double _boredom;
         public double _excitement;
+        
 
         //constructor
         private MINIGAMESDATA()
@@ -68,6 +74,7 @@ namespace Minigames.SingeltonClasses
 			m_emotionMonitor.Show();
 			//if (false)
 			//    initEmotionProvider();
+            
         }
 
 		private emophiz.m_frmEmotionMonitor m_emotionMonitor;

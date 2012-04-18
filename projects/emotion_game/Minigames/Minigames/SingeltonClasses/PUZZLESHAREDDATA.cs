@@ -20,6 +20,7 @@ namespace Minigames.SingeltonClasses
         //puzzle fields
         public List<int> _puzzleTypes;
         public List<PuzzleDisk> _puzzleDisksDegrees;
+        public int _inputDelay;
 
         public double[] _currentDegrees;
         public int _currentNumberOfDisks;
@@ -78,6 +79,7 @@ namespace Minigames.SingeltonClasses
             _puzzleHintDelayCounter = _puzzleHintDelay;
             _puzzleHintGapDelayFlag = false;
             _puzzleHintDelayFlag = false;
+            _inputDelay = 0;
 
             if (PUZZLESHAREDDATA.Instance._currentPuzzleType == PuzzleTypeEnum.nonadaptivePuzzle3Disks_TAG)
             {

@@ -18,9 +18,6 @@ namespace Minigames.PhysicsLogicClasses
         public enum DirectionsEnum { Right = 1, Left, Up, Down };
         public enum EnvironmentEnum { portal_TAG = 1, minigame_TAG};
 
-        //log
-        emophiz.Log _log;
-
         //
         //physics classes of other environments
         //
@@ -37,9 +34,7 @@ namespace Minigames.PhysicsLogicClasses
             _clickAndHack = new ClickAndHackPhysics();
             _electris = new ElectrisPhysics();
             _wallDestroyer = new WallDestroyerPhysics();
-  
-            //log object
-            _log = new emophiz.Log();
+ 
 
         }
 
@@ -52,6 +47,7 @@ namespace Minigames.PhysicsLogicClasses
         public void Move(Microsoft.Xna.Framework.Input.KeyboardState keyState)
         {
             //log
+            /*
             #region
             if (keyState.GetPressedKeys().Length > 0 && MINIGAMESDATA.Instance._isAdaptationEnabled)
             {
@@ -59,11 +55,11 @@ namespace Minigames.PhysicsLogicClasses
                 LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
                 LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
                 LOG.Instance._message = keyState.GetPressedKeys()[0].ToString();
-                _log.Message(LOG.Instance.SerializeToString());
+                MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
                 System.Console.WriteLine(LOG.Instance.SerializeToString());
             }
             #endregion
-
+            */
             //check the update the emotions based on keyboard inputs
             if (MINIGAMESDATA.Instance._isMinigameRunning)
             {
@@ -140,6 +136,26 @@ namespace Minigames.PhysicsLogicClasses
 
 		public void UpdateGamepad(GamePadState gamepadState)
 		{
+            //log
+            #region
+            string temp = gamepadState.Buttons.ToString();
+            string temp2 = gamepadState.DPad.ToString();
+            if ((gamepadState.Buttons.ToString() != "{Buttons:None}"
+                || gamepadState.DPad.ToString() != "{DPad:None}")
+                && MINIGAMESDATA.Instance._isAdaptationEnabled)
+            {
+                LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
+                LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
+                LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
+                if ((gamepadState.Buttons.ToString() != "{Buttons:None}"))
+                    LOG.Instance._message = gamepadState.Buttons.ToString();
+                else if (gamepadState.DPad.ToString() != "{DPad:None}")
+                    LOG.Instance._message = gamepadState.DPad.ToString();
+                MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
+                System.Console.WriteLine(LOG.Instance.SerializeToString());
+            }
+            #endregion
+
 			//invoke the update function of the minigames
 			if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
 			{

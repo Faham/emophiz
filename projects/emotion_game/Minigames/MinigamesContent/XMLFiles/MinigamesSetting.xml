@@ -10,6 +10,7 @@
     <LIBRARY_nonadaptiveElectrisPositions>700 200 700 300 700 400</LIBRARY_nonadaptiveElectrisPositions>
     <LIBRARY_adaptiveElectrisPositions>760 200 760 300 760 400</LIBRARY_adaptiveElectrisPositions>
     <LIBRARY_walldestroyerMinigamePositions>1030 200 1030 300 1030 400</LIBRARY_walldestroyerMinigamePositions>
+    <LIBRARY_fuzzyEnginResources>C:\Users\amin\Documents\MyApplication\Emophiz\emophiz\projects\emotion_monitor\resources\</LIBRARY_fuzzyEnginResources>
     
     <LIBRARY_minigameHeaderIconSize>100</LIBRARY_minigameHeaderIconSize>
     <LIBRARY_minigameIconSize>40</LIBRARY_minigameIconSize>

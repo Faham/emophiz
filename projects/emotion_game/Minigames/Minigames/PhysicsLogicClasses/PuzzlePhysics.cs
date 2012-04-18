@@ -82,12 +82,40 @@ namespace Minigames.PhysicsLogicClasses
             }
             #endregion
 
-#region 
+            #region 
+            
 			if (key.IsButtonDown(Buttons.DPadDown) && PUZZLESHAREDDATA.Instance._inputCounter > 1)
-				PUZZLESHAREDDATA.Instance._inputCounter--;
-			else if (key.IsButtonDown(Buttons.DPadDown) && PUZZLESHAREDDATA.Instance._inputCounter < PUZZLESHAREDDATA.Instance._currentNumberOfDisks)
-				PUZZLESHAREDDATA.Instance._inputCounter++;
-#endregion
+                if (PUZZLESHAREDDATA.Instance._inputDelay > 5)
+                {
+				    PUZZLESHAREDDATA.Instance._inputCounter--;
+                    PUZZLESHAREDDATA.Instance._inputDelay = 0;
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[PUZZLESHAREDDATA.Instance._inputCounter-1] = true;
+                }
+                else
+                {
+                    PUZZLESHAREDDATA.Instance._inputDelay++;
+                }
+			else if (key.IsButtonDown(Buttons.DPadUp) && PUZZLESHAREDDATA.Instance._inputCounter < PUZZLESHAREDDATA.Instance._currentNumberOfDisks)
+                if (PUZZLESHAREDDATA.Instance._inputDelay > 5)
+                {
+				    PUZZLESHAREDDATA.Instance._inputCounter++;
+                    PUZZLESHAREDDATA.Instance._inputDelay = 0;
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[PUZZLESHAREDDATA.Instance._inputCounter - 1] = true;
+                }
+                else
+                {
+                    PUZZLESHAREDDATA.Instance._inputDelay++;
+                }
+            #endregion
+            /*
             #region Detect_Number_Hit
             if (PUZZLESHAREDDATA.Instance._inputCounter == 1 && !PUZZLESHAREDDATA.Instance._isActive[0])
             {
@@ -160,18 +188,19 @@ namespace Minigames.PhysicsLogicClasses
                 }
                 PUZZLESHAREDDATA.Instance._isActive[7] = true;
                 PUZZLESHAREDDATA.Instance._currentActiveRing = 8;
-            }
-            #endregion
+            }*/
 
             #region Detect_ArrowKey_Hit
-			if (key.IsButtonDown(Buttons.DPadRight))
+            if (key.IsButtonDown(Buttons.DPadRight))
             {
                 for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    if (PUZZLESHAREDDATA.Instance._isActive[i])
-                        PUZZLESHAREDDATA.Instance._currentDegrees[i] += PUZZLESHAREDDATA.Instance._currentSpeed;
-                }
+                    {
+                        if (PUZZLESHAREDDATA.Instance._isActive[i])
+                            PUZZLESHAREDDATA.Instance._currentDegrees[i] += PUZZLESHAREDDATA.Instance._currentSpeed;
+                    }
+                    
             }
+
 			else if (key.IsButtonDown(Buttons.DPadLeft))
             {
                 for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
@@ -179,6 +208,7 @@ namespace Minigames.PhysicsLogicClasses
                     if (PUZZLESHAREDDATA.Instance._isActive[i])
                         PUZZLESHAREDDATA.Instance._currentDegrees[i] -= PUZZLESHAREDDATA.Instance._currentSpeed;
                 }
+                
             } 
             #endregion
 
