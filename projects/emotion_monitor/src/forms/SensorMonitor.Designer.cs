@@ -28,80 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-			SpPerfChart.ChartPen chartPen1 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen2 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen3 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen4 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen5 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen6 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen7 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen8 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen9 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen10 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen11 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen12 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen13 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen14 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen15 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen16 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen17 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen18 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen19 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen20 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen21 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen22 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen23 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen24 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen25 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen26 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen27 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen28 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen29 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen30 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen31 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen32 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen33 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen34 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen35 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen36 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen37 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen38 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen39 = new SpPerfChart.ChartPen();
-			SpPerfChart.ChartPen chartPen40 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen49 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen50 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen51 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen52 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen53 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen54 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen55 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen56 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen57 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen58 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen59 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen60 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen61 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen62 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen63 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen64 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen65 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen66 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen67 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen68 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen69 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen70 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen71 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen72 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen41 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen42 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen43 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen44 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen45 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen46 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen47 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen48 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen73 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen74 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen75 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen76 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen77 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen78 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen79 = new SpPerfChart.ChartPen();
+			SpPerfChart.ChartPen chartPen80 = new SpPerfChart.ChartPen();
 			this.m_btnConnect = new System.Windows.Forms.Button();
-			this.m_plotGSR = new SpPerfChart.PerfChart();
 			this.m_backgroundWorker = new System.ComponentModel.BackgroundWorker();
 			this.m_trcbWorkerWait = new System.Windows.Forms.TrackBar();
 			this.m_lblPlotSpeed = new System.Windows.Forms.Label();
-			this.m_plotHR = new SpPerfChart.PerfChart();
-			this.m_plotValence = new SpPerfChart.PerfChart();
-			this.m_plotArousal = new SpPerfChart.PerfChart();
-			this.m_plotBoredom = new SpPerfChart.PerfChart();
-			this.m_plotFun = new SpPerfChart.PerfChart();
-			this.m_plotExcitement = new SpPerfChart.PerfChart();
-			this.m_plotEMGFrown = new SpPerfChart.PerfChart();
-			this.m_plotEMGSmile = new SpPerfChart.PerfChart();
 			this.m_grpbxEmotions = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.m_grpbxAVSpace = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
 			this.m_grpbxSensors = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.m_splHRBVP = new System.Windows.Forms.SplitContainer();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.m_chbxCalibrate = new System.Windows.Forms.CheckBox();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.m_grpbxCalibration = new System.Windows.Forms.GroupBox();
 			this.m_rdbtnNone = new System.Windows.Forms.RadioButton();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-			this.m_trcbarMaxMinShift = new System.Windows.Forms.TrackBar();
+			this.m_numupdnMinMaxShift = new System.Windows.Forms.NumericUpDown();
 			this.m_rdbtnMax = new System.Windows.Forms.RadioButton();
 			this.m_rdbtnShift = new System.Windows.Forms.RadioButton();
 			this.m_rdbtnMin = new System.Windows.Forms.RadioButton();
+			this.m_trcbarMaxMinShift = new System.Windows.Forms.TrackBar();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.m_splHRBVP = new System.Windows.Forms.SplitContainer();
-			this.m_plotBVP = new SpPerfChart.PerfChart();
-			this.m_lblBatteryLevel = new System.Windows.Forms.Label();
 			this.m_prgbrBatteryLevel = new System.Windows.Forms.ProgressBar();
+			this.m_lblBatteryLevel = new System.Windows.Forms.Label();
+			this.m_plotFun = new SpPerfChart.PerfChart();
+			this.m_plotBoredom = new SpPerfChart.PerfChart();
+			this.m_plotExcitement = new SpPerfChart.PerfChart();
+			this.m_plotEMGFrown = new SpPerfChart.PerfChart();
+			this.m_plotEMGSmile = new SpPerfChart.PerfChart();
+			this.m_plotGSR = new SpPerfChart.PerfChart();
+			this.m_plotHR = new SpPerfChart.PerfChart();
+			this.m_plotBVP = new SpPerfChart.PerfChart();
+			this.m_plotArousal = new SpPerfChart.PerfChart();
+			this.m_plotValence = new SpPerfChart.PerfChart();
 			((System.ComponentModel.ISupportInitialize)(this.m_trcbWorkerWait)).BeginInit();
 			this.m_grpbxEmotions.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -109,15 +109,15 @@
 			this.tableLayoutPanel3.SuspendLayout();
 			this.m_grpbxSensors.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
-			this.tableLayoutPanel4.SuspendLayout();
-			this.m_grpbxCalibration.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.m_trcbarMaxMinShift)).BeginInit();
-			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.m_splHRBVP)).BeginInit();
 			this.m_splHRBVP.Panel1.SuspendLayout();
 			this.m_splHRBVP.Panel2.SuspendLayout();
 			this.m_splHRBVP.SuspendLayout();
+			this.tableLayoutPanel4.SuspendLayout();
+			this.m_grpbxCalibration.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.m_numupdnMinMaxShift)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.m_trcbarMaxMinShift)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// m_btnConnect
@@ -130,45 +130,6 @@
 			this.m_btnConnect.Text = "&Connect";
 			this.m_btnConnect.UseVisualStyleBackColor = true;
 			this.m_btnConnect.Click += new System.EventHandler(this.button_connect_Click);
-			// 
-			// m_plotGSR
-			// 
-			this.m_plotGSR.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotGSR.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotGSR.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotGSR.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotGSR.Location = new System.Drawing.Point(759, 3);
-			this.m_plotGSR.Name = "m_plotGSR";
-			this.m_plotGSR.PerfChartStyle.AntiAliasing = true;
-			chartPen1.Color = System.Drawing.Color.LightGreen;
-			chartPen1.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen1.Width = 1F;
-			this.m_plotGSR.PerfChartStyle.AvgLinePen = chartPen1;
-			this.m_plotGSR.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotGSR.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotGSR.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotGSR.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen2.Color = System.Drawing.Color.MistyRose;
-			chartPen2.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen2.Width = 1F;
-			this.m_plotGSR.PerfChartStyle.ChartLinePen = chartPen2;
-			chartPen3.Color = System.Drawing.Color.DarkGray;
-			chartPen3.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen3.Width = 1F;
-			this.m_plotGSR.PerfChartStyle.HorizontalGridPen = chartPen3;
-			this.m_plotGSR.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotGSR.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotGSR.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen4.Color = System.Drawing.Color.DarkGray;
-			chartPen4.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen4.Width = 1F;
-			this.m_plotGSR.PerfChartStyle.VerticalGridPen = chartPen4;
-			this.m_plotGSR.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotGSR.Size = new System.Drawing.Size(248, 174);
-			this.m_plotGSR.TabIndex = 3;
-			this.m_plotGSR.TimerInterval = 100;
-			this.m_plotGSR.TimerMode = SpPerfChart.TimerMode.Disabled;
-			this.m_plotGSR.Click += new System.EventHandler(this.sensorPlotClick);
 			// 
 			// m_backgroundWorker
 			// 
@@ -198,313 +159,6 @@
 			this.m_lblPlotSpeed.Size = new System.Drawing.Size(113, 13);
 			this.m_lblPlotSpeed.TabIndex = 5;
 			this.m_lblPlotSpeed.Text = "Speed: 17 miliseconds";
-			// 
-			// m_plotHR
-			// 
-			this.m_plotHR.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotHR.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotHR.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotHR.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotHR.Location = new System.Drawing.Point(0, 0);
-			this.m_plotHR.Name = "m_plotHR";
-			this.m_plotHR.PerfChartStyle.AntiAliasing = true;
-			chartPen5.Color = System.Drawing.Color.LightGreen;
-			chartPen5.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen5.Width = 1F;
-			this.m_plotHR.PerfChartStyle.AvgLinePen = chartPen5;
-			this.m_plotHR.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotHR.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotHR.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotHR.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen6.Color = System.Drawing.Color.MistyRose;
-			chartPen6.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen6.Width = 1F;
-			this.m_plotHR.PerfChartStyle.ChartLinePen = chartPen6;
-			chartPen7.Color = System.Drawing.Color.DarkGray;
-			chartPen7.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen7.Width = 1F;
-			this.m_plotHR.PerfChartStyle.HorizontalGridPen = chartPen7;
-			this.m_plotHR.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotHR.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotHR.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen8.Color = System.Drawing.Color.DarkGray;
-			chartPen8.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen8.Width = 1F;
-			this.m_plotHR.PerfChartStyle.VerticalGridPen = chartPen8;
-			this.m_plotHR.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotHR.Size = new System.Drawing.Size(246, 82);
-			this.m_plotHR.TabIndex = 11;
-			this.m_plotHR.TimerInterval = 100;
-			this.m_plotHR.TimerMode = SpPerfChart.TimerMode.Disabled;
-			this.m_plotHR.Click += new System.EventHandler(this.sensorPlotClick);
-			// 
-			// m_plotValence
-			// 
-			this.m_plotValence.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotValence.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotValence.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotValence.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotValence.Location = new System.Drawing.Point(508, 3);
-			this.m_plotValence.Name = "m_plotValence";
-			this.m_plotValence.PerfChartStyle.AntiAliasing = true;
-			chartPen9.Color = System.Drawing.Color.LightGreen;
-			chartPen9.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen9.Width = 1F;
-			this.m_plotValence.PerfChartStyle.AvgLinePen = chartPen9;
-			this.m_plotValence.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotValence.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotValence.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotValence.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen10.Color = System.Drawing.Color.Gold;
-			chartPen10.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen10.Width = 1F;
-			this.m_plotValence.PerfChartStyle.ChartLinePen = chartPen10;
-			chartPen11.Color = System.Drawing.Color.DarkGray;
-			chartPen11.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen11.Width = 1F;
-			this.m_plotValence.PerfChartStyle.HorizontalGridPen = chartPen11;
-			this.m_plotValence.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotValence.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotValence.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen12.Color = System.Drawing.Color.DarkGray;
-			chartPen12.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen12.Width = 1F;
-			this.m_plotValence.PerfChartStyle.VerticalGridPen = chartPen12;
-			this.m_plotValence.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotValence.Size = new System.Drawing.Size(499, 174);
-			this.m_plotValence.TabIndex = 15;
-			this.m_plotValence.TimerInterval = 100;
-			this.m_plotValence.TimerMode = SpPerfChart.TimerMode.Disabled;
-			// 
-			// m_plotArousal
-			// 
-			this.m_plotArousal.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotArousal.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotArousal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotArousal.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotArousal.Location = new System.Drawing.Point(3, 3);
-			this.m_plotArousal.Name = "m_plotArousal";
-			this.m_plotArousal.PerfChartStyle.AntiAliasing = true;
-			chartPen13.Color = System.Drawing.Color.LightGreen;
-			chartPen13.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen13.Width = 1F;
-			this.m_plotArousal.PerfChartStyle.AvgLinePen = chartPen13;
-			this.m_plotArousal.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotArousal.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotArousal.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotArousal.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen14.Color = System.Drawing.Color.Gold;
-			chartPen14.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen14.Width = 1F;
-			this.m_plotArousal.PerfChartStyle.ChartLinePen = chartPen14;
-			chartPen15.Color = System.Drawing.Color.DarkGray;
-			chartPen15.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen15.Width = 1F;
-			this.m_plotArousal.PerfChartStyle.HorizontalGridPen = chartPen15;
-			this.m_plotArousal.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotArousal.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotArousal.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen16.Color = System.Drawing.Color.DarkGray;
-			chartPen16.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen16.Width = 1F;
-			this.m_plotArousal.PerfChartStyle.VerticalGridPen = chartPen16;
-			this.m_plotArousal.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotArousal.Size = new System.Drawing.Size(499, 174);
-			this.m_plotArousal.TabIndex = 13;
-			this.m_plotArousal.TimerInterval = 100;
-			this.m_plotArousal.TimerMode = SpPerfChart.TimerMode.Disabled;
-			// 
-			// m_plotBoredom
-			// 
-			this.m_plotBoredom.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotBoredom.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotBoredom.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotBoredom.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotBoredom.Location = new System.Drawing.Point(339, 3);
-			this.m_plotBoredom.Name = "m_plotBoredom";
-			this.m_plotBoredom.PerfChartStyle.AntiAliasing = true;
-			chartPen17.Color = System.Drawing.Color.LightGreen;
-			chartPen17.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen17.Width = 1F;
-			this.m_plotBoredom.PerfChartStyle.AvgLinePen = chartPen17;
-			this.m_plotBoredom.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotBoredom.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotBoredom.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotBoredom.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen18.Color = System.Drawing.Color.Lavender;
-			chartPen18.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen18.Width = 1F;
-			this.m_plotBoredom.PerfChartStyle.ChartLinePen = chartPen18;
-			chartPen19.Color = System.Drawing.Color.DarkGray;
-			chartPen19.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen19.Width = 1F;
-			this.m_plotBoredom.PerfChartStyle.HorizontalGridPen = chartPen19;
-			this.m_plotBoredom.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotBoredom.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotBoredom.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen20.Color = System.Drawing.Color.DarkGray;
-			chartPen20.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen20.Width = 1F;
-			this.m_plotBoredom.PerfChartStyle.VerticalGridPen = chartPen20;
-			this.m_plotBoredom.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotBoredom.Size = new System.Drawing.Size(330, 174);
-			this.m_plotBoredom.TabIndex = 19;
-			this.m_plotBoredom.TimerInterval = 100;
-			this.m_plotBoredom.TimerMode = SpPerfChart.TimerMode.Disabled;
-			// 
-			// m_plotFun
-			// 
-			this.m_plotFun.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotFun.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotFun.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotFun.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotFun.Location = new System.Drawing.Point(3, 3);
-			this.m_plotFun.Name = "m_plotFun";
-			this.m_plotFun.PerfChartStyle.AntiAliasing = true;
-			chartPen21.Color = System.Drawing.Color.LightGreen;
-			chartPen21.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen21.Width = 1F;
-			this.m_plotFun.PerfChartStyle.AvgLinePen = chartPen21;
-			this.m_plotFun.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotFun.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotFun.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotFun.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen22.Color = System.Drawing.Color.Lavender;
-			chartPen22.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen22.Width = 1F;
-			this.m_plotFun.PerfChartStyle.ChartLinePen = chartPen22;
-			chartPen23.Color = System.Drawing.Color.DarkGray;
-			chartPen23.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen23.Width = 1F;
-			this.m_plotFun.PerfChartStyle.HorizontalGridPen = chartPen23;
-			this.m_plotFun.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotFun.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotFun.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen24.Color = System.Drawing.Color.DarkGray;
-			chartPen24.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen24.Width = 1F;
-			this.m_plotFun.PerfChartStyle.VerticalGridPen = chartPen24;
-			this.m_plotFun.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotFun.Size = new System.Drawing.Size(330, 174);
-			this.m_plotFun.TabIndex = 17;
-			this.m_plotFun.TimerInterval = 100;
-			this.m_plotFun.TimerMode = SpPerfChart.TimerMode.Disabled;
-			// 
-			// m_plotExcitement
-			// 
-			this.m_plotExcitement.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotExcitement.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotExcitement.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotExcitement.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotExcitement.Location = new System.Drawing.Point(675, 3);
-			this.m_plotExcitement.Name = "m_plotExcitement";
-			this.m_plotExcitement.PerfChartStyle.AntiAliasing = true;
-			chartPen25.Color = System.Drawing.Color.LightGreen;
-			chartPen25.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen25.Width = 1F;
-			this.m_plotExcitement.PerfChartStyle.AvgLinePen = chartPen25;
-			this.m_plotExcitement.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotExcitement.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotExcitement.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotExcitement.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen26.Color = System.Drawing.Color.Lavender;
-			chartPen26.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen26.Width = 1F;
-			this.m_plotExcitement.PerfChartStyle.ChartLinePen = chartPen26;
-			chartPen27.Color = System.Drawing.Color.DarkGray;
-			chartPen27.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen27.Width = 1F;
-			this.m_plotExcitement.PerfChartStyle.HorizontalGridPen = chartPen27;
-			this.m_plotExcitement.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotExcitement.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotExcitement.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen28.Color = System.Drawing.Color.DarkGray;
-			chartPen28.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen28.Width = 1F;
-			this.m_plotExcitement.PerfChartStyle.VerticalGridPen = chartPen28;
-			this.m_plotExcitement.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotExcitement.Size = new System.Drawing.Size(332, 174);
-			this.m_plotExcitement.TabIndex = 21;
-			this.m_plotExcitement.TimerInterval = 100;
-			this.m_plotExcitement.TimerMode = SpPerfChart.TimerMode.Disabled;
-			// 
-			// m_plotEMGFrown
-			// 
-			this.m_plotEMGFrown.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotEMGFrown.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotEMGFrown.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotEMGFrown.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotEMGFrown.Location = new System.Drawing.Point(3, 3);
-			this.m_plotEMGFrown.Name = "m_plotEMGFrown";
-			this.m_plotEMGFrown.PerfChartStyle.AntiAliasing = true;
-			chartPen29.Color = System.Drawing.Color.LightGreen;
-			chartPen29.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen29.Width = 1F;
-			this.m_plotEMGFrown.PerfChartStyle.AvgLinePen = chartPen29;
-			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen30.Color = System.Drawing.Color.MistyRose;
-			chartPen30.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen30.Width = 1F;
-			this.m_plotEMGFrown.PerfChartStyle.ChartLinePen = chartPen30;
-			chartPen31.Color = System.Drawing.Color.DarkGray;
-			chartPen31.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen31.Width = 1F;
-			this.m_plotEMGFrown.PerfChartStyle.HorizontalGridPen = chartPen31;
-			this.m_plotEMGFrown.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotEMGFrown.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotEMGFrown.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen32.Color = System.Drawing.Color.DarkGray;
-			chartPen32.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen32.Width = 1F;
-			this.m_plotEMGFrown.PerfChartStyle.VerticalGridPen = chartPen32;
-			this.m_plotEMGFrown.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotEMGFrown.Size = new System.Drawing.Size(246, 174);
-			this.m_plotEMGFrown.TabIndex = 25;
-			this.m_plotEMGFrown.TimerInterval = 100;
-			this.m_plotEMGFrown.TimerMode = SpPerfChart.TimerMode.Disabled;
-			this.m_plotEMGFrown.Click += new System.EventHandler(this.sensorPlotClick);
-			// 
-			// m_plotEMGSmile
-			// 
-			this.m_plotEMGSmile.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotEMGSmile.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotEMGSmile.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotEMGSmile.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotEMGSmile.Location = new System.Drawing.Point(255, 3);
-			this.m_plotEMGSmile.Name = "m_plotEMGSmile";
-			this.m_plotEMGSmile.PerfChartStyle.AntiAliasing = true;
-			chartPen33.Color = System.Drawing.Color.LightGreen;
-			chartPen33.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen33.Width = 1F;
-			this.m_plotEMGSmile.PerfChartStyle.AvgLinePen = chartPen33;
-			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen34.Color = System.Drawing.Color.MistyRose;
-			chartPen34.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen34.Width = 1F;
-			this.m_plotEMGSmile.PerfChartStyle.ChartLinePen = chartPen34;
-			chartPen35.Color = System.Drawing.Color.DarkGray;
-			chartPen35.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen35.Width = 1F;
-			this.m_plotEMGSmile.PerfChartStyle.HorizontalGridPen = chartPen35;
-			this.m_plotEMGSmile.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotEMGSmile.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotEMGSmile.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen36.Color = System.Drawing.Color.DarkGray;
-			chartPen36.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen36.Width = 1F;
-			this.m_plotEMGSmile.PerfChartStyle.VerticalGridPen = chartPen36;
-			this.m_plotEMGSmile.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotEMGSmile.Size = new System.Drawing.Size(246, 174);
-			this.m_plotEMGSmile.TabIndex = 23;
-			this.m_plotEMGSmile.TimerInterval = 100;
-			this.m_plotEMGSmile.TimerMode = SpPerfChart.TimerMode.Disabled;
-			this.m_plotEMGSmile.Click += new System.EventHandler(this.sensorPlotClick);
 			// 
 			// m_grpbxEmotions
 			// 
@@ -593,6 +247,24 @@
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(1010, 180);
 			this.tableLayoutPanel1.TabIndex = 29;
 			// 
+			// m_splHRBVP
+			// 
+			this.m_splHRBVP.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_splHRBVP.Location = new System.Drawing.Point(507, 3);
+			this.m_splHRBVP.Name = "m_splHRBVP";
+			this.m_splHRBVP.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			// 
+			// m_splHRBVP.Panel1
+			// 
+			this.m_splHRBVP.Panel1.Controls.Add(this.m_plotHR);
+			// 
+			// m_splHRBVP.Panel2
+			// 
+			this.m_splHRBVP.Panel2.Controls.Add(this.m_plotBVP);
+			this.m_splHRBVP.Size = new System.Drawing.Size(246, 174);
+			this.m_splHRBVP.SplitterDistance = 82;
+			this.m_splHRBVP.TabIndex = 26;
+			// 
 			// tableLayoutPanel4
 			// 
 			this.tableLayoutPanel4.ColumnCount = 1;
@@ -641,7 +313,7 @@
 			this.m_grpbxCalibration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
 			this.m_grpbxCalibration.Controls.Add(this.m_rdbtnNone);
-			this.m_grpbxCalibration.Controls.Add(this.numericUpDown1);
+			this.m_grpbxCalibration.Controls.Add(this.m_numupdnMinMaxShift);
 			this.m_grpbxCalibration.Controls.Add(this.m_rdbtnMax);
 			this.m_grpbxCalibration.Controls.Add(this.m_rdbtnShift);
 			this.m_grpbxCalibration.Controls.Add(this.m_rdbtnMin);
@@ -667,23 +339,17 @@
 			this.m_rdbtnNone.Text = "None";
 			this.m_rdbtnNone.UseVisualStyleBackColor = true;
 			// 
-			// numericUpDown1
+			// m_numupdnMinMaxShift
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(181, 23);
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(58, 20);
-			this.numericUpDown1.TabIndex = 4;
-			// 
-			// m_trcbarMaxMinShift
-			// 
-			this.m_trcbarMaxMinShift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.m_trcbarMaxMinShift.LargeChange = 10;
-			this.m_trcbarMaxMinShift.Location = new System.Drawing.Point(245, 19);
-			this.m_trcbarMaxMinShift.Maximum = 500;
-			this.m_trcbarMaxMinShift.Name = "m_trcbarMaxMinShift";
-			this.m_trcbarMaxMinShift.Size = new System.Drawing.Size(141, 42);
-			this.m_trcbarMaxMinShift.TabIndex = 3;
-			this.m_trcbarMaxMinShift.TickStyle = System.Windows.Forms.TickStyle.None;
+			this.m_numupdnMinMaxShift.Location = new System.Drawing.Point(181, 23);
+			this.m_numupdnMinMaxShift.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+			this.m_numupdnMinMaxShift.Name = "m_numupdnMinMaxShift";
+			this.m_numupdnMinMaxShift.Size = new System.Drawing.Size(58, 20);
+			this.m_numupdnMinMaxShift.TabIndex = 4;
 			// 
 			// m_rdbtnMax
 			// 
@@ -718,6 +384,18 @@
 			this.m_rdbtnMin.Text = "Min";
 			this.m_rdbtnMin.UseVisualStyleBackColor = true;
 			// 
+			// m_trcbarMaxMinShift
+			// 
+			this.m_trcbarMaxMinShift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.m_trcbarMaxMinShift.LargeChange = 10;
+			this.m_trcbarMaxMinShift.Location = new System.Drawing.Point(245, 19);
+			this.m_trcbarMaxMinShift.Maximum = 500;
+			this.m_trcbarMaxMinShift.Name = "m_trcbarMaxMinShift";
+			this.m_trcbarMaxMinShift.Size = new System.Drawing.Size(141, 42);
+			this.m_trcbarMaxMinShift.TabIndex = 3;
+			this.m_trcbarMaxMinShift.TickStyle = System.Windows.Forms.TickStyle.None;
+			this.m_trcbarMaxMinShift.ValueChanged += new System.EventHandler(this.m_trcbarMaxMinShift_ValueChanged);
+			// 
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.m_prgbrBatteryLevel);
@@ -734,62 +412,14 @@
 			this.panel1.Size = new System.Drawing.Size(1016, 55);
 			this.panel1.TabIndex = 33;
 			// 
-			// m_splHRBVP
+			// m_prgbrBatteryLevel
 			// 
-			this.m_splHRBVP.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_splHRBVP.Location = new System.Drawing.Point(507, 3);
-			this.m_splHRBVP.Name = "m_splHRBVP";
-			this.m_splHRBVP.Orientation = System.Windows.Forms.Orientation.Horizontal;
-			// 
-			// m_splHRBVP.Panel1
-			// 
-			this.m_splHRBVP.Panel1.Controls.Add(this.m_plotHR);
-			// 
-			// m_splHRBVP.Panel2
-			// 
-			this.m_splHRBVP.Panel2.Controls.Add(this.m_plotBVP);
-			this.m_splHRBVP.Size = new System.Drawing.Size(246, 174);
-			this.m_splHRBVP.SplitterDistance = 82;
-			this.m_splHRBVP.TabIndex = 26;
-			// 
-			// m_plotBVP
-			// 
-			this.m_plotBVP.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
-			this.m_plotBVP.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_plotBVP.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-			this.m_plotBVP.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.m_plotBVP.Location = new System.Drawing.Point(0, 0);
-			this.m_plotBVP.Name = "m_plotBVP";
-			this.m_plotBVP.PerfChartStyle.AntiAliasing = true;
-			chartPen37.Color = System.Drawing.Color.LightGreen;
-			chartPen37.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen37.Width = 1F;
-			this.m_plotBVP.PerfChartStyle.AvgLinePen = chartPen37;
-			this.m_plotBVP.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
-			this.m_plotBVP.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
-			this.m_plotBVP.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
-			this.m_plotBVP.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
-			chartPen38.Color = System.Drawing.Color.MistyRose;
-			chartPen38.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen38.Width = 1F;
-			this.m_plotBVP.PerfChartStyle.ChartLinePen = chartPen38;
-			chartPen39.Color = System.Drawing.Color.DarkGray;
-			chartPen39.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen39.Width = 1F;
-			this.m_plotBVP.PerfChartStyle.HorizontalGridPen = chartPen39;
-			this.m_plotBVP.PerfChartStyle.ShowAverageLine = true;
-			this.m_plotBVP.PerfChartStyle.ShowHorizontalGridLines = true;
-			this.m_plotBVP.PerfChartStyle.ShowVerticalGridLines = true;
-			chartPen40.Color = System.Drawing.Color.DarkGray;
-			chartPen40.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			chartPen40.Width = 1F;
-			this.m_plotBVP.PerfChartStyle.VerticalGridPen = chartPen40;
-			this.m_plotBVP.ScaleMode = SpPerfChart.ScaleMode.Absolute;
-			this.m_plotBVP.Size = new System.Drawing.Size(246, 88);
-			this.m_plotBVP.TabIndex = 12;
-			this.m_plotBVP.TimerInterval = 100;
-			this.m_plotBVP.TimerMode = SpPerfChart.TimerMode.Disabled;
-			this.m_plotBVP.Click += new System.EventHandler(this.sensorPlotClick);
+			this.m_prgbrBatteryLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.m_prgbrBatteryLevel.Location = new System.Drawing.Point(727, 7);
+			this.m_prgbrBatteryLevel.Name = "m_prgbrBatteryLevel";
+			this.m_prgbrBatteryLevel.Size = new System.Drawing.Size(83, 23);
+			this.m_prgbrBatteryLevel.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+			this.m_prgbrBatteryLevel.TabIndex = 34;
 			// 
 			// m_lblBatteryLevel
 			// 
@@ -801,14 +431,418 @@
 			this.m_lblBatteryLevel.TabIndex = 33;
 			this.m_lblBatteryLevel.Text = "Not connected";
 			// 
-			// m_prgbrBatteryLevel
+			// m_plotFun
 			// 
-			this.m_prgbrBatteryLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.m_prgbrBatteryLevel.Location = new System.Drawing.Point(727, 7);
-			this.m_prgbrBatteryLevel.Name = "m_prgbrBatteryLevel";
-			this.m_prgbrBatteryLevel.Size = new System.Drawing.Size(83, 23);
-			this.m_prgbrBatteryLevel.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-			this.m_prgbrBatteryLevel.TabIndex = 34;
+			this.m_plotFun.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotFun.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotFun.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotFun.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotFun.Location = new System.Drawing.Point(3, 3);
+			this.m_plotFun.Name = "m_plotFun";
+			this.m_plotFun.PerfChartStyle.AntiAliasing = true;
+			chartPen49.Color = System.Drawing.Color.LightGreen;
+			chartPen49.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen49.Width = 1F;
+			this.m_plotFun.PerfChartStyle.AvgLinePen = chartPen49;
+			this.m_plotFun.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotFun.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotFun.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotFun.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotFun.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotFun.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen50.Color = System.Drawing.Color.Lavender;
+			chartPen50.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen50.Width = 1F;
+			this.m_plotFun.PerfChartStyle.ChartLinePen = chartPen50;
+			chartPen51.Color = System.Drawing.Color.DarkGray;
+			chartPen51.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen51.Width = 1F;
+			this.m_plotFun.PerfChartStyle.HorizontalGridPen = chartPen51;
+			this.m_plotFun.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotFun.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotFun.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen52.Color = System.Drawing.Color.DarkGray;
+			chartPen52.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen52.Width = 1F;
+			this.m_plotFun.PerfChartStyle.VerticalGridPen = chartPen52;
+			this.m_plotFun.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotFun.Size = new System.Drawing.Size(330, 174);
+			this.m_plotFun.TabIndex = 17;
+			this.m_plotFun.TimerInterval = 100;
+			this.m_plotFun.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotFun.DoubleClick += new System.EventHandler(this.sensorPlotDoubleClick);
+			// 
+			// m_plotBoredom
+			// 
+			this.m_plotBoredom.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotBoredom.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotBoredom.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotBoredom.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotBoredom.Location = new System.Drawing.Point(339, 3);
+			this.m_plotBoredom.Name = "m_plotBoredom";
+			this.m_plotBoredom.PerfChartStyle.AntiAliasing = true;
+			chartPen53.Color = System.Drawing.Color.LightGreen;
+			chartPen53.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen53.Width = 1F;
+			this.m_plotBoredom.PerfChartStyle.AvgLinePen = chartPen53;
+			this.m_plotBoredom.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotBoredom.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotBoredom.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotBoredom.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotBoredom.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotBoredom.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen54.Color = System.Drawing.Color.Lavender;
+			chartPen54.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen54.Width = 1F;
+			this.m_plotBoredom.PerfChartStyle.ChartLinePen = chartPen54;
+			chartPen55.Color = System.Drawing.Color.DarkGray;
+			chartPen55.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen55.Width = 1F;
+			this.m_plotBoredom.PerfChartStyle.HorizontalGridPen = chartPen55;
+			this.m_plotBoredom.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotBoredom.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotBoredom.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen56.Color = System.Drawing.Color.DarkGray;
+			chartPen56.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen56.Width = 1F;
+			this.m_plotBoredom.PerfChartStyle.VerticalGridPen = chartPen56;
+			this.m_plotBoredom.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotBoredom.Size = new System.Drawing.Size(330, 174);
+			this.m_plotBoredom.TabIndex = 19;
+			this.m_plotBoredom.TimerInterval = 100;
+			this.m_plotBoredom.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotBoredom.DoubleClick += new System.EventHandler(this.sensorPlotDoubleClick);
+			// 
+			// m_plotExcitement
+			// 
+			this.m_plotExcitement.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotExcitement.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotExcitement.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotExcitement.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotExcitement.Location = new System.Drawing.Point(675, 3);
+			this.m_plotExcitement.Name = "m_plotExcitement";
+			this.m_plotExcitement.PerfChartStyle.AntiAliasing = true;
+			chartPen57.Color = System.Drawing.Color.LightGreen;
+			chartPen57.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen57.Width = 1F;
+			this.m_plotExcitement.PerfChartStyle.AvgLinePen = chartPen57;
+			this.m_plotExcitement.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotExcitement.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotExcitement.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotExcitement.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotExcitement.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotExcitement.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen58.Color = System.Drawing.Color.Lavender;
+			chartPen58.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen58.Width = 1F;
+			this.m_plotExcitement.PerfChartStyle.ChartLinePen = chartPen58;
+			chartPen59.Color = System.Drawing.Color.DarkGray;
+			chartPen59.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen59.Width = 1F;
+			this.m_plotExcitement.PerfChartStyle.HorizontalGridPen = chartPen59;
+			this.m_plotExcitement.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotExcitement.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotExcitement.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen60.Color = System.Drawing.Color.DarkGray;
+			chartPen60.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen60.Width = 1F;
+			this.m_plotExcitement.PerfChartStyle.VerticalGridPen = chartPen60;
+			this.m_plotExcitement.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotExcitement.Size = new System.Drawing.Size(332, 174);
+			this.m_plotExcitement.TabIndex = 21;
+			this.m_plotExcitement.TimerInterval = 100;
+			this.m_plotExcitement.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotExcitement.DoubleClick += new System.EventHandler(this.sensorPlotDoubleClick);
+			// 
+			// m_plotEMGFrown
+			// 
+			this.m_plotEMGFrown.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotEMGFrown.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotEMGFrown.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotEMGFrown.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotEMGFrown.Location = new System.Drawing.Point(3, 3);
+			this.m_plotEMGFrown.Name = "m_plotEMGFrown";
+			this.m_plotEMGFrown.PerfChartStyle.AntiAliasing = true;
+			chartPen61.Color = System.Drawing.Color.LightGreen;
+			chartPen61.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen61.Width = 1F;
+			this.m_plotEMGFrown.PerfChartStyle.AvgLinePen = chartPen61;
+			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotEMGFrown.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen62.Color = System.Drawing.Color.MistyRose;
+			chartPen62.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen62.Width = 1F;
+			this.m_plotEMGFrown.PerfChartStyle.ChartLinePen = chartPen62;
+			chartPen63.Color = System.Drawing.Color.DarkGray;
+			chartPen63.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen63.Width = 1F;
+			this.m_plotEMGFrown.PerfChartStyle.HorizontalGridPen = chartPen63;
+			this.m_plotEMGFrown.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotEMGFrown.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotEMGFrown.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen64.Color = System.Drawing.Color.DarkGray;
+			chartPen64.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen64.Width = 1F;
+			this.m_plotEMGFrown.PerfChartStyle.VerticalGridPen = chartPen64;
+			this.m_plotEMGFrown.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotEMGFrown.Size = new System.Drawing.Size(246, 174);
+			this.m_plotEMGFrown.TabIndex = 25;
+			this.m_plotEMGFrown.TimerInterval = 100;
+			this.m_plotEMGFrown.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotEMGFrown.Click += new System.EventHandler(this.sensorPlotClick);
+			this.m_plotEMGFrown.DoubleClick += new System.EventHandler(this.sensorPlotDoubleClick);
+			// 
+			// m_plotEMGSmile
+			// 
+			this.m_plotEMGSmile.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotEMGSmile.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotEMGSmile.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotEMGSmile.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotEMGSmile.Location = new System.Drawing.Point(255, 3);
+			this.m_plotEMGSmile.Name = "m_plotEMGSmile";
+			this.m_plotEMGSmile.PerfChartStyle.AntiAliasing = true;
+			chartPen65.Color = System.Drawing.Color.LightGreen;
+			chartPen65.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen65.Width = 1F;
+			this.m_plotEMGSmile.PerfChartStyle.AvgLinePen = chartPen65;
+			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotEMGSmile.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen66.Color = System.Drawing.Color.MistyRose;
+			chartPen66.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen66.Width = 1F;
+			this.m_plotEMGSmile.PerfChartStyle.ChartLinePen = chartPen66;
+			chartPen67.Color = System.Drawing.Color.DarkGray;
+			chartPen67.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen67.Width = 1F;
+			this.m_plotEMGSmile.PerfChartStyle.HorizontalGridPen = chartPen67;
+			this.m_plotEMGSmile.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotEMGSmile.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotEMGSmile.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen68.Color = System.Drawing.Color.DarkGray;
+			chartPen68.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen68.Width = 1F;
+			this.m_plotEMGSmile.PerfChartStyle.VerticalGridPen = chartPen68;
+			this.m_plotEMGSmile.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotEMGSmile.Size = new System.Drawing.Size(246, 174);
+			this.m_plotEMGSmile.TabIndex = 23;
+			this.m_plotEMGSmile.TimerInterval = 100;
+			this.m_plotEMGSmile.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotEMGSmile.Click += new System.EventHandler(this.sensorPlotClick);
+			this.m_plotEMGSmile.DoubleClick += new System.EventHandler(this.sensorPlotDoubleClick);
+			// 
+			// m_plotGSR
+			// 
+			this.m_plotGSR.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotGSR.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotGSR.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotGSR.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotGSR.Location = new System.Drawing.Point(759, 3);
+			this.m_plotGSR.Name = "m_plotGSR";
+			this.m_plotGSR.PerfChartStyle.AntiAliasing = true;
+			chartPen69.Color = System.Drawing.Color.LightGreen;
+			chartPen69.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen69.Width = 1F;
+			this.m_plotGSR.PerfChartStyle.AvgLinePen = chartPen69;
+			this.m_plotGSR.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotGSR.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotGSR.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotGSR.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotGSR.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotGSR.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen70.Color = System.Drawing.Color.MistyRose;
+			chartPen70.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen70.Width = 1F;
+			this.m_plotGSR.PerfChartStyle.ChartLinePen = chartPen70;
+			chartPen71.Color = System.Drawing.Color.DarkGray;
+			chartPen71.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen71.Width = 1F;
+			this.m_plotGSR.PerfChartStyle.HorizontalGridPen = chartPen71;
+			this.m_plotGSR.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotGSR.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotGSR.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen72.Color = System.Drawing.Color.DarkGray;
+			chartPen72.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen72.Width = 1F;
+			this.m_plotGSR.PerfChartStyle.VerticalGridPen = chartPen72;
+			this.m_plotGSR.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotGSR.Size = new System.Drawing.Size(248, 174);
+			this.m_plotGSR.TabIndex = 3;
+			this.m_plotGSR.TimerInterval = 100;
+			this.m_plotGSR.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotGSR.Click += new System.EventHandler(this.sensorPlotClick);
+			this.m_plotGSR.DoubleClick += new System.EventHandler(this.sensorPlotDoubleClick);
+			// 
+			// m_plotHR
+			// 
+			this.m_plotHR.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotHR.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotHR.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotHR.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotHR.Location = new System.Drawing.Point(0, 0);
+			this.m_plotHR.Name = "m_plotHR";
+			this.m_plotHR.PerfChartStyle.AntiAliasing = true;
+			chartPen41.Color = System.Drawing.Color.LightGreen;
+			chartPen41.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen41.Width = 1F;
+			this.m_plotHR.PerfChartStyle.AvgLinePen = chartPen41;
+			this.m_plotHR.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotHR.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotHR.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotHR.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotHR.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotHR.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen42.Color = System.Drawing.Color.MistyRose;
+			chartPen42.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen42.Width = 1F;
+			this.m_plotHR.PerfChartStyle.ChartLinePen = chartPen42;
+			chartPen43.Color = System.Drawing.Color.DarkGray;
+			chartPen43.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen43.Width = 1F;
+			this.m_plotHR.PerfChartStyle.HorizontalGridPen = chartPen43;
+			this.m_plotHR.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotHR.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotHR.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen44.Color = System.Drawing.Color.DarkGray;
+			chartPen44.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen44.Width = 1F;
+			this.m_plotHR.PerfChartStyle.VerticalGridPen = chartPen44;
+			this.m_plotHR.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotHR.Size = new System.Drawing.Size(246, 82);
+			this.m_plotHR.TabIndex = 11;
+			this.m_plotHR.TimerInterval = 100;
+			this.m_plotHR.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotHR.Click += new System.EventHandler(this.sensorPlotClick);
+			this.m_plotHR.DoubleClick += new System.EventHandler(this.sensorPlotDoubleClick);
+			// 
+			// m_plotBVP
+			// 
+			this.m_plotBVP.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotBVP.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotBVP.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotBVP.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotBVP.Location = new System.Drawing.Point(0, 0);
+			this.m_plotBVP.Name = "m_plotBVP";
+			this.m_plotBVP.PerfChartStyle.AntiAliasing = true;
+			chartPen45.Color = System.Drawing.Color.LightGreen;
+			chartPen45.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen45.Width = 1F;
+			this.m_plotBVP.PerfChartStyle.AvgLinePen = chartPen45;
+			this.m_plotBVP.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotBVP.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotBVP.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotBVP.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotBVP.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotBVP.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen46.Color = System.Drawing.Color.MistyRose;
+			chartPen46.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen46.Width = 1F;
+			this.m_plotBVP.PerfChartStyle.ChartLinePen = chartPen46;
+			chartPen47.Color = System.Drawing.Color.DarkGray;
+			chartPen47.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen47.Width = 1F;
+			this.m_plotBVP.PerfChartStyle.HorizontalGridPen = chartPen47;
+			this.m_plotBVP.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotBVP.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotBVP.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen48.Color = System.Drawing.Color.DarkGray;
+			chartPen48.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen48.Width = 1F;
+			this.m_plotBVP.PerfChartStyle.VerticalGridPen = chartPen48;
+			this.m_plotBVP.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotBVP.Size = new System.Drawing.Size(246, 88);
+			this.m_plotBVP.TabIndex = 12;
+			this.m_plotBVP.TimerInterval = 100;
+			this.m_plotBVP.TimerMode = SpPerfChart.TimerMode.Disabled;
+			this.m_plotBVP.Click += new System.EventHandler(this.sensorPlotClick);
+			this.m_plotBVP.DoubleClick += new System.EventHandler(this.sensorPlotDoubleClick);
+			// 
+			// m_plotArousal
+			// 
+			this.m_plotArousal.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotArousal.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotArousal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotArousal.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotArousal.Location = new System.Drawing.Point(3, 3);
+			this.m_plotArousal.Name = "m_plotArousal";
+			this.m_plotArousal.PerfChartStyle.AntiAliasing = true;
+			chartPen73.Color = System.Drawing.Color.LightGreen;
+			chartPen73.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen73.Width = 1F;
+			this.m_plotArousal.PerfChartStyle.AvgLinePen = chartPen73;
+			this.m_plotArousal.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotArousal.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotArousal.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotArousal.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotArousal.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotArousal.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen74.Color = System.Drawing.Color.Gold;
+			chartPen74.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen74.Width = 1F;
+			this.m_plotArousal.PerfChartStyle.ChartLinePen = chartPen74;
+			chartPen75.Color = System.Drawing.Color.DarkGray;
+			chartPen75.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen75.Width = 1F;
+			this.m_plotArousal.PerfChartStyle.HorizontalGridPen = chartPen75;
+			this.m_plotArousal.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotArousal.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotArousal.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen76.Color = System.Drawing.Color.DarkGray;
+			chartPen76.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen76.Width = 1F;
+			this.m_plotArousal.PerfChartStyle.VerticalGridPen = chartPen76;
+			this.m_plotArousal.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotArousal.Size = new System.Drawing.Size(499, 174);
+			this.m_plotArousal.TabIndex = 13;
+			this.m_plotArousal.TimerInterval = 100;
+			this.m_plotArousal.TimerMode = SpPerfChart.TimerMode.Disabled;
+			// 
+			// m_plotValence
+			// 
+			this.m_plotValence.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
+			this.m_plotValence.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.m_plotValence.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.m_plotValence.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.m_plotValence.Location = new System.Drawing.Point(508, 3);
+			this.m_plotValence.Name = "m_plotValence";
+			this.m_plotValence.PerfChartStyle.AntiAliasing = true;
+			chartPen77.Color = System.Drawing.Color.LightGreen;
+			chartPen77.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen77.Width = 1F;
+			this.m_plotValence.PerfChartStyle.AvgLinePen = chartPen77;
+			this.m_plotValence.PerfChartStyle.BackgroundColorBottom = System.Drawing.SystemColors.ControlDark;
+			this.m_plotValence.PerfChartStyle.BackgroundColorBottomHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotValence.PerfChartStyle.BackgroundColorBottomSelected = System.Drawing.Color.DarkGreen;
+			this.m_plotValence.PerfChartStyle.BackgroundColorTop = System.Drawing.SystemColors.ControlDark;
+			this.m_plotValence.PerfChartStyle.BackgroundColorTopHighlighted = System.Drawing.Color.DarkMagenta;
+			this.m_plotValence.PerfChartStyle.BackgroundColorTopSelected = System.Drawing.Color.DarkGreen;
+			chartPen78.Color = System.Drawing.Color.Gold;
+			chartPen78.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen78.Width = 1F;
+			this.m_plotValence.PerfChartStyle.ChartLinePen = chartPen78;
+			chartPen79.Color = System.Drawing.Color.DarkGray;
+			chartPen79.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen79.Width = 1F;
+			this.m_plotValence.PerfChartStyle.HorizontalGridPen = chartPen79;
+			this.m_plotValence.PerfChartStyle.ShowAverageLine = true;
+			this.m_plotValence.PerfChartStyle.ShowHorizontalGridLines = true;
+			this.m_plotValence.PerfChartStyle.ShowVerticalGridLines = true;
+			chartPen80.Color = System.Drawing.Color.DarkGray;
+			chartPen80.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			chartPen80.Width = 1F;
+			this.m_plotValence.PerfChartStyle.VerticalGridPen = chartPen80;
+			this.m_plotValence.ScaleMode = SpPerfChart.ScaleMode.Absolute;
+			this.m_plotValence.Size = new System.Drawing.Size(499, 174);
+			this.m_plotValence.TabIndex = 15;
+			this.m_plotValence.TimerInterval = 100;
+			this.m_plotValence.TimerMode = SpPerfChart.TimerMode.Disabled;
 			// 
 			// m_frmEmotionMonitor
 			// 
@@ -827,17 +861,17 @@
 			this.tableLayoutPanel3.ResumeLayout(false);
 			this.m_grpbxSensors.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
-			this.tableLayoutPanel4.ResumeLayout(false);
-			this.m_grpbxCalibration.ResumeLayout(false);
-			this.m_grpbxCalibration.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.m_trcbarMaxMinShift)).EndInit();
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
 			this.m_splHRBVP.Panel1.ResumeLayout(false);
 			this.m_splHRBVP.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.m_splHRBVP)).EndInit();
 			this.m_splHRBVP.ResumeLayout(false);
+			this.tableLayoutPanel4.ResumeLayout(false);
+			this.m_grpbxCalibration.ResumeLayout(false);
+			this.m_grpbxCalibration.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.m_numupdnMinMaxShift)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.m_trcbarMaxMinShift)).EndInit();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 
         }
@@ -870,7 +904,7 @@
 		private System.Windows.Forms.RadioButton m_rdbtnMax;
 		private System.Windows.Forms.RadioButton m_rdbtnShift;
 		private System.Windows.Forms.RadioButton m_rdbtnMin;
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.NumericUpDown m_numupdnMinMaxShift;
 		private System.Windows.Forms.TrackBar m_trcbarMaxMinShift;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.RadioButton m_rdbtnNone;

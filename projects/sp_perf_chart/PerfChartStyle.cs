@@ -19,6 +19,8 @@ namespace SpPerfChart
         private Color backgroundColorBottom = Color.DarkGreen;
 		private Color backgroundColorTopHighlighted = Color.DarkMagenta;
 		private Color backgroundColorBottomHighlighted = Color.DarkMagenta;
+		private Color backgroundColorTopSelected = Color.DarkGreen;
+		private Color backgroundColorBottomSelected = Color.DarkGreen;
 
         private bool showVerticalGridLines = true;
         private bool showHorizontalGridLines = true;
@@ -91,7 +93,19 @@ namespace SpPerfChart
 			get { return backgroundColorBottomHighlighted; }
 			set { backgroundColorBottomHighlighted = value; }
         }
-    }
+
+		public Color BackgroundColorTopSelected
+		{
+			get { return backgroundColorTopSelected; }
+			set { backgroundColorTopSelected = value; }
+		}
+
+		public Color BackgroundColorBottomSelected
+		{
+			get { return backgroundColorBottomSelected; }
+			set { backgroundColorBottomSelected = value; }
+		}
+	}
 
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class ChartPen

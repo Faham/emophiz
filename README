@@ -3,3 +3,7 @@ EKG (BVP)	256Hz (HR -> 4Hz)	A or B
 GSR			32Hz				C to H
 EMGFrown	32Hz				C to H
 EMGSmile	32Hz				C to H
+
+initial: 1010
+
+All frequencies 2048

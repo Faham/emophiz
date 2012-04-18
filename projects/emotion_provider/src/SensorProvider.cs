@@ -13,8 +13,8 @@ namespace emophiz
 		private List<ISensorListener> m_listeners = new List<ISensorListener>();
 		private Dictionary<string, Signal> m_signals = new Dictionary<string, Signal>();
 
-		private double m_arousal, m_valence;
-		private double m_fun, m_boredom, m_excitement;
+		private Signal m_arousal, m_valence;
+		private Signal m_fun, m_boredom, m_excitement;
 
 		public SensorLib.ThoughtTechnologies.ITtlEncoder Encoder { get { return m_encoder; } }
 
@@ -24,11 +24,11 @@ namespace emophiz
 		public Signal EMGFrown { get { return m_signals[sensorTypeToStr(SensorType.EMGFrown)]; } }
 		public Signal EMGSmile { get { return m_signals[sensorTypeToStr(SensorType.EMGSmile)]; } }
 
-		public double Arousal { get { return m_arousal; } }
-		public double Valence { get { return m_valence; } }
-		public double Fun { get { return m_fun; } }
-		public double Boredom { get { return m_boredom; } }
-		public double Excitement { get { return m_excitement; } }
+		public Signal Arousal { get { return m_arousal; } }
+		public Signal Valence { get { return m_valence; } }
+		public Signal Fun { get { return m_fun; } }
+		public Signal Boredom { get { return m_boredom; } }
+		public Signal Excitement { get { return m_excitement; } }
 
 		//fuzzy variables
 		DotFuzzy.FuzzyEngine m_fuzzyEngineArousal = new DotFuzzy.FuzzyEngine();
@@ -111,7 +111,7 @@ namespace emophiz
 			InformListeners(Message.Connected, null);
 
 			string sensor_type = sensorTypeToStr(SensorType.BVP);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.B, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.BVP);
@@ -122,7 +122,7 @@ namespace emophiz
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.HR);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			m_signals[sensor_type].SmootheWindow = 4;
+			m_signals[sensor_type].SmootheWindow = 2048 * 1;
 
 			////////how to work with filters.
 			SensorLib.Filters.FilterOrderSpec spec = new SensorLib.Filters.FilterOrderSpec();
@@ -134,32 +134,43 @@ namespace emophiz
 			/////////
 
 			sensor_type = sensorTypeToStr(SensorType.GSR);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.B, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.GSR);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			m_signals[sensor_type].SmootheWindow = 32 * 5; //frequecy * second
+			m_signals[sensor_type].SmootheWindow = 2048 * 5; //frequecy * second
 
 			sensor_type = sensorTypeToStr(SensorType.EMGSmile);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.C, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EMGSmile);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			m_signals[sensor_type].SmootheWindow = 4;
+			m_signals[sensor_type].SmootheWindow = 2048 * 4;
 
 			sensor_type = sensorTypeToStr(SensorType.EMGFrown);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.E, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type] .Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EMGFrown);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			m_signals[sensor_type].SmootheWindow = 4;
-			
+			m_signals[sensor_type].SmootheWindow = 2048 * 4;
+
+			m_arousal = new Signal("Arousal");
+			m_arousal.EnableNormalize = true;
+			m_valence = new Signal("Valence");
+			m_valence.EnableNormalize = true;
+			m_fun = new Signal("Fun");
+			m_fun.EnableNormalize = true;
+			m_excitement = new Signal("Excitement");
+			m_excitement.EnableNormalize = true;
+			m_boredom = new Signal("Boredom");
+			m_boredom.EnableNormalize = true;
+
 			return true;
 		}
 
@@ -245,21 +256,21 @@ namespace emophiz
 					var.InputValue = signal.Transformed;
 
 				// Phase 1
-				m_valence = m_fuzzyEngineValence.Defuzzify();
-				m_arousal = m_fuzzyEngineArousal.Defuzzify();
+				m_valence.Current = m_fuzzyEngineValence.Defuzzify();
+				m_arousal.Current = m_fuzzyEngineArousal.Defuzzify();
 
 				// Phase 2
-				m_fuzzyEngineFun.LinguisticVariableCollection.Find("Valence").InputValue = m_valence;
-				m_fuzzyEngineFun.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal;
-				m_fun = m_fuzzyEngineFun.Defuzzify();
+				m_fuzzyEngineFun.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
+				m_fuzzyEngineFun.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
+				m_fun.Current = m_fuzzyEngineFun.Defuzzify();
 
-				m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Valence").InputValue = m_valence;
-				m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal;
-				m_excitement = m_fuzzyEngineExcitement.Defuzzify();
+				m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
+				m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
+				m_excitement.Current = m_fuzzyEngineExcitement.Defuzzify();
 
-				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Valence").InputValue = m_valence;
-				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal;
-				m_boredom = m_fuzzyEngineBoredom.Defuzzify();
+				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
+				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
+				m_boredom.Current = m_fuzzyEngineBoredom.Defuzzify();
 			}
 			catch (Exception e)
 			{

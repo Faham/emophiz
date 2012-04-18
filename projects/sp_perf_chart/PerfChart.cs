@@ -92,6 +92,7 @@ namespace SpPerfChart
         private PerfChartStyle perfChartStyle;
 
 		public bool Highlighted = false;
+		public bool Selected = false;
 
         #endregion
 
@@ -404,13 +405,19 @@ namespace SpPerfChart
         /// <param name="g">Graphic</param>
         private void DrawBackgroundAndGrid(Graphics g) {
             // Draw the background Gradient rectangle
-            Rectangle baseRectangle = new Rectangle(0, 0, this.Width, this.Height);
+			Rectangle baseRectangle = new Rectangle(0, 0, this.Width, this.Height);
 			System.Drawing.Color topColor = perfChartStyle.BackgroundColorTop;
-			if (Highlighted)
-				topColor = perfChartStyle.BackgroundColorTopHighlighted;
 			System.Drawing.Color bottomColor = perfChartStyle.BackgroundColorBottom;
-			if (Highlighted)
+			if (Selected)
+			{
+				topColor = perfChartStyle.BackgroundColorTopSelected;
+				bottomColor = perfChartStyle.BackgroundColorBottomSelected;
+			}
+			else if (Highlighted)
+			{
+				topColor = perfChartStyle.BackgroundColorTopHighlighted;
 				bottomColor = perfChartStyle.BackgroundColorBottomHighlighted;
+			}
 			using (Brush gradientBrush = new LinearGradientBrush(baseRectangle, topColor, bottomColor, LinearGradientMode.Vertical))
 			{
                 g.FillRectangle(gradientBrush, baseRectangle);

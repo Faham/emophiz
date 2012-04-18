@@ -132,6 +132,8 @@ namespace emophiz
 				m_backgroundWorker.RunWorkerAsync(m_trcbWorkerWait.Value);
 		}
 
+		private SpPerfChart.PerfChart m_selectedPlot = null;
+
 		private void updatePlots()
 		{
 			try
@@ -167,19 +169,19 @@ namespace emophiz
 				m_plotEMGSmile.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EMGSmile.Minimum);
 				m_plotEMGSmile.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGSmile.Maximum);
 				
-				m_plotArousal.AddValue(m_provider.Arousal);
+				m_plotArousal.AddValue(m_provider.Arousal.Transformed);
 				m_plotArousal.Messages[0] = "Arousal: " + String.Format(double_formats, m_provider.Arousal);
 
-				m_plotValence.AddValue(m_provider.Valence);
+				m_plotValence.AddValue(m_provider.Valence.Transformed);
 				m_plotValence.Messages[0] = "Valence: " + String.Format(double_formats, m_provider.Valence);
-				
-				m_plotFun.AddValue(m_provider.Fun);
+
+				m_plotFun.AddValue(m_provider.Fun.Transformed);
 				m_plotFun.Messages[0] = "Fun: " + String.Format(double_formats, m_provider.Fun);
-				
-				m_plotExcitement.AddValue(m_provider.Excitement);
+
+				m_plotExcitement.AddValue(m_provider.Excitement.Transformed);
 				m_plotExcitement.Messages[0] = "Excitement: " + String.Format(double_formats, m_provider.Excitement);
-				
-				m_plotBoredom.AddValue(m_provider.Boredom);
+
+				m_plotBoredom.AddValue(m_provider.Boredom.Transformed);
 				m_plotBoredom.Messages[0] = "Boredom: " + String.Format(double_formats, m_provider.Boredom);
 			}
 			catch (System.Exception ex)
@@ -196,6 +198,34 @@ namespace emophiz
 		private void m_trcbWorkerWait_ValueChanged(object sender, EventArgs e)
 		{
 			updateSpeedLabel();
+		}
+
+		private void selectPlot(SpPerfChart.PerfChart plot, bool select)
+		{
+			if (null == plot)
+				return;
+
+			if (null != m_selectedPlot && plot != m_selectedPlot)
+			{
+				m_selectedPlot.Selected = false;
+				m_selectedPlot = null;
+
+				if (select)
+				{
+					m_selectedPlot = plot;
+					m_selectedPlot.Selected = select;
+				}
+			}
+			else if (null == m_selectedPlot && select)
+			{
+				m_selectedPlot = plot;
+				m_selectedPlot.Selected = select;
+			}
+			else if (plot == m_selectedPlot && !select)
+			{
+				m_selectedPlot.Selected = select;
+				m_selectedPlot = null;
+			}
 		}
 
 		private void sensorPlotClick(object sender, EventArgs e)
@@ -221,6 +251,16 @@ namespace emophiz
 				return m_provider.EMGSmile;
 			else if (plot == m_plotEMGFrown)
 				return m_provider.EMGFrown;
+			else if (plot == m_plotArousal)
+				return m_provider.Arousal;
+			else if (plot == m_plotValence)
+				return m_provider.Valence;
+			else if (plot == m_plotFun)
+				return m_provider.Fun;
+			else if (plot == m_plotExcitement)
+				return m_provider.Excitement;
+			else if (plot == m_plotBoredom)
+				return m_provider.Boredom;
 
 			return null;
 		}
@@ -240,6 +280,34 @@ namespace emophiz
 			enableCalibrate(m_plotHR, false);
 			enableCalibrate(m_plotEMGSmile, false);
 			enableCalibrate(m_plotEMGFrown, false);
+		}
+
+		private void m_trcbarMaxMinShift_ValueChanged(object sender, EventArgs e)
+		{
+			m_numupdnMinMaxShift.Value = m_trcbarMaxMinShift.Value;
+			if (m_selectedPlot == null)
+				return;
+
+			Signal signal = getSignal(m_selectedPlot);
+			if (m_rdbtnMin.Checked)
+				signal.Minimum = m_trcbarMaxMinShift.Value;
+			else if (m_rdbtnMax.Checked)
+				signal.Maximum = m_trcbarMaxMinShift.Value;
+			else if (m_rdbtnShift.Checked)
+				signal.Shift = m_trcbarMaxMinShift.Value;
+		}
+
+		private void sensorPlotDoubleClick(object sender, EventArgs e)
+		{
+			if (!m_provider.Connected/* || !m_chbxCalibrate.Checked*/)
+				return;
+
+			SpPerfChart.PerfChart plot = (SpPerfChart.PerfChart)sender;
+
+			if (plot != m_selectedPlot)
+				selectPlot(plot, true);
+			else
+				selectPlot(m_selectedPlot, false);
 		}
 	}
 }
