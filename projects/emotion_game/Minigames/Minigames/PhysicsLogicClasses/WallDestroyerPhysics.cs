@@ -39,7 +39,7 @@ namespace Minigames.PhysicsLogicClasses
                 if (WALLDESTROYERSHAREDDATA.Instance._totalNumberOfBricks - WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks <= WALLDESTROYERSHAREDDATA.Instance._numberOfBricksInARow)
                 {
                     //bricks are less than 33% so check the fun
-                    if (MINIGAMESDATA.Instance._fun >= 7)
+                    if (MINIGAMESDATA.Instance._fun >= 6)
                     {
                         WALLDESTROYERSHAREDDATA.Instance.AddBrick();
                     }
@@ -316,7 +316,7 @@ namespace Minigames.PhysicsLogicClasses
             else if (collision == _CollisionTypesEnum.board_TAG)
             {
                 //set the new ball initial speed
-                double emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._fun;
+                double emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._excitement;
                 if (emotion > 0)
                 {
                     WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed = (int)emotion;

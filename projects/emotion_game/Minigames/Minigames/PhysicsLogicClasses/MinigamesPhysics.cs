@@ -85,7 +85,10 @@ namespace Minigames.PhysicsLogicClasses
                                 && MINIGAMESDATA.Instance._fun < 10)
                         {
                             MINIGAMESDATA.Instance._fun++;
+                            if (MINIGAMESDATA.Instance._excitement < 10)
+                                MINIGAMESDATA.Instance._excitement++;
                         }
+
                         else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG
                                 && MINIGAMESDATA.Instance._boredom < 10)
                         {
@@ -103,6 +106,8 @@ namespace Minigames.PhysicsLogicClasses
                                 && MINIGAMESDATA.Instance._fun > 1)
                         {
                             MINIGAMESDATA.Instance._fun--;
+                            if (MINIGAMESDATA.Instance._excitement > 1)
+                                MINIGAMESDATA.Instance._excitement--;
                         }
                         else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG
                                 && MINIGAMESDATA.Instance._boredom > 1)

@@ -37,6 +37,7 @@ namespace Minigames.PhysicsLogicClasses
             #endregion
 
             #region update_rotation_speed
+            /*
             if (MINIGAMESDATA.Instance._isAdaptationEnabled)
             {
                 //int emotion = MINIGAMESDATA.Instance._maxEmotionValue - MINIGAMESDATA.Instance._excitement;
@@ -46,6 +47,7 @@ namespace Minigames.PhysicsLogicClasses
                 else
                     PUZZLESHAREDDATA.Instance._currentSpeed = 0.1;//remember to talk about it!
             }
+            */
             #endregion
 
             #region hint

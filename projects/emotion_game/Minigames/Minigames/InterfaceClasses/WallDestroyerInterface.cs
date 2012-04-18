@@ -43,11 +43,13 @@ namespace Minigames.InterfaceClasses
             WALLDESTROYERSHAREDDATA obj = WALLDESTROYERSHAREDDATA.Instance;
             
             //draw background
+            OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Clear(Color.Green);
+            /*
             OBJECTS.Instance._sharedSpriteBatch.Draw(_background, new Rectangle(0, 0,
                 OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Width,
                 OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Height),
                 Color.White);
-
+            */
             //draw bricks
             foreach (WALLDESTROYERSHAREDDATA.Brick brick in obj._brickLst)
             {
