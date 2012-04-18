@@ -142,7 +142,8 @@ namespace Minigames.PhysicsLogicClasses
             string temp2 = gamepadState.DPad.ToString();
             if ((gamepadState.Buttons.ToString() != "{Buttons:None}"
                 || gamepadState.DPad.ToString() != "{DPad:None}")
-                && MINIGAMESDATA.Instance._isAdaptationEnabled)
+                && MINIGAMESDATA.Instance._isLogEnabled
+                )
             {
                 LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
                 LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
@@ -212,8 +213,8 @@ namespace Minigames.PhysicsLogicClasses
                 {
                     if (!MINIGAMESDATA.Instance._isLogEnabled)
                     {
-                        PlayerInformation informationForm = new PlayerInformation();
-                        informationForm.Show();
+                        //PlayerInformation informationForm = new PlayerInformation();
+                        //informationForm.Show();
                         MINIGAMESDATA.Instance._isLogEnabled = true;
                     }
                 }
@@ -227,7 +228,7 @@ namespace Minigames.PhysicsLogicClasses
                         //disable logging
                         MINIGAMESDATA.Instance._isLogEnabled = false;
                         //save the logged data
-                        MINIGAMESDATA.Instance.Log();
+                        //MINIGAMESDATA.Instance.Log();
                     }
                 }
 

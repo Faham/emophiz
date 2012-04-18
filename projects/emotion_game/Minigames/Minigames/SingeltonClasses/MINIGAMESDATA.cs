@@ -195,7 +195,7 @@ namespace Minigames.SingeltonClasses
             logStr += PUZZLESHAREDDATA.Instance._puzzleLogStr;
             try
             {
-                string filename = @"...\log\" + USERINFORMATION.Instance._participantID.ToString() + ".txt";
+                string filename = @"...\" + USERINFORMATION.Instance._participantID.ToString() + ".txt";
                 System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
                 logStr += "\n";
                 file.WriteLine(logStr);
@@ -211,7 +211,7 @@ namespace Minigames.SingeltonClasses
             #region emoophiz_participant_log
             try
             {
-                using (XmlWriter writer = XmlWriter.Create(@"...\log\" + USERINFORMATION.Instance._participantID.ToString() + ".xml"))
+                using (XmlWriter writer = XmlWriter.Create(@"...\" + USERINFORMATION.Instance._participantID.ToString() + ".xml"))
 	            {
                     writer.WriteStartDocument();
                     writer.WriteStartElement("Participant");

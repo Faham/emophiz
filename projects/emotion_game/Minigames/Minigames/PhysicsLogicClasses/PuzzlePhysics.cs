@@ -16,8 +16,7 @@ namespace Minigames.PhysicsLogicClasses
         }
 
         public void Update(GamePadState key)
-        {
-
+        {   
             #region log
             /*
             LOG.Instance._logType = LOG.LogTypeEnum.informationLog;
@@ -82,7 +81,7 @@ namespace Minigames.PhysicsLogicClasses
             }
             #endregion
 
-            #region 
+            #region UpAndDown
             
 			if (key.IsButtonDown(Buttons.DPadDown) && PUZZLESHAREDDATA.Instance._inputCounter > 1)
                 if (PUZZLESHAREDDATA.Instance._inputDelay > 5)
@@ -190,7 +189,7 @@ namespace Minigames.PhysicsLogicClasses
                 PUZZLESHAREDDATA.Instance._currentActiveRing = 8;
             }*/
 
-            #region Detect_ArrowKey_Hit
+            #region RightAndLeft
             if (key.IsButtonDown(Buttons.DPadRight))
             {
                 for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)

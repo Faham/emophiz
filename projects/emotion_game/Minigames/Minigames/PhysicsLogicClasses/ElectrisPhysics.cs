@@ -47,7 +47,7 @@ namespace Minigames.PhysicsLogicClasses
             }
             
             #region log
-            if (ELECTRISSHAREDDATA.Instance._logDelayCounter > 60 && MINIGAMESDATA.Instance._isAdaptationEnabled)
+            if (ELECTRISSHAREDDATA.Instance._logDelayCounter > 60 && MINIGAMESDATA.Instance._isLogEnabled)
             {
                 LOG.Instance._logType = LOG.LogTypeEnum.informationLog;
                 LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
