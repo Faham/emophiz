@@ -13,7 +13,7 @@ namespace emophiz
 	{
 		private SensorProvider m_provider;
 		private bool m_plot_emotion = false;
-		private Log m_log = new Log("SensorMonitor.log");
+		private Log m_log = new Log("EmotionMonitor.log");
 		Dictionary<string, SpPerfChart.PerfChart> m_sensorPlots = new Dictionary<string, SpPerfChart.PerfChart>();
 
 		public SensorProvider EmotionEngine { get { return m_provider; }  }
@@ -23,12 +23,9 @@ namespace emophiz
 			m_log.Message("Initializing EmotionMonitor");
 			InitializeComponent();
 
-			m_provider = new SensorProvider(m_log);
-			m_provider.AddListener(this);
-			if (m_provider.Connected)
-				OnConnect();
-
 			updateSpeedLabel();
+
+			initEmotionEngine();
 
 			m_sensorPlots["HR"] = m_plotHR;
 			m_sensorPlots["GSR"] = m_plotGSR;
@@ -67,6 +64,16 @@ namespace emophiz
 			m_plotExcitement.Messages.Add("Excitement");
 			m_plotBoredom.Messages.Add("Boredom");
 			m_log.Message("EmotionMonitor initialized");
+		}
+
+		public string FuzzyResourcesDir = "resources/";
+
+		public void initEmotionEngine()
+		{
+			m_provider = new SensorProvider(m_log, FuzzyResourcesDir);
+			m_provider.AddListener(this);
+			if (m_provider.Connected)
+				OnConnect();
 		}
 
 		private void button_connect_Click(object sender, EventArgs e)

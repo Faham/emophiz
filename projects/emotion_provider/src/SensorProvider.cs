@@ -56,13 +56,14 @@ namespace emophiz
 
 		private Log m_log;
 
-		public SensorProvider(Log _log = null)
+		public SensorProvider(Log _log = null, String fuzzy_resources = "../../resources/")
 		{
 			if (_log == null)
-				m_log = new Log();
+				m_log = new Log("SensorProvider.log");
 			else
 				m_log = _log;
 
+			m_fuzzyResources = fuzzy_resources;
 			InitFuzzyEngines();
 		}
 
@@ -110,6 +111,7 @@ namespace emophiz
 			m_connected = true;
 			InformListeners(Message.Connected, null);
 
+			m_log.Message("Creating signals");
 			string sensor_type = sensorTypeToStr(SensorType.BVP);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
@@ -171,6 +173,9 @@ namespace emophiz
 			m_boredom = new Signal("Boredom");
 			m_boredom.EnableNormalize = true;
 
+			m_log.Message("Signals created.");
+			m_log.Message("Signal serialization format: " + Signal.SerializationFormat());
+
 			return true;
 		}
 
@@ -200,14 +205,16 @@ namespace emophiz
 				lsn.OnMessage(msg, value);
 		}
 
+		private string m_fuzzyResources = "../../resources/";
+
 		private void InitFuzzyEngines()
 		{
 			m_log.Message("Initializing fuzzy engines");
-			m_fuzzyEngineArousal.Load("../../resources/fuzzy-engine-arousal.xml");
-			m_fuzzyEngineValence.Load("../../resources/fuzzy-engine-valence.xml");
-			m_fuzzyEngineFun.Load("../../resources/fuzzy-engine-fun.xml");
-			m_fuzzyEngineExcitement.Load("../../resources/fuzzy-engine-excitement.xml");
-			m_fuzzyEngineBoredom.Load("../../resources/fuzzy-engine-boredom.xml");
+			m_fuzzyEngineArousal.Load(m_fuzzyResources + "fuzzy-engine-arousal.xml");
+			m_fuzzyEngineValence.Load(m_fuzzyResources + "fuzzy-engine-valence.xml");
+			m_fuzzyEngineFun.Load(m_fuzzyResources + "fuzzy-engine-fun.xml");
+			m_fuzzyEngineExcitement.Load(m_fuzzyResources + "fuzzy-engine-excitement.xml");
+			m_fuzzyEngineBoredom.Load(m_fuzzyResources + "fuzzy-engine-boredom.xml");
 			m_log.Message("Fuzzy engines initialized");
 		}
 
@@ -239,10 +246,7 @@ namespace emophiz
 				if (!m_signals.TryGetValue(sensor.Name, out signal))
 					throw new Exception("This type of sensor isn't supported: " + sensor.Name);
 				
-				//if (sensorStrToType(sensor.Name) == SensorType.GSR)
-				//    signal.Current = m_filterBaselineRemover.FilterData((float)sensor.CurrentValue)[0];
-				//else
-					signal.Current = sensor.CurrentValue;
+				signal.Current = sensor.CurrentValue;
 
 				if (sensorStrToType(sensor.Name) == SensorType.BVP)
 					UpdateHR();
@@ -271,6 +275,13 @@ namespace emophiz
 				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
 				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
 				m_boredom.Current = m_fuzzyEngineBoredom.Defuzzify();
+
+				m_log.Message(signal.Serialize());
+				m_log.Message(m_arousal.Serialize());
+				m_log.Message(m_valence.Serialize());
+				m_log.Message(m_fun.Serialize());
+				m_log.Message(m_excitement.Serialize());
+				m_log.Message(m_boredom.Serialize());
 			}
 			catch (Exception e)
 			{

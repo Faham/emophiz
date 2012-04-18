@@ -190,5 +190,24 @@ namespace emophiz
 			if (EnableNormalize)
 				doNormalize();
 		}
+
+		public static string SerializationFormat()
+		{
+			return "Name\tCurrent\tTransformed\tMinimum\tMaximum\tShift";
+		}
+
+		public string Serialize()
+		{
+			string ret =
+				String.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}"
+					, this.Name
+					, this.Current
+					, this.Transformed
+					, this.Minimum
+					, this.Maximum
+					, this.Shift);
+
+			return "";
+		}
 	}
 }
