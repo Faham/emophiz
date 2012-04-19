@@ -31,7 +31,7 @@ namespace Minigames.PhysicsLogicClasses
         }
 
         //update function
-        public void Update(GamePadState keyboard)
+        public void Update(object keyboard)
         {
             #region update_bricks_And_log
             if (MINIGAMESDATA.Instance._isAdaptationEnabled)
@@ -70,9 +70,15 @@ namespace Minigames.PhysicsLogicClasses
             System.Console.WriteLine(LOG.Instance.SerializeToString());
             */
             #endregion
-            
-            #region Quit_Hit
-			if (keyboard.IsButtonDown(Buttons.B))
+
+            #region handle_inputs
+            #region gamepad_inputs
+            if (!MINIGAMESDATA.Instance._isKeyboardEnabled)
+            {
+                GamePadState gamepadState = (GamePadState)keyboard;
+
+                #region Quit_Hit
+                if (gamepadState.IsButtonDown(Buttons.B))
             {
                 //check for the game result
                 WALLDESTROYERSHAREDDATA.Instance._currentGameResult = false;
@@ -88,8 +94,8 @@ namespace Minigames.PhysicsLogicClasses
             }
             #endregion
 
-            #region Right_Key_Hit
-            if (keyboard.IsButtonDown(Buttons.DPadRight))
+                #region Right_Key_Hit
+                if (gamepadState.IsButtonDown(Buttons.DPadRight))
             {
                 _tempPosition.X = WALLDESTROYERSHAREDDATA.Instance._boardPosition.X + WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed;
                 if (!BoardCollisionDetection(_tempPosition, WALLDESTROYERSHAREDDATA.Instance._boardSize))
@@ -99,8 +105,8 @@ namespace Minigames.PhysicsLogicClasses
             }
             #endregion
 
-            #region Left_Key_Hit
-			if (keyboard.IsButtonDown(Buttons.DPadLeft))
+                #region Left_Key_Hit
+                if (gamepadState.IsButtonDown(Buttons.DPadLeft))
             {
                 _tempPosition.X = WALLDESTROYERSHAREDDATA.Instance._boardPosition.X - WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed;
                 if (!BoardCollisionDetection(_tempPosition, WALLDESTROYERSHAREDDATA.Instance._boardSize))
@@ -110,8 +116,8 @@ namespace Minigames.PhysicsLogicClasses
             }
             #endregion
 
-            #region Up_Key_Hit
-			if (keyboard.IsButtonDown(Buttons.DPadUp) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
+                #region Up_Key_Hit
+                if (gamepadState.IsButtonDown(Buttons.DPadUp) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
             {
                 if (WALLDESTROYERSHAREDDATA.Instance._compassHnadleAngleInt + WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleSpeed < 0)
                 {
@@ -122,8 +128,8 @@ namespace Minigames.PhysicsLogicClasses
             }
             #endregion
 
-            #region Down_Key_Hit
-			if (keyboard.IsButtonDown(Buttons.DPadDown) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
+                #region Down_Key_Hit
+                if (gamepadState.IsButtonDown(Buttons.DPadDown) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
             {
                 if (WALLDESTROYERSHAREDDATA.Instance._compassHnadleAngleInt - WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleSpeed > -180)
                 {
@@ -134,15 +140,96 @@ namespace Minigames.PhysicsLogicClasses
             }
             #endregion
 
-            #region Space_Hey_Hit
-			if (keyboard.IsButtonDown(Buttons.X) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
+                #region Space_Key_Hit
+                if (gamepadState.IsButtonDown(Buttons.X) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
             {
                 WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Cos(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
                 WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Sin(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
                 WALLDESTROYERSHAREDDATA.Instance._isShoot = true;
             }
             #endregion
+            }
+            #endregion
+            #region keyboard_input
+            else
+            {
+                KeyboardState keyboardState = (KeyboardState)keyboard;
+                #region Quit_Key_Hit
+                if (keyboardState.IsKeyDown(Keys.Escape))
+                {
+                    //check for the game result
+                    WALLDESTROYERSHAREDDATA.Instance._currentGameResult = false;
+                    //set the minigame status
+                    MINIGAMESDATA.Instance._isMinigameRunning = false;
+                    //change the interface
+                    MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
+                    //log
+                    TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
+                    WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+                    WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += WALLDESTROYERSHAREDDATA.Instance._currentGameResult ? "1" : "0";
+                    WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += "\t";
+                }
+                #endregion
 
+                #region Right_Key_Hit
+                if (keyboardState.IsKeyDown(Keys.Right))
+                {
+                    _tempPosition.X = WALLDESTROYERSHAREDDATA.Instance._boardPosition.X + WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed;
+                    if (!BoardCollisionDetection(_tempPosition, WALLDESTROYERSHAREDDATA.Instance._boardSize))
+                        WALLDESTROYERSHAREDDATA.Instance._boardPosition.X += WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed;
+                    if (!WALLDESTROYERSHAREDDATA.Instance._isShoot)
+                        WALLDESTROYERSHAREDDATA.Instance._ballPosition.X = WALLDESTROYERSHAREDDATA.Instance._boardPosition.X;
+                }
+                #endregion
+
+                #region Left_Key_Hit
+                if (keyboardState.IsKeyDown(Keys.Left))
+                {
+                    _tempPosition.X = WALLDESTROYERSHAREDDATA.Instance._boardPosition.X - WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed;
+                    if (!BoardCollisionDetection(_tempPosition, WALLDESTROYERSHAREDDATA.Instance._boardSize))
+                        WALLDESTROYERSHAREDDATA.Instance._boardPosition.X -= WALLDESTROYERSHAREDDATA.Instance._currentBoardSpeed;
+                    if (!WALLDESTROYERSHAREDDATA.Instance._isShoot)
+                        WALLDESTROYERSHAREDDATA.Instance._ballPosition.X = WALLDESTROYERSHAREDDATA.Instance._boardPosition.X;
+                }
+                #endregion
+
+                #region Up_Key_Hit
+                if (keyboardState.IsKeyDown(Keys.Up) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
+                {
+                    if (WALLDESTROYERSHAREDDATA.Instance._compassHnadleAngleInt + WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleSpeed < 0)
+                    {
+                        WALLDESTROYERSHAREDDATA.Instance._compassHnadleAngleInt += WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleSpeed;
+                        WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian = MathHelper.ToRadians(WALLDESTROYERSHAREDDATA.Instance._compassHnadleAngleInt);
+                    }
+
+                }
+                #endregion
+
+                #region Down_Key_Hit
+                if (keyboardState.IsKeyDown(Keys.Down) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
+                {
+                    if (WALLDESTROYERSHAREDDATA.Instance._compassHnadleAngleInt - WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleSpeed > -180)
+                    {
+                        WALLDESTROYERSHAREDDATA.Instance._compassHnadleAngleInt -= WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleSpeed;
+                        WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian = MathHelper.ToRadians(WALLDESTROYERSHAREDDATA.Instance._compassHnadleAngleInt);
+                    }
+
+                }
+                #endregion
+
+                #region Space_Hey_Hit
+                if (keyboardState.IsKeyDown(Keys.Space) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
+                {
+                    WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Cos(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
+                    WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Sin(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
+                    WALLDESTROYERSHAREDDATA.Instance._isShoot = true;
+                }
+                #endregion
+            }
+            
+            #endregion
+            #endregion
+            
             #region move_ball
             if (WALLDESTROYERSHAREDDATA.Instance._isShoot)
             {

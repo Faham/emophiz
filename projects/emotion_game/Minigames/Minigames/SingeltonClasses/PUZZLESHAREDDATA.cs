@@ -50,7 +50,7 @@ namespace Minigames.SingeltonClasses
         private PUZZLESHAREDDATA()
         {
             _currentGameResult = false;
-            _degreeOfFreedom = 5;
+            _degreeOfFreedom = 7;
             _puzzleLogStr = "";
         }
 

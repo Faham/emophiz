@@ -37,7 +37,7 @@ namespace Minigames.PhysicsLogicClasses
         }
 
         //Update function
-        public void Update(GamePadState keyboard)
+        public void Update(object keyboard)
         {
             if (!ELECTRISSHAREDDATA.Instance._isGameStarted)
             {
@@ -83,31 +83,68 @@ namespace Minigames.PhysicsLogicClasses
             #endregion
 
             #region Space_Hit
-            //check the keyboard
-            if (keyboard.IsButtonDown(Buttons.X) && !ELECTRISSHAREDDATA.Instance._isSpacePressed)
+            if (!MINIGAMESDATA.Instance._isKeyboardEnabled)
             {
-                ELECTRISSHAREDDATA.Instance._isSpacePressed = true;
-                _isChangable = false;
-                //ELECTRISSHAREDDATA.Instance._fallingDelay = (int)ELECTRISSHAREDDATA.Instance._fallingDelay;
-                ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._currentFallingDelay / 4;
+                GamePadState gamepadState = (GamePadState)keyboard;
+                if (gamepadState.IsButtonDown(Buttons.X) && !ELECTRISSHAREDDATA.Instance._isSpacePressed)
+                {
+                    ELECTRISSHAREDDATA.Instance._isSpacePressed = true;
+                    _isChangable = false;
+                    //ELECTRISSHAREDDATA.Instance._fallingDelay = (int)ELECTRISSHAREDDATA.Instance._fallingDelay;
+                    ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._currentFallingDelay / 4;
+                }
+            }
+            else
+            {
+                KeyboardState keyboardState = (KeyboardState)keyboard;
+                if (keyboardState.IsKeyDown(Keys.Space) && !ELECTRISSHAREDDATA.Instance._isSpacePressed)
+                {
+                    ELECTRISSHAREDDATA.Instance._isSpacePressed = true;
+                    _isChangable = false;
+                    //ELECTRISSHAREDDATA.Instance._fallingDelay = (int)ELECTRISSHAREDDATA.Instance._fallingDelay;
+                    ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._currentFallingDelay / 4;
+                }
             }
             #endregion
 
             #region Quit_Hit
-			if (keyboard.IsButtonDown(Buttons.B))
+			if (!MINIGAMESDATA.Instance._isKeyboardEnabled)
             {
-				//check for the game result
-                ELECTRISSHAREDDATA.Instance._currentGameResult = false;
-                //set the minigame status
-                MINIGAMESDATA.Instance._isMinigameRunning = false;
-                //change the interface
-                MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
-                //log
-                TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
-                ELECTRISSHAREDDATA.Instance._electrisLogStr += timeStamp.TotalSeconds.ToString() + "\t";
-                ELECTRISSHAREDDATA.Instance._electrisLogStr += ELECTRISSHAREDDATA.Instance._currentGameResult ? "1" : "0";
-                ELECTRISSHAREDDATA.Instance._electrisLogStr += "\t";
+                GamePadState gamepadState = (GamePadState)keyboard;
+                if (gamepadState.IsButtonDown(Buttons.B))
+                {
+                    //check for the game result
+                    ELECTRISSHAREDDATA.Instance._currentGameResult = false;
+                    //set the minigame status
+                    MINIGAMESDATA.Instance._isMinigameRunning = false;
+                    //change the interface
+                    MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
+                    //log
+                    TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
+                    ELECTRISSHAREDDATA.Instance._electrisLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+                    ELECTRISSHAREDDATA.Instance._electrisLogStr += ELECTRISSHAREDDATA.Instance._currentGameResult ? "1" : "0";
+                    ELECTRISSHAREDDATA.Instance._electrisLogStr += "\t";
+                }
             }
+            else
+            {
+                KeyboardState keyboardState = (KeyboardState)keyboard;
+                if (keyboardState.IsKeyDown(Keys.Escape))
+                {
+                    //check for the game result
+                    ELECTRISSHAREDDATA.Instance._currentGameResult = false;
+                    //set the minigame status
+                    MINIGAMESDATA.Instance._isMinigameRunning = false;
+                    //change the interface
+                    MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
+                    //log
+                    TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
+                    ELECTRISSHAREDDATA.Instance._electrisLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+                    ELECTRISSHAREDDATA.Instance._electrisLogStr += ELECTRISSHAREDDATA.Instance._currentGameResult ? "1" : "0";
+                    ELECTRISSHAREDDATA.Instance._electrisLogStr += "\t";
+                }
+            }    
+            
             #endregion
 
             //generate a new item
@@ -119,20 +156,44 @@ namespace Minigames.PhysicsLogicClasses
             _moveRoghtAndLeftCounter++;
 
             #region Right_Lerft_Keys_Hit
-            if (keyboard.IsButtonDown(Buttons.DPadRight))
+            if (!MINIGAMESDATA.Instance._isKeyboardEnabled)
             {
-                if (_moveRoghtAndLeftCounter > ELECTRISSHAREDDATA.Instance._keyboardDelay)
+                GamePadState gamepadState = (GamePadState)keyboard;
+                if (gamepadState.IsButtonDown(Buttons.DPadRight))
                 {
-                    MoveToRight();
-                    _moveRoghtAndLeftCounter = 0;
-                }    
+                    if (_moveRoghtAndLeftCounter > ELECTRISSHAREDDATA.Instance._keyboardDelay)
+                    {
+                        MoveToRight();
+                        _moveRoghtAndLeftCounter = 0;
+                    }
+                }
+                else if (gamepadState.IsButtonDown(Buttons.DPadLeft))
+                {
+                    if (_moveRoghtAndLeftCounter > ELECTRISSHAREDDATA.Instance._keyboardDelay)
+                    {
+                        MoveToLeft();
+                        _moveRoghtAndLeftCounter = 0;
+                    }
+                }
             }
-			else if (keyboard.IsButtonDown(Buttons.DPadLeft))
+            else
             {
-                if (_moveRoghtAndLeftCounter > ELECTRISSHAREDDATA.Instance._keyboardDelay)
+                KeyboardState keyboardState = (KeyboardState)keyboard;
+                if (keyboardState.IsKeyDown(Keys.Right))
                 {
-                    MoveToLeft();
-                    _moveRoghtAndLeftCounter = 0;
+                    if (_moveRoghtAndLeftCounter > ELECTRISSHAREDDATA.Instance._keyboardDelay)
+                    {
+                        MoveToRight();
+                        _moveRoghtAndLeftCounter = 0;
+                    }
+                }
+                else if (keyboardState.IsKeyDown(Keys.Left))
+                {
+                    if (_moveRoghtAndLeftCounter > ELECTRISSHAREDDATA.Instance._keyboardDelay)
+                    {
+                        MoveToLeft();
+                        _moveRoghtAndLeftCounter = 0;
+                    }
                 }
             }
             #endregion

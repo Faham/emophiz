@@ -15,8 +15,8 @@ namespace Minigames.PhysicsLogicClasses
             
         }
 
-        public void Update(GamePadState key)
-        {   
+        public void Update(object key)
+        {
             #region log
             /*
             LOG.Instance._logType = LOG.LogTypeEnum.informationLog;
@@ -32,7 +32,7 @@ namespace Minigames.PhysicsLogicClasses
             LOG.Instance._message += PUZZLESHAREDDATA.Instance._currentGameResult.ToString();
             MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
             System.Console.WriteLine(LOG.Instance.SerializeToString());
-            */ 
+            */
             #endregion
 
             #region update_rotation_speed
@@ -81,150 +81,194 @@ namespace Minigames.PhysicsLogicClasses
             }
             #endregion
 
-            #region UpAndDown
-            
-			if (key.IsButtonDown(Buttons.DPadDown) && PUZZLESHAREDDATA.Instance._inputCounter > 1)
-                if (PUZZLESHAREDDATA.Instance._inputDelay > 5)
-                {
-				    PUZZLESHAREDDATA.Instance._inputCounter--;
-                    PUZZLESHAREDDATA.Instance._inputDelay = 0;
-                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+            #region inputs
+            if (!MINIGAMESDATA.Instance._isKeyboardEnabled)
+            {
+                GamePadState gamepadKey = (GamePadState)key;
+                #region UpDown_Gamepad
+                if (gamepadKey.IsButtonDown(Buttons.DPadDown) && PUZZLESHAREDDATA.Instance._inputCounter > 1)
+                    if (PUZZLESHAREDDATA.Instance._inputDelay > 5)
                     {
-                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                        PUZZLESHAREDDATA.Instance._inputCounter--;
+                        PUZZLESHAREDDATA.Instance._inputDelay = 0;
+                        for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                        {
+                            PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                        }
+                        PUZZLESHAREDDATA.Instance._isActive[PUZZLESHAREDDATA.Instance._inputCounter - 1] = true;
                     }
-                    PUZZLESHAREDDATA.Instance._isActive[PUZZLESHAREDDATA.Instance._inputCounter-1] = true;
-                }
-                else
-                {
-                    PUZZLESHAREDDATA.Instance._inputDelay++;
-                }
-			else if (key.IsButtonDown(Buttons.DPadUp) && PUZZLESHAREDDATA.Instance._inputCounter < PUZZLESHAREDDATA.Instance._currentNumberOfDisks)
-                if (PUZZLESHAREDDATA.Instance._inputDelay > 5)
-                {
-				    PUZZLESHAREDDATA.Instance._inputCounter++;
-                    PUZZLESHAREDDATA.Instance._inputDelay = 0;
-                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    else
                     {
-                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                        PUZZLESHAREDDATA.Instance._inputDelay++;
                     }
-                    PUZZLESHAREDDATA.Instance._isActive[PUZZLESHAREDDATA.Instance._inputCounter - 1] = true;
-                }
-                else
+                else if (gamepadKey.IsButtonDown(Buttons.DPadUp) && PUZZLESHAREDDATA.Instance._inputCounter < PUZZLESHAREDDATA.Instance._currentNumberOfDisks)
+                    if (PUZZLESHAREDDATA.Instance._inputDelay > 5)
+                    {
+                        PUZZLESHAREDDATA.Instance._inputCounter++;
+                        PUZZLESHAREDDATA.Instance._inputDelay = 0;
+                        for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                        {
+                            PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                        }
+                        PUZZLESHAREDDATA.Instance._isActive[PUZZLESHAREDDATA.Instance._inputCounter - 1] = true;
+                    }
+                    else
+                    {
+                        PUZZLESHAREDDATA.Instance._inputDelay++;
+                    }
+                #endregion
+                #region RightAndLeft_Gamepad
+                if (gamepadKey.IsButtonDown(Buttons.DPadRight))
                 {
-                    PUZZLESHAREDDATA.Instance._inputDelay++;
-                }
-            #endregion
-            /*
-            #region Detect_Number_Hit
-            if (PUZZLESHAREDDATA.Instance._inputCounter == 1 && !PUZZLESHAREDDATA.Instance._isActive[0])
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    PUZZLESHAREDDATA.Instance._isActive[i] = false;
-                }
-                PUZZLESHAREDDATA.Instance._isActive[0] = true;
-                PUZZLESHAREDDATA.Instance._currentActiveRing = 1;
-            }
-			else if (PUZZLESHAREDDATA.Instance._inputCounter == 2 && !PUZZLESHAREDDATA.Instance._isActive[1])
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    PUZZLESHAREDDATA.Instance._isActive[i] = false;
-                }
-                PUZZLESHAREDDATA.Instance._isActive[1] = true;
-                PUZZLESHAREDDATA.Instance._currentActiveRing = 2;
-            }
-			else if (PUZZLESHAREDDATA.Instance._inputCounter == 3 && !PUZZLESHAREDDATA.Instance._isActive[2])
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    PUZZLESHAREDDATA.Instance._isActive[i] = false;
-                }
-                PUZZLESHAREDDATA.Instance._isActive[2] = true;
-                PUZZLESHAREDDATA.Instance._currentActiveRing = 3;
-            }
-			else if (PUZZLESHAREDDATA.Instance._inputCounter == 4 && PUZZLESHAREDDATA.Instance._currentNumberOfDisks >= 4 && !PUZZLESHAREDDATA.Instance._isActive[3])
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    PUZZLESHAREDDATA.Instance._isActive[i] = false;
-                }
-                PUZZLESHAREDDATA.Instance._isActive[3] = true;
-                PUZZLESHAREDDATA.Instance._currentActiveRing = 4;
-            }
-			else if (PUZZLESHAREDDATA.Instance._inputCounter == 5 && PUZZLESHAREDDATA.Instance._currentNumberOfDisks >= 5 && !PUZZLESHAREDDATA.Instance._isActive[4])
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    PUZZLESHAREDDATA.Instance._isActive[i] = false;
-                }
-                PUZZLESHAREDDATA.Instance._isActive[4] = true;
-                PUZZLESHAREDDATA.Instance._currentActiveRing = 5;
-            }
-			else if (PUZZLESHAREDDATA.Instance._inputCounter == 6 && PUZZLESHAREDDATA.Instance._currentNumberOfDisks >= 6 && !PUZZLESHAREDDATA.Instance._isActive[5])
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    PUZZLESHAREDDATA.Instance._isActive[i] = false;
-                }
-                PUZZLESHAREDDATA.Instance._isActive[5] = true;
-                PUZZLESHAREDDATA.Instance._currentActiveRing = 6;
-            }
-			else if (PUZZLESHAREDDATA.Instance._inputCounter == 7 && PUZZLESHAREDDATA.Instance._currentNumberOfDisks >= 7 && !PUZZLESHAREDDATA.Instance._isActive[6])
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    PUZZLESHAREDDATA.Instance._isActive[i] = false;
-                }
-                PUZZLESHAREDDATA.Instance._isActive[6] = true;
-                PUZZLESHAREDDATA.Instance._currentActiveRing = 7;
-            }
-			else if (PUZZLESHAREDDATA.Instance._inputCounter == 8 && PUZZLESHAREDDATA.Instance._currentNumberOfDisks == 8 && !PUZZLESHAREDDATA.Instance._isActive[7])
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    PUZZLESHAREDDATA.Instance._isActive[i] = false;
-                }
-                PUZZLESHAREDDATA.Instance._isActive[7] = true;
-                PUZZLESHAREDDATA.Instance._currentActiveRing = 8;
-            }*/
-
-            #region RightAndLeft
-            if (key.IsButtonDown(Buttons.DPadRight))
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
                     {
                         if (PUZZLESHAREDDATA.Instance._isActive[i])
                             PUZZLESHAREDDATA.Instance._currentDegrees[i] += PUZZLESHAREDDATA.Instance._currentSpeed;
                     }
-                    
-            }
 
-			else if (key.IsButtonDown(Buttons.DPadLeft))
-            {
-                for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
-                {
-                    if (PUZZLESHAREDDATA.Instance._isActive[i])
-                        PUZZLESHAREDDATA.Instance._currentDegrees[i] -= PUZZLESHAREDDATA.Instance._currentSpeed;
                 }
-                
-            } 
-            #endregion
 
-            #region Detect_Quit_Hit
-			if (key.IsButtonDown(Buttons.B))
+                else if (gamepadKey.IsButtonDown(Buttons.DPadLeft))
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        if (PUZZLESHAREDDATA.Instance._isActive[i])
+                            PUZZLESHAREDDATA.Instance._currentDegrees[i] -= PUZZLESHAREDDATA.Instance._currentSpeed;
+                    }
+
+                }
+                #endregion
+                #region Detect_Quit_Hit
+                if (gamepadKey.IsButtonDown(Buttons.B))
+                {
+                    //check for the game result
+                    PUZZLESHAREDDATA.Instance._currentGameResult = false;
+                    //set the minigame status
+                    MINIGAMESDATA.Instance._isMinigameRunning = false;
+                    //change the interface
+                    MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
+                    //log
+                    TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
+                    PUZZLESHAREDDATA.Instance._puzzleLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+                    PUZZLESHAREDDATA.Instance._puzzleLogStr += PUZZLESHAREDDATA.Instance._currentGameResult ? "1" : "0";
+                    PUZZLESHAREDDATA.Instance._puzzleLogStr += "\t";
+                }
+                #endregion
+            }
+            else
             {
-                //check for the game result
-                PUZZLESHAREDDATA.Instance._currentGameResult = false;
-                //set the minigame status
-                MINIGAMESDATA.Instance._isMinigameRunning = false;
-                //change the interface
-                MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
-                //log
-                TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
-                PUZZLESHAREDDATA.Instance._puzzleLogStr += timeStamp.TotalSeconds.ToString() + "\t";
-                PUZZLESHAREDDATA.Instance._puzzleLogStr += PUZZLESHAREDDATA.Instance._currentGameResult ? "1" : "0";
-                PUZZLESHAREDDATA.Instance._puzzleLogStr += "\t";
+                KeyboardState keyboardKey = (KeyboardState)key;
+                #region UpDown_Keyboard
+                if (keyboardKey.IsKeyDown(Keys.D1) && !PUZZLESHAREDDATA.Instance._isActive[0])
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[0] = true;
+                    PUZZLESHAREDDATA.Instance._currentActiveRing = 1;
+                }
+                else if (keyboardKey.IsKeyDown(Keys.D2) && !PUZZLESHAREDDATA.Instance._isActive[1])
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[1] = true;
+                    PUZZLESHAREDDATA.Instance._currentActiveRing = 2;
+                }
+                else if (keyboardKey.IsKeyDown(Keys.D3) && !PUZZLESHAREDDATA.Instance._isActive[2])
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[2] = true;
+                    PUZZLESHAREDDATA.Instance._currentActiveRing = 3;
+                }
+                else if (keyboardKey.IsKeyDown(Keys.D4) && PUZZLESHAREDDATA.Instance._currentNumberOfDisks >= 4 && !PUZZLESHAREDDATA.Instance._isActive[3])
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[3] = true;
+                    PUZZLESHAREDDATA.Instance._currentActiveRing = 4;
+                }
+                else if (keyboardKey.IsKeyDown(Keys.D5) && PUZZLESHAREDDATA.Instance._currentNumberOfDisks >= 5 && !PUZZLESHAREDDATA.Instance._isActive[4])
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[4] = true;
+                    PUZZLESHAREDDATA.Instance._currentActiveRing = 5;
+                }
+                else if (keyboardKey.IsKeyDown(Keys.D6) && PUZZLESHAREDDATA.Instance._currentNumberOfDisks >= 6 && !PUZZLESHAREDDATA.Instance._isActive[5])
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[5] = true;
+                    PUZZLESHAREDDATA.Instance._currentActiveRing = 6;
+                }
+                else if (keyboardKey.IsKeyDown(Keys.D7) && PUZZLESHAREDDATA.Instance._currentNumberOfDisks >= 7 && !PUZZLESHAREDDATA.Instance._isActive[6])
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[6] = true;
+                    PUZZLESHAREDDATA.Instance._currentActiveRing = 7;
+                }
+                else if (keyboardKey.IsKeyDown(Keys.D8) && PUZZLESHAREDDATA.Instance._currentNumberOfDisks == 8 && !PUZZLESHAREDDATA.Instance._isActive[7])
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        PUZZLESHAREDDATA.Instance._isActive[i] = false;
+                    }
+                    PUZZLESHAREDDATA.Instance._isActive[7] = true;
+                    PUZZLESHAREDDATA.Instance._currentActiveRing = 8;
+                }
+                #endregion
+                #region RightAndLeft_Keyboard
+                if (keyboardKey.IsKeyDown(Keys.Right))
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        if (PUZZLESHAREDDATA.Instance._isActive[i])
+                            PUZZLESHAREDDATA.Instance._currentDegrees[i] += PUZZLESHAREDDATA.Instance._currentSpeed;
+                    }
+
+                }
+
+                else if (keyboardKey.IsKeyDown(Keys.Left))
+                {
+                    for (int i = 0; i < PUZZLESHAREDDATA.Instance._currentNumberOfDisks; i++)
+                    {
+                        if (PUZZLESHAREDDATA.Instance._isActive[i])
+                            PUZZLESHAREDDATA.Instance._currentDegrees[i] -= PUZZLESHAREDDATA.Instance._currentSpeed;
+                    }
+
+                }
+                #endregion
+                #region Detect_Quit_Hit
+                if (keyboardKey.IsKeyDown(Keys.Escape))
+                {
+                    //check for the game result
+                    PUZZLESHAREDDATA.Instance._currentGameResult = false;
+                    //set the minigame status
+                    MINIGAMESDATA.Instance._isMinigameRunning = false;
+                    //change the interface
+                    MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
+                    //log
+                    TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
+                    PUZZLESHAREDDATA.Instance._puzzleLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+                    PUZZLESHAREDDATA.Instance._puzzleLogStr += PUZZLESHAREDDATA.Instance._currentGameResult ? "1" : "0";
+                    PUZZLESHAREDDATA.Instance._puzzleLogStr += "\t";
+                }
+                #endregion
             }
             #endregion
 
@@ -244,7 +288,6 @@ namespace Minigames.PhysicsLogicClasses
                 PUZZLESHAREDDATA.Instance._puzzleLogStr += "\t";
             }
             #endregion
-
         }
 
         public bool IsGameFinished()

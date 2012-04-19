@@ -26,8 +26,7 @@ namespace Minigames.PhysicsLogicClasses
         ElectrisPhysics _electris;
         WallDestroyerPhysics _wallDestroyer;
 
-        
-
+        //constructor
         public MinigamesPhysics()
         {
             _puzzle = new PuzzlePhysics();
@@ -38,7 +37,6 @@ namespace Minigames.PhysicsLogicClasses
 
         }
 
-
         /// <summary>
         /// This function handles all the keyboard events
         /// </summary>
@@ -46,10 +44,10 @@ namespace Minigames.PhysicsLogicClasses
         /// <param name="environment"></param>
         public void Move(Microsoft.Xna.Framework.Input.KeyboardState keyState)
         {
-            //log
-            /*
-            #region
-            if (keyState.GetPressedKeys().Length > 0 && MINIGAMESDATA.Instance._isAdaptationEnabled)
+            #region log
+            if (keyState.GetPressedKeys().Length > 0
+                && MINIGAMESDATA.Instance._isLogEnabled
+                && MINIGAMESDATA.Instance._isKeyboardEnabled)
             {
                 LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
                 LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
@@ -59,7 +57,7 @@ namespace Minigames.PhysicsLogicClasses
                 System.Console.WriteLine(LOG.Instance.SerializeToString());
             }
             #endregion
-            */
+            
             //check the update the emotions based on keyboard inputs
             if (MINIGAMESDATA.Instance._isMinigameRunning)
             {
@@ -68,7 +66,7 @@ namespace Minigames.PhysicsLogicClasses
                 //brickout <-> fun
                 //electris <-> frustration
                 #region change_emotion_values
-                if (MINIGAMESDATA.Instance._isMotionDebuggEnabled)
+                if (MINIGAMESDATA.Instance._isMotionDebuggEnabled && MINIGAMESDATA.Instance._isKeyboardEnabled)
                 {
                     if (keyState.IsKeyDown(Keys.Up))
                     {
@@ -118,15 +116,15 @@ namespace Minigames.PhysicsLogicClasses
             //invoke the update function of the minigames
             if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
             {
-                
+                _puzzle.Update(keyState);   
             }
             else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG)
             {
-               
+                _electris.Update(keyState);  
             }
             else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG)
             {
-                
+                _wallDestroyer.Update(keyState);
             }
             else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.clickAndHack_TAG)
             {
