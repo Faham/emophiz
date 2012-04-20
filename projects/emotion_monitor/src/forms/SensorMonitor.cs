@@ -150,7 +150,7 @@ namespace emophiz
 		{
 			//try
 			{
-				string double_formats = "{0:0.##}";
+				string double_formats = "{0:0.######}";
 				m_plotGSR.AddValue(m_provider.GSR.Transformed);
 				m_plotGSR.Messages[0] = "GSR: " + String.Format(double_formats, m_provider.GSR.Transformed);
 				m_plotGSR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.GSR.Current);
