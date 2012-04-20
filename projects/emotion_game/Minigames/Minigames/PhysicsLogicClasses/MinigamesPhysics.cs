@@ -33,8 +33,6 @@ namespace Minigames.PhysicsLogicClasses
             _clickAndHack = new ClickAndHackPhysics();
             _electris = new ElectrisPhysics();
             _wallDestroyer = new WallDestroyerPhysics();
- 
-
         }
 
         /// <summary>
@@ -218,6 +216,7 @@ namespace Minigames.PhysicsLogicClasses
                         //PlayerInformation informationForm = new PlayerInformation();
                         //informationForm.Show();
                         MINIGAMESDATA.Instance._isLogEnabled = true;
+                        MINIGAMESDATA.Instance.m_emotionMonitor.Log.Enable = true;
                     }
                 }
                 else
@@ -231,6 +230,7 @@ namespace Minigames.PhysicsLogicClasses
                         MINIGAMESDATA.Instance._isLogEnabled = false;
                         //save the logged data
                         MINIGAMESDATA.Instance.Log();
+                        MINIGAMESDATA.Instance.m_emotionMonitor.Log.Enable = false;
                     }
                 }
 

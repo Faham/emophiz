@@ -114,7 +114,6 @@ namespace Minigames
 			_gamepadState = GamePad.GetState(PlayerIndex.One);
             _mouse = Mouse.GetState();
             _keyboard = Keyboard.GetState();
-			
 
             #region mouse_click
             

@@ -59,6 +59,8 @@ namespace Minigames.SingeltonClasses
         public double _excitement;
         public bool _isKeyboardEnabled;
 
+        //emotion monitor
+        public emophiz.m_frmEmotionMonitor m_emotionMonitor;
 
         //constructor
         private MINIGAMESDATA()
@@ -69,16 +71,17 @@ namespace Minigames.SingeltonClasses
             _gameTime = new GameTime();
             _log = new emophiz.Log("minigames.log");
             _isLogEnabled = false;
+            m_emotionMonitor.Log.Enable = false;
             _isAdaptationEnabled = true;
 
 			m_emotionMonitor = new emophiz.m_frmEmotionMonitor();
-			m_emotionMonitor.Show();
+            m_emotionMonitor.Show();
 			//if (false)
 			//    initEmotionProvider();
             
         }
 
-		private emophiz.m_frmEmotionMonitor m_emotionMonitor;
+		
 
         #region fahamComment
         //private emophiz.SensorProvider m_emotionProvider;
