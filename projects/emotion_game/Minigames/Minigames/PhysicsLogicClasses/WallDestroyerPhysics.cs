@@ -40,7 +40,7 @@ namespace Minigames.PhysicsLogicClasses
                 if (WALLDESTROYERSHAREDDATA.Instance._totalNumberOfBricks - WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks <= WALLDESTROYERSHAREDDATA.Instance._numberOfBricksInARow)
                 {
                     //bricks are less than 33% so check the fun
-                    if (MINIGAMESDATA.Instance._fun >= 6)
+                    if (MINIGAMESDATA.Instance._fun >= 4)
                     {
                         WALLDESTROYERSHAREDDATA.Instance.AddBrick();
                     }
