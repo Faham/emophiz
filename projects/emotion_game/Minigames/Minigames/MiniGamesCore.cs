@@ -130,15 +130,15 @@ namespace Minigames
 
             #region Handle_KeyboardEvents
             //handle keyboard events
-            if (MINIGAMESDATA.Instance._isMinigameRunning)
+            if (MINIGAMESDATA.Instance._isMinigameRunning && MINIGAMESDATA.Instance._isKeyboardEnabled)
             {
                 _physics.Move(_keyboard);
             }
             #endregion
 
 			#region handle_gamepad_inputs
-            if (_gamepadState.IsConnected)
-				_physics.UpdateGamepad(_gamepadState);
+            if (_gamepadState.IsConnected && !MINIGAMESDATA.Instance._isKeyboardEnabled)
+				_physics.Move(_gamepadState);
 			#endregion
 			base.Update(gameTime);
         }

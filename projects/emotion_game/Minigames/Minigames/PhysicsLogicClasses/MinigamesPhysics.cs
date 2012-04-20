@@ -42,134 +42,138 @@ namespace Minigames.PhysicsLogicClasses
         /// </summary>
         /// <param name="direction"></param>
         /// <param name="environment"></param>
-        public void Move(Microsoft.Xna.Framework.Input.KeyboardState keyState)
+        public void Move(object keyState)
         {
-            #region log
-            if (keyState.GetPressedKeys().Length > 0
-                && MINIGAMESDATA.Instance._isLogEnabled
-                && MINIGAMESDATA.Instance._isKeyboardEnabled)
+            if (MINIGAMESDATA.Instance._isKeyboardEnabled)
             {
-                LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
-                LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
-                LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
-                LOG.Instance._message = keyState.GetPressedKeys()[0].ToString();
-                MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
-                System.Console.WriteLine(LOG.Instance.SerializeToString());
-            }
-            #endregion
-            
-            //check the update the emotions based on keyboard inputs
-            if (MINIGAMESDATA.Instance._isMinigameRunning)
-            {
-                //simulating the effect of emotional signals receiving from Emotion Detection Engine
-                //puzzle <-> excitemnet
-                //brickout <-> fun
-                //electris <-> frustration
-                #region change_emotion_values
-                if (MINIGAMESDATA.Instance._isMotionDebuggEnabled && MINIGAMESDATA.Instance._isKeyboardEnabled)
+                #region log
+                KeyboardState keyboardState = (KeyboardState)keyState;
+                if (keyboardState.GetPressedKeys().Length > 0
+                    && MINIGAMESDATA.Instance._isLogEnabled
+                    && MINIGAMESDATA.Instance._isKeyboardEnabled)
                 {
-                    if (keyState.IsKeyDown(Keys.Up))
-                    {
-                        if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG
-                            && MINIGAMESDATA.Instance._excitement < 10)
-                        {
-                            MINIGAMESDATA.Instance._excitement++;
-                        }
-                        else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG
-                                && MINIGAMESDATA.Instance._fun < 10)
-                        {
-                            MINIGAMESDATA.Instance._fun++;
-                            if (MINIGAMESDATA.Instance._excitement < 10)
-                                MINIGAMESDATA.Instance._excitement++;
-                        }
-
-                        else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG
-                                && MINIGAMESDATA.Instance._boredom < 10)
-                        {
-                            MINIGAMESDATA.Instance._boredom++;
-                        }
-                    }
-                    else if (keyState.IsKeyDown(Keys.Down))
-                    {
-                        if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG
-                            && MINIGAMESDATA.Instance._excitement > 1)
-                        {
-                            MINIGAMESDATA.Instance._excitement--;
-                        }
-                        else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG
-                                && MINIGAMESDATA.Instance._fun > 1)
-                        {
-                            MINIGAMESDATA.Instance._fun--;
-                            if (MINIGAMESDATA.Instance._excitement > 1)
-                                MINIGAMESDATA.Instance._excitement--;
-                        }
-                        else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG
-                                && MINIGAMESDATA.Instance._boredom > 1)
-                        {
-                            MINIGAMESDATA.Instance._boredom--;
-                        }
-                    }
+                    LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
+                    LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
+                    LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
+                    LOG.Instance._message = keyboardState.GetPressedKeys()[0].ToString();
+                    MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
+                    System.Console.WriteLine(LOG.Instance.SerializeToString());
                 }
                 #endregion
-            }
 
-            //invoke the update function of the minigames
-            if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
-            {
-                _puzzle.Update(keyState);   
+                //check the update the emotions based on keyboard inputs
+                if (MINIGAMESDATA.Instance._isMinigameRunning)
+                {
+                    //simulating the effect of emotional signals receiving from Emotion Detection Engine
+                    //puzzle <-> excitemnet
+                    //brickout <-> fun
+                    //electris <-> frustration
+                    #region change_emotion_values
+                    if (MINIGAMESDATA.Instance._isMotionDebuggEnabled && MINIGAMESDATA.Instance._isKeyboardEnabled)
+                    {
+                        if (keyboardState.IsKeyDown(Keys.Up))
+                        {
+                            if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG
+                                && MINIGAMESDATA.Instance._excitement < 10)
+                            {
+                                MINIGAMESDATA.Instance._excitement++;
+                            }
+                            else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG
+                                    && MINIGAMESDATA.Instance._fun < 10)
+                            {
+                                MINIGAMESDATA.Instance._fun++;
+                                if (MINIGAMESDATA.Instance._excitement < 10)
+                                    MINIGAMESDATA.Instance._excitement++;
+                            }
+
+                            else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG
+                                    && MINIGAMESDATA.Instance._boredom < 10)
+                            {
+                                MINIGAMESDATA.Instance._boredom++;
+                            }
+                        }
+                        else if (keyboardState.IsKeyDown(Keys.Down))
+                        {
+                            if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG
+                                && MINIGAMESDATA.Instance._excitement > 1)
+                            {
+                                MINIGAMESDATA.Instance._excitement--;
+                            }
+                            else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG
+                                    && MINIGAMESDATA.Instance._fun > 1)
+                            {
+                                MINIGAMESDATA.Instance._fun--;
+                                if (MINIGAMESDATA.Instance._excitement > 1)
+                                    MINIGAMESDATA.Instance._excitement--;
+                            }
+                            else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG
+                                    && MINIGAMESDATA.Instance._boredom > 1)
+                            {
+                                MINIGAMESDATA.Instance._boredom--;
+                            }
+                        }
+                    }
+                    #endregion
+                }
+
+                //invoke the update function of the minigames
+                if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
+                {
+                    _puzzle.Update(keyboardState);
+                }
+                else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG)
+                {
+                    _electris.Update(keyboardState);
+                }
+                else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG)
+                {
+                    _wallDestroyer.Update(keyboardState);
+                }
+                else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.clickAndHack_TAG)
+                {
+
+                }
             }
-            else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG)
+            else
             {
-                _electris.Update(keyState);  
-            }
-            else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG)
-            {
-                _wallDestroyer.Update(keyState);
-            }
-            else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.clickAndHack_TAG)
-            {
-               
+                //log
+                #region
+                GamePadState gamepadState = (GamePadState)keyState;
+                string temp = gamepadState.Buttons.ToString();
+                string temp2 = gamepadState.DPad.ToString();
+                if ((gamepadState.Buttons.ToString() != "{Buttons:None}"
+                    || gamepadState.DPad.ToString() != "{DPad:None}")
+                    && MINIGAMESDATA.Instance._isLogEnabled
+                    )
+                {
+                    LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
+                    LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
+                    LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
+                    if ((gamepadState.Buttons.ToString() != "{Buttons:None}"))
+                        LOG.Instance._message = gamepadState.Buttons.ToString();
+                    else if (gamepadState.DPad.ToString() != "{DPad:None}")
+                        LOG.Instance._message = gamepadState.DPad.ToString();
+                    MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
+                    System.Console.WriteLine(LOG.Instance.SerializeToString());
+                }
+                #endregion
+
+                //invoke the update function of the minigames
+                if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
+                {
+                    _puzzle.Update(gamepadState);
+                }
+                else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG)
+                {
+                    _electris.Update(gamepadState);
+                }
+                else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG)
+                {
+                    _wallDestroyer.Update(gamepadState);
+                }
             }
         }
 
-		public void UpdateGamepad(GamePadState gamepadState)
-		{
-            //log
-            #region
-            string temp = gamepadState.Buttons.ToString();
-            string temp2 = gamepadState.DPad.ToString();
-            if ((gamepadState.Buttons.ToString() != "{Buttons:None}"
-                || gamepadState.DPad.ToString() != "{DPad:None}")
-                && MINIGAMESDATA.Instance._isLogEnabled
-                )
-            {
-                LOG.Instance._logType = LOG.LogTypeEnum.inputLog;
-                LOG.Instance._inputDevice = LOG.InputDeviceTypeEnum.keyboardinput;
-                LOG.Instance._gameType = MINIGAMESDATA.Instance._currentMiniGame;
-                if ((gamepadState.Buttons.ToString() != "{Buttons:None}"))
-                    LOG.Instance._message = gamepadState.Buttons.ToString();
-                else if (gamepadState.DPad.ToString() != "{DPad:None}")
-                    LOG.Instance._message = gamepadState.DPad.ToString();
-                MINIGAMESDATA.Instance._log.Message(LOG.Instance.SerializeToString());
-                System.Console.WriteLine(LOG.Instance.SerializeToString());
-            }
-            #endregion
-
-			//invoke the update function of the minigames
-			if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.puzzle_TAG)
-			{
-				_puzzle.Update(gamepadState);
-			}
-			else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.electris_TAG)
-			{
-				_electris.Update(gamepadState);
-			}
-			else if (MINIGAMESDATA.Instance._currentMiniGame == MINIGAMESDATA.MinigamesEnum.wallDestroyer_TAG)
-			{
-				_wallDestroyer.Update(gamepadState);
-			}
-		}
-		
 
         /// <summary>
         /// This function handles all the mouse events
