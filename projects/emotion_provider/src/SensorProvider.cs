@@ -271,9 +271,9 @@ namespace emophiz
 				m_valence.Current = m_fuzzyEngineValence.Defuzzify();
 				m_arousal.Current = m_fuzzyEngineArousal.Defuzzify();
 
-				if (m_valence.Current == double.NaN)
+				if (Double.IsNaN(m_valence.Current))
 					m_valence.Current = 0;
-				if (m_arousal.Current == double.NaN)
+				if (Double.IsNaN(m_arousal.Current))
 					m_arousal.Current = 0;
 
 				// Phase 2
@@ -281,21 +281,21 @@ namespace emophiz
 				m_fuzzyEngineFun.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
 				m_fun.Current = m_fuzzyEngineFun.Defuzzify();
 
-				if (m_fun.Current == double.NaN)
+				if (Double.IsNaN(m_fun.Current))
 					m_fun.Current = 0;
 
 				m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
 				m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
 				m_excitement.Current = m_fuzzyEngineExcitement.Defuzzify();
 
-				if (m_excitement.Current == double.NaN)
+				if (Double.IsNaN(m_excitement.Current))
 					m_excitement.Current = 0;
 
 				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
 				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
 				m_boredom.Current = m_fuzzyEngineBoredom.Defuzzify();
 
-				if (m_boredom.Current == double.NaN)
+				if (Double.IsNaN(m_boredom.Current))
 					m_boredom.Current = 0;
 
 				m_log.Message(signal.Serialize(), Log.Details.Short);
