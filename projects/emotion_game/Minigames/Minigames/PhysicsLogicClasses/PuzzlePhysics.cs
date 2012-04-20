@@ -141,6 +141,10 @@ namespace Minigames.PhysicsLogicClasses
                 #region Detect_Quit_Hit
                 if (gamepadKey.IsButtonDown(Buttons.B))
                 {
+                    //disable log
+                    string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    MINIGAMESDATA.Instance.DisableLog(message);
+
                     //check for the game result
                     PUZZLESHAREDDATA.Instance._currentGameResult = false;
                     //set the minigame status
@@ -255,6 +259,10 @@ namespace Minigames.PhysicsLogicClasses
                 #region Detect_Quit_Hit
                 if (keyboardKey.IsKeyDown(Keys.Escape))
                 {
+                    //disable log
+                    string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    MINIGAMESDATA.Instance.DisableLog(message);
+
                     //check for the game result
                     PUZZLESHAREDDATA.Instance._currentGameResult = false;
                     //set the minigame status
@@ -275,6 +283,10 @@ namespace Minigames.PhysicsLogicClasses
             //check for the game result
             if (IsGameFinished())
             {
+                //disable log
+                string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                MINIGAMESDATA.Instance.DisableLog(message);
+
                 PUZZLESHAREDDATA.Instance._currentGameResult = true;
                 //set the minigame status
                 MINIGAMESDATA.Instance._isMinigameRunning = false;

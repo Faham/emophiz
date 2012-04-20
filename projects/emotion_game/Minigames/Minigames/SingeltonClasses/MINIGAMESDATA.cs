@@ -163,6 +163,8 @@ namespace Minigames.SingeltonClasses
             //reset emotions
             ResetEmotions(_defaultEmotionValue);
 
+            
+
             //invoke the reset function of the minigame
             if (minigame == MinigamesEnum.puzzle_TAG)
                 PUZZLESHAREDDATA.Instance.Reset();
@@ -239,6 +241,24 @@ namespace Minigames.SingeltonClasses
             }
             #endregion
             return true;
+        }
+
+        //disable log
+        public void DisableLog(string message = "")
+        {
+            _log.Message(message);
+            m_emotionMonitor.Log.Message(message);
+            _log.Enable = false;
+            m_emotionMonitor.Log.Enable = false;
+        }
+
+        //enable log
+        public void EnableLog(string message = "")
+        {
+            _log.Enable = true;
+            m_emotionMonitor.Log.Enable = true;
+            _log.Message(message);
+            m_emotionMonitor.Log.Message(message);
         }
     }
 }

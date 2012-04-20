@@ -113,6 +113,10 @@ namespace Minigames.PhysicsLogicClasses
                 GamePadState gamepadState = (GamePadState)keyboard;
                 if (gamepadState.IsButtonDown(Buttons.B))
                 {
+                    //disable log
+                    string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    MINIGAMESDATA.Instance.DisableLog(message);
+
                     //check for the game result
                     ELECTRISSHAREDDATA.Instance._currentGameResult = false;
                     //set the minigame status
@@ -130,6 +134,10 @@ namespace Minigames.PhysicsLogicClasses
                 KeyboardState keyboardState = (KeyboardState)keyboard;
                 if (keyboardState.IsKeyDown(Keys.Escape))
                 {
+                    //disable log
+                    string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    MINIGAMESDATA.Instance.DisableLog(message);
+
                     //check for the game result
                     ELECTRISSHAREDDATA.Instance._currentGameResult = false;
                     //set the minigame status
@@ -219,6 +227,10 @@ namespace Minigames.PhysicsLogicClasses
             #region check_the_game_status
             if (IsGameFinished())
             {
+                //disable log
+                string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                MINIGAMESDATA.Instance.DisableLog(message);
+
                 ELECTRISSHAREDDATA.Instance._currentGameResult = true;
                 //set the minigame status
                 MINIGAMESDATA.Instance._isMinigameRunning = false;
@@ -297,6 +309,13 @@ namespace Minigames.PhysicsLogicClasses
                 //set the falg to false to prevent generating more items ot once!
                 _isGenerable = false;
                 _isChangable = true;
+
+                //reset the falling delay
+                if (!MINIGAMESDATA.Instance._isAdaptationEnabled)
+                {
+                    ELECTRISSHAREDDATA.Instance._currentFallingDelay = ELECTRISSHAREDDATA.Instance._fallingDelay;
+
+                }
             }
         }
 

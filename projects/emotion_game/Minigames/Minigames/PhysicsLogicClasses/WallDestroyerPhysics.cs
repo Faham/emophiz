@@ -80,18 +80,22 @@ namespace Minigames.PhysicsLogicClasses
 
                 #region Quit_Hit
                 if (gamepadState.IsButtonDown(Buttons.B))
-            {
-                //check for the game result
-                WALLDESTROYERSHAREDDATA.Instance._currentGameResult = false;
-                //set the minigame status
-                MINIGAMESDATA.Instance._isMinigameRunning = false;
-                //change the interface
-                MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
-                //log
-                WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
-                WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += WALLDESTROYERSHAREDDATA.Instance._currentGameResult ? "1" : "0";
-                WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += "\t";
-            }
+                {
+                    //disable log
+                    string message = "BrickOut finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    MINIGAMESDATA.Instance.DisableLog(message);
+
+                    //check for the game result
+                    WALLDESTROYERSHAREDDATA.Instance._currentGameResult = false;
+                    //set the minigame status
+                    MINIGAMESDATA.Instance._isMinigameRunning = false;
+                    //change the interface
+                    MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
+                    //log
+                    WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
+                    WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += WALLDESTROYERSHAREDDATA.Instance._currentGameResult ? "1" : "0";
+                    WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += "\t";
+                }
             #endregion
 
                 #region Right_Key_Hit
@@ -158,6 +162,10 @@ namespace Minigames.PhysicsLogicClasses
                 #region Quit_Key_Hit
                 if (keyboardState.IsKeyDown(Keys.Escape))
                 {
+                    //disable log
+                    string message = "BrickOut finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    MINIGAMESDATA.Instance.DisableLog(message);
+
                     //check for the game result
                     WALLDESTROYERSHAREDDATA.Instance._currentGameResult = false;
                     //set the minigame status
@@ -248,6 +256,11 @@ namespace Minigames.PhysicsLogicClasses
             #region check_game_status
             if (WALLDESTROYERSHAREDDATA.Instance._numberOfBalls > WALLDESTROYERSHAREDDATA.Instance._numberOfAvailableBalls)
             {//game over!
+
+                //disable log
+                string message = "BrickOut finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                MINIGAMESDATA.Instance.DisableLog(message);
+
                 WALLDESTROYERSHAREDDATA.Instance._currentGameResult = false;
                 //set the minigame status
                 MINIGAMESDATA.Instance._isMinigameRunning = false;
@@ -261,6 +274,10 @@ namespace Minigames.PhysicsLogicClasses
             }
             if (WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks == WALLDESTROYERSHAREDDATA.Instance._totalNumberOfBricks)
             {
+                //disable log
+                string message = "BrickOut finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                MINIGAMESDATA.Instance.DisableLog(message);
+
                 WALLDESTROYERSHAREDDATA.Instance._currentGameResult = true;
                 //set the minigame status
                 MINIGAMESDATA.Instance._isMinigameRunning = false;
