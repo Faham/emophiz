@@ -75,13 +75,38 @@ namespace Minigames.SingeltonClasses
 
 			m_emotionMonitor = new emophiz.m_frmEmotionMonitor();
 			m_emotionMonitor.Log.Enable = false;
-			m_emotionMonitor.Show();
+
 			//if (false)
 			//    initEmotionProvider();
-            
+
+			showOn1stMonitor(m_emotionMonitor);
         }
 
-		
+		private void showOn2ndMonitor(System.Windows.Forms.Form form) 
+		{ 
+			System.Windows.Forms.Screen[] sc;
+			sc = System.Windows.Forms.Screen.AllScreens;
+ 
+			//get all the screen width and heights 
+			//form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			form.Left = sc[0].Bounds.Width + sc[1].Bounds.Width / 2 - form.Width / 2;
+			form.Top = sc[1].Bounds.Height / 2 - form.Height / 2;
+			form.StartPosition = System.Windows.Forms.FormStartPosition.Manual; 
+			form.Show(); 
+		}
+
+		private void showOn1stMonitor(System.Windows.Forms.Form form)
+		{
+			System.Windows.Forms.Screen[] sc;
+			sc = System.Windows.Forms.Screen.AllScreens;
+
+			//get all the screen width and heights 
+			//form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			form.Left = sc[0].Bounds.Width / 2 - form.Width / 2;
+			form.Top = sc[0].Bounds.Height / 2 - form.Height / 2;
+			form.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+			form.Show();
+		}		
 
         #region fahamComment
         //private emophiz.SensorProvider m_emotionProvider;

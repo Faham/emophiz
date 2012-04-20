@@ -13,9 +13,17 @@ using Minigames.SingeltonClasses;
 using Minigames.XMLClasses;
 using Minigames.PhysicsLogicClasses;
 using Minigames.UtilityClasses;
+using System.Runtime.InteropServices;
 
 namespace Minigames
 {
+	public class User32
+	{
+		[DllImport("user32.dll")]
+		public static extern void SetWindowPos(uint Hwnd, uint Level, int X,
+			int Y, int W, int H, uint Flags);
+	} 
+
     public class MiniGamesCore : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager _graphics;
@@ -64,7 +72,13 @@ namespace Minigames
         protected override void Initialize()
         {
 			//initialize the gamepad state
-			
+
+			System.Windows.Forms.Screen[] sc;
+			sc = System.Windows.Forms.Screen.AllScreens;
+
+			if (sc.Length > 1)
+				User32.SetWindowPos((uint)this.Window.Handle, 0, 2000, 50, 1280, 800, 0);
+
 			base.Initialize();
         }
 
