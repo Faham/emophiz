@@ -239,8 +239,7 @@ namespace Minigames.SingeltonClasses
 
             //log
             _puzzleLogStr += "Puzzle" + _currentNumberOfDisks.ToString() + "\t";
-            TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
-            _puzzleLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+            _puzzleLogStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
         }
     }
 }

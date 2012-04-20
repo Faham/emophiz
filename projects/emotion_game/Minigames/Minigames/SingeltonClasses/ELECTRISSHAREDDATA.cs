@@ -129,8 +129,7 @@ namespace Minigames.SingeltonClasses
             }
 
             _electrisLogStr += "Electris" + _currentNumberOfRows.ToString() + "\t";
-            TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
-            _electrisLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+            _electrisLogStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
         }
     }
 }

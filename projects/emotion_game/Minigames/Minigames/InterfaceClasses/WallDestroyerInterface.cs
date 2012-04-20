@@ -86,6 +86,9 @@ namespace Minigames.InterfaceClasses
                     new Vector2((int)(WALLDESTROYERSHAREDDATA.Instance._handlePosition.X), (int)WALLDESTROYERSHAREDDATA.Instance._handlePosition.Y + _compassTexture.Height), Color.White);
             }
 
+            //debug collision detection
+            //Primitives2D.DrawRectangle(OBJECTS.Instance._sharedSpriteBatch, new Rectangle((int)WALLDESTROYERSHAREDDATA.Instance._nextBallPosition.X, (int)WALLDESTROYERSHAREDDATA.Instance._nextBallPosition.Y, WALLDESTROYERSHAREDDATA.Instance._ballSize, WALLDESTROYERSHAREDDATA.Instance._ballSize), Color.Red);
+
             
 
             //draw emotion value

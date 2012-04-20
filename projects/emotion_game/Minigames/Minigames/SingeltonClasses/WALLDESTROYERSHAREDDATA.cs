@@ -63,6 +63,7 @@ namespace Minigames.SingeltonClasses
         public int _numberOfHitBricks;
         public string _wallDestroyerLogStr;
         public int _totalNumberOfBricks;
+        public Vector2 _nextBallPosition;
 
         //constructor
         private WALLDESTROYERSHAREDDATA()
@@ -113,6 +114,7 @@ namespace Minigames.SingeltonClasses
             //reset the board and ball positions
             _ballPosition = new Vector2(OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Width / 2, OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Height - _ballHorizontalPosition);
             _boardPosition = new Vector2(OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Width / 2, OBJECTS.Instance._sharedGraphicDeviceMgr.GraphicsDevice.Viewport.Height - _boardHorizontalposition);
+            _nextBallPosition = _ballPosition;
 
             //set the current number of bricks
             if (WALLDESTROYERSHAREDDATA.Instance._currentWallDestroyerType == WALLDESTROYERSHAREDDATA.WallDestroyerTypesEnum.wallDestroyer1_TAG)
@@ -154,8 +156,8 @@ namespace Minigames.SingeltonClasses
 
             //log
             _wallDestroyerLogStr += "WallDestroyer" + _currentNumberOfBricks.ToString() + "\t";
-            TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
-            _wallDestroyerLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+
+            _wallDestroyerLogStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
         }
 
         //add ball method to add more balls

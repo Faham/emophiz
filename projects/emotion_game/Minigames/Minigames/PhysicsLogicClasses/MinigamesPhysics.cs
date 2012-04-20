@@ -226,7 +226,7 @@ namespace Minigames.PhysicsLogicClasses
                         //disable logging
                         MINIGAMESDATA.Instance._isLogEnabled = false;
                         //save the logged data
-                        //MINIGAMESDATA.Instance.Log();
+                        MINIGAMESDATA.Instance.Log();
                     }
                 }
 

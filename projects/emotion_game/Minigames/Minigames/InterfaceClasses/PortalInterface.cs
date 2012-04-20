@@ -44,7 +44,7 @@ namespace Minigames.InterfaceClasses
             //
             //loading other textures
             //
-            _backgroundTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\background");
+            _backgroundTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\background3");
             _startLogTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\startLog");
             _stopLogTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\stopLog");
             _enableAdaptationTexture = OBJECTS.Instance._sharedContent.Load<Texture2D>(@"Pictures\Portal\enableAdaptation");

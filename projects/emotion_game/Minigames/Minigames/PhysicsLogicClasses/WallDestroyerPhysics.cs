@@ -14,6 +14,7 @@ namespace Minigames.PhysicsLogicClasses
         //enum variable to define the collision types
         enum _CollisionTypesEnum {null_TAG =0, brick_TAG, rightSide_TAG, leftSide_TAG, bottom_TAG, up_TAG, board_TAG,
         ballAndRightBrick_TAG, ballAndLeftBrick_TAG, ballAndUpBrick_TAG, ballAndBottomBrick_TAG};
+        _CollisionTypesEnum _lastCollisionType;
         //struct variable to define the collision details between brick and the ball
         struct _BallAndBrickCollision
         {
@@ -87,8 +88,7 @@ namespace Minigames.PhysicsLogicClasses
                 //change the interface
                 MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
                 //log
-                TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
-                WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+                WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
                 WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += WALLDESTROYERSHAREDDATA.Instance._currentGameResult ? "1" : "0";
                 WALLDESTROYERSHAREDDATA.Instance._wallDestroyerLogStr += "\t";
             }
@@ -142,11 +142,12 @@ namespace Minigames.PhysicsLogicClasses
 
                 #region Space_Key_Hit
                 if (gamepadState.IsButtonDown(Buttons.X) && !WALLDESTROYERSHAREDDATA.Instance._isShoot)
-            {
-                WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Cos(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
-                WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Sin(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
-                WALLDESTROYERSHAREDDATA.Instance._isShoot = true;
-            }
+                {
+                    WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Cos(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
+                    WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Sin(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
+                    WALLDESTROYERSHAREDDATA.Instance._isShoot = true;
+                    _lastCollisionType = _CollisionTypesEnum.null_TAG;
+                }
             #endregion
             }
             #endregion
@@ -223,6 +224,7 @@ namespace Minigames.PhysicsLogicClasses
                     WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Cos(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
                     WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y = (float)(WALLDESTROYERSHAREDDATA.Instance._ballInitialSpeed * Math.Sin(WALLDESTROYERSHAREDDATA.Instance._compassHandleAngleRadian));
                     WALLDESTROYERSHAREDDATA.Instance._isShoot = true;
+                    _lastCollisionType = _CollisionTypesEnum.null_TAG;
                 }
                 #endregion
             }
@@ -238,6 +240,7 @@ namespace Minigames.PhysicsLogicClasses
                 //get the next ball position
                 Vector2 ballTemporaryPosition = new Vector2((float)(WALLDESTROYERSHAREDDATA.Instance._ballPosition.X + WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.X),
                     (float)(WALLDESTROYERSHAREDDATA.Instance._ballPosition.Y + WALLDESTROYERSHAREDDATA.Instance._currentBallSpeed.Y));
+                WALLDESTROYERSHAREDDATA.Instance._nextBallPosition = ballTemporaryPosition;
                 ChangeDirectionAndSpeed(ballTemporaryPosition, WALLDESTROYERSHAREDDATA.Instance._ballSize);
             }
             #endregion
@@ -298,13 +301,13 @@ namespace Minigames.PhysicsLogicClasses
                     Rectangle collisionRect = Rectangle.Intersect(targetRect, new Rectangle((int)position.X, (int)position.Y, size, size));
                     if (collisionRect.Width >= collisionRect.Height)
                     {
-                        if (center.Y >= targetRect.Y + targetRect.Height / 2)//up side brick
+                        if (center.Y >= targetRect.Y + targetRect.Height / 2 && _lastCollisionType != _CollisionTypesEnum.ballAndUpBrick_TAG)//up side brick
                         {
                             result.brickIndex = counter;
                             result.collisionType = _CollisionTypesEnum.ballAndUpBrick_TAG;
                             break;
                         }
-                        else
+                        else if (_lastCollisionType != _CollisionTypesEnum.ballAndBottomBrick_TAG)
                         {
                             result.brickIndex = counter;
                             result.collisionType = _CollisionTypesEnum.ballAndBottomBrick_TAG;
@@ -313,13 +316,13 @@ namespace Minigames.PhysicsLogicClasses
                     }
                     else if (collisionRect.Width < collisionRect.Height)
                     {
-                        if (center.X <= targetRect.X + targetRect.Width / 2)//right side brick
+                        if (center.X <= targetRect.X + targetRect.Width / 2 && _lastCollisionType != _CollisionTypesEnum.ballAndRightBrick_TAG)//right side brick
                         {
                             result.brickIndex = counter;
                             result.collisionType = _CollisionTypesEnum.ballAndRightBrick_TAG;
                             break;
                         }
-                        else
+                        else if (_lastCollisionType != _CollisionTypesEnum.ballAndLeftBrick_TAG)
                         {
                             result.brickIndex = counter;
                             result.collisionType = _CollisionTypesEnum.ballAndLeftBrick_TAG;

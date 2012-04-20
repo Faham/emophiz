@@ -148,8 +148,7 @@ namespace Minigames.PhysicsLogicClasses
                     //change the interface
                     MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
                     //log
-                    TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
-                    PUZZLESHAREDDATA.Instance._puzzleLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+                    PUZZLESHAREDDATA.Instance._puzzleLogStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
                     PUZZLESHAREDDATA.Instance._puzzleLogStr += PUZZLESHAREDDATA.Instance._currentGameResult ? "1" : "0";
                     PUZZLESHAREDDATA.Instance._puzzleLogStr += "\t";
                 }
@@ -282,8 +281,7 @@ namespace Minigames.PhysicsLogicClasses
                 //change the interface
                 MINIGAMESDATA.Instance._currentMiniGame = MINIGAMESDATA.MinigamesEnum.minigamePortal_TAG;
                 //log
-                TimeSpan timeStamp = (DateTime.UtcNow - new DateTime(1970, 1, 1));
-                PUZZLESHAREDDATA.Instance._puzzleLogStr += timeStamp.TotalSeconds.ToString() + "\t";
+                PUZZLESHAREDDATA.Instance._puzzleLogStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
                 PUZZLESHAREDDATA.Instance._puzzleLogStr += PUZZLESHAREDDATA.Instance._currentGameResult ? "1" : "0";
                 PUZZLESHAREDDATA.Instance._puzzleLogStr += "\t";
             }

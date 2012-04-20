@@ -80,7 +80,8 @@ namespace Minigames.SingeltonClasses
 
 		private emophiz.m_frmEmotionMonitor m_emotionMonitor;
 
-		//private emophiz.SensorProvider m_emotionProvider;
+        #region fahamComment
+        //private emophiz.SensorProvider m_emotionProvider;
 		//private emophiz.Log m_emotionLog = new emophiz.Log("myEmotion.log");
 
 		//private void initEmotionProvider()
@@ -111,7 +112,8 @@ namespace Minigames.SingeltonClasses
 		//        case emophiz.Message.Valence:
 		//            break;
 		//    }
-		//}
+        //}
+        #endregion
 
         //public get function
         public static MINIGAMESDATA Instance
@@ -181,13 +183,13 @@ namespace Minigames.SingeltonClasses
             string logStr = "";
             //user information
             logStr += System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff") + "\t";
-            logStr += info._participantID.ToString() + "\t";
-            logStr += info._firstName + "\t";
-            logStr += info._lastName + "\t";
-            logStr += info._age.ToString() + "\t";
-            logStr += info._DominantHand + "\t";
-            logStr += info._fieldOfStudy + "\t";
-            logStr += info._gender + "\t";
+            //logStr += info._participantID.ToString() + "\t";
+            //logStr += info._firstName + "\t";
+            //logStr += info._lastName + "\t";
+            //logStr += info._age.ToString() + "\t";
+            //logStr += info._DominantHand + "\t";
+            //logStr += info._fieldOfStudy + "\t";
+            //logStr += info._gender + "\t";
             //electris
             logStr += ELECTRISSHAREDDATA.Instance._electrisLogStr;
             //brickout
@@ -208,44 +210,49 @@ namespace Minigames.SingeltonClasses
                 return false;
             }
             #endregion
-
+            
             #region emoophiz_participant_log
-            try
-            {
-                using (XmlWriter writer = XmlWriter.Create(@"...\" + USERINFORMATION.Instance._participantID.ToString() + ".xml"))
-	            {
-                    writer.WriteStartDocument();
-                    writer.WriteStartElement("Participant");
-                    
-                    writer.WriteElementString("Date", System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff"));
-                    writer.WriteElementString("ID", info._participantID.ToString());
-                    writer.WriteElementString("FirstName", info._firstName);
-                    writer.WriteElementString("LastName", info._lastName);
-                    writer.WriteElementString("Age", info._age.ToString());
-                    writer.WriteElementString("Hand", info._DominantHand);
-                    writer.WriteElementString("FieldStudy", info._fieldOfStudy);
-                    writer.WriteElementString("Gender", info._gender);
-                    
-	                writer.WriteEndElement();
-	                writer.WriteEndDocument();
-	            }
-            }
-            catch (Exception exp)
+            /*
+            if (MINIGAMESDATA.Instance._isLogEnabled)
             {
                 try
                 {
-                    string filename = @"...\log\" + "userInformationError.txt";
-                    System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
-                    logStr = exp.ToString();
-                    file.WriteLine(logStr);
-                    file.Close();
+                    using (XmlWriter writer = XmlWriter.Create(@"...\" + USERINFORMATION.Instance._participantID.ToString() + ".xml"))
+                    {
+                        writer.WriteStartDocument();
+                        writer.WriteStartElement("Participant");
+
+                        writer.WriteElementString("Date", System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff"));
+                        writer.WriteElementString("ID", info._participantID.ToString());
+                        writer.WriteElementString("FirstName", info._firstName);
+                        writer.WriteElementString("LastName", info._lastName);
+                        writer.WriteElementString("Age", info._age.ToString());
+                        writer.WriteElementString("Hand", info._DominantHand);
+                        writer.WriteElementString("FieldStudy", info._fieldOfStudy);
+                        writer.WriteElementString("Gender", info._gender);
+
+                        writer.WriteEndElement();
+                        writer.WriteEndDocument();
+                    }
                 }
-                catch (Exception e)
+                catch (Exception exp)
                 {
-                    System.Console.WriteLine(e.ToString());
-                    return false;
+                    try
+                    {
+                        string filename = @"...\" + "userInformationError.txt";
+                        System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+                        logStr = exp.ToString();
+                        file.WriteLine(logStr);
+                        file.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        System.Console.WriteLine(e.ToString());
+                        return false;
+                    }
                 }
             }
+             */
             #endregion
             return true;
         }
