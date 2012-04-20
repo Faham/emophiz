@@ -16,7 +16,9 @@ namespace emophiz
 		private Log m_log = new Log("EmotionMonitor.log");
 		Dictionary<string, SpPerfChart.PerfChart> m_sensorPlots = new Dictionary<string, SpPerfChart.PerfChart>();
 
-		public SensorProvider EmotionEngine { get { return m_provider; }  }
+		public SensorProvider EmotionEngine { get { return m_provider; } }
+
+		public Log Log { get { return m_log; } }
 
 		public m_frmEmotionMonitor()
 		{

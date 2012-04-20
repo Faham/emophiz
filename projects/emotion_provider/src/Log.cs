@@ -12,6 +12,7 @@ namespace emophiz
 		private System.IO.StreamWriter m_logfile;
 		private System.Collections.Concurrent.ConcurrentQueue<string> m_messages;
 		private System.Timers.Timer m_timer = new System.Timers.Timer(100);
+		public bool Enable = true;
 
 		public enum Priority
 		{
@@ -66,6 +67,9 @@ namespace emophiz
 
 		public void Message(String message, Details detail = Details.Standard, Priority priority = Priority.Information)
 		{
+			if (!Enable)
+				return;
+
 			switch (detail)
 			{
 				case Details.Raw:
