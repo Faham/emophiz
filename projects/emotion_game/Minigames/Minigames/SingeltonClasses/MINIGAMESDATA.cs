@@ -71,11 +71,11 @@ namespace Minigames.SingeltonClasses
             _gameTime = new GameTime();
             _log = new emophiz.Log("minigames.log");
             _isLogEnabled = false;
-            m_emotionMonitor.Log.Enable = false;
             _isAdaptationEnabled = true;
 
 			m_emotionMonitor = new emophiz.m_frmEmotionMonitor();
-            m_emotionMonitor.Show();
+			m_emotionMonitor.Log.Enable = false;
+			m_emotionMonitor.Show();
 			//if (false)
 			//    initEmotionProvider();
             
