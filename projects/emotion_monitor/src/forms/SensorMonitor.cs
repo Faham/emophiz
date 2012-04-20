@@ -324,15 +324,15 @@ namespace emophiz
 
 		private void sensorPlotDoubleClick(object sender, EventArgs e)
 		{
-			if (!m_provider.Connected/* || !m_chbxCalibrate.Checked*/)
-				return;
+			//if (!m_provider.Connected/* || !m_chbxCalibrate.Checked*/)
+			//    return;
 
-			SpPerfChart.PerfChart plot = (SpPerfChart.PerfChart)sender;
+			//SpPerfChart.PerfChart plot = (SpPerfChart.PerfChart)sender;
 
-			if (plot != m_selectedPlot)
-				selectPlot(plot, true);
-			else
-				selectPlot(m_selectedPlot, false);
+			//if (plot != m_selectedPlot)
+			//    selectPlot(plot, true);
+			//else
+			//    selectPlot(m_selectedPlot, false);
 		}
 	}
 }
