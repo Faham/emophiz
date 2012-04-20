@@ -137,6 +137,7 @@ namespace Minigames
             #endregion
 
 			#region handle_gamepad_inputs
+            if (_gamepadState.IsConnected)
 				_physics.UpdateGamepad(_gamepadState);
 			#endregion
 			base.Update(gameTime);

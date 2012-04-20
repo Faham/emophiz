@@ -36,7 +36,7 @@ namespace Minigames.XMLClasses
             MINIGAMESDATA.Instance._nonadaptiveElectrisMinigamePositions = _minigamesSharedContent.LIBRARY_nonadaptiveElectrisPositions;
             MINIGAMESDATA.Instance._adaptiveElectrisMinigamePositions = _minigamesSharedContent.LIBRARY_adaptiveElectrisPositions;
             MINIGAMESDATA.Instance._walldestroyerMinigamePositions = _minigamesSharedContent.LIBRARY_walldestroyerMinigamePositions;
-            MINIGAMESDATA.Instance._fuzzyEnginResources = _minigamesSharedContent.LIBRARY_fuzzyEnginResources;
+            MINIGAMESDATA.Instance._isKeyboardEnabled = _minigamesSharedContent.LIBRARY_isKeyboardEnalbed == 1 ? true : false;
 
             //loads emotional values
             MINIGAMESDATA.Instance._defaultEmotionValue = _minigamesSharedContent.LIBRARY_defaultEmotionValue;

@@ -22,7 +22,8 @@ namespace MinigamesLibrary
         public List<Vector2> LIBRARY_nonadaptiveElectrisPositions;
         public List<Vector2> LIBRARY_adaptiveElectrisPositions;
         public List<Vector2> LIBRARY_walldestroyerMinigamePositions;
-        public string LIBRARY_fuzzyEnginResources;
+        public int LIBRARY_isKeyboardEnalbed;
+
         
         
 

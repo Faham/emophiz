@@ -57,7 +57,8 @@ namespace Minigames.SingeltonClasses
         public double _fun;
         public double _boredom;
         public double _excitement;
-        
+        public bool _isKeyboardEnabled;
+
 
         //constructor
         private MINIGAMESDATA()
