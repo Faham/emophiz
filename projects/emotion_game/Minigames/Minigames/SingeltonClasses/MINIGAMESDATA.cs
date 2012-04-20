@@ -163,7 +163,8 @@ namespace Minigames.SingeltonClasses
             //reset emotions
             ResetEmotions(_defaultEmotionValue);
 
-            
+            //enable log
+            EnableLog(minigame.ToString() + " started with augmentation: " + (_isAdaptationEnabled ? "ON" : "OFF"));
 
             //invoke the reset function of the minigame
             if (minigame == MinigamesEnum.puzzle_TAG)
@@ -230,7 +231,6 @@ namespace Minigames.SingeltonClasses
             {
                 string filename = @"...\" + USERINFORMATION.Instance._participantID.ToString() + ".txt";
                 System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
-                logStr += "\n";
                 file.WriteLine(logStr);
                 file.Close();
             }
@@ -246,19 +246,25 @@ namespace Minigames.SingeltonClasses
         //disable log
         public void DisableLog(string message = "")
         {
-            _log.Message(message);
-            m_emotionMonitor.Log.Message(message);
-            _log.Enable = false;
-            m_emotionMonitor.Log.Enable = false;
+            if (MINIGAMESDATA.Instance._isLogEnabled)
+            {
+                _log.Message(message);
+                m_emotionMonitor.Log.Message(message);
+                _log.Enable = false;
+                m_emotionMonitor.Log.Enable = false;
+            }
         }
 
         //enable log
         public void EnableLog(string message = "")
         {
-            _log.Enable = true;
-            m_emotionMonitor.Log.Enable = true;
-            _log.Message(message);
-            m_emotionMonitor.Log.Message(message);
+            if (MINIGAMESDATA.Instance._isLogEnabled)
+            {
+                _log.Enable = true;
+                m_emotionMonitor.Log.Enable = true;
+                _log.Message(message);
+                m_emotionMonitor.Log.Message(message);
+            }
         }
     }
 }

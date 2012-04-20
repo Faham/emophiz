@@ -49,7 +49,7 @@ namespace Minigames.SingeltonClasses
             if (_logType == LogTypeEnum.inputLog)
                 res += _inputDevice.ToString() + "\t";
             res += _gameType.ToString() + "\t";
-            res += _message + "\n";
+            res += _message;
             return res;
         }
     }

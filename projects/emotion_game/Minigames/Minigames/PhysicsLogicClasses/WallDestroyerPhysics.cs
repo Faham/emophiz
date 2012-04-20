@@ -82,7 +82,7 @@ namespace Minigames.PhysicsLogicClasses
                 if (gamepadState.IsButtonDown(Buttons.B))
                 {
                     //disable log
-                    string message = "BrickOut finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    string message = MINIGAMESDATA.Instance._currentMiniGame.ToString() +" finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
                     MINIGAMESDATA.Instance.DisableLog(message);
 
                     //check for the game result
@@ -163,7 +163,7 @@ namespace Minigames.PhysicsLogicClasses
                 if (keyboardState.IsKeyDown(Keys.Escape))
                 {
                     //disable log
-                    string message = "BrickOut finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    string message = MINIGAMESDATA.Instance._currentMiniGame.ToString() + " finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
                     MINIGAMESDATA.Instance.DisableLog(message);
 
                     //check for the game result
@@ -258,7 +258,7 @@ namespace Minigames.PhysicsLogicClasses
             {//game over!
 
                 //disable log
-                string message = "BrickOut finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                string message = MINIGAMESDATA.Instance._currentMiniGame.ToString() + " finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
                 MINIGAMESDATA.Instance.DisableLog(message);
 
                 WALLDESTROYERSHAREDDATA.Instance._currentGameResult = false;
@@ -275,7 +275,7 @@ namespace Minigames.PhysicsLogicClasses
             if (WALLDESTROYERSHAREDDATA.Instance._numberOfHitBricks == WALLDESTROYERSHAREDDATA.Instance._totalNumberOfBricks)
             {
                 //disable log
-                string message = "BrickOut finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                string message = MINIGAMESDATA.Instance._currentMiniGame.ToString() +" finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
                 MINIGAMESDATA.Instance.DisableLog(message);
 
                 WALLDESTROYERSHAREDDATA.Instance._currentGameResult = true;

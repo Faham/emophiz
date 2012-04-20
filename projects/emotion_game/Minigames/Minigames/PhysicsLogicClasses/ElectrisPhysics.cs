@@ -114,7 +114,7 @@ namespace Minigames.PhysicsLogicClasses
                 if (gamepadState.IsButtonDown(Buttons.B))
                 {
                     //disable log
-                    string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    string message = MINIGAMESDATA.Instance._currentMiniGame.ToString() + " finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
                     MINIGAMESDATA.Instance.DisableLog(message);
 
                     //check for the game result
@@ -135,7 +135,7 @@ namespace Minigames.PhysicsLogicClasses
                 if (keyboardState.IsKeyDown(Keys.Escape))
                 {
                     //disable log
-                    string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                    string message = MINIGAMESDATA.Instance._currentMiniGame.ToString() + " finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
                     MINIGAMESDATA.Instance.DisableLog(message);
 
                     //check for the game result
@@ -228,7 +228,7 @@ namespace Minigames.PhysicsLogicClasses
             if (IsGameFinished())
             {
                 //disable log
-                string message = "puzzle finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
+                string message = MINIGAMESDATA.Instance._currentMiniGame.ToString() + " finished, Augmentation was " + (MINIGAMESDATA.Instance._isAdaptationEnabled ? "ON" : "OFF");
                 MINIGAMESDATA.Instance.DisableLog(message);
 
                 ELECTRISSHAREDDATA.Instance._currentGameResult = true;
