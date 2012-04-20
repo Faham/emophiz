@@ -78,7 +78,7 @@
     <LIBRARY_defaultBoardSpeed>5</LIBRARY_defaultBoardSpeed>
     <LIBRARY_defaultEmotionValue>5</LIBRARY_defaultEmotionValue>
     <LIBRARY_maxEmotionValue>10</LIBRARY_maxEmotionValue>
-    <LIBRARY_isMotionDebugEnabled>1</LIBRARY_isMotionDebugEnabled>
+    <LIBRARY_isMotionDebugEnabled>0</LIBRARY_isMotionDebugEnabled>
       
   
 </Asset>

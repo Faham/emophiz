@@ -32,6 +32,11 @@ namespace emophiz
 			m_sensorPlots["BVP"] = m_plotBVP;
 			m_sensorPlots["EMGSmile"] = m_plotEMGSmile;
 			m_sensorPlots["EMGFrown"] = m_plotEMGFrown;
+			//m_sensorPlots["Arousal"] = m_plotArousal;
+			//m_sensorPlots["Valence"] = m_plotValence;
+			m_sensorPlots["Fun"] = m_plotFun;
+			m_sensorPlots["Excitement"] = m_plotExcitement;
+			m_sensorPlots["Boredom"] = m_plotBoredom;
 
 			foreach (KeyValuePair<string, SpPerfChart.PerfChart> item in m_sensorPlots)
 			{
@@ -60,9 +65,9 @@ namespace emophiz
 			//m_plotEMGSmile.Messages.Add("Max");
 			m_plotArousal.Messages.Add("Arousal");
 			m_plotValence.Messages.Add("Valence");
-			m_plotFun.Messages.Add("Fun");
-			m_plotExcitement.Messages.Add("Excitement");
-			m_plotBoredom.Messages.Add("Boredom");
+			//m_plotFun.Messages.Add("Fun");
+			//m_plotExcitement.Messages.Add("Excitement");
+			//m_plotBoredom.Messages.Add("Boredom");
 			m_log.Message("EmotionMonitor initialized");
 		}
 
@@ -141,7 +146,7 @@ namespace emophiz
 
 		private void updatePlots()
 		{
-			try
+			//try
 			{
 				string double_formats = "{0:0.##}";
 				m_plotGSR.AddValue(m_provider.GSR.Transformed);
@@ -175,24 +180,39 @@ namespace emophiz
 				m_plotEMGSmile.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGSmile.Maximum);
 				
 				m_plotArousal.AddValue(m_provider.Arousal.Transformed);
-				m_plotArousal.Messages[0] = "Arousal: " + String.Format(double_formats, m_provider.Arousal);
+				m_plotArousal.Messages[0] = "Arousal: " + String.Format(double_formats, m_provider.Arousal.Transformed);
+				//m_plotArousal.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Arousal.Current);
+				//m_plotArousal.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Arousal.Minimum);
+				//m_plotArousal.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Arousal.Maximum);
 
 				m_plotValence.AddValue(m_provider.Valence.Transformed);
-				m_plotValence.Messages[0] = "Valence: " + String.Format(double_formats, m_provider.Valence);
+				m_plotValence.Messages[0] = "Valence: " + String.Format(double_formats, m_provider.Valence.Transformed);
+				//m_plotValence.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Valence.Current);
+				//m_plotValence.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Valence.Minimum);
+				//m_plotValence.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Valence.Maximum);
 
 				m_plotFun.AddValue(m_provider.Fun.Transformed);
-				m_plotFun.Messages[0] = "Fun: " + String.Format(double_formats, m_provider.Fun);
+				m_plotFun.Messages[0] = "Fun: " + String.Format(double_formats, m_provider.Fun.Transformed);
+				m_plotFun.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Fun.Current);
+				m_plotFun.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Fun.Minimum);
+				m_plotFun.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Fun.Maximum);
 
 				m_plotExcitement.AddValue(m_provider.Excitement.Transformed);
-				m_plotExcitement.Messages[0] = "Excitement: " + String.Format(double_formats, m_provider.Excitement);
+				m_plotExcitement.Messages[0] = "Excitement: " + String.Format(double_formats, m_provider.Excitement.Transformed);
+				m_plotExcitement.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Excitement.Current);
+				m_plotExcitement.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Excitement.Minimum);
+				m_plotExcitement.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Excitement.Maximum);
 
 				m_plotBoredom.AddValue(m_provider.Boredom.Transformed);
-				m_plotBoredom.Messages[0] = "Boredom: " + String.Format(double_formats, m_provider.Boredom);
+				m_plotBoredom.Messages[0] = "Boredom: " + String.Format(double_formats, m_provider.Boredom.Transformed);
+				m_plotBoredom.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Boredom.Current);
+				m_plotBoredom.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Boredom.Minimum);
+				m_plotBoredom.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Boredom.Maximum);
 			}
-			catch (System.Exception ex)
-			{
-				System.Windows.Forms.MessageBox.Show(ex.Message);
-			}
+			//catch (System.Exception ex)
+			//{
+			//    System.Windows.Forms.MessageBox.Show(ex.Message);
+			//}
 		}
 
 		private void updateSpeedLabel()
