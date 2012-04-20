@@ -210,50 +210,6 @@ namespace Minigames.SingeltonClasses
                 return false;
             }
             #endregion
-            
-            #region emoophiz_participant_log
-            /*
-            if (MINIGAMESDATA.Instance._isLogEnabled)
-            {
-                try
-                {
-                    using (XmlWriter writer = XmlWriter.Create(@"...\" + USERINFORMATION.Instance._participantID.ToString() + ".xml"))
-                    {
-                        writer.WriteStartDocument();
-                        writer.WriteStartElement("Participant");
-
-                        writer.WriteElementString("Date", System.DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss:ffff"));
-                        writer.WriteElementString("ID", info._participantID.ToString());
-                        writer.WriteElementString("FirstName", info._firstName);
-                        writer.WriteElementString("LastName", info._lastName);
-                        writer.WriteElementString("Age", info._age.ToString());
-                        writer.WriteElementString("Hand", info._DominantHand);
-                        writer.WriteElementString("FieldStudy", info._fieldOfStudy);
-                        writer.WriteElementString("Gender", info._gender);
-
-                        writer.WriteEndElement();
-                        writer.WriteEndDocument();
-                    }
-                }
-                catch (Exception exp)
-                {
-                    try
-                    {
-                        string filename = @"...\" + "userInformationError.txt";
-                        System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
-                        logStr = exp.ToString();
-                        file.WriteLine(logStr);
-                        file.Close();
-                    }
-                    catch (Exception e)
-                    {
-                        System.Console.WriteLine(e.ToString());
-                        return false;
-                    }
-                }
-            }
-             */
-            #endregion
             return true;
         }
     }

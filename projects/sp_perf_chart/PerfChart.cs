@@ -299,7 +299,7 @@ namespace SpPerfChart
 
             result = this.Height - result;
 
-            return Convert.ToInt32(Math.Round(result));
+			return Convert.ToInt32(Math.Round(result));
         }
 
 

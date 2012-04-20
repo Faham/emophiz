@@ -142,7 +142,7 @@ namespace emophiz
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.GSR);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			m_signals[sensor_type].SmootheWindow = 2048 * 5; //frequecy * second
+			//m_signals[sensor_type].SmootheWindow = 2048 * 5; //frequecy * second
 
 			sensor_type = sensorTypeToStr(SensorType.EMGSmile);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.C, false);
@@ -151,7 +151,7 @@ namespace emophiz
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EMGSmile);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			m_signals[sensor_type].SmootheWindow = 2048 * 4;
+			//m_signals[sensor_type].SmootheWindow = 2048 * 4;
 
 			sensor_type = sensorTypeToStr(SensorType.EMGFrown);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
@@ -160,18 +160,26 @@ namespace emophiz
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EMGFrown);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			m_signals[sensor_type].SmootheWindow = 2048 * 4;
+			//m_signals[sensor_type].SmootheWindow = 2048 * 4;
 
 			m_arousal = new Signal("Arousal");
-			m_arousal.EnableNormalize = true;
+			m_arousal.Minimum = 0;
+			m_arousal.Maximum = 100;
 			m_valence = new Signal("Valence");
-			m_valence.EnableNormalize = true;
+			m_valence.Minimum = 0;
+			m_valence.Maximum = 100;
 			m_fun = new Signal("Fun");
-			m_fun.EnableNormalize = true;
+			m_fun.Minimum = 0;
+			m_fun.Maximum = 100;
+			//m_fun.EnableNormalize = true;
 			m_excitement = new Signal("Excitement");
-			m_excitement.EnableNormalize = true;
+			m_excitement.Minimum = 0;
+			m_excitement.Maximum = 100;
+			//m_excitement.EnableNormalize = true;
 			m_boredom = new Signal("Boredom");
-			m_boredom.EnableNormalize = true;
+			m_boredom.Minimum = 0;
+			m_boredom.Maximum = 100;
+			//m_boredom.EnableNormalize = true;
 
 			m_log.Message("Signals created.");
 			m_log.Message("Signal serialization format: " + Signal.SerializationFormat());
@@ -287,6 +295,21 @@ namespace emophiz
 			{
 				System.Windows.Forms.MessageBox.Show(e.Message);
 			}
+		}
+
+		public void scaleEmotions()
+		{
+			m_fun.EnableNormalize = true;
+			m_fun.NormalizeMinimum = 20.0;
+			m_fun.NormalizeMaximum = 80.0;
+
+			m_excitement.EnableNormalize = true;
+			m_excitement.NormalizeMinimum = 20.0;
+			m_excitement.NormalizeMaximum = 80.0;
+
+			m_boredom.EnableNormalize = true;
+			m_boredom.NormalizeMinimum = 20.0;
+			m_boredom.NormalizeMaximum = 80.0;
 		}
 	}
 }
