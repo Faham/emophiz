@@ -7,7 +7,7 @@
 //=============================================================================//
 #include "glos.h"
 #include <gl/gl.h>
-#include <gl/glaux.h>
+//#include <gl/glaux.h>
 #include <gl/glu.h>
 #include <stdarg.h>
 #include <string.h>
