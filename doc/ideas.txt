@@ -1,0 +1,9 @@
+- this is a nice talk: http://www.gdcvault.com/play/1014734/Biofeedback-in-Gameplay-How-Valve
+- heart rate variability signal, would be a potetionaly useful signal for more accurate extraction of gamer's emotional state.
+- eye tracker for detection of gazing of eye would be another good signal for extracton of gamer's emotional state
+- confronting continues zombie waves would be potentially a good option for applying this system to.
+- using opencv and face recognition softwares through webcams inspite of EMG sensors, for the sake of removing need for extra sensors being attached to the player.
+- AI director would be a good idea for dynamic manipulation of ai in the hl mod. it would be 
+like a central ai looking into the emotional state and decides how to change the game.
+- gsr signal change is almost logarithmic, the increase in signal in lower range identifyes
+greater change in emotional state in compare to the same amount of increase in the higher ranges.

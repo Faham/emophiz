@@ -1,0 +1,4 @@
+- 22 02 2013
+ downloaded and installed source sdk 2007 which is dependent to source sdk and source sdk 2006.
+ bought half life 2 for enabling source skd 2007 mod mode for it, i intend to use that for 
+my game testing experiment.
