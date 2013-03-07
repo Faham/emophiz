@@ -1,0 +1,8 @@
+@include "base.fgd"
+ 
+@PointClass base(Targetname) = director : "Tutorial logical entity."
+[
+	threshold(integer) : "Threshold" : 1 : "Threshold value."
+	input Tick(void) : "Adds one tick to the entity's count."
+	output OnThreshold(void) : "Threshold was hit."
+]

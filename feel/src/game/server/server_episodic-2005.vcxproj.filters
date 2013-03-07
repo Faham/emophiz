@@ -28,6 +28,9 @@
     <Filter Include="Tools Framework">
       <UniqueIdentifier>{2d361a44-9e1f-4832-a86d-9634249fc006}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Feel">
+      <UniqueIdentifier>{0d6282dc-0e6a-4736-a4ee-9b32d325e0e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\shared\achievement_saverestore.cpp">
@@ -1742,6 +1745,9 @@
     </ClCompile>
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="feel_sdk_logicalentity.cpp">
+      <Filter>Feel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
