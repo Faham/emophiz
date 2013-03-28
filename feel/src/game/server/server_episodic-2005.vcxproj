@@ -404,7 +404,7 @@ if exist "$(TargetDir)"server.pdb copy "$(TargetDir)"server.pdb "c:\program file
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="feel_sdk_logicalentity.cpp" />
+    <ClCompile Include="feel_sdk_director.cpp" />
     <ClCompile Include="filters.cpp" />
     <ClCompile Include="fire.cpp" />
     <ClCompile Include="fire_smoke.cpp" />

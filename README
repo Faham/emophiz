@@ -1,8 +1,8 @@
 Sensor		SampleRate			Channel
-EKG (BVP)	256Hz (HR -> 4Hz)	A or B
-GSR			32Hz				C to H
-EMGFrown	32Hz				C to H
-EMGSmile	32Hz				C to H
+EKG (BVP)	256Hz (HR -> 4Hz)	A or B   A
+GSR			32Hz				C to H   C
+EMGFrown	32Hz				C to H   D
+EMGSmile	32Hz				C to H   E
 
 initial: 1010
 

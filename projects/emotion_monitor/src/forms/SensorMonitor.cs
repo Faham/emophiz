@@ -13,7 +13,7 @@ namespace emophiz
 	{
 		private SensorProvider m_provider;
 		private bool m_plot_emotion = false;
-		private Log m_log = new Log("EmotionMonitor.log");
+		private Log m_log;
 		Dictionary<string, SpPerfChart.PerfChart> m_sensorPlots = new Dictionary<string, SpPerfChart.PerfChart>();
 
 		public SensorProvider EmotionEngine { get { return m_provider; } }
@@ -22,6 +22,7 @@ namespace emophiz
 
 		public m_frmEmotionMonitor()
 		{
+            m_log = new Log("emotion_monitor.log");
 			m_log.Message("Initializing EmotionMonitor");
 			InitializeComponent();
 
@@ -336,5 +337,10 @@ namespace emophiz
 			//else
 			//    selectPlot(m_selectedPlot, false);
 		}
+
+        private void m_chbxRecord_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
 	}
 }

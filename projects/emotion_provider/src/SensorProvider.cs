@@ -7,6 +7,8 @@ namespace emophiz
 {
 	public class SensorProvider
 	{
+        public string test() { return "this is a test"; }
+
 		private bool m_connected = false;
 		private SensorLib.ThoughtTechnologies.ITtlEncoder m_encoder = null;
 		private Dictionary<string, SensorLib.ThoughtTechnologies.ITtlSensor> m_sensors = new Dictionary<string, SensorLib.ThoughtTechnologies.ITtlSensor>();
@@ -37,8 +39,8 @@ namespace emophiz
 		DotFuzzy.FuzzyEngine m_fuzzyEngineBoredom = new DotFuzzy.FuzzyEngine();
 		DotFuzzy.FuzzyEngine m_fuzzyEngineExcitement = new DotFuzzy.FuzzyEngine();
 
-		System.DateTime m_last_heartbeat_time = System.DateTime.Now;
-		System.DateTime m_current_heartbeat_time = System.DateTime.Now;
+		double m_last_heartbeat_time = 0;
+		double m_current_heartbeat_time = 0;
 		double m_last_rise;
 		bool m_derivative_change = false;
 		Signal m_bvp;
@@ -55,13 +57,41 @@ namespace emophiz
 		}
 
 		private Log m_log;
+        private Log m_log_signals;
 
-		public SensorProvider(Log _log = null, String fuzzy_resources = "../../resources/")
-		{
+        public SensorProvider(Log _log = null, String fuzzy_resources = "../../resources/")
+        {
 			if (_log == null)
-				m_log = new Log("SensorProvider.log");
+				m_log = new Log("sensor_provider.log");
 			else
 				m_log = _log;
+
+            m_log_signals = new Log("sensor_provider.csv");
+            m_log_signals.CSV(Log.Details.Raw,
+                Log.Priority.Information,
+                "time",
+                "gsr_raw",
+                "gsr_transformed",
+                "hr_raw",
+                "hr_transformed",
+                "bvp_raw",
+                "bvp_transformed",
+                "emgfrown_raw",
+                "emgfrown_transformed",
+                "emgsmile_raw",
+                "emgsmile_transformed",
+                "arousal_raw",
+                "arousal_transformed",
+                "valence_raw",
+                "valence_transformed",
+                "fun_raw",
+                "fun_transformed",
+                "excitement_raw",
+                "excitement_transformed",
+                "boredom_raw",
+                "boredom_transformed"
+            );
+
 
 			m_fuzzyResources = fuzzy_resources;
 			InitFuzzyEngines();
@@ -83,6 +113,10 @@ namespace emophiz
 					return (SensorType)i;
 			return SensorType.Unknown;
 		}
+
+        public bool IsConnected() {
+            return m_connected;
+        }
 
 		public bool Connected
 		{
@@ -118,13 +152,15 @@ namespace emophiz
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.BVP);
 			m_signals[sensor_type].EnableNormalize = true;
-			m_bvp = m_signals[sensorTypeToStr(SensorType.BVP)];
+            m_signals[sensor_type].EnableSmoothe = true;
+            m_signals[sensor_type].SmootheWindow = 256 * 1;
+            m_bvp = m_signals[sensor_type];
 
 			sensor_type = sensorTypeToStr(SensorType.HR);
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.HR);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			m_signals[sensor_type].SmootheWindow = 2048 * 1;
+            m_signals[sensor_type].SmootheWindow = 256 * 5;
 
 			////////how to work with filters.
 			SensorLib.Filters.FilterOrderSpec spec = new SensorLib.Filters.FilterOrderSpec();
@@ -136,31 +172,31 @@ namespace emophiz
 			/////////
 
 			sensor_type = sensorTypeToStr(SensorType.GSR);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.B, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.C, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.GSR);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			//m_signals[sensor_type].SmootheWindow = 2048 * 5; //frequecy * second
+			m_signals[sensor_type].SmootheWindow = 32 * 1; //frequecy * second
 
 			sensor_type = sensorTypeToStr(SensorType.EMGSmile);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.C, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EMGSmile);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			//m_signals[sensor_type].SmootheWindow = 2048 * 4;
+			//m_signals[sensor_type].SmootheWindow = 32 * 4;
 
 			sensor_type = sensorTypeToStr(SensorType.EMGFrown);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
+			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.E, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type] .Start();
 			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.EMGFrown);
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
-			//m_signals[sensor_type].SmootheWindow = 2048 * 4;
+			//m_signals[sensor_type].SmootheWindow = 32 * 4;
 
 			m_arousal = new Signal("Arousal");
 			m_arousal.Minimum = 0;
@@ -213,7 +249,7 @@ namespace emophiz
 				lsn.OnMessage(msg, value);
 		}
 
-		private string m_fuzzyResources = "../../resources/";
+		private string m_fuzzyResources;
 
 		private void InitFuzzyEngines()
 		{
@@ -228,22 +264,45 @@ namespace emophiz
 
 		private void UpdateHR()
 		{
-			double _current_rise = m_bvp.Current - m_bvp.Previous;
-			if (m_last_rise * _current_rise < 0)
+			double _current_rise = m_bvp.Transformed - m_bvp.PreviousTransformed;
+            
+            if (_current_rise == 0)
+                return;
+
+            if (m_last_rise == 0) {
+                m_last_rise = _current_rise;
+                return;
+            }
+
+            if (m_last_rise * _current_rise < 0 && !m_derivative_change)
 			{
-				if (!m_derivative_change)
-					m_derivative_change = true;
-				else
-				{
-					//One HeartBeat!
-					m_derivative_change = false;
-					m_last_heartbeat_time = m_current_heartbeat_time;
-					m_current_heartbeat_time = System.DateTime.Now;
-					System.TimeSpan delta_time = m_current_heartbeat_time - m_last_heartbeat_time;
-					m_signals[sensorTypeToStr(SensorType.HR)].Current = 60000.0 / delta_time.TotalMilliseconds;
-				}
-			}
-			m_last_rise = _current_rise;
+                m_derivative_change = true;
+                m_last_rise = _current_rise;
+            }
+            else if (m_last_rise * _current_rise > 0 && m_derivative_change)
+            {
+                //One HeartBeat!
+                double now = System.TimeSpan.FromTicks(System.DateTime.Now.Ticks).TotalMilliseconds;
+                if (m_last_heartbeat_time == 0 && m_current_heartbeat_time == 0)
+                {
+                    m_last_heartbeat_time = now;
+                    m_current_heartbeat_time = now;
+                }
+                else
+                {
+                    double delta_time = now - m_last_heartbeat_time;
+                    double temp_beat_rate = 60000.0 / delta_time;
+
+                    //if (temp_beat_rate < 110 && temp_beat_rate > 40)
+                    {
+                        m_derivative_change = false;
+                        m_last_heartbeat_time = m_current_heartbeat_time;
+                        m_current_heartbeat_time = now;
+                        m_signals[sensorTypeToStr(SensorType.HR)].Current = temp_beat_rate;
+                        m_last_rise = _current_rise;
+                    }
+                }
+            }
 		}
 
 		private void sensor_DataAvailable(SensorLib.Sensors.ISensor<float> sensor, float[] data)
@@ -298,12 +357,29 @@ namespace emophiz
 				if (Double.IsNaN(m_boredom.Current))
 					m_boredom.Current = 0;
 
-				m_log.Message(signal.Serialize(), Log.Details.Short);
-				m_log.Message(m_arousal.Serialize(), Log.Details.Short);
-				m_log.Message(m_valence.Serialize(), Log.Details.Short);
-				m_log.Message(m_fun.Serialize(), Log.Details.Short);
-				m_log.Message(m_excitement.Serialize(), Log.Details.Short);
-				m_log.Message(m_boredom.Serialize(), Log.Details.Short);
+                //m_log_signals.CSV(Log.Details.Short,
+                //    Log.Priority.Information,
+                //    GSR.Current.ToString(),
+                //    GSR.Transformed.ToString(),
+                //    HR.Current.ToString(),
+                //    HR.Transformed.ToString(),
+                //    BVP.Current.ToString(),
+                //    BVP.Transformed.ToString(),
+                //    EMGFrown.Current.ToString(),
+                //    EMGFrown.Transformed.ToString(),
+                //    EMGSmile.Current.ToString(),
+                //    EMGSmile.Transformed.ToString(),
+                //    m_arousal.Current.ToString(),
+                //    m_arousal.Transformed.ToString(),
+                //    m_valence.Current.ToString(),
+                //    m_valence.Transformed.ToString(),
+                //    m_fun.Current.ToString(),
+                //    m_fun.Transformed.ToString(),
+                //    m_excitement.Current.ToString(),
+                //    m_excitement.Transformed.ToString(),
+                //    m_boredom.Current.ToString(),
+                //    m_boredom.Transformed.ToString()
+                //);
 			}
 			catch (Exception e)
 			{

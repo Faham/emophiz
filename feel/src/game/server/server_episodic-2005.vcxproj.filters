@@ -1746,7 +1746,7 @@
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
     </ClCompile>
-    <ClCompile Include="feel_sdk_logicalentity.cpp">
+    <ClCompile Include="feel_sdk_director.cpp">
       <Filter>Feel</Filter>
     </ClCompile>
   </ItemGroup>

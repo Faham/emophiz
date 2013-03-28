@@ -42,6 +42,7 @@ namespace emophiz
 		public double Shift = 0.0;
 		public double NormalizeMinimum = 0.0;
 		public double NormalizeMaximum = 100.0;
+        private Log m_log;
 
 		private bool m_enableCalibrate = false;
 		public bool EnableCalibrate 
@@ -76,6 +77,7 @@ namespace emophiz
 		private double m_current = 0.0;
 		private double m_previous = 0.0;
 		private double m_transformed = 0.0;
+        private double m_transformed_previous = 0.0;
 		private SignalType m_type = SignalType.Unknown;
 
 		public SignalType Type
@@ -102,7 +104,9 @@ namespace emophiz
 				if (m_history.Count == SmootheWindow)
 					m_history.Dequeue();
 				m_history.Enqueue(m_current);
+                m_transformed_previous = m_transformed;
 				Transform();
+                m_log.CSV(Log.Details.Short, Log.Priority.Information, m_current.ToString(), m_transformed.ToString());
 			}
 			get
 			{
@@ -118,10 +122,20 @@ namespace emophiz
 			}
 		}
 
+		public double PreviousTransformed
+		{
+			get
+			{
+                return m_transformed_previous;
+			}
+		}
+        
 		public Signal(string name = "Unknown", SignalType type = SignalType.Unknown)
 		{
 			Name = name;
 			Type = type;
+            m_log = new Log(name.ToLower() + ".csv");
+            m_log.CSV(Log.Details.Raw, Log.Priority.Information, "time", "raw", "transformed");
 		}
 
 		private void doCalibrate()

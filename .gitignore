@@ -33,6 +33,8 @@ projects/emotion_game/MinigamesLibrary/obj
 
 projects/emotion_game/Minigames/MinigamesContent/Log
 
+logs/
+
 # User configuration files #
 *.suo
 *.user

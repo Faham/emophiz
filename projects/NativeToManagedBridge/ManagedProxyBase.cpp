@@ -1,0 +1,112 @@
+#include "StdAfx.h"
+#include "ManagedProxyBase.h"
+#include "Vcclr.h"
+
+using namespace System;
+using namespace System::IO;
+using namespace System::Reflection;
+
+ManagedProxyBase::~ManagedProxyBase(void)
+{
+}
+
+String^ ManagedProxyBase::locateAssembly(String^ dllFilename)
+{
+    String^ BaseDirectory = gcnew String(L"netmodules");
+    FileInfo^ fi = gcnew FileInfo(dllFilename);
+
+	if (!fi->Exists)
+	{
+        dllFilename = Path::Combine(gcnew String(BaseDirectory), fi->Name);
+		if (!File::Exists(dllFilename))
+		{
+            FileInfo^ fib = gcnew FileInfo(Assembly::GetExecutingAssembly()->Location);
+
+			dllFilename = Path::Combine(fib->DirectoryName,fi->Name);
+			if (!File::Exists(dllFilename))
+                throw gcnew DllNotFoundException(dllFilename);
+		}
+	}
+    return dllFilename;
+}
+
+array<Object^>^ ManagedProxyBase::cliArrayFromAnyArray(const AnyTypeArray &anyArray)
+{
+    int len = static_cast<int>(anyArray.size());
+    array<Object^>^ cliArray = gcnew array<Object^>(len);
+    for(int i = 0; i < len; ++i)
+        cliArray[i] = toObject(anyArray[i]);
+    return cliArray;
+}
+
+void ManagedProxyBase::retrieveOutputParameters(MethodInfo^ functionInfo, array<Object^> ^params, AnyTypeArray &inputParams)
+{    
+    array<ParameterInfo^>^paramInfos = functionInfo->GetParameters();
+    Collections::IEnumerator^ paramPos = paramInfos->GetEnumerator();
+    while ( paramPos->MoveNext() )
+    {
+        ParameterInfo^ currentParam = safe_cast<ParameterInfo^>(paramPos->Current);
+        if ((currentParam->IsOut || currentParam->ParameterType->IsByRef) && !currentParam->IsRetval)
+        {
+            toAny(params[currentParam->Position], inputParams[currentParam->Position]);
+        }
+    }
+}
+
+Type^ ManagedProxyBase::getTypeFromFile(String^ dllFilename, String^ typeName)
+{
+    Assembly^ dllAssembly = nullptr;
+
+    if (!dllFilename->EndsWith(".dll", System::StringComparison::InvariantCultureIgnoreCase))
+        dllAssembly = Assembly::Load(dllFilename);
+    else
+        dllAssembly = Assembly::LoadFrom(locateAssembly(dllFilename));
+
+    return dllAssembly->GetType(typeName);
+}
+
+void ManagedProxyBase::systemStringToTString(System::String^ source, stdtstring &destination)
+{
+    pin_ptr<const wchar_t> pinString = PtrToStringChars(source);
+    std::wstring wsource(pinString);
+#ifdef _UNICODE
+	destination = wsource;
+#else
+    destination = stringtools::toAsciiString(wsource);
+#endif 
+}
+
+
+void ManagedProxyBase::call(const stdtstring &function, AnyType &result)
+{
+    AnyTypeArray noParameters;
+    call(function, noParameters, result);
+}
+
+void ManagedProxyBase::call(const stdtstring &function, AnyTypeArray &inOutParameters, AnyType &result)
+{
+    array<Object^>^ params = cliArrayFromAnyArray(inOutParameters);
+
+    String^ functionName = gcnew String(function.c_str());
+    Object^ returnValue = invokeFunction(functionName, params, BindingFlags::Public | BindingFlags::InvokeMethod );
+
+    // copy out- or ref-parameters back
+    retrieveOutputParameters(getManagedType()->GetMethod(functionName), params, inOutParameters);
+    // get result value here 
+    toAny(returnValue, result);
+}
+
+void ManagedProxyBase::setProperty(const stdtstring &propertyName, const AnyType &value)
+{
+    array<Object^>^ params = gcnew array<Object^>(1);
+    params[0] = toObject(value);
+
+    invokeFunction(gcnew String(propertyName.c_str()), params, BindingFlags::Public | BindingFlags::SetProperty);    
+}
+
+void ManagedProxyBase::getProperty(const stdtstring &propertyName, AnyType &value)
+{
+    Object^ returnValue = invokeFunction(gcnew String(propertyName.c_str()), nullptr, BindingFlags::Public | BindingFlags::GetProperty);    
+    // get result value here 
+    toAny(returnValue, value);
+}
