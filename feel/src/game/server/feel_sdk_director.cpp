@@ -31,7 +31,7 @@ public:
 	}
  
 	// Input function
-	void InputTick( inputdata_t &inputData );
+	void InputTickZombie( inputdata_t &inputData );
 
 private:
 	int	m_nThreshold; // Count at which to fire our output
@@ -57,7 +57,7 @@ BEGIN_DATADESC( CDirector )
 	DEFINE_KEYFIELD( m_nThreshold, FIELD_INTEGER, "threshold" ),
  
 	// Links our input name from Hammer to our input member function
-	DEFINE_INPUTFUNC( FIELD_VOID, "Tick", InputTick ),
+	DEFINE_INPUTFUNC( FIELD_VOID, "TickZombie", InputTickZombie ),
  
 	// Links our output member variable to the output name used by Hammer
 	DEFINE_OUTPUT( m_OnThreshold, "OnThreshold" ),
@@ -67,7 +67,7 @@ END_DATADESC()
 //-----------------------------------------------------------------------------
 // Purpose: Handle a tick input from another entity
 //-----------------------------------------------------------------------------
-void CDirector::InputTick( inputdata_t &inputData )
+void CDirector::InputTickZombie( inputdata_t &inputData )
 {
 	// Increment our counter
 	++m_nCounter;
