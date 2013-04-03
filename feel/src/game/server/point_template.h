@@ -48,10 +48,12 @@ public:
 	int				GetTemplateIndexForTemplate( int iTemplate );
 
 	// Template instancing
-	bool			CreateInstance( const Vector &vecOrigin, const QAngle &vecAngles, CUtlVector<CBaseEntity*> *pEntities );
+	bool			CreateInstance( const Vector &vecOrigin, const QAngle &vecAngles, CUtlVector<CBaseEntity*> *pEntities, int template_index = -1 );
 
 	// Inputs
 	void			InputForceSpawn( inputdata_t &inputdata );
+	void			InputForceSpawnIndex( inputdata_t &inputdata );
+	void			InputForceSpawnRandom( inputdata_t &inputdata );
 
 	virtual void	PerformPrecache();
 

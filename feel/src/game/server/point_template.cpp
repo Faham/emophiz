@@ -60,6 +60,8 @@ BEGIN_DATADESC( CPointTemplate )
 
 	// Inputs
 	DEFINE_INPUTFUNC( FIELD_VOID, "ForceSpawn", InputForceSpawn ),
+	DEFINE_INPUTFUNC( FIELD_INTEGER, "ForceSpawnIndex", InputForceSpawnIndex ),
+	DEFINE_INPUTFUNC( FIELD_VOID, "ForceSpawnRandom", InputForceSpawnRandom ),
 
 	// Outputs
 	DEFINE_OUTPUT( m_pOutputOnSpawned, "OnEntitySpawned" ),
@@ -315,10 +317,22 @@ void CPointTemplate::PerformPrecache()
 //			pEntities - 
 // Output : Returns true on success, false on failure.
 //-----------------------------------------------------------------------------
-bool CPointTemplate::CreateInstance( const Vector &vecOrigin, const QAngle &vecAngles, CUtlVector<CBaseEntity*> *pEntities )
+bool CPointTemplate::CreateInstance( const Vector &vecOrigin, const QAngle &vecAngles, CUtlVector<CBaseEntity*> *pEntities, int template_index /*= -1*/ )
 {
 	// Go through all our templated map data and spawn all the entities in it
-	int iTemplates = m_hTemplates.Count();
+	int iTemplates;
+	CUtlVector< int > template_indices;
+	if (template_index < 0)
+	{
+		for (int i = 0; i < m_hTemplates.Count(); ++i )
+			template_indices.AddToTail(i);
+		iTemplates = m_hTemplates.Count();
+	}
+	else
+	{
+		iTemplates = 1;
+		template_indices.AddToTail(template_index - 1);
+	}
 	if ( !iTemplates )
 	{
 		Msg("CreateInstance called on a point_template that has no templates: %s\n", STRING(GetEntityName()) );
@@ -335,7 +349,7 @@ bool CPointTemplate::CreateInstance( const Vector &vecOrigin, const QAngle &vecA
 	{
 		CBaseEntity *pEntity = NULL;
 		char *pMapData;
-		int iTemplateIndex = m_hTemplates[i].iTemplateIndex;
+		int iTemplateIndex = m_hTemplates[template_indices[i]].iTemplateIndex;
 
 		// Some templates have Entity I/O connecting the entities within the template.
 		// Unique versions of these templates need to be created whenever they're instanced.
@@ -363,7 +377,7 @@ bool CPointTemplate::CreateInstance( const Vector &vecOrigin, const QAngle &vecA
 		// Get a matrix that'll convert from world to the new local space
 		VMatrix matNewTemplateToWorld, matStoredLocalToWorld;
 		matNewTemplateToWorld.SetupMatrixOrgAngles( vecOrigin, vecAngles );
-		MatrixMultiply( matNewTemplateToWorld, m_hTemplates[i].matEntityToTemplate, matStoredLocalToWorld );
+		MatrixMultiply( matNewTemplateToWorld, m_hTemplates[template_indices[i]].matEntityToTemplate, matStoredLocalToWorld );
 
 		// Get the world origin & angles from the stored local coordinates
 		Vector vecNewOrigin;
@@ -402,6 +416,37 @@ void CPointTemplate::InputForceSpawn( inputdata_t &inputdata )
 	// Spawn our template
 	CUtlVector<CBaseEntity*> hNewEntities;
 	if ( !CreateInstance( GetAbsOrigin(), GetAbsAngles(), &hNewEntities ) )
+		return;
+	
+	// Fire our output
+	m_pOutputOnSpawned.FireOutput( this, this );
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+// Input  : &inputdata - index of template
+//-----------------------------------------------------------------------------
+void CPointTemplate::InputForceSpawnIndex( inputdata_t &inputdata )
+{
+	// Spawn our template
+	CUtlVector<CBaseEntity*> hNewEntities;
+	if ( !CreateInstance( GetAbsOrigin(), GetAbsAngles(), &hNewEntities, inputdata.value.Int()) )
+		return;
+	
+	// Fire our output
+	m_pOutputOnSpawned.FireOutput( this, this );
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+// Input  : &inputdata - 
+//-----------------------------------------------------------------------------
+void CPointTemplate::InputForceSpawnRandom( inputdata_t &inputdata )
+{
+	// Spawn our template
+	CUtlVector<CBaseEntity*> hNewEntities;
+
+	if ( !CreateInstance( GetAbsOrigin(), GetAbsAngles(), &hNewEntities, random->RandomInt(1, m_hTemplates.Count())) )
 		return;
 	
 	// Fire our output

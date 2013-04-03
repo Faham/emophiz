@@ -69,7 +69,7 @@
     <CustomBuildStep>
       <Message>Copying to c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\</Message>
       <Command>if exist "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.dll" attrib -r "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.dll"
-copy "$(TargetDir)"client.dll "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin"
+copy /Y "$(TargetDir)"client.dll "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin"
 </Command>
       <Outputs>c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.dll;%(Outputs)</Outputs>
     </CustomBuildStep>
@@ -146,9 +146,9 @@ copy "$(TargetDir)"client.dll "c:\program files (x86)\steam\steamapps\SourceMods
     <CustomBuildStep>
       <Message>Copying to c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\</Message>
       <Command>if exist "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.dll" attrib -r "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.dll"
-copy "$(TargetDir)"client.dll "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin"
+copy /Y "$(TargetDir)"client.dll "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin"
 if exist "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.pdb" attrib -r "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.pdb"
-if exist "$(TargetDir)"client.pdb copy "$(TargetDir)"client.pdb "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.pdb"
+if exist "$(TargetDir)"client.pdb copy /Y "$(TargetDir)"client.pdb "c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.pdb"
 </Command>
       <Outputs>c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.dll;c:\program files (x86)\steam\steamapps\SourceMods\feel\bin\client.pdb;%(Outputs)</Outputs>
     </CustomBuildStep>

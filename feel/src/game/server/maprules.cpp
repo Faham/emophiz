@@ -273,6 +273,7 @@ public:
 	inline	const char *MessageGet( void )	{ return STRING( m_iszMessage ); }
 
 	void InputDisplay( inputdata_t &inputdata );
+	void InputDisplayText( inputdata_t &inputdata );
 	void Display( CBaseEntity *pActivator );
 
 	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
@@ -307,6 +308,7 @@ BEGIN_DATADESC( CGameText )
 
 	// Inputs
 	DEFINE_INPUTFUNC( FIELD_VOID, "Display", InputDisplay ),
+	DEFINE_INPUTFUNC( FIELD_STRING, "DisplayText", InputDisplayText ),
 
 END_DATADESC()
 
@@ -341,6 +343,12 @@ bool CGameText::KeyValue( const char *szKeyName, const char *szValue )
 
 void CGameText::InputDisplay( inputdata_t &inputdata )
 {
+	Display( inputdata.pActivator );
+}
+
+void CGameText::InputDisplayText( inputdata_t &inputdata )
+{
+	m_iszMessage = inputdata.value.StringID();
 	Display( inputdata.pActivator );
 }
 

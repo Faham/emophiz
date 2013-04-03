@@ -5,14 +5,16 @@
 #include <assert.h>
 #include <stdio.h>
 #include <tchar.h>
+#include <math.h>
 
+/*
 // Import mscorlib typelib. Using 1.0 for maximum backwards compatibility
 #import "C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscorlib.tlb" auto_rename
 // Link with mscoree.dll import lib.
 #pragma comment(lib,"mscoree.lib") 
 
 using namespace mscorlib;
-
+*/
 class CDirector : public CLogicalEntity
 {
 public:
@@ -21,28 +23,36 @@ public:
 	DECLARE_DATADESC();
  
 	// Constructor
-	CDirector () :
-		m_pDefaultDomain(NULL),
-		m_pCLRHost(NULL)
+	CDirector () 
+		//:
+		//m_pDefaultDomain(NULL),
+		//m_pCLRHost(NULL)
 	{
 		m_nCounter = 0;
-		InitCLR();
-		InitEmophiz();
+		m_nAlive = 0;
+		m_nRound = 1;
+		//InitCLR();
+		//InitEmophiz();
 	}
  
 	// Input function
 	void InputTickZombie( inputdata_t &inputData );
+	void InputTickZombieDied( inputdata_t &inputData );
 
 private:
-	int	m_nThreshold; // Count at which to fire our output
-	int	m_nCounter;   // Internal counter
-	_AppDomainPtr m_pDefaultDomain;
-	ICorRuntimeHost *m_pCLRHost; 
+	int m_nThreshold; // Count at which to fire our output
+	float m_nIncreasePower; // Increase Power
+	int m_nCounter;   // Internal counter
+	int m_nAlive; // number of alive enemies
+	int m_nRound; // round number
+	//_AppDomainPtr m_pDefaultDomain;
+	//ICorRuntimeHost *m_pCLRHost; 
  
-	COutputEvent m_OnThreshold;	// Output event when the counter reaches the threshold
+	COutputEvent m_OnNextRound;	// Output event when the counter reaches the threshold
+	COutputEvent m_OnContinue;
 
-	int InitCLR();
-	int InitEmophiz();
+	//int InitCLR();
+	//int InitEmophiz();
 };
 
 LINK_ENTITY_TO_CLASS( director, CDirector );
@@ -55,12 +65,15 @@ BEGIN_DATADESC( CDirector )
  
 	// As above, and also links our member variable to a Hammer keyvalue
 	DEFINE_KEYFIELD( m_nThreshold, FIELD_INTEGER, "threshold" ),
+ 	DEFINE_KEYFIELD( m_nIncreasePower, FIELD_FLOAT, "increase_power" ),
  
 	// Links our input name from Hammer to our input member function
 	DEFINE_INPUTFUNC( FIELD_VOID, "TickZombie", InputTickZombie ),
+	DEFINE_INPUTFUNC( FIELD_VOID, "TickZombieDied", InputTickZombieDied ),
  
 	// Links our output member variable to the output name used by Hammer
-	DEFINE_OUTPUT( m_OnThreshold, "OnThreshold" ),
+	DEFINE_OUTPUT( m_OnNextRound, "OnNextRound" ),
+	DEFINE_OUTPUT( m_OnContinue, "OnContinue" ),
  
 END_DATADESC()
 
@@ -69,20 +82,32 @@ END_DATADESC()
 //-----------------------------------------------------------------------------
 void CDirector::InputTickZombie( inputdata_t &inputData )
 {
-	// Increment our counter
 	++m_nCounter;
- 
-	// See if we've met or crossed our threshold value
-	if ( m_nCounter >= m_nThreshold )
+	++m_nAlive;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Handle a tick input from another entity
+//-----------------------------------------------------------------------------
+void CDirector::InputTickZombieDied( inputdata_t &inputData )
+{
+	--m_nAlive;
+	if ( m_nCounter < m_nThreshold )
 	{
-		// Fire an output event
-		m_OnThreshold.FireOutput( inputData.pActivator, this );
- 
-		// Reset our counter
+		int _min = min(int(m_nThreshold * 0.6), m_nThreshold - m_nCounter);
+		for (int i = 0; i < _min; ++i)
+			m_OnContinue.FireOutput( inputData.pActivator, this );
+	}
+	else if ( m_nCounter == m_nThreshold && m_nAlive == 0)
+	{
 		m_nCounter = 0;
+		++m_nRound;
+		m_nThreshold = int(powf(m_nThreshold, m_nIncreasePower));
+		m_OnNextRound.FireOutput( inputData.pActivator, this );
 	}
 }
 
+/*
 //-----------------------------------------------------------------------------
 // Purpose: Initialize the .net clr
 //-----------------------------------------------------------------------------
@@ -189,3 +214,4 @@ exit:
 	return 0;
 }
 
+*/
