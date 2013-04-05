@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <tchar.h>
 #include <math.h>
+#include <maprules.h>
+#include <fmtstr.h>
+#include <point_template.h>
 
 /*
 // Import mscorlib typelib. Using 1.0 for maximum backwards compatibility
@@ -30,7 +33,12 @@ public:
 	{
 		m_nCounter = 0;
 		m_nAlive = 0;
+		m_nKilled = 0;
 		m_nRound = 1;
+		m_ent_gm_txt_killed = NULL;
+		m_ent_gm_txt_round = NULL;
+		m_ent_pnt_spwn_zombie = NULL;
+		m_nMaxAlive = 15;
 		//InitCLR();
 		//InitEmophiz();
 	}
@@ -38,18 +46,26 @@ public:
 	// Input function
 	void InputTickZombie( inputdata_t &inputData );
 	void InputTickZombieDied( inputdata_t &inputData );
+	void InputSetPlayerSpeed( inputdata_t &inputData );
+	void InputStart( inputdata_t &inputData );
+	
+	void Think();
 
 private:
 	int m_nThreshold; // Count at which to fire our output
 	float m_nIncreasePower; // Increase Power
 	int m_nCounter;   // Internal counter
 	int m_nAlive; // number of alive enemies
+	int m_nKilled; // number of killed enemies
 	int m_nRound; // round number
+	int m_nMaxAlive;
+	CGameText * m_ent_gm_txt_killed;
+	CGameText * m_ent_gm_txt_round;
+	CPointTemplate * m_ent_pnt_spwn_zombie;
 	//_AppDomainPtr m_pDefaultDomain;
 	//ICorRuntimeHost *m_pCLRHost; 
  
 	COutputEvent m_OnNextRound;	// Output event when the counter reaches the threshold
-	COutputEvent m_OnContinue;
 
 	//int InitCLR();
 	//int InitEmophiz();
@@ -68,43 +84,108 @@ BEGIN_DATADESC( CDirector )
  	DEFINE_KEYFIELD( m_nIncreasePower, FIELD_FLOAT, "increase_power" ),
  
 	// Links our input name from Hammer to our input member function
-	DEFINE_INPUTFUNC( FIELD_VOID, "TickZombie", InputTickZombie ),
 	DEFINE_INPUTFUNC( FIELD_VOID, "TickZombieDied", InputTickZombieDied ),
+ 	DEFINE_INPUTFUNC( FIELD_VOID, "SetPlayerSpeed", InputSetPlayerSpeed ),
+ 	DEFINE_INPUTFUNC( FIELD_VOID, "Start", InputStart ),
  
 	// Links our output member variable to the output name used by Hammer
 	DEFINE_OUTPUT( m_OnNextRound, "OnNextRound" ),
-	DEFINE_OUTPUT( m_OnContinue, "OnContinue" ),
+
+	DEFINE_THINKFUNC( Think ),
  
 END_DATADESC()
 
-//-----------------------------------------------------------------------------
-// Purpose: Handle a tick input from another entity
-//-----------------------------------------------------------------------------
-void CDirector::InputTickZombie( inputdata_t &inputData )
-{
-	++m_nCounter;
-	++m_nAlive;
-}
 
 //-----------------------------------------------------------------------------
 // Purpose: Handle a tick input from another entity
 //-----------------------------------------------------------------------------
 void CDirector::InputTickZombieDied( inputdata_t &inputData )
 {
+	++m_nKilled;
 	--m_nAlive;
+
+	if (m_ent_gm_txt_killed)
+	{
+		inputdata_t message;
+		CFmtStrN<50> formatter;
+		message.value.SetString(MAKE_STRING(formatter.sprintf("Kills: %d", m_nKilled)));
+		m_ent_gm_txt_killed->InputDisplayText(message);
+	}
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Handle the start
+//-----------------------------------------------------------------------------
+void CDirector::InputStart( inputdata_t &inputData )
+{
+	inputdata_t message;
+
+	m_ent_gm_txt_killed = static_cast<CGameText*>(gEntList.FindEntityByName(NULL, "gm_txt_killed"));
+	message.value.SetString(MAKE_STRING("Kills: 0"));
+	m_ent_gm_txt_killed->InputDisplayText(message);
+
+	m_ent_gm_txt_round = static_cast<CGameText*>(gEntList.FindEntityByName(NULL, "gm_txt_round"));
+	message.value.SetString(MAKE_STRING("Round: 0"));
+	m_ent_gm_txt_round->InputDisplayText(message);
+
+	m_ent_pnt_spwn_zombie = static_cast<CPointTemplate*>(gEntList.FindEntityByName(NULL, "pnt_spwn_zombie"));
+
+	SetNextThink(gpGlobals->curtime); // Think now
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Handle a player speed change
+//-----------------------------------------------------------------------------
+void CDirector::InputSetPlayerSpeed( inputdata_t &inputData )
+{
+	if ( !g_pGameRules->IsDeathmatch() )
+	{
+		CBasePlayer *pPlayer = UTIL_GetLocalPlayer();
+		if (pPlayer)
+		{
+			pPlayer->SetLaggedMovementValue( inputData.value.Float() );
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Thinking
+//-----------------------------------------------------------------------------
+void CDirector::Think()
+{
+	BaseClass::Think(); // Always do this if you override Think()
+ 
 	if ( m_nCounter < m_nThreshold )
 	{
-		int _min = min(int(m_nThreshold * 0.6), m_nThreshold - m_nCounter);
-		for (int i = 0; i < _min; ++i)
-			m_OnContinue.FireOutput( inputData.pActivator, this );
+		if (m_ent_pnt_spwn_zombie)
+		{
+			int _min = min(int(m_nThreshold * 0.3), m_nThreshold - m_nCounter);
+			_min = min(_min, m_nMaxAlive - m_nAlive);
+			for (int i = 0; i < _min; ++i)
+			{
+				++m_nCounter;
+				++m_nAlive;
+				m_ent_pnt_spwn_zombie->InputForceSpawnRandom(inputdata_t());
+			}
+		}
 	}
 	else if ( m_nCounter == m_nThreshold && m_nAlive == 0)
 	{
 		m_nCounter = 0;
+		
 		++m_nRound;
+		if (m_ent_gm_txt_round)
+		{
+			inputdata_t message;
+			CFmtStrN<50> formatter;
+			message.value.SetString(MAKE_STRING(formatter.sprintf("Round: %d", m_nRound)));
+			m_ent_gm_txt_round->InputDisplayText(message);
+		}
+
 		m_nThreshold = int(powf(m_nThreshold, m_nIncreasePower));
-		m_OnNextRound.FireOutput( inputData.pActivator, this );
+		//m_OnNextRound.FireOutput( inputData.pActivator, this );
 	}
+	SetNextThink( gpGlobals->curtime + 1 ); // Think again in 1 second
 }
 
 /*

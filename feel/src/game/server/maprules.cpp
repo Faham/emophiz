@@ -16,24 +16,6 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
-class CRuleEntity : public CBaseEntity
-{
-public:
-	DECLARE_CLASS( CRuleEntity, CBaseEntity );
-
-	void	Spawn( void );
-
-	DECLARE_DATADESC();
-
-	void	SetMaster( string_t iszMaster ) { m_iszMaster = iszMaster; }
-
-protected:
-	bool	CanFireForActivator( CBaseEntity *pActivator );
-
-private:
-	string_t	m_iszMaster;
-};
-
 BEGIN_DATADESC( CRuleEntity )
 
 	DEFINE_KEYFIELD( m_iszMaster, FIELD_STRING, "master" ),
@@ -63,18 +45,6 @@ bool CRuleEntity::CanFireForActivator( CBaseEntity *pActivator )
 	return true;
 }
 
-// 
-// CRulePointEntity -- base class for all rule "point" entities (not brushes)
-//
-class CRulePointEntity : public CRuleEntity
-{
-public:
-	DECLARE_DATADESC();
-	DECLARE_CLASS( CRulePointEntity, CRuleEntity );
-
-	int		m_Score;
-	void		Spawn( void );
-};
 
 //---------------------------------------------------------
 // Save/Restore
@@ -252,40 +222,7 @@ void CGameEnd::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useT
 }
 
 
-//
-// CGameText / game_text	-- NON-Localized HUD Message (use env_message to display a titles.txt message)
-//	Flag: All players					SF_ENVTEXT_ALLPLAYERS
-//
-#define SF_ENVTEXT_ALLPLAYERS			0x0001
-
-
-class CGameText : public CRulePointEntity
-{
-public:
-	DECLARE_CLASS( CGameText, CRulePointEntity );
-
-	bool	KeyValue( const char *szKeyName, const char *szValue );
-
-	DECLARE_DATADESC();
-
-	inline	bool	MessageToAll( void ) { return (m_spawnflags & SF_ENVTEXT_ALLPLAYERS); }
-	inline	void	MessageSet( const char *pMessage ) { m_iszMessage = AllocPooledString(pMessage); }
-	inline	const char *MessageGet( void )	{ return STRING( m_iszMessage ); }
-
-	void InputDisplay( inputdata_t &inputdata );
-	void InputDisplayText( inputdata_t &inputdata );
-	void Display( CBaseEntity *pActivator );
-
-	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
-	{
-		Display( pActivator );
-	}
-
-private:
-
-	string_t m_iszMessage;
-	hudtextparms_t	m_textParms;
-};
+//class CGameText:
 
 LINK_ENTITY_TO_CLASS( game_text, CGameText );
 
