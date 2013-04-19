@@ -5,3 +5,5 @@ my game testing experiment.
 - 07 03 2013
  after days of struggling with the stupid hammer editor I found out the way to get the editor running properly with no blank viewport for my mod under the source 2007 is to set the SteamAppId value to 218 under my gameinfo.txt at the mod directory under steam.
  
+ use " sv_cheats 1" to enable cheats
+ use "impulse 101" for all weapons and ammos

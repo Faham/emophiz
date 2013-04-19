@@ -52,12 +52,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>include\;include\nativeAdapter;include\NativeToManagedBridge;include\nativeTools;$(BOOSTDIR)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>dependencies\lib\$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>nativeAdapter.lib;NativeToManagedBridge.lib;nativeTools.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -66,26 +66,18 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>include\;include\nativeAdapter;include\NativeToManagedBridge;include\nativeTools;$(BOOSTDIR)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>dependencies\lib\$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>nativeAdapter.lib;NativeToManagedBridge.lib;nativeTools.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\nativeAdapter\nativeAdapter.vcxproj">
-      <Project>{50dc6b2e-5ef7-489d-9792-62764adf0bd9}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\NativeToManagedBridge\NativeToManagedBridge.vcxproj">
-      <Project>{57d1ea1f-7f6d-4c9d-8125-32630d64d094}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
