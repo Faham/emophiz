@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "4715"
-	"mapversion" "355"
+	"mapversion" "356"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -26,7 +26,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "355"
+	"mapversion" "356"
 	"classname" "worldspawn"
 	"coldworld" "1"
 	"detailmaterial" "detail/detailsprites"
@@ -1866,8 +1866,8 @@ world
 			"id" "1320"
 			"plane" "(288 732.899 141.395) (205.237 732.899 141.395) (205.237 1263.34 141.395)"
 			"material" "METAL/LIGHTHOUSE_PLATFORM"
-			"uaxis" "[0 1 0 209.296] 27.0495"
-			"vaxis" "[1 0 0 -415.76] 0.076928"
+			"uaxis" "[0 1 0 -134] 0.1"
+			"vaxis" "[1 0 0 12] 0.1"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -1942,8 +1942,8 @@ world
 			"id" "1332"
 			"plane" "(736 736 141.395) (653.237 736 141.395) (653.237 1010 141.395)"
 			"material" "METAL/LIGHTHOUSE_PLATFORM"
-			"uaxis" "[0 1 0 183.715] 13.9725"
-			"vaxis" "[1 0 0 -95.3848] 0.076928"
+			"uaxis" "[0 1 0 -134] 0.1"
+			"vaxis" "[1 0 0 12] 0.1"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -2018,8 +2018,8 @@ world
 			"id" "1344"
 			"plane" "(736 1170.03 141.395) (209.565 1170.03 141.395) (209.565 1266.44 141.395)"
 			"material" "METAL/LIGHTHOUSE_PLATFORM"
-			"uaxis" "[0 1 0 -1.58976] 4.91649"
-			"vaxis" "[1 0 0 287.875] 0.489321"
+			"uaxis" "[0 1 0 -134] 0.1"
+			"vaxis" "[1 0 0 12] 0.1"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -2094,8 +2094,8 @@ world
 			"id" "1356"
 			"plane" "(733.549 736.616 141.395) (207.115 736.616 141.395) (207.115 833.028 141.395)"
 			"material" "METAL/LIGHTHOUSE_PLATFORM"
-			"uaxis" "[0 1 0 86.5649] 4.91649"
-			"vaxis" "[1 0 0 292.882] 0.489321"
+			"uaxis" "[0 1 0 -134] 0.1"
+			"vaxis" "[1 0 0 12] 0.1"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -9416,8 +9416,8 @@ cameras
 	"activecamera" "0"
 	camera
 	{
-		"position" "[499.633 560.192 127.955]"
-		"look" "[643.244 623.072 43.9988]"
+		"position" "[387.375 753.655 197.43]"
+		"look" "[416.144 912.217 122.215]"
 	}
 }
 cordon
