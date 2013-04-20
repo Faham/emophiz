@@ -5,8 +5,10 @@ set INCDR=include
 
 rm -f %INPUT%.pdf
 
-set PDFTEX=pdflatex -qutie --include-directory=%INCDR% -aux-directory=%AUXDR% %INPUT%.tex
-set BIBTEX=bibtex -qutie --include-directory=%INCDR% %AUXDR%/%INPUT%.aux
+mkdir %AUXDR%
+
+set PDFTEX=pdflatex -quiet --include-directory=%INCDR% -aux-directory=%AUXDR% %INPUT%.tex
+set BIBTEX=bibtex -quiet --include-directory=%INCDR% %AUXDR%/%INPUT%.aux
 
 %PDFTEX%
 %BIBTEX%
