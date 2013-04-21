@@ -7,3 +7,23 @@ my game testing experiment.
  
  use " sv_cheats 1" to enable cheats
  use "impulse 101" for all weapons and ammos
+ 
+- 20 04 2013
+ (meeting with regan, kevin)
+ 2 difficulty levels for both experienced and non-experienced players
+ parameters to change:
+	- number of spawn points
+	- base spawn rate
+ 3 conditions each one around 5min. adaptive player, adaptive npc and adaptive environment
+ player: 
+	- speed: regular and sprint standard should change
+	- grenades: player can create grenades, one every ? seconds, and the rate of grenades creation can change.
+	note: bullets should be weak enough to make it chanllenging, player has one infinite ammo machine gun which can launch grenades
+ zombie:
+	- walking speed
+	- spawn rate
+ environment:
+	- health packs rate, there is a vending machine that generates health packs with a defined rate.
+	- light, levels lighting can go high or low based on players feedback.
+
+ note: log everything into a csv file, there might be a 1 or 2 minutes training.
