@@ -1,0 +1,77 @@
+%-------------------------------------------------------------------------------
+
+\documentclass{uofsthesis-cs}
+
+\usepackage[pdftex]{graphicx}
+
+%-------------------------------------------------------------------------------
+
+% THESIS TITLE
+\title{Play Experience Enhancement Using Emotional Feedback}
+
+% AUTHOR'S NAME
+\author{Faham Negini}
+
+% DEGREE SOUGHT
+\degree{\MSc}         
+
+% EXPECTED CONVOCATION DATE
+\convocationdate{September/2013}
+
+% NAME OF ACADEMIC UNIT
+\department{Computer Science}
+% \academicunit{Division}
+
+% PERMISSION TO USE ADDRESS
+\ptuaddress{Head of the Department of Computer Science\\
+176 Thorvaldson Building\\
+110 Science Place\\
+University of Saskatchewan\\
+Saskatoon, Saskatchewan\\
+Canada\\
+S7N 5C9
+}
+
+%-------------------------------------------------------------------------------
+
+\abstract          {\input{content/abstract.tex        }}
+\acknowledgements  {\input{content/acknowledgements.tex}}
+%\dedication       {\input{content/dedication.tex      }}
+\loa               {\input{content/abbreviations.tex   }}
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+% Typeset the title page
+\maketitle
+
+% Typeset the frontmatter.
+\frontmatter
+
+%-------------------------------------------------------------------------------
+
+% Chapters
+\chapter{Introduction}                                \input{content/ch01-intro.tex}
+\chapter{Emotion and Play Technologies}               \input{content/ch02-lit-review.tex}
+\chapter{Customizing Play Experience in Real-Time}    \input{content/ch03-problem-and-solution.tex}
+\chapter{Implementation and Integration}              \input{content/ch04-implementation.tex}
+\chapter{Experimentation}                             \input{content/ch05-experimentation.tex}
+\chapter{Discussion}                                  \input{content/ch06-discussion.tex}
+
+%-------------------------------------------------------------------------------
+
+% Bibliography
+\uofsbibliography[plain]{content/bibliography}
+
+%-------------------------------------------------------------------------------
+
+% APPENDICES
+\uofsappendix
+\chapter{Fuzzy Functions} \input{content/appendix-a-fuzzy.tex}
+
+%-------------------------------------------------------------------------------
+
+\end{document}
+
+%-------------------------------------------------------------------------------
