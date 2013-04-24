@@ -211,6 +211,8 @@ BEGIN_DATADESC( CBaseAnimating )
 
 	DEFINE_FIELD( m_fBoneCacheFlags, FIELD_SHORT ),
 
+	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetMovementValue", InputSetMovementValue ), // fhm
+
 	END_DATADESC()
 
 // Sendtable for fields we don't want to send to clientside animating entities
@@ -258,6 +260,8 @@ IMPLEMENT_SERVERCLASS_ST(CBaseAnimating, DT_BaseAnimating)
 	SendPropFloat( SENDINFO( m_flFadeScale ), 0, SPROP_NOSCALE ),
 
 END_SEND_TABLE()
+
+float CBaseAnimating::ms_movement_value = 1.0f; // fhm
 
 
 CBaseAnimating::CBaseAnimating()
@@ -968,9 +972,15 @@ float CBaseAnimating::GetSequenceGroundSpeed( CStudioHdr *pStudioHdr, int iSeque
 	}
 }
 
+// fhm
+void CBaseAnimating::InputSetMovementValue( inputdata_t &data )
+{
+	ms_movement_value = data.value.Float();
+}
+
 float CBaseAnimating::GetIdealSpeed( ) const
 {
-	return m_flGroundSpeed;
+	return m_flGroundSpeed * ms_movement_value; // fhm
 }
 
 float CBaseAnimating::GetIdealAccel( ) const

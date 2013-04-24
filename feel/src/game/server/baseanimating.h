@@ -341,6 +341,11 @@ private:
 	bool CanSkipAnimation( void );
 
 public:
+	void InputSetMovementValue( inputdata_t &inputdata ); // fhm
+private:
+	static float ms_movement_value; // fhm
+
+public:
 	CNetworkVar( int, m_nForceBone );
 	CNetworkVector( m_vecForce );
 

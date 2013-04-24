@@ -4,6 +4,7 @@
 //
 //===========================================================================//
 
+#include "player.h"
 #include "cbase.h"
 #include "const.h"
 #include "baseplayer_shared.h"
@@ -7578,24 +7579,10 @@ void CRevertSaved::LoadThink( void )
 #define SF_SPEED_MOD_SUPPRESS_ATTACK	(1<<6)
 #define SF_SPEED_MOD_SUPPRESS_ZOOM		(1<<7)
 
-class CMovementSpeedMod : public CPointEntity
-{
-	DECLARE_CLASS( CMovementSpeedMod, CPointEntity );
-public:
-	void InputSpeedMod(inputdata_t &data);
-
-private:
-	int GetDisabledButtonMask( void );
-
-	DECLARE_DATADESC();
-};
-
-LINK_ENTITY_TO_CLASS( player_speedmod, CMovementSpeedMod );
-
 BEGIN_DATADESC( CMovementSpeedMod )
 	DEFINE_INPUTFUNC( FIELD_FLOAT, "ModifySpeed", InputSpeedMod ),
 END_DATADESC()
-	
+
 int CMovementSpeedMod::GetDisabledButtonMask( void )
 {
 	int nMask = 0;

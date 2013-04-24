@@ -1294,4 +1294,18 @@ enum
 	VEHICLE_ANALOG_BIAS_REVERSE,
 };
 
+class CMovementSpeedMod : public CPointEntity
+{
+	DECLARE_CLASS( CMovementSpeedMod, CPointEntity );
+public:
+	void InputSpeedMod(inputdata_t &data);
+
+private:
+	int GetDisabledButtonMask( void );
+
+	DECLARE_DATADESC();
+};
+
+LINK_ENTITY_TO_CLASS( player_speedmod, CMovementSpeedMod );
+
 #endif // PLAYER_H

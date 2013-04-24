@@ -7,3 +7,4 @@ my game testing experiment.
  
  use " sv_cheats 1" to enable cheats
  use "impulse 101" for all weapons and ammos
+ use "ent_fire plyr_speed ModifySpeed 1.2" to change player speed

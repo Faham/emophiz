@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "4715"
-	"mapversion" "356"
+	"mapversion" "361"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -26,7 +26,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "356"
+	"mapversion" "361"
 	"classname" "worldspawn"
 	"coldworld" "1"
 	"detailmaterial" "detail/detailsprites"
@@ -5585,6 +5585,7 @@ entity
 	"fogend" "1000"
 	"fogmaxdensity" ".7"
 	"fogstart" "300"
+	"targetname" "env_fog_ctrl"
 	"origin" "-374 74 32"
 	editor
 	{
@@ -9411,13 +9412,28 @@ entity
 		"logicalpos" "[0 6500]"
 	}
 }
+entity
+{
+	"id" "23464"
+	"classname" "player_speedmod"
+	"spawnflags" "0"
+	"targetname" "plyr_speed"
+	"origin" "-572 128 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
 cameras
 {
 	"activecamera" "0"
 	camera
 	{
-		"position" "[387.375 753.655 197.43]"
-		"look" "[416.144 912.217 122.215]"
+		"position" "[-674.656 65.2204 143.434]"
+		"look" "[-559.872 136.716 27.9367]"
 	}
 }
 cordon

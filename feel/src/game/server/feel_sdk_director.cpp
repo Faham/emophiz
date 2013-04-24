@@ -9,6 +9,9 @@
 #include <maprules.h>
 #include <fmtstr.h>
 #include <point_template.h>
+#include <player.h>
+#include <npc_BaseZombie.h>
+#include <eventqueue.h>
 
 /*
 // Import mscorlib typelib. Using 1.0 for maximum backwards compatibility
@@ -38,7 +41,12 @@ public:
 		m_ent_gm_txt_killed = NULL;
 		m_ent_gm_txt_round = NULL;
 		m_ent_pnt_spwn_zombie = NULL;
+		m_ent_plyr_speed = NULL;
+		m_ent_npc_zombie = NULL;
 		m_nMaxAlive = 15;
+		mp_player = NULL;
+		m_zombie_speed.SetFloat(1.0f);
+		m_player_speed.SetFloat(1.0f);
 		//InitCLR();
 		//InitEmophiz();
 	}
@@ -48,10 +56,17 @@ public:
 	void InputTickZombieDied( inputdata_t &inputData );
 	void InputSetPlayerSpeed( inputdata_t &inputData );
 	void InputStart( inputdata_t &inputData );
+	void InputSetZombieSpeed( inputdata_t &data );
 	
 	void Think();
 
 private:
+	void set_zombie_speed(float val);
+	void set_player_speed(float val);
+
+	CBasePlayer *mp_player;
+	variant_t m_zombie_speed;
+	variant_t m_player_speed;
 	int m_nThreshold; // Count at which to fire our output
 	float m_nIncreasePower; // Increase Power
 	int m_nCounter;   // Internal counter
@@ -62,6 +77,8 @@ private:
 	CGameText * m_ent_gm_txt_killed;
 	CGameText * m_ent_gm_txt_round;
 	CPointTemplate * m_ent_pnt_spwn_zombie;
+	CMovementSpeedMod * m_ent_plyr_speed;
+	CNPC_BaseZombie* m_ent_npc_zombie;
 	//_AppDomainPtr m_pDefaultDomain;
 	//ICorRuntimeHost *m_pCLRHost; 
  
@@ -85,9 +102,10 @@ BEGIN_DATADESC( CDirector )
  
 	// Links our input name from Hammer to our input member function
 	DEFINE_INPUTFUNC( FIELD_VOID, "TickZombieDied", InputTickZombieDied ),
- 	DEFINE_INPUTFUNC( FIELD_VOID, "SetPlayerSpeed", InputSetPlayerSpeed ),
+ 	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetPlayerSpeed", InputSetPlayerSpeed ),
  	DEFINE_INPUTFUNC( FIELD_VOID, "Start", InputStart ),
- 
+ 	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetZombieSpeed", InputSetZombieSpeed ),
+
 	// Links our output member variable to the output name used by Hammer
 	DEFINE_OUTPUT( m_OnNextRound, "OnNextRound" ),
 
@@ -128,24 +146,82 @@ void CDirector::InputStart( inputdata_t &inputData )
 	message.value.SetString(MAKE_STRING("Round: 0"));
 	m_ent_gm_txt_round->InputDisplayText(message);
 
-	m_ent_pnt_spwn_zombie = static_cast<CPointTemplate*>(gEntList.FindEntityByName(NULL, "pnt_spwn_zombie"));
+	m_ent_pnt_spwn_zombie = static_cast<CPointTemplate*>   (gEntList.FindEntityByName(NULL, "pnt_spwn_zombie"));
+	m_ent_plyr_speed      = static_cast<CMovementSpeedMod*>(gEntList.FindEntityByName(NULL, "plyr_speed"));
+	m_ent_npc_zombie      = static_cast<CNPC_BaseZombie*>  (gEntList.FindEntityByName(NULL, "npc_zombie"));
 
 	SetNextThink(gpGlobals->curtime); // Think now
 }
 
 //-----------------------------------------------------------------------------
+// Purpose: internal method to set zombie speed
+//-----------------------------------------------------------------------------
+void CDirector::set_zombie_speed(float val)
+{
+	//inputdata_t data;
+	//data.value.SetFloat(val);
+	//
+	//m_ent_npc_zombie = static_cast<CNPC_BaseZombie*>  (gEntList.FindEntityByName(NULL, "npc_zombie"));
+	//if (m_ent_npc_zombie) {
+	//	Msg("zombie speed changed.\n");
+	//	m_ent_npc_zombie->InputSetMovementValue(data);
+	//}
+	mp_player = ToBasePlayer( UTIL_GetCommandClient() );
+	if (!mp_player)
+		return;
+
+	m_zombie_speed.SetFloat(val);
+	Msg("Zombie speed set to %f\n", val);
+	g_EventQueue.AddEvent("npc_zombie", "setmovementvalue", m_zombie_speed, 0, mp_player, mp_player);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Handle a zombie speed change
+//-----------------------------------------------------------------------------
+void CDirector::InputSetZombieSpeed( inputdata_t &data )
+{
+	set_zombie_speed(data.value.Float());
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: internal method to set player speed
+//-----------------------------------------------------------------------------
+void CDirector::set_player_speed(float val)
+{
+	mp_player = ToBasePlayer( UTIL_GetCommandClient() );
+	if (!mp_player)
+		return;
+	m_player_speed.SetFloat(val);
+	Msg("Player speed set to %f\n", val);
+	g_EventQueue.AddEvent("plyr_speed", "modifyspeed", m_player_speed, 0, mp_player, mp_player);
+}
+
+//-----------------------------------------------------------------------------
 // Purpose: Handle a player speed change
 //-----------------------------------------------------------------------------
-void CDirector::InputSetPlayerSpeed( inputdata_t &inputData )
+void CDirector::InputSetPlayerSpeed( inputdata_t &data )
 {
-	if ( !g_pGameRules->IsDeathmatch() )
-	{
-		CBasePlayer *pPlayer = UTIL_GetLocalPlayer();
-		if (pPlayer)
-		{
-			pPlayer->SetLaggedMovementValue( inputData.value.Float() );
-		}
-	}
+	set_player_speed(data.value.Float());
+
+	//if (m_ent_plyr_speed) {
+	//	m_ent_plyr_speed->InputSpeedMod(data);
+	//}
+
+	//CBasePlayer *pPlayer = NULL;
+	//
+	//if ( data.pActivator && data.pActivator->IsPlayer() )
+	//{
+	//	pPlayer = (CBasePlayer *)data.pActivator;
+	//}
+	//else if ( !g_pGameRules->IsDeathmatch() )
+	//{
+	//	pPlayer = UTIL_GetLocalPlayer();
+	//}
+	//
+	//if (pPlayer)
+	//{
+	//	pPlayer->SetLaggedMovementValue( data.value.Float() );
+	//}
 }
 
 //-----------------------------------------------------------------------------
