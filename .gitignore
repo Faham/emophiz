@@ -1,38 +1,7 @@
 # Build folder #
-bin
-projects/emotion_monitor/bin
-projects/sp_perf_chart/bin
-projects/sensor_lib/SensorLib.Base/bin
-projects/sensor_lib/SensorLib.ThoughtTechnologies/bin
-projects/sensor_lib/SensorLib/bin
-projects/sensor_lib/SensorLib.Mindset/bin
-projects/sensor_lib/SensorLib.Tobii/bin
-projects/sensor_lib/SensorLib.Xna/bin
-projects/sensor_lib/SensorLibBasicExample/SensorLibBasicExample/bin
-projects/sensor_lib/SensorLibTesting/SensorLibTesting/bin
-projects/sensor_lib/Testing/DeviceTests/DeviceTests/bin
-projects/emotion_game/Minigames/Minigames/bin
-projects/emotion_game/Minigames/MinigamesContent/bin
-projects/emotion_game/MinigamesLibrary/bin
 
-obj
-projects/emotion_monitor/obj
-projects/sp_perf_chart/obj
-projects/sensor_lib/SensorLib.Base/obj
-projects/sensor_lib/SensorLib.ThoughtTechnologies/obj
-projects/sensor_lib/SensorLib/obj
-projects/sensor_lib/SensorLib.Mindset/obj
-projects/sensor_lib/SensorLib.Tobii/obj
-projects/sensor_lib/SensorLib.Xna/obj
-projects/sensor_lib/SensorLibBasicExample/SensorLibBasicExample/obj
-projects/sensor_lib/SensorLibTesting/SensorLibTesting/obj
-projects/sensor_lib/Testing/DeviceTests/DeviceTests/obj
-projects/emotion_game/Minigames/Minigames/obj
-projects/emotion_game/Minigames/MinigamesContent/obj
-projects/emotion_game/MinigamesLibrary/obj
-
-projects/emotion_game/Minigames/MinigamesContent/Log
-
+bin/
+obj/
 logs/
 
 # User configuration files #
