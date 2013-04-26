@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD4C84FB-ECA4-462D-BB34-7D652B5E18F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SensorLib.Base</RootNamespace>
+    <AssemblyName>SensorLib.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\SampleSet.cs" />
+    <Compile Include="Data\Sample.cs" />
+    <Compile Include="Filters\Bulk\InterpolatingFilter.cs" />
+    <Compile Include="Filters\INonUniformFilter.cs" />
+    <Compile Include="Filters\IUniformFilter.cs" />
+    <Compile Include="Filters\NonUniform\NonUniformGenericFilter.cs" />
+    <Compile Include="Filters\RealTime\GenericFilter.cs" />
+    <Compile Include="Filters\NonUniform\NonUniformMovingAverage.cs" />
+    <Compile Include="Filters\NonUniform\NonUniformDifferentiator.cs" />
+    <Compile Include="Filters\FilterRepresentations\TransferFunction.cs" />
+    <Compile Include="Filters\FilterRepresentations\SosGain.cs" />
+    <Compile Include="Filters\FilterEnums.cs" />
+    <Compile Include="Filters\FilterSpecs\BandPassDesignSpec.cs" />
+    <Compile Include="Filters\FilterSpecs\BandStopDesignSpec.cs" />
+    <Compile Include="Filters\FilterSpecs\FilterOrderSpec.cs" />
+    <Compile Include="Filters\FilterSpecs\FilterFrequencySpec.cs" />
+    <Compile Include="Filters\FilterSpecs\HighPassDesignSpec.cs" />
+    <Compile Include="Filters\FilterSpecs\LowPassDesignSpec.cs" />
+    <Compile Include="Filters\RealTime\DecimationFilter.cs" />
+    <Compile Include="Filters\FilterRepresentations\ZeroPoleGain.cs" />
+    <Compile Include="Sensors\IDeviceBase.cs" />
+    <Compile Include="Sensors\Delegates.cs" />
+    <Compile Include="Sensors\Device.cs" />
+    <Compile Include="Filters\Fft.cs" />
+    <Compile Include="Filters\ThirdParty\LomontFFT.cs" />
+    <Compile Include="Filters\Bulk\BidirectionalFilter.cs" />
+    <Compile Include="Filters\Bulk\BulkNormalizer.cs" />
+    <Compile Include="Filters\Filter.cs" />
+    <Compile Include="Filters\FilterChain.cs" />
+    <Compile Include="Filters\FilterCreation\FilterFactory.cs" />
+    <Compile Include="Filters\FilterCreation\FIR Filters\Windows.cs" />
+    <Compile Include="Filters\FilterCreation\IIR Filters\AnalogPrototypes.cs" />
+    <Compile Include="Filters\FilterCreation\IIR Filters\FilterModifiers.cs" />
+    <Compile Include="Filters\FilterCreation\IIR Filters\OrderSelectors.cs" />
+    <Compile Include="Filters\RealTime\LinearFiltering\FirFilter.cs" />
+    <Compile Include="Filters\RealTime\LinearFiltering\IirFilter.cs" />
+    <Compile Include="Filters\RealTime\LinearFiltering\Sos.cs" />
+    <Compile Include="Filters\RealTime\LinearFiltering\LinearFilter.cs" />
+    <Compile Include="Filters\RealTime\DelayFilter.cs" />
+    <Compile Include="Filters\RealTime\Differentiator.cs" />
+    <Compile Include="Filters\RealTime\DownSampleFilter.cs" />
+    <Compile Include="Filters\RealTime\FlatFilter.cs" />
+    <Compile Include="Filters\RealTime\MovingAverage.cs" />
+    <Compile Include="Filters\RealTime\Normalizer.cs" />
+    <Compile Include="Filters\RealTime\SchmittTrigger.cs" />
+    <Compile Include="Sensors\IDevice.cs" />
+    <Compile Include="Sensors\Inputs\FileInput.cs" />
+    <Compile Include="Sensors\Inputs\IInput.cs" />
+    <Compile Include="Sensors\Inputs\IInputBase.cs" />
+    <Compile Include="Sensors\Inputs\QueueInput.cs" />
+    <Compile Include="Sensors\Inputs\RampInput.cs" />
+    <Compile Include="Sensors\Inputs\RandomInput.cs" />
+    <Compile Include="Nomenclature.cs" />
+    <Compile Include="Sensors\Processors\ProcessorChain.cs" />
+    <Compile Include="Sensors\Processors\FixedSampleTimeShiftProcessor.cs" />
+    <Compile Include="Sensors\Processors\SampleTimeShiftProcessor.cs" />
+    <Compile Include="Sensors\Processors\IProcessorBase.cs" />
+    <Compile Include="Sensors\Processors\IProcessor.cs" />
+    <Compile Include="Sensors\Processors\NoneProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sensors\SensorInterfaces\IHeartBeatSensor.cs" />
+    <Compile Include="Sensors\SensorInterfaces\InputSensor.cs" />
+    <Compile Include="Sensors\SensorInterfaces\ISensor.cs" />
+    <Compile Include="Sensors\SensorInterfaces\ISensorBase.cs" />
+    <Compile Include="Sensors\Sensor.cs" />
+    <Compile Include="Sensors\SensorBase.cs" />
+    <Compile Include="Util\Complex.cs" />
+    <Compile Include="Util\ApplicationThread.cs" />
+    <Compile Include="Util\Helpers.cs" />
+    <Compile Include="Util\Logger.cs" />
+    <Compile Include="Util\NCO.cs" />
+    <Compile Include="Util\Ole32Methods.cs" />
+    <Compile Include="Util\Pair.cs" />
+    <Compile Include="Util\Point2D.cs" />
+    <Compile Include="Util\Point3D.cs" />
+    <Compile Include="Util\SpecialMath.cs" />
+    <Compile Include="Util\SuperThread.cs" />
+    <Compile Include="Util\TSQueue.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

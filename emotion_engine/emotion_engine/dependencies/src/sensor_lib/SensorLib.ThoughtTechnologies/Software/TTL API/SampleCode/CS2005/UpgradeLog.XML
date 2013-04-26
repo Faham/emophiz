@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CS2005TTLLiveDemo">
+</Property><Property Name="Solution File" Value="C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\CS2005TTLLiveDemo.sln">
+</Property><Property Name="Date" Value="Tuesday, July 19, 2011">
+</Property><Property Name="Time" Value="15:33 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="CS2005TTLLiveDemo.sln" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo.sln">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\CS2005TTLLiveDemo.csproj" Description="Project file successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\CS2005TTLLiveDemo.csproj">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Form1.cs" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Form1.cs">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Form1.Designer.cs" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Program.cs" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Program.cs">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Properties\Settings.settings" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Form1.resx" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Form1.resx">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\Properties\Resources.resx" Description="File successfully backed up as C:\Users\Mike\SVN Sandbox\TTL API\SampleCode\CS2005\Backup\CS2005TTLLiveDemo\Properties\Resources.resx">
+</Event><Event ErrorLevel="1" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\CS2005TTLLiveDemo.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\CS2005TTLLiveDemo.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\CS2005TTLLiveDemo.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="CS2005TTLLiveDemo.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="CS2005TTLLiveDemo.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="CS2005TTLLiveDemo" Source="CS2005TTLLiveDemo\CS2005TTLLiveDemo.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
