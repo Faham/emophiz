@@ -49,6 +49,8 @@ public:
 	void InputSetPlayerSpeed( inputdata_t &inputData );
 	void InputStart( inputdata_t &inputData );
 	void InputSetZombieSpeed( inputdata_t &data );
+	void InputStartEmotionEngine( inputdata_t &data );
+	void InputPrintEmotionValues( inputdata_t &data );
 	
 	void Think();
 
@@ -93,6 +95,8 @@ BEGIN_DATADESC( CDirector )
  	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetPlayerSpeed", InputSetPlayerSpeed ),
  	DEFINE_INPUTFUNC( FIELD_VOID, "Start", InputStart ),
  	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetZombieSpeed", InputSetZombieSpeed ),
+	DEFINE_INPUTFUNC( FIELD_VOID, "StartEmotionEngine", InputStartEmotionEngine ),
+	DEFINE_INPUTFUNC( FIELD_VOID, "PrintEmotionValues", InputPrintEmotionValues ),
 
 	// Links our output member variable to the output name used by Hammer
 	DEFINE_OUTPUT( m_OnNextRound, "OnNextRound" ),
@@ -144,8 +148,7 @@ void CDirector::InputStart( inputdata_t &inputData )
 }
 
 //-----------------------------------------------------------------------------
-// Purpose: internal method to set zombie speed
-//-----------------------------------------------------------------------------
+
 void CDirector::set_zombie_speed(float val)
 {
 	//inputdata_t data;
@@ -166,16 +169,39 @@ void CDirector::set_zombie_speed(float val)
 }
 
 //-----------------------------------------------------------------------------
-// Purpose: Handle a zombie speed change
+
+void CDirector::InputStartEmotionEngine( inputdata_t &data )
+{
+	m_emotion_engine->start();
+}
+
 //-----------------------------------------------------------------------------
+
+void CDirector::InputPrintEmotionValues( inputdata_t &data )
+{
+	m_emotion_engine->connect();
+	Msg("Arousal: %f, Valence: %f, GSR: %f, HR: %f, BVP: %f, EMGFrown: %f, EMGSmile: %f, Fun: %f, Boredom: %f, Excitement: %f\n",
+		m_emotion_engine->readArousal   (),
+		m_emotion_engine->readValence   (),
+		m_emotion_engine->readGSR       (),
+		m_emotion_engine->readHR        (),
+		m_emotion_engine->readBVP       (),
+		m_emotion_engine->readEMGFrown  (),
+		m_emotion_engine->readEMGSmile  (),
+		m_emotion_engine->readFun       (),
+		m_emotion_engine->readBoredom   (),
+		m_emotion_engine->readExcitement());
+}
+
+//-----------------------------------------------------------------------------
+
 void CDirector::InputSetZombieSpeed( inputdata_t &data )
 {
 	set_zombie_speed(data.value.Float());
 }
 
 //-----------------------------------------------------------------------------
-// Purpose: internal method to set player speed
-//-----------------------------------------------------------------------------
+
 void CDirector::set_player_speed(float val)
 {
 	mp_player = ToBasePlayer( UTIL_GetCommandClient() );
@@ -187,16 +213,14 @@ void CDirector::set_player_speed(float val)
 }
 
 //-----------------------------------------------------------------------------
-// Purpose: Handle a player speed change
-//-----------------------------------------------------------------------------
+
 void CDirector::InputSetPlayerSpeed( inputdata_t &data )
 {
 	set_player_speed(data.value.Float());
 }
 
 //-----------------------------------------------------------------------------
-// Purpose: Thinking
-//-----------------------------------------------------------------------------
+
 void CDirector::Think()
 {
 	BaseClass::Think(); // Always do this if you override Think()
@@ -233,3 +257,5 @@ void CDirector::Think()
 	}
 	SetNextThink( gpGlobals->curtime + 1 ); // Think again in 1 second
 }
+
+//-----------------------------------------------------------------------------

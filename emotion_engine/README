@@ -1,3 +1,14 @@
-you should register the following dll using regsvr32 at cmd:
+- You should register the following dll using the following regsvr32 at cmd:
+	regsvr32 "D:\faham\emophiz\emophiz\emotion_engine\dependencies\bin\Release\TTLLiveCtrl.dll"
 
-regsvr32 "D:\faham\emophiz\emophiz\emotion_engine\dependencies\bin\Release\TTLLiveCtrl.dll"
+- Copy the followings from "...\emotion_engine\emotion_engine_proxy\bin\Release" to "C:\Program Files (x86)\Steam\SteamApps\hci_usask2\source sdk base 2007"
+	resources\
+	CEmotionEngine.dll
+	EmotionEngine.dll
+	Interop.TTLLiveCtrlLib.3.0.dll
+	Interop.TTLLiveCtrlLib.dll
+	Native.EmotionEngine.manifest
+	Native.SensorLib.ThoughtTechnologies.manifest
+	SensorLib.Base.dll
+	SensorLib.ThoughtTechnologies.dll
+	SpPerfChart.dll

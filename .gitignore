@@ -6,9 +6,13 @@ logs/
 
 # User configuration files #
 *.suo
+*.sdf
+*.opensdf
 *.user
 *.cachefile
 *.log
+*.tlog
+*.obj
 
 # OS generated files #
 .DS_Store*

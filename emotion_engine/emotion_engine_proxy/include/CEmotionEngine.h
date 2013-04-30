@@ -22,6 +22,8 @@ namespace emophiz {
 		CEmotionEngine();
 		~CEmotionEngine();
 
+		bool start();
+		bool connect();
 		bool isConnected();
 		double readArousal   (bool raw = false);
 		double readValence   (bool raw = false);

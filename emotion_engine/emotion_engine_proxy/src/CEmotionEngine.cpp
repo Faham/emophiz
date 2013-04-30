@@ -33,11 +33,6 @@ namespace emophiz {
 //------------------------------------------------------------------------------
 
 	void messageLoop() {
-		/*
-		SensorProvider^ _sensor_provider = gcnew SensorProvider();
-		gcroot<SensorProvider^> *_ptr_sensor_provider = new gcroot<SensorProvider^>(_sensor_provider);
-		void *m_sensor_provider = (void*)_ptr_sensor_provider;
-		/*/
 		EmotionMonitor^ _emotion_monitor = gcnew EmotionMonitor();
 		gcroot<EmotionMonitor^> *_ptr_emotion_monitor = new gcroot<EmotionMonitor^>(_emotion_monitor);
 		void *m_emotion_monitor = (void*)_ptr_emotion_monitor;
@@ -48,17 +43,7 @@ namespace emophiz {
 		void *m_sensor_provider = (void*)_ptr_sensor_provider;
 		//*/
 
-		((SensorProvider^)*_ptr_sensor_provider)->Connect();
-
-		/*
-		MSG msg;
-		while (GetMessage(&msg, NULL, 0, 0)) {
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		}
-		/*/
 		Application::Run(((EmotionMonitor^)*_ptr_emotion_monitor));
-		//*/
 	}
 
 //------------------------------------------------------------------------------
@@ -70,15 +55,7 @@ namespace emophiz {
 		Thread^ _back_thread = gcnew Thread(trdDlgt);
 		gcroot<Thread^> *_ptr_back_thread = new gcroot<Thread^>(_back_thread);
 		m_background_thread = (void*)_ptr_back_thread;
-
 		((Thread^)*_ptr_back_thread)->IsBackground = true;
-		((Thread^)*_ptr_back_thread)->Start();
-
-		Sleep(5000); // make sure the first instance is generated.
-
-		SensorProvider^ _sensor_provider = SensorProvider::Instance;
-		gcroot<SensorProvider^> *_ptr_sensor_provider = new gcroot<SensorProvider^>(_sensor_provider);
-		m_sensor_provider = (void*)_ptr_sensor_provider;
 	}
 
 //------------------------------------------------------------------------------
@@ -95,6 +72,25 @@ namespace emophiz {
 			m_emotion_monitor = NULL;
 			delete pp;
 		}
+	}
+
+//------------------------------------------------------------------------------
+
+	bool CEmotionEngine::start() {
+		gcroot<Thread^> *pp = reinterpret_cast<gcroot<Thread^>*>(m_background_thread);
+		((Thread^)*pp)->Start();
+
+		return true;
+	}
+
+//------------------------------------------------------------------------------
+
+	bool CEmotionEngine::connect() {
+		SensorProvider^ _sensor_provider = SensorProvider::Instance;
+		gcroot<SensorProvider^> *_ptr_sensor_provider = new gcroot<SensorProvider^>(_sensor_provider);
+		m_sensor_provider = (void*)_ptr_sensor_provider;
+
+		return true;
 	}
 
 //------------------------------------------------------------------------------
@@ -220,26 +216,14 @@ namespace emophiz {
 
 //==============================================================================
 
-//*
+/*
 void main() {
 	emophiz::CEmotionEngine sens;
-	std::cout << 'test';
+	sens.start();
 
 	int i = 1000000;
-	if (sens.isConnected())
-		while (i > 0) {
-			std::cout  << sens.readArousal() 
-				<< ' ' << sens.readValence() 
-				<< ' ' << sens.readGSR() 
-				<< ' ' << sens.readHR() 
-				<< ' ' << sens.readBVP() 
-				<< ' ' << sens.readEMGFrown() 
-				<< ' ' << sens.readEMGSmile() 
-				<< ' ' << sens.readFun() 
-				<< ' ' << sens.readBoredom() 
-				<< ' ' << sens.readExcitement() << std::endl;
-			--i;
-		}
+	while (i > 0)
+		Sleep(1000);
 }
 
 //*/
