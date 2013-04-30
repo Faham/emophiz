@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<assemblyIdentity
+	type="win32"
+	name="TTLAPI"
+	version="2.0.0.0"
+	processorArchitecture="x86"
+/>
+<file name="TTLAPILang.dll">
+</file>
+<file name="TTLLiveCtrl.dll">
+	<typelib tlbid="{EA85D9B2-B3F3-43F4-ADF5-256669A83D06}" version="3.0" helpdir="" />
+	<comClass clsid="{897B372A-F588-4143-AA5D-3414D1DBC42E}" threadingModel="Apartment" progid="TTLLiveCtrl.TTLLive.2"     tlbid="{EA85D9B2-B3F3-43F4-ADF5-256669A83D06}" />
+	<comClass clsid="{4BD54EE8-D59E-4A09-BEA2-DFE10B650237}" threadingModel="Apartment" progid="TTLLiveCtrl.TTLLiveText.1" tlbid="{EA85D9B2-B3F3-43F4-ADF5-256669A83D06}" />
+</file>
+<file name="TTLSessionMgrCtrl.dll">
+	<typelib tlbid="{690ACCBF-C1C8-42CD-B766-4F7649119D19}" version="1.0" helpdir="" />
+	<comClass clsid="{2F74B5D8-EFC0-44B2-A0F9-F284A7DB96F9}" threadingModel="Apartment" progid="TTLSessionMgrCtrl.TTLSessionMgr.1" tlbid="{690ACCBF-C1C8-42CD-B766-4F7649119D19}" />
+</file>
+<file name="TTLDCRPTCtrl.dll">
+	<typelib tlbid="{9AD17340-C152-4CEE-8A37-5C3F309AA3D3}" version="1.0" helpdir="" />
+	<comClass clsid="{B19F27AA-5A35-49CC-9243-5F8CAA60655E}" threadingModel="Free" progid="TTLDCRPT.TTLDecrypt.1" tlbid="{9AD17340-C152-4CEE-8A37-5C3F309AA3D3}" />
+</file>
+<file name="TTLInfinitiMyotracLiveCtrl.dll">
+	<typelib tlbid="{74BAEB41-87CB-4D7B-BC55-E4D387830FA2}" version="1.0" helpdir="" />
+	<comClass clsid="{87395359-A60D-4DE2-8A8D-9665F957B8BB}" threadingModel="Free" progid="TTLInfinitiMyotracLiveCtrl.TTLInfinitiMyotracLive.1" tlbid="{74BAEB41-87CB-4D7B-BC55-E4D387830FA2}" />
+</file>
+<file name="TTCmd.dll">
+</file>
+</assembly>
