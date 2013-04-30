@@ -36,18 +36,21 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="SensorLib.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>dependencies\bin\Release\SensorLib.Base.dll</HintPath>
+      <HintPath>..\dependencies\bin\Release\SensorLib.Base.dll</HintPath>
     </Reference>
     <Reference Include="SensorLib.ThoughtTechnologies, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>dependencies\bin\Release\SensorLib.ThoughtTechnologies.dll</HintPath>
+      <HintPath>..\dependencies\bin\Release\SensorLib.ThoughtTechnologies.dll</HintPath>
     </Reference>
     <Reference Include="SpPerfChart, Version=1.0.4862.34259, Culture=neutral, PublicKeyToken=5f66223a893f5e2f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>dependencies\bin\Release\SpPerfChart.dll</HintPath>
+      <HintPath>..\dependencies\bin\Release\SpPerfChart.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -102,6 +105,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Native.SensorLib.ThoughtTechnologies, Version=1.0.0.0, Type=win32">
+      <Name>Native.SensorLib.ThoughtTechnologies.manifest</Name>
+      <HintPath>..\dependencies\bin\Release\Native.SensorLib.ThoughtTechnologies.manifest</HintPath>
+    </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

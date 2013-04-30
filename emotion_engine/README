@@ -1,0 +1,3 @@
+you should register the following dll using regsvr32 at cmd:
+
+regsvr32 "D:\faham\emophiz\emophiz\emotion_engine\dependencies\bin\Release\TTLLiveCtrl.dll"

@@ -72,14 +72,24 @@ namespace emophiz
 		private Log m_log;
         private Log m_log_signals;
 
-        public SensorProvider(Log _log = null, String fuzzy_resources = "resources/")
+        public SensorProvider()
         {
             ms_instance = this;
+            init();
+        }
 
-			if (_log == null)
-				m_log = new Log("sensor_provider.log");
-			else
-				m_log = _log;
+        public SensorProvider(Log log, String fuzzy_resources)
+        {
+            ms_instance = this;
+            init(log, fuzzy_resources);
+        }
+
+        private void init(Log log = null, String fuzzy_resources = "resources/")
+        {
+            if (log == null)
+                m_log = new Log("sensor_provider.log");
+            else
+                m_log = log;
 
             m_log_signals = new Log("sensor_provider.csv");
             m_log_signals.CSV(Log.Details.Raw,
