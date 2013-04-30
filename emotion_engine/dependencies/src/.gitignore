@@ -1,0 +1,15 @@
+# Build folder #
+
+bin/
+obj/
+
+# User configuration files #
+*.suo
+*.user
+*.cachefile
+*.log
+
+# OS generated files #
+.DS_Store*
+ehthumbs.db
+Thumbs.db
