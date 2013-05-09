@@ -36,7 +36,7 @@ public:
 		m_ent_pnt_spwn_zombie = NULL;
 		m_ent_plyr_speed = NULL;
 		m_ent_npc_zombie = NULL;
-		m_nMaxAlive = 15;
+		m_nMaxAlive = 5;
 		mp_player = NULL;
 		m_zombie_speed.SetFloat(1.0f);
 		m_player_speed.SetFloat(1.0f);
@@ -159,7 +159,8 @@ void CDirector::set_zombie_speed(float val)
 	//	Msg("zombie speed changed.\n");
 	//	m_ent_npc_zombie->InputSetMovementValue(data);
 	//}
-	mp_player = ToBasePlayer( UTIL_GetCommandClient() );
+	
+	mp_player = UTIL_GetLocalPlayer();
 	if (!mp_player)
 		return;
 
@@ -172,6 +173,7 @@ void CDirector::set_zombie_speed(float val)
 
 void CDirector::InputStartEmotionEngine( inputdata_t &data )
 {
+	// NOTE: after starting the engine first you need to connect to the encoder through the ui before doing any other interaction with the engine.
 	m_emotion_engine->start();
 }
 
@@ -180,7 +182,7 @@ void CDirector::InputStartEmotionEngine( inputdata_t &data )
 void CDirector::InputPrintEmotionValues( inputdata_t &data )
 {
 	m_emotion_engine->connect();
-	Msg("Arousal: %f, Valence: %f, GSR: %f, HR: %f, BVP: %f, EMGFrown: %f, EMGSmile: %f, Fun: %f, Boredom: %f, Excitement: %f\n",
+	Msg("Arousal: %f\nValence: %f\nGSR: %f\nHR: %f\nBVP: %f\nEMGFrown: %f\nEMGSmile: %f\nFun: %f\nBoredom: %f\nExcitement: %f\n",
 		m_emotion_engine->readArousal   (),
 		m_emotion_engine->readValence   (),
 		m_emotion_engine->readGSR       (),
@@ -204,9 +206,11 @@ void CDirector::InputSetZombieSpeed( inputdata_t &data )
 
 void CDirector::set_player_speed(float val)
 {
-	mp_player = ToBasePlayer( UTIL_GetCommandClient() );
+	//mp_player = ToBasePlayer( UTIL_GetCommandClient() );
+	mp_player = UTIL_GetLocalPlayer();
 	if (!mp_player)
 		return;
+
 	m_player_speed.SetFloat(val);
 	Msg("Player speed set to %f\n", val);
 	g_EventQueue.AddEvent("plyr_speed", "modifyspeed", m_player_speed, 0, mp_player, mp_player);
@@ -244,12 +248,31 @@ void CDirector::Think()
 		m_nCounter = 0;
 		
 		++m_nRound;
+
+		// deciding new zombie speed
+		float max_zombie_speed = 4.0f;
+		float next_zombie_speed = m_zombie_speed.Float() * 1.50;
+		if (next_zombie_speed > max_zombie_speed)
+			next_zombie_speed = max_zombie_speed;
+		Msg("updated zombie speed: %f\n", next_zombie_speed);
+		set_zombie_speed(next_zombie_speed);
+
+		// deciding new max alive zombies
+		m_nMaxAlive = m_nMaxAlive * 1.50;
+
 		if (m_ent_gm_txt_round)
 		{
 			inputdata_t message;
 			CFmtStrN<50> formatter;
 			message.value.SetString(MAKE_STRING(formatter.sprintf("Round: %d", m_nRound)));
 			m_ent_gm_txt_round->InputDisplayText(message);
+		}
+
+		mp_player = UTIL_GetLocalPlayer();
+		if (mp_player) {
+			variant_t msg;
+			msg.SetString(MAKE_STRING("Round Complete"));
+			g_EventQueue.AddEvent("gm_txt_message", "DisplayText", msg, 0, mp_player, mp_player);
 		}
 
 		m_nThreshold = int(powf(m_nThreshold, m_nIncreasePower));

@@ -12,3 +12,11 @@
 	SensorLib.Base.dll
 	SensorLib.ThoughtTechnologies.dll
 	SpPerfChart.dll
+
+- Here is sensors settings:
+	Sensor      SampleRate          Channel
+	EKG (BVP)   256Hz (HR -> 4Hz)   A or B   A
+	GSR         32Hz                C to H   C
+	EMGFrown    32Hz                C to H   D
+	EMGSmile    32Hz                C to H   E
+	All frequencies: 2048
