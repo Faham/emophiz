@@ -40,6 +40,8 @@ public:
 		mp_player = NULL;
 		m_zombie_speed.SetFloat(1.0f);
 		m_player_speed.SetFloat(1.0f);
+		m_fog_end.SetFloat(1000.0f);
+		m_fog_start.SetFloat(300.0f);
 		m_emotion_engine = NULL;
 	}
  
@@ -57,10 +59,14 @@ public:
 private:
 	void set_zombie_speed(float val);
 	void set_player_speed(float val);
+	void set_fog_end(float val);
+	void set_fog_start(float val);
 
 	CBasePlayer *mp_player;
 	variant_t m_zombie_speed;
 	variant_t m_player_speed;
+	variant_t m_fog_end;
+	variant_t m_fog_start;
 	int m_nThreshold; // Count at which to fire our output
 	float m_nIncreasePower; // Increase Power
 	int m_nCounter;   // Internal counter
@@ -218,6 +224,34 @@ void CDirector::set_player_speed(float val)
 
 //-----------------------------------------------------------------------------
 
+void CDirector::set_fog_end(float val)
+{
+	mp_player = UTIL_GetLocalPlayer();
+	if (!mp_player)
+		return;
+
+	//ent_fire env_fog_ctrl setenddist 500
+	m_fog_end.SetFloat(val);
+	Msg("Fog end distance set to %f\n", val);
+	g_EventQueue.AddEvent("env_fog_ctrl", "setenddist", m_fog_end, 0, mp_player, mp_player);
+}
+
+//-----------------------------------------------------------------------------
+
+void CDirector::set_fog_start(float val)
+{
+	mp_player = UTIL_GetLocalPlayer();
+	if (!mp_player)
+		return;
+
+	//ent_fire env_fog_ctrl setstartdist 2
+	m_fog_start.SetFloat(val);
+	Msg("Fog start distance set to %f\n", val);
+	g_EventQueue.AddEvent("env_fog_ctrl", "setstartdist", m_fog_start, 0, mp_player, mp_player);
+}
+
+//-----------------------------------------------------------------------------
+
 void CDirector::InputSetPlayerSpeed( inputdata_t &data )
 {
 	set_player_speed(data.value.Float());
@@ -259,6 +293,9 @@ void CDirector::Think()
 
 		// deciding new max alive zombies
 		m_nMaxAlive = m_nMaxAlive * 1.50;
+
+		set_fog_start(300 / m_nRound);
+		set_fog_end(1000 / m_nRound);
 
 		if (m_ent_gm_txt_round)
 		{

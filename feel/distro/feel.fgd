@@ -3,6 +3,9 @@
 @PointClass base(Targetname) = director : "Tutorial logical entity."
 [
 	threshold(integer) : "Threshold" : 1 : "Threshold value."
-	input Tick(void) : "Adds one tick to the entity's count."
-	output OnThreshold(void) : "Threshold was hit."
+	increase_power(float) : "Increase Power" : 1 : "Increase power value."
+	input TickZombieDied(void) : "Adds one tick to the dead entity's count."
+	input SetPlayerSpeed(float) : "Set players speed."
+	input Start(void) : "Start."
+	output OnNextRound(void) : "Going to next round."
 ]

@@ -1,14 +1,14 @@
 "GameInfo"
 {
 	game 		"feel"
-	title 		"HALF-LIFE'"
-	title2		"== episode two =="
+	title 		"FEEL'"
+	title2		""
 
 	type		singleplayer_only
 
 	FileSystem
 	{
-		SteamAppId				218 		// GCF for Episode 2 (default 420)
+		SteamAppId				218 		// GCF for Episode 2
 		ToolsAppId				211		// Tools will load this (ie: source SDK caches) to get things like materials\debug, materials\editor, etc.
 		
 		SearchPaths
@@ -16,6 +16,7 @@
 			Game				|gameinfo_path|.
 			Game				|all_source_engine_paths|ep2
 			Game				|all_source_engine_paths|episodic
+			Game				|all_source_engine_paths|portal
 			Game				|all_source_engine_paths|hl2
 		}
 	}

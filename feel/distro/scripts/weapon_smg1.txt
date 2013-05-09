@@ -12,11 +12,11 @@ WeaponData
 	"bucket_360"			"1"
 	"bucket_position_360"	"0"
 
-	"clip_size"				"45"
-	"clip2_size"			"-1"
+	"clip_size"				"999"
+	"clip2_size"			"3"
 
-	"default_clip"			"45"
-	"default_clip2"			"-1"
+	"default_clip"			"999"
+	"default_clip2"			"0"
 
 	"primary_ammo"			"SMG1"
 	"secondary_ammo"		"SMG1_Grenade"
