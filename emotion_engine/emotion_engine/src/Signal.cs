@@ -140,10 +140,15 @@ namespace emophiz
 
 		private void doCalibrate()
 		{
-			if (m_transformed < Minimum)
+            /*/
+            Minimum = -0.700f;
+            Maximum = -0.600f;
+            /*/
+            if (m_transformed < Minimum)
 				Minimum = m_transformed;
 			if (m_transformed > Maximum)
 				Maximum = m_transformed;
+            //*/
 		}
 
 		private void doNormalize()
