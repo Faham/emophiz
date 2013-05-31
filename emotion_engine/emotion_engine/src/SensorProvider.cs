@@ -70,7 +70,8 @@ namespace emophiz
 		}
 
 		private Log m_log;
-        private Log m_log_signals;
+        //private Log m_log_signals;
+        private Log m_log_game;
 
         public SensorProvider()
         {
@@ -91,31 +92,32 @@ namespace emophiz
             else
                 m_log = log;
 
-            m_log_signals = new Log("sensor_provider.csv");
-            m_log_signals.CSV(Log.Details.Raw,
-                Log.Priority.Information,
-                "time",
-                "gsr_raw",
-                "gsr_transformed",
-                "hr_raw",
-                "hr_transformed",
-                "bvp_raw",
-                "bvp_transformed",
-                "emgfrown_raw",
-                "emgfrown_transformed",
-                "emgsmile_raw",
-                "emgsmile_transformed",
-                "arousal_raw",
-                "arousal_transformed",
-                "valence_raw",
-                "valence_transformed",
-                "fun_raw",
-                "fun_transformed",
-                "excitement_raw",
-                "excitement_transformed",
-                "boredom_raw",
-                "boredom_transformed"
-            );
+            //m_log_signals = new Log("sensor_provider.csv");
+            m_log_game = new Log("game_events.csv");
+            //m_log_signals.CSV(Log.Details.Raw,
+            //    Log.Priority.Information,
+            //    "time",
+            //    "gsr_raw",
+            //    "gsr_transformed",
+            //    "hr_raw",
+            //    "hr_transformed",
+            //    "bvp_raw",
+            //    "bvp_transformed",
+            //    "emgfrown_raw",
+            //    "emgfrown_transformed",
+            //    "emgsmile_raw",
+            //    "emgsmile_transformed",
+            //    "arousal_raw",
+            //    "arousal_transformed",
+            //    "valence_raw",
+            //    "valence_transformed",
+            //    "fun_raw",
+            //    "fun_transformed",
+            //    "excitement_raw",
+            //    "excitement_transformed",
+            //    "boredom_raw",
+            //    "boredom_transformed"
+            //);
 
 
 			//m_fuzzyResources = fuzzy_resources;
@@ -430,5 +432,16 @@ namespace emophiz
 			m_boredom.NormalizeMaximum = 80.0;
 		}
         */
+
+        public void logGameEvent(int optcode, params float[] values)
+        {
+            string[] values_str = new string[values.Length + 1];
+
+            values_str[0] = optcode.ToString();
+            for (int i = 0; i < values.Length; ++i)
+                values_str[i + 1] = values[i].ToString();
+
+            m_log_game.CSV(Log.Details.Short, Log.Priority.Information, values_str);
+        }
 	}
 }

@@ -1,0 +1,14 @@
+optcode             arguments                            action
+1                   speed                                player speed change
+2                                                        spawn zombie
+3                   start_dist, end_dist                 set fog start end
+4                   speed                                set zombie speed
+5                   finished round number                round finished
+6                   new threshold                        set zombie count threshold
+7                                                        start calibrating
+8                                                        calibrating finished
+9                   new increase power                   set zombie increase power
+10                  new permitted max number alive       set max zombie alive limit for spawner
+11                  new delay value                      grenade regeneration delay
+12                  new delay value                      healthpack regeneration delay
+13                  new adapt id (player:1,npc:2,env:3)  game adaptation approach change

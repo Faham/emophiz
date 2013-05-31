@@ -36,6 +36,9 @@ namespace emophiz {
 		//double readFun       (bool raw = false);
 		//double readBoredom   (bool raw = false);
 		//double readExcitement(bool raw = false);
+		void logGameEvent(int optcode);
+		void logGameEvent(int optcode, float v);
+		void logGameEvent(int optcode, float v1, float v2);
 
 	private:
 		void* m_sensor_provider;

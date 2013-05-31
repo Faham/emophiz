@@ -219,6 +219,58 @@ namespace emophiz {
 
 //------------------------------------------------------------------------------
 
+	void CEmotionEngine::logGameEvent(int optcode) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->logGameEvent(optcode);
+	}
+
+	void CEmotionEngine::logGameEvent(int optcode, float v) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->logGameEvent(optcode, v);
+	}
+
+	void CEmotionEngine::logGameEvent(int optcode, float v1, float v2) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->logGameEvent(optcode, v1, v2);
+	}
+
+//------------------------------------------------------------------------------
+
+	/*void CEmotionEngine::logGameEvent(int optcode) {
+	
+		int n = 0;
+		switch(optcode) {
+		case 2:
+		case 7:
+		case 8:
+			n = 0;
+		case 3:
+			n = 2;
+		default:
+			n = 1;
+		}
+		
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+
+		if (n > 0) {
+			float[] values = new float[n];
+
+			va_list argptr;
+			va_start(argptr, optcode);
+			for (int i = 0; i < n; ++i)
+				values[i] = va_arg(argptr, float);
+			va_end(argptr);
+
+			((SensorProvider^)*pp)->logGameEvent(optcode, values);
+
+			delete [] values;
+		} else {
+			((SensorProvider^)*pp)->logGameEvent(optcode);
+		}
+	}*/
+
+//------------------------------------------------------------------------------
+
 }
 
 //==============================================================================
