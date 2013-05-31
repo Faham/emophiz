@@ -25,16 +25,17 @@ namespace emophiz {
 		bool start();
 		bool connect();
 		bool isConnected();
-		double readArousal   (bool raw = false);
-		double readValence   (bool raw = false);
+		void calibrateGSR(bool b);
+		//double readArousal   (bool raw = false);
+		//double readValence   (bool raw = false);
 		double readGSR       (bool raw = false);
-		double readHR        (bool raw = false);
-		double readBVP       (bool raw = false);
-		double readEMGFrown  (bool raw = false);
-		double readEMGSmile  (bool raw = false);
-		double readFun       (bool raw = false);
-		double readBoredom   (bool raw = false);
-		double readExcitement(bool raw = false);
+		//double readHR        (bool raw = false);
+		//double readBVP       (bool raw = false);
+		//double readEMGFrown  (bool raw = false);
+		//double readEMGSmile  (bool raw = false);
+		//double readFun       (bool raw = false);
+		//double readBoredom   (bool raw = false);
+		//double readExcitement(bool raw = false);
 
 	private:
 		void* m_sensor_provider;

@@ -25,6 +25,13 @@ public:
 
 	DECLARE_DATADESC();
  
+	enum ADAPTING_ELEMENT {
+		AE_NONE = 0,
+		AE_PLAYER = 1,
+		AE_NPC = 2,
+		AE_ENVIRONMENT = 3,
+	};
+
 	// Constructor
 	CDirector () 
 	{
@@ -40,9 +47,12 @@ public:
 		m_ent_funcbtn_healthpack = NULL;
 		m_ent_funcbtn_grenade = NULL;
 		m_nMaxAlive = 5;
-		m_game_adapt_id = 0x0000111;
+		m_game_adapt_id = AE_NONE;
+		m_adapting = false;
 		m_max_zombie_speed = 4.0f;
-		m_max_player_speed = 5.0f;
+		m_min_zombie_speed = 0.7;
+		m_max_player_speed = 4.0f;
+		m_min_player_speed = 0.5f;
 		mp_player = NULL;
 		m_zombie_speed.SetFloat(1.0f);
 		m_player_speed.SetFloat(1.0f);
@@ -53,6 +63,7 @@ public:
 		m_nThreshold = 5;
 		m_nIncreasePower = 1.3f;
 		m_arousal = 0.0f;
+		m_calibrating = false;
 	}
  
 	// Input function
@@ -63,6 +74,7 @@ public:
 	void InputSetZombieSpeed( inputdata_t &data );
 	void InputStartEmotionEngine( inputdata_t &data );
 	void InputPrintEmotionValues( inputdata_t &data );
+	void InputSetAdaptId( inputdata_t &data );
 	
 	void Think();
 
@@ -77,8 +89,9 @@ private:
 	void adapt_player();
 	void readEmotions();
 	void updateRound();
+	void reset();
 
-
+	bool m_calibrating;
 	CBasePlayer *mp_player;
 	variant_t m_zombie_speed;
 	variant_t m_player_speed;
@@ -89,13 +102,16 @@ private:
 	int m_nThreshold; // Count at which to fire our output
 	float m_nIncreasePower; // Increase Power
 	float m_max_zombie_speed;
+	float m_min_zombie_speed;
 	float m_max_player_speed;
+	float m_min_player_speed;
 	int m_nCounter;   // Internal counter
 	int m_nAlive; // number of alive enemies
 	int m_nKilled; // number of killed enemies
 	int m_nRound; // round number
 	int m_nMaxAlive;
 	int m_game_adapt_id;
+	bool m_adapting;
 	CGameText * m_ent_gm_txt_killed;
 	CGameText * m_ent_gm_txt_round;
 	CBaseButton * m_ent_funcbtn_healthpack;
@@ -108,6 +124,8 @@ private:
 	COutputEvent m_OnNextRound;	// Output event when the counter reaches the threshold
 	static emophiz::CEmotionEngine* ms_emotion_engine;
 };
+
+//-----------------------------------------------------------------------------
 
 LINK_ENTITY_TO_CLASS( director, CDirector );
 
@@ -122,12 +140,13 @@ BEGIN_DATADESC( CDirector )
  	DEFINE_KEYFIELD( m_nIncreasePower, FIELD_FLOAT, "increase_power" ),
  
 	// Links our input name from Hammer to our input member function
-	DEFINE_INPUTFUNC( FIELD_VOID,  "TickZombieDied",     InputTickZombieDied     ),
- 	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetPlayerSpeed",     InputSetPlayerSpeed     ),
- 	DEFINE_INPUTFUNC( FIELD_VOID,  "Start",              InputStart              ),
- 	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetZombieSpeed",     InputSetZombieSpeed     ),
-	DEFINE_INPUTFUNC( FIELD_VOID,  "StartEmotionEngine", InputStartEmotionEngine ),
-	DEFINE_INPUTFUNC( FIELD_VOID,  "PrintEmotionValues", InputPrintEmotionValues ),
+	DEFINE_INPUTFUNC( FIELD_VOID   , "TickZombieDied"    , InputTickZombieDied     ),
+ 	DEFINE_INPUTFUNC( FIELD_FLOAT  , "SetPlayerSpeed"    , InputSetPlayerSpeed     ),
+ 	DEFINE_INPUTFUNC( FIELD_VOID   , "Start"             , InputStart              ),
+ 	DEFINE_INPUTFUNC( FIELD_FLOAT  , "SetZombieSpeed"    , InputSetZombieSpeed     ),
+	DEFINE_INPUTFUNC( FIELD_VOID   , "StartEmotionEngine", InputStartEmotionEngine ),
+	DEFINE_INPUTFUNC( FIELD_VOID   , "PrintEmotionValues", InputPrintEmotionValues ),
+	DEFINE_INPUTFUNC( FIELD_INTEGER, "SetAdaptId"        , InputSetAdaptId         ),
 
 	// Links our output member variable to the output name used by Hammer
 	DEFINE_OUTPUT( m_OnNextRound, "OnNextRound" ),
@@ -136,6 +155,7 @@ BEGIN_DATADESC( CDirector )
  
 END_DATADESC()
 
+//-----------------------------------------------------------------------------
 
 emophiz::CEmotionEngine* CDirector::ms_emotion_engine = new emophiz::CEmotionEngine();
 bool CDirector::ms_emotion_engine_started = false;
@@ -185,15 +205,7 @@ void CDirector::InputStart( inputdata_t &inputData )
 	if (NULL == m_ent_pnt_spwn_zombie)
 		m_ent_pnt_spwn_zombie = static_cast<CPointTemplate*>   (gEntList.FindEntityByName(NULL, "pnt_spwn_zombie"));
 
-	set_zombie_speed(1.0f);
-	set_player_speed(1.0f);
-	set_fog_end(1000);
-	set_fog_start(300);
-	m_nCounter = 0;
-	m_nAlive = 0;
-	m_nKilled = 0;
-	m_nRound = 1;
-	m_nMaxAlive = 5;
+	reset();
 
 	if (!ms_emotion_engine_started) {
 		ms_emotion_engine->start();
@@ -201,6 +213,21 @@ void CDirector::InputStart( inputdata_t &inputData )
 	}
 
 	SetNextThink(gpGlobals->curtime + 5); // Think 5 seconds later to also connect the emotion engine
+}
+
+//-----------------------------------------------------------------------------
+
+void CDirector::reset()
+{
+	set_zombie_speed(1.0f);
+	set_player_speed(1.0f);
+	set_fog_end     (1000);
+	set_fog_start   (300);
+	m_nCounter  = 0;
+	m_nAlive    = 0;
+	m_nKilled   = 0;
+	m_nRound    = 1;
+	m_nMaxAlive = 5;
 }
 
 //-----------------------------------------------------------------------------
@@ -226,20 +253,32 @@ void CDirector::InputStartEmotionEngine( inputdata_t &data )
 
 //-----------------------------------------------------------------------------
 
+void CDirector::InputSetAdaptId( inputdata_t &data )
+{
+	reset();
+	m_game_adapt_id = data.value.Int();
+	m_adapting = true;
+	Msg("Adaption id is set to %d\n", m_game_adapt_id);
+	//ms_emotion_engine->log(optcode value value value value);
+}
+
+//-----------------------------------------------------------------------------
+
 void CDirector::InputPrintEmotionValues( inputdata_t &data )
 {
 	if (ms_emotion_engine->isConnected())
-		Msg("Arousal: %f\nValence: %f\nGSR: %f\nHR: %f\nBVP: %f\nEMGFrown: %f\nEMGSmile: %f\nFun: %f\nBoredom: %f\nExcitement: %f\n",
-			ms_emotion_engine->readArousal   (),
-			ms_emotion_engine->readValence   (),
-			ms_emotion_engine->readGSR       (),
-			ms_emotion_engine->readHR        (),
-			ms_emotion_engine->readBVP       (),
-			ms_emotion_engine->readEMGFrown  (),
-			ms_emotion_engine->readEMGSmile  (),
-			ms_emotion_engine->readFun       (),
-			ms_emotion_engine->readBoredom   (),
-			ms_emotion_engine->readExcitement());
+		Msg("GSR: %f\n", ms_emotion_engine->readGSR());
+		//Msg("Arousal: %f\nValence: %f\nGSR: %f\nHR: %f\nBVP: %f\nEMGFrown: %f\nEMGSmile: %f\nFun: %f\nBoredom: %f\nExcitement: %f\n",
+			//ms_emotion_engine->readArousal   (),
+			//ms_emotion_engine->readValence   (),
+			//ms_emotion_engine->readGSR       (),
+			//ms_emotion_engine->readHR        (),
+			//ms_emotion_engine->readBVP       (),
+			//ms_emotion_engine->readEMGFrown  (),
+			//ms_emotion_engine->readEMGSmile  (),
+			//ms_emotion_engine->readFun       (),
+			//ms_emotion_engine->readBoredom   (),
+			//ms_emotion_engine->readExcitement());
 	else
 		Msg("Engine is not connected");
 }
@@ -260,9 +299,9 @@ void CDirector::set_player_speed(float val)
 		return;
 
 	m_player_speed.SetFloat(val);
-	Msg("Player speed set to %f\n", val);
 	//g_EventQueue.AddEvent("plyr_speed", "modifyspeed", m_player_speed, 0, mp_player, mp_player);
 	mp_player->SetLaggedMovementValue( m_player_speed.Float() );
+	Msg("Player speed set to %f\n", val);
 }
 
 //-----------------------------------------------------------------------------
@@ -275,7 +314,6 @@ void CDirector::set_fog_end(float val)
 
 	//ent_fire env_fog_ctrl setenddist 500
 	m_fog_end.SetFloat(val);
-	Msg("Fog end distance set to %f\n", val);
 	g_EventQueue.AddEvent("env_fog_ctrl", "setenddist", m_fog_end, 0, mp_player, mp_player);
 }
 
@@ -289,7 +327,6 @@ void CDirector::set_fog_start(float val)
 
 	//ent_fire env_fog_ctrl setstartdist 2
 	m_fog_start.SetFloat(val);
-	Msg("Fog start distance set to %f\n", val);
 	g_EventQueue.AddEvent("env_fog_ctrl", "setstartdist", m_fog_start, 0, mp_player, mp_player);
 }
 
@@ -362,17 +399,29 @@ void CDirector::Think()
 		SetNextThink(gpGlobals->curtime + 1);
 	}
 
-	readEmotions();
-	if (m_game_adapt_id & 0x0000001) adapt_player();
-	if (m_game_adapt_id & 0x0000010) adapt_npc();
-	if (m_game_adapt_id & 0x0000100) adapt_environment();
+
+	if (m_adapting && ms_emotion_engine->isConnected()) {
+		if (!m_calibrating && m_nRound <= 3) {
+			ms_emotion_engine->calibrateGSR(true);
+			Msg("Calibrating...\n");
+			m_calibrating = true;
+		} else if (m_calibrating && m_nRound >= 3) {
+			ms_emotion_engine->calibrateGSR(true);
+			Msg("Calibration finished.\n");
+			m_calibrating = false;
+		}
+		readEmotions();
+		if (m_game_adapt_id == AE_PLAYER)      adapt_player();
+		if (m_game_adapt_id == AE_NPC)         adapt_npc();
+		if (m_game_adapt_id == AE_ENVIRONMENT) adapt_environment();
+	}
 }
 
 //-----------------------------------------------------------------------------
 
 void CDirector::readEmotions() {
 	if (ms_emotion_engine->isConnected()) {
-		m_arousal = ms_emotion_engine->readArousal() / 100.0f;
+		m_arousal = ms_emotion_engine->readGSR() / 100.0f;
 	}
 }
 
@@ -395,6 +444,7 @@ void CDirector::adapt_environment() {
 	int fg_end = 1000 * m_arousal / m_nRound;
 	fg_end = fg_end < m_min_fog_end ? m_min_fog_end : fg_end;
 
+	Msg("Fog distance set to (start, end) %f, %f\n", fg_start, fg_end);
 
 	int step = fg_start > m_fog_start.Int() ? 1 : -1;
 	for (int i = m_fog_start.Int(); i < fg_start; i += step)
@@ -419,7 +469,9 @@ void CDirector::adapt_npc() {
 	float next_zombie_speed = 1 / (0.30f + m_arousal);
 	if (next_zombie_speed > m_max_zombie_speed)
 		next_zombie_speed = m_max_zombie_speed;
-	Msg("updated zombie speed: %f\n", next_zombie_speed);
+	if (next_zombie_speed < m_min_zombie_speed)
+		next_zombie_speed = m_min_zombie_speed;
+	//Msg("updated zombie speed: %f\n", next_zombie_speed);
 	set_zombie_speed(next_zombie_speed);
 }
 
@@ -430,7 +482,9 @@ void CDirector::adapt_player() {
 	float next_player_speed = 0.50f + m_arousal;
 	if (next_player_speed > m_max_player_speed)
 		next_player_speed = m_max_player_speed;
-	Msg("updated player speed: %f\n", next_player_speed);
+	if (next_player_speed < m_min_player_speed)
+		next_player_speed = m_min_player_speed;
+	//Msg("updated player speed: %f\n", next_player_speed);
 	set_player_speed(next_player_speed);
 
 	// grenade rate

@@ -28,35 +28,35 @@ namespace emophiz
 		private List<ISensorListener> m_listeners = new List<ISensorListener>();
 		private Dictionary<string, Signal> m_signals = new Dictionary<string, Signal>();
 
-		private Signal m_arousal, m_valence;
-		private Signal m_fun, m_boredom, m_excitement;
+		//private Signal m_arousal, m_valence;
+		//private Signal m_fun, m_boredom, m_excitement;
 
 		public SensorLib.ThoughtTechnologies.ITtlEncoder Encoder { get { return m_encoder; } }
 
 		public Signal GSR { get { return m_signals[sensorTypeToStr(SensorType.GSR)]; } }
-		public Signal HR { get { return m_signals[sensorTypeToStr(SensorType.HR)]; } }
-		public Signal BVP { get { return m_signals[sensorTypeToStr(SensorType.BVP)]; } }
-		public Signal EMGFrown { get { return m_signals[sensorTypeToStr(SensorType.EMGFrown)]; } }
-		public Signal EMGSmile { get { return m_signals[sensorTypeToStr(SensorType.EMGSmile)]; } }
+		//public Signal HR { get { return m_signals[sensorTypeToStr(SensorType.HR)]; } }
+		//public Signal BVP { get { return m_signals[sensorTypeToStr(SensorType.BVP)]; } }
+		//public Signal EMGFrown { get { return m_signals[sensorTypeToStr(SensorType.EMGFrown)]; } }
+		//public Signal EMGSmile { get { return m_signals[sensorTypeToStr(SensorType.EMGSmile)]; } }
 
-		public Signal Arousal { get { return m_arousal; } }
-		public Signal Valence { get { return m_valence; } }
-		public Signal Fun { get { return m_fun; } }
-		public Signal Boredom { get { return m_boredom; } }
-		public Signal Excitement { get { return m_excitement; } }
+		//public Signal Arousal { get { return m_arousal; } }
+		//public Signal Valence { get { return m_valence; } }
+		//public Signal Fun { get { return m_fun; } }
+		//public Signal Boredom { get { return m_boredom; } }
+		//public Signal Excitement { get { return m_excitement; } }
 
 		//fuzzy variables
-		DotFuzzy.FuzzyEngine m_fuzzyEngineArousal = new DotFuzzy.FuzzyEngine();
-		DotFuzzy.FuzzyEngine m_fuzzyEngineValence = new DotFuzzy.FuzzyEngine();
-		DotFuzzy.FuzzyEngine m_fuzzyEngineFun = new DotFuzzy.FuzzyEngine();
-		DotFuzzy.FuzzyEngine m_fuzzyEngineBoredom = new DotFuzzy.FuzzyEngine();
-		DotFuzzy.FuzzyEngine m_fuzzyEngineExcitement = new DotFuzzy.FuzzyEngine();
+		//DotFuzzy.FuzzyEngine m_fuzzyEngineArousal = new DotFuzzy.FuzzyEngine();
+		//DotFuzzy.FuzzyEngine m_fuzzyEngineValence = new DotFuzzy.FuzzyEngine();
+		//DotFuzzy.FuzzyEngine m_fuzzyEngineFun = new DotFuzzy.FuzzyEngine();
+		//DotFuzzy.FuzzyEngine m_fuzzyEngineBoredom = new DotFuzzy.FuzzyEngine();
+		//DotFuzzy.FuzzyEngine m_fuzzyEngineExcitement = new DotFuzzy.FuzzyEngine();
 
-		double m_last_heartbeat_time = 0;
-		double m_current_heartbeat_time = 0;
-		double m_last_rise;
-		bool m_derivative_change = false;
-		Signal m_bvp;
+		//double m_last_heartbeat_time = 0;
+		//double m_current_heartbeat_time = 0;
+		//double m_last_rise;
+		//bool m_derivative_change = false;
+		//Signal m_bvp;
 
 		public enum SensorType
 		{
@@ -118,8 +118,8 @@ namespace emophiz
             );
 
 
-			m_fuzzyResources = fuzzy_resources;
-			InitFuzzyEngines();
+			//m_fuzzyResources = fuzzy_resources;
+			//InitFuzzyEngines();
 		}
 
 		private static string[] SensorTypeStr = Enum.GetNames(typeof(SensorType));
@@ -169,9 +169,11 @@ namespace emophiz
 			m_encoder = SensorLib.ThoughtTechnologies.TtlEncoder.Connect(encoderInfos.First());
 			m_connected = true;
 			InformListeners(Message.Connected, null);
+            string sensor_type;
 
 			m_log.Message("Creating signals");
-			string sensor_type = sensorTypeToStr(SensorType.BVP);
+            /*
+			sensor_type = sensorTypeToStr(SensorType.BVP);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
@@ -195,7 +197,7 @@ namespace emophiz
 			spec.Order = 8;
 			m_filterBaselineRemover = SensorLib.Filters.FilterCreation.FilterFactory.CreateIirFilter(spec);
 			/////////
-
+            */
 			sensor_type = sensorTypeToStr(SensorType.GSR);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.C, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
@@ -204,7 +206,7 @@ namespace emophiz
 			m_signals[sensor_type].EnableNormalize = true;
 			m_signals[sensor_type].EnableSmoothe = true;
 			m_signals[sensor_type].SmootheWindow = 32 * 1; //frequecy * second
-
+            /*
 			sensor_type = sensorTypeToStr(SensorType.EMGSmile);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.D, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
@@ -241,7 +243,7 @@ namespace emophiz
 			m_boredom.Minimum = 0;
 			m_boredom.Maximum = 100;
 			//m_boredom.EnableNormalize = true;
-
+            */
 			m_log.Message("Signals created.");
 			m_log.Message("Signal serialization format: " + Signal.SerializationFormat());
 
@@ -273,7 +275,7 @@ namespace emophiz
 			foreach (ISensorListener lsn in m_listeners)
 				lsn.OnMessage(msg, value);
 		}
-
+        /*
 		private string m_fuzzyResources;
 
 		private void InitFuzzyEngines()
@@ -329,7 +331,7 @@ namespace emophiz
                 }
             }
 		}
-
+        */
 		private void sensor_DataAvailable(SensorLib.Sensors.ISensor<float> sensor, float[] data)
 		{
 			try
@@ -337,51 +339,52 @@ namespace emophiz
 				Signal signal;
 				if (!m_signals.TryGetValue(sensor.Name, out signal))
 					throw new Exception("This type of sensor isn't supported: " + sensor.Name);
-				
-				signal.Current = sensor.CurrentValue;
 
-				if (sensorStrToType(sensor.Name) == SensorType.BVP)
-					UpdateHR();
+                signal.Current = sensor.CurrentValue;
+                /*
 
-				DotFuzzy.LinguisticVariable var = m_fuzzyEngineArousal.LinguisticVariableCollection.Find(signal.Name);
-				if (var != null)
-					var.InputValue = signal.Transformed;
+                if (sensorStrToType(sensor.Name) == SensorType.BVP)
+                    UpdateHR();
 
-				var = m_fuzzyEngineValence.LinguisticVariableCollection.Find(signal.Name);
-				if (var != null)
-					var.InputValue = signal.Transformed;
+                DotFuzzy.LinguisticVariable var = m_fuzzyEngineArousal.LinguisticVariableCollection.Find(signal.Name);
+                if (var != null)
+                    var.InputValue = signal.Transformed;
 
-				// Phase 1
-				m_valence.Current = m_fuzzyEngineValence.Defuzzify();
-				m_arousal.Current = m_fuzzyEngineArousal.Defuzzify();
+                var = m_fuzzyEngineValence.LinguisticVariableCollection.Find(signal.Name);
+                if (var != null)
+                    var.InputValue = signal.Transformed;
 
-				if (Double.IsNaN(m_valence.Current))
-					m_valence.Current = 0;
-				if (Double.IsNaN(m_arousal.Current))
-					m_arousal.Current = 0;
+                // Phase 1
+                m_valence.Current = m_fuzzyEngineValence.Defuzzify();
+                m_arousal.Current = m_fuzzyEngineArousal.Defuzzify();
 
-				// Phase 2
-				m_fuzzyEngineFun.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
-				m_fuzzyEngineFun.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
-				m_fun.Current = m_fuzzyEngineFun.Defuzzify();
+                if (Double.IsNaN(m_valence.Current))
+                    m_valence.Current = 0;
+                if (Double.IsNaN(m_arousal.Current))
+                    m_arousal.Current = 0;
 
-				if (Double.IsNaN(m_fun.Current))
-					m_fun.Current = 0;
+                // Phase 2
+                m_fuzzyEngineFun.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
+                m_fuzzyEngineFun.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
+                m_fun.Current = m_fuzzyEngineFun.Defuzzify();
 
-				m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
-				m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
-				m_excitement.Current = m_fuzzyEngineExcitement.Defuzzify();
+                if (Double.IsNaN(m_fun.Current))
+                    m_fun.Current = 0;
 
-				if (Double.IsNaN(m_excitement.Current))
-					m_excitement.Current = 0;
+                m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
+                m_fuzzyEngineExcitement.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
+                m_excitement.Current = m_fuzzyEngineExcitement.Defuzzify();
 
-				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
-				m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
-				m_boredom.Current = m_fuzzyEngineBoredom.Defuzzify();
+                if (Double.IsNaN(m_excitement.Current))
+                    m_excitement.Current = 0;
 
-				if (Double.IsNaN(m_boredom.Current))
-					m_boredom.Current = 0;
+                m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
+                m_fuzzyEngineBoredom.LinguisticVariableCollection.Find("Arousal").InputValue = m_arousal.Current;
+                m_boredom.Current = m_fuzzyEngineBoredom.Defuzzify();
 
+                if (Double.IsNaN(m_boredom.Current))
+                    m_boredom.Current = 0;
+                */
                 //m_log_signals.CSV(Log.Details.Short,
                 //    Log.Priority.Information,
                 //    GSR.Current.ToString(),
@@ -411,7 +414,7 @@ namespace emophiz
 				System.Windows.Forms.MessageBox.Show(e.Message);
 			}
 		}
-
+        /*
 		public void scaleEmotions()
 		{
 			m_fun.EnableNormalize = true;
@@ -426,5 +429,6 @@ namespace emophiz
 			m_boredom.NormalizeMinimum = 20.0;
 			m_boredom.NormalizeMaximum = 80.0;
 		}
+        */
 	}
 }
