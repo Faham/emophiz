@@ -102,25 +102,32 @@ namespace emophiz {
 
 //------------------------------------------------------------------------------
 
-	double CEmotionEngine::readArousal(bool raw /*= false*/) {
+	void CEmotionEngine::calibrateGSR(bool b) {
 		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
-
-		if (raw)
-			return ((SensorProvider^)*pp)->Arousal->Current;
-		else
-			return ((SensorProvider^)*pp)->Arousal->Transformed;
+		((SensorProvider^)*pp)->GSR->EnableCalibrate = b;
 	}
 
 //------------------------------------------------------------------------------
 
-	double CEmotionEngine::readValence(bool raw /*= false*/) {
-		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//double CEmotionEngine::readArousal(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->Arousal->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->Arousal->Transformed;
+	//}
 
-		if (raw)
-			return ((SensorProvider^)*pp)->Valence->Current;
-		else
-			return ((SensorProvider^)*pp)->Valence->Transformed;
-	}
+//------------------------------------------------------------------------------
+
+	//double CEmotionEngine::readValence(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->Valence->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->Valence->Transformed;
+	//}
 
 //------------------------------------------------------------------------------
 
@@ -135,80 +142,132 @@ namespace emophiz {
 
 //------------------------------------------------------------------------------
 
-	double CEmotionEngine::readHR(bool raw /*= false*/) {
-		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//double CEmotionEngine::readHR(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->HR->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->HR->Transformed;
+	//}
 
-		if (raw)
-			return ((SensorProvider^)*pp)->HR->Current;
-		else
-			return ((SensorProvider^)*pp)->HR->Transformed;
+//------------------------------------------------------------------------------
+
+	//double CEmotionEngine::readBVP(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->BVP->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->BVP->Transformed;
+	//}
+
+//------------------------------------------------------------------------------
+
+	//double CEmotionEngine::readEMGFrown(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->EMGFrown->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->EMGFrown->Transformed;
+	//}
+
+//------------------------------------------------------------------------------
+
+	//double CEmotionEngine::readEMGSmile(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->EMGFrown->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->EMGFrown->Transformed;
+	//}
+
+//------------------------------------------------------------------------------
+
+	//double CEmotionEngine::readFun(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->Fun->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->Fun->Transformed;
+	//}
+
+//------------------------------------------------------------------------------
+
+	//double CEmotionEngine::readBoredom(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->Boredom->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->Boredom->Transformed;
+	//}
+
+//------------------------------------------------------------------------------
+
+	//double CEmotionEngine::readExcitement(bool raw /*= false*/) {
+	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	//
+	//	if (raw)
+	//		return ((SensorProvider^)*pp)->Excitement->Current;
+	//	else
+	//		return ((SensorProvider^)*pp)->Excitement->Transformed;
+	//}
+
+//------------------------------------------------------------------------------
+
+	void CEmotionEngine::logGameEvent(int optcode) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->logGameEvent(optcode);
+	}
+
+	void CEmotionEngine::logGameEvent(int optcode, float v) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->logGameEvent(optcode, v);
+	}
+
+	void CEmotionEngine::logGameEvent(int optcode, float v1, float v2) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->logGameEvent(optcode, v1, v2);
 	}
 
 //------------------------------------------------------------------------------
 
-	double CEmotionEngine::readBVP(bool raw /*= false*/) {
+	/*void CEmotionEngine::logGameEvent(int optcode) {
+	
+		int n = 0;
+		switch(optcode) {
+		case 2:
+		case 7:
+		case 8:
+			n = 0;
+		case 3:
+			n = 2;
+		default:
+			n = 1;
+		}
+		
 		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
 
-		if (raw)
-			return ((SensorProvider^)*pp)->BVP->Current;
-		else
-			return ((SensorProvider^)*pp)->BVP->Transformed;
-	}
+		if (n > 0) {
+			float[] values = new float[n];
 
-//------------------------------------------------------------------------------
+			va_list argptr;
+			va_start(argptr, optcode);
+			for (int i = 0; i < n; ++i)
+				values[i] = va_arg(argptr, float);
+			va_end(argptr);
 
-	double CEmotionEngine::readEMGFrown(bool raw /*= false*/) {
-		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+			((SensorProvider^)*pp)->logGameEvent(optcode, values);
 
-		if (raw)
-			return ((SensorProvider^)*pp)->EMGFrown->Current;
-		else
-			return ((SensorProvider^)*pp)->EMGFrown->Transformed;
-	}
-
-//------------------------------------------------------------------------------
-
-	double CEmotionEngine::readEMGSmile(bool raw /*= false*/) {
-		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
-
-		if (raw)
-			return ((SensorProvider^)*pp)->EMGFrown->Current;
-		else
-			return ((SensorProvider^)*pp)->EMGFrown->Transformed;
-	}
-
-//------------------------------------------------------------------------------
-
-	double CEmotionEngine::readFun(bool raw /*= false*/) {
-		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
-
-		if (raw)
-			return ((SensorProvider^)*pp)->Fun->Current;
-		else
-			return ((SensorProvider^)*pp)->Fun->Transformed;
-	}
-
-//------------------------------------------------------------------------------
-
-	double CEmotionEngine::readBoredom(bool raw /*= false*/) {
-		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
-
-		if (raw)
-			return ((SensorProvider^)*pp)->Boredom->Current;
-		else
-			return ((SensorProvider^)*pp)->Boredom->Transformed;
-	}
-
-//------------------------------------------------------------------------------
-
-	double CEmotionEngine::readExcitement(bool raw /*= false*/) {
-		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
-
-		if (raw)
-			return ((SensorProvider^)*pp)->Excitement->Current;
-		else
-			return ((SensorProvider^)*pp)->Excitement->Transformed;
-	}
+			delete [] values;
+		} else {
+			((SensorProvider^)*pp)->logGameEvent(optcode);
+		}
+	}*/
 
 //------------------------------------------------------------------------------
 

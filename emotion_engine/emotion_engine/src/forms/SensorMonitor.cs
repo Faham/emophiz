@@ -157,7 +157,7 @@ namespace emophiz
 				m_plotGSR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.GSR.Current);
 				m_plotGSR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.GSR.Minimum);
 				m_plotGSR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.GSR.Maximum);
-				
+				/*
 				m_plotBVP.AddValue(m_provider.BVP.Transformed);
 				m_plotBVP.Messages[0] = "BVP: " + String.Format(double_formats, m_provider.BVP.Transformed);
 				m_plotBVP.Messages[1] = "Current: " + String.Format(double_formats, m_provider.BVP.Current);
@@ -211,6 +211,7 @@ namespace emophiz
 				m_plotBoredom.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Boredom.Current);
 				m_plotBoredom.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Boredom.Minimum);
 				m_plotBoredom.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Boredom.Maximum);
+                */
 			}
 			//catch (System.Exception ex)
 			//{
@@ -271,24 +272,24 @@ namespace emophiz
 		{
 			if (plot == m_plotGSR)
 				return m_provider.GSR;
-			else if (plot == m_plotHR)
-				return m_provider.HR;
-			else if (plot == m_plotBVP)
-				return m_provider.BVP;
-			else if (plot == m_plotEMGSmile)
-				return m_provider.EMGSmile;
-			else if (plot == m_plotEMGFrown)
-				return m_provider.EMGFrown;
-			else if (plot == m_plotArousal)
-				return m_provider.Arousal;
-			else if (plot == m_plotValence)
-				return m_provider.Valence;
-			else if (plot == m_plotFun)
-				return m_provider.Fun;
-			else if (plot == m_plotExcitement)
-				return m_provider.Excitement;
-			else if (plot == m_plotBoredom)
-				return m_provider.Boredom;
+			//else if (plot == m_plotHR)
+			//	return m_provider.HR;
+			//else if (plot == m_plotBVP)
+			//	return m_provider.BVP;
+			//else if (plot == m_plotEMGSmile)
+			//	return m_provider.EMGSmile;
+			//else if (plot == m_plotEMGFrown)
+			//	return m_provider.EMGFrown;
+			//else if (plot == m_plotArousal)
+			//	return m_provider.Arousal;
+			//else if (plot == m_plotValence)
+			//	return m_provider.Valence;
+			//else if (plot == m_plotFun)
+			//	return m_provider.Fun;
+			//else if (plot == m_plotExcitement)
+			//	return m_provider.Excitement;
+			//else if (plot == m_plotBoredom)
+			//	return m_provider.Boredom;
 
 			return null;
 		}
@@ -305,9 +306,9 @@ namespace emophiz
 			if (!m_provider.Connected)
 				return;
 			enableCalibrate(m_plotGSR, false);
-			enableCalibrate(m_plotHR, false);
-			enableCalibrate(m_plotEMGSmile, false);
-			enableCalibrate(m_plotEMGFrown, false);
+			//enableCalibrate(m_plotHR, false);
+			//enableCalibrate(m_plotEMGSmile, false);
+			//enableCalibrate(m_plotEMGFrown, false);
 		}
 
 		private void m_trcbarMaxMinShift_ValueChanged(object sender, EventArgs e)

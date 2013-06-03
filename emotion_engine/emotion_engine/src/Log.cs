@@ -72,7 +72,7 @@ namespace emophiz
 		public static String GetTimestamp()
 		{
             // "yyyy-MM-dd-HH:mm:ss:ffff"
-            return System.DateTime.Now.Subtract(msc_tick_start).Ticks.ToString();
+            return (System.DateTime.Now.Subtract(msc_tick_start).Ticks / TimeSpan.TicksPerMillisecond).ToString();
 		}
 
 		private String getLogSignature(Details detail, Priority priority, String delim = ",")

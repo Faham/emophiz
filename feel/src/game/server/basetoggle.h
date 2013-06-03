@@ -44,6 +44,7 @@ public:
 	DECLARE_DATADESC();
 
 	virtual float	GetDelay( void ) { return m_flWait; }
+	void SetDelay(float sec) { m_flWait = sec; }
 
 	// common member functions
 	void LinearMove( const Vector &vecDest, float flSpeed );
