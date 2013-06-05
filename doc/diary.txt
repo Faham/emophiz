@@ -28,3 +28,17 @@ my game testing experiment.
 	- light, levels lighting can go high or low based on players feedback.
 
  note: log everything into a csv file, there might be a 1 or 2 minutes training.
+
+- June 4 2013
+  (meeting with regan about piloting).
+  - 2 minutes of calibration starting at the begining of round 1.
+  - 5 minutes of rest between each condition during this time players should fill out questionares for each condition.
+  - 6 people for piolting the experiment in 2 groups of 3.
+  - we should still use the fuzzy approach though the arousal level is totally dependant to the GSR sensor.
+  - the focus of the this research is relating game adaptation to affects and looks for the differences between the 3 adaptation condition.
+  - questionaires to use: PENS for before each condition and PANAS and NASA-TLS for after each conditions. GEK is also a questionaire to look at.
+  - the PENS should tell how players better played and how they tell the differences between the conditions.
+  - the order of played conditions should be in a latin square order through different players, like the 1st player would player PL,NPC,ENV and the 2nd would player NPC,ENV,PL and the 3d ENV,PL,NPC.
+  - the structure of the thesis looks alright the chapter 03 "Customizing Play Experience in Real-Time" should be removed and merged into intro and lit-review.
+  - the chapter 04 "Implementation and Integration" should be splitted into two chapters, Implementation talks about the affect system and the Integration talks about the mod and game creation part.
+  - each player needs to play for 7 minutes including the 2 minute calibration for each condition, after that they would finish by either dieing or ending the round.

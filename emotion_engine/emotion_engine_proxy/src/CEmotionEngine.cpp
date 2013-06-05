@@ -89,7 +89,6 @@ namespace emophiz {
 		SensorProvider^ _sensor_provider = SensorProvider::Instance;
 		gcroot<SensorProvider^> *_ptr_sensor_provider = new gcroot<SensorProvider^>(_sensor_provider);
 		m_sensor_provider = (void*)_ptr_sensor_provider;
-
 		return true;
 	}
 
@@ -109,14 +108,14 @@ namespace emophiz {
 
 //------------------------------------------------------------------------------
 
-	//double CEmotionEngine::readArousal(bool raw /*= false*/) {
-	//	gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
-	//
-	//	if (raw)
-	//		return ((SensorProvider^)*pp)->Arousal->Current;
-	//	else
-	//		return ((SensorProvider^)*pp)->Arousal->Transformed;
-	//}
+	double CEmotionEngine::readArousal(bool raw /*= false*/) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+	
+		if (raw)
+			return ((SensorProvider^)*pp)->Arousal->Current;
+		else
+			return ((SensorProvider^)*pp)->Arousal->Transformed;
+	}
 
 //------------------------------------------------------------------------------
 
@@ -232,6 +231,40 @@ namespace emophiz {
 	void CEmotionEngine::logGameEvent(int optcode, float v1, float v2) {
 		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
 		((SensorProvider^)*pp)->logGameEvent(optcode, v1, v2);
+	}
+
+	void CEmotionEngine::logGameMetrics(
+		float player_speed,
+		float zombie_speed,
+		float fog_start_dist,
+		float fog_end_dist,
+		float current_round,
+		float zombie_threshold,
+		float zombie_increase_power,
+		float max_zombie_alive,
+		float number_of_alive_zombies,
+		float number_of_killed_zombies,
+		float grenade_regen_delay,
+		float medic_regen_delay,
+		float calibrating,
+		float adaptation_condition)
+	{
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->logGameMetrics(
+			player_speed,
+			zombie_speed,
+			fog_start_dist,
+			fog_end_dist,
+			current_round,
+			zombie_threshold,
+			zombie_increase_power,
+			max_zombie_alive,
+			number_of_alive_zombies,
+			number_of_killed_zombies,
+			grenade_regen_delay,
+			medic_regen_delay,
+			calibrating,
+			adaptation_condition);
 	}
 
 //------------------------------------------------------------------------------

@@ -157,7 +157,14 @@ namespace emophiz
 				m_plotGSR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.GSR.Current);
 				m_plotGSR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.GSR.Minimum);
 				m_plotGSR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.GSR.Maximum);
-				/*
+
+                m_plotArousal.AddValue(m_provider.Arousal.Transformed);
+                m_plotArousal.Messages[0] = "Arousal: " + String.Format(double_formats, m_provider.Arousal.Transformed);
+                //m_plotArousal.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Arousal.Current);
+                //m_plotArousal.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Arousal.Minimum);
+                //m_plotArousal.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Arousal.Maximum);
+
+                /*
 				m_plotBVP.AddValue(m_provider.BVP.Transformed);
 				m_plotBVP.Messages[0] = "BVP: " + String.Format(double_formats, m_provider.BVP.Transformed);
 				m_plotBVP.Messages[1] = "Current: " + String.Format(double_formats, m_provider.BVP.Current);
@@ -182,12 +189,6 @@ namespace emophiz
 				m_plotEMGSmile.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EMGSmile.Minimum);
 				m_plotEMGSmile.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGSmile.Maximum);
 				
-				m_plotArousal.AddValue(m_provider.Arousal.Transformed);
-				m_plotArousal.Messages[0] = "Arousal: " + String.Format(double_formats, m_provider.Arousal.Transformed);
-				//m_plotArousal.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Arousal.Current);
-				//m_plotArousal.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Arousal.Minimum);
-				//m_plotArousal.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Arousal.Maximum);
-
 				m_plotValence.AddValue(m_provider.Valence.Transformed);
 				m_plotValence.Messages[0] = "Valence: " + String.Format(double_formats, m_provider.Valence.Transformed);
 				//m_plotValence.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Valence.Current);
@@ -280,8 +281,8 @@ namespace emophiz
 			//	return m_provider.EMGSmile;
 			//else if (plot == m_plotEMGFrown)
 			//	return m_provider.EMGFrown;
-			//else if (plot == m_plotArousal)
-			//	return m_provider.Arousal;
+			else if (plot == m_plotArousal)
+				return m_provider.Arousal;
 			//else if (plot == m_plotValence)
 			//	return m_provider.Valence;
 			//else if (plot == m_plotFun)

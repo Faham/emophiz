@@ -134,7 +134,7 @@ namespace emophiz
 		{
 			Name = name;
 			Type = type;
-            m_log = new Log(name.ToLower() + ".csv");
+            m_log = new Log(DateTime.Now.ToString(@"yyyy-MM-dd h-mm") +  "_" + name.ToLower() + ".csv");
             m_log.CSV(Log.Details.Raw, Log.Priority.Information, "time", "raw", "transformed");
 		}
 

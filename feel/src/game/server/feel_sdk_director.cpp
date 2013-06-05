@@ -49,21 +49,32 @@ public:
 		m_nMaxAlive = 5;
 		m_game_adapt_id = AE_NONE;
 		m_adapting = false;
-		m_max_zombie_speed = 4.0f;
-		m_min_zombie_speed = 0.7;
-		m_max_player_speed = 4.0f;
-		m_min_player_speed = 0.5f;
 		mp_player = NULL;
 		m_zombie_speed.SetFloat(1.0f);
 		m_player_speed.SetFloat(1.0f);
 		m_fog_end.SetFloat(1000.0f);
 		m_fog_start.SetFloat(300.0f);
+		m_grenade_regen_delay = 30;
+		m_medic_regen_delay = 30;
+
+		m_max_zombie_speed = 4.0f;
+		m_min_zombie_speed = 1.0;
+		m_max_player_speed = 3.0f;
+		m_min_player_speed = 0.7f;
 		m_min_fog_end = 500;
+		m_max_fog_end = 1500;
 		m_min_fog_start = 70;
+		m_max_fog_start = 450;
+		m_max_alive_adapted = m_nMaxAlive;
+
 		m_nThreshold = 5;
 		m_nIncreasePower = 1.3f;
 		m_arousal = 0.0f;
 		m_calibrating = false;
+		m_calibrated = false;
+		m_calibration_start_time = 0;
+		m_calibration_duration = 60;
+		m_calibration_interval = 120;
 	}
  
 	// Input function
@@ -92,16 +103,23 @@ private:
 	void logEvent(int optcode);
 	void logEvent(int optcode, float v);
 	void logEvent(int optcode, float v1, float v2);
+	void logMetrics();
 
 
 	bool m_calibrating;
+	bool m_calibrated;
+	float m_calibration_start_time;
+	float m_calibration_duration;
+	float m_calibration_interval;
 	CBasePlayer *mp_player;
 	variant_t m_zombie_speed;
 	variant_t m_player_speed;
 	variant_t m_fog_end;
 	variant_t m_fog_start;
 	int m_min_fog_end;
+	int m_max_fog_end;
 	int m_min_fog_start;
+	int m_max_fog_start;
 	int m_nThreshold; // Count at which to fire our output
 	float m_nIncreasePower; // Increase Power
 	float m_max_zombie_speed;
@@ -123,6 +141,9 @@ private:
 	static bool ms_emotion_engine_started;
 	static bool ms_emotion_engine_initialized;
 	float m_arousal;
+	float m_grenade_regen_delay;
+	float m_medic_regen_delay;
+	int m_max_alive_adapted;
  
 	COutputEvent m_OnNextRound;	// Output event when the counter reaches the threshold
 	static emophiz::CEmotionEngine* ms_emotion_engine;
@@ -230,6 +251,8 @@ void CDirector::reset()
 	m_nKilled   = 0;
 	m_nRound    = 1;
 	m_nMaxAlive = 5;
+	m_calibrated = false;
+	m_calibrating = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -246,6 +269,29 @@ void CDirector::logEvent(int optcode, float v1, float v2) {
 	ms_emotion_engine->logGameEvent(optcode, v1, v2);
 }
 
+void CDirector::logMetrics() {
+
+	if (!ms_emotion_engine_initialized)
+		return;
+
+	ms_emotion_engine->logGameMetrics(
+	m_player_speed.Float(),    // player_speed
+	m_zombie_speed.Float(),    // zombie_speed
+	m_fog_start.Float(),       // fog_start_dist
+	m_fog_end.Float(),         // fog_end_dist
+	m_nRound,                  // current_round
+	m_nThreshold,              // zombie_threshold
+	m_nIncreasePower,          // zombie_increase_power
+	m_nMaxAlive,               // max_zombie_alive
+	m_nAlive,                  // number of alive zombies
+	m_nKilled,                 // number of killed zombies
+	m_grenade_regen_delay,     // grenade_regen_delay
+	m_medic_regen_delay,       // medic_regen_delay
+	m_calibrating,             // calibrating
+	m_game_adapt_id            // adaptation_condition
+	);
+}
+
 //-----------------------------------------------------------------------------
 
 void CDirector::set_zombie_speed(float val)
@@ -257,6 +303,7 @@ void CDirector::set_zombie_speed(float val)
 	m_zombie_speed.SetFloat(val);
 	Msg("Zombie speed set to %f\n", val);
 	g_EventQueue.AddEvent("npc_zombie", "setmovementvalue", m_zombie_speed, 0, mp_player, mp_player);
+	logMetrics();
 }
 
 //-----------------------------------------------------------------------------
@@ -317,6 +364,7 @@ void CDirector::set_player_speed(float val)
 	//g_EventQueue.AddEvent("plyr_speed", "modifyspeed", m_player_speed, 0, mp_player, mp_player);
 	mp_player->SetLaggedMovementValue( m_player_speed.Float() );
 	Msg("Player speed set to %f\n", val);
+	logMetrics();
 }
 
 //-----------------------------------------------------------------------------
@@ -334,7 +382,7 @@ void CDirector::set_fog_start_end(float val_s, float val_e)
 	//ent_fire env_fog_ctrl setenddist 500
 	m_fog_end.SetFloat(val_e);
 	g_EventQueue.AddEvent("env_fog_ctrl", "setenddist", m_fog_end, 0, mp_player, mp_player);
-
+	logMetrics();
 }
 
 //-----------------------------------------------------------------------------
@@ -368,13 +416,13 @@ void CDirector::Think()
 	if ( m_nCounter < m_nThreshold )
 	{
 		int _min = min(int(m_nThreshold * 0.3), m_nThreshold - m_nCounter);
-		_min = min(_min, m_nMaxAlive - m_nAlive);
+		_min = min(_min, m_max_alive_adapted - m_nAlive);
 		for (int i = 0; i < _min; ++i)
 		{
 			++m_nCounter;
 			++m_nAlive;
 			force_spawn_random_zombie();
-			logEvent(2);
+			logMetrics();
 		}
 		SetNextThink(gpGlobals->curtime + 1);
 	}
@@ -382,7 +430,7 @@ void CDirector::Think()
 	{
 		m_nCounter = 0;
 		++m_nRound;
-		logEvent(5, m_nRound - 1);
+		logMetrics();
 
 		if (m_ent_gm_txt_round)
 		{
@@ -402,7 +450,7 @@ void CDirector::Think()
 		updateRound();
 
 		m_nThreshold = int(powf(m_nThreshold, m_nIncreasePower));
-		logEvent(6, m_nThreshold);
+		logMetrics();
 
 		SetNextThink(gpGlobals->curtime + 10);
 	} else {
@@ -411,22 +459,27 @@ void CDirector::Think()
 
 
 	if (m_adapting && ms_emotion_engine->isConnected()) {
-		if (!m_calibrating && m_nRound <= 3) {
-			logEvent(7);
+		if (!m_calibrating && !m_calibrated) {
 			ms_emotion_engine->calibrateGSR(true);
-			Msg("Calibrating...\n");
+			m_calibration_start_time = gpGlobals->curtime;
 			m_calibrating = true;
-		} else if (m_calibrating && m_nRound >= 3) {
+			logMetrics();
+			Msg("Calibrating...\n");
+		} else if (m_calibrating && m_calibration_start_time + m_calibration_duration < gpGlobals->curtime) {
 			ms_emotion_engine->calibrateGSR(false);
 			Msg("Calibration finished.\n");
-			logEvent(8);
 			m_calibrating = false;
-			logEvent(13, m_game_adapt_id);
+			m_calibrated = true;
+			logMetrics();
+		} else if (m_calibrated) {
+			readEmotions();
+			if (m_game_adapt_id == AE_PLAYER)      adapt_player();
+			if (m_game_adapt_id == AE_NPC)         adapt_npc();
+			if (m_game_adapt_id == AE_ENVIRONMENT) adapt_environment();
 		}
-		readEmotions();
-		if (m_game_adapt_id == AE_PLAYER)      adapt_player();
-		if (m_game_adapt_id == AE_NPC)         adapt_npc();
-		if (m_game_adapt_id == AE_ENVIRONMENT) adapt_environment();
+
+		if (m_calibration_start_time + m_calibration_duration + m_calibration_interval < gpGlobals->curtime)
+			m_calibrated = false;
 	}
 }
 
@@ -434,7 +487,8 @@ void CDirector::Think()
 
 void CDirector::readEmotions() {
 	if (ms_emotion_engine->isConnected()) {
-		m_arousal = ms_emotion_engine->readGSR() / 100.0f;
+		//m_arousal = ms_emotion_engine->readGSR() / 100.0f;
+		m_arousal = ms_emotion_engine->readArousal() / 100.0f;
 	}
 }
 
@@ -443,73 +497,51 @@ void CDirector::readEmotions() {
 void CDirector::updateRound() {
 	// deciding new max alive zombies
 	m_nMaxAlive = m_nMaxAlive * 1.50;
-	logEvent(10, m_nMaxAlive);
+	m_max_alive_adapted = m_nMaxAlive;
 
 	// decide zombie increase rate
 	m_nIncreasePower = 1.3f;
-	logEvent(9, m_nIncreasePower);
+	logMetrics();
 }
 
 //-----------------------------------------------------------------------------
 
 void CDirector::adapt_environment() {
 	// set fog distant
-	int fg_start = 300 * m_arousal / m_nRound;
-	fg_start = fg_start < m_min_fog_start ? m_min_fog_start : fg_start;
-	int fg_end = 1000 * m_arousal / m_nRound;
-	fg_end = fg_end < m_min_fog_end ? m_min_fog_end : fg_end;
+	int fg_start = m_min_fog_start + m_arousal * (m_max_fog_start - m_min_fog_start);
+	int fg_end = m_min_fog_end + m_arousal * (m_max_fog_end - m_min_fog_end);
 
 	Msg("Fog distance set to (start, end) %f, %f\n", fg_start, fg_end);
 	set_fog_start_end(fg_start, fg_end);
-	logEvent(3, fg_start, fg_end);
-
 
 	// set healthpack rate
-	int delay = 30;
-	if (m_arousal > 0)
-		delay *= 1 / m_arousal;
-
-	m_ent_funcbtn_healthpack->SetDelay(delay);
-	logEvent(12, delay);
+	m_medic_regen_delay = 100 - (m_arousal * 60); // interpolates arousal from 0.0~1.0 to 90.0~30.0
+	m_ent_funcbtn_healthpack->SetDelay(m_medic_regen_delay);
+	logMetrics();
 }
 
 //-----------------------------------------------------------------------------
 
 void CDirector::adapt_npc() {
 	// deciding new zombie speed
-	float next_zombie_speed = 1 / (0.30f + m_arousal);
-	if (next_zombie_speed > m_max_zombie_speed)
-		next_zombie_speed = m_max_zombie_speed;
-	if (next_zombie_speed < m_min_zombie_speed)
-		next_zombie_speed = m_min_zombie_speed;
-	//Msg("updated zombie speed: %f\n", next_zombie_speed);
+	float next_zombie_speed = 1 / (0.30f + m_arousal);m_min_zombie_speed + (m_arousal * (m_max_zombie_speed - m_min_zombie_speed));
 	set_zombie_speed(next_zombie_speed);
-	logEvent(4, next_zombie_speed);
 
 	//Todo: add zombie numbers change adaptively
+	m_max_alive_adapted = m_nMaxAlive - (int)(m_arousal * (m_nMaxAlive * 0.5) - (m_nMaxAlive * 0.25));
 }
 
 //-----------------------------------------------------------------------------
 
 void CDirector::adapt_player() {
 	// set player speed
-	float next_player_speed = 0.50f + m_arousal;
-	if (next_player_speed > m_max_player_speed)
-		next_player_speed = m_max_player_speed;
-	if (next_player_speed < m_min_player_speed)
-		next_player_speed = m_min_player_speed;
-	//Msg("updated player speed: %f\n", next_player_speed);
+	float next_player_speed = m_min_player_speed + (m_arousal * (m_max_player_speed - m_min_player_speed));
 	set_player_speed(next_player_speed);
-	logEvent(1, next_player_speed);
-
 
 	// grenade rate
-	int delay = 30;
-	if (m_arousal > 0)
-		delay *= 1 / m_arousal;
-
-	m_ent_funcbtn_grenade->SetDelay(delay);
-	logEvent(11, delay);
+	m_grenade_regen_delay = 40 - (m_arousal * 20); // interpolates arousal from 0.0~1.0 to 40.0~20.0
+	m_ent_funcbtn_grenade->SetDelay(m_grenade_regen_delay);
+	logMetrics();
 }
 
 //-----------------------------------------------------------------------------
