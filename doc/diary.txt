@@ -42,3 +42,8 @@ my game testing experiment.
   - the structure of the thesis looks alright the chapter 03 "Customizing Play Experience in Real-Time" should be removed and merged into intro and lit-review.
   - the chapter 04 "Implementation and Integration" should be splitted into two chapters, Implementation talks about the affect system and the Integration talks about the mod and game creation part.
   - each player needs to play for 7 minutes including the 2 minute calibration for each condition, after that they would finish by either dieing or ending the round.
+- June 6 2013
+  (quick meeting with regan)
+  - relace SAM with PANAS
+  - put IMI too only the Interest/Enjoyment, Effort and Pressure/Tenssion
+  - create the experiment script

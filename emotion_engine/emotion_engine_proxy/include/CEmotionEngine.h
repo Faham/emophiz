@@ -26,6 +26,8 @@ namespace emophiz {
 		bool connect();
 		bool isConnected();
 		void calibrateGSR(bool b);
+		void calibrateHR(bool b);
+		void calibrateBVP(bool b);
 		double readArousal   (bool raw = false);
 		//double readValence   (bool raw = false);
 		double readGSR       (bool raw = false);
@@ -40,6 +42,7 @@ namespace emophiz {
 		void logGameEvent(int optcode, float v);
 		void logGameEvent(int optcode, float v1, float v2);
 		void logGameMetrics(float player_speed,
+			float arousal,
 			float zombie_speed,
 			float fog_start_dist,
 			float fog_end_dist,

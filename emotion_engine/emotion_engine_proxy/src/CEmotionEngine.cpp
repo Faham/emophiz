@@ -108,6 +108,20 @@ namespace emophiz {
 
 //------------------------------------------------------------------------------
 
+	void CEmotionEngine::calibrateHR(bool b) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->HR->EnableCalibrate = b;
+	}
+
+//------------------------------------------------------------------------------
+
+	void CEmotionEngine::calibrateBVP(bool b) {
+		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
+		((SensorProvider^)*pp)->BVP->EnableCalibrate = b;
+	}
+
+//------------------------------------------------------------------------------
+
 	double CEmotionEngine::readArousal(bool raw /*= false*/) {
 		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
 	
@@ -234,6 +248,7 @@ namespace emophiz {
 	}
 
 	void CEmotionEngine::logGameMetrics(
+		float arousal,
 		float player_speed,
 		float zombie_speed,
 		float fog_start_dist,
@@ -251,6 +266,7 @@ namespace emophiz {
 	{
 		gcroot<SensorProvider^> *pp = reinterpret_cast<gcroot<SensorProvider^>*>(m_sensor_provider);
 		((SensorProvider^)*pp)->logGameMetrics(
+			arousal,
 			player_speed,
 			zombie_speed,
 			fog_start_dist,

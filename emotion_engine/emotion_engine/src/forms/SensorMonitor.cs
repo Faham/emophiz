@@ -164,7 +164,6 @@ namespace emophiz
                 //m_plotArousal.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Arousal.Minimum);
                 //m_plotArousal.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Arousal.Maximum);
 
-                /*
 				m_plotBVP.AddValue(m_provider.BVP.Transformed);
 				m_plotBVP.Messages[0] = "BVP: " + String.Format(double_formats, m_provider.BVP.Transformed);
 				m_plotBVP.Messages[1] = "Current: " + String.Format(double_formats, m_provider.BVP.Current);
@@ -176,42 +175,43 @@ namespace emophiz
 				m_plotHR.Messages[1] = "Current: " + String.Format(double_formats, m_provider.HR.Current);
 				m_plotHR.Messages[2] = "Min: " + String.Format(double_formats, m_provider.HR.Minimum);
 				m_plotHR.Messages[3] = "Max: " + String.Format(double_formats, m_provider.HR.Maximum);
-				
-				m_plotEMGFrown.AddValue(m_provider.EMGFrown.Transformed);
-				m_plotEMGFrown.Messages[0] = "EMGFrown: " + String.Format(double_formats, m_provider.EMGFrown.Transformed);
-				m_plotEMGFrown.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EMGFrown.Current);
-				m_plotEMGFrown.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EMGFrown.Minimum);
-				m_plotEMGFrown.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGFrown.Maximum);
+
+                /*
+                m_plotEMGFrown.AddValue(m_provider.EMGFrown.Transformed);
+                m_plotEMGFrown.Messages[0] = "EMGFrown: " + String.Format(double_formats, m_provider.EMGFrown.Transformed);
+                m_plotEMGFrown.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EMGFrown.Current);
+                m_plotEMGFrown.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EMGFrown.Minimum);
+                m_plotEMGFrown.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGFrown.Maximum);
 	
-				m_plotEMGSmile.AddValue(m_provider.EMGSmile.Transformed);
-				m_plotEMGSmile.Messages[0] = "EMGSmile: " + String.Format(double_formats, m_provider.EMGSmile.Transformed);
-				m_plotEMGSmile.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EMGSmile.Current);
-				m_plotEMGSmile.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EMGSmile.Minimum);
-				m_plotEMGSmile.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGSmile.Maximum);
+                m_plotEMGSmile.AddValue(m_provider.EMGSmile.Transformed);
+                m_plotEMGSmile.Messages[0] = "EMGSmile: " + String.Format(double_formats, m_provider.EMGSmile.Transformed);
+                m_plotEMGSmile.Messages[1] = "Current: " + String.Format(double_formats, m_provider.EMGSmile.Current);
+                m_plotEMGSmile.Messages[2] = "Min: " + String.Format(double_formats, m_provider.EMGSmile.Minimum);
+                m_plotEMGSmile.Messages[3] = "Max: " + String.Format(double_formats, m_provider.EMGSmile.Maximum);
 				
-				m_plotValence.AddValue(m_provider.Valence.Transformed);
-				m_plotValence.Messages[0] = "Valence: " + String.Format(double_formats, m_provider.Valence.Transformed);
-				//m_plotValence.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Valence.Current);
-				//m_plotValence.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Valence.Minimum);
-				//m_plotValence.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Valence.Maximum);
+                m_plotValence.AddValue(m_provider.Valence.Transformed);
+                m_plotValence.Messages[0] = "Valence: " + String.Format(double_formats, m_provider.Valence.Transformed);
+                //m_plotValence.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Valence.Current);
+                //m_plotValence.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Valence.Minimum);
+                //m_plotValence.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Valence.Maximum);
 
-				m_plotFun.AddValue(m_provider.Fun.Transformed);
-				m_plotFun.Messages[0] = "Fun: " + String.Format(double_formats, m_provider.Fun.Transformed);
-				m_plotFun.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Fun.Current);
-				m_plotFun.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Fun.Minimum);
-				m_plotFun.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Fun.Maximum);
+                m_plotFun.AddValue(m_provider.Fun.Transformed);
+                m_plotFun.Messages[0] = "Fun: " + String.Format(double_formats, m_provider.Fun.Transformed);
+                m_plotFun.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Fun.Current);
+                m_plotFun.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Fun.Minimum);
+                m_plotFun.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Fun.Maximum);
 
-				m_plotExcitement.AddValue(m_provider.Excitement.Transformed);
-				m_plotExcitement.Messages[0] = "Excitement: " + String.Format(double_formats, m_provider.Excitement.Transformed);
-				m_plotExcitement.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Excitement.Current);
-				m_plotExcitement.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Excitement.Minimum);
-				m_plotExcitement.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Excitement.Maximum);
+                m_plotExcitement.AddValue(m_provider.Excitement.Transformed);
+                m_plotExcitement.Messages[0] = "Excitement: " + String.Format(double_formats, m_provider.Excitement.Transformed);
+                m_plotExcitement.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Excitement.Current);
+                m_plotExcitement.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Excitement.Minimum);
+                m_plotExcitement.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Excitement.Maximum);
 
-				m_plotBoredom.AddValue(m_provider.Boredom.Transformed);
-				m_plotBoredom.Messages[0] = "Boredom: " + String.Format(double_formats, m_provider.Boredom.Transformed);
-				m_plotBoredom.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Boredom.Current);
-				m_plotBoredom.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Boredom.Minimum);
-				m_plotBoredom.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Boredom.Maximum);
+                m_plotBoredom.AddValue(m_provider.Boredom.Transformed);
+                m_plotBoredom.Messages[0] = "Boredom: " + String.Format(double_formats, m_provider.Boredom.Transformed);
+                m_plotBoredom.Messages[1] = "Current: " + String.Format(double_formats, m_provider.Boredom.Current);
+                m_plotBoredom.Messages[2] = "Min: " + String.Format(double_formats, m_provider.Boredom.Minimum);
+                m_plotBoredom.Messages[3] = "Max: " + String.Format(double_formats, m_provider.Boredom.Maximum);
                 */
 			}
 			//catch (System.Exception ex)
@@ -273,10 +273,10 @@ namespace emophiz
 		{
 			if (plot == m_plotGSR)
 				return m_provider.GSR;
-			//else if (plot == m_plotHR)
-			//	return m_provider.HR;
-			//else if (plot == m_plotBVP)
-			//	return m_provider.BVP;
+			else if (plot == m_plotHR)
+				return m_provider.HR;
+			else if (plot == m_plotBVP)
+				return m_provider.BVP;
 			//else if (plot == m_plotEMGSmile)
 			//	return m_provider.EMGSmile;
 			//else if (plot == m_plotEMGFrown)
@@ -307,7 +307,7 @@ namespace emophiz
 			if (!m_provider.Connected)
 				return;
 			enableCalibrate(m_plotGSR, false);
-			//enableCalibrate(m_plotHR, false);
+			enableCalibrate(m_plotHR, false);
 			//enableCalibrate(m_plotEMGSmile, false);
 			//enableCalibrate(m_plotEMGFrown, false);
 		}

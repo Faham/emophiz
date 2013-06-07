@@ -27,9 +27,10 @@ public:
  
 	enum ADAPTING_ELEMENT {
 		AE_NONE = 0,
-		AE_PLAYER = 1,
-		AE_NPC = 2,
-		AE_ENVIRONMENT = 3,
+		AE_DEFAULT = 1,
+		AE_PLAYER = 2,
+		AE_NPC = 3,
+		AE_ENVIRONMENT = 4,
 	};
 
 	// Constructor
@@ -59,7 +60,7 @@ public:
 
 		m_max_zombie_speed = 4.0f;
 		m_min_zombie_speed = 1.0;
-		m_max_player_speed = 3.0f;
+		m_max_player_speed = 2.5f;
 		m_min_player_speed = 0.7f;
 		m_min_fog_end = 500;
 		m_max_fog_end = 1500;
@@ -70,11 +71,13 @@ public:
 		m_nThreshold = 5;
 		m_nIncreasePower = 1.3f;
 		m_arousal = 0.0f;
-		m_calibrating = false;
+		m_gsr_calibrating = false;
+		m_hr_calibrating = false;
 		m_calibrated = false;
 		m_calibration_start_time = 0;
-		m_calibration_duration = 60;
-		m_calibration_interval = 120;
+		m_gsr_calibration_duration = 60;
+		m_hr_calibration_duration = 7;
+		m_calibration_interval = 180;
 	}
  
 	// Input function
@@ -106,10 +109,12 @@ private:
 	void logMetrics();
 
 
-	bool m_calibrating;
+	bool m_gsr_calibrating;
+	bool m_hr_calibrating;
 	bool m_calibrated;
 	float m_calibration_start_time;
-	float m_calibration_duration;
+	float m_gsr_calibration_duration;
+	float m_hr_calibration_duration;
 	float m_calibration_interval;
 	CBasePlayer *mp_player;
 	variant_t m_zombie_speed;
@@ -252,7 +257,10 @@ void CDirector::reset()
 	m_nRound    = 1;
 	m_nMaxAlive = 5;
 	m_calibrated = false;
-	m_calibrating = false;
+	m_gsr_calibrating = false;
+	m_hr_calibrating = false;
+	m_game_adapt_id = AE_NONE;
+	m_adapting = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -275,20 +283,21 @@ void CDirector::logMetrics() {
 		return;
 
 	ms_emotion_engine->logGameMetrics(
-	m_player_speed.Float(),    // player_speed
-	m_zombie_speed.Float(),    // zombie_speed
-	m_fog_start.Float(),       // fog_start_dist
-	m_fog_end.Float(),         // fog_end_dist
-	m_nRound,                  // current_round
-	m_nThreshold,              // zombie_threshold
-	m_nIncreasePower,          // zombie_increase_power
-	m_nMaxAlive,               // max_zombie_alive
-	m_nAlive,                  // number of alive zombies
-	m_nKilled,                 // number of killed zombies
-	m_grenade_regen_delay,     // grenade_regen_delay
-	m_medic_regen_delay,       // medic_regen_delay
-	m_calibrating,             // calibrating
-	m_game_adapt_id            // adaptation_condition
+		m_arousal,                 // arousal
+		m_player_speed.Float(),    // player_speed
+		m_zombie_speed.Float(),    // zombie_speed
+		m_fog_start.Float(),       // fog_start_dist
+		m_fog_end.Float(),         // fog_end_dist
+		m_nRound,                  // current_round
+		m_nThreshold,              // zombie_threshold
+		m_nIncreasePower,          // zombie_increase_power
+		m_nMaxAlive,               // max_zombie_alive
+		m_nAlive,                  // number of alive zombies
+		m_nKilled,                 // number of killed zombies
+		m_grenade_regen_delay,     // grenade_regen_delay
+		m_medic_regen_delay,       // medic_regen_delay
+		m_gsr_calibrating,         // calibrating
+		m_game_adapt_id            // adaptation_condition
 	);
 }
 
@@ -320,7 +329,7 @@ void CDirector::InputSetAdaptId( inputdata_t &data )
 {
 	reset();
 	m_game_adapt_id = data.value.Int();
-	m_adapting = true;
+	m_adapting = (m_game_adapt_id != AE_NONE && m_game_adapt_id != AE_DEFAULT);
 	Msg("Adaption id is set to %d\n", m_game_adapt_id);
 }
 
@@ -459,26 +468,44 @@ void CDirector::Think()
 
 
 	if (m_adapting && ms_emotion_engine->isConnected()) {
-		if (!m_calibrating && !m_calibrated) {
+		if (!m_gsr_calibrating && !m_calibrated) {
+
 			ms_emotion_engine->calibrateGSR(true);
+			ms_emotion_engine->calibrateBVP(true);
+			
 			m_calibration_start_time = gpGlobals->curtime;
-			m_calibrating = true;
+			m_gsr_calibrating = true;
+			m_hr_calibrating = true;
 			logMetrics();
 			Msg("Calibrating...\n");
-		} else if (m_calibrating && m_calibration_start_time + m_calibration_duration < gpGlobals->curtime) {
+		}
+		
+		if (m_hr_calibrating && m_calibration_start_time + m_hr_calibration_duration < gpGlobals->curtime) {
+			
+			ms_emotion_engine->calibrateBVP(false);
+			m_hr_calibrating = false;
+			logMetrics();
+
+		}
+		
+		if (m_gsr_calibrating && m_calibration_start_time + m_gsr_calibration_duration < gpGlobals->curtime) {
+			
 			ms_emotion_engine->calibrateGSR(false);
-			Msg("Calibration finished.\n");
-			m_calibrating = false;
+			m_gsr_calibrating = false;
 			m_calibrated = true;
 			logMetrics();
-		} else if (m_calibrated) {
+			Msg("Calibration finished.\n");
+
+		}
+		
+		if (m_calibrated) {
 			readEmotions();
 			if (m_game_adapt_id == AE_PLAYER)      adapt_player();
 			if (m_game_adapt_id == AE_NPC)         adapt_npc();
 			if (m_game_adapt_id == AE_ENVIRONMENT) adapt_environment();
 		}
 
-		if (m_calibration_start_time + m_calibration_duration + m_calibration_interval < gpGlobals->curtime)
+		if (m_calibration_start_time + m_gsr_calibration_duration + m_calibration_interval < gpGlobals->curtime)
 			m_calibrated = false;
 	}
 }
@@ -487,8 +514,8 @@ void CDirector::Think()
 
 void CDirector::readEmotions() {
 	if (ms_emotion_engine->isConnected()) {
-		//m_arousal = ms_emotion_engine->readGSR() / 100.0f;
-		m_arousal = ms_emotion_engine->readArousal() / 100.0f;
+		m_arousal = ms_emotion_engine->readGSR() / 100.0f;
+		//m_arousal = ms_emotion_engine->readArousal() / 100.0f;
 	}
 }
 
