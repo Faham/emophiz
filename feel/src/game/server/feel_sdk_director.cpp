@@ -60,8 +60,8 @@ public:
 
 		m_max_zombie_speed = 4.0f;
 		m_min_zombie_speed = 1.0;
-		m_max_player_speed = 2.5f;
-		m_min_player_speed = 0.7f;
+		m_max_player_speed = 2.0f;
+		m_min_player_speed = 0.65f;
 		m_min_fog_end = 500;
 		m_max_fog_end = 1500;
 		m_min_fog_start = 70;
