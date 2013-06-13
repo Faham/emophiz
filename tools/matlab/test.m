@@ -12,8 +12,16 @@
 %[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_3\20130611_1458_metrics.csv', 16);
 
 %[arousal_h, arousal_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_4\20130612_1322_arousal.csv', 3);
-[gsr_h, gsr_v]         = readCSV('D:\faham\emophiz\emophiz\logs\pilot_4\20130612_1322_gsr.csv', 3);
-[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_4\20130612_1322_metrics.csv', 16);
+%[gsr_h, gsr_v]         = readCSV('D:\faham\emophiz\emophiz\logs\pilot_4\20130612_1322_gsr.csv', 3);
+%[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_4\20130612_1322_metrics.csv', 16);
+
+%[arousal_h, arousal_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_5\20130612_1515_arousal.csv', 3);
+%[gsr_h, gsr_v]         = readCSV('D:\faham\emophiz\emophiz\logs\pilot_5\20130612_1515_gsr.csv', 3);
+%[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_5\20130612_1515_metrics.csv', 16);
+
+%[arousal_h, arousal_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_6\20130612_1619_arousal.csv', 3);
+[gsr_h, gsr_v]         = readCSV('D:\faham\emophiz\emophiz\logs\pilot_6\20130612_1703_gsr.csv', 3);
+[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_6\20130612_1703_metrics.csv', 16);
 
 %----------------------------------------------
 %time_millisecond
@@ -33,8 +41,8 @@
 %calibrating
 %adaptation_condition
 %----------------------------------------------
-%plot(gsr_v{1}, (gsr_v{2} * 1000) + 800 , 'r-'); hold on;
-plot(gsr_v{1}, smooth(gsr_v{1}, (gsr_v{2} * 1000) + 800, 0.1, 'loess'), 'r-'); hold on; 
+plot(gsr_v{1}, (gsr_v{2} * 1000) + 800 , 'r-'); hold on;
+%plot(gsr_v{1}, smooth(gsr_v{1}, (gsr_v{2} * 1000) + 800, 0.1, 'loess'), 'r-'); hold on; 
 plot(metrics_v{1}, metrics_v{15} * 100 + 25, 'k-'); hold on; % calibration
 plot(metrics_v{1}, metrics_v{16} * 20 + 50, 'c-'); hold on; % adaptation
 %plot(bvp_v{1}, bvp_v{3}, 'c-'); %hold on;
