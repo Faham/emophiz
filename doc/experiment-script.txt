@@ -1,0 +1,44 @@
+Experiment Script - BioFeedback FPS by Faham Negini
+
+<Participants arrive>
+	- Greetings
+<Participants sits>
+	- Consent form and a short description of the procedure and questionnaires
+	  (make sure they put their email address)
+	- Ask him to turn his cell phone off
+	- Tell him about the sensor and attach the sensors and make 
+	  sure s/he is comfortable with that
+	- Give him his participant ID
+	- Describe the SAM for him if he doesn't know
+		Self-Assessment Manikin questionnaire is a non-verbal pictorial
+		assessment technique that directly measures the pleasure, arousal
+		and dominance associated with a person's affective reaction.
+		It contains three simple judgments.
+	- Take him to fill the start questionnaire
+<Run the first condition>
+	- Turn on the encoder
+	- Run the game
+	- Take him a tour in the map
+		- Headshot effect
+		- Infinite ammo plus automatic recoil
+		- Little monsters
+		- 30 seconds gameplay practice
+	- Make sure he is in good shape to play the game
+<After each condition>
+	- Choose New Game from menu and pause the game
+	- Ask him to fill the 'between conditions' after each condition
+	- Inform him not to rush through questionnaires.
+	- Start timer
+	- Rest for 7 minutes
+<After each condition questionnaire>
+	- Bring up signal window
+	- Let the game start
+	- player should play to round 5 for about 5 minutes at least
+	- Start timer
+<After the four conditions finished>
+	- Answer participant's unasnwered questions
+	- Pay the $15
+	- Take them to sign the honorarium form
+	- Say good buy
+	- Move Logs to its directory
+	- Turn the encoder off
