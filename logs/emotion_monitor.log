@@ -2,6 +2,6 @@
 80	Information	Initializing fuzzy engines
 90	Information	Fuzzy engines initialized
 90	Information	EmotionMonitor initialized
-7050	Information	Creating signals
-7080	Information	Signals created.
-7080	Information	Signal serialization format: Name	Current	Transformed	Minimum	Maximum	Shift
+9500	Information	Creating signals
+9540	Information	Signals created.
+9540	Information	Signal serialization format: Name	Current	Transformed	Minimum	Maximum	Shift

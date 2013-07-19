@@ -78,6 +78,7 @@ public:
 		m_gsr_calibration_duration = 60;
 		m_hr_calibration_duration = 7;
 		m_calibration_interval = 180;
+		m_firstZombie = true;
 	}
  
 	// Input function
@@ -108,7 +109,7 @@ private:
 	void logEvent(int optcode, float v1, float v2);
 	void logMetrics();
 
-
+	bool m_firstZombie;
 	bool m_gsr_calibrating;
 	bool m_hr_calibrating;
 	bool m_calibrated;
@@ -402,6 +403,13 @@ void CDirector::force_spawn_random_zombie()
 	if (!mp_player)
 		return;
 	g_EventQueue.AddEvent("pnt_spwn_zombie", "ForceSpawnRandom", variant_t(), 0, mp_player, mp_player);
+
+	if (m_firstZombie) {
+		set_zombie_speed(1.0f);
+		set_zombie_speed(1.0f);
+		set_zombie_speed(1.0f);
+		m_firstZombie = false;
+	}
 }
 
 //-----------------------------------------------------------------------------
