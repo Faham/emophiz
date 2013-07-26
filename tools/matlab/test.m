@@ -23,8 +23,11 @@
 %[gsr_h, gsr_v]         = readCSV('D:\faham\emophiz\emophiz\logs\pilot_6\20130612_1619_gsr.csv', 3);
 %[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\pilot_6\20130612_1619_metrics.csv', 16);
 
-[gsr_h, gsr_v]         = readCSV('D:\faham\emophiz\emophiz\logs\experiment\1\20130711_0921_gsr.csv', 3);
-[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\experiment\1\20130711_0921_metrics.csv', 16);
+%[gsr_h, gsr_v]         = readCSV('D:\faham\emophiz\emophiz\logs\experiment\1\20130711_0921_gsr.csv', 3);
+%[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\experiment\1\20130711_0921_metrics.csv', 16);
+
+[gsr_h, gsr_v]         = readCSV('D:\faham\emophiz\emophiz\logs\experiment\10\20130711_0921_gsr.csv', 3);
+[metrics_h, metrics_v] = readCSV('D:\faham\emophiz\emophiz\logs\experiment\10\20130711_0921_metrics.csv', 16);
 
 %----------------------------------------------
 %1 time_millisecond
@@ -45,55 +48,55 @@
 %16 adaptation_condition
 %----------------------------------------------
 %finding conditions
-m_conditions = {[], [], [], []}
-
-m_cur_cond = 0
-m_start = -1
-m_end = -1
-for i=1:length(metrics_v{16}) - 1
-	if metrics_v{16}(i) ~= 0 && m_start == -1
-		m_start = i
-		m_cur_cond = metrics_v{16}(i)
-	elseif metrics_v{16}(i) ~= 0 && (metrics_v{16}(i + 1) == 0 || i + 1 == length(metrics_v{16}))
-		if m_end == -1
-			m_end = i
-			m_conditions{m_cur_cond} = [m_start, m_end]
-		end
-	elseif metrics_v{16}(i) == 0 && (metrics_v{16}(i + 1) ~= 0)
-		if m_end ~= -1 && m_start ~= -1 && m_cur_cond ~= 0
-			m_end = -1
-			m_start = -1
-			m_cur_cond = 0
-		end
-	end
-end
-%----------------------------------------------
-for i=1:length(m_conditions)
-	start_time = metrics_v{1}(m_conditions{i}(1))
-	end_time = metrics_v{1}(m_conditions{i}(2))
-	start_gsr_index = -1
-	end_gsr_index = -1
-	for j=1:length(gsr_v{1})
-		if gsr_v{1}(j) >= start_time && start_gsr_index == -1
-			start_gsr_index = j
-		elseif gsr_v{1}(j) >= end_time && end_gsr_index == -1
-			end_gsr_index = j
-		end
-	end
-	%for each condition the array is as the following:
-	%1: condition start time index
-	%2: condition end time index
-	%3: gsr start value
-	%4: gsr end value
-	%5: gsr mean
-	%6: gsr variance
-	%7: gsr slope
-	m_conditions{i}(3) = gsr_v{2}(start_gsr_index)
-	m_conditions{i}(4) = gsr_v{2}(end_gsr_index)
-	m_conditions{i}(5) = mean(gsr_v{2}(start_gsr_index:end_gsr_index))
-	m_conditions{i}(6) = var(gsr_v{2}(start_gsr_index:end_gsr_index), 1)
-	m_conditions{i}(7) = diff(mean(gsr_v{2}(start_gsr_index:start_gsr_index + (end_gsr_index - start_gsr_index) / 2)), mean(gsr_v{2}(start_gsr_index + (end_gsr_index - start_gsr_index) / 2:end)))
-end
+%m_conditions = {[], [], [], []}
+%
+%m_cur_cond = 0
+%m_start = -1
+%m_end = -1
+%for i=1:length(metrics_v{16}) - 1
+%	if metrics_v{16}(i) ~= 0 && m_start == -1
+%		m_start = i
+%		m_cur_cond = metrics_v{16}(i)
+%	elseif metrics_v{16}(i) ~= 0 && (metrics_v{16}(i + 1) == 0 || i + 1 == length(metrics_v{16}))
+%		if m_end == -1
+%			m_end = i
+%			m_conditions{m_cur_cond} = [m_start, m_end]
+%		end
+%	elseif metrics_v{16}(i) == 0 && (metrics_v{16}(i + 1) ~= 0)
+%		if m_end ~= -1 && m_start ~= -1 && m_cur_cond ~= 0
+%			m_end = -1
+%			m_start = -1
+%			m_cur_cond = 0
+%		end
+%	end
+%end
+%%----------------------------------------------
+%for i=1:length(m_conditions)
+%	start_time = metrics_v{1}(m_conditions{i}(1))
+%	end_time = metrics_v{1}(m_conditions{i}(2))
+%	start_gsr_index = -1
+%	end_gsr_index = -1
+%	for j=1:length(gsr_v{1})
+%		if gsr_v{1}(j) >= start_time && start_gsr_index == -1
+%			start_gsr_index = j
+%		elseif gsr_v{1}(j) >= end_time && end_gsr_index == -1
+%			end_gsr_index = j
+%		end
+%	end
+%	%for each condition the array is as the following:
+%	%1: condition start time index
+%	%2: condition end time index
+%	%3: gsr start value
+%	%4: gsr end value
+%	%5: gsr mean
+%	%6: gsr variance
+%	%7: gsr slope
+%	m_conditions{i}(3) = gsr_v{2}(start_gsr_index)
+%	m_conditions{i}(4) = gsr_v{2}(end_gsr_index)
+%	m_conditions{i}(5) = mean(gsr_v{2}(start_gsr_index:end_gsr_index))
+%	m_conditions{i}(6) = var(gsr_v{2}(start_gsr_index:end_gsr_index), 1)
+%	m_conditions{i}(7) = diff(mean(gsr_v{2}(start_gsr_index:start_gsr_index + (end_gsr_index - start_gsr_index) / 2)), mean(gsr_v{2}(start_gsr_index + (end_gsr_index - start_gsr_index) / 2:end)))
+%end
 %----------------------------------------------
 
 plot(gsr_v{1}, (gsr_v{2} * 1000) + 800 , 'b-'); hold on;
