@@ -28,35 +28,35 @@ namespace emophiz
 		private List<ISensorListener> m_listeners = new List<ISensorListener>();
 		private Dictionary<string, Signal> m_signals = new Dictionary<string, Signal>();
 
-		//private Signal m_arousal, m_valence;
+        private Signal m_arousal;//, m_valence;
 		//private Signal m_fun, m_boredom, m_excitement;
 
 		public SensorLib.ThoughtTechnologies.ITtlEncoder Encoder { get { return m_encoder; } }
 
 		public Signal GSR { get { return m_signals[sensorTypeToStr(SensorType.GSR)]; } }
-		//public Signal HR { get { return m_signals[sensorTypeToStr(SensorType.HR)]; } }
-		//public Signal BVP { get { return m_signals[sensorTypeToStr(SensorType.BVP)]; } }
+		public Signal HR { get { return m_signals[sensorTypeToStr(SensorType.HR)]; } }
+		public Signal BVP { get { return m_signals[sensorTypeToStr(SensorType.BVP)]; } }
 		//public Signal EMGFrown { get { return m_signals[sensorTypeToStr(SensorType.EMGFrown)]; } }
 		//public Signal EMGSmile { get { return m_signals[sensorTypeToStr(SensorType.EMGSmile)]; } }
 
-		//public Signal Arousal { get { return m_arousal; } }
+		public Signal Arousal { get { return m_arousal; } }
 		//public Signal Valence { get { return m_valence; } }
 		//public Signal Fun { get { return m_fun; } }
 		//public Signal Boredom { get { return m_boredom; } }
 		//public Signal Excitement { get { return m_excitement; } }
 
 		//fuzzy variables
-		//DotFuzzy.FuzzyEngine m_fuzzyEngineArousal = new DotFuzzy.FuzzyEngine();
+		DotFuzzy.FuzzyEngine m_fuzzyEngineArousal = new DotFuzzy.FuzzyEngine();
 		//DotFuzzy.FuzzyEngine m_fuzzyEngineValence = new DotFuzzy.FuzzyEngine();
 		//DotFuzzy.FuzzyEngine m_fuzzyEngineFun = new DotFuzzy.FuzzyEngine();
 		//DotFuzzy.FuzzyEngine m_fuzzyEngineBoredom = new DotFuzzy.FuzzyEngine();
 		//DotFuzzy.FuzzyEngine m_fuzzyEngineExcitement = new DotFuzzy.FuzzyEngine();
 
-		//double m_last_heartbeat_time = 0;
-		//double m_current_heartbeat_time = 0;
-		//double m_last_rise;
-		//bool m_derivative_change = false;
-		//Signal m_bvp;
+		double m_last_heartbeat_time = 0;
+		double m_current_heartbeat_time = 0;
+		double m_last_rise;
+		bool m_derivative_change = false;
+		Signal m_bvp;
 
 		public enum SensorType
 		{
@@ -93,35 +93,29 @@ namespace emophiz
                 m_log = log;
 
             //m_log_signals = new Log("sensor_provider.csv");
-            m_log_game = new Log("game_events.csv");
-            //m_log_signals.CSV(Log.Details.Raw,
-            //    Log.Priority.Information,
-            //    "time",
-            //    "gsr_raw",
-            //    "gsr_transformed",
-            //    "hr_raw",
-            //    "hr_transformed",
-            //    "bvp_raw",
-            //    "bvp_transformed",
-            //    "emgfrown_raw",
-            //    "emgfrown_transformed",
-            //    "emgsmile_raw",
-            //    "emgsmile_transformed",
-            //    "arousal_raw",
-            //    "arousal_transformed",
-            //    "valence_raw",
-            //    "valence_transformed",
-            //    "fun_raw",
-            //    "fun_transformed",
-            //    "excitement_raw",
-            //    "excitement_transformed",
-            //    "boredom_raw",
-            //    "boredom_transformed"
-            //);
+            m_log_game = new Log(DateTime.Now.ToString(@"yyyyMMdd_HHmm") + "_metrics.csv");
 
+            m_log_game.CSV(Log.Details.Raw, Log.Priority.Information,
+                "time_millisecond",
+                "arousal",
+                "player_speed",
+			    "zombie_speed",
+			    "fog_start_dist",
+			    "fog_end_dist",
+			    "current_round",
+			    "zombie_threshold",
+			    "zombie_increase_power",
+			    "max_zombie_alive",
+			    "number_of_alive_zombies",
+			    "number_of_killed_zombies",
+			    "grenade_regen_delay",
+			    "medic_regen_delay",
+			    "calibrating",
+			    "adaptation_condition"
+           );
 
-			//m_fuzzyResources = fuzzy_resources;
-			//InitFuzzyEngines();
+			m_fuzzyResources = fuzzy_resources;
+			InitFuzzyEngines();
 		}
 
 		private static string[] SensorTypeStr = Enum.GetNames(typeof(SensorType));
@@ -174,23 +168,8 @@ namespace emophiz
             string sensor_type;
 
 			m_log.Message("Creating signals");
+
             /*
-			sensor_type = sensorTypeToStr(SensorType.BVP);
-			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
-			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
-			m_sensors[sensor_type].Start();
-			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.BVP);
-			m_signals[sensor_type].EnableNormalize = true;
-            m_signals[sensor_type].EnableSmoothe = true;
-            m_signals[sensor_type].SmootheWindow = 256 * 1;
-            m_bvp = m_signals[sensor_type];
-
-			sensor_type = sensorTypeToStr(SensorType.HR);
-			m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.HR);
-			m_signals[sensor_type].EnableNormalize = true;
-			m_signals[sensor_type].EnableSmoothe = true;
-            m_signals[sensor_type].SmootheWindow = 256 * 5;
-
 			////////how to work with filters.
 			SensorLib.Filters.FilterOrderSpec spec = new SensorLib.Filters.FilterOrderSpec();
 			spec.BandType = SensorLib.Filters.BandType.HighPass;
@@ -200,7 +179,25 @@ namespace emophiz
 			m_filterBaselineRemover = SensorLib.Filters.FilterCreation.FilterFactory.CreateIirFilter(spec);
 			/////////
             */
-			sensor_type = sensorTypeToStr(SensorType.GSR);
+            sensor_type = sensorTypeToStr(SensorType.BVP);
+            m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.A, false);
+            m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
+            m_sensors[sensor_type].Start();
+            m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.BVP);
+            m_signals[sensor_type].EnableNormalize = true;
+            m_signals[sensor_type].EnableSmoothe = true;
+            m_signals[sensor_type].SmootheWindow = 128 * 1;
+            m_bvp = m_signals[sensor_type];
+
+            sensor_type = sensorTypeToStr(SensorType.HR);
+            m_signals[sensor_type] = new Signal(sensor_type, Signal.SignalType.HR);
+            m_signals[sensor_type].EnableNormalize = true;
+            m_signals[sensor_type].EnableSmoothe = true;
+            m_signals[sensor_type].SmootheWindow = 256;// *5;
+            m_signals[sensor_type].Maximum = 160;
+            m_signals[sensor_type].Minimum = 80;
+            
+            sensor_type = sensorTypeToStr(SensorType.GSR);
 			m_sensors[sensor_type] = m_encoder.CreateSensor(sensor_type, SensorLib.ThoughtTechnologies.SensorType.Raw, SensorLib.ThoughtTechnologies.Channel.C, false);
 			m_sensors[sensor_type].DataAvailable += new SensorLib.Sensors.DataAvailableHandler<float>(sensor_DataAvailable);
 			m_sensors[sensor_type].Start();
@@ -227,9 +224,13 @@ namespace emophiz
 			m_signals[sensor_type].EnableSmoothe = true;
 			//m_signals[sensor_type].SmootheWindow = 32 * 4;
 
+            */
+
 			m_arousal = new Signal("Arousal");
 			m_arousal.Minimum = 0;
 			m_arousal.Maximum = 100;
+
+            /*
 			m_valence = new Signal("Valence");
 			m_valence.Minimum = 0;
 			m_valence.Maximum = 100;
@@ -277,17 +278,16 @@ namespace emophiz
 			foreach (ISensorListener lsn in m_listeners)
 				lsn.OnMessage(msg, value);
 		}
-        /*
 		private string m_fuzzyResources;
 
 		private void InitFuzzyEngines()
 		{
 			m_log.Message("Initializing fuzzy engines");
 			m_fuzzyEngineArousal.Load(m_fuzzyResources + "fuzzy-engine-arousal.xml");
-			m_fuzzyEngineValence.Load(m_fuzzyResources + "fuzzy-engine-valence.xml");
-			m_fuzzyEngineFun.Load(m_fuzzyResources + "fuzzy-engine-fun.xml");
-			m_fuzzyEngineExcitement.Load(m_fuzzyResources + "fuzzy-engine-excitement.xml");
-			m_fuzzyEngineBoredom.Load(m_fuzzyResources + "fuzzy-engine-boredom.xml");
+			//m_fuzzyEngineValence.Load(m_fuzzyResources + "fuzzy-engine-valence.xml");
+			//m_fuzzyEngineFun.Load(m_fuzzyResources + "fuzzy-engine-fun.xml");
+			//m_fuzzyEngineExcitement.Load(m_fuzzyResources + "fuzzy-engine-excitement.xml");
+			//m_fuzzyEngineBoredom.Load(m_fuzzyResources + "fuzzy-engine-boredom.xml");
 			m_log.Message("Fuzzy engines initialized");
 		}
 
@@ -333,8 +333,8 @@ namespace emophiz
                 }
             }
 		}
-        */
-		private void sensor_DataAvailable(SensorLib.Sensors.ISensor<float> sensor, float[] data)
+
+        private void sensor_DataAvailable(SensorLib.Sensors.ISensor<float> sensor, float[] data)
 		{
 			try
 			{
@@ -343,7 +343,6 @@ namespace emophiz
 					throw new Exception("This type of sensor isn't supported: " + sensor.Name);
 
                 signal.Current = sensor.CurrentValue;
-                /*
 
                 if (sensorStrToType(sensor.Name) == SensorType.BVP)
                     UpdateHR();
@@ -352,18 +351,19 @@ namespace emophiz
                 if (var != null)
                     var.InputValue = signal.Transformed;
 
-                var = m_fuzzyEngineValence.LinguisticVariableCollection.Find(signal.Name);
-                if (var != null)
-                    var.InputValue = signal.Transformed;
+                //var = m_fuzzyEngineValence.LinguisticVariableCollection.Find(signal.Name);
+                //if (var != null)
+                //    var.InputValue = signal.Transformed;
 
                 // Phase 1
-                m_valence.Current = m_fuzzyEngineValence.Defuzzify();
                 m_arousal.Current = m_fuzzyEngineArousal.Defuzzify();
+                if (Double.IsNaN(m_arousal.Current))
+                    m_arousal.Current = 0;
+                /*
+                m_valence.Current = m_fuzzyEngineValence.Defuzzify();
 
                 if (Double.IsNaN(m_valence.Current))
                     m_valence.Current = 0;
-                if (Double.IsNaN(m_arousal.Current))
-                    m_arousal.Current = 0;
 
                 // Phase 2
                 m_fuzzyEngineFun.LinguisticVariableCollection.Find("Valence").InputValue = m_valence.Current;
@@ -387,29 +387,6 @@ namespace emophiz
                 if (Double.IsNaN(m_boredom.Current))
                     m_boredom.Current = 0;
                 */
-                //m_log_signals.CSV(Log.Details.Short,
-                //    Log.Priority.Information,
-                //    GSR.Current.ToString(),
-                //    GSR.Transformed.ToString(),
-                //    HR.Current.ToString(),
-                //    HR.Transformed.ToString(),
-                //    BVP.Current.ToString(),
-                //    BVP.Transformed.ToString(),
-                //    EMGFrown.Current.ToString(),
-                //    EMGFrown.Transformed.ToString(),
-                //    EMGSmile.Current.ToString(),
-                //    EMGSmile.Transformed.ToString(),
-                //    m_arousal.Current.ToString(),
-                //    m_arousal.Transformed.ToString(),
-                //    m_valence.Current.ToString(),
-                //    m_valence.Transformed.ToString(),
-                //    m_fun.Current.ToString(),
-                //    m_fun.Transformed.ToString(),
-                //    m_excitement.Current.ToString(),
-                //    m_excitement.Transformed.ToString(),
-                //    m_boredom.Current.ToString(),
-                //    m_boredom.Transformed.ToString()
-                //);
 			}
 			catch (Exception e)
 			{
@@ -443,5 +420,41 @@ namespace emophiz
 
             m_log_game.CSV(Log.Details.Short, Log.Priority.Information, values_str);
         }
-	}
+
+        public void logGameMetrics(
+            float arousal,
+            float player_speed,
+            float zombie_speed,
+            float fog_start_dist,
+            float fog_end_dist,
+            float current_round,
+            float zombie_threshold,
+            float zombie_increase_power,
+            float max_zombie_alive,
+            float number_of_alive_zombies,
+            float number_of_killed_zombies,
+            float grenade_regen_delay,
+            float medic_regen_delay,
+            float calibrating,
+            float adaptation_condition)
+        {
+            m_log_game.CSV(Log.Details.Short, Log.Priority.Information,
+                arousal.ToString(),
+                player_speed.ToString(),
+                zombie_speed.ToString(),
+                fog_start_dist.ToString(),
+                fog_end_dist.ToString(),
+                current_round.ToString(),
+                zombie_threshold.ToString(),
+                zombie_increase_power.ToString(),
+                max_zombie_alive.ToString(),
+                number_of_alive_zombies.ToString(),
+                number_of_killed_zombies.ToString(),
+                grenade_regen_delay.ToString(),
+                medic_regen_delay.ToString(),
+                calibrating.ToString(),
+                adaptation_condition.ToString()
+                );
+        }
+    }
 }

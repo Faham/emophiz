@@ -1,0 +1,6 @@
+player tried to use distant corners and avoid engaging close combats however changing npc's speed effectively disabled the player to do so
+player enjoyed the variable environment condition and described that easier
+player noticed slower speeds of himself in the second condition.
+the change of zombie speeds in condition 3 was not reset to 1 for the 4rth condition so we re run the game for the 4rth condition
+the player shaked the sensors attached to his hand a lot while handling the mouse.
+player mistakenly played first condition twice!

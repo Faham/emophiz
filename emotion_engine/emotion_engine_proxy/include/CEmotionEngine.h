@@ -26,7 +26,9 @@ namespace emophiz {
 		bool connect();
 		bool isConnected();
 		void calibrateGSR(bool b);
-		//double readArousal   (bool raw = false);
+		void calibrateHR(bool b);
+		void calibrateBVP(bool b);
+		double readArousal   (bool raw = false);
 		//double readValence   (bool raw = false);
 		double readGSR       (bool raw = false);
 		//double readHR        (bool raw = false);
@@ -39,6 +41,21 @@ namespace emophiz {
 		void logGameEvent(int optcode);
 		void logGameEvent(int optcode, float v);
 		void logGameEvent(int optcode, float v1, float v2);
+		void logGameMetrics(float player_speed,
+			float arousal,
+			float zombie_speed,
+			float fog_start_dist,
+			float fog_end_dist,
+			float current_round,
+			float zombie_threshold,
+			float zombie_increase_power,
+			float max_zombie_alive,
+			float number_of_alive_zombies,
+			float number_of_killed_zombies,
+			float grenade_regen_delay,
+			float medic_regen_delay,
+			float calibrating,
+			float adaptation_condition);
 
 	private:
 		void* m_sensor_provider;
