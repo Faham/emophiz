@@ -1,0 +1,461 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ex",
+				"exists"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"stat",
+				"stat_filename"
+			],
+			[
+				"content",
+				"content-type"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 191.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/projects/emophiz/tools/matlab/readCSV.m",
+		"/D/projects/emophiz/tools/matlab/test.m",
+		"/D/projects/hci/templates/index.tpl",
+		"/D/projects/hci/config.php",
+		"/D/projects/hci/toremove/classes/cmpt105_OLD.shtml",
+		"/D/projects/hci/index.php",
+		"/D/projects/hci/classes/content.php",
+		"/D/projects/hci/modules/pages/pages.php",
+		"/D/projects/hci/database.sql",
+		"/D/projects/hci/modules/admin/admin.php",
+		"/D/projects/hci/templates/admin.tpl",
+		"/C/Users/Faham/Desktop/cmpt 485.txt",
+		"/D/projects/hci/classes/contents.php",
+		"/C/Users/Faham/Desktop/red-light-ticket.txt",
+		"/D/documents/faham-resume-2013.txt",
+		"/D/documents/cover-letter.txt",
+		"/D/projects/hci/pear/pear.bat",
+		"/C/php/pear/data/DB_DataObject_FormBuilder/tools/fix0.9.0Files.php",
+		"/D/projects/hci/pear/pear.ini",
+		"/D/projects/hci/temp/go-pear",
+		"/D/projects/hci/templates/snippets/publication_default.tpl",
+		"/D/projects/hci/templates/people.tpl",
+		"/D/projects/hci/templates/home.tpl",
+		"/D/projects/hci/modules/admin/admin.ini",
+		"/D/projects/hci/templates/publications.tpl",
+		"/D/projects/hci/modules/users/users.class.php",
+		"/D/projects/hci/modules/settings/settings.php",
+		"/D/projects/hci/modules/settings/settings.class.php",
+		"/D/projects/hci/templates/admin/admin.tpl",
+		"/D/projects/hci/templates/notfound.tpl",
+		"/D/projects/hci/templates/contact.tpl",
+		"/D/projects/hci/templates/courses.tpl",
+		"/D/projects/bric-a-brac/tools/snapshot/setup.py",
+		"/D/projects/bric-a-brac/brac-sync/setup.py",
+		"/D/projects/bric-a-brac/tools/crop/setup.py",
+		"/D/projects/bric-a-brac/brac-sync/dialog_settings.ui",
+		"/D/projects/bric-a-brac/brac-sync/dialog_settings.py",
+		"/D/projects/bric-a-brac/brac-sync/brac_sync.py",
+		"/D/projects/bric-a-brac/brac-sync/dist/brac_sync.log",
+		"/C/Users/Faham/AppData/Roaming/uofs/bric-a-brac/bracList.json",
+		"/D/projects/bric-a-brac/temp/tim-Bracollage04.bracsdf/bric.0/bric.xml",
+		"/D/projects/bric-a-brac/temp/tim-Bracollage04.bracsdf/bric.1/bric.xml",
+		"/D/projects/bric-a-brac/temp/tim-Bracollage04.bracsdf/brac.xml",
+		"/D/projects/bric-a-brac/brac-sync/dist/temp/bric.5/bric.xml",
+		"/D/projects/bric-a-brac/brac-sync/resources.qrc",
+		"/D/projects/bric-a-brac/brac-sync/webkitrenderer.py",
+		"/D/projects/bric-a-brac/tools/crop/clg-crop.py",
+		"/D/projects/bric-a-brac/brac-sync/make.sh",
+		"/D/projects/bric-a-brac/tools/snapshot/clg-snapshot.py",
+		"/D/projects/bric-a-brac/tools/snapshot/make.sh",
+		"/D/projects/hci/modules/admin/pages.ini",
+		"/D/projects/hci/templates/snippets/bibtex.tpl",
+		"/D/projects/hci/.htaccess",
+		"/D/projects/hci/inserts.sql",
+		"/D/projects/hci/readme.txt",
+		"/D/projects/library/settings.py",
+		"/D/projects/library/TODO.txt",
+		"/D/projects/library/main/views.py",
+		"/D/projects/library/templates/main/document_list.html",
+		"/D/projects/library/main/urls.py",
+		"/D/projects/library/main/static/main/css/main.css",
+		"/C/Python27/Lib/site-packages/django/contrib/admin/templates/admin/base.html",
+		"/D/projects/library/templates/main/base.html",
+		"/D/projects/emophiz/logs/experiment/split_states.sh",
+		"/D/projects/library/templates/main/404.html",
+		"/D/projects/library/templates/registration/login.html",
+		"/D/projects/library/templates/main/index.html",
+		"/D/projects/emophiz/logs/experiment/split_all_results.sh",
+		"/D/documents/internet-network.txt",
+		"/C/Users/Faham/Downloads/OpenGL-tutorial_v0013_33/OpenGL-tutorial_v0013_33/tutorial02_red_triangle/tutorial02.cpp",
+		"/C/Users/Faham/Downloads/cmpt485/OpenGL-tutorial_v0013_21/build/launch-tutorial02_red_triangle-Debug.cmd",
+		"/C/Users/Faham/Downloads/cmpt485/OpenGL-tutorial_v0013_21/build/launch-playground-RelWithDebInfo.cmd",
+		"/C/Users/Faham/Desktop/movies-to-watch.txt",
+		"/C/Users/Faham/Desktop/cmpt 485",
+		"/C/Users/Faham/Downloads/AndroidShaders/AndroidShaders/src/graphics/shaders/Renderer.java",
+		"/C/Users/Faham/Downloads/AndroidShaders/AndroidShaders/src/graphics/shaders/Shader.java",
+		"/C/Users/Faham/Downloads/movies/Elysium (2013) [1080p]/Elysium.2013.1080p.BluRay.x264.YIFY.srt",
+		"/C/Users/Faham/Desktop/health and dental/note.txt",
+		"/H/video/movies/Elysium (2013) [1080p]/Elysium.2013.720p.BluRay.x264.YIFY.srt",
+		"/D/projects/emophiz/logs/experiment/15/15_metrics.csv",
+		"/I/movie-list.txt",
+		"/C/Users/Faham/Desktop/temp/tax-review-docs/response.txt",
+		"/H/RecordMyCall/Database/recordmycall.db",
+		"/C/Users/Faham/Downloads/movies/In Time (2011) [1080p]/In.Time.2011.10800p.Brrip.x264.Deceit.YIFY.srt",
+		"/C/Users/Faham/Desktop/ReadMe.En.txt",
+		"/D/projects/library/templates/main/500.html",
+		"/D/projects/library/manage.py",
+		"/D/projects/library/static/main/css/reset.css",
+		"/D/projects/library/static/main/css/main.css",
+		"/D/projects/library/registration/login.py",
+		"/C/users/faham/appdata/local/temp/sublime-sftp-browse-1388356957/faham@kat.usask.ca/var/www/html/gist/page/page.css",
+		"/C/users/faham/appdata/local/temp/sublime-sftp-browse-1388356098/faham@kat.usask.ca/var/www/html/gist/page/example2.html",
+		"/C/users/faham/appdata/local/temp/sublime-sftp-browse-1388356387/faham@kat.usask.ca/var/www/html/gist/data/example2.rdf",
+		"/C/users/faham/appdata/local/temp/sublime-sftp-browse-1388350923/faham@kat.usask.ca/var/www/html/gist/.htaccess",
+		"/C/users/faham/appdata/local/temp/sublime-sftp-browse-1388353910/faham@kat.usask.ca/var/www/html/gist/resource/html/example2.html",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/sftp_servers/faham@kat.usask.ca",
+		"/C/users/faham/appdata/local/temp/sublime-sftp-browse-1388350168/faham@kat.usask.ca/home/faham/temp/test.ttl",
+		"/C/users/faham/appdata/local/temp/sublime-sftp-browse-1388349570/faham@kat.usask.ca/var/www/html/gist/.htaccess",
+		"/C/Users/Faham/Desktop/.htaccess",
+		"/C/Users/Faham/Downloads/example2.rdf",
+		"/D/projects/library/temp.txt",
+		"/H/ebook/islam/irpdf/download.py",
+		"/C/users/faham/appdata/local/temp/sublime-sftp-browse-1388348471/faham@kat.usask.ca/home/faham/temp/test.ttl",
+		"/C/Users/Faham/Downloads/download (2)",
+		"/C/Users/Faham/Downloads/download (1)",
+		"/H/ebook/islam/irpdf/stat.json",
+		"/C/Users/Faham/Downloads/download",
+		"/C/Users/Faham/Downloads/books/irpdf/download.py",
+		"/C/Users/Faham/Downloads/books/irpdf/stat.json",
+		"/H/ebook/islam/irpdf/(1286).exe",
+		"/C/Users/Faham/Downloads/books/irpdf/password.txt",
+		"/C/Users/Faham/Downloads/books/start.sh",
+		"/C/Users/Faham/Downloads/books/brootforce.py",
+		"/C/Users/Faham/Downloads/books/0_1000.json",
+		"/C/Users/Faham/Downloads/books/users.txt",
+		"/C/Users/Faham/Downloads/books/1000_2000.json",
+		"/C/Users/Faham/Downloads/books/3000_4000.json",
+		"/C/Users/Faham/Downloads/books/12000_13000.json",
+		"/C/Users/Faham/Downloads/books/10000_11000.json",
+		"/C/Users/Faham/Downloads/books/4000_5000.json",
+		"/C/Users/Faham/Downloads/books/2000_3000.json",
+		"/C/Users/Faham/Downloads/books/11000_12000.json",
+		"/C/Users/Faham/Downloads/books/13000_14000.json",
+		"/C/Users/Faham/Downloads/books/14000_15000.json",
+		"/C/Users/Faham/Downloads/books/faham_negini_0_1000.json",
+		"/C/Users/Faham/Downloads/books/grayfox_1_13000_14000.json",
+		"/C/Users/Faham/Downloads/books/faham_negini_3000_4000.json",
+		"/C/Users/Faham/Downloads/books/default.json"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\n%",
+			"c:",
+			"mkdir",
+			"icon",
+			"entryutils",
+			"resources",
+			"tools",
+			"included",
+			"cropImage",
+			"Alex",
+			"Jason",
+			"monkey",
+			"Picture of .*",
+			"Course.*",
+			"  ",
+			"	",
+			"String",
+			"sh split_states.sh  17/17_metrics.csv\nsh split_states.sh  17/17_gsr.csv\n\n",
+			"breadcrumbs",
+			"LOGIN_URL",
+			"body",
+			"http://www.w3.org/2006/07/SWD/recipes/examples-20080421/",
+			"www.irpdf.com",
+			"1893",
+			"180",
+			"subcat",
+			"<b> توضیحات",
+			"نویسنده",
+			"title=\"شاخه\"",
+			"شاخه",
+			"category",
+			"http://dl.irpdf.com/ebook",
+			"open",
+			"password",
+			"22734177",
+			"md5",
+			"f23f0fc8f1aebdb3a0d54c1771fc4d3e",
+			"userid",
+			"cookies",
+			"end_id",
+			"subsequent_downloads_without_one_minute_wait",
+			"aquisition_failed",
+			"data_aquired",
+			"insert_failed",
+			"failed",
+			", ",
+			"Question ",
+			"Kingsley",
+			"OUT_FILE",
+			".txt",
+			"1571",
+			"\n---------------------",
+			"renderSim",
+			"stillRunning",
+			"renderSim",
+			"PhysicsSimulator",
+			"ThreadTestMain",
+			".\\",
+			"/",
+			"MATLAB",
+			"                                                                     ",
+			"          ",
+			"                                                                     ",
+			"             ",
+			"02011",
+			"Tintin",
+			"02011",
+			"                                                          ",
+			"                                                    ",
+			"                                                   ",
+			"                                                  ",
+			"                                                 ",
+			"                                                ",
+			"                                               ",
+			"                                              ",
+			"                                             ",
+			"                                            ",
+			"                                           ",
+			"                                          ",
+			"                                         ",
+			"                                        ",
+			"                                       ",
+			"                                      ",
+			"                                     ",
+			"                                    ",
+			"                                   ",
+			"                                  ",
+			"                                 ",
+			"                                ",
+			"                               ",
+			"                              ",
+			"                             ",
+			"                            ",
+			"                           ",
+			"                          ",
+			"                         ",
+			"                        ",
+			"                       ",
+			"                      ",
+			"                     ",
+			"                    ",
+			"                   ",
+			"                  ",
+			"                 ",
+			"                ",
+			"               ",
+			"              ",
+			"             ",
+			"            ",
+			" ",
+			"Film",
+			"                                                          ",
+			"                                                                     ",
+			"###",
+			"10",
+			"Arthur",
+			"\n",
+			"A",
+			"Film",
+			"thisad"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			" ",
+			"http://kat.usask.ca/gist/resource/",
+			"exceeded_time_interval",
+			"link_error",
+			"write_to_file",
+			"aquisition_failed",
+			", \\n",
+			", \\r\\n",
+			"SQ",
+			".csv",
+			"\\"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 111.0
+	},
+	"project": "emophiz.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"cont",
+				"classes\\content.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

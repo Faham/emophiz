@@ -1,0 +1,564 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ex",
+				"exists"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"stat",
+				"stat_filename"
+			],
+			[
+				"content",
+				"content-type"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "tools/matlab/test.m",
+			"settings":
+			{
+				"buffer_size": 2575,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tools/matlab/readCSV.m",
+			"settings":
+			{
+				"buffer_size": 422,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				":$",
+				":$ - EOF"
+			],
+			[
+				":0",
+				":0 - BOF"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 191.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/projects/emophiz/doc/experiment-script.txt",
+		"/D/documents/internet-network.txt",
+		"/D/projects/emophiz/doc/diary.txt",
+		"/D/projects/emophiz/doc/thesis/thesis.tex",
+		"/D/projects/emophiz/doc/thesis/content/bibliography.bib",
+		"/D/projects/emophiz/doc/thesis/content/abstract.tex",
+		"/D/projects/emophiz/doc/daily.txt",
+		"/D/projects/emophiz/logs/experiment/splitted/10_metrics_2.csv",
+		"/D/projects/emophiz/logs/experiment/splitted/10_metrics_1.csv",
+		"/D/projects/emophiz/feel/src/game/client/basepresence.h",
+		"/D/projects/emophiz/logs/experiment/unsplitted/10_metrics.csv",
+		"/D/projects/emophiz/logs/experiment/unsplitted/10_arousal.csv",
+		"/D/projects/emophiz/logs/experiment/split_all_results.sh",
+		"/D/projects/emophiz/logs/experiment/split_csv.sh",
+		"/D/projects/emophiz/logs/experiment/unsplitted/19_gsr.csv",
+		"/D/projects/emophiz/logs/experiment/19/19_gsr.csv",
+		"/D/projects/emophiz/logs/experiment/splitted/19_gsr_2.csv",
+		"/D/projects/emophiz/logs/experiment/split_states.sh",
+		"/D/projects/emophiz/logs/experiment/splitted/20_gsr_4.csv",
+		"/D/projects/emophiz/logs/experiment/splitted/19_gsr_4.csv",
+		"/D/projects/emophiz/logs/experiment/splitted/18_metrics_4.csv",
+		"/C/Users/Faham/Downloads/cmpt485/submissions/tutorial04_colored_cube/foo.diff",
+		"/C/Users/Faham/Downloads/cmpt485/usask_jan2014_cmpt485/foo.txt",
+		"/C/Users/Faham/Downloads/cmpt485/usask_jan2014_cmpt485/.gitignore",
+		"/C/Users/Faham/Downloads/cmpt485/UofS_Jan2014_CMPT485/CMakeLists.txt",
+		"/C/Users/Faham/Downloads/cmpt485/UofS_Jan2014_CMPT485/BUILDING.txt",
+		"/C/Users/Faham/Downloads/cmpt485/assgn1/ProjectAssignment1readme.txt",
+		"/C/Users/Faham/Downloads/cmpt485/assgn1/ProjectAssignment1.cpp",
+		"/C/Users/Faham/Downloads/485PA1-ReadMe.txt",
+		"/C/Users/Faham/Downloads/cmpt485/assgn1/Assignment1/common/shader.cpp",
+		"/C/Users/Faham/Downloads/cmpt485/assgn1/Assignment1/playground/playground.cpp",
+		"/C/Users/Faham/Downloads/cmpt485/assgn1/Assignment1/Assignment1/README.txt",
+		"/C/Users/Faham/Desktop/cmpt 485.txt",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Sublime-Text-2-BIDI/lang/algorithm.py",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Sublime-Text-2-BIDI/rtl.py",
+		"/I/faham/faham/Backup/Picasa.ini",
+		"/F/etc/modprobe.d/sound.conf",
+		"/F/etc/modprobe.d/alsa-base.conf",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Alignment/Base File.sublime-settings",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Base File.sublime-settings",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings",
+		"/I/software/Windows_8.1_Pro_X64_Activated_Final/USB Install Tool/rufus_v1.4.1.txt",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Alignment/Default (Windows).sublime-keymap",
+		"/D/documents/sublime.txt",
+		"/D/projects/emophiz/feel/src/game/client/c_sceneentity.cpp",
+		"/D/projects/emophiz/doc/consent-form.doc",
+		"/D/projects/emophiz/feel/src/game/client/c_vguiscreen.cpp",
+		"/D/projects/emophiz/feel/src/public/mathlib/compressed_vector.h",
+		"/D/projects/emophiz/README",
+		"/D/projects/emophiz/feel/src/public/r_efx.h",
+		"/D/projects/emophiz/feel/distro/scripts/npc_sounds_stalker.txt",
+		"/D/projects/emophiz/emotion_engine/dependencies/distro/TTL API/SampleCode/VC++/Tutorial/20_CreatingInstance/20_CreatingInstance.cpp",
+		"/D/projects/emophiz/feel/src/game/client/IsNPCProxy.cpp",
+		"/D/projects/emophiz/doc/ideas.txt",
+		"/D/projects/emophiz/tools/matlab/readCSV.m",
+		"/D/projects/emophiz/tools/matlab/test.m",
+		"/D/projects/hci/templates/index.tpl",
+		"/D/projects/hci/config.php",
+		"/D/projects/hci/toremove/classes/cmpt105_OLD.shtml",
+		"/D/projects/hci/index.php",
+		"/D/projects/hci/classes/content.php",
+		"/D/projects/hci/modules/pages/pages.php",
+		"/D/projects/hci/database.sql",
+		"/D/projects/hci/modules/admin/admin.php",
+		"/D/projects/hci/templates/admin.tpl",
+		"/D/projects/hci/classes/contents.php",
+		"/C/Users/Faham/Desktop/red-light-ticket.txt",
+		"/D/documents/faham-resume-2013.txt",
+		"/D/documents/cover-letter.txt",
+		"/D/projects/hci/pear/pear.bat",
+		"/C/php/pear/data/DB_DataObject_FormBuilder/tools/fix0.9.0Files.php",
+		"/D/projects/hci/pear/pear.ini",
+		"/D/projects/hci/temp/go-pear",
+		"/D/projects/hci/templates/snippets/publication_default.tpl",
+		"/D/projects/hci/templates/people.tpl",
+		"/D/projects/hci/templates/home.tpl",
+		"/D/projects/hci/modules/admin/admin.ini",
+		"/D/projects/hci/templates/publications.tpl",
+		"/D/projects/hci/modules/users/users.class.php",
+		"/D/projects/hci/modules/settings/settings.php",
+		"/D/projects/hci/modules/settings/settings.class.php",
+		"/D/projects/hci/templates/admin/admin.tpl",
+		"/D/projects/hci/templates/notfound.tpl",
+		"/D/projects/hci/templates/contact.tpl",
+		"/D/projects/hci/templates/courses.tpl",
+		"/D/projects/bric-a-brac/tools/snapshot/setup.py",
+		"/D/projects/bric-a-brac/brac-sync/setup.py",
+		"/D/projects/bric-a-brac/tools/crop/setup.py",
+		"/D/projects/bric-a-brac/brac-sync/dialog_settings.ui",
+		"/D/projects/bric-a-brac/brac-sync/dialog_settings.py",
+		"/D/projects/bric-a-brac/brac-sync/brac_sync.py",
+		"/D/projects/bric-a-brac/brac-sync/dist/brac_sync.log",
+		"/C/Users/Faham/AppData/Roaming/uofs/bric-a-brac/bracList.json",
+		"/D/projects/bric-a-brac/temp/tim-Bracollage04.bracsdf/bric.0/bric.xml",
+		"/D/projects/bric-a-brac/temp/tim-Bracollage04.bracsdf/bric.1/bric.xml",
+		"/D/projects/bric-a-brac/temp/tim-Bracollage04.bracsdf/brac.xml",
+		"/D/projects/bric-a-brac/brac-sync/dist/temp/bric.5/bric.xml",
+		"/D/projects/bric-a-brac/brac-sync/resources.qrc",
+		"/D/projects/bric-a-brac/brac-sync/webkitrenderer.py",
+		"/D/projects/bric-a-brac/tools/crop/clg-crop.py",
+		"/D/projects/bric-a-brac/brac-sync/make.sh",
+		"/D/projects/bric-a-brac/tools/snapshot/clg-snapshot.py",
+		"/D/projects/bric-a-brac/tools/snapshot/make.sh",
+		"/D/projects/hci/modules/admin/pages.ini",
+		"/D/projects/hci/templates/snippets/bibtex.tpl",
+		"/D/projects/hci/.htaccess",
+		"/D/projects/hci/inserts.sql",
+		"/D/projects/hci/readme.txt",
+		"/D/projects/library/settings.py",
+		"/D/projects/library/TODO.txt",
+		"/D/projects/library/main/views.py",
+		"/D/projects/library/templates/main/document_list.html",
+		"/D/projects/library/main/urls.py",
+		"/D/projects/library/main/static/main/css/main.css",
+		"/C/Python27/Lib/site-packages/django/contrib/admin/templates/admin/base.html",
+		"/D/projects/library/templates/main/base.html",
+		"/D/projects/library/templates/main/404.html",
+		"/D/projects/library/templates/registration/login.html",
+		"/D/projects/library/templates/main/index.html",
+		"/C/Users/Faham/Downloads/OpenGL-tutorial_v0013_33/OpenGL-tutorial_v0013_33/tutorial02_red_triangle/tutorial02.cpp",
+		"/C/Users/Faham/Downloads/cmpt485/OpenGL-tutorial_v0013_21/build/launch-tutorial02_red_triangle-Debug.cmd",
+		"/C/Users/Faham/Downloads/cmpt485/OpenGL-tutorial_v0013_21/build/launch-playground-RelWithDebInfo.cmd",
+		"/C/Users/Faham/Desktop/movies-to-watch.txt",
+		"/C/Users/Faham/Desktop/cmpt 485",
+		"/C/Users/Faham/Downloads/AndroidShaders/AndroidShaders/src/graphics/shaders/Renderer.java"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"means",
+			"132.1",
+			"x_offset",
+			"end_time",
+			"start_gsr_index",
+			" ",
+			"tch435",
+			"jdp037",
+			"jtb134",
+			"ann315",
+			"ogi073",
+			"yut630",
+			"zhl975",
+			"chk019",
+			"wbj297",
+			"wwb573",
+			"mdb815",
+			"aso854",
+			"ajm513",
+			"dmb575",
+			"mdb815",
+			"wbj297",
+			"zhl975",
+			"jtb134",
+			"ccm552",
+			"jdp037",
+			"chk019",
+			"mss042",
+			"ann315",
+			"Bernath",
+			"chk019",
+			"clb135",
+			"ann315",
+			"dmb575",
+			"ajm513",
+			"yut630",
+			"aso854",
+			"ogi073",
+			"wwb573",
+			"mdb815",
+			"wbj297",
+			"zhl975",
+			"Zhen",
+			"\n%",
+			"c:",
+			"mkdir",
+			"icon",
+			"entryutils",
+			"resources",
+			"tools",
+			"included",
+			"cropImage",
+			"Alex",
+			"Jason",
+			"monkey",
+			"Picture of .*",
+			"Course.*",
+			"  ",
+			"	",
+			"String",
+			"sh split_states.sh  17/17_metrics.csv\nsh split_states.sh  17/17_gsr.csv\n\n",
+			"breadcrumbs",
+			"LOGIN_URL",
+			"body",
+			"http://www.w3.org/2006/07/SWD/recipes/examples-20080421/",
+			"www.irpdf.com",
+			"1893",
+			"180",
+			"subcat",
+			"<b> توضیحات",
+			"نویسنده",
+			"title=\"شاخه\"",
+			"شاخه",
+			"category",
+			"http://dl.irpdf.com/ebook",
+			"open",
+			"password",
+			"22734177",
+			"md5",
+			"f23f0fc8f1aebdb3a0d54c1771fc4d3e",
+			"userid",
+			"cookies",
+			"end_id",
+			"subsequent_downloads_without_one_minute_wait",
+			"aquisition_failed",
+			"data_aquired",
+			"insert_failed",
+			"failed",
+			", ",
+			"Question ",
+			"Kingsley",
+			"OUT_FILE",
+			".txt",
+			"1571",
+			"\n---------------------",
+			"renderSim",
+			"stillRunning",
+			"renderSim",
+			"PhysicsSimulator",
+			"ThreadTestMain",
+			".\\",
+			"/",
+			"MATLAB",
+			"                                                                     ",
+			"          ",
+			"                                                                     ",
+			"             ",
+			"02011",
+			"Tintin",
+			"02011",
+			"                                                          ",
+			"                                                    ",
+			"                                                   ",
+			"                                                  ",
+			"                                                 ",
+			"                                                ",
+			"                                               ",
+			"                                              ",
+			"                                             ",
+			"                                            ",
+			"                                           ",
+			"                                          ",
+			"                                         ",
+			"                                        ",
+			"                                       ",
+			"                                      ",
+			"                                     ",
+			"                                    "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"phase_offset",
+			"\\n",
+			"",
+			" ",
+			"http://kat.usask.ca/gist/resource/",
+			"exceeded_time_interval",
+			"link_error",
+			"write_to_file",
+			"aquisition_failed",
+			", \\n",
+			", \\r\\n",
+			"SQ",
+			".csv",
+			"\\"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "tools/matlab/test.m",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2432,
+								2432
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Objective-C/Objective-C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 825.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tools/matlab/readCSV.m",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 422,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								366,
+								366
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Objective-C/Objective-C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 111.0
+	},
+	"project": "emophiz.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"cont",
+				"classes\\content.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\projects\\hci\\hci.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 664.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
