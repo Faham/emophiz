@@ -24,18 +24,27 @@
 	"buffers":
 	[
 		{
-			"file": "tools/matlab/test.m",
+			"file": "/C/Users/Faham/Desktop/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 2575,
+				"buffer_size": 1560,
+				"line_ending": "Windows",
+				"name": "alientrap - automata"
+			}
+		},
+		{
+			"file": "/C/Users/Faham/Downloads/cmpt485/usask_jan2014_cmpt485/CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 28478,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "tools/matlab/readCSV.m",
+			"file": "/C/Users/Faham/Downloads/cmpt485/usask_cmpt485_project/usask_cmpt485_project/CMakeLists.txt",
 			"settings":
 			{
-				"buffer_size": 422,
+				"buffer_size": 2424,
 				"line_ending": "Windows"
 			}
 		}
@@ -95,6 +104,18 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Faham/Downloads/cmpt485/usask_cmpt485_project/usask_cmpt485_project/BUILDING.txt",
+		"/C/Users/Faham/Downloads/cmpt485/usask_cmpt485_project/usask_cmpt485_project/Makefile",
+		"/C/Users/Faham/Desktop/html5/notes.html",
+		"/C/Users/Faham/Desktop/html5/view.html",
+		"/C/Users/Faham/Desktop/html5-timesheet.txt",
+		"/D/projects/emophiz/tools/matlab/readCSV.m",
+		"/D/projects/emophiz/tools/matlab/test.m",
+		"/C/Users/Faham/Downloads/cmpt485/usask_jan2014_cmpt485/foo.diff",
+		"/C/Users/Faham/Downloads/cmpt485/usask_jan2014_cmpt485/foob.diff",
+		"/J/software/Windows_8.1_Pro_X64_Activated_Final/Install Keys.txt",
+		"/C/Users/Faham/Desktop/html5/canvas.html",
+		"/C/Users/Faham/Desktop/html5/canvas",
 		"/D/projects/emophiz/doc/experiment-script.txt",
 		"/D/documents/internet-network.txt",
 		"/D/projects/emophiz/doc/diary.txt",
@@ -152,8 +173,6 @@
 		"/D/projects/emophiz/emotion_engine/dependencies/distro/TTL API/SampleCode/VC++/Tutorial/20_CreatingInstance/20_CreatingInstance.cpp",
 		"/D/projects/emophiz/feel/src/game/client/IsNPCProxy.cpp",
 		"/D/projects/emophiz/doc/ideas.txt",
-		"/D/projects/emophiz/tools/matlab/readCSV.m",
-		"/D/projects/emophiz/tools/matlab/test.m",
 		"/D/projects/hci/templates/index.tpl",
 		"/D/projects/hci/config.php",
 		"/D/projects/hci/toremove/classes/cmpt105_OLD.shtml",
@@ -212,17 +231,7 @@
 		"/D/projects/library/templates/main/document_list.html",
 		"/D/projects/library/main/urls.py",
 		"/D/projects/library/main/static/main/css/main.css",
-		"/C/Python27/Lib/site-packages/django/contrib/admin/templates/admin/base.html",
-		"/D/projects/library/templates/main/base.html",
-		"/D/projects/library/templates/main/404.html",
-		"/D/projects/library/templates/registration/login.html",
-		"/D/projects/library/templates/main/index.html",
-		"/C/Users/Faham/Downloads/OpenGL-tutorial_v0013_33/OpenGL-tutorial_v0013_33/tutorial02_red_triangle/tutorial02.cpp",
-		"/C/Users/Faham/Downloads/cmpt485/OpenGL-tutorial_v0013_21/build/launch-tutorial02_red_triangle-Debug.cmd",
-		"/C/Users/Faham/Downloads/cmpt485/OpenGL-tutorial_v0013_21/build/launch-playground-RelWithDebInfo.cmd",
-		"/C/Users/Faham/Desktop/movies-to-watch.txt",
-		"/C/Users/Faham/Desktop/cmpt 485",
-		"/C/Users/Faham/Downloads/AndroidShaders/AndroidShaders/src/graphics/shaders/Renderer.java"
+		"/C/Python27/Lib/site-packages/django/contrib/admin/templates/admin/base.html"
 	],
 	"find":
 	{
@@ -241,6 +250,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CMAKE_BINARY_DIR",
+			">",
+			"<",
+			"<==============================================================================>",
 			"means",
 			"132.1",
 			"x_offset",
@@ -364,11 +377,7 @@
 			"                                           ",
 			"                                          ",
 			"                                         ",
-			"                                        ",
-			"                                       ",
-			"                                      ",
-			"                                     ",
-			"                                    "
+			"                                        "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -376,6 +385,9 @@
 		"regex": true,
 		"replace_history":
 		[
+			"&gt;",
+			"&lt;",
+			"================================================================================",
 			"phase_offset",
 			"\\n",
 			"",
@@ -400,57 +412,55 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "tools/matlab/test.m",
+					"file": "/C/Users/Faham/Desktop/tasks.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2575,
+						"buffer_size": 1560,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2432,
-								2432
+								1119,
+								1119
 							]
 						],
 						"settings":
 						{
+							"auto_name": "alientrap - automata",
 							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Objective-C/Objective-C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 825.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "tools/matlab/readCSV.m",
+					"file": "/C/Users/Faham/Downloads/cmpt485/usask_jan2014_cmpt485/CMakeLists.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 422,
+						"buffer_size": 28478,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								366,
-								366
+								114,
+								130
 							]
 						],
 						"settings":
@@ -458,7 +468,7 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Objective-C/Objective-C++.tmLanguage",
+							"syntax": "Packages/Makefile/Makefile.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -467,13 +477,45 @@
 					},
 					"stack_index": 1,
 					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Faham/Downloads/cmpt485/usask_cmpt485_project/usask_cmpt485_project/CMakeLists.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2424,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								993,
+								993
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 26.0
 	},
 	"input":
 	{
