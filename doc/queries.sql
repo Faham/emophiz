@@ -190,6 +190,7 @@ PENS: Intuitive Controls:
 select
 	condition, 
 
+
 	avg(imi0) + avg(imi5) + avg(imi6) + avg(imi10) - avg(imi12) / 5 as imi_interest_enjoyment,
 	avg(imi1) + avg(imi2) + avg(imi4) - avg(imi9) / 4 as imi_perceived_competence,
 	avg(imi3) + avg(imi7) + avg(imi8) - avg(imi11) / 4 as imi_pressure_tension,
@@ -210,3 +211,5 @@ where id <> 11 and id <> 22
 group by condition
 having condition <> NULL
 ;
+
+
