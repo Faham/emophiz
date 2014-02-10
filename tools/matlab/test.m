@@ -47,6 +47,9 @@ phase_offset = 500000;
 signal_offset = 100;
 means = zeros(26, 4);
 ranges = zeros(26, 4);
+killed_zombies = zeros(26, 4);
+max_round = zeros(26, 4);
+adaptation_value = zeros(26, 4);
 
 for j=1:4
     mn = 0;
@@ -65,6 +68,17 @@ for j=1:4
 
         means(file_id{i}, j) = mean(gsr_signal_clamped) * 1000;
         ranges(file_id{i}, j) = (max(gsr_signal_clamped) - min(gsr_signal_clamped)) * 1000;
+        killed_zombies(file_id{i}, j) = max(metrics_v{12});
+        max_round(file_id{i}, j) = max(metrics_v{7});
+        if j == 2
+            adaptation_value(file_id{i}, j) = mean(abs(metrics_v{j+1} - 1) / 1.35) * 100;
+        elseif j == 3
+            adaptation_value(file_id{i}, j) = mean(abs(metrics_v{j+1} - 1) / 2.57) * 100;
+        elseif j == 4
+            adaptation_value(file_id{i}, j) = mean(abs(metrics_v{j+1} - 300) / 380) * 100;
+        else
+            adaptation_value(file_id{i}, j) = 0;
+        end
 
         %plot(gsr_time_adjusted, smooth(gsr_v{1}, gsr_signal_clamped * 1000 + signal_offset * i, 0.1, 'loess'), 'g-'); hold on; 
         

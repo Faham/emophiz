@@ -1,0 +1,657 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fetch",
+				"fetchInfo"
+			],
+			[
+				"q",
+				"query"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"strr",
+				"strrpos"
+			],
+			[
+				"strrep",
+				"str_replace"
+			],
+			[
+				"db",
+				"db_host"
+			],
+			[
+				"str_re",
+				"str_replace"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Faham/Desktop/temp/tasks.txt",
+			"settings":
+			{
+				"buffer_size": 1619,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/ch05-experimentation.tex",
+			"settings":
+			{
+				"buffer_size": 451,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "make.bat",
+			"settings":
+			{
+				"buffer_size": 291,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/ch04-implementation.tex",
+			"settings":
+			{
+				"buffer_size": 3769,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/projects/emophiz/doc/thesis/thesis.tex",
+		"/C/Users/Faham/Desktop/temp/cover-letter.tex",
+		"/D/projects/mycms/templates/home.tpl",
+		"/D/projects/mycms/templates/snippets/research_teaser.tpl",
+		"/D/projects/mycms/templates/snippets/publication_teaser.tpl",
+		"/D/projects/mycms/templates/snippets/people_teaser.tpl",
+		"/D/projects/mycms/templates/people.tpl",
+		"/D/projects/mycms/config.ini",
+		"/D/projects/mycms/modules/admin/admin.php",
+		"/D/projects/mycms/modules/admin/admin.class.php",
+		"/D/projects/mycms/modules/pages/pages.php",
+		"/D/projects/mycms/modules/pages/pages.class.php",
+		"/D/projects/mycms/modules/settings/settings.class.php",
+		"/D/projects/mycms/modules/settings/settings.php",
+		"/D/projects/mycms/modules/users/users.php",
+		"/D/projects/mycms/modules/users/users.class.php",
+		"/D/projects/mycms/classes/system.php",
+		"/D/projects/mycms/classes/mysmarty.php",
+		"/D/projects/mycms/classes/error.php",
+		"/D/projects/mycms/classes/db.php",
+		"/C/wamp/bin/php/php5.4.12/php.ini",
+		"/D/projects/mycms/index.php",
+		"/D/projects/mycms/config.php",
+		"/D/projects/mycms/package2.xml",
+		"/D/projects/mycms/package.xml",
+		"/D/projects/mycms/readme.txt",
+		"/D/projects/mycms/inserts.sql",
+		"/D/projects/mycms/templates/people_admin.tpl",
+		"/D/projects/mycms/templates/research_admin.tpl",
+		"/D/projects/mycms/modules/admin/admin.ini",
+		"/D/projects/mycms/templates/snippets/people_admin.tpl",
+		"/D/projects/mycms/templates/snippets/people_list_admin.tpl",
+		"/D/projects/mycms/templates/research.tpl",
+		"/D/projects/mycms/templates_c/c18762f0eca931673473e9b063ad3bd4639afcb4.file.people_list_admin.tpl.php",
+		"/D/projects/mycms/db/create.ini",
+		"/D/projects/mycms/db/Mycms_doc_publication.php",
+		"/D/projects/mycms/db/Mycms_doc.php",
+		"/D/projects/mycms/db/mycms.ini",
+		"/C/pear/pear.ini",
+		"/D/projects/mycms/templates/admin-people.tpl",
+		"/D/projects/mycms/templates/admin.tpl",
+		"/D/projects/mycms/classes/dataobjects/Mycms_people.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_image.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_video_publication.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_settings.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_video_research.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_video.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_research_video.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_research_publication.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_research_people.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_research_image.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_research.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_publication_video.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_publication_research.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_publication_people.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_publication_image.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_publication_doc.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_publication.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_people_research.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_people_publication.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_people_image.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_image_research.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_image_publication.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_image_people.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_doc_publication.php",
+		"/D/projects/mycms/classes/dataobjects/Mycms_doc.php",
+		"/D/projects/mycms/database.sql",
+		"/D/projects/mycms/classes/dataobjects/create.ini",
+		"/D/projects/mycms/classes/dataobjects/create.sh",
+		"/C/pear/tmp/mycms/DataObjects/Mycms_doc.php",
+		"/C/pear/tmp/mycms/DataObjects/mycms.ini",
+		"/C/pear/pear/DB/DataObject/Generator.php",
+		"/C/pear/pear/PEAR.php",
+		"/D/projects/mycms/dataobjects/create.ini",
+		"/D/projects/mycms/dataobjects/mycms.ini",
+		"/D/projects/mycms/dataobjects/Mycms_people.php",
+		"/D/projects/mycms/dataobjects/Mycms_image_publication.php",
+		"/D/projects/mycms/dataobjects/Mycms_publication_video.php",
+		"/D/projects/mycms/dataobjects/Mycms_publication_image.php",
+		"/D/projects/mycms/dataobjects/schema.ini",
+		"/C/pear/pear/DB/DataObject/create.ini",
+		"/C/pear/tmp/mycms/DataObjects/Mycms_doc_publication.php",
+		"/C/pear/tmp/mycms/DataObjects/Mycms_image_publication.php",
+		"/C/tmp/mycms/DataObjects/mycms.ini",
+		"/C/tmp/mycms/DataObjects/Mycms_doc.php",
+		"/C/tmp/mycms/DataObjects/Mycms_doc_publication.php",
+		"/C/tmp/mycms/DataObjects/Mycms_image.php",
+		"/C/pear/pear/DB/DataObject/Error.php",
+		"/C/pear/pear/DB/DataObject/createTables.php",
+		"/C/pear/pear/DB/DataObject.php",
+		"/C/wamp/bin/apache/Apache2.4.4/bin/php.ini",
+		"/C/pear/PEAR/DB/DataObject/create.ini",
+		"/D/projects/mycms/create.ini",
+		"/D/projects/mycms/schema.ini",
+		"/D/projects/mycms/pear/INSTALL",
+		"/C/pear/pear.bat",
+		"/C/wamp/lang/arabic.lang",
+		"/D/projects/mycms/pear/PEAR.php",
+		"/D/projects/mycms/pear/pear.bat",
+		"/D/projects/mycms/pear/pear.ini",
+		"/D/projects/mycms/pear/pear/PEAR.php",
+		"/D/projects/mycms/pear/go-pear.php",
+		"/D/projects/mycms/pear/DB/scripts/config.ini",
+		"/D/projects/mycms/check_pear.php",
+		"/D/projects/mycms/pear/DB/scripts/DB_DataObject_createTables.bat",
+		"/D/projects/mycms/phpinfo.php",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/trailing_spaces.sublime-settings",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/projects/mycms/.htaccess",
+		"/D/documents/internet-network.txt",
+		"/D/projects/mycms/modules/pages/pages.ini",
+		"/D/documents/cover-letter.txt",
+		"/C/Users/Faham/Downloads/ginans (8)",
+		"/D/projects/library/lod/.htaccess",
+		"/D/projects/library/lod/templates/resource.xslt",
+		"/D/projects/library/lod/templates/index.tpl",
+		"/D/projects/library/lod/modules/page/page.php",
+		"/D/projects/mycms/.gitignore",
+		"/D/projects/library/lod/templates/resource.tpl",
+		"/D/projects/library/lod/templates/collections.tpl",
+		"/D/projects/library/lod/classes/error.php",
+		"/C/Users/Faham/Desktop/temp/tasks.txt",
+		"/D/projects/library/lod/index.php",
+		"/D/projects/library/lod/config.php",
+		"/C/Users/Faham/Downloads/ginans.rdf"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\projects\\mycms\\templates\\snippets",
+			"D:\\projects\\mycms",
+			"D:\\projects\\library\\lod"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"pages",
+			"pages/",
+			"pages",
+			"system",
+			"get",
+			"Query",
+			"query",
+			"Query",
+			"query",
+			"db",
+			"get(",
+			"hci",
+			"hci_",
+			"ppl",
+			"people",
+			"val",
+			"rows[$i].",
+			";\n",
+			"getmodule",
+			"val.",
+			"ppl.",
+			"time_start",
+			"error_reporting",
+			"use_only_cookies",
+			"display_errors",
+			"config",
+			"does not support",
+			"Content type people does not support",
+			"->push",
+			"/tmp",
+			"getStaticProperty",
+			"PEAR::getStaticProperty",
+			"_generateClassTable",
+			"pear",
+			"myproj",
+			"mysql_",
+			"MYSQL_",
+			"mysql_",
+			"go-pear",
+			"include_path",
+			"mycms",
+			"hci",
+			"include_path",
+			"/pear",
+			"pear",
+			";",
+			"alt+shift+t",
+			"ctrl+t",
+			"			\n",
+			"action",
+			"getmodule",
+			"$g",
+			"error",
+			"log",
+			"getmodule",
+			"interpret_params",
+			"genlink",
+			"urlModu",
+			"preg_match",
+			"module",
+			"    \n",
+			"        \n",
+			" ",
+			"module",
+			"else",
+			"hci_",
+			"page",
+			"PAGE",
+			"page",
+			"pages",
+			"view",
+			"\n#-------------------------------------------------------------------------------",
+			"\n@",
+			"#A",
+			"#Ā",
+			"      ",
+			"<hr>",
+			"   ",
+			"  }",
+			"; \n",
+			"{\n",
+			"*/\n",
+			";\n",
+			"   ",
+			"	",
+			"title",
+			"get_cities",
+			"title",
+			"{$weburl}",
+			"	",
+			"home",
+			"hci",
+			"	",
+			"    ",
+			"gist",
+			"error",
+			" ,",
+			"m_max_fog_start",
+			"m_min_fog_start",
+			"m_max_zombie_speed",
+			"m_max_player_speed",
+			"m_min_player_speed",
+			"m_max_player_speed",
+			"m_min_zombie_speed",
+			"m_max_fog_start",
+			"set_fog_start_end",
+			"m_fog_start",
+			"set_fog_start_end",
+			"glDrawElements",
+			"load",
+			"glDrawElements",
+			"objloader",
+			"#include \"objloader.hpp\"",
+			",",
+			"vertexPosition_modelspace",
+			"glm::lookAt(",
+			"glm::perspective",
+			"glfwSetWindowTitle",
+			"glGetAttribLocation",
+			"vertexPosition",
+			"90",
+			"vertexPosition_modelspace",
+			"vertexPosition",
+			"vertexPosition_modelspace",
+			"vertexPosition",
+			"_)",
+			"(_",
+			"(O)"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"view(",
+			"mycms_",
+			"rows[$i]->",
+			"val->",
+			"ppl->",
+			"hci",
+			"mycms",
+			";\n",
+			"\n",
+			"mycms_",
+			"  ",
+			"",
+			"  ",
+			"}",
+			";\n  ",
+			"{\n  ",
+			"*/\n  ",
+			";\n  ",
+			"  ",
+			"	",
+			",",
+			"--)",
+			"(--",
+			"¶¶¶",
+			"¶¶",
+			"¶¶¶",
+			"\\r\\n",
+			"\\n",
+			"",
+			"\\n",
+			"",
+			"\\n",
+			"",
+			"	",
+			"\\t",
+			",",
+			"",
+			",",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Faham/Desktop/temp/tasks.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "content/ch05-experimentation.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								425,
+								425
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "make.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								291,
+								291
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "content/ch04-implementation.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3769,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								345,
+								345
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"project": "thesis.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
