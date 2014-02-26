@@ -146,7 +146,7 @@ Collector {_collector_id}
 9	I don’t answer when someone talks to me
 
 [GEQ: Absorption]
-8	I feel spaced out 
+8	I feel spaced out
 7	Time seems to kind of stand still or stop
 2	I feel different
 13	I lose track of where I am
