@@ -2,7 +2,6 @@
 
 bin/
 obj/
-logs/
 
 # User configuration files #
 *.suo
