@@ -1,0 +1,27 @@
+
+The following 22 rules were used as described in Section ~\ref{subsec:fuzzi} to transform physiological variables into arousal-valence space:
+
+\begin{enumerate}
+\item If (GSR is high) then (arousal is high)
+\item If (GSR is mid-high) then (arousal is mid-high)
+\item If (GSR is mid-low) then (arousal is mid-low)
+\item If (GSR is low) then (arousal is low)
+\item If (HR is low) then (arousal is low)
+\item If (HR is high) then (arousal is high)
+\item If (GSR is low) and (HR is high) then (arousal is midlow)
+\item If (GSR is high) and (HR is low) then (arousal is midhigh)
+\item If (EMGfrown is high) then (valence is very low)
+\item If (EMGfrown is mid) then (valence is low)
+\item If (EMGsmile is mid) then (valence is high)
+\item If (EMGsmile is high) then (valence is very high)
+\item If (EMGsmile is low) and (EMGfrown is low) then (valence is neutral)
+\item If (EMGsmile is high) and (EMGfrown is low) then (valence is very high)
+\item If (EMGsmile is high) and (EMGfrown is mid) then (valence is high)
+\item If (EMGsmile is low) and (EMGfrown is high) then (valence is very low)
+\item If (EMGsmile is mid) and (EMGfrown is high) then (valence is low)
+\item If (EMGsmile is low) and (EMGfrown is low) and (HR is low) then (valence is low)
+\item If (EMGsmile is low) and (EMGfrown is low) and (HR is high) then (valence is high)
+\item If (GSR is high) and (HR is mid) then (arousal is high)
+\item If (GSR is mid-high) and (HR is mid) then (arousal is mid-high)
+\item If (GSR is mid-low) and (HR is mid) then (arousal is mid-low)
+\end{enumerate}

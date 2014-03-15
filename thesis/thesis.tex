@@ -3,6 +3,7 @@
 \documentclass{uofsthesis-cs}
 
 \usepackage[pdftex]{graphicx}
+\usepackage{pdfpages}
 
 %-------------------------------------------------------------------------------
 
@@ -52,12 +53,12 @@ S7N 5C9
 %-------------------------------------------------------------------------------
 
 % Chapters
-\chapter{Introduction}                              \input{content/ch01-intro.tex}
-\chapter{Human and Play Technologies}               \input{content/ch02-lit-review.tex}
-\chapter{Customizing Play Experience in Real-Time}  \input{content/ch03-problem-and-solution.tex}
-\chapter{Implementation and Integration}            \input{content/ch04-implementation.tex}
-\chapter{Experimentation}                           \input{content/ch05-experimentation.tex}
-\chapter{Discussion}                                \input{content/ch06-discussion.tex}
+\chapter{Introduction}                             \label{chap:intro}      \input{content/ch01-intro.tex}
+\chapter{Human and Play Technologies}              \label{chap:man-n-play} \input{content/ch02-lit-review.tex}
+\chapter{Customizing Play Experience in Real-Time} \label{chap:custmz}     \input{content/ch03-problem-and-solution.tex}
+\chapter{Implementation and Integration}           \label{chap:impl}       \input{content/ch04-implementation.tex}
+\chapter{Experimentation}                          \label{chap:exprm}      \input{content/ch05-experimentation.tex}
+\chapter{Discussion}                               \label{chap:discus}     \input{content/ch06-discussion.tex}
 
 %-------------------------------------------------------------------------------
 
@@ -68,7 +69,14 @@ S7N 5C9
 
 % APPENDICES
 \uofsappendix
-\chapter{Fuzzy Functions} \input{content/appendix-a-fuzzy.tex}
+\chapter{Transforming physiological variables into arousal-valence space} \label{app:phys-to-av}    \input{content/app-phys-to-av.tex}
+\chapter{Transforming arousal-valence space into emotional states}        \label{app:av-to-emotion} \input{content/app-av-to-emotion.tex}
+\chapter{Demographics Questionnaire}                                      \label{app:q-dmg}         \includepdf[pages={-}]{content/q-dmg.pdf}
+\chapter{Condition Questionnaire}                                         \label{app:q-cnd}         \includepdf[pages={-}]{content/q-cnd.pdf}
+\chapter{Self-Assessment-Manikin Arousal Scales Questionnaire}            \label{app:q-sam}         \includepdf[pages={-}]{content/q-sam.pdf}
+\chapter{Intrinsic Motivation Inventory Questionnaire}                    \label{app:q-ini}         \includepdf[pages={-}]{content/q-imi.pdf}
+\chapter{Player Experience of Need Satisfaction Questionnaire}            \label{app:q-pens}        \includepdf[pages={-}]{content/q-pens.pdf}
+\chapter{Game Engagement Questionnaire}                                   \label{app:q-geq}         \includepdf[pages={-}]{content/q-geq.pdf}
 
 %-------------------------------------------------------------------------------
 
