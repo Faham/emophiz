@@ -36,6 +36,14 @@
 	"buffers":
 	[
 		{
+			"file": "/D/desktop/temp/tasks.txt",
+			"settings":
+			{
+				"buffer_size": 2479,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "content/common.tex",
 			"settings":
 			{
@@ -44,42 +52,26 @@
 			}
 		},
 		{
-			"file": "/D/projects/emophiz/data/variables.txt",
-			"settings":
-			{
-				"buffer_size": 12691,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "content/bibliography.bib",
 			"settings":
 			{
-				"buffer_size": 7506,
+				"buffer_size": 9646,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "content/ch02-lit-review.tex",
+			"file": "thesis.tex",
 			"settings":
 			{
-				"buffer_size": 8424,
+				"buffer_size": 53258,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "content/ch04-implementation.tex",
+			"file": "content/import/import.bib",
 			"settings":
 			{
-				"buffer_size": 5799,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/ch05-experimentation.tex",
-			"settings":
-			{
-				"buffer_size": 11445,
+				"buffer_size": 2487,
 				"line_ending": "Windows"
 			}
 		}
@@ -91,23 +83,35 @@
 		"selected_items":
 		[
 			[
-				"install",
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
-				"inst",
-				"Package Control: Install Package"
+				"remove",
+				"Package Control: Remove Package"
 			],
 			[
 				"instal",
 				"Package Control: Install Package"
 			],
 			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
 				"packa",
-				"Preferences: Browse Packages"
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
 			]
 		],
-		"width": 528.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -127,8 +131,29 @@
 	},
 	"file_history":
 	[
-		"/D/projects/bracollage/README.md",
+		"/D/projects/emophiz/thesis/related-works/olesen2008real.tex",
+		"/D/projects/emophiz/thesis/content/import/olesen2008real.tex",
+		"/D/projects/emophiz/thesis/content/import/fairclough2011brain.tex",
+		"/D/projects/emophiz/thesis/content/abbreviations.tex",
+		"/D/projects/emophiz/thesis/content/import/lazzaro2004we.tex",
+		"/D/projects/emophiz/thesis/content/import/cherney2008mom.tex",
+		"/D/projects/emophiz/thesis/content/import/import.bib",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/LaTeX Word Count/LaTeXWordCount.sublime-settings",
+		"/C/Users/Faham/Desktop/quranic-topics.txt",
+		"/C/Users/Faham/Desktop/quranic-topics",
+		"/C/Users/Faham/Downloads/scholar.enw",
+		"/D/documents/private/docs/new/faham-tax-2013-netfile.tax",
 		"/D/projects/emophiz/thesis/thesis.tex",
+		"/D/projects/emophiz/thesis/content/app-av-to-emotion.tex",
+		"/D/projects/emophiz/thesis/content/ch06-discussion.tex",
+		"/D/projects/emophiz/thesis/content/ch05-experimentation.tex",
+		"/D/projects/emophiz/thesis/content/ch04-implementation.tex",
+		"/D/projects/emophiz/thesis/content/ch03-problem-and-solution.tex",
+		"/D/projects/emophiz/thesis/content/ch01-intro.tex",
+		"/D/projects/emophiz/thesis/content/ch02-lit-review.tex",
+		"/D/projects/emophiz/thesis/content/common.tex",
+		"/D/projects/emophiz/data/variables.txt",
+		"/D/projects/bracollage/README.md",
 		"/D/projects/emophiz/thesis/auxiliary/thesis.bbl",
 		"/C/Users/Faham/Downloads/Willball.bibtex",
 		"/C/Users/Faham/Desktop/temp/tasks.txt",
@@ -233,32 +258,11 @@
 		"/D/projects/mycms/schema.ini",
 		"/D/projects/mycms/pear/INSTALL",
 		"/C/pear/pear.bat",
-		"/C/wamp/lang/arabic.lang",
-		"/D/projects/mycms/pear/PEAR.php",
-		"/D/projects/mycms/pear/pear.bat",
-		"/D/projects/mycms/pear/pear.ini",
-		"/D/projects/mycms/pear/pear/PEAR.php",
-		"/D/projects/mycms/pear/go-pear.php",
-		"/D/projects/mycms/pear/DB/scripts/config.ini",
-		"/D/projects/mycms/check_pear.php",
-		"/D/projects/mycms/pear/DB/scripts/DB_DataObject_createTables.bat",
-		"/D/projects/mycms/phpinfo.php",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/trailing_spaces.sublime-settings",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/D/projects/mycms/.htaccess",
-		"/D/documents/internet-network.txt",
-		"/D/projects/mycms/modules/pages/pages.ini",
-		"/D/documents/cover-letter.txt",
-		"/C/Users/Faham/Downloads/ginans (8)",
-		"/D/projects/library/lod/.htaccess",
-		"/D/projects/library/lod/templates/resource.xslt"
+		"/C/wamp/lang/arabic.lang"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 54.0
 	},
 	"find_in_files":
 	{
@@ -275,6 +279,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"to top\n",
+			"Sahih International\n",
+			"xiang2013dynamic",
+			"\\chapter",
+			"ref{fig:",
+			" \"",
+			"@",
+			"russelavspace",
+			"textit",
+			"_p ",
+			"\\img",
+			"fig:",
+			"russell2003core",
+			"russel",
+			"\\img",
+			"\\caption",
+			"\\img",
+			"figure",
+			"russell-av-space",
+			"caption",
+			"picard1995affective",
+			"cannon1927james",
+			"russell2003core",
+			"Core affect and the psychological construction",
+			",",
+			"forgas1995mood",
+			"%-------------------------------------------------------------------------------",
+			"\\chapter",
+			"chapter",
 			" ",
 			"%%%-----------------------------------------------------------------------------",
 			"picard2003affective",
@@ -373,36 +406,7 @@
 			"{$weburl}",
 			"	",
 			"home",
-			"hci",
-			"	",
-			"    ",
-			"gist",
-			"error",
-			" ,",
-			"m_max_fog_start",
-			"m_min_fog_start",
-			"m_max_zombie_speed",
-			"m_max_player_speed",
-			"m_min_player_speed",
-			"m_max_player_speed",
-			"m_min_zombie_speed",
-			"m_max_fog_start",
-			"set_fog_start_end",
-			"m_fog_start",
-			"set_fog_start_end",
-			"glDrawElements",
-			"load",
-			"glDrawElements",
-			"objloader",
-			"#include \"objloader.hpp\"",
-			",",
-			"vertexPosition_modelspace",
-			"glm::lookAt(",
-			"glm::perspective",
-			"glfwSetWindowTitle",
-			"glGetAttribLocation",
-			"vertexPosition",
-			"90"
+			"hci"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -466,42 +470,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "content/common.tex",
+					"file": "/D/desktop/temp/tasks.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 396,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								175,
-								174
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/projects/emophiz/data/variables.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12691,
+						"buffer_size": 2479,
 						"regions":
 						{
 						},
@@ -517,11 +490,41 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"word_wrap": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 248.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "content/common.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -533,15 +536,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7506,
+						"buffer_size": 9646,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4576,
-								4576
+								4799,
+								4799
 							]
 						],
 						"settings":
@@ -554,38 +557,39 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 13957.0,
+						"translation.y": 2446.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "content/ch02-lit-review.tex",
+					"file": "thesis.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8424,
+						"buffer_size": 53258,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								15106,
+								15106
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
 							"remote_loading": false,
+							"spell_check": true,
 							"synced": false,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3964.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -593,63 +597,29 @@
 				},
 				{
 					"buffer": 4,
-					"file": "content/ch04-implementation.tex",
+					"file": "content/import/import.bib",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5799,
+						"buffer_size": 2487,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								702,
-								702
+								2487,
+								2487
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
 							"remote_loading": false,
-							"spell_check": true,
 							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "content/ch05-experimentation.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11445,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								417,
-								417
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"spell_check": true,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -703,7 +673,7 @@
 	"project": "thesis.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

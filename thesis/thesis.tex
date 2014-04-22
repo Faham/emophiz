@@ -1,11 +1,11 @@
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \documentclass{uofsthesis-cs}
 
 \usepackage[pdftex]{graphicx}
 \usepackage{pdfpages}
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 % THESIS TITLE
 \title{Play Experience Enhancement Using Emotional Feedback}
@@ -33,14 +33,14 @@ Canada\\
 S7N 5C9
 }
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \abstract          {\input{content/abstract.tex        }}
 \acknowledgements  {\input{content/acknowledgements.tex}}
 %\dedication       {\input{content/dedication.tex      }}
 \loa               {\input{content/abbreviations.tex   }}
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \begin{document}
 
@@ -50,12 +50,12 @@ S7N 5C9
 % Typeset the frontmatter.
 \frontmatter
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \input{content/common.tex} %new commands go here
 
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \chapter{Introduction}
 \label{chap:intro}
@@ -81,7 +81,7 @@ Since computers are playing a significant role in our daily life, the need for a
 
 Although the study of affective computing has increased considerably during the last years, few have applied their research to play technologies ~\cite{sykes2003affective}. Emotional component of human computer interaction in video games is surprisingly important. Game players frequently turn to the console in their search for an emotional experience ~\cite{rouse2010game}. There are numerous benefits such technology could bring video game experience, like: The ability to generate game content dynamically with respect to the affective state of the player, the ability to communicate the affective state of the game player to third parties and adoption of new game mechanics based on the affective state of the player ~\cite{sykes2003affective}. This work concentrates on developing a real-time emotion recognition system for play technologies which can quantify player instant emotional state during a play experience The rest of the paper is organized as follows: in Section 2 we outline different emotion recognition theories with an overview of physiology sensors. In Section 3 we demonstrate some implementation details of the system. We then describe the experimental setup in Section 4 before giving our results in Section 5. Finally, we give conclusions in Section 6.
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \chapter{Human and Play Technologies}
 \label{chap:man-n-play}
@@ -99,7 +99,7 @@ Although the study of affective computing has increased considerably during the 
 
 %%% 1 page: overview of what is going on
 
-In this chapter, related research to this work is being presented. It starts with introducing and reviewing common terminology used in the research on affect and emotion and the methods that have been used to measure affect and estimate emotion; And continues by presenting previous research in game balancing that inspired this work in its game experience enhancement study.
+In this chapter, related research to this work is being presented. It starts with introducing and reviewing common terminology used in the research on affect and emotion and the methods that have been used to measure affect and emotion; And continues by presenting previous research in game balancing that inspired this work in its game experience enhancement study.
 
 \section{Affect and Emotion}
 
@@ -107,49 +107,119 @@ In this section common terms used in the literature is introduced along with dif
 
 \subsection{Terminology}
 
-The terms \textit{affect} and \textit{emotion} are often used interchangeably and using these terms without any specific description highlighting their differences can be usually confusing. To avoid this confusion it is important to understand the distinction between these terms. In this thesis, \textit{affect} is 
+The terms \textit{affect} and \textit{emotion} are often used interchangeably and using these terms without any specific description highlighting their differences can be usually confusing. To avoid this confusion it is important to understand the distinction between these terms. In this thesis, \textit{affect} is used in a more general sense that encompasses emotions ~\cite{forgas1995mood} while \textit{emotions} are usually reactionary fealings often triggered by some particular cause either physical or cognitive and are short in duration; Individuals are usually aware of the presence of an emotion ~\cite{paiva2007affective}.
+
+Classical attempts to describe emotion can be categorized into two major different approaches: Those that try to describe emotion by emphasizing its cognitive (mental) aspects and those that concentrate on its bodily (physical) aspects. Walter Cannon by suggesting emotion as an experience within the brain, independent of the sensations of the body ~\cite{cannon1927james} is usually credited for the cognitive approach. On the other hand the physical approach has largely been attributed to William James in which physiological responses (e.g. elevated heart rate) are the center of focus that occurs just prior or during an emotional episode ~\cite{paiva2007affective}.
+
+In more recent approaches emotion has been considered as a combined result of cognitive and physiological changes simultaneously. ~\cite{paiva2007affective}. Body chemistry changes and thoughts can both contribute to the definition of emotions; As Schachter suggests emotion is our interpretation of a specific physiological reactions along with our mental situation that is labeled as an emotion (e.g. fear) ~\cite{schachter1964interaction}. In this thesis, \textit{emotional state} refers to the combinational internal dynamics (both cognitive and physiological) that are perceived by an individual during an emotional experience ~\cite{paiva2007affective}.
 
 \section{Describing Emotion}
 
+Identifying emotions by dividing them into discrete categories or assuming a continuous dimensional space in which emotions can be defined are two major approaches that the related research has gone into to describe emotions.
+
 \subsection{Discrete Categories}
 
-\subsection{Continious Dimensions}
+Suggested discrete categories in the categorical approach does not necessarily agree with one another. This approach, also known as the basic emotion theory largely relies on language in its mission to describe emotion; In fact, it begins by identifying specific labels people attach to different emotional episodes and then suggests categories of emotions. Examples of such labels (or categories) include excitement, anger, fear, sadness and happiness. Relying on language to describing emotions not only led suggested categories to vary across languages, but also within a language. The variability and disagreement in the literature suggests a lack for clear definitions or boundaries for these states, which has caused difficulties when comparing different research approaches. In-availability of specific categories in other languages also makes research using this approach difficult ~\cite{zimmermann2006extending}
+
+Recent works on the basic emotion theory identifies anger, disgust, fear, happiness, sadness, and surprise ~\cite{peter2006emotion} as the concise set of primary emotions. These are actually the least six universal categories researchers agreed upon ~\cite{zagalo2004story}. It also claims these primary emotions are distinguishable from each other and other affective phenomena ~\cite{dalgleish1999handbook}.
+
+\subsection{Continuous Dimensions}
+
+The dimensional emotion theory argues that all emotional states reside in a two-dimensional space, defined by arousal and valence. This approach described by Russell in ~\cite{russell2003core} introduces the idea of core affect to identify emotions. It holds core affect accountable for feelings triggered by specific events and describes it as being composed of two independent dimensions: arousal and valence. Figure ~\ref{fig:russel-av-space} illustrates the concept of arousal and valence space describing various emotions known as common emotion categories.
+
+\img
+{Russell's arousal and valence model}
+{Russell's circumplex model with two axes of arousal and valence \footnotemark.}
+{russell-av-space.pdf}
+{russel-av-space}
+\footnotetext{Photo credit: http://imagine-it.org/gamessurvey/}
+
+The energy or the degree of activation of an individual which brings a sense of mobilization is usually referred to as \textit{arousal}. The arousal state is physiological and psychological state of being reactive and responsive to a stimuli. The flight-or-fight response, as introduced in Cannon's theory ~\cite{stern2001psychophysiological} is a physiological reaction that occurs in response to a perceived threat or stimuli and focuses on the physiological changes that occur in the body during these situations. Different qualities of arousal are usually studied as low (e.g. sleepiness) to high (e.g. excitement).
+
+Valence as often used in psychology particularly in study of emotions, means the intrinsic attractiveness (positive valence) or aversiveness (negative valence) of an event or situation ~\cite{frijda1986emotions}. However in many related studies of emotion, the term is also used to identify popular emotions by their negative or positive impressions. Emotions with lower valence are those that are less desired such as anger and fear, and emotions with higher valence are those that are more desired such as joy and happiness.
 
 \section{Recognizing Emotions}
 
-Using emotional responses to increase the level of users interaction with a real-time play technology requires an effective technique to identifying specific emotion states within an emotional space. Major existing emotion models in the psychology literature includes: basic emotion theory ~\cite{ekman1992argument, ekman1992there} , dimensional emotion theory ~\cite{lang1995emotion, russell1980circumplex} and models from appraisal theory (e.g.,~\cite{roseman2001model}) ~\cite{zhang2010service}
+In this work, both the categorical and dimensional approaches are used for developed models. The model developed for capturing emotional state responses is coupled with gathered subjective emotional experiences of our participants based on a categorical approach. Using categorical approach when collecting emotional experiences subjectively is the most practical method, as it is far easier for participants to communicate in a language that they can understand (emotional categories rather than the degree of arousal or valence) to describe their emotional state best. However although we did not want to use a data collection process that require the participants to learn new terminologies and describe their emotional estate with unfamiliar terms, participants have been introduced to arousal, valence and dominance. Given example emotions for different levels of these variables participants tried to describe their affect state by choosing images based on these concepts. The developed model for the affect space uses the dimensional model as in Figure ~\ref{fig:russel-av-space} to provide a mapping between the original emotional categories and a dimensional space. These models are further elaborated in Chapter ~\ref{chap:impl}.
 
-Basic emotion theory identifies anger, disgust, fear, happiness, sadness, and surprise ~\cite{peter2006emotion} as the concise set of primary emotions. These are actually the least six universal categories researchers agreed upon ~\cite{zagalo2004story}. It also claims these primary emotions are distinguishable from each other and other affective phenomena ~\cite{dalgleish1999handbook}. On the other hand dimensional emotion theory argues that all emotional states reside in a two-dimensional space, defined by arousal and valence.
+~\cite{picard2003affective}
+
+p There are many different emotional indicators that have been studied to determine affect including facial expressions, gestures, postures, vocal intonation, language, pressure, and pupil dilation [45]. These are all visible features that can be observed by others through day-to-day interactions. For example, in human-to-human interactions, facial expression can help us to determine whether someone is distracted, frustrated, or happy just through facial expression. Some researchers have used sophisticated face-tracking software to analyze facial expressions to infer the emotional state of the user [11,44]. Work by Khan et al. [31] extended this idea but used thermal imaging to identify changes of blood flow patterns in the face that correspond to different facial expressions. 
+
+p There are also a number of other indicators that are less visible to another person, such as physiological changes in the body that occur during emotional episodes. In [38], Mandryk et al. used physiological metrics such as galvanic skin response (GSR), respiration, electrocardiography (EKG), and electromyography of the jaw (EMG) as indicators of participants‘ affective states while playing video games. These indicators are measured through electronic sensors placed directly on the skin, face, chest, and hands of the participant.
+
+
 
 While there are various opinions on identifying emotional states, classification into discrete emotions ~\cite{dalgleish1999handbook}, or locating emotions along multiple axes ~\cite{russell1989affect, lang1995emotion}, both had limited success in using physiology to identify emotional states ~\cite{cacioppo2000psychophysiology}.
 
-Lang used a 2-D space defined by arousal and valence (pleasure) (AV space) to classify emotions ~\cite{lang1995emotion}. Valence can be described as a subjective feeling of pleasantness or unpleasantness while arousal is the subjective state feeling activated or deactivated ~\cite{barrett1998discrete}. Using an arousal-valence space to create the Affect Grid, Russell believed that arousal and valence are cognitive dimensions of individual emotion states. Affect is a broad definition that includes feelings, moods, sentiments etc. and is commonly used to define the concept of emotion ~\cite{picard2003affective}. Russell's model has two "axes"that might be labeled as displeasure/pleasure (horizontal axis) and low/high arousal (vertical axis) It is not easy to map affective states into distinctive emotional states, However these models can provide a mapping between predefined states and the level of arousal and valence ~\cite{zagalo2004story}, Figure ~\ref{fig:russelavspace}.
+Lang used a 2-D space defined by arousal and valence (pleasure) (AV space) to classify emotions ~\cite{lang1995emotion}. Valence can be described as a subjective feeling of pleasantness or unpleasantness while arousal is the subjective state feeling activated or deactivated ~\cite{barrett1998discrete}. Using an arousal-valence space to create the Affect Grid, Russell believed that arousal and valence are cognitive dimensions of individual emotion states. Affect is a broad definition that includes feelings, moods, sentiments etc. and is commonly used to define the concept of emotion ~\cite{picard2003affective}. Russell's model has two axes that might be labeled as displeasure/pleasure (horizontal axis) and low/high arousal (vertical axis) It is not easy to map affective states into distinctive emotional states, However these models can provide a mapping between predefined states and the level of arousal and valence ~\cite{zagalo2004story}, Figure ~\ref{fig:russel-av-space}.
 
-\begin{figure}[h!]
-  \caption[Russell's arousal and valence model]
-  {Russell's circumplex model with two axes of arousal and valence \footnotemark.}
-  \centering
-  \includegraphics[width=0.5\textwidth]{images/russell-av-space.pdf}
-  \label{fig:russelavspace}
-\end{figure}
-
-\footnotetext{Photo credit: http://imagine-it.org/gamessurvey/}
 
 Both mentioned models for identifying emotions convey some practical issues in emotion measurement. In a HCI context, the stimuli for potential emotions may vary less than in human-human interaction (e.g., participant verbal expressions and body language) ~\cite{zhang2010service} and also the combination of evoked emotions ~\cite{peter2006emotion}. However with help of physiological signals and the fuzzy logic in the model we are going to use, such issues with our dimentional emotion models would be minimized. Though it is anticipated to observe different range of evoked emotions while interacting with play technologies compared to interacting with other humans in daily life. ~\cite{zhang2010service}. However our dimensional emotion models suffers some other problems. One problems is that arousal and valence are not independent and one can impact the other ~\cite{mandryk2007fuzzy}. Continuously capturing emotional experiences in this applied setting is of its other hallmarks. Subjective measures based on dimensional emotion theory, such as the Affect Grid ~\cite{russell1989affect} and the Self-Assessment Manikin ~\cite{bradley1994measuring}, allow for quick assessments of user emotional experiences but they may aggregate responses over the course of many events ~\cite{zhang2010service}. This work uses Mandryk et al. version of AV space ~\cite{mandryk2007fuzzy}.
 
+Using emotional responses to increase the level of users interaction with a real-time play technology requires an effective technique to identifying specific emotion states within an emotional space. Major existing emotion models in the psychology literature includes: basic emotion theory ~\cite{ekman1992argument, ekman1992there} , dimensional emotion theory ~\cite{lang1995emotion, russell1980circumplex} and models from appraisal theory (e.g.,~\cite{roseman2001model}) ~\cite{zhang2010service}
+
+
 \section{Measuring Affect}
 %%% Talk about various sensors and their attributes, in particular the GSR sensor
-%%% and how it can be used to detect Arousal using the fazzy logic
+%%% and how it can be used to detect Arousal using the fuzzy logic
 
-\section{Affect and Play Technologies}
+p EKG measures the electrical activity of the heart which is measured on the surface of the skin using electrodes. These electrodes are commonly placed on the chest, forearm, or legs and are applied with conductive gels on the bare skin of the person being examined. The area where the electrodes are placed must be free of hair so shaving these regions may be necessary to prevent interference with the sensors [50].  
+
+p Respiration measures the rate or volume of air exchange in the lungs. Although accurate results can be obtained by measuring gas exchange, the apparatus that is required (a face mask) prevents the user from speaking and requires them to remain stationary during the measurement process. Alternatively, measuring chest cavity expansion can also be used for these metrics using less obtrusive sensors (e.g. stretch sensor around the chest of the participant) [50].  
+
+p The major problem with the physiological approaches to measuring affect is the intrusive nature of the technology. Affixing sensors to users‘ skin would not be realistic in a real-world context (e.g. casual interactions with mobile phones). Sensors take time to attach to the user, conductive gels might be used, shaving may be necessary, and the sensors can be sensitive to movement and could fall off with activity. Furthermore, the presence and constant reminder of the sensors may alter the emotional state that the user would have been in, if the sensors were not present. 
+
+p Some physiological approaches to detecting emotional states are less obtrusive because they do not require physical contact with the participant. For example, thermal cameras have been leveraged to identify increased blood flow in particular regions of the face when the user is experiencing emotional states such as stress [46]. Although this type of technology is not as obtrusive as some of the other physiological approaches (such as GSR), the main drawback is that the approach requires the use of expensive technology (a thermal camera) that is not widely used in typical computer settings such as the home or office. This is also typical of the other physiological sensors previously mentioned (e.g. GSR) because they require specialized equipment that can be expensive, which limits the applicability of widespread adoption of this approach. 
+
+
+\section{The Concept of Flow in Video Games}
+
+\subsection{Challenge vs. Skill}
+
+\img
+{Russell's arousal and valence model}
+{Mental state in terms of challenge level and skill level, according to Csikszentmihalyi's flow model ~\cite{csikszentmihalyi1997finding}}
+{challenge-vs-skill.png}
+{challenge-vs-skill}
+
+\section{Emotionally Adaptive Games}
 %%% talk about play technologies and why do people play them
 %%% the importance of being challenged in play technologies
 %%% and its effect on arousal level
 
-\section{Video Games and Game Balance}
+%% olesen2008real
+Computer game balance (or difficulty adjustment) is a
+crucial aspect of commercial game development. Currently,
+this is achieved either by predefined levels of game challenge
+— the player then decides which of those levels she will play
+against — or by techniques known as rubber-band artificial
+intelligence (AI) [1], mainly used in racing games. The
+first approach cannot incorporate the needs of all potential
+players of the game while the latter approach generates
+predictable behaviors which reduce the believability of the
+non-player characters (NPCs). Furthermore, human players
+enhance their skills while playing a game which necessitates
+an adaptive mechanism that covers the player’s need for more
+challenging NPCs during play (i.e. in real-time).
+%% olesen2008real
+
+%% TODO:paraphrase
+For creating entertaining computer games1, gameplay is considered to be of key im- portance ([1], [2]). In absence of a broadly accepted definition of gameplay, we focus here on one frequently mentioned element of it, which is challenge. The process of optimizing a game’s challenge is referred to as game balancing or difficulty scaling. That is, changing parameters in order to avoid that the player gets frustrated because the game is too hard, or gets bored because the game is too easy [3]. In this study, we have investigated the relations between a game's difficulty level and the interplay between the emotions boredom, frustration and enjoyment (Fig. 1-left panel). These 
+relations strongly differ per individual, for example influenced by a player's skill level. For instance, a difficulty level that is found enjoyable by a novice might be boring for expert players. Games therefore need psychological customization tech- niques [4], such as difficulty adaptation, to optimize the experience. Since many years, game designers aim to provide some customization, for example by letting players choose a difficulty level upfront or including progressive difficulty levels during gameplay, based on a player’s performance.   More advanced methods that work in real-time are less common. One difficulty adaptation mechanism, frequently applied in racing games, is called rubber banding [5]: When falling behind, the player suddenly gets an enormous boost in speed, which allows for catching up again (and vice versa for the competing cars). However, game adaptation that is solely based on in-game behavior can only have limited success, because there are many different types of players [6]. Each type of player has his/her own goals, preferences and emotional responses when playing a game. Hence, for optimizing the players' experiences, successful psychological customization requires a game to take the emotional state of the player into account. Games should become emotionally adaptive (Fig. 1– right panel). 
+
+\img
+{Emotionally adaptive games}
+{Left panel: Game balancing (Adapted from [1]). Right panel: The emotionally adaptive games loop, inspired on the affective loop [7]. }
+{adaptive-games.png}
+{adaptive-games}
+
+The importance of emotions in computing is widely argued for (e.g. [8]). Emotion theorists differ over a discrete versus a dimensional model. The \"discretionists\" (e.g. [9]) argue for basic discrete emotions, such as anger, fear, sadness and happiness, as unique experiential states. The \"dimensionalists\" (e.g. [10]), on the other hand, look at emotions in terms of a two-dimensional space consisting of valence ("pleasantness") and arousal ("activation"). Sometimes dominance is added as a third dimension.  Effective human-computer interaction from an emotions perspective works in terms of an \"affective loop\" [7]. A similar feedback loop in a games context is de- scribed by [11]. Inspired by their work, Fig. 1 (right panel) shows a schematic view on the functioning of an emotionally adaptive game. By providing the right game mechanics [12] (e.g. audiovisuals, narrative, challenge), the game influences the player's experience, behavior and emotional state. Ideally, during play, the emotional state of the player (measured in terms of emotion-data), is continuously being fed back to the game so that the game can adapt its mechanics (e.g. difficulty level)
+accordingly in real-time. This all is done to create the optimal experience (which is referred to in literature as e.g. flow [13] or immersion [14]). Previous research at- tempts to create emotionally adaptive software have mainly focused on tutoring sys- tems and workload / performance optimization (see e.g. [15]). Fewer attempts have been made to incorporate a closed-loop mechanism in a games context. Takahashi et al. [16] and Rani et al. [17] created a game that was found to improve player perform- ance by adapting difficulty level to player's physiological state. Concept validation claims of these both studies were, however, based on a limited number of participants. Besides these attempts, a number of biofeedback games have recently been devel- oped, which have some integration of a player's physiological data into the game (e.g. [18], [19] and [20]). These games however focus on stress manipulation rather than optimization of gameplay experience. Probably closest to the present project's scope is the work of Saari and colleagues, who created the Mind-Based Technology frame- work for psychological customization [21]. They have further elaborated this in a games context (e.g. [4], [22]) and are currently developing an emotionally adaptive game demo. As a first step in creating an emotionally adaptive game, system input and output need to be specified in further detail. Regarding output (emotion-data), Saari et al. [22] provide an extensive discussion of possible elements to be adapted, structured by \"psychologically validated templates\". We have adopted a rather straightforward and intuitive \"template\": Game speed. We will manipulate the game's speed to influence the player's emotional state (the interplay between boredom, frustration and enjoy- ment, Fig. 1-left panel). Regarding system input (emotion-data), Öhman [23] distin- guished three categories of emotion measures: Self-reports, overt behavior and physiological responses. Self-reports are frequently used for assessing players' emo- tions and experiences [5] but not suitable (since too obtrusive) for real-time applica- tion in a game. Regarding overt behavior, potentially useful techniques for measuring boredom, frustration and enjoyment are facial emotion tracking [24] and the analysis of posture and pressure exerted on the game controls [25]. Regarding physiological responses, there is an extensive field with many research findings in psychophysiol- ogy. Although the research is done in varying contexts with sometimes contradicting results, it is considered a highly interesting field for analyzing emotions in games. We have limited ourselves to the methods described below. Regarding cardiovascular (heart) activity, tonic (long-term, as opposed to phasic) heart rate (HR) is known to increase with sympathetic nervous system activity, such as emotional arousal and cognitive effort and stress. On the other hand, increases in attention (mediated in the parasympathetic nervous system) lead to a decreased heart rate [26]. [27] found HR features to correlate with self-reported fun in games. Heart rate variability (HRV) is considered an index for mental effort (e.g. [28]). Some re- searchers (e.g. [29]) consider the percentage power in the low-frequency (LF) 0.07- 0.14 Hz range as a particularly effective index for task-related mental effort / sympa- thetic activity. Respiratory responses are analyzed to control for respiratory artifacts in e.g. HRV (a phenomenon known as respiratory sinus arrhythmia). Respiration may, however, also be used as a measure itself, e.g. for investigating stress and mental load [30]. Electrodermal activity (EDA) concerns the electrical resistance of the skin, also known as Skin Conductance (SCL, SCR) or Galvanic Skin Response (GSR). Skin conductance level is known to increase with information processing and the frequency of non-specific skin responses increases with arousal [26]. Electromyography (EMG) is a technique for measuring muscle activity; electric potential is being generated when muscle cells contract. Facial EMG is frequently used as a metric for valence. The most frequently analyzed facial muscles in this context are the orbicularis oculi (OO, used for closing the eyelids), zygomaticus major (ZYG, smiling) and corrugator supercilii (CORR, frowning). Most studies find positive correlations between valence and the OO and ZYG muscles, and a negative correlation between valence and CORR muscle (see e.g. [31], [32], [33]). In addition to the above findings, there are also a considerable number of studies without significant findings [34]. Because of the large differences in physiological responses between individuals and within individuals over time (autonomic response stereotypy principle, see e.g. [15], [35]), some re- searchers (e.g. [36]) argue for normalizing physiological data to facilitate a group analysis of the data. Additionally, affective systems should employ a battery of physiological features for accurate emotion predictions (e.g. [37]), and should allow for user-control for the sake of autonomy, privacy and interpretation of the data [41]. Because of the context-dependency of physiological responses, a two-stage ap- proach was adopted. The purpose of the current initial study is to investigate physio- logical and other affect-related responses in relation to an experimentally induced change in game mechanics. Note that in this study the affective loop is not yet closed, that is, real-time affective indicators are not yet directly influencing the game me- chanics. This will be the purpose of phase 2 of our work. The research question for the current invesigation evolved around the components of our framework (Fig. 1- right panel): What game mechanics (speed settings) lead to what kind of emotional state, and what emotion-data is this accompanied by? This was investigated by means of a controlled experiment, as explained in the next section.
+%% TODO:paraphrase
 
 \section{Real Time Game Adaptation}
-%%% talk about works has beed done in this area and different approaches
+%%% talk about works has been done in this area and different approaches
 %%% and relate that to what we have done in this research
 
 %%% adaptive play technologies critique existing systems (easy medium hard system), ideas
@@ -173,7 +243,7 @@ This interactive experience in contrast to cinema
 and other major types of entertainment is what makes them exceptional
 
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \chapter{Customizing Play Experience in Real-Time}
 \label{chap:custmz}
@@ -199,7 +269,7 @@ and other major types of entertainment is what makes them exceptional
 \subsection{Fuzzy Logic for Space Transformation}
 \subsection{Physiological Signals to Arousal and Valence}
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \chapter{Implementation and Integration}
 \label{chap:impl}
@@ -251,7 +321,7 @@ This module functions through two separate phases; Then filtered signals are fuz
 
 
 \section{Sensors}
-While the modular design of the Affect Engine allows its expansion for support of any physiological measures, currently the system uses Blood Volume Pulse (BVP), Galvanic Skin Response (GSR) and Electromyography (EMG; for frowning and smiling), to classify human affective states in 2-dimensional valence/arousal space (Figure \ref{fig:russelavspace}).
+While the modular design of the Affect Engine allows its expansion for support of any physiological measures, currently the system uses Blood Volume Pulse (BVP), Galvanic Skin Response (GSR) and Electromyography (EMG; for frowning and smiling), to classify human affective states in 2-dimensional valence/arousal space (Figure \ref{fig:russel-av-space}).
 
 \subsection{Blood Volume Pulse and Heart Rate}
 The Blood Volume Pulse (BVP, Figure \ref{fig:bvp-sensor}) is a relative measure of the amount of blood owing in a vessel. Using BVP we calculated heart rate and heart rate variability. The heart rate is known to reflect emotional activity and has been used to differentiate between both negative and positive emotions as well as different arousal levels ~\cite{tt2013procomp}.
@@ -280,7 +350,7 @@ The Galvanic Skin Response (GSR, Figure \ref{fig:gsr-sensor}) is useful to measu
 \subsection{The Director}
 
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \chapter{Experimentation}
 \label{chap:exprm}
@@ -325,13 +395,11 @@ All experiments were conducted on weekdays, with the first slot beginning at 11:
 
 Attached GSR sensors wired to the signal decoder brings limitations for participants while moving and using their hand. To diminish noisy signals and make participants feel comfortable under these limitations, the GSR sensors were attached to the hand that was handling the mouse during the game. While fingers dealing with mouse were quite steady compared to the other hand handling the keyboard, those fingers used to press the left and right mouse buttons were usually most comfortable ones for attaching GSR sensors. Some participants used index and middle fingers to press mouse buttons and others used index and ring fingers to do that \ref{fig:gsr-attached}.
 
-\begin{figure}[h!]
-  \caption[Attaching GSR sensors]
-  {GSR sensors attached to index and middle finger of participant's right hand}
-  \centering
-  \includegraphics[width=0.5\textwidth]{images/placeholder.png}
-  \label{fig:gsr-attached}
-\end{figure}
+\img
+{Attaching GSR sensors}
+{GSR sensors attached to index and middle finger of participant's right hand}
+{placeholder.png}
+{gsr-attached}
 
 Having GSR sensors attached, participants were seated in a comfortable office chair, which was adjusted according to their individual height. They were then led to fill out the initial game demographic questionnaire. To keep GSR sensors attached during the experiment, all questionnaires after attaching GSR sensors were filled out using mouse and the same computer system. After the demographic questionnaire, participants were asked to self-assess their arousal, valence and dominance level using the self assessment manikin (SAM) questionnaire ~\cite{?}. Filling initial questionnaires after attaching GSR sensors was meant to give enough time (approximately 5 minutes) to the participant to get used to the sensors before playing the game. Participants then have been taken to a tour in the game. Different game mechanics were shown to them, and they were given about 1 minute, dependent to their experience, to make themselves comfortable with it. Some participants didn't need this time due to prior experience and asked to skip that. Then, participants played four different game conditions described before. Participants were not told about the differences between conditions. Each game condition was set to take 5 minutes. After each condition, participants were asked to write their comments about particular changes they noticed under that condition and its effect on their gameplay. Then they were asked to filled out the intrinsic motivation inventory (IMI) questionnaire, the player experience of need satisfaction (PENS) questionnaire and the game engagement questionnaire (GEQ) to rate their experience. Filling the questionnaires between conditions was done during the minimum 7 minutes of resting time before the next condition begins. The resting time was meant to restore players baseline signals. GSR sensors were recording players signals during both the play and the resting sessions from the beginning of the first condition to the ending of the last condition. After completion of the experiment, sensors were removed. Participants were debriefed and compensated \$15 Canadian dollars and escorted out of the lab.
 
@@ -394,7 +462,7 @@ Environment modes
 % describe 16 participant's feedbacks and comments, and general ideas on how each one of them migh have experienced different situations through the game.
 
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \chapter{Discussion}
 \label{chap:discus}
@@ -405,12 +473,12 @@ Environment modes
 %Summarize contributions (achievements and impact)
 %Outline open issues/directions for future work
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 % Bibliography
 \uofsbibliography[plain]{content/bibliography}
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 % APPENDICES
 \uofsappendix
@@ -423,8 +491,8 @@ Environment modes
 \chapter{Player Experience of Need Satisfaction Questionnaire}            \label{app:q-pens}        \includepdf[pages={-}]{content/q-pens.pdf}
 \chapter{Game Engagement Questionnaire}                                   \label{app:q-geq}         \includepdf[pages={-}]{content/q-geq.pdf}
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \end{document}
 
-%-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
