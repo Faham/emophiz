@@ -77,7 +77,7 @@ S7N 5C9
 % What is now known/possible/better because of your thesis?
 % Outline of the thesis (optional)
 
-Since computers are playing a significant role in our daily life, the need for a more friendly and natural communication interface between human and computer has continiously increased. Making computers capabale of perceiving the situation in terms of most human specific factors and responding dependent to this perception is of major steps to acquire this goal. If computers could recognize the situation the same way as human does, they would be much more natural to communicate. Emotions are of important and mysterious human attributes that have a great effect on people's day to day behavior. Researchs from neuroscience, psychology, and cognitive science, suggests that emotion plays critical roles in rational and intelligent behavior ~\cite{picard2001toward}. Apparently, emotion interacts with thinking in ways that are nonobvious but important for intelligent functioning ~\cite{picard2001toward}. Scientists have amassed evidence that emotional skills are a basic component of intelligence, especially for learning preferences and adapting to what is important ~\cite{mayer1993intelligence, goleman2006emotional} People used to express their emotions through facial expressions, body movement, gestures and tone of voice and expect others understand and answer to their affective state. But sometimes there is a distinction between inner emotional experiences and the outward emotional expressions ~\cite{picard2003affective}. Some emotions can be hard to recognise by humans, and inner emotional experiences may not be expressed outwardly ~\cite{jones2007biometric}. Recent extensive investigations of physiological signals for emotion detection have been providing encouraging results where affective states are directly related to change in inner bodily signals ~\cite{jones2007biometric}. However whether we can use physiological patterns to recognise distinct emotions is still a question ~\cite{picard2001toward, cacioppo1990inferring}.
+Since computers are playing a significant role in our daily life, the need for a more friendly and natural communication interface between human and computer has continiously increased. Making computers capabale of perceiving the situation in terms of most human specific factors and responding dependent to this perception is of major steps to acquire this goal. If computers could recognize the situation the same way as human does, they would be much more natural to communicate. Emotions are of important and mysterious human attributes that have a great effect on people's day to day behavior. Researchs from neuroscience, psychology, and cognitive science, suggests that emotion plays critical roles in rational and intelligent behavior ~\cite{picard2001toward}. Apparently, emotion interacts with thinking in ways that are nonobvious but important for intelligent functioning ~\cite{picard2001toward}. Scientists have amassed evidence that emotional skills are a basic component of intelligence, especially for learning preferences and adapting to what is important ~\cite{mayer1993intelligence, goleman2006emotional} People used to express their emotions through facial expressions, body movement, gestures and tone of voice and expect others understand and answer to their affective state. But sometimes there is a distinction between inner emotional experiences and the outward emotional expressions ~\cite{picard2003affective}. Some emotions can be hard to recognise by humans, and inner emotional experiences may not be expressed outwardly ~\cite{jones2007biometric}. Recent extensive investigations of physiological signals for emotion detection have been providing encouraging results where affective states are directly related to change in inner bodily signals ~\cite{jones2007biometric}. However whether we can use physiological patterns to recognize distinct emotions is still a question ~\cite{picard2001toward, cacioppo1990inferring}.
 
 Although the study of affective computing has increased considerably during the last years, few have applied their research to play technologies ~\cite{sykes2003affective}. Emotional component of human computer interaction in video games is surprisingly important. Game players frequently turn to the console in their search for an emotional experience ~\cite{rouse2010game}. There are numerous benefits such technology could bring video game experience, like: The ability to generate game content dynamically with respect to the affective state of the player, the ability to communicate the affective state of the game player to third parties and adoption of new game mechanics based on the affective state of the player ~\cite{sykes2003affective}. This work concentrates on developing a real-time emotion recognition system for play technologies which can quantify player instant emotional state during a play experience The rest of the paper is organized as follows: in Section 2 we outline different emotion recognition theories with an overview of physiology sensors. In Section 3 we demonstrate some implementation details of the system. We then describe the experimental setup in Section 4 before giving our results in Section 5. Finally, we give conclusions in Section 6.
 
@@ -138,27 +138,19 @@ The energy or the degree of activation of an individual which brings a sense of 
 
 Valence as often used in psychology particularly in study of emotions, means the intrinsic attractiveness (positive valence) or aversiveness (negative valence) of an event or situation ~\cite{frijda1986emotions}. However in many related studies of emotion, the term is also used to identify popular emotions by their negative or positive impressions. Emotions with lower valence are those that are less desired such as anger and fear, and emotions with higher valence are those that are more desired such as joy and happiness.
 
+Lang used a 2-D space defined by arousal and valence (pleasure) (AV space) to classify emotions ~\cite{lang1995emotion}. Valence is described as a subjective feeling of pleasantness or unpleasantness while arousal is the subjective state feeling activated or deactivated ~\cite{barrett1998discrete}. Using an arousal-valence space to create the Affect Grid, Russell believed that arousal and valence are cognitive dimensions of individual emotion states. Affect is a broad definition that includes feelings, moods, sentiments etc. and is commonly used to define the concept of emotion ~\cite{picard2003affective}. Russell's model has two axes that might be labeled as displeasure/pleasure (horizontal axis) and low/high arousal (vertical axis) It is not easy to map affective states into distinctive emotional states, However these models can provide a mapping between predefined states and the level of arousal and valence ~\cite{zagalo2004story}, Figure ~\ref{fig:russel-av-space}.
+
 \section{Recognizing Emotions}
-
-In this work, both the categorical and dimensional approaches are used for developed models. The model developed for capturing emotional state responses is coupled with gathered subjective emotional experiences of our participants based on a categorical approach. Using categorical approach when collecting emotional experiences subjectively is the most practical method, as it is far easier for participants to communicate in a language that they can understand (emotional categories rather than the degree of arousal or valence) to describe their emotional state best. However although we did not want to use a data collection process that require the participants to learn new terminologies and describe their emotional estate with unfamiliar terms, participants have been introduced to arousal, valence and dominance. Given example emotions for different levels of these variables participants tried to describe their affect state by choosing images based on these concepts. The developed model for the affect space uses the dimensional model as in Figure ~\ref{fig:russel-av-space} to provide a mapping between the original emotional categories and a dimensional space. These models are further elaborated in Chapter ~\ref{chap:impl}.
-
- ~\cite{picard2003affective}
-
-p There are many different emotional indicators that have been studied to determine affect including facial expressions, gestures, postures, vocal intonation, language, pressure, and pupil dilation [45]. These are all visible features that can be observed by others through day-to-day interactions. For example, in human-to-human interactions, facial expression can help us to determine whether someone is distracted, frustrated, or happy just through facial expression. Some researchers have used sophisticated face-tracking software to analyze facial expressions to infer the emotional state of the user [11,44]. Work by Khan et al. [31] extended this idea but used thermal imaging to identify changes of blood flow patterns in the face that correspond to different facial expressions. 
-
-p There are also a number of other indicators that are less visible to another person, such as physiological changes in the body that occur during emotional episodes. In [38], Mandryk et al. used physiological metrics such as galvanic skin response (GSR), respiration, electrocardiography (EKG), and electromyography of the jaw (EMG) as indicators of participants‘ affective states while playing video games. These indicators are measured through electronic sensors placed directly on the skin, face, chest, and hands of the participant.
-
-
 
 While there are various opinions on identifying emotional states, classification into discrete emotions ~\cite{dalgleish1999handbook}, or locating emotions along multiple axes ~\cite{russell1989affect, lang1995emotion}, both had limited success in using physiology to identify emotional states ~\cite{cacioppo2000psychophysiology}.
 
-Lang used a 2-D space defined by arousal and valence (pleasure) (AV space) to classify emotions ~\cite{lang1995emotion}. Valence can be described as a subjective feeling of pleasantness or unpleasantness while arousal is the subjective state feeling activated or deactivated ~\cite{barrett1998discrete}. Using an arousal-valence space to create the Affect Grid, Russell believed that arousal and valence are cognitive dimensions of individual emotion states. Affect is a broad definition that includes feelings, moods, sentiments etc. and is commonly used to define the concept of emotion ~\cite{picard2003affective}. Russell's model has two axes that might be labeled as displeasure/pleasure (horizontal axis) and low/high arousal (vertical axis) It is not easy to map affective states into distinctive emotional states, However these models can provide a mapping between predefined states and the level of arousal and valence ~\cite{zagalo2004story}, Figure ~\ref{fig:russel-av-space}.
+In this work, both the categorical and dimensional approaches are used for developed models. The model developed for capturing emotional state responses is coupled with gathered subjective emotional experiences of our participants based on a categorical approach. Using categorical approach when collecting emotional experiences subjectively is the most practical method, as it is far easier for participants to communicate in a language that they can understand (emotional categories rather than the degree of arousal or valence) to describe their emotional state best. However although we did not want to use a data collection process that require the participants to learn new terminologies and describe their emotional state with unfamiliar terms, participants have been introduced to arousal, valence and dominance concepts. Given example emotions for different levels of these variables participants described their affect state by choosing images based on these concepts. The developed model for the affect space uses the dimensional model as in Figure ~\ref{fig:russel-av-space} to provide a mapping between the original emotional categories and a dimensional space. These models are further elaborated in Chapter ~\ref{chap:impl}.
 
+Both mentioned models for identifying emotions convey some practical issues in emotion measurement. In a HCI context, the stimuli for potential emotions may vary less than in human-human interaction (e.g., participant verbal expressions and body language) ~\cite{zhang2010service} and also the combination of evoked emotions ~\cite{peter2006emotion}. However with help of physiological signals and the fuzzy logic in the model we are going to use, such issues with our dimensional emotion models would be minimized. Though it is anticipated to observe different range of evoked emotions while interacting with play technologies compared to interacting with other humans in daily life. ~\cite{zhang2010service}. Our dimensional emotion models also suffers some other problems. One problems is that arousal and valence are not independent and one can impact the other ~\cite{mandryk2007fuzzy}. Continuously capturing emotional experiences in this applied setting is of its other hallmarks. Subjective measures based on dimensional emotion theory, such as the Affect Grid ~\cite{russell1989affect} and the Self-Assessment Manikin ~\cite{bradley1994measuring}, allow for quick assessments of user emotional experiences but they may aggregate responses over the course of many events ~\cite{zhang2010service}. This work uses Mandryk et al. version of AV space ~\cite{mandryk2007fuzzy}.
 
-Both mentioned models for identifying emotions convey some practical issues in emotion measurement. In a HCI context, the stimuli for potential emotions may vary less than in human-human interaction (e.g., participant verbal expressions and body language) ~\cite{zhang2010service} and also the combination of evoked emotions ~\cite{peter2006emotion}. However with help of physiological signals and the fuzzy logic in the model we are going to use, such issues with our dimentional emotion models would be minimized. Though it is anticipated to observe different range of evoked emotions while interacting with play technologies compared to interacting with other humans in daily life. ~\cite{zhang2010service}. However our dimensional emotion models suffers some other problems. One problems is that arousal and valence are not independent and one can impact the other ~\cite{mandryk2007fuzzy}. Continuously capturing emotional experiences in this applied setting is of its other hallmarks. Subjective measures based on dimensional emotion theory, such as the Affect Grid ~\cite{russell1989affect} and the Self-Assessment Manikin ~\cite{bradley1994measuring}, allow for quick assessments of user emotional experiences but they may aggregate responses over the course of many events ~\cite{zhang2010service}. This work uses Mandryk et al. version of AV space ~\cite{mandryk2007fuzzy}.
+There are many visible features that can be observed and measured in our everyday interactions to be considered as emotional indicators. Many different emotional indicators that have been studied to determine affect include facial expressions, gestures, postures, language, pressure, and pupil dilation ~\cite{picard2003affective}. Facial expressions for example can help us to figure out whether someone is distracted, frustrated or happy. Researchers have used many sophisticated face-tracking software to analyze facial expressions in order to find out emotional state of the user ~\cite{partala2006real, sebe2006emotion}. Some researches have extended this work by identifying facial points that undergo significant thermal changes with a change in expression and resulted it as a person-independent classification to do affect interpretation using infrared measurement of facial skin temperature variations ~\cite{khan2006automated}. Other recent works has pushed the borders even further by using observable facial features that are only visible to machines. Work by Takano et al has shown how to measure heart rate based on a partial average image brightness of the subject's skin using consecutively captured time-lapsed images ~\cite{takano2007heart}.
 
-Using emotional responses to increase the level of users interaction with a real-time play technology requires an effective technique to identifying specific emotion states within an emotional space. Major existing emotion models in the psychology literature includes: basic emotion theory ~\cite{ekman1992argument, ekman1992there} , dimensional emotion theory ~\cite{lang1995emotion, russell1980circumplex} and models from appraisal theory (e.g.,~\cite{roseman2001model}) ~\cite{zhang2010service}
-
+Many physiological changes in the body occurring during an emotional episode is not visible to another person. Many researchers have considered using physiological data to identify emotional states. It was first speculated by William James to use patterns of physiological responses to recognize emotion ~\cite{cacioppo2000psychophysiology}. Although this approach does not consider the individual's psyche and mind state to identify emotions but many evidences suggest that physiological data sources can differentiate among some emotions ~\cite{ekman1983autonomic}. Picard et al. performed a feature-based recognition of eight emotional states from GSR, EMG of the jaw, BVP and respiration over multiple days ~\cite{picard2001toward}. Their work presents and compares multiple algorithms for feature-based recognition of emotional states partially corrected for day-to-day differences and provides an 81\% accuracy on recognizing eight emotional states. Mandryk et al. shown how to measure and use physiological metrics such as galvanic skin response (GSR), respiration, electrocardiography (EKG), and electromyography of the jaw (EMG) as indicators of participants' affective states while playing video games ~\cite{mandryk2007fuzzy}.
 
 \section{Measuring Affect}
 %%% Talk about various sensors and their attributes, in particular the GSR sensor
@@ -175,6 +167,26 @@ p Some physiological approaches to detecting emotional states are less obtrusive
 
 \section{The Concept of Flow in Video Games}
 
+% TODO:paraphrase (Flow in Games - And Everything Else.pdf)
+In the mid-1970s, in an attempt to explain hap- piness, Mihaly Csikszentmihalyi, a professor of psy- chology at the Claremont Graduate University, Claremont, CA, introduced the concept of Flow, which has since become fundamental to the field of positive psychology, including the study, according to Wikipedia, of “happiness, creativity, subjective well-being, and fun.” Flow represents the feeling of complete and energized focus in an activity, with a high level of enjoyment and fulfillment [2]. During the Flow experience, we lose track of time and worries. Indeed, our level of focus maximizes our performance in and pleasurable feelings from the activity.Flow is also called the optimal experi- ence, or being in “the Zone.” Though often associ- ated with professional athletes and artists, it is a feeling shared by every human being. Recall being so engaged in something that you forget to eat or sleep. What made you feel that way? Csikszentmihalyi’s research and personal observa- tions identified eight major components of Flow: 
+ A challenging activity requiring skill;
+ A merging of action and awareness;
+ Clear goals;
+ Direct, immediate feedback;
+ Concentration on the task at hand; 
+ A sense of control;
+ A loss of self-consciousness; and
+ An altered sense of time. 
+
+ Not all of them are needed, however, for an activity or technology to give users the experience of Flow [1]. Does your work or hobby reflect them? Do you have fun doing it? Flow can emerge from any kind of activity, whether it’s a five-minute pinball game or a 10-year research project. A life that would be con- sidered happy is usually bundled with various long- and short-term Flow experiences, from career and family to daily entertainment like TV, movies, and video games. 
+
+\img
+{Flow in Games}
+{flow ...}
+{flow-in-games.pdf}
+{flow-in-games}
+% TODO:paraphrase (Flow in Games - And Everything Else.pdf)
+
 \subsection{Challenge vs. Skill}
 
 \img
@@ -188,7 +200,7 @@ p Some physiological approaches to detecting emotional states are less obtrusive
 %%% the importance of being challenged in play technologies
 %%% and its effect on arousal level
 
-%% olesen2008real
+%% TODO:paraphrase (olesen2008real)
 Computer game balance (or difficulty adjustment) is a
 crucial aspect of commercial game development. Currently,
 this is achieved either by predefined levels of game challenge
@@ -202,7 +214,7 @@ non-player characters (NPCs). Furthermore, human players
 enhance their skills while playing a game which necessitates
 an adaptive mechanism that covers the player’s need for more
 challenging NPCs during play (i.e. in real-time).
-%% olesen2008real
+%% TODO:paraphrase (olesen2008real)
 
 %% TODO:paraphrase
 For creating entertaining computer games1, gameplay is considered to be of key im- portance ([1], [2]). In absence of a broadly accepted definition of gameplay, we focus here on one frequently mentioned element of it, which is challenge. The process of optimizing a game’s challenge is referred to as game balancing or difficulty scaling. That is, changing parameters in order to avoid that the player gets frustrated because the game is too hard, or gets bored because the game is too easy [3]. In this study, we have investigated the relations between a game's difficulty level and the interplay between the emotions boredom, frustration and enjoyment (Fig. 1-left panel). These 
@@ -224,7 +236,7 @@ accordingly in real-time. This all is done to create the optimal experience (whi
 
 %%% adaptive play technologies critique existing systems (easy medium hard system), ideas
 %%% , problems and challenges, works has been done, goals for this study and future works.
-%%% adapting play technologies by chaning Player, NPC, Environment parameters.
+%%% adapting play technologies by changing Player, NPC, Environment parameters.
 %%% getting challenged and physiological signals, the importance of GSR
 
 %% TODO:paraphrase
@@ -266,6 +278,10 @@ and other major types of entertainment is what makes them exceptional
 \subsection{Facial Electromyography}
 
 \section{Real-Time Affect Engine}
+
+Using emotional responses to increase the level of users interaction with a real-time play technology requires an effective technique to identifying specific emotion states within an emotional space. Major existing emotion models in the psychology literature includes: basic emotion theory ~\cite{ekman1992argument, ekman1992there} , dimensional emotion theory ~\cite{lang1995emotion, russell1980circumplex} and models from appraisal theory (e.g.,~\cite{roseman2001model}) ~\cite{zhang2010service}
+
+
 \subsection{Fuzzy Logic for Space Transformation}
 \subsection{Physiological Signals to Arousal and Valence}
 
@@ -484,14 +500,16 @@ Environment modes
 \uofsappendix
 \chapter{Transforming physiological variables into arousal-valence space} \label{app:phys-to-av}    \input{content/app-phys-to-av.tex}
 \chapter{Transforming arousal-valence space into emotional states}        \label{app:av-to-emotion} \input{content/app-av-to-emotion.tex}
-\chapter{Demographics Questionnaire}                                      \label{app:q-dmg}         \box{\includegraphics[page=1]{content/q-dmg.pdf}}
-                                                                                                    \includepdf[pages={2}]{content/q-dmg.pdf}
-                                                                                                    \box{\includegraphics[page=3]{content/q-dmg.pdf}}
-\chapter{Condition Questionnaire}                                         \label{app:q-cnd}         \box{\includegraphics[page=1]{content/q-cnd.pdf}}
-\chapter{Self-Assessment-Manikin Arousal Scales Questionnaire}            \label{app:q-sam}         \box{\includegraphics[page=1]{content/q-sam.pdf}}
-\chapter{Intrinsic Motivation Inventory Questionnaire}                    \label{app:q-ini}         \box{\includegraphics[page=1]{content/q-imi.pdf}}
-\chapter{Player Experience of Need Satisfaction Questionnaire}            \label{app:q-pens}        \box{\includegraphics[page=1]{content/q-pens.pdf}}
-\chapter{Game Engagement Questionnaire}                                   \label{app:q-geq}         \box{\includegraphics[page=1]{content/q-geq.pdf}}
+\chapter{Consent Form}                                                    \label{app:consent}       \noindent\makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{content/consent-form.pdf}}
+\chapter{Demographics Questionnaire}                                      \label{app:q-dmg}         \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,pages={1}]{content/q-dmg.pdf}}
+                                                                                                    \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,page=2]{content/q-dmg.pdf}}
+                                                                                                    \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,page=2]{content/q-dmg.pdf}}
+                                                                                                    \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,page=3]{content/q-dmg.pdf}}
+\chapter{Condition Questionnaire}                                         \label{app:q-cnd}         \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,page=1]{content/q-cnd.pdf}}
+\chapter{Self-Assessment-Manikin Arousal Scales Questionnaire}            \label{app:q-sam}         \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,page=1]{content/q-sam.pdf}}
+\chapter{Intrinsic Motivation Inventory Questionnaire}                    \label{app:q-ini}         \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,page=1]{content/q-imi.pdf}}
+\chapter{Player Experience of Need Satisfaction Questionnaire}            \label{app:q-pens}        \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,page=1]{content/q-pens.pdf}}
+\chapter{Game Engagement Questionnaire}                                   \label{app:q-geq}         \noindent\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,page=1]{content/q-geq.pdf}}
 
 %------------------------------------------------------------------------------
 
