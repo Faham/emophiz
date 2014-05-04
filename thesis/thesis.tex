@@ -153,17 +153,81 @@ There are many visible features that can be observed and measured in our everyda
 Many physiological changes in the body occurring during an emotional episode is not visible to another person. Many researchers have considered using physiological data to identify emotional states. It was first speculated by William James to use patterns of physiological responses to recognize emotion ~\cite{cacioppo2000psychophysiology}. Although this approach does not consider the individual's psyche and mind state to identify emotions but many evidences suggest that physiological data sources can differentiate among some emotions ~\cite{ekman1983autonomic}. Picard et al. performed a feature-based recognition of eight emotional states from GSR, EMG of the jaw, BVP and respiration over multiple days ~\cite{picard2001toward}. Their work presents and compares multiple algorithms for feature-based recognition of emotional states partially corrected for day-to-day differences and provides an 81\% accuracy on recognizing eight emotional states. Mandryk et al. shown how to measure and use physiological metrics such as galvanic skin response (GSR), respiration, electrocardiography (EKG), and electromyography of the jaw (EMG) as indicators of participants' affective states while playing video games ~\cite{mandryk2007fuzzy}.
 
 \section{Measuring Affect}
-%%% Talk about various sensors and their attributes, in particular the GSR sensor
-%%% and how it can be used to detect Arousal using the fuzzy logic
+When evaluating affective interfaces and interactions in HCI, one of the most important and primary challenges is to detect affect state of the user. measuring affect can be addressed under different titles such as sensing, detection or recognition. However we chose to use `measurement' to signify all these different expressions. Classically there are two major approaches for affect measurement: physiological measures and self-report. In the following a brief description of self-report approach continues with a look into today most popular physiological measures that are used in this work.
 
-p EKG measures the electrical activity of the heart which is measured on the surface of the skin using electrodes. These electrodes are commonly placed on the chest, forearm, or legs and are applied with conductive gels on the bare skin of the person being examined. The area where the electrodes are placed must be free of hair so shaving these regions may be necessary to prevent interference with the sensors [50].  
+\subsection{Self-Report}
+Self-report measures is to figure out the emotional state of an individual by directly questioning the individual. This is usually done through a familiar language and vocabulary, or sometimes using images that carry a common meaning within different languages and cultures. This is in fact trying to find out about an individual's emotional state through his or her verbal descriptions, rating scales, standardized checklists, questionnaires, semantic graphical differentials and projective methods. Self-report is maybe the simplest and easiest way too approach the issue of affect measurement, and it suffers some major weaknesses. Criticisms of self-report methods include the possibility that they draw attention to what the experimenter is trying to measure, that they fail to measure mild (low intensity) emotions, and that they are not construct valid ~\cite{isen2007some}.
 
-p Respiration measures the rate or volume of air exchange in the lungs. Although accurate results can be obtained by measuring gas exchange, the apparatus that is required (a face mask) prevents the user from speaking and requires them to remain stationary during the measurement process. Alternatively, measuring chest cavity expansion can also be used for these metrics using less obtrusive sensors (e.g. stretch sensor around the chest of the participant) [50].  
+\subsubsection{Player Experience of Need Satisfaction}
+%%PENS_Sept07.pdf
+p In its Player Experience of Need Satisfaction model (PENS), Immersyve brings an applied theory of player motivation that meaningfully contributes to developers’ understanding of what fundamentally satisfies players and provides a practical testing methodology and analytic approach with proven value. The PENS outlines three  intrinsic psychological needs - those of competence, autonomy, and relatedness - that numerous data  demonstrate are at the heart of the player's fun, enjoyment, and valuing of games. By collecting data on how  these needs are being satisfied, the PENS model can strongly and significantly predict positive experiential and  commercial outcomes, in many cases much more strongly than more traditional measures of fun and  enjoyment. The PENS model has repeatedly demonstrated predictive value regardless of genre, platform, or even the individual preferences of players ~\cite{rigby2007pens}.
 
-p The major problem with the physiological approaches to measuring affect is the intrusive nature of the technology. Affixing sensors to users‘ skin would not be realistic in a real-world context (e.g. casual interactions with mobile phones). Sensors take time to attach to the user, conductive gels might be used, shaving may be necessary, and the sensors can be sensitive to movement and could fall off with activity. Furthermore, the presence and constant reminder of the sensors may alter the emotional state that the user would have been in, if the sensors were not present. 
+\subsubsection{Game Engagement Questionnaire}
+p 
 
-p Some physiological approaches to detecting emotional states are less obtrusive because they do not require physical contact with the participant. For example, thermal cameras have been leveraged to identify increased blood flow in particular regions of the face when the user is experiencing emotional states such as stress [46]. Although this type of technology is not as obtrusive as some of the other physiological approaches (such as GSR), the main drawback is that the approach requires the use of expensive technology (a thermal camera) that is not widely used in typical computer settings such as the home or office. This is also typical of the other physiological sensors previously mentioned (e.g. GSR) because they require specialized equipment that can be expensive, which limits the applicability of widespread adoption of this approach. 
+\subsubsection{Self-Assessment-Manikin Arousal Scales}
+The self-assessment manikin (sam) ~\cite{lang1985cognitive} presents a promising solution to the problems that have been associated with measuring emotional response in Mehrabanian and Russell's three PAD dimensions. SAM takes a visual approach to design an alternative to the sometimes-combersome verbal self-report measures ~\cite{lang1985cognitive}.
 
+\img
+{SAM The Self-Assessment Manikin}
+{The Self-Assessment Manikin}
+{sam-russell.png}
+{sam-russell}
+
+SAM depicts each PAD dimension with a graphic charater arrayed along a continuous nine-point scale. For please, SAM ranges from a sm
+\subsection{Physiological Measures}
+
+%%Measuring-affect-in-HCI.pdf
+p Physiological measures involve looking into such signals as facial expressions, vocal tone, skin conductance, heart rate, blood pressure, respiratio n, pupillary dilation, electroencephalography (EEG) or muscle action, to determine the intensity and qu ality of an individual‘s internal affective states. Concerns with physiological measures involve the difficulties relating to (1) setup, invasiveness, and analysis and (2) the association of specific physical responses with a particular type of emotion because of individual variability [4].
+
+\subsubsection{Galvanic Skin Response}
+Skin conductance, also known as galvanic skin response (GSR), is a method of investigating electrical conductance of the skin. This feature varies depending on the moisture of the skin by sweat. The fact that sweat is controlled by the sympathetic nervous system ~\cite{seiger2002essentials} makes this measure quite helpful to investigate affect state of an individual. In other words, skin conductance can be used as an indication of physiological arousal. The sweat gland activity in certain areas of the skin such as finger tips is largely dependent to sympathetic branch of the autonomic nervous system; And for example it would be increased if the person is highly aroused and therefore, skin conductance would change. Thus, skin conductance is a good measure of emotional and sympathetic responses ~\cite{carlson2013physiology}.
+
+Galvanic skin response can be measured by looking at changes of galvanic skin resistance and galvanic skin potential. Galvanic skin resistance refers to measured electrical resistance between two electrodes while a weak current is passing through them. These electrodes are usually placed on certain areas of skin for about an inch apart. Galvanic skin potential is the measured voltage between two electrodes while no external current being applied. This potential is measured by connecting electrodes to voltage amplifiers. The recorded resistance and voltage varies dependent on the emotional state of the subject ~\cite{pflanzer2013galvanic}.
+
+\img
+{Galvanic Skin Response (GSR) Sensor}
+{Galvanic Skin Response (GSR) Sensor}
+{gsr-sensor.png}
+{gsr-sensor}
+
+The relation between sympathetic activity and emotional arousal due to a stimuli can be easily detected through the response of the skin. The subtle changes in skin conductance, when the device is correctly calibrated, can be measured and rationalized. Though identification of particular specifications of the emotional episode merely by looking at these skin conductance changes seems to be impossible ~\cite{pflanzer2013galvanic}.
+
+\subsubsection{Heart Rate}
+Easiest way to measure heart rate, is by finding the pulse of the heart by looking at any region of body where the artery's pulsation is easily detectable at the surface of skin; By pressuring that region with index and middle fingers against the underlying structures such as bone the pulse of the heart can be detected. The neck under the corner of the jaw, the wrist and the upper arm are usually best places to find the blood vessels close to the skin's surface and therefore easily feel the pulse of the heart when blood is pumped through the body.
+
+%%http://en.wikipedia.org/wiki/Heart_rate
+p A more precise method of determining pulse involves the use of an electrocardiograph, or ECG (also abbreviated EKG). Continuous electrocardiograph monitoring of the heart is routinely done in many clinical settings, especially in critical care medicine. On an ECG the heart rate is measured using the R wave to R wave interval (RR interval). Additionally pulse oximeters measure heart rate by pulse detection.
+
+p EKG measures the electrical activity of the heart which is measured on the surface of the skin using electrodes. These electrodes are commonly placed on the chest, forearm, or legs and are applied with conductive gels on the bare skin of the person being examined. The area where the electrodes are placed must be free of hair so shaving these regions may be necessary to prevent interference with the sensors [50].
+
+%%http://en.wikipedia.org/wiki/Heart_rate
+p BVP, Blood Volume Pulse sensor or photoplethysmograph, bounces infra-red light against a skin surface and measures the amount of reflected light. This amount will vary with the amount of blood present in the skin. At each heart beat (pulse), there is more blood in the skin - blood reflects red light and absorbs other colors - and more light is reflected. Between pulses, the amount of blood decreases and more red light is absorbed. The BVP signal is a relative measure so it does not have a standard unit. From the BVP signal, the software can usually calculate heart rate and inter-beat interval. The amplitude of the BVP deviation can also be a useful measure. Heart Rate Variability can also be calculated with the BVP
+
+\img
+{Blood Volume Pulse (BVP) Sensor}
+{Blood Volume Pulse (BVP) Sensor}
+{bvp-sensor.png}
+{bvp-sensor}
+
+%%TODO: talk a little bit about Heart Rate Variability (HRV)
+
+\subsubsection{Facial Electromyography}
+%%TODO: talk about facial EMG
+
+
+One of the major problems with using physiological devices to measure affect is the intrusive nature of the technology. Although physiological sensors can provide lots of useful data about the user in the course of interaction, but  it is usually quite limiting to use sensors in many ways. Sensors usually need special attention in terms of their placement and connection to the target, particularly because the target is sometimes moving. Some sensors are inherently sensitive to movement and might generate a large amount of noisy signals which needs to be detected and filtered out by the software analyzing the signal. On the other hand some of the sensors such as the respiration sensor can hardly be designed for realistic casual interactions. Furthermore, the presence of an unusual device attached to the user might itself has some influence on user's emotional experience.
+
+There are some physiological approaches that let us detect affect states with less limitations. Wireless and wearable devices or even devices with no need to have any contact with the participants such as thermal cameras to identify increased blood flow in particular regions of the skin are of this category ~\cite{puri2005stresscam}. However in the case of thermal cameras, this technology although not as obtrusive as other physiological approaches such as GSR sensors, but still requires a quite expensive device which is not usually found in typical computer settings. This main drawback of expensive technologies is still typical of many other physiological sensors such as GSR sensors. The requirement for such expensive specialized equipment limits the applicability of widespread adoption of this sensors. 
+
+%------------------------------------------------------------------------------
+
+\chapter{Customizing Play Experience in Real-Time}
+\label{chap:custmz}
+
+% 10 to 15 pages
+% - talk about various game design elements, player, npcs and environment
+% and their connection to the play experience
 
 \section{The Concept of Flow in Video Games}
 
@@ -195,26 +259,26 @@ In the mid-1970s, in an attempt to explain hap- piness, Mihaly Csikszentmihalyi,
 {challenge-vs-skill.png}
 {challenge-vs-skill}
 
-\section{Emotionally Adaptive Games}
-%%% talk about play technologies and why do people play them
-%%% the importance of being challenged in play technologies
-%%% and its effect on arousal level
+
+\section{Different Mechanisms in Game Balancing}
 
 %% TODO:paraphrase (olesen2008real)
-Computer game balance (or difficulty adjustment) is a
-crucial aspect of commercial game development. Currently,
-this is achieved either by predefined levels of game challenge
-— the player then decides which of those levels she will play
-against — or by techniques known as rubber-band artificial
-intelligence (AI) [1], mainly used in racing games. The
-first approach cannot incorporate the needs of all potential
-players of the game while the latter approach generates
-predictable behaviors which reduce the believability of the
-non-player characters (NPCs). Furthermore, human players
-enhance their skills while playing a game which necessitates
-an adaptive mechanism that covers the player’s need for more
-challenging NPCs during play (i.e. in real-time).
+Computer game balance (or difficulty adjustment) is a crucial aspect of commercial game development. Currently, this is achieved either by predefined levels of game challenge — the player then decides which of those levels she will play against — or by techniques known as rubber-band artificial intelligence (AI) [1], mainly used in racing games. The first approach cannot incorporate the needs of all potential players of the game while the latter approach generates predictable behaviors which reduce the believability of the non-player characters (NPCs). Furthermore, human players enhance their skills while playing a game which necessitates an adaptive mechanism that covers the player’s need for more challenging NPCs during play (i.e. in real-time).
 %% TODO:paraphrase (olesen2008real)
+
+%%TODO:paraphrase(Time Balancing of Computer Games with Adaptive Time-Variant Minigames)
+A game balancing approach can be considered from two different aspects: the degree of adaptability of the overall approach of game balancing and actual game balancing algorithms employed to achieve the approach. Static game balancing and dynamic game balancing are the two primary approaches for the adaptability, which are considered here. Many game balancing algorithms are possible once an approach has been determined, and key implementations are discussed here.  
+
+\subsection{Dynamic Game Balancing vs. Static Game Balancing }
+A primary issue in competitive games is that the different teams or players should have equal chances to win the game based on rules and starting positions [20]. Balancing fairness can involve manipulations of different game elements – for example, the capabilities and initial resources allocated to player types such as Orcs and Humans in WarCraft [12]. This type of balancing (called ‘static balancing’) is often carried out through repeated playtesting of the game mechanics and parameters [34], such as tuning the capabilities of individual weapons or units [20].  The idea of balancing a game dynamically during game play is not new [36]. Dynamic balancing, considers a fully continuous spectrum of play, from the starting point of the game to its end. Dynamic balancing differs from static balancing because the interaction of the player or players with the game should be considered, and different units and parameters in the game configuration should be adapted based on the current state of the game [37] rather than at the start of play based on player models. Variable frequency of enemies in Diablo 3 and variable power of enemies in Assassin’s Creed 4: Black Flag [38] are examples of dynamic balancing during game play. 
+
+
+\subsection{Game Balancing using Artificial Intelligence}
+High quality game AI has become an important selling point of computer games in recent years [40]. However, game players often still prefer to play against human controlled opponents (via a network) rather than computer controlled ones [41]. Olesen has explored neuro-evolution methodologies to generate intelligent opponents in Real-Time Strategy (RTS) games and tried to adapt the challenge generated by the game opponents to match the skill of a player in real-time [42]. Several previous approaches focused on the game’s AI and probabilistic methods to address dynamic balancing. In Knock’Em [43], reinforcement learning techniques has been employed to build intelligent agents that adapt their behavior in order to provide dynamic game balancing. Hunicke [26] has explored a computational and design requirements for a dynamic difficulty adjustment system using probabilistic methods based on Half Life game engine [44]. 
+%%TODO:paraphrase(Time Balancing of Computer Games with Adaptive Time-Variant Minigames)
+
+
+\section{Emotionally Adaptive Games}
 
 %% TODO:paraphrase
 For creating entertaining computer games1, gameplay is considered to be of key im- portance ([1], [2]). In absence of a broadly accepted definition of gameplay, we focus here on one frequently mentioned element of it, which is challenge. The process of optimizing a game’s challenge is referred to as game balancing or difficulty scaling. That is, changing parameters in order to avoid that the player gets frustrated because the game is too hard, or gets bored because the game is too easy [3]. In this study, we have investigated the relations between a game's difficulty level and the interplay between the emotions boredom, frustration and enjoyment (Fig. 1-left panel). These 
@@ -255,15 +319,6 @@ This interactive experience in contrast to cinema
 and other major types of entertainment is what makes them exceptional
 
 
-%------------------------------------------------------------------------------
-
-\chapter{Customizing Play Experience in Real-Time}
-\label{chap:custmz}
-
-% 10 to 15 pages
-% - talk about various game design elements, player, npcs and environment
-% and their connection to the play experience
-
 \section{Adaptive Game Design}
 \subsection{Player}
 % give examples of god of war, kratus rage mode with some photo
@@ -272,10 +327,6 @@ and other major types of entertainment is what makes them exceptional
 \subsection{Environment}
 % give examples of chaning background like music, lighting etc with some photo.
 
-\section{Phisiological Signals}
-\subsection{Heart Rate}
-\subsection{Galvanic Skin Response}
-\subsection{Facial Electromyography}
 
 \section{Real-Time Affect Engine}
 

@@ -39,7 +39,7 @@
 			"file": "/D/desktop/temp/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 2487,
+				"buffer_size": 2840,
 				"line_ending": "Windows"
 			}
 		},
@@ -55,7 +55,7 @@
 			"file": "content/bibliography.bib",
 			"settings":
 			{
-				"buffer_size": 9646,
+				"buffer_size": 12107,
 				"line_ending": "Unix"
 			}
 		},
@@ -63,32 +63,53 @@
 			"file": "thesis.tex",
 			"settings":
 			{
-				"buffer_size": 53593,
+				"buffer_size": 65567,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "content/import/import.bib",
+			"file": "/C/Users/Faham/Desktop/quran-miracles.txt",
 			"settings":
 			{
-				"buffer_size": 2487,
-				"line_ending": "Windows"
+				"buffer_size": 1103,
+				"line_ending": "Windows",
+				"name": "-----------------------------------------------"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 81.0,
+		"height": 173.0,
 		"selected_items":
 		[
 			[
-				"insta",
-				"Package Control: Install Package"
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"package",
+				"Package Control: Enable Package"
 			],
 			[
 				"remove",
 				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
 			],
 			[
 				"instal",
@@ -131,20 +152,36 @@
 	},
 	"file_history":
 	[
-		"/D/projects/emophiz/thesis/content/app-av-to-emotion.tex",
+		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/ShadowTexture.vertexshader",
+		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/ShadowTexture.fragmentshader",
+		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Shadow.fragmentshader",
+		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Shadow.vertexshader",
+		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Texture.fragmentshader",
+		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Texture.vertexshader",
+		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Color.fragmentshader",
+		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Color.vertexshader",
+		"/D/desktop/temp/cmpt485/cmpt485/part4/ColorFragmentShader.fragmentshader",
+		"/D/desktop/temp/cmpt485/cmpt485/part4/TransformVertexShader.vertexshader",
+		"/D/projects/emophiz/thesis/-10% - lots of linkage error due to including cpp",
+		"/C/Users/Faham/Downloads/scholar.enw",
+		"/D/documents/private/docs/decrypt.sh",
 		"/D/documents/faham/faham-resume-2013.txt",
+		"/C/Users/Faham/AppData/Local/Temp/7zOB0EA.tmp/quranic-corpus-morphology-0.4.txt",
+		"/D/desktop/temp/tax-review-docs/response.txt",
+		"/D/desktop/temp/tax-review-docs/response2.txt",
+		"/D/projects/emophiz/thesis/content/import/import.bib",
+		"/D/documents/faham/invitation-letter-mohammad-negini.tex",
 		"/D/documents/faham/cover-letter.tex",
+		"/D/projects/emophiz/thesis/content/app-av-to-emotion.tex",
 		"/D/projects/emophiz/thesis/related-works/olesen2008real.tex",
 		"/D/projects/emophiz/thesis/content/import/olesen2008real.tex",
 		"/D/projects/emophiz/thesis/content/import/fairclough2011brain.tex",
 		"/D/projects/emophiz/thesis/content/abbreviations.tex",
 		"/D/projects/emophiz/thesis/content/import/lazzaro2004we.tex",
 		"/D/projects/emophiz/thesis/content/import/cherney2008mom.tex",
-		"/D/projects/emophiz/thesis/content/import/import.bib",
 		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/LaTeX Word Count/LaTeXWordCount.sublime-settings",
 		"/C/Users/Faham/Desktop/quranic-topics.txt",
 		"/C/Users/Faham/Desktop/quranic-topics",
-		"/C/Users/Faham/Downloads/scholar.enw",
 		"/D/documents/private/docs/new/faham-tax-2013-netfile.tax",
 		"/D/projects/emophiz/thesis/thesis.tex",
 		"/D/projects/emophiz/thesis/content/ch06-discussion.tex",
@@ -242,27 +279,11 @@
 		"/D/projects/mycms/dataobjects/Mycms_people.php",
 		"/D/projects/mycms/dataobjects/Mycms_image_publication.php",
 		"/D/projects/mycms/dataobjects/Mycms_publication_video.php",
-		"/D/projects/mycms/dataobjects/Mycms_publication_image.php",
-		"/D/projects/mycms/dataobjects/schema.ini",
-		"/C/pear/pear/DB/DataObject/create.ini",
-		"/C/pear/tmp/mycms/DataObjects/Mycms_doc_publication.php",
-		"/C/pear/tmp/mycms/DataObjects/Mycms_image_publication.php",
-		"/C/tmp/mycms/DataObjects/mycms.ini",
-		"/C/tmp/mycms/DataObjects/Mycms_doc.php",
-		"/C/tmp/mycms/DataObjects/Mycms_doc_publication.php",
-		"/C/tmp/mycms/DataObjects/Mycms_image.php",
-		"/C/pear/pear/DB/DataObject/Error.php",
-		"/C/pear/pear/DB/DataObject/createTables.php",
-		"/C/pear/pear/DB/DataObject.php",
-		"/C/wamp/bin/apache/Apache2.4.4/bin/php.ini",
-		"/C/pear/PEAR/DB/DataObject/create.ini",
-		"/D/projects/mycms/create.ini",
-		"/D/projects/mycms/schema.ini",
-		"/D/projects/mycms/pear/INSTALL"
+		"/D/projects/mycms/dataobjects/Mycms_publication_image.php"
 	],
 	"find":
 	{
-		"height": 54.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -279,6 +300,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gsr-sensor",
+			"respiration",
+			"raspiration",
+			"Facial Electromyography",
+			"bateman2011target",
+			"\\box",
+			"picard",
+			"ekman",
+			"picard",
+			"Picard",
+			"picard",
+			"Picard",
+			"picard",
+			"Picard",
+			"picard",
+			"Picard",
+			"feature-based",
+			"recognition of eight",
+			"Flow in Games - And Everything Else.pdf",
+			"olesen2008real",
+			" • ",
+			"emotional estate",
 			"_p ",
 			"sensor",
 			"to top\n",
@@ -384,29 +427,7 @@
 			"else",
 			"hci_",
 			"page",
-			"PAGE",
-			"page",
-			"pages",
-			"view",
-			"\n#-------------------------------------------------------------------------------",
-			"\n@",
-			"#A",
-			"#Ā",
-			"      ",
-			"<hr>",
-			"   ",
-			"  }",
-			"; \n",
-			"{\n",
-			"*/\n",
-			";\n",
-			"   ",
-			"	",
-			"title",
-			"get_cities",
-			"title",
-			"{$weburl}",
-			"	"
+			"PAGE"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -474,15 +495,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2487,
+						"buffer_size": 2840,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2487,
-								2487
+								2840,
+								2840
 							]
 						],
 						"settings":
@@ -493,7 +514,7 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 281.0,
+						"translation.y": 585.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -536,15 +557,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9646,
+						"buffer_size": 12107,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4799,
-								4799
+								12107,
+								12107
 							]
 						],
 						"settings":
@@ -557,7 +578,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 9476.0,
+						"translation.y": 1440.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -569,15 +590,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 53593,
+						"buffer_size": 65567,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12499,
-								12499
+								22227,
+								22227
 							]
 						],
 						"settings":
@@ -590,7 +611,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3734.0,
+						"translation.y": 5962.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -598,29 +619,26 @@
 				},
 				{
 					"buffer": 4,
-					"file": "content/import/import.bib",
+					"file": "/C/Users/Faham/Desktop/quran-miracles.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2487,
+						"buffer_size": 1103,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2487,
-								2487
+								1055,
+								1055
 							]
 						],
 						"settings":
 						{
+							"auto_name": "-----------------------------------------------",
 							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
