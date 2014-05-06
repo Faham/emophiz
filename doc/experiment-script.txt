@@ -2,7 +2,7 @@ Experiment Script - BioFeedback FPS by Faham Negini
 
 <Participants arrive>
 	- Greetings
-<Participants sits>
+<Participants seats>
 	- Consent form and a short description of the procedure and questionnaires
 	  (make sure they put their email address)
 	- Ask him to turn his cell phone off

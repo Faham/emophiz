@@ -55,7 +55,7 @@
 			"file": "content/bibliography.bib",
 			"settings":
 			{
-				"buffer_size": 12107,
+				"buffer_size": 13069,
 				"line_ending": "Unix"
 			}
 		},
@@ -63,41 +63,36 @@
 			"file": "thesis.tex",
 			"settings":
 			{
-				"buffer_size": 65567,
+				"buffer_size": 67779,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Desktop/quran-miracles.txt",
-			"settings":
-			{
-				"buffer_size": 1103,
-				"line_ending": "Windows",
-				"name": "-----------------------------------------------"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 173.0,
+		"height": 219.0,
 		"selected_items":
 		[
 			[
-				"enable",
+				"enabl",
 				"Package Control: Enable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
 			],
 			[
 				"disab",
 				"Package Control: Disable Package"
 			],
 			[
-				"enab",
+				"enable",
 				"Package Control: Enable Package"
 			],
 			[
-				"disa",
-				"Package Control: Disable Package"
+				"enab",
+				"Package Control: Enable Package"
 			],
 			[
 				"package",
@@ -152,6 +147,15 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Faham/Desktop/quran-miracles.txt",
+		"/C/Users/Faham/Desktop/math-in-quran.txt",
+		"/C/Users/Faham/Downloads/quran-simple-clean.txt",
+		"/C/Users/Faham/Desktop/day-in-quran.txt",
+		"/C/Users/Faham/Desktop/day-in-quran-2.txt",
+		"/C/Users/Faham/Downloads/quran-simple-clean2.txt",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Faham/Downloads/quran-simple.txt",
 		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/ShadowTexture.vertexshader",
 		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/ShadowTexture.fragmentshader",
 		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Shadow.fragmentshader",
@@ -270,16 +274,7 @@
 		"/D/projects/mycms/database.sql",
 		"/D/projects/mycms/classes/dataobjects/create.ini",
 		"/D/projects/mycms/classes/dataobjects/create.sh",
-		"/C/pear/tmp/mycms/DataObjects/Mycms_doc.php",
-		"/C/pear/tmp/mycms/DataObjects/mycms.ini",
-		"/C/pear/pear/DB/DataObject/Generator.php",
-		"/C/pear/pear/PEAR.php",
-		"/D/projects/mycms/dataobjects/create.ini",
-		"/D/projects/mycms/dataobjects/mycms.ini",
-		"/D/projects/mycms/dataobjects/Mycms_people.php",
-		"/D/projects/mycms/dataobjects/Mycms_image_publication.php",
-		"/D/projects/mycms/dataobjects/Mycms_publication_video.php",
-		"/D/projects/mycms/dataobjects/Mycms_publication_image.php"
+		"/C/pear/tmp/mycms/DataObjects/Mycms_doc.php"
 	],
 	"find":
 	{
@@ -290,6 +285,7 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"C:\\Users\\Faham\\Downloads\\quran-simple-clean.txt",
 			"D:\\projects\\mycms\\templates\\snippets",
 			"D:\\projects\\mycms",
 			"D:\\projects\\library\\lod"
@@ -300,6 +296,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"يوم",
+			" ",
+			"\\n",
+			"font",
+			" ",
+			"|",
+			"([0-9])\\|([0-9])",
+			"\n------------------------",
+			"-",
+			" ",
+			" ",
+			"–",
+			" ",
 			"gsr-sensor",
 			"respiration",
 			"raspiration",
@@ -414,27 +423,17 @@
 			"$g",
 			"error",
 			"log",
-			"getmodule",
-			"interpret_params",
-			"genlink",
-			"urlModu",
-			"preg_match",
-			"module",
-			"    \n",
-			"        \n",
-			" ",
-			"module",
-			"else",
-			"hci_",
-			"page",
-			"PAGE"
+			"getmodule"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			" \\n",
+			" ",
+			"$1:$2",
 			"%------------------------------------------------------------------------------",
 			"'",
 			"view(",
@@ -486,7 +485,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -517,7 +516,7 @@
 						"translation.y": 585.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -548,7 +547,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -557,15 +556,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12107,
+						"buffer_size": 13069,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12107,
-								12107
+								1062,
+								1062
 							]
 						],
 						"settings":
@@ -578,10 +577,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1440.0,
+						"translation.y": 570.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -590,15 +589,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 65567,
+						"buffer_size": 67779,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22227,
-								22227
+								22810,
+								22810
 							]
 						],
 						"settings":
@@ -611,37 +610,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5962.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/Users/Faham/Desktop/quran-miracles.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1103,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1055,
-								1055
-							]
-						],
-						"settings":
-						{
-							"auto_name": "-----------------------------------------------",
-							"incomplete_sync": null,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5544.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
