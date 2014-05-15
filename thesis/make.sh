@@ -9,7 +9,7 @@ rm -f $INPUT.pdf
 
 mkdir $AUXDR
 
-PDFTEX="pdflatex -quiet --include-directory=${INCDR} -aux-directory=${AUXDR} ${INPUT}.tex"
+PDFTEX="pdflatex -quiet --shell-escape --include-directory=${INCDR} -aux-directory=${AUXDR} ${INPUT}.tex"
 BIBTEX="bibtex -quiet --include-directory=${INCDR} ${AUXDR}/${INPUT}.aux"
 
 $PDFTEX

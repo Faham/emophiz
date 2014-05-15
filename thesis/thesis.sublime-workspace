@@ -39,7 +39,7 @@
 			"file": "/D/desktop/temp/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 2840,
+				"buffer_size": 3023,
 				"line_ending": "Windows"
 			}
 		},
@@ -47,7 +47,7 @@
 			"file": "content/common.tex",
 			"settings":
 			{
-				"buffer_size": 396,
+				"buffer_size": 1186,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,44 +55,64 @@
 			"file": "content/bibliography.bib",
 			"settings":
 			{
-				"buffer_size": 13069,
+				"buffer_size": 16523,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "thesis.tex",
+			"file": "content/chp-3-video-games.tex",
 			"settings":
 			{
-				"buffer_size": 67779,
-				"line_ending": "Windows"
+				"buffer_size": 36021,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 219.0,
+		"height": 196.0,
 		"selected_items":
 		[
 			[
-				"enabl",
-				"Package Control: Enable Package"
+				"rem",
+				"Package Control: Remove Package"
 			],
 			[
-				"disa",
-				"Package Control: Disable Package"
+				"instal",
+				"Package Control: Install Package"
 			],
 			[
-				"disab",
-				"Package Control: Disable Package"
+				"insta",
+				"Package Control: Install Package"
 			],
 			[
 				"enable",
 				"Package Control: Enable Package"
 			],
 			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"enabl",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
 				"enab",
 				"Package Control: Enable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
 			],
 			[
 				"package",
@@ -101,14 +121,6 @@
 			[
 				"remove",
 				"Package Control: Remove Package"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
 			],
 			[
 				"install",
@@ -147,8 +159,33 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Faham/Desktop/quran-miracles.txt",
+		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
+		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
+		"/D/projects/emophiz/thesis/content/chp-video-games.tex",
+		"/D/projects/emophiz/thesis/thesis.tex",
+		"/C/Users/Faham/Downloads/untex-1.2/Makefile",
+		"/C/Users/Faham/Downloads/untex-1.2/untex.man",
+		"/C/Users/Faham/Downloads/untex-1.2/untex.c",
+		"/D/projects/emophiz/thesis/content/common.tex",
+		"/D/projects/emophiz/thesis/make.sh",
+		"/D/projects/emophiz/thesis/content/chp-discus.tex",
+		"/D/projects/emophiz/thesis/content/abbreviations.tex",
+		"/D/projects/emophiz/thesis/content/chp-intro.tex",
+		"/D/projects/emophiz/thesis/content/chp-emotion.tex",
+		"/D/projects/emophiz/thesis/content/chp-.tex",
+		"/D/projects/emophiz/thesis/content/chp-exprm.tex",
+		"/D/projects/emophiz/thesis/content/chp-impl.tex",
+		"/D/documents/sasktel-internet-service.txt",
 		"/C/Users/Faham/Desktop/math-in-quran.txt",
+		"/C/Users/Faham/Desktop/quran-miracles.txt",
+		"/D/projects/emophiz/data/variables.txt",
+		"/D/documents/private/docs/faham-negini/passwords.txt",
+		"/D/documents/private/docs/faham-negini/passwords-2.txt",
+		"/D/documents/private/docs/faham-negini/accounts-and-passwords.txt",
+		"/D/projects/emophiz/thesis/images/needed-photos.txt",
+		"/D/projects/emophiz/doc/experiment-script.txt",
+		"/C/Users/Faham/Downloads/uofsthesis-cs/thesis_template.tex",
+		"/C/Users/Faham/Downloads/Download Document.html",
 		"/C/Users/Faham/Downloads/quran-simple-clean.txt",
 		"/C/Users/Faham/Desktop/day-in-quran.txt",
 		"/C/Users/Faham/Desktop/day-in-quran-2.txt",
@@ -180,22 +217,18 @@
 		"/D/projects/emophiz/thesis/related-works/olesen2008real.tex",
 		"/D/projects/emophiz/thesis/content/import/olesen2008real.tex",
 		"/D/projects/emophiz/thesis/content/import/fairclough2011brain.tex",
-		"/D/projects/emophiz/thesis/content/abbreviations.tex",
 		"/D/projects/emophiz/thesis/content/import/lazzaro2004we.tex",
 		"/D/projects/emophiz/thesis/content/import/cherney2008mom.tex",
 		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/LaTeX Word Count/LaTeXWordCount.sublime-settings",
 		"/C/Users/Faham/Desktop/quranic-topics.txt",
 		"/C/Users/Faham/Desktop/quranic-topics",
 		"/D/documents/private/docs/new/faham-tax-2013-netfile.tax",
-		"/D/projects/emophiz/thesis/thesis.tex",
 		"/D/projects/emophiz/thesis/content/ch06-discussion.tex",
 		"/D/projects/emophiz/thesis/content/ch05-experimentation.tex",
 		"/D/projects/emophiz/thesis/content/ch04-implementation.tex",
 		"/D/projects/emophiz/thesis/content/ch03-problem-and-solution.tex",
 		"/D/projects/emophiz/thesis/content/ch01-intro.tex",
 		"/D/projects/emophiz/thesis/content/ch02-lit-review.tex",
-		"/D/projects/emophiz/thesis/content/common.tex",
-		"/D/projects/emophiz/data/variables.txt",
 		"/D/projects/bracollage/README.md",
 		"/D/projects/emophiz/thesis/auxiliary/thesis.bbl",
 		"/C/Users/Faham/Downloads/Willball.bibtex",
@@ -253,28 +286,7 @@
 		"/D/projects/mycms/classes/dataobjects/Mycms_video_research.php",
 		"/D/projects/mycms/classes/dataobjects/Mycms_video.php",
 		"/D/projects/mycms/classes/dataobjects/Mycms_research_video.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_research_publication.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_research_people.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_research_image.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_research.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_publication_video.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_publication_research.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_publication_people.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_publication_image.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_publication_doc.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_publication.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_people_research.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_people_publication.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_people_image.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_image_research.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_image_publication.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_image_people.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_doc_publication.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_doc.php",
-		"/D/projects/mycms/database.sql",
-		"/D/projects/mycms/classes/dataobjects/create.ini",
-		"/D/projects/mycms/classes/dataobjects/create.sh",
-		"/C/pear/tmp/mycms/DataObjects/Mycms_doc.php"
+		"/D/projects/mycms/classes/dataobjects/Mycms_research_publication.php"
 	],
 	"find":
 	{
@@ -296,6 +308,86 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"difficulty level",
+			".bmp",
+			"bmp",
+			"//",
+			"`",
+			"Experiment procedure",
+			"experiment-procedure",
+			"\\specialrule{.1em}{.05em}{.05em}",
+			"	",
+			"-",
+			"maste",
+			"Master",
+			"Masters",
+			"array",
+			"content/q-",
+			"q-",
+			"input",
+			"label",
+			"input",
+			"saari2009emotionally",
+			"Apr",
+			"May",
+			"sniper",
+			"ﬂ",
+			"’",
+			"ﬁ",
+			"l",
+			"Decrease",
+			"Increase",
+			"p",
+			"^",
+			"\\\\\n",
+			"\\newline",
+			"^",
+			"subsection",
+			"subsubsection",
+			"~\\ref{",
+			"~\\ref",
+			"pdf",
+			"\\",
+			"svg",
+			" ",
+			"Rate",
+			"electrocardiograph",
+			"Electrocardiograph",
+			"Self-Report",
+			"self-report",
+			"Self-Report",
+			"subjective measures",
+			"Subjective measures",
+			"subjective measures",
+			"physiological",
+			"Physiological",
+			"physiological",
+			"Physiological",
+			"physiological",
+			"Physiological",
+			"rigby2007pens",
+			"@",
+			"}\n@",
+			"TODO",
+			" ",
+			" ",
+			"\\chapter",
+			"custmz",
+			"Customizing Play Experience in Real-Time",
+			"man-n-play",
+			"Recognizing Emotion",
+			"p ",
+			"P ",
+			"p ",
+			"~\\ref",
+			"p ",
+			"\\hlinewd{2pt}",
+			"hline",
+			"table",
+			" a",
+			"- ",
+			"bradley1994measuring",
+			"bradle",
 			"يوم",
 			" ",
 			"\\n",
@@ -343,94 +435,15 @@
 			"russelavspace",
 			"textit",
 			"_p ",
-			"\\img",
-			"fig:",
-			"russell2003core",
-			"russel",
-			"\\img",
-			"\\caption",
-			"\\img",
-			"figure",
-			"russell-av-space",
-			"caption",
-			"picard1995affective",
-			"cannon1927james",
-			"russell2003core",
-			"Core affect and the psychological construction",
-			",",
-			"forgas1995mood",
-			"%-------------------------------------------------------------------------------",
-			"\\chapter",
-			"chapter",
-			" ",
-			"%%%-----------------------------------------------------------------------------",
-			"picard2003affective",
-			"::",
-			"::gsr",
-			"ref",
-			"’",
-			"pages",
-			"pages/",
-			"pages",
-			"system",
-			"get",
-			"Query",
-			"query",
-			"Query",
-			"query",
-			"db",
-			"get(",
-			"hci",
-			"hci_",
-			"ppl",
-			"people",
-			"val",
-			"rows[$i].",
-			";\n",
-			"getmodule",
-			"val.",
-			"ppl.",
-			"time_start",
-			"error_reporting",
-			"use_only_cookies",
-			"display_errors",
-			"config",
-			"does not support",
-			"Content type people does not support",
-			"->push",
-			"/tmp",
-			"getStaticProperty",
-			"PEAR::getStaticProperty",
-			"_generateClassTable",
-			"pear",
-			"myproj",
-			"mysql_",
-			"MYSQL_",
-			"mysql_",
-			"go-pear",
-			"include_path",
-			"mycms",
-			"hci",
-			"include_path",
-			"/pear",
-			"pear",
-			";",
-			"alt+shift+t",
-			"ctrl+t",
-			"			\n",
-			"action",
-			"getmodule",
-			"$g",
-			"error",
-			"log",
-			"getmodule"
+			"\\img"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
+			"\\bhline",
 			" \\n",
 			" ",
 			"$1:$2",
@@ -485,7 +498,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -494,15 +507,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2840,
+						"buffer_size": 3023,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2840,
-								2840
+								13,
+								13
 							]
 						],
 						"settings":
@@ -513,10 +526,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 585.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -525,15 +538,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 396,
+						"buffer_size": 1186,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								155,
-								155
+								1186,
+								1186
 							]
 						],
 						"settings":
@@ -544,10 +557,10 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 566.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -556,15 +569,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13069,
+						"buffer_size": 16523,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1062,
-								1062
+								15325,
+								15325
 							]
 						],
 						"settings":
@@ -577,7 +590,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 570.0,
+						"translation.y": 9101.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -585,32 +598,30 @@
 				},
 				{
 					"buffer": 3,
-					"file": "thesis.tex",
+					"file": "content/chp-3-video-games.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 67779,
+						"buffer_size": 36021,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22810,
-								22810
+								26409,
+								26409
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
 							"remote_loading": false,
-							"spell_check": true,
 							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"word_wrap": true
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 5544.0,
+						"translation.y": 5358.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,

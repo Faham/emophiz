@@ -1,0 +1,201 @@
+% 10 to 15 pages
+% - talk about various game design elements, player, npcs and environment
+% and their connection to the play experience
+
+\section{The Concept of Flow in Video Games}
+
+% TODO:paraphrase (Flow in Games - And Everything Else.pdf)
+p In the mid-1970s, in an attempt to explain hap- piness, Mihaly Csikszentmihalyi, a professor of psy- chology at the Claremont Graduate University, Claremont, CA, introduced the concept of Flow, which has since become fundamental to the field of positive psychology, including the study, according to Wikipedia, of “happiness, creativity, subjective well-being, and fun.” Flow represents the feeling of complete and energized focus in an activity, with a high level of enjoyment and fulfillment [2]. During the Flow experience, we lose track of time and worries. Indeed, our level of focus maximizes our performance in and pleasurable feelings from the activity.Flow is also called the optimal experi- ence, or being in “the Zone.” Though often associ- ated with professional athletes and artists, it is a feeling shared by every human being. Recall being so engaged in something that you forget to eat or sleep. What made you feel that way? Csikszentmihalyi’s research and personal observa- tions identified eight major components of Flow: 
+ A challenging activity requiring skill;
+ A merging of action and awareness;
+ Clear goals;
+ Direct, immediate feedback;
+ Concentration on the task at hand; 
+ A sense of control;
+ A loss of self-consciousness; and
+ An altered sense of time. 
+
+p Not all of them are needed, however, for an activity or technology to give users the experience of Flow [1]. Does your work or hobby reflect them? Do you have fun doing it? Flow can emerge from any kind of activity, whether it’s a five-minute pinball game or a 10-year research project. A life that would be con- sidered happy is usually bundled with various long- and short-term Flow experiences, from career and family to daily entertainment like TV, movies, and video games. 
+
+\img
+{Flow in Games}
+{flow ...}
+{flow-in-games.pdf}
+{flow-in-games}
+% TODO:paraphrase (Flow in Games - And Everything Else.pdf)
+
+\subsection{Challenge vs. Skill}
+
+\img
+{Russell's arousal and valence model}
+{Mental state in terms of challenge level and skill level, according to Csikszentmihalyi's flow model ~\cite{csikszentmihalyi1997finding}}
+{challenge-vs-skill.png}
+{challenge-vs-skill}
+
+
+\section{Different Mechanisms in Game Balancing}
+
+%% TODO:paraphrase (olesen2008real)
+p Computer game balance (or difficulty adjustment) is a crucial aspect of commercial game development. Currently, this is achieved either by predefined levels of game challenge — the player then decides which of those levels she will play against — or by techniques known as rubber-band artificial intelligence (AI) [1], mainly used in racing games. The first approach cannot incorporate the needs of all potential players of the game while the latter approach generates predictable behaviors which reduce the believability of the non-player characters (NPCs). Furthermore, human players enhance their skills while playing a game which necessitates an adaptive mechanism that covers the player’s need for more challenging NPCs during play (i.e. in real-time).
+%% TODO:paraphrase (olesen2008real)
+
+%%TODO:paraphrase(Time Balancing of Computer Games with Adaptive Time-Variant Minigames)
+p A game balancing approach can be considered from two different aspects: the degree of adaptability of the overall approach of game balancing and actual game balancing algorithms employed to achieve the approach. Static game balancing and dynamic game balancing are the two primary approaches for the adaptability, which are considered here. Many game balancing algorithms are possible once an approach has been determined, and key implementations are discussed here.  
+
+\subsection{Dynamic Game Balancing vs. Static Game Balancing }
+p A primary issue in competitive games is that the different teams or players should have equal chances to win the game based on rules and starting positions [20]. Balancing fairness can involve manipulations of different game elements – for example, the capabilities and initial resources allocated to player types such as Orcs and Humans in WarCraft [12]. This type of balancing (called ‘static balancing’) is often carried out through repeated playtesting of the game mechanics and parameters [34], such as tuning the capabilities of individual weapons or units [20].  The idea of balancing a game dynamically during game play is not new [36]. Dynamic balancing, considers a fully continuous spectrum of play, from the starting point of the game to its end. Dynamic balancing differs from static balancing because the interaction of the player or players with the game should be considered, and different units and parameters in the game configuration should be adapted based on the current state of the game [37] rather than at the start of play based on player models. Variable frequency of enemies in Diablo 3 and variable power of enemies in Assassin’s Creed 4: Black Flag [38] are examples of dynamic balancing during game play. 
+
+
+\subsection{Game Balancing using Artificial Intelligence}
+p High quality game AI has become an important selling point of computer games in recent years [40]. However, game players often still prefer to play against human controlled opponents (via a network) rather than computer controlled ones [41]. Olesen has explored neuro-evolution methodologies to generate intelligent opponents in Real-Time Strategy (RTS) games and tried to adapt the challenge generated by the game opponents to match the skill of a player in real-time [42]. Several previous approaches focused on the game’s AI and probabilistic methods to address dynamic balancing. In Knock’Em [43], reinforcement learning techniques has been employed to build intelligent agents that adapt their behavior in order to provide dynamic game balancing. Hunicke [26] has explored a computational and design requirements for a dynamic difficulty adjustment system using probabilistic methods based on Half Life game engine [44]. 
+%%TODO:paraphrase(Time Balancing of Computer Games with Adaptive Time-Variant Minigames)
+
+% Dynamic Difﬁculty Adjustment by Facial Expression.pdf
+p The other methods are to utilize game AI to dynamically adjust the difﬁculty level. Gaussian Mixture Module and multivariate pattern mining were used to model the player’s reaction pattern [21, 22]. NPCs behaviors are controlled by reinforce learning algorithm [6, 7]. They did not, however, change the game environment or adjust the difﬁculty of the game level during play. By conducting a cheap, abstract simulation of the player’s progression through state space, Hunicke [4] used Hamlet system to predict when the player is repeatedly entering an undesirable loop, and help them get out of it. Joost [23] proposed an adaptation approach that uses expert knowledge for the adaptation. They used a game adaption model and organized agents to choose the most optimal task for the trainee, given the user model, the game ﬂow and the capabilities of the agents. Hom [24] used AI techniques to design balanced board games like checkers and Go by modifying the rules of the game, not just the rule parameters.
+
+
+\section{Emotionally Adaptive Games}
+%%% talk about works has been done in this area and different approaches
+%%% and relate that to what we have done in this research
+
+%%% adaptive play technologies critique existing systems (easy medium hard system), ideas
+%%% , problems and challenges, works has been done, goals for this study and future works.
+%%% adapting play technologies by changing Player, NPC, Environment parameters.
+%%% getting challenged and physiological signals, the importance of GSR
+
+% Emotionally Adapted Games - An Example of a First Person Shooter.pdf
+p Emotionally adapted gaming can be seen as based on gaming templates which are parts of the meta-narrative of the game. Hence, a basic approach to an element to be adapted inside a game is a psychologically validated template which creates a particular psychological effect. A broad view of templates may be that the whole game consists of a database of psychologically validated templates that are dynamically presented by the gaming engine in sequences during gameplay. A limited view entails that a smaller collection of templates is used. The element of psychological evaluation means that the selected psychological influence (such an emotional response) of the template on a particular type of user is sufficiently predictable. These psychologically evaluated templates may consist of i) manipulating 
+
+% Emotionally Adapted Games - An Example of a First Person Shooter.pdf
+p the substance of a game, such as story line (initiating events, new characters etc.) and manipulating the situations specifically related to the character of the player (such as putting the character into sudden and dangerous situations inside the game) and ii) manipulating the form or way of presentation of the game (such as visual elements, shapes, colors, types of objects, sound effects, background music, level of interactivity and feedback etc.). The difficulty level of the game may also be continuously automatically be adjusted, thereby keeping the skills and challenges in balance, which results in a maintenance of an optimal emotional experience and possibly also a flow-state. [14]  Why and when then to manipulate emotion in gaming on the basis of avoiding or approaching a specific emotional state? First, there are the transient basic emotional effects of games that are dependent of the phase of the game or some specific events. These are emotions such as happiness, satisfaction, sadness, dissatisfaction, anger, aggression, fear and anxiousness. These emotions are the basis of narrative experiences, i.e. being afraid of the enemy in a shooting game, feeling aggression and wishing to destroy the enemy and feeling satisfaction, even happiness, when the enemy has been destroyed. Emotional regulation systems in these instances most naturally may focus on manipulating the event structures, such as characters, their roles, events that take place and other features of the narrative gaming experience. [14] Second, there are possibilities for emotional management, especially in the case of managing arousal, alertness and excitation. Also, one may wish to manage negative emotions, such as sadness, dissatisfaction, disappointment, anger, aggression, fear and anxiousness. The case for managing these emotions is twofold. On the one hand, one may see that these emotions could be eliminated altogether in the gaming experience. This can happen via either eliminating, if possible, the emergence of such an emotion in the game. For example, one can make a deliberately happy game with level-playing monkeys in a far away island throwing barrels at obstacles and gathering points. This would include minimum negative emotions. Or, in a game where negative emotion is a basic part of the game, one may wish to limit the intensity, duration or frequency of the emotions via manipulating gaming events and gaming elements so that sadness or fear are at their minimum levels, or that gaming events do not lead to sadness at all. [14] Similarly, managing level of arousal or the intensity, duration and frequency of select negative emotions may be quite feasible in the case of children as a form of parental control. On the other hand, one may wish to maximize arousal, alertness and excitation, perhaps even anger, fear and aggression for hardcore gamers. Third, there are possibilities related to the avoidance of certain types of emotions that are typically indicative of a poor gaming experience. Inactivity, idleness, passivity, tiredness, boredom, dullness, helplessness as well as a totally neutral experience may be indicating that there is some fundamental problem in the user- game interaction. This could be due to poor gaming skills of the user vs. the difficult challenges of the game or some other factors, such as the user is stuck in an adventure game for too long and can not proceed without finding a magic key to enter the next level or so. When a gaming engine detects these emotions in the user, it may adapt its behavior to offer the user more choices of selecting the difficulty level of the game or offer the user some clues as to how to go forward in the game. The game can also adapt its level of difficulty to the player’s skill level. [e.g. 14] 
+
+% Emotionally Adapted Games - An Example of a First Person Shooter.pdf
+p Fourth, it is also possible to create different combinations of emotional states (satisfied and angry) or emotional states and other psychological states (pleasant relaxation and efficient information processing) or emotional states and behavior (using specific motivational and action tendencies). [3]  All of these possibilities may be relevant. However, the elimination or minimization of certain emotions may be specifically feasible in the case of indicated overly poor gaming experience in which the game may adapt its behavior to assist the user. It should be noted that events in games may change quickly and produce complex situations and hence complex emotions that may change rapidly. Consequently, one should better integrate these approaches into the genre or type of the game, such as driving simulator, first person shooter, sports game such as golf, or an adventure game, or a level-playing game for children. [14] 
+
+% Creating an Emotionally Adaptive Game.pdf
+p For creating entertaining computer games1, gameplay is considered to be of key importance ([1], [2]). In absence of a broadly accepted definition of gameplay, we focus here on one frequently mentioned element of it, which is challenge. The process of optimizing a game’s challenge is referred to as game balancing or difficulty scaling. That is, changing parameters in order to avoid that the player gets frustrated because the game is too hard, or gets bored because the game is too easy [3]. In this study, we have investigated the relations between a game's difficulty level and the interplay between the emotions boredom, frustration and enjoyment (Fig. 1-left panel). These 
+relations strongly differ per individual, for example influenced by a player's skill level. For instance, a difficulty level that is found enjoyable by a novice might be boring for expert players. Games therefore need psychological customization tech- niques [4], such as difficulty adaptation, to optimize the experience. Since many years, game designers aim to provide some customization, for example by letting players choose a difficulty level upfront or including progressive difficulty levels during gameplay, based on a player’s performance.   More advanced methods that work in real-time are less common. One difficulty adaptation mechanism, frequently applied in racing games, is called rubber banding [5]: When falling behind, the player suddenly gets an enormous boost in speed, which allows for catching up again (and vice versa for the competing cars). However, game adaptation that is solely based on in-game behavior can only have limited success, because there are many different types of players [6]. Each type of player has his/her own goals, preferences and emotional responses when playing a game. Hence, for optimizing the players' experiences, successful psychological customization requires a game to take the emotional state of the player into account. Games should become emotionally adaptive (Fig. 1– right panel). 
+
+\img
+{Emotionally adaptive games}
+{Left panel: Game balancing (Adapted from [1]). Right panel: The emotionally adaptive games loop, inspired on the affective loop [7]. }
+{adaptive-games.png}
+{adaptive-games}
+
+% Creating an Emotionally Adaptive Game.pdf
+p The importance of emotions in computing is widely argued for (e.g. [8]). Emotion theorists differ over a discrete versus a dimensional model. The \"discretionists\" (e.g. [9]) argue for basic discrete emotions, such as anger, fear, sadness and happiness, as unique experiential states. The \"dimensionalists\" (e.g. [10]), on the other hand, look at emotions in terms of a two-dimensional space consisting of valence ("pleasantness") and arousal ("activation"). Sometimes dominance is added as a third dimension.  Effective human-computer interaction from an emotions perspective works in terms of an \"affective loop\" [7]. A similar feedback loop in a games context is de- scribed by [11]. Inspired by their work, Fig. 1 (right panel) shows a schematic view on the functioning of an emotionally adaptive game. By providing the right game mechanics [12] (e.g. audiovisuals, narrative, challenge), the game influences the player's experience, behavior and emotional state. Ideally, during play, the emotional state of the player (measured in terms of emotion-data), is continuously being fed back to the game so that the game can adapt its mechanics (e.g. difficulty level)
+accordingly in real-time. This all is done to create the optimal experience (which is referred to in literature as e.g. flow [13] or immersion [14]). Previous research at- tempts to create emotionally adaptive software have mainly focused on tutoring sys- tems and workload / performance optimization (see e.g. [15]). Fewer attempts have been made to incorporate a closed-loop mechanism in a games context. Takahashi et al. [16] and Rani et al. [17] created a game that was found to improve player perform- ance by adapting difficulty level to player's physiological state. Concept validation claims of these both studies were, however, based on a limited number of participants. Besides these attempts, a number of biofeedback games have recently been devel- oped, which have some integration of a player's physiological data into the game (e.g. [18], [19] and [20]). These games however focus on stress manipulation rather than optimization of gameplay experience. Probably closest to the present project's scope is the work of Saari and colleagues, who created the Mind-Based Technology frame- work for psychological customization [21]. They have further elaborated this in a games context (e.g. [4], [22]) and are currently developing an emotionally adaptive game demo. As a first step in creating an emotionally adaptive game, system input and output need to be specified in further detail. Regarding output (emotion-data), Saari et al. [22] provide an extensive discussion of possible elements to be adapted, structured by \"psychologically validated templates\". We have adopted a rather straightforward and intuitive \"template\": Game speed. We will manipulate the game's speed to influence the player's emotional state (the interplay between boredom, frustration and enjoy- ment, Fig. 1-left panel). Regarding system input (emotion-data), Öhman [23] distin- guished three categories of emotion measures: Self-reports, overt behavior and physiological responses. Self-reports are frequently used for assessing players' emo- tions and experiences [5] but not suitable (since too obtrusive) for real-time application in a game. Regarding overt behavior, potentially useful techniques for measuring boredom, frustration and enjoyment are facial emotion tracking [24] and the analysis of posture and pressure exerted on the game controls [25]. Regarding physiological responses, there is an extensive field with many research findings in psychophysiology. Although the research is done in varying contexts with sometimes contradicting results, it is considered a highly interesting field for analyzing emotions in games. We have limited ourselves to the methods described below. Regarding cardiovascular (heart) activity, tonic (long-term, as opposed to phasic) heart rate (HR) is known to increase with sympathetic nervous system activity, such as emotional arousal and cognitive effort and stress. On the other hand, increases in attention (mediated in the parasympathetic nervous system) lead to a decreased heart rate [26]. [27] found HR features to correlate with self-reported fun in games. Heart rate variability (HRV) is considered an index for mental effort (e.g. [28]). Some researchers (e.g. [29]) consider the percentage power in the low-frequency (LF) 0.070.14 Hz range as a particularly effective index for task-related mental effort / sympathetic activity. Respiratory responses are analyzed to control for respiratory artifacts in e.g. HRV (a phenomenon known as respiratory sinus arrhythmia). Respiration may, however, also be used as a measure itself, e.g. for investigating stress and mental load [30]. Electrodermal activity (EDA) concerns the electrical resistance of the skin, also known as Skin Conductance (SCL, SCR) or Galvanic Skin Response (GSR). Skin conductance level is known to increase with information processing and the frequency of non-specific skin responses increases with arousal [26]. Electromyography (EMG) is a technique for measuring muscle activity; electric potential is being generated when muscle cells contract. Facial EMG is frequently used as a metric for valence. The most frequently analyzed facial muscles in this context are the orbicularis oculi (OO, used for closing the eyelids), zygomaticus major (ZYG, smiling) and corrugator supercilii (CORR, frowning). Most studies find positive correlations between valence and the OO and ZYG muscles, and a negative correlation between valence and CORR muscle (see e.g. [31], [32], [33]). In addition to the above findings, there are also a considerable number of studies without significant findings [34]. Because of the large differences in physiological responses between individuals and within individuals over time (autonomic response stereotypy principle, see e.g. [15], [35]), some researchers (e.g. [36]) argue for normalizing physiological data to facilitate a group analysis of the data. Additionally, affective systems should employ a battery of physiological features for accurate emotion predictions (e.g. [37]), and should allow for user-control for the sake of autonomy, privacy and interpretation of the data [41]. Because of the context-dependency of physiological responses, a two-stage approach was adopted. The purpose of the current initial study is to investigate physiological and other affect-related responses in relation to an experimentally induced change in game mechanics. Note that in this study the affective loop is not yet closed, that is, real-time affective indicators are not yet directly influencing the game mechanics. This will be the purpose of phase 2 of our work. The research question for the current invesigation evolved around the components of our framework (Fig. 1- right panel): What game mechanics (speed settings) lead to what kind of emotional state, and what emotion-data is this accompanied by? This was investigated by means of a controlled experiment, as explained in the next section.
+% Creating an Emotionally Adaptive Game.pdf
+
+%% TODO:paraphrase
+p The Affective Gaming concept was first introduced by Wehrenberg, Charles through using Biofeedback to control a game based on relaxation level, it was the earliest research for correlating a game with biofeedback and after years of research the project was first implemented in 1984 for apple II computers, and the test results proved that human arousal level can actually be measured through GSR and used to control a game  ~\cite{wehrenberg1995willball}.
+%% TODO:paraphrase
+
+\img
+{Call of Duty, non-adaptive difficulty modes}
+{Menu content for difficulty selection, Call of Duty: World at War (Wii)}
+{cod-mw-difficulty.png}
+{cod-mw-difficulty}
+
+Playing video games as a kind of entertainment would help people to have new internal
+experiences. The virtual world of video games let adults to play as new rolls and enjoy filling
+their heads with new thoughts and emotions. Some people value
+the sensation
+
+Games are opportunities for development and design of environments therefore
+the player can interactively experience various emotions and mental conditions.
+This interactive experience in contrast to cinema
+and other major types of entertainment is what makes them exceptional
+
+
+\section{Related Work}
+
+In this section a number of noticeable works related to emotionally adaptive games are introduced and some of their properties, achievements and limitations are investigated.
+
+%Creating an Emotionally Adaptive Game.pdf
+\subsection{Emotional State and Unguided Player Speed Variation}
+Tijs et al. in their work on emotionally adaptive games have developed a version of the Pacman PC-game (figure: ~\ref{fig:pacman}) called Stimulus ~\cite{tijs2009creating}. They chose Pacman for a number of reasons to conduct their study, (1) relatively uncomplicated nature of the game without major changes in e.g. audiovisuals during play, which could lead to emotional bias, (2) being a well-known game and easy to pick up and consequently requiring relatively short practice to minimize learning effects, and also (3) because Pacman has a rather continuous flow of action which is beneficial when comparing blocks of time the game is played. Similar features of Pacman also has made the game being used in other affective computing studies (e.g. ~\cite{yannakakis2007towards}). However as their work describes a number of adaptations have been made to the game to suit the experiments: (1) The players have been playing the same level of difficulty during the experiment, (2) Entities that were eaten, such as points and pills, returned after a while (added back to the game scene), (3) The speed level of the player changed at preset times (unknown to the player), (4) Eating objects increased the player's score but being eaten by the enemies meant a strong decrease in score, and (5) The overall objective of the game was to score as many points as possible. Their choice for manipulating speed as the difficulty parameter, instead of e.g. the number of enemies has been due to the fact that the number of normal ghosts was constantly changed during the default gameplay as a result to Pacman eating star-shaped pills. This game was played using arrow keys on the keyboard, while all participants have been offered to use their preferred hands to play the game ~\cite{tijs2009creating}.
+
+\img
+{Pacman}
+{Pacman - The original game used by Tijs et al.}
+{pacman.png}
+{pacman}
+
+Tijs et al. study on Stimulus has shown the unguided adaption of players speed has resulted the slow-mode being too slow and the fast-mode being a bit too fast for some players but for others the right speed level. It has suggested that the speed level in the normal-mode might not be optimal either, but the players' experiences are better in that mode than in the other two.
+
+They have described their work on induction of boredom, frustration and enjoyment through manipulation of the game mechanic \"speed\" partly successful. Nearly all players have shown indications of boredom during the slow-mode, however the fast-mode was found more enjoyable than frustrating. As they demonstrate in their work, players knew the game speed was going to change, and also they knew it only lasted for a limited amount of time. Besides the speed changes were rather abrupt. Finally they concluded nearly all participants describing the normal-mode the most enjoyable of the three.
+
+%Affective Gaming - a GSR Based Approach .pdf
+\subsection{Emotion and Different Difficulty Levels}
+Aggag and Revett in their work on affective gaming with use of the GSR signal, have developed a basic first-person shooter (FPS) that was supposed to be played in two different difficulty levels interleavingly ~\cite{aggag2011affective}. They have considered players' stress level as a function of the difficulty of the game. They synchronously recorded players' GSR response to the difficulty level and then mapped this signal to what happened during the game. During the experiment they have set the difficulty level randomly such that the play was interleaved and balanced between difficulty levels. Their principal idea was to acquire the score from the player during low and challenging play periods in order to see if there was any difference that could be attributed to level of difficulty ~\cite{aggag2011affective}.
+
+As Aggag and Revett described the result of their study, they have observed all subjects deployed in their study report that the game did induce feelings of stress at the same time points during the play. The players' GSR signal that was recorded during play was pooled according to difficult/non-difficult regions and the data was analyzed with respect to the frequency and amplitude of the responses throughout the two phases of the game for each phasic response. Their result indicate that during the stressful periods (higher difficulty level), the skin conductance level increase and the frequency of the spontaneous GSRs increased somewhat (from 0.5 to 2.3 per minute on average). Looking at the GSR values, the report it is clearly evident which phase of the game the player was involved in within 60 seconds of recording inspection. For next steps of their study, Aggag and Revett hoped to use the recorded GSR signal to provide subjects with a balance between basic and advanced play, such that the player feels comfortable with the level of difficulty as measuring using GSR. This is accomplished by providing the results of the GSR back to the game, whereby the game logic uses the value of the affective state of the player to adjust the difficulty level according to a player-centric requirement ~\cite{aggag2011affective}.
+
+Aggag and Revett could not determine if level of arousal had any effect on players' score, as a reflection of player performance. Though what they observed is that the affective state of the player can influence performance. In their study, the increased difficulty level was usually along with increased score (performance). While they find it seemingly a counter-intuitive result, they suggest it should be due to increased engagement of the player which in turn may enhance their overall sensitivity to audio-visual stimuli and enhanced their reaction time. However due to the limitations of their study they refuse to draw a clear line of conclusion in this regard ~\cite{aggag2011affective}.
+
+%% Affective gaming: measuring emotion through the gamepad.pdf
+\subsection{Emotion and Standard Game Input Devices}
+Sykes and Brown in their work on measuring emotion through gamepad ~\cite{sykes2003affective}, both from a marketing perspective and also targeting current generation of video-games and available gaming technologies, suggest to use current video game technologies to measure affect rather than introducing new paraphernalia to the gaming experience. They have used modern game consoles' controller analogue buttons which indicate the pressure used when playing a game. Possibility of detecting a person's emotion through finger pressure ~\cite{clynes1977sentics}, makes the analogue buttons on the gamepad a possible resource for collecting data.
+
+In their study, Sykes and Brown have shown data from gamepad correlates with a player's level of arousal during game play. They have developed a remake of the classic arcade game `Space Invaders' (figure: ~\ref{fig:space-invaders}) for their study. Players needed to shoot alien spacecraft as they march down the screen toward them. It was possible for the players to move to their left or right to avoid offensive attacks. They could also return fire by pressing a button on the gamepad. They have conducted three levels of difficulty were meant to change the players' level of arousal in different levels: easy, medium and hard. For the medium level the alien craft would march twice as fast, and the player would have the benefit of only two barriers. In the hard level the tempo of the alien craft was increased by a further factor of two, and the barriers were removed completely ~\cite{sykes2003affective}. Players have played different levels in random order and the amount of pressure exerted by the player on each button press has been recorded by the game.
+
+Although Sykes and Brown in their study do not investigate the effect of NPC and environmental factors separately but based on their results, they conclude it is possible to determine the level of a player's arousal by the pressure they use when controlling the gamepad.
+
+\img
+{Space Invaders}
+{Space Invaders - The original game used by Sykes and Brown}
+{space-invaders.png}
+{space-invaders}
+
+%% Dynamic Difficulty Adjustment by Facial Expression.pdf
+\subsection{Difficulty Level and Facial Expression}
+Xiang et al. in their study on dynamic difficulty adjustment by facial expression provided an emotion based dynamic game adjusting prototype named Emotetris, which utilizes facial expression captured using a camera and then detect emotional state of the player between four different states of frustrated, relax, excited and bored. Their prototype adjusts game difficulty level dynamically according to these emotional states. Their method of dynamic adjustment combines the in-game performance and facial expressions of players to dynamically adjust the game difficulty. In their study they have shown how better the dynamic difficulty adjustment can attract players' attention when they were bored and release the pressure when they were frustrated.
+
+They have adjusted Tetris to evaluate the performance of player. In their prototype the speed of dropping items is the parameter to be adjusted as it directly affects players. In their study they used 20 participants, from which 16 players thought the game could make in-time adjustment when they were frustrated or bored. Also 14 players among them considered the expression based game adjustment is better than in-game performance based adjustment in brining them better game experience.
+
+% Affective game engines: motivation and requirements.pdf
+% Biofeedback game design: using direct and indirect physiological control to enhance game interaction.pdf
+% Boredom, engagement and anxiety as indicators for adaptation to difficulty in games.pdf
+% A semantic generation framework for enabling adaptive game worlds.pdf
+% Using gameplay semantics to procedurally generate player-matching game worlds.pdf
+% Dynamic Difficulty Adjustment in Computer Games Through Real-Time Anxiety-Based Affective Feedback.pdf
+% Dynamic Game Balancing by Recognizing Affect.pdf
+% Pervasive Game Flow - Understanding Player Enjoyment in Pervasive Gaming.pdf
+% The Influence of Implicit and Explicit Biofeedback  in First-Person Shooter Games.pdf
+% The use of video game achievements to enhance player performance, self-efficacy, and motivation.pdf
+% User Performance Tweaking in Videogames - a Physiological Perspective of Player Reactions.pdf
+% Using Frustration in the Design of Adaptive Videogames.pdf
+% Emotionally Adapted Games - An Example of a First Person Shooter.pdf
+
+\section{Adaptive Game Design}
+\subsection{Player}
+% give examples of god of war, kratus rage mode with some photo
+
+\img
+{God of War 2, Poseidon's rage concept art}
+{God of War 2, gamer supposed to get excited through changes applied to player character}
+{gow-2-poseidons-rage.jpg}
+{gow-2-poseidons-rage}
+
+\subsection{NPCs}
+% give examples of a situation in which npcs increase to excite the player with some photo
+
+\img
+{Risen 2 boss fight}
+{Risen 2 boss fight, gamer supposed to get excited through changes applied to the NPC}
+{risen-2-boss-fight.jpg}
+{risen-2-boss-fight}
+
+\subsection{Environment}
+% give examples of chaning background like music, lighting etc with some photo.
+
+\img
+{Risen boss fight}
+{Risen boss fight, gamer supposed to get excited through changes applied to environment}
+{risen-boss-fight.jpg}
+{risen-boss-fight}
+
+
+% TODO: talk a bout the following as a problem of this work
+% However, how to change the game parameters in a certain situation is due to the custom of different players.

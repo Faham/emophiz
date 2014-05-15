@@ -1,6 +1,18 @@
 
 %------------------------------------------------------------------------------
 
+% this allowes application of styles for tables rows
+% usage: \rowstyle{\bfseries}
+
+%\usepackage{array}
+\newcolumntype{+}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+#1\ignorespaces
+}
+
+%------------------------------------------------------------------------------
+
 %\img
 %{caption}
 %{description}
@@ -15,5 +27,27 @@
   \label{fig:#4}
 \end{figure}
 }
+
+%------------------------------------------------------------------------------
+
+%\svg
+%{caption}
+%{description}
+%{file path reltive to images/}
+%{label}
+
+%\usepackage{svg}
+\newcommand{\svg}[4]{
+\begin{figure}[h!]
+  \caption[#1]{#2}
+  \centering
+  \includesvg{images/#3}
+  \label{fig:#4}
+\end{figure}
+}
+
+%------------------------------------------------------------------------------
+
+\newcommand{\bhline}{\specialrule{.1em}{.05em}{.05em}}
 
 %------------------------------------------------------------------------------
