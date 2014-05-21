@@ -39,10 +39,16 @@ Using emotional responses to increase the level of users interaction with a real
 Affect Engine is the software unit developed to transform collected physiological data to their equivalent emotional state in real-time. While it is generally agreed that emotions comprise three components: subjective experience (e.g. feeling joyous), expressive behavior (e.g. smiling), and physiological activation (e.g. arousal) ~\cite{scherer1993neuroscience}, Affect Engine provides a framework for transformation of physiological activations and some expressive behaviors. Affect Engine consists of four major components: Sensor Module, Fuzzification Module, Administration Panel and Engine Proxies, Figure \ref{fig:affect-engine} is a schematic view of these components working together. Applications such as games can easily integrate the Affect Engine where emotion recognition can offer adaptive control to maintain user interest and engagement. Once connected via sensors to the emotion recognition system, the affective state of the user can be captured continuously and in real-time, and used as a secondary input in the game logic for an enhanced play experienced.
 
 \img
-{Affect Engine}
-{Affect Engine}
-{placeholder.png}
-{gsr-attached}
+{Affect engine modules}
+{Affect engine modules}
+{affect-engine.pdf}
+{affect-engine}
+
+\img
+{Sample connected system}
+{Sample connected system with GSR and EMG sensors attached}
+{sample-connected-system.png}
+{sample-connected-system}
 
 At the following a brief description on these components is provided.
 
@@ -77,20 +83,8 @@ While the modular design of the Affect Engine allows its expansion for support o
 \subsection{Blood Volume Pulse and Heart Rate}
 The Blood Volume Pulse (BVP, Figure \ref{fig:bvp-sensor}) is a relative measure of the amount of blood owing in a vessel. Using BVP we calculated heart rate and heart rate variability. The heart rate is known to reflect emotional activity and has been used to differentiate between both negative and positive emotions as well as different arousal levels ~\cite{tt2013procomp}.
 
-\img
-{Blood Volume Pulse (BVP) Sensor}
-{Blood Volume Pulse (BVP) Sensor}
-{bvp-sensor.png}
-{bvp-sensor}
-
 \subsection{Galvanic Skin Response}
 The Galvanic Skin Response (GSR, Figure \ref{fig:gsr-sensor}) is useful to measure the skin's conductance between two electrodes and is a function of sweat gland activity and the skin's pore size. As a person becomes more or less stressed, the skin's conductance increases or decreases proportionally ~\cite{picard2003affective}.
-
-\img
-{Galvanic Skin Response (GSR) Sensor}
-{Galvanic Skin Response (GSR) Sensor}
-{gsr-sensor.png}
-{gsr-sensor}
 
 \subsection{Facial Electromyography}
 
