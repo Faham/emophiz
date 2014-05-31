@@ -1,14 +1,19 @@
-- gsr attached to index and middle finger
-- source hammer editor
+done:
 - map of the level
-- a general image of game
-- image of starting buttons in the game
-- image of healthpack and grenade buttons
+- source hammer editor
 - image of zombies
-- image of signal monitor
+- image of starting buttons in the game
 - imge of fuzzification tool
+-----------------------
+- a general image of game
+- image of healthpack and grenade buttons
+- an image of intense fog mode
+
+- gsr attached to index and middle finger
+- image of signal monitor
 - image from two fuzzification steps (regan's paper)
 - an image of the total settings of the experiment (from the old paper)
 - a diagram of affect engine architecture
 - a diagram of total procedure of the affect engine and game cycle
-- an image of intense fog mode
+
+- a video footage of the game
