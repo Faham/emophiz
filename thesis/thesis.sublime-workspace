@@ -39,52 +39,117 @@
 			"file": "/D/desktop/temp/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 3023,
+				"buffer_size": 3045,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "content/common.tex",
+			"file": "/D/projects/mycms/README.md",
 			"settings":
 			{
-				"buffer_size": 1186,
-				"line_ending": "Unix"
+				"buffer_size": 1363,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "content/bibliography.bib",
+			"contents": "\nSara Naeeni - Jado سارا نائینی - جادو\nToranj - Mohsen Namjoo\nSharab e Nasazegaram\nسینا حجازی - گلخونه\n\nhttps://soundcloud.com/tannaz-sn\nhttps://soundcloud.com/maahoor\nhttps://soundcloud.com/sh-ereh\n\nhttps://soundcloud.com/pirbadian-2\nhttps://soundcloud.com/reza-pirbadian\nhttps://soundcloud.com/pirbadian1\nhttps://soundcloud.com/pirbadian3\n",
 			"settings":
 			{
-				"buffer_size": 18324,
-				"line_ending": "Unix"
+				"buffer_size": 341,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "content/chp-3-video-games.tex",
+			"file": "/D/projects/mycms/temp/toremove/admin/index.php",
 			"settings":
 			{
-				"buffer_size": 38178,
-				"line_ending": "Unix"
+				"buffer_size": 32,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "Sara Naeeni - Jado سارا نائینی - جادو\nToranj - Mohsen Namjoo\nSharab e Nasazegaram\nسینا حجازی - گلخونه\n\n",
+			"file": "/D/projects/mycms/temp/toremove/admin/people.php",
 			"settings":
 			{
-				"buffer_size": 103,
+				"buffer_size": 15400,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "https://cas.usask.ca/cas/logout?service=http://hci.usask.ca/\nhttps://cas.usask.ca/cas/login?service=http://hci.usask.ca/admin\n\n",
+			"settings":
+			{
+				"buffer_size": 127,
 				"line_ending": "Windows",
-				"name": "Sara Naeeni - Jado سارا نائینی - جادو"
+				"name": "https://cas.usask.ca/cas/logout?service=http://hci"
+			}
+		},
+		{
+			"file": "/D/projects/mycms/temp/toremove/admin/common.php",
+			"settings":
+			{
+				"buffer_size": 6300,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/projects/mycms/modules/admin/admin.php",
+			"settings":
+			{
+				"buffer_size": 9760,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Stephanie Dilsner\n-3 - add/subtract functions can be easily implemented without a loop, in the case of add:\n        result.numerator = (this.numerator*r2.denominator) + (r2.numerator*this.denominator);\n        result.denominator = this.denominator * r2.denominator;\n\nTaylor Summach\nrepeating code snippets is a dangerous practice, you should always try to reduce your code complexity at the expense of increasing your processing data (through using extra variables avoid repeated codes)\n\nTorban Peterson\n",
+			"settings":
+			{
+				"buffer_size": 504,
+				"line_ending": "Windows",
+				"name": "Stephanie Dilsner"
+			}
+		},
+		{
+			"file": "/C/Users/Faham/Downloads/cmpt270/a1.java",
+			"settings":
+			{
+				"buffer_size": 6291,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 219.0,
+		"height": 173.0,
 		"selected_items":
 		[
 			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
 				"enabl",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"enal",
 				"Package Control: Enable Package"
 			],
 			[
@@ -104,28 +169,12 @@
 				"Package Control: Install Package"
 			],
 			[
-				"enable",
-				"Package Control: Enable Package"
-			],
-			[
 				"disabl",
-				"Package Control: Disable Package"
-			],
-			[
-				"disa",
-				"Package Control: Disable Package"
-			],
-			[
-				"disab",
 				"Package Control: Disable Package"
 			],
 			[
 				"enab",
 				"Package Control: Enable Package"
-			],
-			[
-				"dis",
-				"Package Control: Disable Package"
 			],
 			[
 				"package",
@@ -172,34 +221,89 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Faham/Downloads/Flow.bibtex",
-		"/D/projects/emophiz/thesis/thesis.tex",
-		"/C/Users/Faham/Downloads/wallpaper_example.tex",
+		"/D/projects/mycms/temp/check_php.php",
+		"/C/Users/Faham/Downloads/cmpt270/a1 (1).java",
+		"/C/Users/Faham/Downloads/cmpt270/a1.java",
+		"/C/Users/Faham/Downloads/cmpt270/main.java",
+		"/C/Users/Faham/Downloads/cmpt270/RationaltypeTest.java",
+		"/C/Users/Faham/Downloads/cmpt270/RationalType.java",
+		"/C/Users/Faham/Downloads/cmpt270/RationalTypeTest.java",
+		"/C/Users/Faham/Downloads/cmpt270/RationalTypeTest (1).java",
+		"/C/Users/Faham/Downloads/cmpt270/RationalType (1).java",
+		"/D/projects/mycms/temp/oldweb-backup/hcidb-backup.sql",
+		"/D/projects/mycms/temp/database-backup.sql",
+		"/D/projects/mycms/modules/pages/pages.php",
+		"/D/projects/mycms/temp/toremove/index.php",
+		"/D/projects/mycms/temp/toremove/.htaccess",
+		"/D/projects/mycms/temp/toremove/admin/logout.php",
+		"/D/projects/mycms/config.ini",
+		"/D/documents/internet-network.txt",
+		"/D/projects/mycms/create-schema.sh",
+		"/D/projects/mycms/README.md",
+		"/D/projects/mycms/.htaccess",
+		"/D/projects/mycms/database.sql",
+		"/D/projects/mycms/schema/mycms.ini",
+		"/D/projects/mycms/classes/content.php",
+		"/D/projects/mycms/classes/contents.php",
+		"/C/Users/Faham/Downloads/mycms.sql",
+		"/D/projects/mycms/temp/inserts.sql",
+		"/D/projects/emophiz/doc/analysis/put-into-thesis.txt",
 		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
 		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
+		"/D/projects/emophiz/thesis/content/bibliography.bib",
+		"/D/projects/emophiz/thesis/content/abbreviations.tex",
+		"/C/wamp/bin/php/php5.3.13/php.ini",
+		"/C/wamp/bin/apache/apache2.2.22/bin/php.ini",
+		"/C/pear/pear/pearcmd.php",
+		"/C/pear/pear/PEAR.php",
+		"/C/pear/pear.bat",
+		"/C/pear/pecl.bat",
+		"/D/projects/mycms/_config.ini_",
+		"/D/projects/mycms/.gitignore",
+		"/C/wamp/bin/php/php5.3.13/phar.phar.bat",
+		"/C/Users/Faham/Desktop/uhmwpe",
+		"/D/projects/mycms/classes/db.php",
+		"/D/projects/emophiz/thesis/thesis.tex",
+		"/C/Users/Faham/Desktop/quran-miracles.txt",
+		"/C/Users/Faham/Desktop/put-into-thesis.txt",
+		"/D/projects/emophiz/doc/analysis/statistical-analysis.R",
+		"/D/projects/emophiz/doc/analysis/statistical-analysis.log",
+		"/C/Users/Faham/Downloads/Faham.R",
+		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex",
+		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
+		"/D/documents/private/people/faham-negini/passwords.txt",
+		"/D/documents/private/encrypt.sh",
+		"/D/documents/private/decrypt.sh",
+		"/D/documents/private/gpg/mohammad-negini/trip-to-canada/expenses-summary.txt",
+		"/D/documents/private/mohammad-negini/canada-visitor-visa-application-2014/checklist.txt",
+		"/D/documents/private/docs/faham-negini/passwords.txt",
+		"/D/documents/sasktel-internet-service.txt",
+		"/D/documents/private/docs/passwords.txt",
+		"/D/documents/private/docs/accounts-and-passwords.txt",
+		"/C/Users/Faham/Downloads/uofsthesis-cs/thesis_template.tex",
+		"/C/Users/Faham/Downloads/uofsthesis-cs/uofsthesis-cs.cls",
+		"/D/music/sarapasand/manifest",
+		"/D/projects/emophiz/thesis/content/common.tex",
+		"/G/software/usb-windows-installer/rufus_v1.4.1.txt",
+		"/C/Users/Faham/Downloads/Flow.bibtex",
+		"/C/Users/Faham/Downloads/wallpaper_example.tex",
 		"/D/projects/emophiz/thesis/content/chp-video-games.tex",
 		"/C/Users/Faham/Downloads/untex-1.2/Makefile",
 		"/C/Users/Faham/Downloads/untex-1.2/untex.man",
 		"/C/Users/Faham/Downloads/untex-1.2/untex.c",
-		"/D/projects/emophiz/thesis/content/common.tex",
 		"/D/projects/emophiz/thesis/make.sh",
 		"/D/projects/emophiz/thesis/content/chp-discus.tex",
-		"/D/projects/emophiz/thesis/content/abbreviations.tex",
 		"/D/projects/emophiz/thesis/content/chp-intro.tex",
 		"/D/projects/emophiz/thesis/content/chp-emotion.tex",
 		"/D/projects/emophiz/thesis/content/chp-.tex",
 		"/D/projects/emophiz/thesis/content/chp-exprm.tex",
 		"/D/projects/emophiz/thesis/content/chp-impl.tex",
-		"/D/documents/sasktel-internet-service.txt",
 		"/C/Users/Faham/Desktop/math-in-quran.txt",
-		"/C/Users/Faham/Desktop/quran-miracles.txt",
 		"/D/projects/emophiz/data/variables.txt",
-		"/D/documents/private/docs/faham-negini/passwords.txt",
 		"/D/documents/private/docs/faham-negini/passwords-2.txt",
 		"/D/documents/private/docs/faham-negini/accounts-and-passwords.txt",
 		"/D/projects/emophiz/thesis/images/needed-photos.txt",
 		"/D/projects/emophiz/doc/experiment-script.txt",
-		"/C/Users/Faham/Downloads/uofsthesis-cs/thesis_template.tex",
 		"/C/Users/Faham/Downloads/Download Document.html",
 		"/C/Users/Faham/Downloads/quran-simple-clean.txt",
 		"/C/Users/Faham/Desktop/day-in-quran.txt",
@@ -244,72 +348,18 @@
 		"/D/projects/emophiz/thesis/content/ch03-problem-and-solution.tex",
 		"/D/projects/emophiz/thesis/content/ch01-intro.tex",
 		"/D/projects/emophiz/thesis/content/ch02-lit-review.tex",
-		"/D/projects/bracollage/README.md",
-		"/D/projects/emophiz/thesis/auxiliary/thesis.bbl",
-		"/C/Users/Faham/Downloads/Willball.bibtex",
-		"/C/Users/Faham/Desktop/temp/tasks.txt",
-		"/D/projects/emophiz/doc/diary.txt",
-		"/D/projects/emophiz/doc/daily.txt",
-		"/D/projects/emophiz/doc/queries.sql",
-		"/D/projects/emophiz/logs/emotion_monitor.log",
-		"/D/projects/emophiz/thesis/make.bat",
-		"/D/projects/emophiz/doc/thesis/thesis.tex",
-		"/C/Users/Faham/Desktop/temp/cover-letter.tex",
-		"/D/projects/mycms/templates/home.tpl",
-		"/D/projects/mycms/templates/snippets/research_teaser.tpl",
-		"/D/projects/mycms/templates/snippets/publication_teaser.tpl",
-		"/D/projects/mycms/templates/snippets/people_teaser.tpl",
-		"/D/projects/mycms/templates/people.tpl",
-		"/D/projects/mycms/config.ini",
-		"/D/projects/mycms/modules/admin/admin.php",
-		"/D/projects/mycms/modules/admin/admin.class.php",
-		"/D/projects/mycms/modules/pages/pages.php",
-		"/D/projects/mycms/modules/pages/pages.class.php",
-		"/D/projects/mycms/modules/settings/settings.class.php",
-		"/D/projects/mycms/modules/settings/settings.php",
-		"/D/projects/mycms/modules/users/users.php",
-		"/D/projects/mycms/modules/users/users.class.php",
-		"/D/projects/mycms/classes/system.php",
-		"/D/projects/mycms/classes/mysmarty.php",
-		"/D/projects/mycms/classes/error.php",
-		"/D/projects/mycms/classes/db.php",
-		"/C/wamp/bin/php/php5.4.12/php.ini",
-		"/D/projects/mycms/index.php",
-		"/D/projects/mycms/config.php",
-		"/D/projects/mycms/package2.xml",
-		"/D/projects/mycms/package.xml",
-		"/D/projects/mycms/readme.txt",
-		"/D/projects/mycms/inserts.sql",
-		"/D/projects/mycms/templates/people_admin.tpl",
-		"/D/projects/mycms/templates/research_admin.tpl",
-		"/D/projects/mycms/modules/admin/admin.ini",
-		"/D/projects/mycms/templates/snippets/people_admin.tpl",
-		"/D/projects/mycms/templates/snippets/people_list_admin.tpl",
-		"/D/projects/mycms/templates/research.tpl",
-		"/D/projects/mycms/templates_c/c18762f0eca931673473e9b063ad3bd4639afcb4.file.people_list_admin.tpl.php",
-		"/D/projects/mycms/db/create.ini",
-		"/D/projects/mycms/db/Mycms_doc_publication.php",
-		"/D/projects/mycms/db/Mycms_doc.php",
-		"/D/projects/mycms/db/mycms.ini",
-		"/C/pear/pear.ini",
-		"/D/projects/mycms/templates/admin-people.tpl",
-		"/D/projects/mycms/templates/admin.tpl",
-		"/D/projects/mycms/classes/dataobjects/Mycms_people.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_image.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_video_publication.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_settings.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_video_research.php",
-		"/D/projects/mycms/classes/dataobjects/Mycms_video.php"
+		"/D/projects/bracollage/README.md"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 90.0,
 		"where_history":
 		[
+			"D:\\projects\\mycms\\temp\\toremove",
 			"C:\\Users\\Faham\\Downloads\\quran-simple-clean.txt",
 			"D:\\projects\\mycms\\templates\\snippets",
 			"D:\\projects\\mycms",
@@ -321,6 +371,93 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"person",
+			"isadmin",
+			"HTTP_CAS_USER",
+			"admin",
+			"cas",
+			"%2f",
+			"usask.ca",
+			"cas.usask.ca",
+			"portal.usask.ca",
+			"admin",
+			"publication",
+			"REAL",
+			"	",
+			"Apr ",
+			"May ",
+			"Apr ",
+			"6.20",
+			"_",
+			" ALGORITHM=UNDEFINED DEFINER=`mycms_hci`@`%.usask.ca` SQL SECURITY DEFINER",
+			"ALGORITHM=UNDEFINED DEFINER=`mycms_hci`@`%.usask.ca` SQL SECURITY DEFINER ",
+			"title_format",
+			"view",
+			"from",
+			"install",
+			"pear",
+			"/pear",
+			"pear",
+			"performance",
+			"45.60",
+			"91.50",
+			"101.75",
+			"98.25",
+			"        ",
+			"         ",
+			"        ",
+			"         ",
+			"        ",
+			"           ",
+			"            ",
+			"           ",
+			"         ",
+			"        ",
+			"         ",
+			"        ",
+			"       ",
+			"      ",
+			"        ",
+			"       ",
+			"      ",
+			"         ",
+			"        ",
+			"p adj",
+			"pr",
+			"Pr",
+			"> ",
+			"chapter",
+			"Figure",
+			"figure",
+			"emo-game-sys-design",
+			"Affect Engine",
+			"saari2009emotionally",
+			"output_file",
+			"show_help",
+			"  (required)	Help ",
+			" 	\n\nNot Provided\n",
+			"Apr",
+			"\nMay",
+			"6.20",
+			"font",
+			"\np ",
+			"cod-mw-difficulty",
+			"tijs2009creating",
+			" = ",
+			"saari2005towards",
+			"http://en.wikipedia.org/wiki/Galvanic_Skin_Response",
+			"http://en.wikipedia.org/wiki/Facial_electromyography",
+			"galvanic ski",
+			" ",
+			"Procomp Inﬁnity Hardware Manua",
+			"url",
+			"\",",
+			"=\"",
+			"\"",
+			" = ",
+			"Dynamic Difﬁculty Adjustment by Facial Expression",
+			"olesen2008real",
+			"And Everything Else",
 			"- ",
 			"enumerate",
 			"url",
@@ -361,94 +498,7 @@
 			"Apr",
 			"May",
 			"sniper",
-			"ﬂ",
-			"’",
-			"ﬁ",
-			"l",
-			"Decrease",
-			"Increase",
-			"p",
-			"^",
-			"\\\\\n",
-			"\\newline",
-			"^",
-			"subsection",
-			"subsubsection",
-			"~\\ref{",
-			"~\\ref",
-			"pdf",
-			"\\",
-			"svg",
-			" ",
-			"Rate",
-			"electrocardiograph",
-			"Electrocardiograph",
-			"Self-Report",
-			"self-report",
-			"Self-Report",
-			"subjective measures",
-			"Subjective measures",
-			"subjective measures",
-			"physiological",
-			"Physiological",
-			"physiological",
-			"Physiological",
-			"physiological",
-			"Physiological",
-			"rigby2007pens",
-			"@",
-			"}\n@",
-			"TODO",
-			" ",
-			" ",
-			"\\chapter",
-			"custmz",
-			"Customizing Play Experience in Real-Time",
-			"man-n-play",
-			"Recognizing Emotion",
-			"p ",
-			"P ",
-			"p ",
-			"~\\ref",
-			"p ",
-			"\\hlinewd{2pt}",
-			"hline",
-			"table",
-			" a",
-			"- ",
-			"bradley1994measuring",
-			"bradle",
-			"يوم",
-			" ",
-			"\\n",
-			"font",
-			" ",
-			"|",
-			"([0-9])\\|([0-9])",
-			"\n------------------------",
-			"-",
-			" ",
-			" ",
-			"–",
-			" ",
-			"gsr-sensor",
-			"respiration",
-			"raspiration",
-			"Facial Electromyography",
-			"bateman2011target",
-			"\\box",
-			"picard",
-			"ekman",
-			"picard",
-			"Picard",
-			"picard",
-			"Picard",
-			"picard",
-			"Picard",
-			"picard",
-			"Picard",
-			"feature-based",
-			"recognition of eight"
+			"ﬂ"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -511,7 +561,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -520,15 +570,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3023,
+						"buffer_size": 3045,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13,
-								13
+								0,
+								0
 							]
 						],
 						"settings":
@@ -542,24 +592,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "content/common.tex",
+					"file": "/D/projects/mycms/README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1186,
+						"buffer_size": 1363,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								745,
-								745
+								278,
+								278
 							]
 						],
 						"settings":
@@ -567,103 +617,255 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 357.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "content/bibliography.bib",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18324,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								18118,
-								18130
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 10313.0,
+						"translation.y": 87.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "content/chp-3-video-games.tex",
+					"buffer": 2,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 38178,
+						"buffer_size": 341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3967,
-								3967
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/projects/mycms/temp/toremove/admin/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/projects/mycms/temp/toremove/admin/people.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4991,
+								4991
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
 							"remote_loading": false,
-							"spell_check": true,
 							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 684.0,
+						"translation.y": 2705.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 103,
+						"buffer_size": 127,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								103,
-								103
+								127,
+								127
 							]
 						],
 						"settings":
 						{
-							"auto_name": "Sara Naeeni - Jado سارا نائینی - جادو",
+							"auto_name": "https://cas.usask.ca/cas/logout?service=http://hci",
 							"incomplete_sync": null,
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/D/projects/mycms/temp/toremove/admin/common.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								241,
+								241
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/D/projects/mycms/modules/admin/admin.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								402,
+								402
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								504,
+								504
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Stephanie Dilsner",
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/C/Users/Faham/Downloads/cmpt270/a1.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -675,7 +877,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -715,7 +917,7 @@
 	"project": "thesis.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":

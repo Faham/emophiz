@@ -1,0 +1,96 @@
+---------------------------------
+    perform order experience condition
+1   69      1     1          4
+2   74      1     2          1
+3   117     1     3          2
+4   106     1     4          3
+5   42      2     1          1
+6   86      2     2          2
+7   67      2     3          3
+8   118     2     4          4
+9   13      3     1          3
+10  106     3     2          4
+11  98      3     3          1
+12  140     3     4          2
+13  66      4     1          2
+14  58      4     2          3
+15  110     4     3          4
+16  140     4     4          1
+---------------------------------
+Analysis of Variance Table
+Response: perform
+                 P-value
+conditionfactor  0.0043036
+orderfactor      0.2580350
+experiencefactor 0.0002247
+---------------------------------
+multiple comparisons between different conditions performances
+     diff  lwr        upr       P-value
+2-1  13.75 -11.52089  39.020888 0.3257096
+3-1 -27.50 -52.77089  -2.229112 0.0353323
+4-1  12.25 -13.02089  37.520888 0.4088102
+3-2 -41.25 -66.52089 -15.979112 0.0053130
+4-2  -1.50 -26.77089  23.770888 0.9965938
+4-3  39.75  14.47911  65.020888 0.0064014
+---------------------------------
+multiple comparisons between different experience performances
+    diff lwr       upr       P-value
+2-1 33.5  8.229112  58.77089 0.0146635
+3-1 50.5 25.229112  75.77089 0.0018523
+4-1 78.5 53.229112 103.77089 0.0001604
+3-2 17.0 -8.270888  42.27089 0.1931465
+4-2 45.0 19.729112  70.27089 0.0034006
+4-3 28.0  2.729112  53.27089 0.0327327
+---------------------------------
+        gsr experience condition
+1  -17.2518          1         1
+2    6.7850          2         1
+3  -10.7204          3         1
+4  -17.2518          4         1
+5   -1.8195          1         2
+6   58.3814          2         2
+7   24.5918          3         2
+8  104.7899          4         2
+9   10.2778          1         3
+10  27.8437          2         3
+11  42.3241          3         3
+12  27.3695          4         3
+13  15.0953          1         4
+14  29.1430          2         4
+15  17.9926          3         4
+16  29.7538          4         4
+---------------------------------
+95% CI of mean of performances of conditions
+              mean estimate  lower bound   upper bound
+condition 1   88.50          82.87653      94.12347
+condition 2   102.25         96.62653      107.87347
+condition 3   61.00          55.37653      66.62347
+condition 4   100.75         95.12653      106.37347 
+---------------------------------
+test wether gsr varies across condition and experience (experience as a block)
+Analysis of Variance Table
+                 P-value
+conditionfactor  0.04033
+experiencefactor 0.21274
+------------------------------------
+Null hypothesis goes here
+------------------------------------
+$conditionfactor
+         diff        lwr       upr     p adj
+2-1  56.09565   6.095658 106.09564 0.0282480
+3-1  36.56352 -13.436467  86.56352 0.1732951
+4-1  32.60592 -17.394067  82.60592 0.2445423
+3-2 -19.53212 -69.532117  30.46787 0.6308197
+4-2 -23.48972 -73.489717  26.51027 0.4935346
+4-3  -3.95760 -53.957592  46.04239 0.9943187
+------------------------------------
+95% CI of mean of gsr of conditions
+            mean estimate  lower bound   upper bound
+condition1  -9.60975       -29.794706    10.57521
+condition2  46.48590       26.300944     66.67086
+condition3  26.95377       6.768819      47.13873
+condition4  22.99617       2.811219      43.18113
+
+all conditions except condition2 are statistically equal and
+condition2 is significantly higher than condition1 
+------------------------------------

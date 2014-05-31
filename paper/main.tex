@@ -1,0 +1,166 @@
+
+%------------------------------------------------------------------------------
+
+\documentclass[conference]{include/IEEEtran}
+\usepackage{blindtext, graphicx}
+\usepackage[pdftex]{graphicx}
+\input{common.tex} %new commands go here
+
+%------------------------------------------------------------------------------
+
+\usepackage[pdftex,
+            pdfauthor={Faham Negini},
+            pdftitle={Play Experience Enhancement Using Emotional Feedback},
+            pdfsubject={An IEEE Paper from the Department of Computer Science at the University of Saskatchewan},
+            pdfkeywords={Affective Computing, Biometrics, Emotion Recognition, Play, Games, Physiology, Fuzzy Logic},
+            pdfproducer={Latex},
+            pdfcreator={pdflatex}]{hyperref}
+
+%------------------------------------------------------------------------------
+
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\begin{document}
+
+%------------------------------------------------------------------------------
+
+\title{Play Experience Enhancement Using Emotional Feedback}
+
+\author{\IEEEauthorblockN{Faham Negini\IEEEauthorrefmark{1},
+Mehdi Rostami Forooshani\IEEEauthorrefmark{2},
+Regan L. Mandryk\IEEEauthorrefmark{3} and
+Kevin G. Stanley\IEEEauthorrefmark{4}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}DISCUS Lab, Department of Computer Science, University of Saskatchewan\\
+Phone: +1 306 966 1947, Email: faham.negini@usask.ca}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Department of Mathematics and Statistics, University of Saskatchewan\\
+Email: mer521@mail.usask.ca}
+\IEEEauthorblockA{\IEEEauthorrefmark{3}HCI Lab, Department of Computer Science, University of Saskatchewan\\
+Email: regan@cs.usask.ca}
+\IEEEauthorblockA{\IEEEauthorrefmark{4}DISCUS Lab, Department of Computer Science, University of Saskatchewan\\
+Email: kstanley@cs.usask.ca}
+}
+
+\maketitle
+
+%------------------------------------------------------------------------------
+
+\begin{abstract}
+\label{sec:abs}
+\blindtext
+\end{abstract}
+
+\begin{IEEEkeywords}
+Affective Computing, Biometrics, Emotion Recognition, Play, Games, Physiology, Fuzzy Logic.
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+%------------------------------------------------------------------------------
+
+\section{Introduction}
+\label{sec:intro}
+
+% old-version
+p Since computers are playing a signiﬁcant role in our daily life, the need for a more friendly and natural communication interface between human and computer has continiously increased. Making computers capabale of perceiving the situation in terms of most human speciﬁc factors and responding dependent to this perception is of major steps to acquire this goal. If computers could recognize the situation the same way as human does, they would be much more natural to communicate.
+Emotions are of important and mysterious human attributes
+
+% old-version
+p that have a great effect on people’s day to day behavior. Researchs from neuroscience, psychology, and cognitive science, suggests that emotion plays critical roles in rational and intelligent behavior [19]. Apparently, emotion interacts with thinking in ways that are nonobvious but important for intelligent functioning [19]. Scientists have amassed evidence that emotional skills are a basic component of intelligence, especially for learning preferences and adapting to what is important [16, 8]
+
+% old-version
+p People used to express their emotions through facial expressions, body movement, gestures and tone of voice and expect others understand and answer to their affective state. But sometimes there is a distinction between inner emotional experiences and the outward emotional expressions [18]. Some emotions can be hard to recognise by humans, and inner emotional experiences may not be expressed outwardly [9].
+
+% old-version
+p Recent extensive investigations of physiological signals for emotion detection have been providing encouraging results where affective states are directly related to change in inner bodily signals [9]. However whether we can use physiological patterns to recognise distinct emotions is still a question [19, 4].
+
+% old-version
+p Although the study of affective computing has increased considerably during the last years, few have applied their research to play technologies [24]. Emotional component of human computer interaction in video games is surprisingly important. Game players frequently turn to the console in their search for an emotional experience [21]. There are numerous beneﬁts such technology could bring video game experience, like: The ability to generate game content dynamically with respect to the affective state of the player, the ability to communicate the affective state of the game player to third parties and adoption of new game mechanics based on the affective state of the player [24].
+
+% old-version
+p This work concentrates on developing a real-time emotion recognition system for play technologies which can quantify player instant emotional state during a play experience The rest of the paper is organized as follows: in Section 2 we outline different emotion recognition theories with an overview of physiology sensors. In Section 3 we demonstrate some implementation details of the system. We then describe the experimental setup in Section 4 before giving our results in Section 5. Finally, we give conclusions in Section 6.
+
+%------------------------------------------------------------------------------
+
+\section{Background}
+\label{sec:lit-review}
+
+% old-version
+p Using emotional responses to increase the level of users in- teraction with a real-time play technology requires an effective technique to identifying speciﬁc emotion states within an emotional space. Major existing emotion models in the psychology literture includes: basic emotion theory [7, 6] , dimensional emotion theory [10, 22] and models from appraisal theory (e.g.,[20]) [26]
+
+% old-version
+p Basic emotion theory identiﬁes anger, disgust, fear, happiness, sadness, and surprise [17] as the consice set of primary emotions. These are actually the least six universal categories researchers agreed upon [25]. It also claims these primary emotions are distinguishable from each other and other affective phenomena [5]. On the other hand dimensional emotion theory argues that all emotional states reside in a two-dimensional space, deﬁned by arousal and valence.
+
+% old-version
+p While there are various opinions on identifying emotional states, classiﬁcation into discrete emotions [5], or locating emotions along multiple axes [23, 10], both had limited success in using physiology to identify emotional states [3].
+
+% old-version
+p Lang used a 2-D space deﬁned by arousal and valence (pleasure) (AV space) to classify emotions [10]. Valence can be described as a subjective feeling of pleasantness or unpleasantness while arousal is the subjective state feeling activated or deactivated [1]. Using an arousal-valence space to create the Affect Grid, Russell believed that arousal and valence are cognitive dimentions of individual emotion states. Affect is a broad deﬁnition that includes feelings, moods, sentiments etc. and is commonly used to deﬁne the concept of emotion [18]. Russell’s circumplex model has two “axes” that might be labeled as displeasure/pleasure (horizontal axis) and low/high arousal (vertical axis) It is not easy to map affective states into distinctive emotional states, However these models can provide a mapping between predeﬁned states and the level of arousal and valence [25], Figure ~\ref{fig:russel-av-space}.
+
+\img
+{Russell's arousal and valence model}
+{Russell's circumplex model with two axes of arousal and valence \footnotemark.}
+{russell-av-space.pdf}
+{russel-av-space}
+\footnotetext{Photo credit: http://imagine-it.org/gamessurvey/}
+
+% old-version
+p Both mentioned models for identifying emotions convey some practical issues in emotion measurement. In a HCI context, the stimuli for potential emotions may vary less than in human-human interaction (e.g., participant verbal expressions and body language) [26] and also the combination of evoked emotions [17]. However with help of physiological signals and the fuzzy logic in the model we are going to use, such issues with our dimentional emotion models would be minimized. Though it is anticipated to observe different range of evoked emotions while interacting with play technologies compared to interacting with other humans in daily life. [26]. However our dimensional emotion models suffers some other problems. One problems is that arousal and valence are not independent and one can impact the other [13]. Continuously capturing emotional experiences in this applied setting is of its other halmarks. Subjective measures based on dimensional emotion theory, such as the Affect Grid [23] and the Self-Assessment Manikin [2], allow for quick assessments of user emotional experiences but they may aggregate responses over the course of many events [26]. This work uses Mandryk et al. version of AV space [13]. 
+
+\subsection{Recognising Emotion}
+
+% old-version
+p Heart rate (HR), blood pressure, respiration, electrodermal activity (EDA) and galvanic skin response (GSR), as well as facial EMG (Electromyography) are of physiological variables correlated with various emotions most. Interpreting physiological measures into emotion state can be defficult, due to noisy and inaccurate signals, however recent on-going studies in this area by Mandryk and Atkins [13] presented a method to continuously identifying emotional states of the user while playing a computer game. Using the dimentional emotion model and the fuzzy logic, based on a set of physiologcial measures, in its ﬁrst phase, their fuzzy model transforms GSR, HR, facial EMG (for fowning and smiling) into arousal and valence variables. In the second phase another fuzzy logic model is used to transform arousal and valence variables into ﬁve basic emotion states including: boredom, challenge, excitement, frustration and fun. Their study successfully revealed self-reported emotion states for fun, boredom and excitement are following the trends generated by their fuzzy transformation. The advantage of continiously and quantitatively assessing user’s emotional state during an entire play by their fuzzy logic model is what makes their model perfect to be in incorporated with real-time play technologies. Therefore exposeing user’s emotional state as a new class of uncontious inputs to the play technology. 
+
+%------------------------------------------------------------------------------
+
+\section{System Implementation}
+\label{sec:impl}
+
+%------------------------------------------------------------------------------
+
+\section{Experimentation}
+\label{sec:exprm}
+
+Data were recorded from 15 male and 1 female University students, aged between 18 and 32 (M = 25.00, SD = 3.875). As part of the experiment procedure demographic data were collected with special respect to the suggestions made by ~\cite{?}. Of the participants 94.1\% were right-handed. 41.2\% of participants rated their computer skills as Advanced while the rest of 58.8\% rated their skills as Intermediate. 35.3\% of participants have described themselves playing video games every day, while 41.2\% of them described themselves playing video games a few times per week and 17\% have been playing video games a few times per month and the rest of 5.9\% have been playing video games a few times per year. All participants have used PC as gaming system while 76.48\% of them also have used at least one of the four popular console platforms (XBox360, PS3, PS2, Wii) for gaming. All of participants had at least some experience with 3D shooting games like First Person Shooters. 47.1\% have described themselves playing 3D shooting games many times, while another 41.2\% described themselves as experts in 3D shooting games; Only a total of 11.8\% had limited or intermediate experience with 3D shooting games. Among the participants only 5.9\% had intermediate experience in using mouse in games, 35.3\% of them declared using mouse in games for many times and other 58.8\% of them described themselves as experts in doing that.
+
+A four condition (standard, player, NPC, environment) play session was employed to evaluate performance and excitement as dependent variables. The order 4 Latin square used to permute conditions between participants was as the following:
+
+The experiment was piloted with six participants (2 female). Pilot participants were selected from the Interaction Lab at the University of Saskatchewan, their comments on different mechanisms and online questionnaires of the experiment were reviewed to make participant more comfortable and less intervened during the experiment. Also pilot participants physiological data was recorded to confirm the functionality of the system during the experiment.
+
+All experiments were conducted on weekdays, with the first slot beginning at 11:00h and the last ending at 18:30h. Participants were contacted to choose their preferred time slots while general time for one experimental session was 1:30 hours with setup and cleanup. Participants were invited to a laboratory, after a brief introduction of the experimental procedure, and becoming aware of the data being collected during the session, they were asked to fill out and sign informed consent form, this was the only paper form used during the experiment. Then the GSR sensors were attached to participant's hand.
+
+Attached GSR sensors wired to the signal decoder brings limitations for participants while moving and using their hand. To diminish noisy signals and make participants feel comfortable under these limitations, the GSR sensors were attached to the hand that was handling the mouse during the game. While fingers dealing with mouse were quite steady compared to the other hand handling the keyboard, those fingers used to press the left and right mouse buttons were usually most comfortable ones for attaching GSR sensors. Some participants used index and middle fingers to press mouse buttons and others used index and ring fingers to do that.
+
+%------------------------------------------------------------------------------
+
+\section{Results}
+\label{sec:res}
+
+%------------------------------------------------------------------------------
+
+\section{Discussion}
+\label{sec:discus}
+
+%------------------------------------------------------------------------------
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+%------------------------------------------------------------------------------
+
+\section*{Acknowledgment}
+Thanks to GRAND, NSERC and the University of Saskatchewan for funding the study. Also, thanks to Dr. Regan Mandryk, Dr. Kevin Stanley and special thanks to Michael Kalyn for helping me with the SensorLib and TEVA libraries.
+
+%------------------------------------------------------------------------------
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}  
+\end{document}
+
+%------------------------------------------------------------------------------
+
+
+
