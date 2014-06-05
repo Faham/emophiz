@@ -11,13 +11,20 @@
 \begin{figure}[h]
   \caption[#1]{#2}
   \centering
-  \includegraphics[width=0.5\textwidth]{images/#3}
+  \includegraphics[width=0.48\textwidth]{images/#3}
   \label{fig:#4}
 \end{figure}
 }
 
 %------------------------------------------------------------------------------
 
-\newcommand{\bhline}{\specialrule{.1em}{.05em}{.05em}}
+\newcommand{\dcimg}[4]{
+\begin{figure*}[!t]
+  \caption[#1]{#2}
+  \centering
+  \includegraphics[width=0.85\textwidth]{images/#3}
+  \label{fig:#4}
+\end{figure*}
+}
 
 %------------------------------------------------------------------------------

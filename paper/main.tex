@@ -2,9 +2,9 @@
 %------------------------------------------------------------------------------
 
 \documentclass[conference]{IEEEtran}
-\usepackage{blindtext, graphicx}
+\usepackage{blindtext}
 \usepackage[pdftex]{graphicx}
-\input{common.tex} %new commands go here
+\input{common.tex}
 
 %------------------------------------------------------------------------------
 
@@ -29,15 +29,17 @@
 
 \title{Play Experience Enhancement Using Emotional Feedback}
 
-\author{\IEEEauthorblockN{Faham Negini\IEEEauthorrefmark{1},
-Mehdi Rostami\IEEEauthorrefmark{2},
-Regan L. Mandryk\IEEEauthorrefmark{3},
-Kevin G. Stanley\IEEEauthorrefmark{4}} and
-Amin Tavassolian\IEEEauthorrefmark{5}
-\IEEEauthorblockA{\IEEEauthorrefmark{1}DISCUS Lab, Department of Computer Science\\
-University of Saskatchewan\\
-Phone: +1 306 966 1947\\
-Email: faham.negini@usask.ca}
+\author{\IEEEauthorblockN
+{removed for blind review}
+%{Faham Negini\IEEEauthorrefmark{1},
+%Mehdi Rostami\IEEEauthorrefmark{2},
+%Regan L. Mandryk\IEEEauthorrefmark{3},
+%Kevin G. Stanley\IEEEauthorrefmark{4}} and
+%Amin Tavassolian\IEEEauthorrefmark{5}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}DISCUS Lab, Department of Computer Science\\
+%University of Saskatchewan\\
+%Phone: +1 306 966 1947\\
+%Email: faham.negini@usask.ca}
 }
 
 \maketitle
@@ -141,10 +143,47 @@ Affect Engine is the software unit developed to transform collected physiologica
 {affect-engine.pdf}
 {affect-engine}
 
-% TODO: paraphrase - Emotionally Adapted Games - An Example of a First Person Shooter.pdf
-p This input data is then processed and transferred to the layer that handles the game’s internal logical state, and the user input may influence the game state. After the logical state of the game is defined the system alters the actions of the synthetic agents in the game world. For example, these include the actions of computer-controlled non-player characters. The complexity of this AI layer varies greatly depending on the game. Based on the game state and the determined actions of the synthetic agents, the physics engine determines the kinetic movements of different objects within  the world. Finally, the game world is synthesized for the player by rendering the graphical elements and producing and controlling the audio elements within the game. [see 14] The proposed emotional regulation can be implemented as a middleware system that runs parallel to the actual game engine. The input processing layer of the game engine can receive a data flow of captured and pre-processed sensor data. The real- time signal processing may consist of different forms of amplifying, filtering and feature selection on the psychophysiological signals. This data flow may directly influence the state of the game world, or it can be used by the emotional regulation sub-module of the emotion feedback engine. This module consists of the rules of emotional balancing for different player profile types and gamer-related explicitly set preferences controlled by the “emotion knob”. In addition, it contains a collection of design rules for narrative constructions and game object presentation within the game world. The emotional regulation module also receives input from the game engine’s logical layer to make selections related to desired emotional balance and narrative structures within the game. [14] The outputs of emotional regulation engine may then be applied to various different levels of the actions of the game engine: i) the logical state of the world may be re-directed, ii) the actions of the synthetic agents may be controlled, iii) the
+% TODO: revise
+Affect engine is implemented as a middleware system that runs parallel to the actual game engine. The physiological input data is first transferred to the sensor module of the affect engine ~\ref{subsec:sens-mdl}, where the real-time signal processing happens, this module may apply different forms of amplifying, filtering and feature selection on the physiological signals. Then the processes signal data continues to the next module which transforms it to estimated emotional states ~\ref{subsec:fuzzi}. The resulting data from the transformation module is then transferred to the layer that handles the game's internal logical state ~\ref{subsec:director}. The complexity of the AI layer in this section might vary greatly depending on the game. Based on the logical decisions made at this layer, other subsystems of the game-engine such as the physics and animation engine would collaborate and synthesize the game world for the player.
 
+% TODO: revise
+The affect engine can switch between to major states: Processing State and the Calibration State. Dependent on the design we want to apply to influence players emotional state in any particular way, affect engine can be controlled to switch between these two states by different algorithms. In our setting, the affect engine priodically switch between these two states on preset time intervals to regularly calibrate the system with resent physiological feedback of the player.
 
+% TODO: revise
+\subsection{Sensor Module} \label{subsec:sens-mdl}
+The sensor module consists of a Thought Technology ProComp Infinity encoder ~\cite{tt2013procomp}, connected to PC through a USB cable. SensorLib as the basic application programming interface (API) receives raw physiological inputs from the encoder driver and provides functionalities to apply different filters such as low-pass, high-pass, smoothing and shifting to the signal. Sensor module provides a generic interface for any type of sensor attached to the system, that makes interaction with different type of sensors much easier in fuzzification module ~\ref{subsec:fuzzi}.
+
+% TODO: revise
+\subsection{Transformation Module} \label{subsec:fuzzi}
+This module functions through two separate phases; Then filtered signals are fuzzified using a set of fuzzy rules in the first phase of transformation. Then generated arousal and valence values are transformed into emotion values using another set of fuzzy rules in the second pass ~\cite{mandryk2007fuzzy}. While this module makes the affect engine capable of doing complex transformations from physiological signals to emotion values using different set of fuzzy rules, for this study we only targeted the normalized GSR value as an indicator of players excitement level.
+
+% TODO: revise
+\subsection{The Director} \label{subsec:director}
+The logical subsystem integrated in the game-engine is called the director. In this subsystem the generated emotional state is received and with use of various logical components different adaptations can be applied to the game. Table ~\ref{tbl:adjustment-strategy} presents our exitement oriented adaptation strategy for three different adapted conditions of our study.
+
+%-----------------------------------------------------------
+\begin{table*}[!t]
+\caption{Adjustment Strategy}
+\label{tbl:adjustment-strategy}
+\hfil
+\centering
+\begin{tabular}{lp{3cm}p{3cm}p{3cm}}
+\hline
+Excitement/Strategy               & Player                         & NPC                            & Environment \\
+\hline
+Excited                           & Increase player speed \newline
+                                     Increase grenade rate \newline
+                                     Increase med-pack rate         & Decrease zombie speed \newline
+                                                                      Decrease zombie crowd          & Decrease fog density \\
+\hline
+Not excited                       & Decrease player speed \newline
+                                     Decrease grenade rate \newline
+                                     Decrease med-pack rate         & Increase zombie speed \newline
+                                                                      Increase zombie crowd          & Increase fog density \\
+\hline
+\end{tabular}
+\end{table*}
+%-----------------------------------------------------------
 
 %------------------------------------------------------------------------------
 
@@ -169,9 +208,14 @@ A four condition (Default, Player adapted, NPC adapted, Environment adapted) pla
 % gtg
 Attached GSR sensors wired to the signal decoder brings limitations for participants while moving and using their hand. To diminish noisy signals and make participants feel comfortable under these limitations, the GSR sensors were attached to the hand that was handling the mouse during the game. While fingers dealing with mouse were quite steady compared to the other hand handling the keyboard, those fingers used to press the left and right mouse buttons were usually most comfortable ones for attaching GSR sensors. Some participants used index and middle fingers to press mouse buttons and others used index and ring fingers to do that.
 
-% TODO: revise
-p In this image from left to right the light-blue line
-indicate different conditions being played. When the line is declining towards its base value, that is the period that participant is asked to stop playing and instead relaxing and filling out the questionnaires. The blue line is the normalized GSR signal value of the participant which is used as an estimation of excitement level. The yellow, green and pink lines are showing the three different modes of Player, NPC and Environment parameters being adapted. From left to right the conditions have been played are the Environment, Default, Player and the NPC modes.
+% gtg
+Figure ~\ref{fig:gsr-signal} presents resulted signal values for a participant. From left to right the light-blue line indicate different conditions being played. When the line is declining towards its base value, that is the period that participant is asked to stop playing and instead relaxing and filling out the questionnaires. The blue line is the normalized GSR signal value of the participant which is used as an estimation of excitement level. The yellow, green and pink lines are showing the three different modes of Player, NPC and Environment parameters being adapted. From left to right the conditions have been played are the Environment, Default, Player and the NPC modes. For a better understanding of changes between signal values, some of signals have been shifted to a different range.
+
+\dcimg
+{Map of the level designed for our 4 condition experiment}
+{Map of the level designed for our 4 condition experiment}
+{gsr-signal.png}
+{gsr-signal}
 
 %-----------------------------------------------------------
 \begin{table}[h]
@@ -212,7 +256,7 @@ Total                                            & \~60  \\
 In the presented tables conditions are indicated by numbers: Default (1), Player adapted (2), NPC adapted (3) and Environment adapted as (4). In our analysis we wanted to consider the impact of three different adaptations on players performance and excitement level. In this study performance is defined as the number of killed zombies during the 5 minutes play of each conditions; And we used normalized GSR signal as the excitement metric.
 
 % gtg
-Table ~\ref{tbl:pval-cnd-perf} presents performance value differences between the four conditions. A RCBD ANOVA used to block order of playing different conditions and also players' experience level as two extraneous factors. This analysis shows that there was a significant difference in performance values between conditions. Post-hoc analysis revealed performance values have been declined significantly under condition 3 (NPC adapted) compared to all other conditions (p \< 0.05). However, no significant changes have been observed between the other three conditions. Table ~\ref{tbl:mean-cnd-perf} presents mean estimates of these conditions. While values in this table show improvement in performance values under conditions 2 and 4, the mean differences (Table ~\ref{tbl:mean-cnd-perf}) between these two conditions and condition 1 are not large enough to draw any significant conclusion.
+Table ~\ref{tbl:pval-cnd-perf} presents performance value differences between the four conditions. A RCBD ANOVA used to block order of playing different conditions and also players' experience level as two extraneous factors. This analysis shows that there was a significant difference in performance values between conditions. Post-hoc analysis revealed performance values have been declined significantly under condition 3 (NPC adapted) compared to all other conditions (p \textless 0.05). However, no significant changes have been observed between the other three conditions. Table ~\ref{tbl:mean-cnd-perf} presents mean estimates of these conditions. While values in this table show improvement in performance values under conditions 2 and 4, the mean differences (Table ~\ref{tbl:mean-cnd-perf}) between these two conditions and condition 1 are not large enough to draw any significant conclusion.
 
 % gtg
 Observing player reactions to adaptations during gameplay, and also looking at their responses in the post-game interview, clearly explain the disadvantageous impacts of condition 2 on player. Players naturally adapt themselves to engage and control their character harmonious to the pace of events in the game. Therefor their expectation about next events heavily relies on their prior understanding of the game. Players can easily grasp a feeling about how to control the main character, based on the numerous commands they send to the main character by pushing the control buttons, and the feedback they receive from it. Therefor they can quickly adapt their expectations about the main character behavior. On the other hand, players understanding about NPC components of the game, increase gradually during the play scenario generally by looking at NPC behavior, far slower than the how it happens about the main character. This lead condition 2 to be quite inefficient compared to other conditions in our setting.
@@ -255,6 +299,14 @@ Differences &   Difference  &   Lwr. Bnd.      &     Upr. Bnd.   &  P-value     
 \end{tabular}
 \end{table}
 %-----------------------------------------------------------
+
+Based on the model adequacy checking we can be confident RCBD ANOVA was a perfectly suitable model to analyze our data and the results are reliable Figure ~\ref{fig:residuals-vs-fitted-values-performance}, ~\ref{fig:residuals-vs-fitted-values-excitement}.
+
+\img
+{Plot of residuals vs. fitted values for player performance}
+{Plot of residuals vs. fitted values for player performance}
+{anova-residuals-vs-fitted-values-performance.pdf}
+{residuals-vs-fitted-values-performance}
 
 % gtg
 Table ~\ref{tbl:pval-cnd-exct} presents differences between excitement values between the four conditions. This table shows a significant difference in excitement values between condition 2 and 1 (p = 0.028). The post-hoc analysis revealed participants felt more excited in condition 2 (Player adapted). However excitement differences between the other conditions have not been significant. Table ~\ref{tbl:mean-cnd-exct} presents mean estimates of the excitement values. Although at first glance it can be inferred from Table ~\ref{tbl:mean-cnd-exct} that mean of excitement values in adapted conditions 2,3 and 4, have been increased, based on the differences in Table ~\ref{tbl:pval-cnd-exct} we conclude that only excitement value in condition 2 is significantly larger than the default condition. The mean differences between other conditions are not large enough to draw any further conclusion. Also player reactions to adaptations during gameplay in addition to their responses in our post-game interview indicate players have been most easily influenced by adaptations applied to the main character.
@@ -300,20 +352,11 @@ Condition Differences &   Difference  &   Lwr. Bnd.      &     Upr. Bnd.   &  P-
 \end{table}
 %-----------------------------------------------------------
 
-Based on the model adequacy checking we can be confident RCBD ANOVA was a perfectly suitable model to analyze our data and the results are reliable Figure ~\ref{fig:residuals-vs-fitted-values-performance}, ~\ref{fig:residuals-vs-fitted-values-excitement}.
-
-\img
-{Plot of residuals vs. fitted values for player performance}
-{Plot of residuals vs. fitted values for player performance}
-{anova-residuals-vs-fitted-values-performance.pdf}
-{residuals-vs-fitted-values-performance}
-
 \img
 {Plot of residuals vs. fitted values for player excitement}
 {Plot of residuals vs. fitted values for player excitement}
 {anova-residuals-vs-fitted-values-excitement.pdf}
 {residuals-vs-fitted-values-excitement}
-
 
 %------------------------------------------------------------------------------
 
@@ -324,19 +367,14 @@ Based on the model adequacy checking we can be confident RCBD ANOVA was a perfec
 Choosing a first-person shooter game for this study was a good decision to compare the three different adaptation modes. The FPS game had players both visually and mechanically engaged therefor changing various gameplay parameters had noticeably influenced most players emotional status. Source engine and Half Life 2 assets also was a perfect choice by letting us accessing the code of the engine to incorporate the affect engine. Also the Hammer editor had all needed tools to generate the map of the game.
 
 % TODO: revise
-The impact of main character adaptations on player's excitement level as shown in this study, can be easily understood by looking at what has already taken place in the industry. In fact changing main character parameters such as speed to impact players emotional state is nothing new, many game designers have used similar mechanics to improve players' excitement level by somehow changing or transforming the main character's capabilities in certain moments. Application of such design decisions have become even more popular in recent years, Prince of Persia series, The Suffering, Onimusha and the God of War series are famous examples of such game titles. This work tried to improve this 
-
-% TODO: revise
-In this study we tried to compare different game mechanic adaptation approaches' impact on gamer's performance and excitement level. However one should note different game mechanic adaptations can also happen along with certain non-mechanical adaptations such as changes in background soundtrack or applying certain color variations. We believe our study have applied a minimum amount of such non-mechanical adaptations. We hope to be able to expand this study into that area in our further works.
-
-% TODO: revise
-Calibration-adaptatoin cycle algorithm, 
+The impact of main character adaptations on player's excitement level as shown in this study, can be easily understood by looking at what has already taken place in the industry. In fact changing main character parameters such as speed to impact players emotional state is nothing new, many game designers have used similar mechanisms to improve players' excitement level by somehow changing or transforming the main character's capabilities in certain moments. Application of such design decisions have become even more popular in recent years, Prince of Persia series, The Suffering, Onimusha and the God of War series are famous examples of such game titles. This work tried to improve dynamically adjusted game designs by comparing different adaptation approaches. However one should note different game mechanic adaptations can also happen along with certain non-mechanical adaptations such as changes in background soundtrack or applying certain color variations. We believe our study and the presented results in this work have applied a minimum amount of such non-mechanical adaptations to compare the three different mechanical adaptation conditions. We believe the calibration-adaptation algorithm we used for our study was compatible with the game play scenario we used in our study, however more work on this algorithm for other game scenarios is an interesting area for future work.
 
 %------------------------------------------------------------------------------
 
 \section{Conclusion}
 \label{sec:conclusion}
 % TODO: conclusion
+We analysed the impact of different adaptions on player's performance and excitement level.
 
 %------------------------------------------------------------------------------
 
