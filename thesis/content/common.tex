@@ -13,6 +13,23 @@
 
 %------------------------------------------------------------------------------
 
+%\largeimg
+%{caption}
+%{description}
+%{file path reltive to images/}
+%{label}
+
+\newcommand{\largeimg}[4]{
+\begin{figure}[h!]
+  \caption[#1]{#2}
+  \centering
+  \includegraphics[width=0.95\textwidth]{images/#3}
+  \label{fig:#4}
+\end{figure}
+}
+
+%------------------------------------------------------------------------------
+
 %\img
 %{caption}
 %{description}

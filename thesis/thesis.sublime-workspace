@@ -39,93 +39,91 @@
 			"file": "/D/desktop/temp/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 3045,
+				"buffer_size": 3479,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/projects/mycms/README.md",
+			"file": "/D/projects/emophiz/paper/bibliography.bib",
 			"settings":
 			{
-				"buffer_size": 1363,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "\nSara Naeeni - Jado سارا نائینی - جادو\nToranj - Mohsen Namjoo\nSharab e Nasazegaram\nسینا حجازی - گلخونه\n\nhttps://soundcloud.com/tannaz-sn\nhttps://soundcloud.com/maahoor\nhttps://soundcloud.com/sh-ereh\n\nhttps://soundcloud.com/pirbadian-2\nhttps://soundcloud.com/reza-pirbadian\nhttps://soundcloud.com/pirbadian1\nhttps://soundcloud.com/pirbadian3\n",
-			"settings":
-			{
-				"buffer_size": 341,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/projects/mycms/temp/toremove/admin/index.php",
-			"settings":
-			{
-				"buffer_size": 32,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/projects/mycms/temp/toremove/admin/people.php",
-			"settings":
-			{
-				"buffer_size": 15400,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "https://cas.usask.ca/cas/logout?service=http://hci.usask.ca/\nhttps://cas.usask.ca/cas/login?service=http://hci.usask.ca/admin\n\n",
-			"settings":
-			{
-				"buffer_size": 127,
-				"line_ending": "Windows",
-				"name": "https://cas.usask.ca/cas/logout?service=http://hci"
-			}
-		},
-		{
-			"file": "/D/projects/mycms/temp/toremove/admin/common.php",
-			"settings":
-			{
-				"buffer_size": 6300,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/projects/mycms/modules/admin/admin.php",
-			"settings":
-			{
-				"buffer_size": 9760,
+				"buffer_size": 11075,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Stephanie Dilsner\n-3 - add/subtract functions can be easily implemented without a loop, in the case of add:\n        result.numerator = (this.numerator*r2.denominator) + (r2.numerator*this.denominator);\n        result.denominator = this.denominator * r2.denominator;\n\nTaylor Summach\nrepeating code snippets is a dangerous practice, you should always try to reduce your code complexity at the expense of increasing your processing data (through using extra variables avoid repeated codes)\n\nTorban Peterson\n",
+			"file": "/D/projects/emophiz/paper/main.tex",
 			"settings":
 			{
-				"buffer_size": 504,
-				"line_ending": "Windows",
-				"name": "Stephanie Dilsner"
+				"buffer_size": 35713,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/Users/Faham/Downloads/cmpt270/a1.java",
+			"file": "/D/projects/emophiz/paper/common.tex",
 			"settings":
 			{
-				"buffer_size": 6291,
+				"buffer_size": 529,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/projects/mycms/database.sql",
+			"settings":
+			{
+				"buffer_size": 19780,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/chp-3-video-games.tex",
+			"settings":
+			{
+				"buffer_size": 43008,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/bibliography.bib",
+			"settings":
+			{
+				"buffer_size": 23527,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/chp-5-exprm.tex",
+			"settings":
+			{
+				"buffer_size": 20515,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/chp-4-impl.tex",
+			"settings":
+			{
+				"buffer_size": 18166,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/common.tex",
+			"settings":
+			{
+				"buffer_size": 1509,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 173.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"enable",
+				"ena",
 				"Package Control: Enable Package"
 			],
 			[
@@ -133,7 +131,11 @@
 				"Package Control: Disable Package"
 			],
 			[
-				"ena",
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"enable",
 				"Package Control: Enable Package"
 			],
 			[
@@ -171,10 +173,6 @@
 			[
 				"disabl",
 				"Package Control: Disable Package"
-			],
-			[
-				"enab",
-				"Package Control: Enable Package"
 			],
 			[
 				"package",
@@ -221,9 +219,33 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Faham/Desktop/uhmwpe.txt",
+		"/D/projects/emophiz/paper/make.sh",
+		"/D/projects/emophiz/doc/analysis/put-into-thesis.txt",
+		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex",
+		"/D/projects/emophiz/data/comments.txt",
+		"/D/projects/emophiz/paper/include/IEEEtran-sample.tex",
+		"/D/projects/emophiz/paper/common.tex",
+		"/D/projects/emophiz/thesis/content/chp-1-intro.tex",
+		"/D/projects/emophiz/thesis/content/common.tex",
+		"/D/projects/emophiz/thesis/thesis.tex",
+		"/D/projects/emophiz/thesis/content/chp-6-discus.tex",
+		"/D/projects/emophiz/thesis/include/uofsthesis-cs.cls",
+		"/D/projects/emophiz/paper/bibliography.bib",
+		"/D/projects/emophiz/paper/auxiliary/main.log",
+		"/D/projects/emophiz/paper/content/01-intro.tex",
+		"/D/projects/emophiz/paper/content/abstract.tex",
+		"/D/projects/emophiz/paper/picture",
+		"/C/Users/Faham/Downloads/cmpt270/marking-270.txt",
+		"/D/projects/emophiz/paper/.gitignore",
+		"/D/projects/mycms/modules/admin/admin.php",
+		"/D/projects/mycms/temp/toremove/admin/common.php",
+		"/D/projects/mycms/README.md",
+		"/D/projects/mycms/temp/toremove/admin/people.php",
+		"/D/projects/mycms/temp/toremove/admin/index.php",
+		"/C/Users/Faham/Downloads/cmpt270/a1.java",
 		"/D/projects/mycms/temp/check_php.php",
 		"/C/Users/Faham/Downloads/cmpt270/a1 (1).java",
-		"/C/Users/Faham/Downloads/cmpt270/a1.java",
 		"/C/Users/Faham/Downloads/cmpt270/main.java",
 		"/C/Users/Faham/Downloads/cmpt270/RationaltypeTest.java",
 		"/C/Users/Faham/Downloads/cmpt270/RationalType.java",
@@ -239,7 +261,6 @@
 		"/D/projects/mycms/config.ini",
 		"/D/documents/internet-network.txt",
 		"/D/projects/mycms/create-schema.sh",
-		"/D/projects/mycms/README.md",
 		"/D/projects/mycms/.htaccess",
 		"/D/projects/mycms/database.sql",
 		"/D/projects/mycms/schema/mycms.ini",
@@ -247,7 +268,6 @@
 		"/D/projects/mycms/classes/contents.php",
 		"/C/Users/Faham/Downloads/mycms.sql",
 		"/D/projects/mycms/temp/inserts.sql",
-		"/D/projects/emophiz/doc/analysis/put-into-thesis.txt",
 		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
 		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
 		"/D/projects/emophiz/thesis/content/bibliography.bib",
@@ -263,13 +283,11 @@
 		"/C/wamp/bin/php/php5.3.13/phar.phar.bat",
 		"/C/Users/Faham/Desktop/uhmwpe",
 		"/D/projects/mycms/classes/db.php",
-		"/D/projects/emophiz/thesis/thesis.tex",
 		"/C/Users/Faham/Desktop/quran-miracles.txt",
 		"/C/Users/Faham/Desktop/put-into-thesis.txt",
 		"/D/projects/emophiz/doc/analysis/statistical-analysis.R",
 		"/D/projects/emophiz/doc/analysis/statistical-analysis.log",
 		"/C/Users/Faham/Downloads/Faham.R",
-		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex",
 		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
 		"/D/documents/private/people/faham-negini/passwords.txt",
 		"/D/documents/private/encrypt.sh",
@@ -283,7 +301,6 @@
 		"/C/Users/Faham/Downloads/uofsthesis-cs/thesis_template.tex",
 		"/C/Users/Faham/Downloads/uofsthesis-cs/uofsthesis-cs.cls",
 		"/D/music/sarapasand/manifest",
-		"/D/projects/emophiz/thesis/content/common.tex",
 		"/G/software/usb-windows-installer/rufus_v1.4.1.txt",
 		"/C/Users/Faham/Downloads/Flow.bibtex",
 		"/C/Users/Faham/Downloads/wallpaper_example.tex",
@@ -329,26 +346,7 @@
 		"/C/Users/Faham/AppData/Local/Temp/7zOB0EA.tmp/quranic-corpus-morphology-0.4.txt",
 		"/D/desktop/temp/tax-review-docs/response.txt",
 		"/D/desktop/temp/tax-review-docs/response2.txt",
-		"/D/projects/emophiz/thesis/content/import/import.bib",
-		"/D/documents/faham/invitation-letter-mohammad-negini.tex",
-		"/D/documents/faham/cover-letter.tex",
-		"/D/projects/emophiz/thesis/content/app-av-to-emotion.tex",
-		"/D/projects/emophiz/thesis/related-works/olesen2008real.tex",
-		"/D/projects/emophiz/thesis/content/import/olesen2008real.tex",
-		"/D/projects/emophiz/thesis/content/import/fairclough2011brain.tex",
-		"/D/projects/emophiz/thesis/content/import/lazzaro2004we.tex",
-		"/D/projects/emophiz/thesis/content/import/cherney2008mom.tex",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/LaTeX Word Count/LaTeXWordCount.sublime-settings",
-		"/C/Users/Faham/Desktop/quranic-topics.txt",
-		"/C/Users/Faham/Desktop/quranic-topics",
-		"/D/documents/private/docs/new/faham-tax-2013-netfile.tax",
-		"/D/projects/emophiz/thesis/content/ch06-discussion.tex",
-		"/D/projects/emophiz/thesis/content/ch05-experimentation.tex",
-		"/D/projects/emophiz/thesis/content/ch04-implementation.tex",
-		"/D/projects/emophiz/thesis/content/ch03-problem-and-solution.tex",
-		"/D/projects/emophiz/thesis/content/ch01-intro.tex",
-		"/D/projects/emophiz/thesis/content/ch02-lit-review.tex",
-		"/D/projects/bracollage/README.md"
+		"/D/projects/emophiz/thesis/content/import/import.bib"
 	],
 	"find":
 	{
@@ -371,6 +369,83 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"review",
+			"TODO: ",
+			"!t",
+			"pval-cnd-perf",
+			"Affect Engine",
+			"Affect",
+			"baba",
+			"russell1989affect",
+			"mandryk2007fuzzy",
+			"barrett1998discrete",
+			"russell2003core",
+			"dalgleish1999handbook",
+			"zagalo2004story",
+			"peter2006emotion",
+			"paiva2007affective",
+			"cannon1927james",
+			"zhang2010service",
+			"roseman2001model",
+			"russell1980circumplex",
+			"lang1995emotion",
+			"ekman1992argument",
+			"Measuring emotion",
+			"[23]",
+			"[13]",
+			"[17]",
+			"[26]",
+			"eas",
+			"17",
+			"16",
+			"15",
+			"14",
+			"13",
+			"12",
+			"11",
+			"26",
+			"25",
+			"24",
+			"23",
+			"22",
+			"21",
+			"20",
+			"19",
+			"20",
+			"19",
+			"18",
+			"17",
+			"16",
+			"15",
+			"14",
+			"13",
+			"12",
+			"11",
+			"10",
+			"xiang2013dynamic",
+			"pajares2008understanding",
+			"table",
+			"figure",
+			"floating",
+			"sec:res",
+			"mayer1993intelligence",
+			"ﬁ",
+			"---------------------------------",
+			"- ",
+			"ﬀ",
+			"biblio",
+			"uofsbibliography",
+			"CLASSOPTIONcaptions",
+			"ﬃ",
+			"ﬀ",
+			"- ",
+			"aham negi",
+			"aham neini",
+			"IEEEtran",
+			"ieeetran",
+			"IEEEtran",
+			"ieeetran",
+			"IEEEtran",
 			"person",
 			"isadmin",
 			"HTTP_CAS_USER",
@@ -421,84 +496,7 @@
 			"       ",
 			"      ",
 			"         ",
-			"        ",
-			"p adj",
-			"pr",
-			"Pr",
-			"> ",
-			"chapter",
-			"Figure",
-			"figure",
-			"emo-game-sys-design",
-			"Affect Engine",
-			"saari2009emotionally",
-			"output_file",
-			"show_help",
-			"  (required)	Help ",
-			" 	\n\nNot Provided\n",
-			"Apr",
-			"\nMay",
-			"6.20",
-			"font",
-			"\np ",
-			"cod-mw-difficulty",
-			"tijs2009creating",
-			" = ",
-			"saari2005towards",
-			"http://en.wikipedia.org/wiki/Galvanic_Skin_Response",
-			"http://en.wikipedia.org/wiki/Facial_electromyography",
-			"galvanic ski",
-			" ",
-			"Procomp Inﬁnity Hardware Manua",
-			"url",
-			"\",",
-			"=\"",
-			"\"",
-			" = ",
-			"Dynamic Difﬁculty Adjustment by Facial Expression",
-			"olesen2008real",
-			"And Everything Else",
-			"- ",
-			"enumerate",
-			"url",
-			"Csikszentmihalyi",
-			"csikszentmihalyi",
-			"Csikszentmihalyi",
-			"csikszentmihalyi",
-			"Csikszentmihalyi",
-			"csikszentmihalyi",
-			"Csikszentmihalyi",
-			"csikszentmihalyi",
-			"Csikszentmihalyi",
-			"- ",
-			"TODO",
-			"- ",
-			"\\wpYoffset ",
-			"sykes2003affective",
-			"difficulty level",
-			".bmp",
-			"bmp",
-			"//",
-			"`",
-			"Experiment procedure",
-			"experiment-procedure",
-			"\\specialrule{.1em}{.05em}{.05em}",
-			"	",
-			"-",
-			"maste",
-			"Master",
-			"Masters",
-			"array",
-			"content/q-",
-			"q-",
-			"input",
-			"label",
-			"input",
-			"saari2009emotionally",
-			"Apr",
-			"May",
-			"sniper",
-			"ﬂ"
+			"        "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -561,7 +559,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -570,15 +568,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3045,
+						"buffer_size": 3479,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1329,
+								1329
 							]
 						],
 						"settings":
@@ -587,6 +585,104 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 141.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/projects/emophiz/paper/bibliography.bib",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10115,
+								10115
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/projects/emophiz/paper/main.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 35713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17761,
+								17761
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"spell_check": true,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3871.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/projects/emophiz/paper/common.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194,
+								194
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -596,20 +692,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/D/projects/mycms/README.md",
+					"buffer": 4,
+					"file": "/D/projects/mycms/database.sql",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1363,
+						"buffer_size": 19780,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								278,
-								278
+								16773,
+								16773
 							]
 						],
 						"settings":
@@ -617,51 +713,55 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 87.0,
+						"translation.y": 8424.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 5,
+					"file": "content/chp-3-video-games.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 341,
+						"buffer_size": 43008,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								341,
-								341
+								7864,
+								7864
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
 							"incomplete_sync": null,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 267.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/D/projects/mycms/temp/toremove/admin/index.php",
+					"buffer": 6,
+					"file": "content/bibliography.bib",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32,
+						"buffer_size": 23527,
 						"regions":
 						{
 						},
@@ -674,9 +774,12 @@
 						],
 						"settings":
 						{
+							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -686,20 +789,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/D/projects/mycms/temp/toremove/admin/people.php",
+					"buffer": 7,
+					"file": "content/chp-5-exprm.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15400,
+						"buffer_size": 20515,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4991,
-								4991
+								14656,
+								14656
 							]
 						],
 						"settings":
@@ -707,153 +810,61 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2705.0,
+						"translation.y": 789.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 127,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								127,
-								127
-							]
-						],
-						"settings":
-						{
-							"auto_name": "https://cas.usask.ca/cas/logout?service=http://hci",
-							"incomplete_sync": null,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/D/projects/mycms/temp/toremove/admin/common.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6300,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								241,
-								241
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/D/projects/mycms/modules/admin/admin.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9760,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								402,
-								402
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
 					"buffer": 8,
+					"file": "content/chp-4-impl.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 504,
+						"buffer_size": 18166,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								504,
-								504
+								16918,
+								16778
 							]
 						],
 						"settings":
 						{
-							"auto_name": "Stephanie Dilsner",
 							"incomplete_sync": null,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3633.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 9,
-					"file": "/C/Users/Faham/Downloads/cmpt270/a1.java",
+					"file": "content/common.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6291,
+						"buffer_size": 1509,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								212,
-								212
+								513,
+								513
 							]
 						],
 						"settings":
@@ -861,15 +872,13 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 18.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 9,
 					"type": "text"
 				}
 			]

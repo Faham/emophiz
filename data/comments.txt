@@ -1,0 +1,72 @@
+id     condition    comment
+01     1            noticed more enemies came out after playing for a while. difficulty increased 
+02     1            
+03     1            didn't notice any change
+04     1            Enemies seemed similar in difficulty to condition 4 so I modified my strategy slightly and it seemed to work better than before. I tried to do more running back and forth between the health pack and the grenade.
+05     1            it was better
+06     1            I backed into a corner and defended it so it was easier to not have zombies spawn behind you. I did better.
+07     1            This felt the same as condition 4
+08     1            Didn't notice anything different this time than from the last one (4)
+09     1            
+10     1            Got used to the game.
+__     1            zombi this time was appearing next to  me. since I was expecting this I performed good in the conditions.
+11     1            Yes, I was feeling more confident and played better.
+12     1            I experienced tiredness in my eyes 
+13     1            Did not notice a lot of changes between this condition, it did seem about the same difficulty with many more enemies than the others. There was sense of being overwhelmed at one point.     I didn't really change my gameplay much from the last condition, still fired the weapon a lot and used grenades. 
+14     1            moved around much faster, used grenades, shot more at the headcrabs.
+15     1            Given more map familiarity, I located a defensible position which I think increased performance. I am not sure if I noticed what difference the condition made.
+16     1            
+-----------------------------------------
+01     2            it seems get easier
+02     2            
+03     2            my speed changes all the time, sometimes fast, sometimes slow.
+04     2            My strategy was to be much more mobile and it seemed to work better. I could just run across the map, group up the zombies, grab the grenade and then blow up most of them. 
+05     2            
+06     2            I found the the zombies collected in the middle so it was better to stay away from there. I did better the second try with this strategy.
+07     2            I felt this condition was the easiest, even though there were more zombies
+08     2            The Speed of the character would change constantly. I think that is the only difference i noticed.
+09     2            It was harder this time.
+10     2            
+__     2            my speed was changes. mouse sensitivity probably too. it affected my movement and discomforted me. since it was uncomfortable to play in the conditions my performance was lower.
+11     2            yes. after each condition my gameplay is improving
+12     2            
+13     2            The movements were slower as I took damage from the enemies. 
+14     2            faster movements, more health packs, trying to keep zombies in front of me
+15     2            I noticed the command prompt changing the movement speed, and initially I thought is was only decreasing so it made me want to stop moving.    When I noticed it going back up I took it as an opportunity to move around a bit.    Being the 3rd time playing the game, I found it easier to expect what could happen making it much easier to survive.    Since last game I died to my blind spot, this time I checked it every 8 seconds like a rear view check while driving to make sure I would not get flanked.
+16     2            I noticed that around Round 2 or 3 that my movement speed (not aiming sensitivity, just character movement) increased dramatically. It was difficult to get used to, but ultimately it did help gameplay.
+-----------------------------------------
+01     3            difficulty increased as level going up. make game harder. 
+02     3            
+03     3            
+04     3            My character felt quite sluggish and slow. Relative to the zombies. This made my previous strategy difficult to pull off as I wasn't as maneuverable.
+05     3            
+06     3            I didn't really change my playstyle but it seemed the safe places got more overrun quicker now
+07     3            The play area was small and the zombies spawned more together as the round went on, I think this made it more difficult
+08     3            The zombies would change speed throughout the playthrough.
+09     3            Each round took longer time to go to the next round.  I could use speed(Shift) this time better(in 3rd try).
+10     3            The speed seems slower.  And I felt more used to the game.
+__     3            every round the number of zombies increased
+11     3            yes and the gameplay improved
+12     3            
+13     3            The gameplay seemed normal at the begining and felt so until I died the first time where one hit killed me. I changed my style of gameplay to be more aggressive by firing the weapons more and aiming for the head. Think I performed better knowing one hit from the enemy killed me. 
+14     3            I started using the grenades more as more zombies were released
+15     3            Now that I had noticed the command prompt last game, I was now checking it for updates to the game mechanics. I noticed that the zombie speed was being altered and assumed that I would eventually get rushed.    I feel my performance worsened given that I died. It was harder to deal with a change to the enemy's profile than one to my own.    I had quite a surprise when the speed was set to 3.33 and a guy was in my face immediately.
+16     3            Felt just like Condition 1 (movement speed was normal again).
+-----------------------------------------
+01     4            did not notice changes. but i performed better
+02     4            
+03     4            seems like more zombies appear, and seems like they appear faster
+04     4            Enemies got progressively harder and increased in number as the rounds increased. Definitely impacted my performance
+05     4            
+06     4            I didn't change anythi8ng major. My gameplay stayed about the same.
+07     4            the zombies moved slower but there also seemed to be more
+08     4            Unlimited Ammo, Fairly quick respawn on consumables.
+09     4            I think somehow I found the best way how to play the game.
+10     4            
+__     4            zombies still strong and number of it increased every round
+11     4            I dont think anything changed and i didnot perform better with these changes
+12     4            I felt game got harder in this step.
+13     4            Notices there was fog creeping in around me and had to use the flashlight a few times until I adapted to playing in the fog. Also used more ammo this round and held the trigger/mouse down longer.     Think I performed better after I died the first time knowing what it takes to die. 
+14     4            Ran back more, used grenades more, used healthpacks more
+15     4            Familiarity with HL2 made getting accustomed easier than with a different game.    The point spawning was surprising compared to games where mobs would have an entrance like climbing over a fence. Made it so that no point was particularly defensible. I noticed my heart jump a bit when Unexpectedly hit from behind from a new spawn.
+16     4            At round 3 it got foggy and then round 4 got even foggier. This made it difficult to see at long ranges, but ultimately this only was a minor hindrance to gameplay since round 3 and 4 are easy compared to round 5.

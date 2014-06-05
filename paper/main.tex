@@ -1,7 +1,7 @@
 
 %------------------------------------------------------------------------------
 
-\documentclass[conference]{include/IEEEtran}
+\documentclass[conference]{IEEEtran}
 \usepackage{blindtext, graphicx}
 \usepackage[pdftex]{graphicx}
 \input{common.tex} %new commands go here
@@ -30,17 +30,14 @@
 \title{Play Experience Enhancement Using Emotional Feedback}
 
 \author{\IEEEauthorblockN{Faham Negini\IEEEauthorrefmark{1},
-Mehdi Rostami Forooshani\IEEEauthorrefmark{2},
-Regan L. Mandryk\IEEEauthorrefmark{3} and
-Kevin G. Stanley\IEEEauthorrefmark{4}}
-\IEEEauthorblockA{\IEEEauthorrefmark{1}DISCUS Lab, Department of Computer Science, University of Saskatchewan\\
-Phone: +1 306 966 1947, Email: faham.negini@usask.ca}
-\IEEEauthorblockA{\IEEEauthorrefmark{2}Department of Mathematics and Statistics, University of Saskatchewan\\
-Email: mer521@mail.usask.ca}
-\IEEEauthorblockA{\IEEEauthorrefmark{3}HCI Lab, Department of Computer Science, University of Saskatchewan\\
-Email: regan@cs.usask.ca}
-\IEEEauthorblockA{\IEEEauthorrefmark{4}DISCUS Lab, Department of Computer Science, University of Saskatchewan\\
-Email: kstanley@cs.usask.ca}
+Mehdi Rostami\IEEEauthorrefmark{2},
+Regan L. Mandryk\IEEEauthorrefmark{3},
+Kevin G. Stanley\IEEEauthorrefmark{4}} and
+Amin Tavassolian\IEEEauthorrefmark{5}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}DISCUS Lab, Department of Computer Science\\
+University of Saskatchewan\\
+Phone: +1 306 966 1947\\
+Email: faham.negini@usask.ca}
 }
 
 \maketitle
@@ -49,7 +46,7 @@ Email: kstanley@cs.usask.ca}
 
 \begin{abstract}
 \label{sec:abs}
-\blindtext
+% TODO: abstract
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -63,41 +60,31 @@ Affective Computing, Biometrics, Emotion Recognition, Play, Games, Physiology, F
 \section{Introduction}
 \label{sec:intro}
 
-% old-version
-p Since computers are playing a signiﬁcant role in our daily life, the need for a more friendly and natural communication interface between human and computer has continiously increased. Making computers capabale of perceiving the situation in terms of most human speciﬁc factors and responding dependent to this perception is of major steps to acquire this goal. If computers could recognize the situation the same way as human does, they would be much more natural to communicate.
-Emotions are of important and mysterious human attributes
+% gtg
+Since computers are playing a significant role in our daily life, the need for a more friendly and natural communication interface between human and computer has continuously increased. Making computers capable of perceiving the situation in terms of most human specific factors and responding dependent to this perception is of major steps to acquire this goal. If computers could recognize the situation the same way as human does, they would be much more natural to communicate. Emotions are of important and mysterious human attributes that have a great effect on people's day to day behavior. Researches from neuroscience, psychology, and cognitive science, suggests that emotion plays critical roles in rational and intelligent behavior ~\cite{picard2001toward}. Apparently, emotion interacts with thinking in ways that are non-obvious but important for intelligent functioning ~\cite{picard2001toward}. Scientists have amassed evidence that emotional skills are a basic component of intelligence, especially for learning preferences and adapting to what is important ~\cite{mayer1993intelligence, goleman2006emotional} People used to express their emotions through facial expressions, body movement, gestures and tone of voice and expect others understand and answer to their affective state. But sometimes there is a distinction between inner emotional experiences and the outward emotional expressions ~\cite{picard2003affective}. Some emotions can be hard to recognize by humans, and inner emotional experiences may not be expressed outwardly ~\cite{jones2007biometric}. Recent extensive investigations of physiological signals for emotion detection have been providing encouraging results where affective states are directly related to change in inner bodily signals ~\cite{jones2007biometric}. However whether we can use physiological patterns to recognize distinct emotions is still a question ~\cite{picard2001toward, cacioppo1990inferring}.
 
-% old-version
-p that have a great effect on people’s day to day behavior. Researchs from neuroscience, psychology, and cognitive science, suggests that emotion plays critical roles in rational and intelligent behavior [19]. Apparently, emotion interacts with thinking in ways that are nonobvious but important for intelligent functioning [19]. Scientists have amassed evidence that emotional skills are a basic component of intelligence, especially for learning preferences and adapting to what is important [16, 8]
-
-% old-version
-p People used to express their emotions through facial expressions, body movement, gestures and tone of voice and expect others understand and answer to their affective state. But sometimes there is a distinction between inner emotional experiences and the outward emotional expressions [18]. Some emotions can be hard to recognise by humans, and inner emotional experiences may not be expressed outwardly [9].
-
-% old-version
-p Recent extensive investigations of physiological signals for emotion detection have been providing encouraging results where affective states are directly related to change in inner bodily signals [9]. However whether we can use physiological patterns to recognise distinct emotions is still a question [19, 4].
-
-% old-version
-p Although the study of affective computing has increased considerably during the last years, few have applied their research to play technologies [24]. Emotional component of human computer interaction in video games is surprisingly important. Game players frequently turn to the console in their search for an emotional experience [21]. There are numerous beneﬁts such technology could bring video game experience, like: The ability to generate game content dynamically with respect to the affective state of the player, the ability to communicate the affective state of the game player to third parties and adoption of new game mechanics based on the affective state of the player [24].
-
-% old-version
-p This work concentrates on developing a real-time emotion recognition system for play technologies which can quantify player instant emotional state during a play experience The rest of the paper is organized as follows: in Section 2 we outline different emotion recognition theories with an overview of physiology sensors. In Section 3 we demonstrate some implementation details of the system. We then describe the experimental setup in Section 4 before giving our results in Section 5. Finally, we give conclusions in Section 6.
+% gtg
+Although the study of affective computing has increased considerably during the last years, few have applied their research to play technologies ~\cite{sykes2003affective}. Emotional component of human computer interaction in video games is surprisingly important. Game players frequently turn to the console in their search for an emotional experience ~\cite{rouse2010game}. There are numerous benefits such technology could bring video game experience, like: The ability to generate game content dynamically with respect to the affective state of the player, the ability to communicate the affective state of the game player to third parties and adoption of new game mechanics based on the affective state of the player ~\cite{sykes2003affective}. This work concentrates on developing a real-time emotion recognition system for play technologies which can quantify player instant emotional state during a play experience. The rest of the paper is organized as follows: in Section ~\ref{sec:lit-review} we outline different emotion recognition theories with an overview of physiology sensors and the concept of flow in video games. In Section ~\ref{sec:impl} we demonstrate some implementation details of the system. We then describe the experimental setup in Section ~\ref{sec:exprm} before giving our results in Section ~\ref{sec:res}. Finally, we discuss the results in Section ~\ref{sec:discus} and give conclusions in Section ~\ref{sec:conclusion}.
 
 %------------------------------------------------------------------------------
 
 \section{Background}
 \label{sec:lit-review}
 
-% old-version
-p Using emotional responses to increase the level of users in- teraction with a real-time play technology requires an effective technique to identifying speciﬁc emotion states within an emotional space. Major existing emotion models in the psychology literture includes: basic emotion theory [7, 6] , dimensional emotion theory [10, 22] and models from appraisal theory (e.g.,[20]) [26]
+% gtg
+Using emotional responses to increase the level of users interaction with a real-time play technology requires an effective technique to identifying specific emotion states within an emotional space. Major existing emotion models in the psychology literature includes: basic emotion theory ~\cite{ekman1992argument, ekman1992there}, dimensional emotion theory ~\cite{lang1995emotion, russell1980circumplex} and models from appraisal theory (e.g.,~\cite{roseman2001model}) ~\cite{zhang2010service}
 
-% old-version
-p Basic emotion theory identiﬁes anger, disgust, fear, happiness, sadness, and surprise [17] as the consice set of primary emotions. These are actually the least six universal categories researchers agreed upon [25]. It also claims these primary emotions are distinguishable from each other and other affective phenomena [5]. On the other hand dimensional emotion theory argues that all emotional states reside in a two-dimensional space, deﬁned by arousal and valence.
+% gtg
+Classical attempts to describe emotion can be categorized into two major different approaches: Those that try to describe emotion by emphasizing its cognitive (mental) aspects and those that concentrate on its bodily (physical) aspects. Walter Cannon by suggesting emotion as an experience within the brain, independent of the sensations of the body ~\cite{cannon1927james} is usually credited for the cognitive approach. On the other hand the physical approach has largely been attributed to William James in which physiological responses (e.g. elevated heart rate) are the center of focus that occurs just prior or during an emotional episode ~\cite{paiva2007affective}.
 
-% old-version
-p While there are various opinions on identifying emotional states, classiﬁcation into discrete emotions [5], or locating emotions along multiple axes [23, 10], both had limited success in using physiology to identify emotional states [3].
+% gtg
+Discrete categories, also known as the basic emotion theory largely relies on language in its mission to describe emotion; In fact, it begins by identifying specific labels people attach to different emotional episodes and then suggests categories of emotions. Examples of such labels (or categories) include excitement, anger, fear, sadness and happiness. Recent works on the basic emotion theory identifies anger, disgust, fear, happiness, sadness, and surprise ~\cite{peter2006emotion} as the concise set of primary emotions. These are actually the least six universal categories researchers agreed upon ~\cite{zagalo2004story}. It also claims these primary emotions are distinguishable from each other and other affective phenomena ~\cite{dalgleish1999handbook}.
 
-% old-version
-p Lang used a 2-D space deﬁned by arousal and valence (pleasure) (AV space) to classify emotions [10]. Valence can be described as a subjective feeling of pleasantness or unpleasantness while arousal is the subjective state feeling activated or deactivated [1]. Using an arousal-valence space to create the Affect Grid, Russell believed that arousal and valence are cognitive dimentions of individual emotion states. Affect is a broad deﬁnition that includes feelings, moods, sentiments etc. and is commonly used to deﬁne the concept of emotion [18]. Russell’s circumplex model has two “axes” that might be labeled as displeasure/pleasure (horizontal axis) and low/high arousal (vertical axis) It is not easy to map affective states into distinctive emotional states, However these models can provide a mapping between predeﬁned states and the level of arousal and valence [25], Figure ~\ref{fig:russel-av-space}.
+% gtg
+The dimensional emotion theory argues that all emotional states reside in a two-dimensional space, defined by arousal and valence. This approach described by Russell in ~\cite{russell2003core} introduces the idea of core affect to identify emotions. It holds core affect accountable for feelings triggered by specific events and describes it as being composed of two independent dimensions: arousal and valence. Figure ~\ref{fig:russel-av-space} illustrates the concept of arousal and valence space describing various emotions known as common emotion categories.
+
+% gtg
+Lang used a 2-D space defined by arousal and valence (pleasure) (AV space) to classify emotions ~\cite{lang1995emotion}. Valence is described as a subjective feeling of pleasantness or unpleasantness while arousal is the subjective state feeling activated or deactivated ~\cite{barrett1998discrete}. Using an arousal-valence space to create the Affect Grid, Russell believed that arousal and valence are cognitive dimensions of individual emotion states. Affect is a broad definition that includes feelings, moods, sentiments etc. and is commonly used to define the concept of emotion ~\cite{picard2003affective}. Russell's model has two axes that might be labeled as displeasure/pleasure (horizontal axis) and low/high arousal (vertical axis) It is not easy to map affective states into distinctive emotional states, However these models can provide a mapping between predefined states and the level of arousal and valence ~\cite{zagalo2004story}, Figure ~\ref{fig:russel-av-space}.
 
 \img
 {Russell's arousal and valence model}
@@ -106,48 +93,250 @@ p Lang used a 2-D space deﬁned by arousal and valence (pleasure) (AV space) to
 {russel-av-space}
 \footnotetext{Photo credit: http://imagine-it.org/gamessurvey/}
 
-% old-version
-p Both mentioned models for identifying emotions convey some practical issues in emotion measurement. In a HCI context, the stimuli for potential emotions may vary less than in human-human interaction (e.g., participant verbal expressions and body language) [26] and also the combination of evoked emotions [17]. However with help of physiological signals and the fuzzy logic in the model we are going to use, such issues with our dimentional emotion models would be minimized. Though it is anticipated to observe different range of evoked emotions while interacting with play technologies compared to interacting with other humans in daily life. [26]. However our dimensional emotion models suffers some other problems. One problems is that arousal and valence are not independent and one can impact the other [13]. Continuously capturing emotional experiences in this applied setting is of its other halmarks. Subjective measures based on dimensional emotion theory, such as the Affect Grid [23] and the Self-Assessment Manikin [2], allow for quick assessments of user emotional experiences but they may aggregate responses over the course of many events [26]. This work uses Mandryk et al. version of AV space [13]. 
+% gtg
+Both mentioned models for identifying emotions convey some practical issues in emotion measurement. In a HCI context, the stimuli for potential emotions may vary less than in human-human interaction (e.g., participant verbal expressions and body language) ~\cite{zhang2010service} and also the combination of evoked emotions ~\cite{peter2006emotion}. However with help of physiological signals and the fuzzy logic in the model we are going to use, such issues with our dimensional emotion models would be minimized. Though it is anticipated to observe different range of evoked emotions while interacting with play technologies compared to interacting with other humans in daily life. ~\cite{zhang2010service}. However our dimensional emotion models suffers some other problems. One problem is that arousal and valence are not independent and one can impact the other ~\cite{mandryk2007fuzzy}. Continuously capturing emotional experiences in this applied setting is of its other hallmarks. Subjective measures based on dimensional emotion theory, such as the Affect Grid ~\cite{russell1989affect} and the Self-Assessment Manikin ~\cite{bradley1994measuring}, allow for quick assessments of user emotional experiences but they may aggregate responses over the course of many events ~\cite{zhang2010service}. This work uses Mandryk et al. version of AV space ~\cite{mandryk2007fuzzy}. 
 
-\subsection{Recognising Emotion}
+\subsection{Recognizing Emotion}
 
-% old-version
-p Heart rate (HR), blood pressure, respiration, electrodermal activity (EDA) and galvanic skin response (GSR), as well as facial EMG (Electromyography) are of physiological variables correlated with various emotions most. Interpreting physiological measures into emotion state can be defficult, due to noisy and inaccurate signals, however recent on-going studies in this area by Mandryk and Atkins [13] presented a method to continuously identifying emotional states of the user while playing a computer game. Using the dimentional emotion model and the fuzzy logic, based on a set of physiologcial measures, in its ﬁrst phase, their fuzzy model transforms GSR, HR, facial EMG (for fowning and smiling) into arousal and valence variables. In the second phase another fuzzy logic model is used to transform arousal and valence variables into ﬁve basic emotion states including: boredom, challenge, excitement, frustration and fun. Their study successfully revealed self-reported emotion states for fun, boredom and excitement are following the trends generated by their fuzzy transformation. The advantage of continiously and quantitatively assessing user’s emotional state during an entire play by their fuzzy logic model is what makes their model perfect to be in incorporated with real-time play technologies. Therefore exposeing user’s emotional state as a new class of uncontious inputs to the play technology. 
+% gtg
+Heart rate (HR), blood pressure, respiration, electrodermal activity (EDA) and galvanic skin response (GSR), as well as facial EMG (Electromyography) are of physiological variables correlated with various emotions. Interpreting physiological measures into emotion state can be difficult, due to noisy and inaccurate signals, however recent on-going studies in this area by Mandryk and Atkins ~\cite{mandryk2007fuzzy} presented a method to continuously identifying emotional states of the user while playing a computer game. Using the dimensional emotion model and the fuzzy logic, based on a set of physiological measures, in its first phase, their fuzzy model transforms GSR, HR, facial EMG (for frowning and smiling) into arousal and valence variables. In the second phase another fuzzy logic model is used to transform arousal and valence variables into five basic emotion states including: boredom, challenge, excitement, frustration and fun. Their study successfully revealed self-reported emotion states for fun, boredom and excitement are following the trends generated by their fuzzy transformation. The advantage of continuously and quantitatively assessing user's emotional state during an entire play by their fuzzy logic model is what makes their model perfect to be incorporated with real-time play technologies.
+
+\subsection{Gameplay and The Concept of Flow}
+
+% gtg
+In computer games, gameplay is usually considered of key importance ~\cite{rollings2006fundamentals, malone1982makes}. One can define gameplay as the pattern defined through the game rules ~\cite{salen2004rules, pajares2008understanding} connection between player and the game ~\cite{laramee2002game} or challenges ~\cite{rollings2003andrew} of the game. In absence of a broadly accepted definition for gameplay, our focus here is targeted on one frequently mentioned element of it which is \textit{challenge}. To balance the challenge level or difficulty scale of the game, designers change many interacting parameters to create a gameplay somewhere between too easy to be boring and too hard to be frustrating ~\cite{koster2013theory}.
+
+% gtg
+Mihaly Csikszentmihalyi, in the mid 70s, in an attempt to explain happiness, introduced the concept of \textit{flow}. The feeling of complete and energized focus while engaged in an activity is what usually referred to as flow, this feeling also has an ambient sense of enjoyment and fulfillment ~\cite{csikszentmihalyi1990flow}. Flow is also referred to as the optimal experience or being in \textit{the zone}. Flow zone is an inspiring concept in flow theory and is illustrated in Figure ~\ref{fig:flow-zone}. What flow zone suggests, in order to sustain player's flow experience, is to balance the inherent challenge of the activity and the required player's ability (skills) to address and overcome it ~\cite{chen2007flow}. It avoids the activity to become so overwhelming by a challenge beyond player's ability and consequently generating anxiety; Also avoids failing to engage the player and become so boring due to a challenge level less than player's ability. However, this should be mentioned, we fortunately have tolerance for a temporary lack of stimulation, with an assumption of more is on the way. One should consider the flow zone as a fuzzy safe zone where the activity is not yet too challenging or boring ~\cite{csikszentmihalyi1990flow}.
+
+\img
+{Flow zone}
+{Flow zone, the area where challenge and skill level match ~\cite{chen2007flow}.}
+{flow-zone.pdf}
+{flow-zone}
+
+% gtg
+Many video games offer only a simple narrow and static experience, which is shown with the red line in Figure ~\ref{fig:flow-zone}. This statically preset path might keep the typical player in the flow zone but will not be fun for the hardcore or novice player ~\cite{chen2007flow}. Kiel pointed two kinds of frustration during games, the at-game-frustration and in-game-frustration. The first is due to lack of skill during game playing and the second in caused by difficult game levels ~\cite{gilleade2004using}. Addressing these game balancing issues, in recent years many researches have been done on utilizing game AI and secondary inputs to dynamically adjust the difficulty level. Xiang et al. in their work on dynamic difficulty adjustment by facial expression ~\cite{xiang2013dynamic}. They have also controlled NPCs behaviors by reinforce learning algorithm ~\cite{spronck2004difficulty, andrade2005challenge}. Hunicke ~\cite{hunicke2004ai} used Hamlet system to predict when the player is repeatedly entering an undesirable loop, and help them get out of it, they have explored computational and design requirements for a dynamic difficulty adjustment system using probabilistic methods based on Half Life game engine. Joost ~\cite{westra2009adaptive} proposed an adaptation approach that uses expert knowledge for the adaptation. They used a game adaption model and organized agents to choose the most optimal task for the trainee, given the user model, the game flow and the capabilities of the agents. Hom ~\cite{hom2007automatic} used AI techniques to design balanced board games like checkers and Go by modifying the rules of the game, not just the rule parameters. Olesen has explored neuro-evolution methodologies to generate intelligent opponents in Real-Time Strategy (RTS) games and tried to adapt the challenge generated by the game opponents to match the skill of a player in real-time ~\cite{olesen2008real}.
 
 %------------------------------------------------------------------------------
 
 \section{System Implementation}
 \label{sec:impl}
 
+% gtg
+We will now present a basic system schematic of an emotionally adapted game in Figure ~\ref{fig:system-design}. A typical game engine depicted on the left-hand side of the diagram, continuously captures user input which is usually collected using gaming controllers such as gamepad or mouse and keyboard.
+
+\img
+{Emotion adaptive game system design}
+{Emotion adaptive game system design}
+{system-design.pdf}
+{system-design}
+
+% gtg
+Affect Engine is the software unit developed to transform collected physiological data to their equivalent emotional state in real-time. While it is generally agreed that emotions comprise three components: subjective experience (e.g. feeling joyous), expressive behavior (e.g. smiling), and physiological activation (e.g. arousal) ~\cite{scherer1993neuroscience}, affect engine provides a framework for transformation of physiological activations and some expressive behaviors. Figure \ref{fig:affect-engine} is a schematic view of the signal transformation pipeline. Applications such as games can easily integrate the affect engine where emotion recognition can offer adaptive control to maintain user interest and engagement. Once connected via sensors to the emotion recognition system, the affective state of the user can be captured continuously and in real-time, and used as a secondary input for an enhanced interaction experience.
+
+\img
+{Affect engine modules}
+{Affect engine modules}
+{affect-engine.pdf}
+{affect-engine}
+
+% TODO: paraphrase - Emotionally Adapted Games - An Example of a First Person Shooter.pdf
+p This input data is then processed and transferred to the layer that handles the game’s internal logical state, and the user input may influence the game state. After the logical state of the game is defined the system alters the actions of the synthetic agents in the game world. For example, these include the actions of computer-controlled non-player characters. The complexity of this AI layer varies greatly depending on the game. Based on the game state and the determined actions of the synthetic agents, the physics engine determines the kinetic movements of different objects within  the world. Finally, the game world is synthesized for the player by rendering the graphical elements and producing and controlling the audio elements within the game. [see 14] The proposed emotional regulation can be implemented as a middleware system that runs parallel to the actual game engine. The input processing layer of the game engine can receive a data flow of captured and pre-processed sensor data. The real- time signal processing may consist of different forms of amplifying, filtering and feature selection on the psychophysiological signals. This data flow may directly influence the state of the game world, or it can be used by the emotional regulation sub-module of the emotion feedback engine. This module consists of the rules of emotional balancing for different player profile types and gamer-related explicitly set preferences controlled by the “emotion knob”. In addition, it contains a collection of design rules for narrative constructions and game object presentation within the game world. The emotional regulation module also receives input from the game engine’s logical layer to make selections related to desired emotional balance and narrative structures within the game. [14] The outputs of emotional regulation engine may then be applied to various different levels of the actions of the game engine: i) the logical state of the world may be re-directed, ii) the actions of the synthetic agents may be controlled, iii) the
+
+
+
 %------------------------------------------------------------------------------
 
 \section{Experimentation}
 \label{sec:exprm}
 
-Data were recorded from 15 male and 1 female University students, aged between 18 and 32 (M = 25.00, SD = 3.875). As part of the experiment procedure demographic data were collected with special respect to the suggestions made by ~\cite{?}. Of the participants 94.1\% were right-handed. 41.2\% of participants rated their computer skills as Advanced while the rest of 58.8\% rated their skills as Intermediate. 35.3\% of participants have described themselves playing video games every day, while 41.2\% of them described themselves playing video games a few times per week and 17\% have been playing video games a few times per month and the rest of 5.9\% have been playing video games a few times per year. All participants have used PC as gaming system while 76.48\% of them also have used at least one of the four popular console platforms (XBox360, PS3, PS2, Wii) for gaming. All of participants had at least some experience with 3D shooting games like First Person Shooters. 47.1\% have described themselves playing 3D shooting games many times, while another 41.2\% described themselves as experts in 3D shooting games; Only a total of 11.8\% had limited or intermediate experience with 3D shooting games. Among the participants only 5.9\% had intermediate experience in using mouse in games, 35.3\% of them declared using mouse in games for many times and other 58.8\% of them described themselves as experts in doing that.
+% gtg
+Data were recorded from 15 male and 1 female University students, aged between 18 and 32 (M = 25.00, SD = 3.875). As part of the experiment procedure demographic data were collected with special respect to the suggestions made by ~\cite{stanley2011gemini}. Of the participants 94.1\% were right-handed. 41.2\% of participants rated their computer skills as Advanced while the rest of 58.8\% rated their skills as Intermediate. 35.3\% of participants have described themselves playing video games every day, while 41.2\% of them described themselves playing video games a few times per week and 17\% have been playing video games a few times per month and the rest of 5.9\% have been playing video games a few times per year. All participants have used PC as gaming system while 76.48\% of them also have used at least one of the four popular console platforms (XBox360, PS3, PS2, Wii) for gaming. All of participants had at least some experience with 3D shooting games like First Person Shooters. 47.1\% have described themselves playing 3D shooting games many times, while another 41.2\% described themselves as experts in 3D shooting games; Only a total of 11.8\% had limited or intermediate experience with 3D shooting games. Among the participants only 5.9\% had intermediate experience in using mouse in games, 35.3\% of them declared using mouse in games for many times and other 58.8\% of them described themselves as experts in doing that.
 
-A four condition (standard, player, NPC, environment) play session was employed to evaluate performance and excitement as dependent variables. The order 4 Latin square used to permute conditions between participants was as the following:
+% TODO: could you add a more detailed section on the game, each intervention and the
+% TODO: calculations and mechanics underlying those interventions
 
-The experiment was piloted with six participants (2 female). Pilot participants were selected from the Interaction Lab at the University of Saskatchewan, their comments on different mechanisms and online questionnaires of the experiment were reviewed to make participant more comfortable and less intervened during the experiment. Also pilot participants physiological data was recorded to confirm the functionality of the system during the experiment.
+% gtg
+A four condition (Default, Player adapted, NPC adapted, Environment adapted) play session was employed to evaluate performance and excitement as dependent variables. The order 4 Latin square used to permute conditions between participants. Each game condition was set to take 5 minutes. After each condition, participants were asked to write their comments about particular changes they noticed under that condition and its effect on their gameplay. Then they were asked to filled out the intrinsic motivation inventory (IMI) questionnaire, the player experience of need satisfaction (PENS) questionnaire and the game engagement questionnaire (GEQ) to rate their experience. Filling the questionnaires between conditions was done during the minimum 7 minutes of resting time before the next condition begins. The resting time was meant to restore players baseline signals. GSR sensors were recording players signals during both the play and the resting sessions from the beginning of the first condition to the ending of the last condition.
 
-All experiments were conducted on weekdays, with the first slot beginning at 11:00h and the last ending at 18:30h. Participants were contacted to choose their preferred time slots while general time for one experimental session was 1:30 hours with setup and cleanup. Participants were invited to a laboratory, after a brief introduction of the experimental procedure, and becoming aware of the data being collected during the session, they were asked to fill out and sign informed consent form, this was the only paper form used during the experiment. Then the GSR sensors were attached to participant's hand.
+\img
+{Map of the level designed for our 4 condition experiment}
+{Map of the level designed for our 4 condition experiment}
+{map-of-level.png}
+{map-of-level}
 
+% gtg
 Attached GSR sensors wired to the signal decoder brings limitations for participants while moving and using their hand. To diminish noisy signals and make participants feel comfortable under these limitations, the GSR sensors were attached to the hand that was handling the mouse during the game. While fingers dealing with mouse were quite steady compared to the other hand handling the keyboard, those fingers used to press the left and right mouse buttons were usually most comfortable ones for attaching GSR sensors. Some participants used index and middle fingers to press mouse buttons and others used index and ring fingers to do that.
+
+% TODO: revise
+p In this image from left to right the light-blue line
+indicate different conditions being played. When the line is declining towards its base value, that is the period that participant is asked to stop playing and instead relaxing and filling out the questionnaires. The blue line is the normalized GSR signal value of the participant which is used as an estimation of excitement level. The yellow, green and pink lines are showing the three different modes of Player, NPC and Environment parameters being adapted. From left to right the conditions have been played are the Environment, Default, Player and the NPC modes.
+
+%-----------------------------------------------------------
+\begin{table}[h]
+\caption{Experiment procedure}
+\label{tbl:experiment-procedure}
+\centering
+\begin{tabular}{lr}
+\hline
+Activity                                         & min. \\
+\hline
+Greetings, Consent form                          & \~2   \\
+Installation of physiological sensors            & \~3   \\
+Introducing the game mechanics                   & \~2   \\
+Game condition a                                 & 5    \\
+Condition questionnaire a                        & 7    \\
+Game condition b                                 & 5    \\
+Condition questionnaire b                        & 7    \\
+Game condition c                                 & 5    \\
+Condition questionnaire c                        & 7    \\
+Game condition d                                 & 5    \\
+Condition questionnaire d                        & 7    \\
+Semi-structured post-game interview, debriefing  & \~5   \\ 
+Total                                            & \~60  \\
+\hline
+\end{tabular}
+\end{table}
+%-----------------------------------------------------------
 
 %------------------------------------------------------------------------------
 
 \section{Results}
 \label{sec:res}
 
+% TODO: general results
+% TODO: perceived results, participants comments
+
+% gtg
+In the presented tables conditions are indicated by numbers: Default (1), Player adapted (2), NPC adapted (3) and Environment adapted as (4). In our analysis we wanted to consider the impact of three different adaptations on players performance and excitement level. In this study performance is defined as the number of killed zombies during the 5 minutes play of each conditions; And we used normalized GSR signal as the excitement metric.
+
+% gtg
+Table ~\ref{tbl:pval-cnd-perf} presents performance value differences between the four conditions. A RCBD ANOVA used to block order of playing different conditions and also players' experience level as two extraneous factors. This analysis shows that there was a significant difference in performance values between conditions. Post-hoc analysis revealed performance values have been declined significantly under condition 3 (NPC adapted) compared to all other conditions (p \< 0.05). However, no significant changes have been observed between the other three conditions. Table ~\ref{tbl:mean-cnd-perf} presents mean estimates of these conditions. While values in this table show improvement in performance values under conditions 2 and 4, the mean differences (Table ~\ref{tbl:mean-cnd-perf}) between these two conditions and condition 1 are not large enough to draw any significant conclusion.
+
+% gtg
+Observing player reactions to adaptations during gameplay, and also looking at their responses in the post-game interview, clearly explain the disadvantageous impacts of condition 2 on player. Players naturally adapt themselves to engage and control their character harmonious to the pace of events in the game. Therefor their expectation about next events heavily relies on their prior understanding of the game. Players can easily grasp a feeling about how to control the main character, based on the numerous commands they send to the main character by pushing the control buttons, and the feedback they receive from it. Therefor they can quickly adapt their expectations about the main character behavior. On the other hand, players understanding about NPC components of the game, increase gradually during the play scenario generally by looking at NPC behavior, far slower than the how it happens about the main character. This lead condition 2 to be quite inefficient compared to other conditions in our setting.
+
+%-----------------------------------------------------------
+\begin{table}[h]
+\caption{Mean of performance value in four conditions and their 95\% CI}
+\label{tbl:mean-cnd-perf}
+\centering
+\begin{tabular}{llll}
+\hline
+Condition      &   Mean Est.      &   Lwr. Bnd.    &  Upr. Bnd.     \\
+\hline
+1              &   88.50          &   82.87        &  94.12         \\
+2              &   102.25         &   96.62        &  107.87        \\
+3              &   61.00          &   55.37        &  66.62         \\
+4              &   100.75         &   95.12        &  106.37        \\
+\hline
+\end{tabular}
+\end{table}
+%-----------------------------------------------------------
+
+%-----------------------------------------------------------
+\begin{table}[h]
+\caption{Multiple comparisons between performance value differences between conditions}
+\label{tbl:pval-cnd-perf}
+\centering
+\begin{tabular}{lllll}
+\hline
+Condition \newline
+Differences &   Difference  &   Lwr. Bnd.      &     Upr. Bnd.   &  P-value     \\
+\hline
+2-1         &    13.75      &     -11.52       &      39.02      &  0.325       \\
+3-1         &   -27.50      &     -52.77       &      -2.22      &  0.035       \\
+4-1         &    12.25      &     -13.02       &      37.52      &  0.408       \\
+3-2         &   -41.25      &     -66.52       &     -15.97      &  0.005       \\
+4-2         &    -1.50      &     -26.77       &      23.77      &  0.996       \\
+4-3         &    39.75      &     14.47        &      65.02      &  0.006       \\
+\hline
+\end{tabular}
+\end{table}
+%-----------------------------------------------------------
+
+% gtg
+Table ~\ref{tbl:pval-cnd-exct} presents differences between excitement values between the four conditions. This table shows a significant difference in excitement values between condition 2 and 1 (p = 0.028). The post-hoc analysis revealed participants felt more excited in condition 2 (Player adapted). However excitement differences between the other conditions have not been significant. Table ~\ref{tbl:mean-cnd-exct} presents mean estimates of the excitement values. Although at first glance it can be inferred from Table ~\ref{tbl:mean-cnd-exct} that mean of excitement values in adapted conditions 2,3 and 4, have been increased, based on the differences in Table ~\ref{tbl:pval-cnd-exct} we conclude that only excitement value in condition 2 is significantly larger than the default condition. The mean differences between other conditions are not large enough to draw any further conclusion. Also player reactions to adaptations during gameplay in addition to their responses in our post-game interview indicate players have been most easily influenced by adaptations applied to the main character.
+
+% gtg
+Collected player comments after playing each condition shows 50\% of players declared they have noticed adaptations in main character during condition 2; 31\% of participants could identify adaptations in zombies' speed and spawn rate during condition 3; While only 12.5\% of them identified environmental adaptations in fog density during the condition number 4. Based on these results added to measured excitement values and performance differences between three adapted conditions we conclude, more indirect mechanical environment adaptations although easily observable by eyes, but are yet less noticeable during the play experience; And on the other hand direct mechanical adaptations are more easily detectable and therefor can quickly influence player's emotional state.
+
+%-----------------------------------------------------------
+\begin{table}[h]
+\caption{Mean of excitement value in four conditions and their 95\% CI}
+\label{tbl:mean-cnd-exct}
+\centering
+\begin{tabular}{llll}
+\hline
+Condition      &   Mean Est.      &   Lwr. Bnd.    &  Upr. Bnd.     \\
+\hline
+1              &   -9.60          &   -29.79       &  10.57         \\
+2              &   46.48          &   26.30        &  66.67         \\
+3              &   26.95          &   6.76         &  47.13         \\
+4              &   22.99          &   2.81         &  43.18         \\
+\hline
+\end{tabular}
+\end{table}
+%-----------------------------------------------------------
+
+%-----------------------------------------------------------
+\begin{table}[h]
+\caption{Multiple comparisons between excitement value differences between conditions}
+\label{tbl:pval-cnd-exct}
+\centering
+\begin{tabular}{lllll}
+\hline
+Condition Differences &   Difference  &   Lwr. Bnd.      &     Upr. Bnd.   &  P-value     \\
+\hline
+2-1                   &    56.09      &       6.09       &     106.09      &  0.028       \\
+3-1                   &    36.56      &     -13.43       &      86.56      &  0.173       \\
+4-1                   &    32.60      &     -17.39       &      82.60      &  0.244       \\
+3-2                   &   -19.53      &     -69.53       &      30.46      &  0.630       \\
+4-2                   &   -23.48      &     -73.48       &      26.51      &  0.493       \\
+4-3                   &    -3.95      &     -53.95       &      46.04      &  0.994       \\
+\hline
+\end{tabular}
+\end{table}
+%-----------------------------------------------------------
+
+Based on the model adequacy checking we can be confident RCBD ANOVA was a perfectly suitable model to analyze our data and the results are reliable Figure ~\ref{fig:residuals-vs-fitted-values-performance}, ~\ref{fig:residuals-vs-fitted-values-excitement}.
+
+\img
+{Plot of residuals vs. fitted values for player performance}
+{Plot of residuals vs. fitted values for player performance}
+{anova-residuals-vs-fitted-values-performance.pdf}
+{residuals-vs-fitted-values-performance}
+
+\img
+{Plot of residuals vs. fitted values for player excitement}
+{Plot of residuals vs. fitted values for player excitement}
+{anova-residuals-vs-fitted-values-excitement.pdf}
+{residuals-vs-fitted-values-excitement}
+
+
 %------------------------------------------------------------------------------
 
-\section{Discussion}
+\section{Discussion and Further Research}
 \label{sec:discus}
+
+% TODO: revise
+Choosing a first-person shooter game for this study was a good decision to compare the three different adaptation modes. The FPS game had players both visually and mechanically engaged therefor changing various gameplay parameters had noticeably influenced most players emotional status. Source engine and Half Life 2 assets also was a perfect choice by letting us accessing the code of the engine to incorporate the affect engine. Also the Hammer editor had all needed tools to generate the map of the game.
+
+% TODO: revise
+The impact of main character adaptations on player's excitement level as shown in this study, can be easily understood by looking at what has already taken place in the industry. In fact changing main character parameters such as speed to impact players emotional state is nothing new, many game designers have used similar mechanics to improve players' excitement level by somehow changing or transforming the main character's capabilities in certain moments. Application of such design decisions have become even more popular in recent years, Prince of Persia series, The Suffering, Onimusha and the God of War series are famous examples of such game titles. This work tried to improve this 
+
+% TODO: revise
+In this study we tried to compare different game mechanic adaptation approaches' impact on gamer's performance and excitement level. However one should note different game mechanic adaptations can also happen along with certain non-mechanical adaptations such as changes in background soundtrack or applying certain color variations. We believe our study have applied a minimum amount of such non-mechanical adaptations. We hope to be able to expand this study into that area in our further works.
+
+% TODO: revise
+Calibration-adaptatoin cycle algorithm, 
 
 %------------------------------------------------------------------------------
 
 \section{Conclusion}
 \label{sec:conclusion}
+% TODO: conclusion
 
 %------------------------------------------------------------------------------
 
