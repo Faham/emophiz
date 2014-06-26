@@ -559,7 +559,7 @@ void CDirector::adapt_environment() {
 
 void CDirector::adapt_npc() {
 	// deciding new zombie speed
-	float next_zombie_speed = 1 / (0.30f + m_arousal);m_min_zombie_speed + (m_arousal * (m_max_zombie_speed - m_min_zombie_speed));
+	float next_zombie_speed = 1 / (0.30f + m_arousal); //m_min_zombie_speed + (m_arousal * (m_max_zombie_speed - m_min_zombie_speed));
 	set_zombie_speed(next_zombie_speed);
 
 	//Todo: add zombie numbers change adaptively

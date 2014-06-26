@@ -10,9 +10,9 @@
 
 \usepackage[pdftex,
             pdfauthor={Faham Negini},
-            pdftitle={Play Experience Enhancement Using Emotional Feedback},
+            pdftitle={Driving Dynamic Difficulty Adjustments from Affective State},
             pdfsubject={An IEEE Paper from the Department of Computer Science at the University of Saskatchewan},
-            pdfkeywords={Affective Computing, Biometrics, Emotion Recognition, Play, Games, Physiology, Fuzzy Logic},
+            pdfkeywords={Affective Computing, Biometrics, Play, Games, Physiology, Fuzzy Logic, Dynamic Difficulty Adjustment},
             pdfproducer={Latex},
             pdfcreator={pdflatex}]{hyperref}
 
@@ -27,7 +27,7 @@
 
 %------------------------------------------------------------------------------
 
-\title{Play Experience Enhancement Using Emotional Feedback}
+\title{Driving Dynamic Difficulty Adjustment in a First-Person Shooter Game from Affective State}
 
 \author{\IEEEauthorblockN
 {removed for blind review}
@@ -36,7 +36,7 @@
 %Regan L. Mandryk\IEEEauthorrefmark{3},
 %Kevin G. Stanley\IEEEauthorrefmark{4}} and
 %Amin Tavassolian\IEEEauthorrefmark{5}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}DISCUS Lab, Department of Computer Science\\
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}DISCUS Lab, %Department of Computer Science\\
 %University of Saskatchewan\\
 %Phone: +1 306 966 1947\\
 %Email: faham.negini@usask.ca}
@@ -52,7 +52,7 @@
 \end{abstract}
 
 \begin{IEEEkeywords}
-Affective Computing, Biometrics, Emotion Recognition, Play, Games, Physiology, Fuzzy Logic.
+Affective Computing, Biometrics, Play, Games, Physiology, Fuzzy Logic, Dynamic Difficulty Adjustment.
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
@@ -63,10 +63,20 @@ Affective Computing, Biometrics, Emotion Recognition, Play, Games, Physiology, F
 \label{sec:intro}
 
 % gtg
-Since computers are playing a significant role in our daily life, the need for a more friendly and natural communication interface between human and computer has continuously increased. Making computers capable of perceiving the situation in terms of most human specific factors and responding dependent to this perception is of major steps to acquire this goal. If computers could recognize the situation the same way as human does, they would be much more natural to communicate. Emotions are of important and mysterious human attributes that have a great effect on people's day to day behavior. Researches from neuroscience, psychology, and cognitive science, suggests that emotion plays critical roles in rational and intelligent behavior ~\cite{picard2001toward}. Apparently, emotion interacts with thinking in ways that are non-obvious but important for intelligent functioning ~\cite{picard2001toward}. Scientists have amassed evidence that emotional skills are a basic component of intelligence, especially for learning preferences and adapting to what is important ~\cite{mayer1993intelligence, goleman2006emotional} People used to express their emotions through facial expressions, body movement, gestures and tone of voice and expect others understand and answer to their affective state. But sometimes there is a distinction between inner emotional experiences and the outward emotional expressions ~\cite{picard2003affective}. Some emotions can be hard to recognize by humans, and inner emotional experiences may not be expressed outwardly ~\cite{jones2007biometric}. Recent extensive investigations of physiological signals for emotion detection have been providing encouraging results where affective states are directly related to change in inner bodily signals ~\cite{jones2007biometric}. However whether we can use physiological patterns to recognize distinct emotions is still a question ~\cite{picard2001toward, cacioppo1990inferring}.
+%Since computers are playing a significant role in our daily life, the need for a more friendly and natural communication interface between human and computer has continuously increased. Making computers capable of perceiving the situation in terms of most human specific factors and responding dependent to this perception is of major steps to acquire this goal. If computers could recognize the situation the same way as human does, they would be much more natural to communicate. Emotions are of important and mysterious human attributes that have a great effect on people's day to day behavior. Researches from neuroscience, psychology, and cognitive science, suggests that emotion plays critical roles in rational and intelligent behavior ~\cite{picard2001toward}. Apparently, emotion interacts with thinking in ways that are non-obvious but important for intelligent functioning ~\cite{picard2001toward}. Scientists have amassed evidence that emotional skills are a basic component of intelligence, especially for learning preferences and adapting to what is important ~\cite{mayer1993intelligence, goleman2006emotional} People used to express their emotions through facial expressions, body movement, gestures and tone of voice and expect others understand and answer to their affective state. But sometimes there is a distinction between inner emotional experiences and the outward emotional expressions ~\cite{picard2003affective}. Some emotions can be hard to recognize by humans, and inner emotional experiences may not be expressed outwardly ~\cite{jones2007biometric}. Recent extensive investigations of physiological signals for emotion detection have been providing encouraging results where affective states are directly related to change in inner bodily signals ~\cite{jones2007biometric}. However whether we can use physiological patterns to recognize distinct emotions is still a question ~\cite{picard2001toward, cacioppo1990inferring}.
 
 % gtg
-Although the study of affective computing has increased considerably during the last years, few have applied their research to play technologies ~\cite{sykes2003affective}. Emotional component of human computer interaction in video games is surprisingly important. Game players frequently turn to the console in their search for an emotional experience ~\cite{rouse2010game}. There are numerous benefits such technology could bring video game experience, like: The ability to generate game content dynamically with respect to the affective state of the player, the ability to communicate the affective state of the game player to third parties and adoption of new game mechanics based on the affective state of the player ~\cite{sykes2003affective}. This work concentrates on developing a real-time emotion recognition system for play technologies which can quantify player instant emotional state during a play experience. The rest of the paper is organized as follows: in Section ~\ref{sec:lit-review} we outline different emotion recognition theories with an overview of physiology sensors and the concept of flow in video games. In Section ~\ref{sec:impl} we demonstrate some implementation details of the system. We then describe the experimental setup in Section ~\ref{sec:exprm} before giving our results in Section ~\ref{sec:res}. Finally, we discuss the results in Section ~\ref{sec:discus} and give conclusions in Section ~\ref{sec:conclusion}.
+%Although the study of affective computing has increased considerably during the last years, few have applied their research to play technologies ~\cite{sykes2003affective}. Emotional component of human computer interaction in video games is surprisingly important. Game players frequently turn to the console in their search for an emotional experience ~\cite{rouse2010game}. There are numerous benefits such technology could bring video game experience, like: The ability to generate game content dynamically with respect to the affective state of the player, the ability to communicate the affective state of the game player to third parties and adoption of new game mechanics based on the affective state of the player ~\cite{sykes2003affective}. This work concentrates on developing a real-time emotion recognition system for play technologies which can quantify player instant emotional state during a play experience. 
+
+Computer games have been widely adopted as a form of entertainment. In 2013, 58\% of Americans identified themselves as computer gamers, and 32\% under the age of 18, 32\% between the age of 18 and 36\% above the age of 36. With the expansion of the computer gaming demographic, comes an expansion of interests, ability and responsiveness. The gamer demographic can no longer be considered homogeneous, if it even ever was. In response to this changing demographic, game developers have provided more choices in how many AAA titles are played. While originally innovative, the concept of being able to complete a level by tactical prowess, controller skill, or stealth for example is now a mainstay of most adventure games. While these kinds of design decisions can help support a multitude of play styles in the expanded gamer demographic, it cannot react to changes in skill or mood of an individual player on a day to day basis or throughout a given play session.
+
+While it is possible to adapt a game to the measured performance of a player, particularly in a multiplayer setting (ref game balance stuff) it is harder to react to the players mood. This is difficult for two reasons, first because despite significant advances in affective computing (cite affcomp stuff) it is still difficult to reliably extract mood in real time, and second because it is unclear what the design feedback mechanism should be to address changes in player mood in real-time or near real time. Even if they could reliably detect mood, designers have no validated guidelines to determine how the game mechanics should be adjusted to enhance player experience.
+
+Xiang et al. provided an emotion based dynamic game adjusting prototype, which utilizes facial expression captured using a camera ~\cite{xiang2013dynamic}. Sykes and Brown have shown data from gamepad correlates with a player's level of arousal during game play  ~\cite{sykes2003affective}. Aggag and Revett in their work on affective gaming with use of the GSR signal, have developed a basic First-Person Shooter (FPS) that was supposed to be played in two different difficulty levels interleavingly ~\cite{aggag2011affective}. They have considered players' arousal level as a function of the difficulty of the game. Tijs et al. study on Stimulus has shown the unguided adaption of players speed has resulted the slow-mode being too slow and the fast-mode being a bit too fast for some players and described their work on induction of boredom, frustration and enjoyment through manipulation of the game mechanic \"speed\" partly successful ~\cite{tijs2009creating}. 
+
+In this paper we build on the work of Mandryk and Atkins ~\cite{mandryk2007fuzzy} to create a system which provides real time feedback based on player arousal. Our primary contribution is not the mapping of arousal to game state, but an understanding of how design decisions surrounding the feedback effect player experience. We created a custom zombie survival level for Half-Life 2 – a popular first person shooter – as a test bed, and interfaced it with a system which inferred arousal from GSR signals. Arousal state was then fed back to the player through changing aspects of the player’s avatar, the zombie opponents or the surrounding environment. After controlled laboratory studies, we found that players preferred feedback through avatar adaptation to the other two manipulations.
+
+The rest of the paper is organized as follows: in Section ~\ref{sec:lit-review} we outline different emotion recognition theories with an overview of physiology sensors and the concept of flow in video games. In Section ~\ref{sec:impl} we demonstrate some implementation details of the system. We then describe the experimental setup in Section ~\ref{sec:exprm} before giving our results in Section ~\ref{sec:res}. Finally, we discuss the results in Section ~\ref{sec:discus} and give conclusions in Section ~\ref{sec:conclusion}.
 
 %------------------------------------------------------------------------------
 
@@ -125,8 +135,14 @@ Many video games offer only a simple narrow and static experience, which is show
 \section{System Implementation}
 \label{sec:impl}
 
-% gtg
-We will now present a basic system schematic of an emotionally adapted game in Figure ~\ref{fig:system-design}. A typical game engine depicted on the left-hand side of the diagram, continuously captures user input which is usually collected using gaming controllers such as gamepad or mouse and keyboard.
+The purpose of this paper was to evaluate the impact of design choices for affect feedback on user experience. To evaluate this effect, we needed to implement three distinct components:
+\begin{itemize}
+\item {\bf Affect sensing}: A affect-detecting middlewear engine (AME) to translate between physiological indicators of affect to actionable game input.
+\item {\bf Game Environment}: A game system with parameters suitable for adaptation via output from the sensed affect.
+\item {\bf Experience Evaluator}: A series of validated instruments integrated with the game environment to determine user experience during the experiment.
+\end{itemize}
+
+Figure ~\ref{fig:system-design} shows a schematic flow diagram for the first two components, where an affect detecting system depicted on the right feeds data to a typical game engine depicted on the left-hand side of the diagram. 
 
 \img
 {Emotion adaptive game system design}
@@ -135,7 +151,11 @@ We will now present a basic system schematic of an emotionally adapted game in F
 {system-design}
 
 % gtg
-Affect Engine is the software unit developed to transform collected physiological data to their equivalent emotional state in real-time. While it is generally agreed that emotions comprise three components: subjective experience (e.g. feeling joyous), expressive behavior (e.g. smiling), and physiological activation (e.g. arousal) ~\cite{scherer1993neuroscience}, affect engine provides a framework for transformation of physiological activations and some expressive behaviors. Figure \ref{fig:affect-engine} is a schematic view of the signal transformation pipeline. Applications such as games can easily integrate the affect engine where emotion recognition can offer adaptive control to maintain user interest and engagement. Once connected via sensors to the emotion recognition system, the affective state of the user can be captured continuously and in real-time, and used as a secondary input for an enhanced interaction experience.
+\subsection{Affect Middlewear Engine}
+\label{AME}
+The Affect Middlewear Engine is the software unit developed to transform collected physiological data to their equivalent emotional state in real-time. While it is generally agreed that emotions can be inferred from three components: subjective experience (e.g. feeling joyous), expressive behavior (e.g. smiling), and physiological activation (e.g. arousal) ~\cite{scherer1993neuroscience}, the affect engine provides a framework for transformation of only physiological activations and some expressive behaviors. Figure ~\ref{fig:affect-engine} is a schematic view of the signal transformation pipeline. Applications such as games can easily integrate the affect engine where emotion recognition can offer adaptive control to maintain user interest and engagement. Once connected via sensors to the emotion recognition system, the affective state of the user can be captured continuously and in real-time, and used as a secondary input for an enhanced interaction experience. The AME runs in two states, calibration and adaptation. When calibrating, the system waits for user input, attempting to discern sensible boundaries for physiological normalization according to the process described in [mandryk and atkins]. After a set period of time, the system enters adaptation mode, where data is fed into the signal transformation stage, and from there to the game engine. For longer play sessions, the system will periodically re-enter the calibration state to compensate for drift in the physiological signals. In this manner the system compensates for the difficulty of globally bounding physiological signals by performing a series of temporally local bound approximations. 
+
+While the affect engine is capable of interpreting multiple physiological signals and performing a full fuzzy logic-based emotion inference according to the approach described by Mandryk and Atkins ~\cite{mandryk2007fuzzy}, we constrained ourselves to a simpler linear mapping for this experiment. Specifically, GSR signals were measured using a Thought Technology ProComp Infinity encoder ~\cite{tt2013procomp}, connected to PC through a USB cable. Through the SensorLib (API), raw physiological inputs were received and basic filtering operations were performed. After the calibration period described above, the AME system began reporting normalized GSR signals to the game engine as a measure of player excitement or arousal ~\cite{aggag2011affective, tijs2009creating}.
 
 \img
 {Affect engine modules}
@@ -144,22 +164,41 @@ Affect Engine is the software unit developed to transform collected physiologica
 {affect-engine}
 
 % TODO: revise
-Affect engine is implemented as a middleware system that runs parallel to the actual game engine. The physiological input data is first transferred to the sensor module of the affect engine ~\ref{subsec:sens-mdl}, where the real-time signal processing happens, this module may apply different forms of amplifying, filtering and feature selection on the physiological signals. Then the processes signal data continues to the next module which transforms it to estimated emotional states ~\ref{subsec:fuzzi}. The resulting data from the transformation module is then transferred to the layer that handles the game's internal logical state ~\ref{subsec:director}. The complexity of the AI layer in this section might vary greatly depending on the game. Based on the logical decisions made at this layer, other subsystems of the game-engine such as the physics and animation engine would collaborate and synthesize the game world for the player.
+%Affect engine is implemented as a middleware system that runs parallel to the actual game engine. The physiological input data is first transferred to the sensor module of the affect engine ~\ref{subsec:sens-mdl}, where the real-time signal processing happens, this module may apply different forms of amplifying, filtering and feature selection on the physiological signals. Then the processes signal data continues to the next module which transforms it to estimated emotional states ~\ref{subsec:fuzzi}. The resulting data from the transformation module is then transferred to the layer that handles the game's internal logical state ~\ref{subsec:director}. The complexity of the AI layer in this section might vary greatly depending on the game. Based on the logical decisions made at this layer, other subsystems of the game-engine such as the physics and animation engine would collaborate and synthesize the game world for the player.
 
 % TODO: revise
-The affect engine can switch between to major states: Processing State and the Calibration State. Dependent on the design we want to apply to influence players emotional state in any particular way, affect engine can be controlled to switch between these two states by different algorithms. In our setting, the affect engine priodically switch between these two states on preset time intervals to regularly calibrate the system with resent physiological feedback of the player.
+%The affect engine can switch between to major states: Processing State and the Calibration State. Dependent on the design we want to apply to influence players emotional state in any particular way, affect engine can be controlled to switch between these two states by different algorithms. In our setting, the affect engine priodically switch between these two states on preset time intervals to regularly calibrate the system with resent physiological feedback of the player.
 
 % TODO: revise
-\subsection{Sensor Module} \label{subsec:sens-mdl}
-The sensor module consists of a Thought Technology ProComp Infinity encoder ~\cite{tt2013procomp}, connected to PC through a USB cable. SensorLib as the basic application programming interface (API) receives raw physiological inputs from the encoder driver and provides functionalities to apply different filters such as low-pass, high-pass, smoothing and shifting to the signal. Sensor module provides a generic interface for any type of sensor attached to the system, that makes interaction with different type of sensors much easier in fuzzification module ~\ref{subsec:fuzzi}.
+%\subsection{Sensor Module} \label{subsec:sens-mdl}
+%The sensor module consists of a Thought Technology ProComp Infinity encoder ~\cite{tt2013procomp}, connected to PC through a USB cable. SensorLib as the basic application programming interface (API) receives raw physiological inputs from the encoder driver and provides functionalities to apply different filters such as low-pass, high-pass, smoothing and shifting to the signal. Sensor module provides a generic interface for any type of sensor attached to the system, that makes interaction with different type of sensors much easier in fuzzification module ~\ref{subsec:fuzzi}.
 
 % TODO: revise
-\subsection{Transformation Module} \label{subsec:fuzzi}
-This module functions through two separate phases; Then filtered signals are fuzzified using a set of fuzzy rules in the first phase of transformation. Then generated arousal and valence values are transformed into emotion values using another set of fuzzy rules in the second pass ~\cite{mandryk2007fuzzy}. While this module makes the affect engine capable of doing complex transformations from physiological signals to emotion values using different set of fuzzy rules, for this study we only targeted the normalized GSR value as an indicator of players excitement level.
+%\subsection{Transformation Module} \label{subsec:fuzzi}
+%This module functions through two separate phases; Then filtered signals are fuzzified using a set of fuzzy rules in the first phase of transformation. Then generated arousal and valence values are transformed into emotion values using another set of fuzzy rules in the second pass ~\cite{mandryk2007fuzzy}. While this module makes the affect engine capable of doing complex transformations from physiological signals to emotion values using different set of fuzzy rules, for this study we only targeted the normalized GSR value as an indicator of players excitement level.
 
 % TODO: revise
-\subsection{The Director} \label{subsec:director}
-The logical subsystem integrated in the game-engine is called the director. In this subsystem the generated emotional state is received and with use of various logical components different adaptations can be applied to the game. Table ~\ref{tbl:adjustment-strategy} presents our exitement oriented adaptation strategy for three different adapted conditions of our study.
+%\subsection{The Director} \label{subsec:director}
+%The logical subsystem integrated in the game-engine is called the director. In this subsystem the generated emotional state is received and with use of various logical components different adaptations can be applied to the game. Table ~\ref{tbl:adjustment-strategy} presents our exitement oriented adaptation strategy for three different adapted conditions of our study.
+
+\subsection{Game Environment}
+\label{game_env}
+To evaluate the impact of feedback on player experience, it was also necessary to implement a game environment that could be linked to the output of the AME. We chose to implement a straightforward zombie survival game based on the Half Life 2 engine. A custom map (shown in Figure ~\ref{fig:map-of-level}) was implemented. The map was composed of a small outdoor area and three buildings. Zombies would spawn in waves from one of 10 points, and would undertake standard Half Life 2 zombie AI behavior, looking for the player and attacking with either thrown objects when distance (weakly damaging the player) or a melee attack when close (heavily damaging the player). A good default strategy for the player is to keep the zombies at a distance, eliminating them with their moderately powerful machine gun, and not closing to melee range. The player is tasked with surviving as many waves of zombies as possible, accrues a score based on the number of zombies killed. The player is equipped with a machine gun with a grenade which has unlimited ammunition but a limited number of grenades. Health packs, which restore player from received damage, and additional grenades are available at defined locations. If a player presses a button at that location, a health pack will dispense and the button will be disabled until a cool down timer has expired. Aspects of the player's abilities, the zombies' abilities and the environment can be adjusted in real time based on the output of the AME system.
+
+Table ~\ref{tbl:adjustment-strategy} contains the types of adjustments that can occur. In this particular implementation, the system could be in one of three states based on the normalized GSR value supplied from the AME. If players fell below a threshold of excitement as indicated by normalized GSR, then the system inferred that they were bored and increased the difficulty of the game. If players were above a threshold of normalized GSR, the system inferred that they were over stimulated and made the game easier. If neither of these states were true, then the system assumed that they were playing normally and no adjustment occurred. The equations by which the game parameters were adjusted are also shown in Table ~\ref{tbl:adjustment-strategy}. While no action was taken unless normalized GSR was in the excited or bored band, once in that band, the game parameters adjusted continuously with the value of the GSR. Constants in the equations and the threshold values for excited and bored were adjusted manually, based on design experience and play testing prior to the experiment.
+
+%Kevin it wasn't only the number of zombies being spawned which was adapted, but also it was the number of zombie crowd. That means, in a more difficult state, a larger zombie crowd was attackinig the player. The crowd size had a limit to not allow zombies of a wave be spawned all together and become over crowded. 
+%Also the health pack was considered an evironment parameter as during the game, player didn't have that under control but simply using it. but I've considered the grenade as a player adaptation parameter, as players were practically planning strategies to use their grenades as a secondary attack. though these two really didn't have any much influence in different conditions as players were mostly not using them regularly and didn't notice any changes about them based on the post-experiment interviews.
+Player modifcations were any modifications that directly effected player state, even if those modifications were mediated by the environment. Player speed enabled the player to more easily escape the zombies dangerous melee attacks, and was mapped directly to the player. The respawn rate of grenades and health packs was moderated by the environment (through the buttons the player had to press) but ultimately impacted the state of the player in their ability to inflict or take damage. The number of zombies spawned per unit time obviously increased the difficulty for the player. By increasing or decreasing the speed of the zombie with respect to the player made it more difficult or easier for the player to evade the zombies melee attacks. This manipulation is particularly interesting as it is the opposite of the speed adjustment for the player from a game balance, but not a game experience perspective. Finally, the environment itself was adjusted by increasing or descresing the amount of ambient fog, which was proportionate to the distance the player could see. By constraining the players viewing distance with increasing fog, zombies could approach closer, leaving the player with less time to target them before they closed to within melee range.
+
+\subsection{Evaluation System}
+Evaluation of the system was carried out in three major ways. First, all phsyiological signals were logged to ensure that the system was working correctly and as a basis for comparison. Second, game events were logged to track how the player reacted to adaptive game mechanics. Finally, players were given experience surveys after the completion of each level. In this analysis, the player experience surveys are the primary evaluation method because they directly link the experience to the manipulation.
+
+\img
+{Map of the level designed for our 4 condition experiment}
+{Map of the level designed for our 4 condition experiment}
+{map-of-level.png}
+{map-of-level}
 
 %-----------------------------------------------------------
 \begin{table*}[!t]
@@ -167,20 +206,21 @@ The logical subsystem integrated in the game-engine is called the director. In t
 \label{tbl:adjustment-strategy}
 \hfil
 \centering
-\begin{tabular}{lp{3cm}p{3cm}p{3cm}}
+\begin{tabular}{lp{4cm}p{4cm}p{4cm}}
+                     & Player                            & NPC                             & Environment \\
 \hline
-Excitement/Strategy               & Player                         & NPC                            & Environment \\
+Excited              & Increase player speed \newline Increase grenade rate
+                     & Decrease zombie speed \newline Decrease zombie crowd
+                     & Decrease fog density \newline Increase med-pack rate  \\
 \hline
-Excited                           & Increase player speed \newline
-                                     Increase grenade rate \newline
-                                     Increase med-pack rate         & Decrease zombie speed \newline
-                                                                      Decrease zombie crowd          & Decrease fog density \\
+Not excited          & Decrease player speed \newline Decrease grenade rate
+                     & Increase zombie speed \newline Increase zombie crowd
+                     & Increase fog density \newline Decrease med-pack rate  \\
 \hline
-Not excited                       & Decrease player speed \newline
-                                     Decrease grenade rate \newline
-                                     Decrease med-pack rate         & Increase zombie speed \newline
-                                                                      Increase zombie crowd          & Increase fog density \\
-\hline
+Adaption \newline
+equation             & $P_{speed} = 0.65 + 1.35 * Arousal$    \newline $G_{delay} = 40 - 20 * Arousal$
+                     & $Z_{speed} = \frac{1}{0.30 + Arousal}$ \newline $Z_{crowd} = 3.75 - 2.5 * Arousal$
+                     & $F_{start} = 70 + 380 * Arousal$       \newline $F_{end} = 500 + 1000 * Arousal$ \newline $M_{delay} = 100 - 60 * Arousal$ \\
 \end{tabular}
 \end{table*}
 %-----------------------------------------------------------
@@ -191,24 +231,18 @@ Not excited                       & Decrease player speed \newline
 \label{sec:exprm}
 
 % gtg
-Data were recorded from 15 male and 1 female University students, aged between 18 and 32 (M = 25.00, SD = 3.875). As part of the experiment procedure demographic data were collected with special respect to the suggestions made by ~\cite{stanley2011gemini}. Of the participants 94.1\% were right-handed. 41.2\% of participants rated their computer skills as Advanced while the rest of 58.8\% rated their skills as Intermediate. 35.3\% of participants have described themselves playing video games every day, while 41.2\% of them described themselves playing video games a few times per week and 17\% have been playing video games a few times per month and the rest of 5.9\% have been playing video games a few times per year. All participants have used PC as gaming system while 76.48\% of them also have used at least one of the four popular console platforms (XBox360, PS3, PS2, Wii) for gaming. All of participants had at least some experience with 3D shooting games like First Person Shooters. 47.1\% have described themselves playing 3D shooting games many times, while another 41.2\% described themselves as experts in 3D shooting games; Only a total of 11.8\% had limited or intermediate experience with 3D shooting games. Among the participants only 5.9\% had intermediate experience in using mouse in games, 35.3\% of them declared using mouse in games for many times and other 58.8\% of them described themselves as experts in doing that.
-
-% TODO: could you add a more detailed section on the game, each intervention and the
-% TODO: calculations and mechanics underlying those interventions
-
-% gtg
-A four condition (Default, Player adapted, NPC adapted, Environment adapted) play session was employed to evaluate performance and excitement as dependent variables. The order 4 Latin square used to permute conditions between participants. Each game condition was set to take 5 minutes. After each condition, participants were asked to write their comments about particular changes they noticed under that condition and its effect on their gameplay. Then they were asked to filled out the intrinsic motivation inventory (IMI) questionnaire, the player experience of need satisfaction (PENS) questionnaire and the game engagement questionnaire (GEQ) to rate their experience. Filling the questionnaires between conditions was done during the minimum 7 minutes of resting time before the next condition begins. The resting time was meant to restore players baseline signals. GSR sensors were recording players signals during both the play and the resting sessions from the beginning of the first condition to the ending of the last condition.
-
-\img
-{Map of the level designed for our 4 condition experiment}
-{Map of the level designed for our 4 condition experiment}
-{map-of-level.png}
-{map-of-level}
+We performed a small user study to determine the impact of adaptation mechanism on player experience. After filling in consent forms consistent with our institutional ethics approval, data were recorded from 15 male and 1 female University students, aged between 18 and 32 years old. All participants felt they had at least intermediate computing skills. A third of participants have described themselves playing video games every day, while 41.2\% of them described themselves playing video games a few times per week and all but one a few times per month. All participants have used PCs as gaming system while 76.48\% of them also have used at least one of the four popular console platforms. All of participants had at least some experience with 3D shooting games like First Person Shooters, with 47.1\% have described themselves playing 3D shooting games many times, while another 41.2\% described themselves as experts in 3D shooting games. Only 11.8\% had limited or intermediate experience with 3D shooting games. 
+%Among the participants only 5.9\% had intermediate experience in using mouse in games, 35.3\% of them declared using mouse in games for many times and other 58.8\% of them described themselves as experts in doing that.
+%--Kevin likely not relevant.
 
 % gtg
-Attached GSR sensors wired to the signal decoder brings limitations for participants while moving and using their hand. To diminish noisy signals and make participants feel comfortable under these limitations, the GSR sensors were attached to the hand that was handling the mouse during the game. While fingers dealing with mouse were quite steady compared to the other hand handling the keyboard, those fingers used to press the left and right mouse buttons were usually most comfortable ones for attaching GSR sensors. Some participants used index and middle fingers to press mouse buttons and others used index and ring fingers to do that.
+A four condition (Default, Player adapted, NPC adapted, Environment adapted) play session was employed to evaluate performance and excitement as dependent variables. An order 4 Latin square used to permute conditions between participants. Each game condition was lasted 5 minutes. Players were told to kill as many zombies as possible, and to die as few times as possible. After each condition, participants were asked to write their comments about particular changes they noticed under that condition and its effect on their gameplay. Then they were asked to filled out the intrinsic motivation inventory (IMI) questionnaire, the player experience of need satisfaction (PENS) questionnaire and the game engagement questionnaire (GEQ) to rate their experience. Filling the questionnaires between conditions was done during the minimum 7 minutes of resting time before the next condition begins. The resting time was meant to restore players baseline GSR levels. Because of the dynamic baselining, perfect resting GSR was not required prior to the next gameplay session. GSR sensors were recording players signals during both the play and the resting sessions from the beginning of the first condition to the ending of the last condition.
 
 % gtg
+To diminish noisy signals and make participants feel comfortable, the GSR sensors were attached to the participant's ring and index finger on their mouse hand, because mouse fingers tend to move much less than the keyboard hand in FPS gameplay. 
+%Some participants used index and middle fingers to press mouse buttons and others used index and ring fingers to do that.
+
+% Will need to be replaced with better description when new figures available.
 Figure ~\ref{fig:gsr-signal} presents resulted signal values for a participant. From left to right the light-blue line indicate different conditions being played. When the line is declining towards its base value, that is the period that participant is asked to stop playing and instead relaxing and filling out the questionnaires. The blue line is the normalized GSR signal value of the participant which is used as an estimation of excitement level. The yellow, green and pink lines are showing the three different modes of Player, NPC and Environment parameters being adapted. From left to right the conditions have been played are the Environment, Default, Player and the NPC modes. For a better understanding of changes between signal values, some of signals have been shifted to a different range.
 
 \dcimg
@@ -217,31 +251,32 @@ Figure ~\ref{fig:gsr-signal} presents resulted signal values for a participant. 
 {gsr-signal.png}
 {gsr-signal}
 
+%table not necessary for paper, covered in text. Maintain for thesis though.
 %-----------------------------------------------------------
-\begin{table}[h]
-\caption{Experiment procedure}
-\label{tbl:experiment-procedure}
-\centering
-\begin{tabular}{lr}
-\hline
-Activity                                         & min. \\
-\hline
-Greetings, Consent form                          & \~2   \\
-Installation of physiological sensors            & \~3   \\
-Introducing the game mechanics                   & \~2   \\
-Game condition a                                 & 5    \\
-Condition questionnaire a                        & 7    \\
-Game condition b                                 & 5    \\
-Condition questionnaire b                        & 7    \\
-Game condition c                                 & 5    \\
-Condition questionnaire c                        & 7    \\
-Game condition d                                 & 5    \\
-Condition questionnaire d                        & 7    \\
-Semi-structured post-game interview, debriefing  & \~5   \\ 
-Total                                            & \~60  \\
-\hline
-\end{tabular}
-\end{table}
+%\begin{table}[h]
+%\caption{Experiment procedure}
+%\label{tbl:experiment-procedure}
+%\centering
+%\begin{tabular}{lr}
+%\hline
+%Activity                                         & min. \\
+%\hline
+%Greetings, Consent form                          & \~2   \\
+%Installation of physiological sensors            & \~3   \\
+%Introducing the game mechanics                   & \~2   \\
+%Game condition a                                 & 5    \\
+%Condition questionnaire a                        & 7    \\
+%Game condition b                                 & 5    \\
+%Condition questionnaire b                        & 7    \\
+%Game condition c                                 & 5    \\
+%Condition questionnaire c                        & 7    \\
+%Game condition d                                 & 5    \\
+%Condition questionnaire d                        & 7    \\
+%Semi-structured post-game interview, debriefing  & \~5   \\ 
+%Total                                            & \~60  \\
+%\hline
+%\end{tabular}
+%\end{table}
 %-----------------------------------------------------------
 
 %------------------------------------------------------------------------------
@@ -253,13 +288,15 @@ Total                                            & \~60  \\
 % TODO: perceived results, participants comments
 
 % gtg
-In the presented tables conditions are indicated by numbers: Default (1), Player adapted (2), NPC adapted (3) and Environment adapted as (4). In our analysis we wanted to consider the impact of three different adaptations on players performance and excitement level. In this study performance is defined as the number of killed zombies during the 5 minutes play of each conditions; And we used normalized GSR signal as the excitement metric.
+Conditions are indicated by the following labels: Default (1), Player adapted (2), NPC adapted (3) and Environment adapted (4). In our analysis we wanted to consider the impact of three different adaptations on players performance and excitement. In this study performance is defined as the number of killed zombies during the 5 minutes play of each conditions, and we used normalized GSR signal as the excitement metric.
 
 % gtg
 Table ~\ref{tbl:pval-cnd-perf} presents performance value differences between the four conditions. A RCBD ANOVA used to block order of playing different conditions and also players' experience level as two extraneous factors. This analysis shows that there was a significant difference in performance values between conditions. Post-hoc analysis revealed performance values have been declined significantly under condition 3 (NPC adapted) compared to all other conditions (p \textless 0.05). However, no significant changes have been observed between the other three conditions. Table ~\ref{tbl:mean-cnd-perf} presents mean estimates of these conditions. While values in this table show improvement in performance values under conditions 2 and 4, the mean differences (Table ~\ref{tbl:mean-cnd-perf}) between these two conditions and condition 1 are not large enough to draw any significant conclusion.
 
 % gtg
-Observing player reactions to adaptations during gameplay, and also looking at their responses in the post-game interview, clearly explain the disadvantageous impacts of condition 2 on player. Players naturally adapt themselves to engage and control their character harmonious to the pace of events in the game. Therefor their expectation about next events heavily relies on their prior understanding of the game. Players can easily grasp a feeling about how to control the main character, based on the numerous commands they send to the main character by pushing the control buttons, and the feedback they receive from it. Therefor they can quickly adapt their expectations about the main character behavior. On the other hand, players understanding about NPC components of the game, increase gradually during the play scenario generally by looking at NPC behavior, far slower than the how it happens about the main character. This lead condition 2 to be quite inefficient compared to other conditions in our setting.
+%Faham, more detailed data is needed here, we can discuss tomorrow over the phone
+Observing player reactions to adaptations during gameplay, and also looking at their responses in the post-game interview, clearly explain the disadvantageous impacts of condition 3 on players. Players adapted more naturally to the changing pace of their own character, as they have full feedback control over the character's motions. Players had a more difficult time adapting to the changing speed of the zombies, as the NPCs enhanced abilities were not immediately obvious, and required the player to change their model of NPC behavior.
+%Players naturally adapt themselves to engage and control their character to the pace of events in the game. Therefor their expectation about next events heavily relies on their prior understanding of the game. Players can easily grasp a feeling about how to control the main character, based on the numerous commands they send to the main character by pushing the control buttons, and the feedback they receive from it. Therefor they can quickly adapt their expectations about the main character behavior. On the other hand, players understanding about NPC components of the game, increase gradually during the play scenario generally by looking at NPC behavior, far slower than the how it happens about the main character. This lead condition 3 to be quite inefficient compared to other conditions in our setting.
 
 %-----------------------------------------------------------
 \begin{table}[h]
@@ -309,10 +346,13 @@ Based on the model adequacy checking we can be confident RCBD ANOVA was a perfec
 {residuals-vs-fitted-values-performance}
 
 % gtg
-Table ~\ref{tbl:pval-cnd-exct} presents differences between excitement values between the four conditions. This table shows a significant difference in excitement values between condition 2 and 1 (p = 0.028). The post-hoc analysis revealed participants felt more excited in condition 2 (Player adapted). However excitement differences between the other conditions have not been significant. Table ~\ref{tbl:mean-cnd-exct} presents mean estimates of the excitement values. Although at first glance it can be inferred from Table ~\ref{tbl:mean-cnd-exct} that mean of excitement values in adapted conditions 2,3 and 4, have been increased, based on the differences in Table ~\ref{tbl:pval-cnd-exct} we conclude that only excitement value in condition 2 is significantly larger than the default condition. The mean differences between other conditions are not large enough to draw any further conclusion. Also player reactions to adaptations during gameplay in addition to their responses in our post-game interview indicate players have been most easily influenced by adaptations applied to the main character.
+Table ~\ref{tbl:pval-cnd-exct} presents differences between excitement values between the four conditions. This table shows a significant difference in excitement values between condition 2 and 1 (p = 0.028). The post-hoc analysis revealed participants felt more excited in condition 2 (Player adapted). However excitement differences between the other conditions were not significant. Table ~\ref{tbl:mean-cnd-exct} presents mean estimates of the excitement values. 
+%Although at first glance it can be inferred from Table ~\ref{tbl:mean-cnd-exct} that mean of excitement values in adapted conditions 2,3 and 4, have been increased, based on the differences in Table ~\ref{tbl:pval-cnd-exct} we conclude that only excitement value in condition 2 is significantly larger than the default condition. The mean differences between other conditions are not large enough to draw any further conclusion. Also player reactions to adaptations during gameplay in addition to their responses in our post-game interview indicate players have been most easily influenced by adaptations applied to the main character.
 
 % gtg
-Collected player comments after playing each condition shows 50\% of players declared they have noticed adaptations in main character during condition 2; 31\% of participants could identify adaptations in zombies' speed and spawn rate during condition 3; While only 12.5\% of them identified environmental adaptations in fog density during the condition number 4. Based on these results added to measured excitement values and performance differences between three adapted conditions we conclude, more indirect mechanical environment adaptations although easily observable by eyes, but are yet less noticeable during the play experience; And on the other hand direct mechanical adaptations are more easily detectable and therefor can quickly influence player's emotional state.
+Collected player comments after playing each condition shows 50\% of players declared they have noticed adaptations in main character during condition 2; 31\% of participants could identify adaptations in zombies' speed and spawn rate during condition 3; While only 12.5\% of them identified environmental adaptations in fog density during the condition number 4. 
+%Based on these results added to measured excitement values and performance differences between three adapted conditions we conclude, more indirect mechanical environment adaptations although easily observable by eyes, but are yet less noticeable during the play experience; And on the other hand direct mechanical adaptations are more easily detectable and therefor can quickly influence player's emotional state.
+%Conclusions don't go here --Kevin
 
 %-----------------------------------------------------------
 \begin{table}[h]
@@ -379,12 +419,12 @@ We analysed the impact of different adaptions on player's performance and excite
 %------------------------------------------------------------------------------
 
 \section*{Acknowledgment}
-Thanks to GRAND, NSERC and the University of Saskatchewan for funding the study. Also, thanks to Dr. Regan Mandryk, Dr. Kevin Stanley and special thanks to Michael Kalyn for helping me with the SensorLib and TEVA libraries.
+Thanks to GRAND, NSERC and the University of Saskatchewan for funding the study. Special thanks to Michael Kalyn for helping me with the SensorLib and TEVA libraries.
 
 %------------------------------------------------------------------------------
 
 \bibliographystyle{IEEEtran}
-\bibliography{bibliography}  
+\bibliography{bibliography}
 \end{document}
 
 %------------------------------------------------------------------------------

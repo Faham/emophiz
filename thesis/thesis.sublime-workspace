@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"array_K",
+				"array_key_exists"
+			],
+			[
+				"array_key",
+				"array_key_exists"
+			],
+			[
+				"removable",
+				"removable-refrence-list"
+			],
+			[
+				"undergr",
+				"Undergraduate"
+			],
+			[
+				"pub",
+				"publication_id"
+			],
+			[
+				"mycms",
+				"mycms_image"
+			],
+			[
+				"image",
+				"image_id"
+			],
+			[
+				"home",
+				"HOME"
+			],
+			[
 				"fetch",
 				"fetchInfo"
 			],
@@ -39,89 +71,57 @@
 			"file": "/D/desktop/temp/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 3479,
+				"buffer_size": 3576,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/projects/emophiz/paper/bibliography.bib",
+			"file": "/D/projects/mycms/hci_related/todo.txt",
 			"settings":
 			{
-				"buffer_size": 11075,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/projects/emophiz/paper/main.tex",
-			"settings":
-			{
-				"buffer_size": 35713,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/projects/emophiz/paper/common.tex",
-			"settings":
-			{
-				"buffer_size": 529,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/projects/mycms/database.sql",
-			"settings":
-			{
-				"buffer_size": 19780,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/chp-3-video-games.tex",
-			"settings":
-			{
-				"buffer_size": 43008,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/bibliography.bib",
-			"settings":
-			{
-				"buffer_size": 23527,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/chp-5-exprm.tex",
-			"settings":
-			{
-				"buffer_size": 20515,
+				"buffer_size": 900,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "content/chp-4-impl.tex",
+			"file": "/D/projects/mycms/static/css/main.css",
 			"settings":
 			{
-				"buffer_size": 18166,
+				"buffer_size": 7479,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "content/common.tex",
+			"file": "/D/projects/mycms/templates/snippets/people_default.tpl",
 			"settings":
 			{
-				"buffer_size": 1509,
-				"line_ending": "Unix"
+				"buffer_size": 1824,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/projects/mycms/modules/pages/pages.php",
+			"settings":
+			{
+				"buffer_size": 7464,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 173.0,
 		"selected_items":
 		[
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
 			[
 				"ena",
 				"Package Control: Enable Package"
@@ -135,20 +135,12 @@
 				"Package Control: Enable Package"
 			],
 			[
-				"enable",
-				"Package Control: Enable Package"
-			],
-			[
 				"dis",
 				"Package Control: Disable Package"
 			],
 			[
 				"enabl",
 				"Package Control: Enable Package"
-			],
-			[
-				"disab",
-				"Package Control: Disable Package"
 			],
 			[
 				"enal",
@@ -219,134 +211,134 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Faham/Desktop/uhmwpe.txt",
-		"/D/projects/emophiz/paper/make.sh",
-		"/D/projects/emophiz/doc/analysis/put-into-thesis.txt",
-		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex",
-		"/D/projects/emophiz/data/comments.txt",
-		"/D/projects/emophiz/paper/include/IEEEtran-sample.tex",
-		"/D/projects/emophiz/paper/common.tex",
-		"/D/projects/emophiz/thesis/content/chp-1-intro.tex",
-		"/D/projects/emophiz/thesis/content/common.tex",
-		"/D/projects/emophiz/thesis/thesis.tex",
-		"/D/projects/emophiz/thesis/content/chp-6-discus.tex",
-		"/D/projects/emophiz/thesis/include/uofsthesis-cs.cls",
-		"/D/projects/emophiz/paper/bibliography.bib",
-		"/D/projects/emophiz/paper/auxiliary/main.log",
-		"/D/projects/emophiz/paper/content/01-intro.tex",
-		"/D/projects/emophiz/paper/content/abstract.tex",
-		"/D/projects/emophiz/paper/picture",
-		"/C/Users/Faham/Downloads/cmpt270/marking-270.txt",
-		"/D/projects/emophiz/paper/.gitignore",
+		"/D/projects/mycms/templates/people.tpl",
+		"/D/projects/mycms/hci_related/working-hours.txt",
+		"/D/projects/mycms/modules/ajax/ajax.php",
+		"/D/projects/mycms/index.php",
+		"/D/projects/mycms/config.php",
+		"/D/projects/mycms/static/js/main.js",
+		"/D/projects/mycms/static/css/main.css",
+		"/D/projects/mycms/modules/ajax/ajax.ini",
+		"/D/projects/mycms/classes/auth.php",
+		"/D/projects/mycms/templates/download.tpl",
+		"/D/projects/mycms/classes/cas.php",
+		"/D/projects/mycms/templates/people_admin_edit.tpl",
 		"/D/projects/mycms/modules/admin/admin.php",
-		"/D/projects/mycms/temp/toremove/admin/common.php",
-		"/D/projects/mycms/README.md",
-		"/D/projects/mycms/temp/toremove/admin/people.php",
-		"/D/projects/mycms/temp/toremove/admin/index.php",
-		"/C/Users/Faham/Downloads/cmpt270/a1.java",
-		"/D/projects/mycms/temp/check_php.php",
-		"/C/Users/Faham/Downloads/cmpt270/a1 (1).java",
-		"/C/Users/Faham/Downloads/cmpt270/main.java",
-		"/C/Users/Faham/Downloads/cmpt270/RationaltypeTest.java",
-		"/C/Users/Faham/Downloads/cmpt270/RationalType.java",
-		"/C/Users/Faham/Downloads/cmpt270/RationalTypeTest.java",
-		"/C/Users/Faham/Downloads/cmpt270/RationalTypeTest (1).java",
-		"/C/Users/Faham/Downloads/cmpt270/RationalType (1).java",
-		"/D/projects/mycms/temp/oldweb-backup/hcidb-backup.sql",
-		"/D/projects/mycms/temp/database-backup.sql",
 		"/D/projects/mycms/modules/pages/pages.php",
-		"/D/projects/mycms/temp/toremove/index.php",
-		"/D/projects/mycms/temp/toremove/.htaccess",
-		"/D/projects/mycms/temp/toremove/admin/logout.php",
 		"/D/projects/mycms/config.ini",
-		"/D/documents/internet-network.txt",
-		"/D/projects/mycms/create-schema.sh",
-		"/D/projects/mycms/.htaccess",
+		"/D/projects/mycms/templates/snippets/people_default.tpl",
+		"/D/projects/mycms/templates/snippets/publication_default.tpl",
+		"/D/projects/mycms/templates/snippets/research_default.tpl",
+		"/D/projects/mycms/modules/admin/admin.class.php",
+		"/D/projects/mycms/classes/error.php",
+		"/D/projects/mycms/LICENSE",
+		"/D/projects/mycms/templates/error.tpl",
+		"/D/projects/mycms/_config.ini_",
+		"/D/projects/mycms/templates/snippets/bibtex.tpl",
+		"/D/projects/mycms/templates/research.tpl",
+		"/D/projects/mycms/templates/publication.tpl",
+		"/D/projects/mycms/hci_related/original_list_of_videos.txt",
+		"/D/projects/mycms/hci_related/original_list_of_pdfs.txt",
+		"/D/projects/mycms/hci_related/hci_db_covnversion.sql",
+		"/C/Users/Faham/Desktop/old_hci_db.sql",
 		"/D/projects/mycms/database.sql",
-		"/D/projects/mycms/schema/mycms.ini",
+		"/D/projects/mycms/.htaccess",
+		"/D/projects/mycms/_.htaccess_",
 		"/D/projects/mycms/classes/content.php",
+		"/D/projects/mycms/templates/snippets/publication_teaser_list.tpl",
 		"/D/projects/mycms/classes/contents.php",
-		"/C/Users/Faham/Downloads/mycms.sql",
-		"/D/projects/mycms/temp/inserts.sql",
+		"/D/projects/mycms/templates/snippets/people_all_publication.tpl",
+		"/D/projects/mycms/templates/snippets/people_all_research.tpl",
+		"/D/projects/mycms/modules/pages/pages.ini",
+		"/D/projects/mycms/.gitignore",
+		"/D/projects/mycms/templates/index.tpl",
+		"/D/projects/mycms/templates/snippets/research_teaser.tpl",
+		"/D/projects/mycms/static/js/jquery.sortable.js",
+		"/D/projects/mycms/static/js/jquery.min.js",
+		"/D/projects/mycms/temp/html5sortable/jquery.sortable.js",
+		"/D/projects/mycms/templates/snippets/research_teaser_list.tpl",
+		"/D/projects/mycms/templates/snippets/research_refrence_list.tpl",
+		"/D/projects/mycms/static/js/jquery.sortable.min.js",
+		"/D/documents/resume-jamal/cover-letter.tex",
+		"/D/documents/resume-faham/cover-letter.tex",
+		"/D/documents/resume-jamal/make.sh",
+		"/D/projects/mycms/templates/publication_admin_edit.tpl",
+		"/D/projects/mycms/templates/research_admin_edit.tpl",
+		"/D/projects/mycms/templates/snippets/publication_teaser.tpl",
+		"/D/projects/mycms/templates/snippets/people_teaser.tpl",
+		"/D/projects/mycms/templates/snippets/publication_refrence_list.tpl",
+		"/D/projects/mycms/templates/snippets/people_refrence_list.tpl",
+		"/D/projects/mycms/templates/people_admin_create.tpl",
+		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/research/index.php",
+		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/common.php",
+		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/people/index.php",
+		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/index.php",
+		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/people/view.php",
+		"/D/projects/mycms/lang/en.php",
+		"/D/projects/mycms/templates/publication_admin_create.tpl",
+		"/D/projects/mycms/templates/research_admin_create.tpl",
+		"/D/projects/mycms/static/js/jquery.tools.js",
+		"/D/projects/mycms/static/js/jquery.uniform.min.js",
+		"/D/projects/mycms/static/js/main.js_",
+		"/C/Users/Faham/Desktop/mycms_publication.sql",
+		"/D/projects/mycms/hci_db_covnversion.sql",
+		"/D/projects/mycms/temp/working-hours.txt",
+		"/D/projects/mycms/temp/todo.txt",
+		"/D/projects/mycms/temp/oldweb-backup/list_of_pdfs.txt",
+		"/D/projects/mycms/temp/oldweb-backup/list_of_videos.txt",
+		"/D/projects/mycms/temp/temp.html",
+		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/publications/view.php",
+		"/D/projects/mycms/temp/oldweb-backup/old_hci_db_covnversion.sql",
+		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_db_old_export.sql",
+		"/D/projects/mycms/temp/toremove/people/view.php",
+		"/D/projects/mycms/temp/toremove/publications/index.php",
+		"/D/projects/mycms/temp/database-backup.sql",
+		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_db_ported.sql",
+		"/D/projects/mycms/temp/oldweb-backup/hcidb.sql",
+		"/D/documents/cba7dc1b.txt",
+		"/C/Users/Faham/Desktop/tmp.tmp",
+		"/D/projects/mycms/temp/oldweb-backup/parser.py",
+		"/C/hci_backup/export_old_hci_db_6182014.sql",
+		"/C/hci_backup/new_database.sql",
+		"/C/hci/export_old_hci_db_6182014.sql",
+		"/D/projects/mycms/templates/snippets/people_teaser_list.tpl",
+		"/D/projects/mycms/temp/cas/notes.txt",
+		"/D/projects/mycms/schema/mycms.ini",
+		"/C/Users/Faham/Desktop/mycms_people (1).sql",
+		"/D/projects/mycms/classes/system.php",
+		"/C/Users/Faham/Desktop/mycms_people.sql",
+		"/D/projects/mycms/README.md",
+		"/D/projects/library/lod/index.php",
+		"/D/projects/library/lod/modules/page/page.php",
+		"/D/projects/library/lod/classes/common.php",
+		"/D/projects/library/lod/classes/log.php",
+		"/D/projects/library/lod/config.ini",
+		"/D/projects/mycms/modules/users/users.ini",
+		"/D/projects/mycms/modules/users/users.class.php",
+		"/D/projects/mycms/modules/users/users.php",
+		"/D/projects/mycms/classes/mysmarty.php",
+		"/D/projects/mycms/temp/cas/cas_php_example.php",
+		"/C/wamp/bin/apache/apache2.2.22/bin/php.ini",
+		"/D/projects/mycms/classes/cas/CAS.php",
+		"/D/projects/mycms/classes/cas/README.md",
+		"/D/projects/mycms/classes/CAS-1.3.2/CAS-1.3.2/package.xml",
+		"/D/projects/mycms/temp/toremove/admin/privileges.php",
+		"/D/projects/mycms/temp/toremove/admin/common.php",
+		"/D/projects/mycms/temp/cas/cas_php_example.txt",
+		"/D/projects/mycms/temp/toremove/common.php",
+		"/D/projects/mycms/temp/toremove/admin/index.php",
+		"/D/projects/mycms/temp/toremove/admin/publications.php",
+		"/D/projects/mycms/temp/toremove/admin/people.php",
+		"/D/projects/mycms/temp/toremove/admin/logout.php",
+		"/D/projects/mycms/temp/toremove/admin/editauthors.php",
+		"/D/projects/mycms/temp/toremove/admin/research.php",
+		"/D/projects/mycms/temp/toremove/admin/authors.css",
+		"/D/projects/mycms/ - Copy.htaccess",
+		"/D/projects/mycms/working-hours.txt",
 		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
 		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
-		"/D/projects/emophiz/thesis/content/bibliography.bib",
-		"/D/projects/emophiz/thesis/content/abbreviations.tex",
-		"/C/wamp/bin/php/php5.3.13/php.ini",
-		"/C/wamp/bin/apache/apache2.2.22/bin/php.ini",
-		"/C/pear/pear/pearcmd.php",
-		"/C/pear/pear/PEAR.php",
-		"/C/pear/pear.bat",
-		"/C/pear/pecl.bat",
-		"/D/projects/mycms/_config.ini_",
-		"/D/projects/mycms/.gitignore",
-		"/C/wamp/bin/php/php5.3.13/phar.phar.bat",
-		"/C/Users/Faham/Desktop/uhmwpe",
-		"/D/projects/mycms/classes/db.php",
-		"/C/Users/Faham/Desktop/quran-miracles.txt",
-		"/C/Users/Faham/Desktop/put-into-thesis.txt",
-		"/D/projects/emophiz/doc/analysis/statistical-analysis.R",
-		"/D/projects/emophiz/doc/analysis/statistical-analysis.log",
-		"/C/Users/Faham/Downloads/Faham.R",
 		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
-		"/D/documents/private/people/faham-negini/passwords.txt",
-		"/D/documents/private/encrypt.sh",
-		"/D/documents/private/decrypt.sh",
-		"/D/documents/private/gpg/mohammad-negini/trip-to-canada/expenses-summary.txt",
-		"/D/documents/private/mohammad-negini/canada-visitor-visa-application-2014/checklist.txt",
-		"/D/documents/private/docs/faham-negini/passwords.txt",
-		"/D/documents/sasktel-internet-service.txt",
-		"/D/documents/private/docs/passwords.txt",
-		"/D/documents/private/docs/accounts-and-passwords.txt",
-		"/C/Users/Faham/Downloads/uofsthesis-cs/thesis_template.tex",
-		"/C/Users/Faham/Downloads/uofsthesis-cs/uofsthesis-cs.cls",
-		"/D/music/sarapasand/manifest",
-		"/G/software/usb-windows-installer/rufus_v1.4.1.txt",
-		"/C/Users/Faham/Downloads/Flow.bibtex",
-		"/C/Users/Faham/Downloads/wallpaper_example.tex",
-		"/D/projects/emophiz/thesis/content/chp-video-games.tex",
-		"/C/Users/Faham/Downloads/untex-1.2/Makefile",
-		"/C/Users/Faham/Downloads/untex-1.2/untex.man",
-		"/C/Users/Faham/Downloads/untex-1.2/untex.c",
-		"/D/projects/emophiz/thesis/make.sh",
-		"/D/projects/emophiz/thesis/content/chp-discus.tex",
-		"/D/projects/emophiz/thesis/content/chp-intro.tex",
-		"/D/projects/emophiz/thesis/content/chp-emotion.tex",
-		"/D/projects/emophiz/thesis/content/chp-.tex",
-		"/D/projects/emophiz/thesis/content/chp-exprm.tex",
-		"/D/projects/emophiz/thesis/content/chp-impl.tex",
-		"/C/Users/Faham/Desktop/math-in-quran.txt",
-		"/D/projects/emophiz/data/variables.txt",
-		"/D/documents/private/docs/faham-negini/passwords-2.txt",
-		"/D/documents/private/docs/faham-negini/accounts-and-passwords.txt",
-		"/D/projects/emophiz/thesis/images/needed-photos.txt",
-		"/D/projects/emophiz/doc/experiment-script.txt",
-		"/C/Users/Faham/Downloads/Download Document.html",
-		"/C/Users/Faham/Downloads/quran-simple-clean.txt",
-		"/C/Users/Faham/Desktop/day-in-quran.txt",
-		"/C/Users/Faham/Desktop/day-in-quran-2.txt",
-		"/C/Users/Faham/Downloads/quran-simple-clean2.txt",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/C/Users/Faham/Downloads/quran-simple.txt",
-		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/ShadowTexture.vertexshader",
-		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/ShadowTexture.fragmentshader",
-		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Shadow.fragmentshader",
-		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Shadow.vertexshader",
-		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Texture.fragmentshader",
-		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Texture.vertexshader",
-		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Color.fragmentshader",
-		"/D/desktop/temp/cmpt485/submissions/part4/wwb573/asst4Submission/ASST4/ASST4/cmpt485/part4/Color.vertexshader",
-		"/D/desktop/temp/cmpt485/cmpt485/part4/ColorFragmentShader.fragmentshader",
-		"/D/desktop/temp/cmpt485/cmpt485/part4/TransformVertexShader.vertexshader",
-		"/D/projects/emophiz/thesis/-10% - lots of linkage error due to including cpp",
-		"/C/Users/Faham/Downloads/scholar.enw",
-		"/D/documents/private/docs/decrypt.sh",
-		"/D/documents/faham/faham-resume-2013.txt",
-		"/C/Users/Faham/AppData/Local/Temp/7zOB0EA.tmp/quranic-corpus-morphology-0.4.txt",
-		"/D/desktop/temp/tax-review-docs/response.txt",
-		"/D/desktop/temp/tax-review-docs/response2.txt",
-		"/D/projects/emophiz/thesis/content/import/import.bib"
+		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex"
 	],
 	"find":
 	{
@@ -357,6 +349,10 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"D:\\projects\\mycms,<open files>",
+			"D:\\projects\\mycms",
+			"D:\\projects\\library\\lod",
+			"D:\\projects\\mycms",
 			"D:\\projects\\mycms\\temp\\toremove",
 			"C:\\Users\\Faham\\Downloads\\quran-simple-clean.txt",
 			"D:\\projects\\mycms\\templates\\snippets",
@@ -369,134 +365,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"review",
-			"TODO: ",
-			"!t",
-			"pval-cnd-perf",
-			"Affect Engine",
-			"Affect",
-			"baba",
-			"russell1989affect",
-			"mandryk2007fuzzy",
-			"barrett1998discrete",
-			"russell2003core",
-			"dalgleish1999handbook",
-			"zagalo2004story",
-			"peter2006emotion",
-			"paiva2007affective",
-			"cannon1927james",
-			"zhang2010service",
-			"roseman2001model",
-			"russell1980circumplex",
-			"lang1995emotion",
-			"ekman1992argument",
-			"Measuring emotion",
-			"[23]",
-			"[13]",
-			"[17]",
-			"[26]",
-			"eas",
-			"17",
-			"16",
-			"15",
-			"14",
-			"13",
-			"12",
-			"11",
-			"26",
-			"25",
-			"24",
-			"23",
-			"22",
-			"21",
-			"20",
-			"19",
-			"20",
-			"19",
-			"18",
-			"17",
-			"16",
-			"15",
-			"14",
-			"13",
-			"12",
-			"11",
-			"10",
-			"xiang2013dynamic",
-			"pajares2008understanding",
-			"table",
-			"figure",
-			"floating",
-			"sec:res",
-			"mayer1993intelligence",
-			"ﬁ",
-			"---------------------------------",
-			"- ",
-			"ﬀ",
-			"biblio",
-			"uofsbibliography",
-			"CLASSOPTIONcaptions",
-			"ﬃ",
-			"ﬀ",
-			"- ",
-			"aham negi",
-			"aham neini",
-			"IEEEtran",
-			"ieeetran",
-			"IEEEtran",
-			"ieeetran",
-			"IEEEtran",
-			"person",
-			"isadmin",
-			"HTTP_CAS_USER",
-			"admin",
-			"cas",
-			"%2f",
-			"usask.ca",
-			"cas.usask.ca",
-			"portal.usask.ca",
-			"admin",
+			"button",
+			"params",
+			"ajax/",
+			"ajax",
+			".remove",
+			"teaser",
+			"research",
+			"people",
+			"remove",
+			"weburl",
+			"$g['user']",
+			"is",
+			"$g['user']",
+			"$g['session']['error']",
+			"push",
+			"echo",
+			"$_SESSION",
+			"use_only_cookies",
+			"todo",
+			"refrence_limit",
+			"image",
+			"gt",
+			"ref_limit",
+			"search",
+			"find",
+			"default",
+			"$g['db']",
 			"publication",
-			"REAL",
-			"	",
-			"Apr ",
-			"May ",
-			"Apr ",
-			"6.20",
-			"_",
-			" ALGORITHM=UNDEFINED DEFINER=`mycms_hci`@`%.usask.ca` SQL SECURITY DEFINER",
-			"ALGORITHM=UNDEFINED DEFINER=`mycms_hci`@`%.usask.ca` SQL SECURITY DEFINER ",
-			"title_format",
+			"query",
+			"lower",
+			"tolower",
+			"href",
+			"AND",
+			"WHERE",
+			"SET",
+			"; ",
+			"\\r\\n\\t\\t\\t\\t",
+			"cases",
+			"\\r\\n\\t\\t\\t",
+			"values",
+			"->",
+			"success",
+			"=>",
+			"for (",
+			"foreach",
+			"this",
+			"research",
+			".h5s",
+			"a",
+			"div",
+			"ul",
+			" ",
+			"var_dump",
+			"edit",
+			"$(this)",
+			"$(\".removable-refrence-list .teaser\")",
+			"removable-refrence",
+			"'display', 'none'",
+			"success",
+			"alert(",
+			"alert(message",
+			"'success' ==",
+			"if('success' == data.status)",
+			"remove",
+			"closest('.TTWForm-container')",
+			"input.data('selected');",
+			"input.data('selected')",
+			"//-----------------------------------------------------------------------------\n",
+			"insertSuggest",
+			"refer",
+			"jax",
+			"img.",
+			".teaser",
+			"append",
+			"-",
+			"weburl",
+			"hover",
+			"publication",
+			".publication",
+			"$research",
+			"publication",
+			"people",
+			"ref_order",
+			"people",
+			"outputSummary",
+			"other",
+			"faculty",
+			"other",
+			"faculty",
+			"','",
+			"people",
+			"�",
+			"mycms_people",
+			".on",
+			"submit",
+			"save",
+			"submit",
+			"\\",
+			"zxc",
+			"- ",
+			"'operation' => ",
+			"validate",
+			"publication_toappear",
+			"validate",
+			"empty",
+			", ",
+			"<option />",
+			"script",
+			"selected",
+			"�",
 			"view",
-			"from",
-			"install",
-			"pear",
-			"/pear",
-			"pear",
-			"performance",
-			"45.60",
-			"91.50",
-			"101.75",
-			"98.25",
-			"        ",
-			"         ",
-			"        ",
-			"         ",
-			"        ",
-			"           ",
-			"            ",
-			"           ",
-			"         ",
-			"        ",
-			"         ",
-			"        ",
-			"       ",
-			"      ",
-			"        ",
-			"       ",
-			"      ",
-			"         ",
-			"        "
+			"http://hci.usask.ca/publications/",
+			"uploads/",
+			"doc",
+			"publication_temp_pdflink",
+			"mycms_doc_publication",
+			"mycms_video_publication",
+			"mycms_doc_video",
+			"mycms_doc_publication",
+			"uploads/",
+			"http://hci.usask.ca/publications/",
+			"mycms_doc_publication",
+			"INSERT",
+			"mycms_people_publication",
+			"delete from",
+			"mycms_image_people",
+			"delete from",
+			"wehre"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -504,6 +500,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\\t",
 			"\\bhline",
 			" \\n",
 			" ",
@@ -568,15 +565,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3479,
+						"buffer_size": 3576,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1329,
-								1329
+								778,
+								778
 							]
 						],
 						"settings":
@@ -587,74 +584,68 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 141.0,
+						"translation.y": 18.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/D/projects/emophiz/paper/bibliography.bib",
+					"file": "/D/projects/mycms/hci_related/todo.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11075,
+						"buffer_size": 900,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10115,
-								10115
+								80,
+								80
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 195.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/D/projects/emophiz/paper/main.tex",
+					"file": "/D/projects/mycms/static/css/main.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 35713,
+						"buffer_size": 7479,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17761,
-								17761
+								7295,
+								7295
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
 							"remote_loading": false,
-							"spell_check": true,
 							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3871.0,
+						"translation.y": 9501.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -662,19 +653,19 @@
 				},
 				{
 					"buffer": 3,
-					"file": "/D/projects/emophiz/paper/common.tex",
+					"file": "/D/projects/mycms/templates/snippets/people_default.tpl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 529,
+						"buffer_size": 1824,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								194,
-								194
+								1638,
+								1630
 							]
 						],
 						"settings":
@@ -682,10 +673,11 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 159.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -693,19 +685,19 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/D/projects/mycms/database.sql",
+					"file": "/D/projects/mycms/modules/pages/pages.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19780,
+						"buffer_size": 7464,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16773,
-								16773
+								1646,
+								1646
 							]
 						],
 						"settings":
@@ -713,172 +705,14 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/SQL/SQL.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 8424.0,
+						"translation.y": 483.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "content/chp-3-video-games.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 43008,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7864,
-								7864
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 267.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "content/bibliography.bib",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 23527,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "content/chp-5-exprm.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 20515,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								14656,
-								14656
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 789.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "content/chp-4-impl.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18166,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								16918,
-								16778
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3633.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "content/common.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								513,
-								513
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 18.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -917,7 +751,7 @@
 	"menu_visible": true,
 	"output.find_results":
 	{
-		"height": 0.0
+		"height": 118.0
 	},
 	"output.sftp":
 	{
@@ -926,7 +760,7 @@
 	"project": "thesis.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
