@@ -4,7 +4,9 @@
 % - talk about the sensors and the fuzzy framework for emotion recognition
 % and connect that to the game design elements
 
-In This chapter various aspects of the affect engine developed and used in our study is demonstrated. We would show how the generic design of this system can be incorporated with any game engine and how can it be expanded for any other type of sensor and biofeedback data not necessarily used in this work. The first section talks about the overal design and different modules of the affect engine; Next sections describe different modules in details giving examples of different settings used for our particular study. In final sections we would talk about the game engine we used in this work, and how we incorporated the affect engine in this particular case. We would talk about details of design decisions we made for our study, and game design differences we plan to investigate in our study in Chapter ~\ref{chap:exprm}.
+Our goal is to adapt gameplay based on a player's affective state. Although there have not been studies investigating our particular question of how player experience is impacted by applying different mechanisms for affect-driven adjustments in games, there has been related work that can inform our research. Affective gaming has been defined by Gilleade et al. as an activity where ``the player's current emotional state is used to manipulate gameplay." ~\cite{gilleade2005affective}. Researchers have created and studied games that replace traditional game controls with affective game controls (e.g., the GSR-controlled dragons racing in `Relax-to-win' ~\cite{bersak2001intelligent} or the Electroencephalography-controlled balls rolling in `BrainBall' ~\cite{hjelm2003research}). Researchers have also investigating augmenting traditional game controls with affective game controls. For example, the Death Trigger side-scrolling shooter was played with a traditional gamepad and control scheme, but also adapted game elements (e.g., length of the flamethrower, size of the enemies, and the density of snowfall) using different physiological signals ~\cite{nacke2011biofeedback}. Finally, researchers have investigated adapting games using affective input. In work closest to ours, Dekker et al. ~\cite{dekker2007please} developed a game modification using the Source SDK and Half-Life 2, in which GSR and HR were used to control game shader graphics, screen shaking, and enemy spawn points (the number of locations in which enemies are put into the game world).  Kuikanniemi et al. ~\cite{kuikkaniemi2010influence} studied how awareness of the manipulation affected player experience in a first-person shooter (FPS), where affective input modulated character walking and turning speed, aiming direction, recoil amount, and firing rate. Their works revealed that players preferred to be aware of the adaptation.
+
+This chapter explores various aspects of the affect engine developed and used in our study. We would show how the generic design of this system can be incorporated with any game engine and how can it be expanded for any other type of sensor and biofeedback data not necessarily used in this work. The first section talks about the overal design and different modules of the affect engine; Next sections describe different modules in details giving examples of different settings used for our particular study. In final sections we would talk about the game engine we used in this work, and how we incorporated the affect engine in this particular case. We would talk about details of design decisions we made for our study, and game design differences we plan to investigate in our study in Chapter ~\ref{chap:exprm}.
 
 \section{Emotionally Adaptive Game System Design}
 %% talk about the fuzzy logic and details of its transformation
@@ -12,9 +14,9 @@ In This chapter various aspects of the affect engine developed and used in our s
 We will now present a basic system schematic of an emotionally adapted game in Figure ~\ref{fig:system-design}. A typical game engine depicted on the left-hand side of the diagram, continuously captures user input which is usually collected using gaming controllers such as gamepads or mouse and keyboard.
 
 % Emotionally Adapted Games - An Example of a First Person Shooter.pdf
-p We will now present a basic system schematic of an emotionally adapted game in Figure 1. The process of a typical gaming engine is depicted on the left-hand side of the diagram. The engine continuously monitors user input, which is typically collected using a keyboard, a joystick, or other game controllers. This input data is then processed and transferred to the layer that handles the game’s internal logical state, and the user input may influence the game state. After the logical state of the game is defined the system alters the actions of the synthetic agents in the game world. For example, these include the actions of computer-controlled non-player characters. The complexity of this AI layer varies greatly depending on the game. Based on the game state and the determined actions of the synthetic agents, the physics engine determines the kinetic movements of different objects within  the world. Finally, the game world is synthesized for the player by rendering the graphical elements and producing and controlling the audio elements within the game. [see 14] The proposed emotional regulation can be implemented as a middleware system that runs parallel to the actual game engine. The input processing layer of the game engine can receive a data flow of captured and pre-processed sensor data. The real- time signal processing may consist of different forms of amplifying, filtering and feature selection on the psychophysiological signals. This data flow may directly influence the state of the game world, or it can be used by the emotional regulation sub-module of the emotion feedback engine. This module consists of the rules of emotional balancing for different player profile types and gamer-related explicitly set preferences controlled by the “emotion knob”. In addition, it contains a collection of design rules for narrative constructions and game object presentation within the game world. The emotional regulation module also receives input from the game engine’s logical layer to make selections related to desired emotional balance and narrative structures within the game. [14] The outputs of emotional regulation engine may then be applied to various different levels of the actions of the game engine: i) the logical state of the world may be re-directed, ii) the actions of the synthetic agents may be controlled, iii) the 
+p We will now present a basic system schematic of an emotionally adapted game in Figure 1. The process of a typical gaming engine is depicted on the left-hand side of the diagram. The engine continuously monitors user input, which is typically collected using a keyboard, a joystick, or other game controllers. This input data is then processed and transferred to the layer that handles the game's internal logical state, and the user input may influence the game state. After the logical state of the game is defined the system alters the actions of the synthetic agents in the game world. For example, these include the actions of computer-controlled non-player characters. The complexity of this AI layer varies greatly depending on the game. Based on the game state and the determined actions of the synthetic agents, the physics engine determines the kinetic movements of different objects within  the world. Finally, the game world is synthesized for the player by rendering the graphical elements and producing and controlling the audio elements within the game. [see 14] The proposed emotional regulation can be implemented as a middleware system that runs parallel to the actual game engine. The input processing layer of the game engine can receive a data flow of captured and pre-processed sensor data. The real- time signal processing may consist of different forms of amplifying, filtering and feature selection on the psychophysiological signals. This data flow may directly influence the state of the game world, or it can be used by the emotional regulation sub-module of the emotion feedback engine. This module consists of the rules of emotional balancing for different player profile types and gamer-related explicitly set preferences controlled by the “emotion knob”. In addition, it contains a collection of design rules for narrative constructions and game object presentation within the game world. The emotional regulation module also receives input from the game engine’s logical layer to make selections related to desired emotional balance and narrative structures within the game. [14] The outputs of emotional regulation engine may then be applied to various different levels of the actions of the game engine: i) the logical state of the world may be re-directed, ii) the actions of the synthetic agents may be controlled, iii) the
 
-A basic system schematic of an emotionally adapted game is presented in Figure ~\ref{fig:}
+A basic system schematic of an emotionally adapted game is presented in Figure ~\ref{fig:system-design}
 
 \img
 {Emotion adaptive game system design}
@@ -27,32 +29,27 @@ A basic system schematic of an emotionally adapted game is presented in Figure ~
 p kinetics of the game may be altered and iv) the rendering of the game world may be changed. First two options are more relevant to high-level and story-related structures of the game, whereas the last two are more directly related to the selection of presentation of objects within the virtual environment. [e.g. 14]
 
 % Emotionally Adapted Games - An Example of a First Person Shooter.pdf
-p With our system design for games it is possible for the game designer as well for the user to set desired emotional targets to be approached or avoided. The system uses both positive and negative feedback loops to determine the ideal adaptations case-by- case for game play for various emotional effects to be realized and managed. Indeed, to implement and evaluate some of the ideas presented, we have explored novel technical solutions and tested different kinds of psychophysiological adaptations that can be implemented. EMOShooter is a prototype platform for psychophysiologically adaptive 3D first-person shooter (FPS) gaming. It is built on top of open-source graphics engine (OGRE 3D) and physics engine (ODE). In this experimental platform we have the possibility to modify practically any game world element, player avatar, avatar outlook, or control parameter.  EMOShooter is a simple psychophysiologically adaptive game and hence a part of our emotionally adapted games definition. The system uses psychophysiological signals to influence the ease of use of the controls of the game hence affecting game play difficulty and game play experience. The system does not have target experiences systematically implemented at this moment nor does it have an emotion knob to tune the system. However, the EMOShooter game is a valuable example of one type of emotionally adapted games in demonstrating one feasible link between real-time emotional state measurement with psychophysiology and the game play. The goal of the EMOShooter game is to kill cube-like enemies either with sniper or machine gun. We have been testing various adaptation patterns with EMOShooter by primarily EDA and respiration as psychophysiological signals in our adaptive 
+p With our system design for games it is possible for the game designer as well for the user to set desired emotional targets to be approached or avoided. The system uses both positive and negative feedback loops to determine the ideal adaptations case-by- case for game play for various emotional effects to be realized and managed. Indeed, to implement and evaluate some of the ideas presented, we have explored novel technical solutions and tested different kinds of psychophysiological adaptations that can be implemented. EMOShooter is a prototype platform for psychophysiologically adaptive 3D first-person shooter (FPS) gaming. It is built on top of open-source graphics engine (OGRE 3D) and physics engine (ODE). In this experimental platform we have the possibility to modify practically any game world element, player avatar, avatar outlook, or control parameter.  EMOShooter is a simple psychophysiologically adaptive game and hence a part of our emotionally adapted games definition. The system uses psychophysiological signals to influence the ease of use of the controls of the game hence affecting game play difficulty and game play experience. The system does not have target experiences systematically implemented at this moment nor does it have an emotion knob to tune the system. However, the EMOShooter game is a valuable example of one type of emotionally adapted games in demonstrating one feasible link between real-time emotional state measurement with psychophysiology and the game play. The goal of the EMOShooter game is to kill cube-like enemies either with sniper or machine gun. We have been testing various adaptation patterns with EMOShooter by primarily EDA and respiration as psychophysiological signals in our adaptive
 
 % Emotionally Adapted Games - An Example of a First Person Shooter.pdf
-p feedback system regards how these signals can be meaningfully connected to the actual game play via adapting game controls.  Adaptation of game controls includes changes in rate of fire, recoil, movement speed and shaking. If a player is aroused this will be reflected in EDA and respiration signals which in turn will make rate of fire and movement slower and will make the aim shaky. Hence, for a highly aroused player the game becomes more difficult. For a mildly aroused or calm player the controls become more efficient and easy to use hence facilitating performance at game play. Game events are mostly arousing. The amount of cubes to shoot, their approach and firing on the user, the amount of health left after being hit and the sound effects all are geared to drive up arousal in the game. The player’s task is to be calm as indexed by psychophysiological signals to be able to operate the controls more efficiently. In our tests of the game we have collected also EMG data to infer the valence dimension of emotion during game play. In addition to the psychophysiological signals we have collected data from the players using behavioral game logging, video capture, interviews and questionnaires. During our tests we noticed that proper calibration and base lining of the psychophysiological signals is very important for the adaptations to work. We also noticed that having robust stimuli in the game is crucial for the adaptations to work because in many cases the stimulus functioned as a trigger in adaptation. The psychophysiological signals used are calibrated by using dynamic range (basically a variation of dynamic signal normalization algorithm), which has a memory buffer of a few seconds (depending on signal). Dynamic range is easy to use and effective calibration mechanism, and relative change seems to be more practical than absolute values in this kind of gaming.  According to our early analysis, there are three key issues in designing psychophysiologically adaptive games i) understanding the meaningful emotionally adaptive gaming patterns, ii) implementation of adaptation algorithms and signal processing, and iii) purposeful use of sensors in the game context [15]. The design patterns used in emotionally adaptive gaming must be meaningful and enjoyable for the player, and the utilization of signals must also obey the overall goal of the game. In order to achieve the goal player should find the right rhythm or balance of playing the game and control of psychophysiological responses and signals.   Signals should be analyzed as close to real-time as possible in psycho- physiologically adaptive gaming in order to keep the feedback loop in pace with the game adaptations and game events. We have used time-series analysis with short sample windows. In practice, ECG, EEG and EMG always require extensive data processing, but EDA and respiration can be almost used as such to create the adaptation signal. This implies that not all psychophysiological signals are equally open to be used as real-time inputs into an adaptive game at least in this stage of signal processing hardware and software development. Usability of psychophysiological recording devices remains quite poor. Respiration, HR [heart rate] and EDA are probably the easiest to implement. Also in case of emotional adaptation the design of the game may include the physical design of the sensors, e.g. “Detective hat” for EEG sensors or “Sniper-gloves” for EDA sensors. Hence, the sensors could be designed as part of the game story rather than presented as cumbersome and invasive laboratory-originated equipment. 
+p feedback system regards how these signals can be meaningfully connected to the actual game play via adapting game controls.  Adaptation of game controls includes changes in rate of fire, recoil, movement speed and shaking. If a player is aroused this will be reflected in EDA and respiration signals which in turn will make rate of fire and movement slower and will make the aim shaky. Hence, for a highly aroused player the game becomes more difficult. For a mildly aroused or calm player the controls become more efficient and easy to use hence facilitating performance at game play. Game events are mostly arousing. The amount of cubes to shoot, their approach and firing on the user, the amount of health left after being hit and the sound effects all are geared to drive up arousal in the game. The player’s task is to be calm as indexed by psychophysiological signals to be able to operate the controls more efficiently. In our tests of the game we have collected also EMG data to infer the valence dimension of emotion during game play. In addition to the psychophysiological signals we have collected data from the players using behavioral game logging, video capture, interviews and questionnaires. During our tests we noticed that proper calibration and base lining of the psychophysiological signals is very important for the adaptations to work. We also noticed that having robust stimuli in the game is crucial for the adaptations to work because in many cases the stimulus functioned as a trigger in adaptation. The psychophysiological signals used are calibrated by using dynamic range (basically a variation of dynamic signal normalization algorithm), which has a memory buffer of a few seconds (depending on signal). Dynamic range is easy to use and effective calibration mechanism, and relative change seems to be more practical than absolute values in this kind of gaming.  According to our early analysis, there are three key issues in designing psychophysiologically adaptive games i) understanding the meaningful emotionally adaptive gaming patterns, ii) implementation of adaptation algorithms and signal processing, and iii) purposeful use of sensors in the game context [15]. The design patterns used in emotionally adaptive gaming must be meaningful and enjoyable for the player, and the utilization of signals must also obey the overall goal of the game. In order to achieve the goal player should find the right rhythm or balance of playing the game and control of psychophysiological responses and signals.   Signals should be analyzed as close to real-time as possible in psycho- physiologically adaptive gaming in order to keep the feedback loop in pace with the game adaptations and game events. We have used time-series analysis with short sample windows. In practice, ECG, EEG and EMG always require extensive data processing, but EDA and respiration can be almost used as such to create the adaptation signal. This implies that not all psychophysiological signals are equally open to be used as real-time inputs into an adaptive game at least in this stage of signal processing hardware and software development. Usability of psychophysiological recording devices remains quite poor. Respiration, HR [heart rate] and EDA are probably the easiest to implement. Also in case of emotional adaptation the design of the game may include the physical design of the sensors, e.g. “Detective hat” for EEG sensors or “Sniper-gloves” for EDA sensors. Hence, the sensors could be designed as part of the game story rather than presented as cumbersome and invasive laboratory-originated equipment.
 
 % Emotionally Adapted Games - An Example of a First Person Shooter.pdf
 p In future versions of EMOShooter we may also employ the system design of emotionally adapted games including setting of explicit experiential targets and their parameters for gaming sessions and the emotion control knob.
 
+The purpose of our study ~\ref{chap:exprm} is to evaluate the effects of design choices for affect-generated game adaptation on player experience. To compare different in-game adaptation approaches, we needed to implement three components:
 
-\subsection{Recognizing Emotion} %revision: 0
-Heart rate (HR), blood pressure, respiration, electrodermal activity (EDA) and galvanic skin response (GSR), as well as facial EMG (Electromyography) are of physiological variables correlated with various emotions most. Interpreting physiological measures into emotion state can be difficult, due to noisy and inaccurate signals, however recent on-going studies in this area by Mandryk and Atkins ~\cite{mandryk2007fuzzy} presented a method to continuously identifying emotional states of the user while playing a computer game. Using the dimensional emotion model and the fuzzy logic, based on a set of physiological measures, in its first phase, their fuzzy model transforms GSR, HR, facial EMG (for frowning and smiling) into arousal and valence variables. In the second phase another fuzzy logic model is used to transform arousal and valence variables into five basic emotion states including: boredom, challenge, excitement, frustration and fun. Their study successfully revealed self-reported emotion states for fun, boredom and excitement are following the trends generated by their fuzzy transformation. The advantage of continuously and quantitatively assessing user's emotional state during an entire play by their fuzzy logic model is what makes their model perfect to be in incorporated with real-time play technologies. Therefore extracting user's emotional state as a new class of unconscious inputs to the play technology.
+\begin{itemize}
+\item \textbf{Affect sensing}: An affect-detecting middleware engine (AME) to translate between physiological indicators of affect and actionable game input.
+\item \textbf{Game Environment}: A game system with parameters suitable for adaptation via output from the sensed affect.
+\item \textbf{Experience Evaluator}: A series of validated instruments integrated with the game environment to determine user experience during the experiment.
+\end{itemize}
 
-Using emotional responses to increase the level of users interaction with a real-time play technology requires an effective technique to identifying specific emotion states within an emotional space. Major existing emotion models in the psychology literature includes: basic emotion theory ~\cite{ekman1992argument, ekman1992there} , dimensional emotion theory ~\cite{lang1995emotion, russell1980circumplex} and models from appraisal theory (e.g.,~\cite{roseman2001model}) ~\cite{zhang2010service}
+Fig. ~\ref{fig:system-design} shows a schematic flow diagram for the first two components, where an affect detection system depicted on the right feeds data to a typical game engine depicted on the left-hand side of the diagram.
 
+\section{Affect Middleware Engine}
 
-\subsection{Fuzzy Logic for Space Transformation}
-\subsection{Physiological Signals to Arousal and Valence}
-
-\img
-{DotFuzzy Application used to define set of fuzzy rules and store it in xml format}
-{DotFuzzy Application}
-{dotfuzzy.png}
-{dotfuzzy}
-
-\section{Affect Engine} %revision: 2
-Affect Engine is the software unit developed to transform collected physiological data to their equivalent emotional state in real-time. While it is generally agreed that emotions comprise three components: subjective experience (e.g. feeling joyous), expressive behavior (e.g. smiling), and physiological activation (e.g. arousal) ~\cite{scherer1993neuroscience}, Affect Engine provides a framework for transformation of physiological activations and some expressive behaviors. Affect Engine consists of four major components: Sensor Module, Fuzzification Module, Administration Panel and Engine Proxies, Figure \ref{fig:affect-engine} is a schematic view of these components working together. Applications such as games can easily integrate the Affect Engine where emotion recognition can offer adaptive control to maintain user interest and engagement. Once connected via sensors to the emotion recognition system, the affective state of the user can be captured continuously and in real-time, and used as a secondary input in the game logic for an enhanced play experienced.
+The Affect Middleware Engine or AME is the software unit developed to transform collected physiological data into usable emotional state in real-time. While it is generally agreed that emotions can be inferred from three sources: subjective experience (e.g. feeling joyous), expressive behavior (e.g. smiling), and physiological activation (e.g. arousal) ~\cite{scherer1993neuroscience}, our affect engine provides a framework for transformation of physiological activations and some expressive behaviors. Fig. ~\ref{fig:affect-engine} is a schematic view of the signal transformation pipeline.
 
 \img
 {Affect engine modules}
@@ -60,13 +57,24 @@ Affect Engine is the software unit developed to transform collected physiologica
 {affect-engine.pdf}
 {affect-engine}
 
+%todo: add a uml diagram of AME different modules
+
+% Heart rate (HR), blood pressure, respiration, electrodermal activity (EDA) and galvanic skin response (GSR), as well as facial EMG (Electromyography) are of physiological variables correlated with various emotions most. Interpreting physiological measures into emotion state can be difficult, due to noisy and inaccurate signals, however recent on-going studies in this area by Mandryk and Atkins ~\cite{mandryk2007fuzzy} presented a method to continuously identifying emotional states of the user while playing a computer game. Using the dimensional emotion model and the fuzzy logic, based on a set of physiological measures, in its first phase, their fuzzy model transforms GSR, HR, facial EMG (for frowning and smiling) into arousal and valence variables. In the second phase another fuzzy logic model is used to transform arousal and valence variables into five basic emotion states including: boredom, challenge, excitement, frustration and fun. Their study successfully revealed self-reported emotion states for fun, boredom and excitement are following the trends generated by their fuzzy transformation. The advantage of continuously and quantitatively assessing user's emotional state during an entire play by their fuzzy logic model is what makes their model perfect to be in incorporated with real-time play technologies. Therefore extracting user's emotional state as a new class of unconscious inputs to the play technology.
+
+% Using emotional responses to increase the level of users interaction with a real-time play technology requires an effective technique to identifying specific emotion states within an emotional space. Major existing emotion models in the psychology literature includes: basic emotion theory ~\cite{ekman1992argument, ekman1992there} , dimensional emotion theory ~\cite{lang1995emotion, russell1980circumplex} and models from appraisal theory (e.g.,~\cite{roseman2001model}) ~\cite{zhang2010service}
+
+
+Applications such as games can easily integrate the affect engine where emotion recognition can offer adaptive control to maintain user interest and engagement. Once connected via sensors to the emotion recognition system, the affective state of the user can be captured continuously and in real-time, and used as a secondary input for an enhanced interaction experience. The AME runs in two states, calibration and adaptation. When calibrating, the system waits for user input, attempting to discern sensible boundaries for physiological normalization according to the process described in ~\cite{mandryk2007fuzzy}. After a set period of time, the system enters adaptation mode, where data is fed into the signal transformation stage, and from there into the game engine. For longer play sessions, the system will periodically re-enter the calibration state to compensate for drift in the physiological signals. In this manner the system compensates for the difficulty of globally bounding physiological signals by approximating a series of local temporal bounds.
+
+While the affect engine is capable of interpreting multiple physiological signals and performing a full fuzzy logic-based emotion inference according to the approach described in ~\cite{mandryk2007fuzzy}, we constrained ourselves to a simpler linear mapping for this experiment. Specifically, GSR signals were measured using a Thought Technology ProComp Infinity, connected to PC through a USB cable. Through the SensorLib API ~\cite{nacke2011biofeedback}, raw physiological inputs were received and basic filtering operations were performed. After the calibration period described above, the AME system began reporting normalized GSR signals to the game engine as a measure of player excitement or arousal ~\cite{aggag2011affective, tijs2009creating}. Fig. ~\ref{fig:sample-connected-system} shows a schematic view of a sample connected system components.
+
 \img
 {Sample connected system}
 {Sample connected system with GSR and EMG sensors attached}
 {sample-connected-system.png}
 {sample-connected-system}
 
-At the following a brief description on these components is provided.
+AME consists of four major components: Sensor Module, Fuzzification Module, Administration Panel and Engine Proxies. At the following a brief description on these components is provided.
 
 \subsection{Sensor Module} %revision: 3
 The sensor module consists of a Thought Technology ProComp Infinity encoder ~\cite{tt2013procomp} Figure ~\ref{fig:encoder}, connected to PC with a USB cable, SensorLib as the basic application programming interface (API) receives raw physiological inputs from the encoder driver and provides functionalities to apply different filters such as low-pass, high-pass, smoothing and shifting to the signal.
@@ -80,11 +88,17 @@ The sensor module consists of a Thought Technology ProComp Infinity encoder ~\ci
 \subsection{Fuzzification Module} \label{subsec:fuzzi} %revision: 3
 This module functions through two separate phases; Then filtered signals are fuzzified using a set of fuzzy rules in the first phase of transformation. Then generated arousal and valence values are transformed into emotion values using another set of fuzzy rules in the second pass ~\cite{mandryk2007fuzzy}. A sample set for fuzzy rules used in the first and the second phase can be found in Appendix ~\ref{app:phys-to-av} and ~\ref{app:av-to-emotion}.
 
+\largeimg
+{DotFuzzy Application used to define set of fuzzy rules and store it in xml format}
+{DotFuzzy Application}
+{dotfuzzy.png}
+{dotfuzzy}
 
+%todo: add sample xml content of fuzzy rules generated by DotFuzzy
 
 \subsection{Administration Panel}
 
-\img
+\largeimg
 {Administration Panel}
 {Administration Panel}
 {placeholder.png}
@@ -93,28 +107,70 @@ This module functions through two separate phases; Then filtered signals are fuz
 \subsection{Engine Proxies}
 
 
-\section{Sensors}
-While the modular design of the Affect Engine allows its expansion for support of any physiological measures, currently the system uses Blood Volume Pulse (BVP), Galvanic Skin Response (GSR) and Electromyography (EMG; for frowning and smiling), to classify human affective states in 2-dimensional valence/arousal space (Figure \ref{fig:russel-av-space}).
+% \section{Sensors}
+% While the modular design of the Affect Engine allows its expansion for support of any physiological measures, currently the system uses Blood Volume Pulse (BVP), Galvanic Skin Response (GSR) and Electromyography (EMG; for frowning and smiling), to classify human affective states in 2-dimensional valence/arousal space (Figure \ref{fig:russel-av-space}).
 
-\subsection{Blood Volume Pulse and Heart Rate}
-The Blood Volume Pulse (BVP, Figure \ref{fig:bvp-sensor}) is a relative measure of the amount of blood owing in a vessel. Using BVP we calculated heart rate and heart rate variability. The heart rate is known to reflect emotional activity and has been used to differentiate between both negative and positive emotions as well as different arousal levels ~\cite{tt2013procomp}.
+% \subsection{Blood Volume Pulse and Heart Rate}
+% The Blood Volume Pulse (BVP, Figure \ref{fig:bvp-sensor}) is a relative measure of the amount of blood owing in a vessel. Using BVP we calculated heart rate and heart rate variability. The heart rate is known to reflect emotional activity and has been used to differentiate between both negative and positive emotions as well as different arousal levels ~\cite{tt2013procomp}.
 
-\subsection{Galvanic Skin Response}
-The Galvanic Skin Response (GSR, Figure \ref{fig:gsr-sensor}) is useful to measure the skin's conductance between two electrodes and is a function of sweat gland activity and the skin's pore size. As a person becomes more or less stressed, the skin's conductance increases or decreases proportionally ~\cite{picard2003affective}.
+% \subsection{Galvanic Skin Response}
+% The Galvanic Skin Response (GSR, Figure \ref{fig:gsr-sensor}) is useful to measure the skin's conductance between two electrodes and is a function of sweat gland activity and the skin's pore size. As a person becomes more or less stressed, the skin's conductance increases or decreases proportionally ~\cite{picard2003affective}.
 
-\subsection{Facial Electromyography}
+% \subsection{Facial Electromyography}
 
 
-\section{Integration with Valve Source Engine}
+\section{Game Environment}
+% talk about integration with Valve's Source engine
 
-\img
-{Zombie model that attach player as enemy}
+To evaluate the impact of feedback on player experience, it was also necessary to implement a game environment that could be linked to the output of the AME. We chose to implement a straightforward zombie survival game based on the Half Life 2 engine in the genre of first-person shooters (FPS). A custom map (shown in Fig. ~\ref{fig:map-of-level}) was implemented. Using the Source Software Development Kit (Source SDK). The map was composed of a small outdoor area and three buildings. Zombies (Fig. ~\ref{fig:zombie}) spawned in waves from one of 10 points, and would undertake standard Half Life 2 zombie AI behavior, looking for the player and attacking with either thrown objects when distant (weakly damaging the player) or a melee attack when close (heavily damaging the player). A good default strategy for the player was to keep the zombies at a distance, eliminating them with their moderately powerful machine gun, and not allowing them to close to melee range. The player is tasked with surviving as many waves of zombies as possible, and accrues a score based on the number of zombies killed. The player is equipped with a machine gun with unlimited ammunition and a limited number of grenades. Health packs, which restore players from received damage, and additional grenades are available at defined locations. If a player presses a button at that location, a health pack will dispense and the button will be disabled until a cool down timer has expired (Fig. ~\ref{fig:health-pack-button}).
+
+\largeimg
+{Our custom map level created using the Source SDK and Half-Life 2}
+{Map level created using the Source SDK and Half-Life 2}
+{map-of-level.png}
+{map-of-level}
+
+Aspects of the game can be adjusted in real time based on the output of the AME system. In the implementation used in our study, the system could be in one of three states based on the normalized GSR value supplied from the AME. If players fell below a threshold of excitement as indicated by normalized GSR, then the system inferred that they were bored and increased the difficulty of the game. If players were above a threshold of normalized GSR, the system inferred that they were over-stimulated and made the game easier. If neither of these states were true, then the system assumed that they were playing normally and no adjustment occurred. The equations by which the game parameters were adjusted are also shown in Table ~\ref{tbl:adjustment-strategy}. While no action was taken unless normalized GSR was in the excited or bored band, once in that band, the game parameters adjusted continuously with the value of the GSR. Constants in the equations and the threshold values for excited and bored were adjusted manually, based on design experience and play testing prior to the experiment.
+
+%-----------------------------------------------------------
+\begin{table*}[!t]
+\caption{Adjustment Strategy}
+\label{tbl:adjustment-strategy}
+\hfil
+\centering
+\begin{tabular}{lp{4cm}p{4cm}p{4cm}}
+                     & Player                            & NPC                             & Environment \\
+\hline
+Excited              & Increase player speed \newline Increase grenade rate
+                     & Decrease zombie speed \newline Decrease zombie crowd
+                     & Decrease fog density \newline Increase med-pack rate  \\
+\hline
+Not excited          & Decrease player speed \newline Decrease grenade rate
+                     & Increase zombie speed \newline Increase zombie crowd
+                     & Increase fog density \newline Decrease med-pack rate  \\
+\hline
+Adaption \newline
+equation             & $P_{speed} = 0.65 + 1.35 * Arousal$    \newline $G_{delay} = 40 - 20 * Arousal$
+                     & $Z_{speed} = \frac{1}{0.30 + Arousal}$ \newline $Z_{crowd} = 3.75 - 2.5 * Arousal$
+                     & $F_{start} = 70 + 380 * Arousal$       \newline $F_{end} = 500 + 1000 * Arousal$ \newline $M_{delay} = 100 - 60 * Arousal$ \\
+\end{tabular}
+\end{table*}
+%-----------------------------------------------------------
+
+\largeimg
+{Zombie model that attack player as enemy}
 {Zombie model}
 {zombie.png}
 {zombie}
 
-% talk about Modding Half Life EP2
+\largeimg
+{Health pack dispense button}
+{Health pack dispense button}
+{placeholder.png}
+{health-pack-button}
+
 \subsection{Level Design}
+% talk about Modding Half Life EP2
 
 \largeimg
 {Hammer level editor from the Source}
@@ -122,34 +178,67 @@ The Galvanic Skin Response (GSR, Figure \ref{fig:gsr-sensor}) is useful to measu
 {hammer-editor.png}
 {hammer-editor}
 
-\largeimg
-{Map of the level designed for study in next chapter}
-{Map of the level designed for the study}
-{map-of-level.png}
-{map-of-level}
+\section{Game Adaptation}
+The game can be adapted in numerous ways based on the output of the AME. Our research interest is in how different in-game adaptation mechanisms affect resulting player experience. To explore in-game adaptation, we adapt either the player's abilities, the zombies' abilities or the environment. Table I shows the types of adjustments that can occur, which we describe next.
 
+\subsection{Player}
+Player modifications are any modifications that directly affected player state, even if the environment mediated those modifications. Specifically, to adapt the player’s abilities, we vary the player’s speed (at which they can move around the environment) and the rate of grenade respawn in the player’s weapon. Higher player speeds enabled the player to more easily escape the zombie melee attacks. The respawn rate of grenades impacted the player’s ability to inflict damage by essentially giving them more powerful weapons.
 
-\subsection{The Director}
+\subsection{NPC}
+To adapt the non-player character zombies (NPCs), we can vary the speed at which the zombies move and the number of zombies (the size of the attacking crowd). The number of zombies spawned per unit time obviously increases the difficulty of the game. Increasing the speed of the zombie with respect to the player made it more difficult for the player to evade the zombie melee attacks. This manipulation is interesting as it is similar to the player speed adjustment from the perspective of game balance (i.e., the relative speed of the player and the enemy varies using both approaches), but applying the adaptation to the player or the NPC could result in very different game experiences.
+
+\subsection{Environment}
+To adapt the environment, we vary the density of fog displayed, which was proportionate to the distance that the player could see. By constraining the players’ viewing distance with increasing fog, zombies could approach closer, leaving the player with less time to target them before they closed to within melee range. We also varied the rate at which health packs respawned in the environment. Giving players the ability to find more health packs affected their ability to take damage; however, this required player interaction with the environment (i.e., picking up the health pack) as opposed to better equipping the player directly (e.g., giving the player more powerful weapons or shields).
+
+\section{Evaluation System}
+
+Evaluation of the system was carried out in three ways. First, all physiological signals were logged to ensure that the system was working correctly and as a basis for comparison. Second, game events were logged to track how the player reacted to adaptive game mechanics. Finally, players were given experience surveys after the completion of each level. In this analysis, the player experience surveys are the primary evaluation method because they directly link the resulting experience to the in-game adaptation manipulation.
 
 %-----------------------------------------------------------
-\begin{center}
-\label{tbl:adjustment-strategy}
-\captionof{table}{Adjustment Strategy}
-\begin{tabular}{+l^p{4cm}^p{4cm}^p{4cm}}
-\specialrule{.1em}{.05em}{.05em}
-\rowstyle{\bfseries}
-Excitement/Strategy               & Player                         & NPC                            & Environment \\
-\hline
-Excited                           & Increase player speed \newline
-                                     Increase grenade rate \newline
-                                     Increase med-pack rate         & Decrease zombie speed \newline
-                                                                      Decrease zombie crowd          & Decrease fog density \\
-\hline
-Not excited                       & Decrease player speed \newline
-                                     Decrease grenade rate \newline
-                                     Decrease med-pack rate         & Increase zombie speed \newline
-                                                                      Increase zombie crowd          & Increase fog density \\
-\specialrule{.1em}{.05em}{.05em}
-\end{tabular}
-\end{center}
+\begin{figure}
+  \centering
+  \begin{SaveVerbatim}{VerbCode}
+time, raw, transformed
+811913, -0.784929931163788, 78.1241008746691
+812026, -0.784929931163788, 76.2492447347221
+812135, -0.784722805023193, 75.6241728046956
+812243, -0.784515619277954, 74.3742087697088
+812349, -0.784515619277954, 74.3742087697088
+812459, -0.784515619277954, 74.3742087697088
+812571, -0.784515619277954, 74.9992806997353
+812680, -0.784515619277954, 75.6243526297618
+812790, -0.784515619277954, 77.499388594775
+812895, -0.783686995506287, 45.1390664961637
+\end{SaveVerbatim}
+  \setlength{\fboxsep}{5mm}
+  \fbox{\BUseVerbatim{VerbCode}}
+  \caption{In-game GSR log reporting about raw and transformed GSR values}
+  \label{txt:log-gsr}
+\end{figure}
+%-----------------------------------------------------------
+
+%-----------------------------------------------------------
+\begin{figure}
+  \centering
+  \begin{SaveVerbatim}{VerbCode}
+time_millisecond, arousal, player_speed, zombie_speed, fog_start_dist,
+fog_end_dist, current_round, zombie_threshold, zombie_increase_power,
+max_zombie_alive, number_of_alive_zombies, number_of_killed_zombies,
+grenade_regen_delay, medic_regen_delay, calibrating, adaptation_condition
+870368, 0,          1,        1, 300, 1000, 2, 8, 1.3, 7, 7, 6, 30,       30, 0, 2
+870369, 0. 9242272, 1.897707, 1, 300, 1000, 2, 8, 1.3, 7, 7, 6, 30,       30, 0, 2
+870369, 0.9242272,  1.897707, 1, 300, 1000, 2, 8, 1.3, 7, 7, 6, 21.51546, 30, 0, 2
+871373, 0.9304435,  1.906099, 1, 300, 1000, 2, 8, 1.3, 7, 7, 6, 21.51546, 30, 0, 2
+871373, 0.9304435,  1.906099, 1, 300, 1000, 2, 8, 1.3, 7, 7, 6, 21.39113, 30, 0, 2
+872379, 0.9327956,  1.909274, 1, 300, 1000, 2, 8, 1.3, 7, 6, 7, 21.39113, 30, 0, 2
+872379, 0.9327956,  1.909274, 1, 300, 1000, 2, 8, 1.3, 7, 6, 7, 21.34409, 30, 0, 2
+873382, 0.9732862,  1.963936, 1, 300, 1000, 2, 8, 1.3, 7, 5, 8, 21.34409, 30, 0, 2
+873382, 0.9732862,  1.963936, 1, 300, 1000, 2, 8, 1.3, 7, 5, 8, 20.53428, 30, 0, 2
+874389, 1,          2,        1, 300, 1000, 2, 8, 1.3, 7, 5, 8, 20.53428, 30, 0, 2
+\end{SaveVerbatim}
+  \setlength{\fboxsep}{5mm}
+  \fbox{\BUseVerbatim{VerbCode}}
+  \caption{In-game metrics log reporting about different adaptation details in each condition}
+  \label{txt:log-metrics}
+\end{figure}
 %-----------------------------------------------------------

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"var",
+				"var_dump"
+			],
+			[
 				"array_K",
 				"array_key_exists"
 			],
@@ -71,39 +75,63 @@
 			"file": "/D/desktop/temp/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 3576,
+				"buffer_size": 3774,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/projects/mycms/hci_related/todo.txt",
+			"file": "content/bibliography.bib",
 			"settings":
 			{
-				"buffer_size": 900,
+				"buffer_size": 31828,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/chp-1-intro.tex",
+			"settings":
+			{
+				"buffer_size": 10716,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/chp-2-emotion.tex",
+			"settings":
+			{
+				"buffer_size": 33744,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/chp-3-video-games.tex",
+			"settings":
+			{
+				"buffer_size": 44485,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/chp-4-impl.tex",
+			"settings":
+			{
+				"buffer_size": 18166,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/projects/mycms/static/css/main.css",
+			"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
 			"settings":
 			{
-				"buffer_size": 7479,
+				"buffer_size": 888,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/projects/mycms/templates/snippets/people_default.tpl",
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/chl929.java",
 			"settings":
 			{
-				"buffer_size": 1824,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/projects/mycms/modules/pages/pages.php",
-			"settings":
-			{
-				"buffer_size": 7464,
+				"buffer_size": 8019,
 				"line_ending": "Windows"
 			}
 		}
@@ -111,11 +139,19 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 173.0,
+		"height": 219.0,
 		"selected_items":
 		[
 			[
-				"enable",
+				"enabl",
+				"Package Control: Enable Package"
+			],
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"enal",
 				"Package Control: Enable Package"
 			],
 			[
@@ -123,7 +159,7 @@
 				"Package Control: Disable Package"
 			],
 			[
-				"ena",
+				"enable",
 				"Package Control: Enable Package"
 			],
 			[
@@ -135,16 +171,12 @@
 				"Package Control: Enable Package"
 			],
 			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
 				"dis",
 				"Package Control: Disable Package"
-			],
-			[
-				"enabl",
-				"Package Control: Enable Package"
-			],
-			[
-				"enal",
-				"Package Control: Enable Package"
 			],
 			[
 				"disal",
@@ -161,10 +193,6 @@
 			[
 				"instal",
 				"Package Control: Install Package"
-			],
-			[
-				"disabl",
-				"Package Control: Disable Package"
 			],
 			[
 				"package",
@@ -211,134 +239,134 @@
 	},
 	"file_history":
 	[
-		"/D/projects/mycms/templates/people.tpl",
-		"/D/projects/mycms/hci_related/working-hours.txt",
-		"/D/projects/mycms/modules/ajax/ajax.php",
-		"/D/projects/mycms/index.php",
-		"/D/projects/mycms/config.php",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-2.txt",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-1.txt",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
+		"/D/projects/mycms/templates/research_admin_edit.tpl",
 		"/D/projects/mycms/static/js/main.js",
-		"/D/projects/mycms/static/css/main.css",
-		"/D/projects/mycms/modules/ajax/ajax.ini",
-		"/D/projects/mycms/classes/auth.php",
-		"/D/projects/mycms/templates/download.tpl",
-		"/D/projects/mycms/classes/cas.php",
 		"/D/projects/mycms/templates/people_admin_edit.tpl",
-		"/D/projects/mycms/modules/admin/admin.php",
+		"/D/projects/mycms/static/css/tinyeditor.css",
+		"/D/projects/mycms/static/js/tiny.editor.js",
+		"/D/projects/mycms/hci_related/todo.txt",
+		"/D/projects/mycms/templates/index.tpl",
+		"/D/projects/mycms/temp/tinyeditor/index.html",
+		"/D/projects/mycms/templates/snippets/people_default.tpl",
+		"/D/projects/mycms/templates/snippets/research_default.tpl",
+		"/D/projects/mycms/temp/tinyeditor/tiny.editor.packed.js",
+		"/D/projects/mycms/temp/xing-wysihtml5-fb0cfe4/examples/simple.html",
+		"/D/projects/emophiz/thesis/make.sh",
+		"/D/projects/mycms/static/css/main.css",
+		"/D/projects/mycms/templates/snippets/publication_default.tpl",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/lib280-asn1/lib280-asn1/src/lib280/list/LinkedList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/erm643/DoubleList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/erm643/Asn1Q3.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/tpq921/DoubleList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/tpq921/Asn1Q3.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/tkq465/DoubleList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/tkq465/A1Q3.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/qjp600/DoubleList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/qjp600/Asn1Q3.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jlm012/DoubleList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jlm012/Answer1Q3.java",
+		"/C/Program Files (x86)/Git/doc/git/html/git-log.html",
+		"/D/projects/mycms/classes/auth.php",
+		"/D/projects/mycms/classes/error.php",
 		"/D/projects/mycms/modules/pages/pages.php",
 		"/D/projects/mycms/config.ini",
-		"/D/projects/mycms/templates/snippets/people_default.tpl",
-		"/D/projects/mycms/templates/snippets/publication_default.tpl",
-		"/D/projects/mycms/templates/snippets/research_default.tpl",
+		"/D/projects/mycms/modules/admin/admin.php",
+		"/D/projects/mycms/config.php",
+		"/D/projects/mycms/index.php",
 		"/D/projects/mycms/modules/admin/admin.class.php",
-		"/D/projects/mycms/classes/error.php",
-		"/D/projects/mycms/LICENSE",
-		"/D/projects/mycms/templates/error.tpl",
-		"/D/projects/mycms/_config.ini_",
-		"/D/projects/mycms/templates/snippets/bibtex.tpl",
-		"/D/projects/mycms/templates/research.tpl",
-		"/D/projects/mycms/templates/publication.tpl",
-		"/D/projects/mycms/hci_related/original_list_of_videos.txt",
-		"/D/projects/mycms/hci_related/original_list_of_pdfs.txt",
-		"/D/projects/mycms/hci_related/hci_db_covnversion.sql",
-		"/C/Users/Faham/Desktop/old_hci_db.sql",
-		"/D/projects/mycms/database.sql",
-		"/D/projects/mycms/.htaccess",
-		"/D/projects/mycms/_.htaccess_",
-		"/D/projects/mycms/classes/content.php",
-		"/D/projects/mycms/templates/snippets/publication_teaser_list.tpl",
-		"/D/projects/mycms/classes/contents.php",
-		"/D/projects/mycms/templates/snippets/people_all_publication.tpl",
-		"/D/projects/mycms/templates/snippets/people_all_research.tpl",
-		"/D/projects/mycms/modules/pages/pages.ini",
-		"/D/projects/mycms/.gitignore",
-		"/D/projects/mycms/templates/index.tpl",
-		"/D/projects/mycms/templates/snippets/research_teaser.tpl",
-		"/D/projects/mycms/static/js/jquery.sortable.js",
-		"/D/projects/mycms/static/js/jquery.min.js",
-		"/D/projects/mycms/temp/html5sortable/jquery.sortable.js",
-		"/D/projects/mycms/templates/snippets/research_teaser_list.tpl",
-		"/D/projects/mycms/templates/snippets/research_refrence_list.tpl",
-		"/D/projects/mycms/static/js/jquery.sortable.min.js",
-		"/D/documents/resume-jamal/cover-letter.tex",
-		"/D/documents/resume-faham/cover-letter.tex",
-		"/D/documents/resume-jamal/make.sh",
-		"/D/projects/mycms/templates/publication_admin_edit.tpl",
-		"/D/projects/mycms/templates/research_admin_edit.tpl",
-		"/D/projects/mycms/templates/snippets/publication_teaser.tpl",
-		"/D/projects/mycms/templates/snippets/people_teaser.tpl",
-		"/D/projects/mycms/templates/snippets/publication_refrence_list.tpl",
-		"/D/projects/mycms/templates/snippets/people_refrence_list.tpl",
-		"/D/projects/mycms/templates/people_admin_create.tpl",
-		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/research/index.php",
-		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/common.php",
-		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/people/index.php",
-		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/index.php",
-		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/people/view.php",
-		"/D/projects/mycms/lang/en.php",
-		"/D/projects/mycms/templates/publication_admin_create.tpl",
-		"/D/projects/mycms/templates/research_admin_create.tpl",
-		"/D/projects/mycms/static/js/jquery.tools.js",
-		"/D/projects/mycms/static/js/jquery.uniform.min.js",
-		"/D/projects/mycms/static/js/main.js_",
-		"/C/Users/Faham/Desktop/mycms_publication.sql",
-		"/D/projects/mycms/hci_db_covnversion.sql",
-		"/D/projects/mycms/temp/working-hours.txt",
-		"/D/projects/mycms/temp/todo.txt",
-		"/D/projects/mycms/temp/oldweb-backup/list_of_pdfs.txt",
-		"/D/projects/mycms/temp/oldweb-backup/list_of_videos.txt",
-		"/D/projects/mycms/temp/temp.html",
-		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_web_old/publications/view.php",
-		"/D/projects/mycms/temp/oldweb-backup/old_hci_db_covnversion.sql",
-		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_db_old_export.sql",
-		"/D/projects/mycms/temp/toremove/people/view.php",
-		"/D/projects/mycms/temp/toremove/publications/index.php",
-		"/D/projects/mycms/temp/database-backup.sql",
-		"/D/projects/mycms/temp/oldweb-backup/6182014_hci_db_ported.sql",
-		"/D/projects/mycms/temp/oldweb-backup/hcidb.sql",
-		"/D/documents/cba7dc1b.txt",
-		"/C/Users/Faham/Desktop/tmp.tmp",
-		"/D/projects/mycms/temp/oldweb-backup/parser.py",
-		"/C/hci_backup/export_old_hci_db_6182014.sql",
-		"/C/hci_backup/new_database.sql",
-		"/C/hci/export_old_hci_db_6182014.sql",
-		"/D/projects/mycms/templates/snippets/people_teaser_list.tpl",
-		"/D/projects/mycms/temp/cas/notes.txt",
-		"/D/projects/mycms/schema/mycms.ini",
-		"/C/Users/Faham/Desktop/mycms_people (1).sql",
-		"/D/projects/mycms/classes/system.php",
-		"/C/Users/Faham/Desktop/mycms_people.sql",
-		"/D/projects/mycms/README.md",
-		"/D/projects/library/lod/index.php",
-		"/D/projects/library/lod/modules/page/page.php",
-		"/D/projects/library/lod/classes/common.php",
-		"/D/projects/library/lod/classes/log.php",
-		"/D/projects/library/lod/config.ini",
-		"/D/projects/mycms/modules/users/users.ini",
-		"/D/projects/mycms/modules/users/users.class.php",
-		"/D/projects/mycms/modules/users/users.php",
-		"/D/projects/mycms/classes/mysmarty.php",
-		"/D/projects/mycms/temp/cas/cas_php_example.php",
-		"/C/wamp/bin/apache/apache2.2.22/bin/php.ini",
-		"/D/projects/mycms/classes/cas/CAS.php",
-		"/D/projects/mycms/classes/cas/README.md",
-		"/D/projects/mycms/classes/CAS-1.3.2/CAS-1.3.2/package.xml",
-		"/D/projects/mycms/temp/toremove/admin/privileges.php",
-		"/D/projects/mycms/temp/toremove/admin/common.php",
-		"/D/projects/mycms/temp/cas/cas_php_example.txt",
-		"/D/projects/mycms/temp/toremove/common.php",
-		"/D/projects/mycms/temp/toremove/admin/index.php",
-		"/D/projects/mycms/temp/toremove/admin/publications.php",
-		"/D/projects/mycms/temp/toremove/admin/people.php",
-		"/D/projects/mycms/temp/toremove/admin/logout.php",
-		"/D/projects/mycms/temp/toremove/admin/editauthors.php",
-		"/D/projects/mycms/temp/toremove/admin/research.php",
-		"/D/projects/mycms/temp/toremove/admin/authors.css",
-		"/D/projects/mycms/ - Copy.htaccess",
-		"/D/projects/mycms/working-hours.txt",
-		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
-		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
+		"/D/documents/internet-network.txt",
+		"/F/video/islam-talks/yasir-qadhi/links.txt",
+		"/F/video/islam-talks/yasir-qadhi/playlists.txt",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jkp323/DoubleList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/bwr040/DoubleList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jkp323/Asn1Q3 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/bwr040/Asn1Q3 (1).java",
+		"/D/desktop/temp/tasks.txt",
+		"/D/projects/emophiz/thesis/content/bibliography.bib",
 		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
-		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex"
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/ann315/DoubleList280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/ann315/Asn1Q3.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/lib280-asn1/lib280-asn1/src/lib280/list/DoubleNode280.java",
+		"/C/Users/Faham/AppData/Local/Temp/7zO33DA.tmp/DoubleList280.java",
+		"/D/projects/emophiz/thesis/content/abbreviations.tex",
+		"/D/projects/emophiz/thesis/thesis.tex",
+		"/D/projects/emophiz/thesis/content/chp-1-intro.tex",
+		"/D/projects/emophiz/thesis/content/abstract.tex",
+		"/D/projects/emophiz/thesis/content/chp-7-conclusion.tex",
+		"/D/projects/emophiz/thesis/content/chp-6-discus.tex",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/cns727/Asn1Q3.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/cns727/DoubleList280.java",
+		"/D/scripts/mov-to-mp4.sh",
+		"/F/video/private/mov-to-mp4.sh",
+		"/F/video/private/2013-june-28/mov-to-mp4.sh",
+		"/D/documents/vecima/misc info/Bayside map.eml",
+		"/C/Users/Faham/Desktop/tmp.tmp",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/vcw542/Assignment4/Assignment4/src/assignment4/UndergradStudentWindow.java",
+		"/C/Users/Faham/Downloads/cmpt270/marks-assignment-4.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/vcw542/Assignment4/Assignment4/src/assignment4/GradStudentWindow.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/vcw542/Assignment4/Assignment4/src/assignment4/Thesis.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/vcw542/Assignment4/Assignment4/src/assignment4/PersonWindow.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/ManagementWindow.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/UndergradStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/GraduateStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/Person.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/filedata.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/A4_StudentM.jarfiledata.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/src/a4/Database.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/src/a4/PersonGUI.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/src/a4/Person.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/README.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/database.ser",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/MainWindow.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/Person.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/documentation.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/GradStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/ThesisTest.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/data.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/EveryoneLists.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/ViewEditUI.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/UndergradStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/ChangeRoleUI.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/Thesis.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/Storage.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/Person.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/InitialUI.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/ListJFrame.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/UndergradStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/GraduateStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/DisplayFrame.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/UnderGradStudentFrame.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/GraduateStudentFrame.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/Person.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/SimpleLL.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/StartUpJFrame.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/Thesis.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/CreateNewStudent.java",
+		"/C/Users/Faham/AppData/Local/Temp/7zODB43.tmp/Thesis.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tpq921/StorageForUndergrad.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tpq921/StorageForPerson.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tpq921/StorageForGrad.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/LlistAll.java",
+		"/C/Users/Faham/AppData/Local/Temp/7zO9759.tmp/README.txt",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/PersonTest.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/oea313/Frame.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/Person.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/UndergradStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/Thesis.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/GradStGUI.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/GraduateStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/PersonGUI.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/oea313/GUIGraduateStudentClass.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/MainMenu.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/PeopleList.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/GradStudent.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/PeopleListTest.java",
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/Person.java"
 	],
 	"find":
 	{
@@ -349,6 +377,8 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"D:\\projects\\mycms\\classes",
+			"C:\\Users\\Faham\\Downloads\\cmpt270\\submissions-assignment-4\\smj146",
 			"D:\\projects\\mycms,<open files>",
 			"D:\\projects\\mycms",
 			"D:\\projects\\library\\lod",
@@ -365,134 +395,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"button",
-			"params",
-			"ajax/",
-			"ajax",
-			".remove",
-			"teaser",
-			"research",
-			"people",
-			"remove",
-			"weburl",
+			"91",
+			"public ",
+			"/6",
+			"6",
+			"10",
+			"20",
+			"/6",
+			"----------------------",
+			"\n",
+			".java  ",
+			"-a",
+			"q4",
+			"source",
+			"editor",
+			"each",
+			"this.t[i]",
+			"this.t.",
+			"bio",
+			"images",
+			"this.t",
+			"each",
+			"this.t",
+			".t",
+			"obj.id",
+			"! =",
+			"+ =",
+			"=  =",
+			"= =",
+			"p>",
+			"p",
+			"descr",
+			"item",
+			"  ",
+			"  xuz765",
+			"   ",
+			"     ",
+			"    ",
+			"   ",
+			"  ",
+			"deleteItem",
+			"\\\\t",
+			"\\\\n",
+			"\\n",
+			"error",
+			"session",
+			"['session']['user']",
+			"['user']",
 			"$g['user']",
-			"is",
-			"$g['user']",
-			"$g['session']['error']",
-			"push",
-			"echo",
-			"$_SESSION",
-			"use_only_cookies",
-			"todo",
-			"refrence_limit",
-			"image",
-			"gt",
-			"ref_limit",
-			"search",
-			"find",
-			"default",
-			"$g['db']",
-			"publication",
-			"query",
-			"lower",
-			"tolower",
-			"href",
-			"AND",
-			"WHERE",
-			"SET",
-			"; ",
-			"\\r\\n\\t\\t\\t\\t",
-			"cases",
-			"\\r\\n\\t\\t\\t",
-			"values",
-			"->",
-			"success",
-			"=>",
-			"for (",
-			"foreach",
-			"this",
-			"research",
-			".h5s",
-			"a",
-			"div",
-			"ul",
-			" ",
-			"var_dump",
-			"edit",
-			"$(this)",
-			"$(\".removable-refrence-list .teaser\")",
-			"removable-refrence",
-			"'display', 'none'",
-			"success",
-			"alert(",
-			"alert(message",
-			"'success' ==",
-			"if('success' == data.status)",
-			"remove",
-			"closest('.TTWForm-container')",
-			"input.data('selected');",
-			"input.data('selected')",
-			"//-----------------------------------------------------------------------------\n",
-			"insertSuggest",
-			"refer",
-			"jax",
-			"img.",
-			".teaser",
-			"append",
-			"-",
-			"weburl",
-			"hover",
-			"publication",
-			".publication",
-			"$research",
-			"publication",
-			"people",
-			"ref_order",
-			"people",
-			"outputSummary",
-			"other",
-			"faculty",
-			"other",
-			"faculty",
-			"','",
-			"people",
-			"�",
-			"mycms_people",
-			".on",
-			"submit",
-			"save",
-			"submit",
-			"\\",
-			"zxc",
+			"80",
+			"172",
+			"80",
+			"172",
+			"deleteFirs",
+			"void deleteItem",
+			"insertFirst",
 			"- ",
-			"'operation' => ",
-			"validate",
-			"publication_toappear",
-			"validate",
-			"empty",
+			"q",
+			"q3",
+			"insertLast",
+			"insertFirst",
+			"todo",
+			"TODO",
+			"itemExists",
+			"TODO",
+			"setNextNode",
+			"createNewNode",
+			"setPreviousNode",
+			"TODO",
+			"insertfirst",
+			"q3 /5\n",
+			"todo",
+			"\n----------------------------\n",
+			"\n",
+			"  ",
+			"\\",
+			"@mail.usask.ca",
+			"@",
 			", ",
-			"<option />",
-			"script",
-			"selected",
-			"�",
-			"view",
-			"http://hci.usask.ca/publications/",
-			"uploads/",
-			"doc",
-			"publication_temp_pdflink",
-			"mycms_doc_publication",
-			"mycms_video_publication",
-			"mycms_doc_video",
-			"mycms_doc_publication",
-			"uploads/",
-			"http://hci.usask.ca/publications/",
-			"mycms_doc_publication",
-			"INSERT",
-			"mycms_people_publication",
-			"delete from",
-			"mycms_image_people",
-			"delete from",
-			"wehre"
+			"<",
+			"\"",
+			">,",
+			".*<",
+			"noisy signals",
+			"due to noisy signals and difficulties with",
+			"[20]	Lang",
+			"Ekman",
+			"[10]	Ekman",
+			"Cognition",
+			"Cognition & Emotion",
+			"argument  for  basic  emotions, Cognition & Emotion",
+			"Methods of describing emotions in the psychology literature include",
+			"responses to adapt interaction with",
+			"Using emotional responses to adapt interaction with",
+			"Using emotional responses to adapt interaction with ",
+			"ﬂ",
+			"texti",
+			"Lippold",
+			"\\url{",
+			". ",
+			"- ",
+			"-",
+			"Section",
+			"balance",
+			"balanc",
+			"tijs",
+			")",
+			"(",
+			"ﬁ",
+			"%",
+			"q1",
+			"str",
+			"website",
+			"FILENAME",
+			"---------------------------------",
+			" ",
+			"SaveQuitBtnActionPerformed",
+			"save",
+			" ",
+			"save",
+			" ",
+			"save",
+			"outputValues",
+			"getName",
+			"save",
+			"                                ",
+			"</p>",
+			"<strong>",
+			"</strong>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -500,6 +530,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\\t",
+			"\\n",
 			"\\t",
 			"\\bhline",
 			" \\n",
@@ -556,7 +588,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -565,15 +597,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3576,
+						"buffer_size": 3774,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								778,
-								778
+								573,
+								597
 							]
 						],
 						"settings":
@@ -581,59 +613,188 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 18.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "content/bibliography.bib",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "content/chp-1-intro.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10716,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1027,
+								1027
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 126.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/D/projects/mycms/hci_related/todo.txt",
+					"buffer": 3,
+					"file": "content/chp-2-emotion.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 900,
+						"buffer_size": 33744,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								80,
-								80
+								18029,
+								18033
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2697.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "content/chp-3-video-games.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 44485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3370,
+								3061
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 177.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "content/chp-4-impl.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1543,
+								1543
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/D/projects/mycms/static/css/main.css",
+					"buffer": 6,
+					"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7479,
+						"buffer_size": 888,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7295,
-								7295
+								541,
+								541
 							]
 						],
 						"settings":
@@ -641,31 +802,30 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 9501.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/D/projects/mycms/templates/snippets/people_default.tpl",
+					"buffer": 7,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/chl929.java",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1824,
+						"buffer_size": 8019,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1638,
-								1630
+								4325,
+								4325
 							]
 						],
 						"settings":
@@ -673,46 +833,14 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/Java/Java.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 159.0,
+						"translation.x": -0.0,
+						"translation.y": 6102.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/D/projects/mycms/modules/pages/pages.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7464,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1646,
-								1646
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 483.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
 					"type": "text"
 				}
 			]
