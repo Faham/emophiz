@@ -55,17 +55,11 @@ Having GSR sensors attached, participants were seated in a comfortable office ch
 
 For each play session, players were required to press one of the four buttons on the entrance ramp labeled 1 to 4 initiating one of the four designed conditions. When one of these buttons is pressed, the AME starts calibrating players signals for 60 seconds, during the calibration mode, no adaptation to any of game parameters is applied, no matter which condition is being played. After the one minute of calibration the system decides the standard range of signal for player's excitement value. Then, except for the condition number 1 which is the no adaptation mode, the captured excitement value is normalized using the calibrated player range of excitement into a value between 0 and 1, and this value is then used to adjust the game parameters, this process of capturing, adjusting and applying the signal value would continue for 3 minutes until the next cycle of calibrating and adaptation starts. The player is required to play every condition for at least 5 minutes to ensure capturing of a complete cycle of calibrating and adaptation.
 
-%%%%%%%%%%%%%nasty%%%%%%%%%%%%%
-Fig. ~\ref{fig:sample-signal} shows signal values for one of the participants. In this image from left to right the light blue line shows different conditions being played, and when the light blue line is declining towards its base value, that is the period that participant is asked to stop playing and instead relaxing and filling out the questionnaires. The blue line is the normalized GSR signal value of the participants which is used as an estimation of his excitement level. The yellow green and pink lines are showing the three different modes of Player, NPC and Environment parameters being adapted
-
-Following image is the GSR signal of players playing different conditions from 1 to 4. From left to right the conditions are the Default, Player, NPC and the Environment mode. This signals are all based to an initial start value of 100, during the play experience, some of them had gone bellow the start point and some other had risen above that. Also the start time for each different condition is shifted 500 seconds times the number of condition, from 0.
-
-The following image is the average of GSR values for players in four different conditions from left to right: Default, Player, NPC and Environment modes
-%%%%%%%%%%%%%nasty%%%%%%%%%%%%%
+Figure ~\ref{fig:sample-signal} shows signal values for one of the participants. In this image from left to right the light blue line shows different conditions being played, and when the light blue line is declining towards its base value, that is the period that participant is asked to stop playing and instead relaxing and filling out the questionnaires. The blue line is the GSR signal value of the participant which is used as an estimation of his/her excitement level. The yellow green and pink lines are showing the three Player, NPC and Environment adapted conditions. In this image from left to right the conditions are Environment, Default, Player and the NPC adapted.
 
 \largeimg
 {Sample GSR signal of a participant}
-{Sample GSR signal of a participant; From left to right the conditions are the Default, Player, NPC and the Environment adapted}
+{Sample GSR signal of a participant; From left to right the conditions are the Environment, Default, Player and the NPC adapted}
 {sample-signal.png}
 {sample-signal}
 
@@ -119,9 +113,11 @@ Participants were assessing their experience under different conditions, using f
 
 \paragraph{Intrinsic Motivation Inventory} Different components of game experience were measured using the Intrinsic Motivation Inventory questionnaire \cite{ryan1983relation}. It combines several game-related subjective measurement dimensions: interest/enjoyment, perceived competence, effort and felt pressure and tension while playing the game. Each one of these components consists of a number of question items (e.g., ``While playing, I was thinking about how much I enjoyed it'' is a interest/enjoyment component item). Question items were shown in a randomized order every time the page was viewed. Each question item consists of a statement on a five-point scale ranging from 1 (strongly disagreeing with the statement) to 5 (strongly agreeing with the statement).
 
-\paragraph{Player Experience of Need Satisfaction} talk about PENS
+%\paragraph{Player Experience of Need Satisfaction}
+% todo: talk about PENS
 
-\paragraph{Game Engagement Questionnaire} talk about GEQ
+%\paragraph{Game Engagement Questionnaire}
+% todo: talk about GEQ
 
 \section{Dependent Measures}
 
@@ -130,7 +126,7 @@ We group our dependent measures into amount of adaptation, player performance, a
 \begin{itemize}
 	\item \textbf{Adaptation}: GSR Range is a measure of the span of the normalized GSR signal, giving an idea of how much range there was in GSR over the condition. Proportion is the proportion of time spent adapting the game positively (increasing difficulty) to the time spent adapting the game negatively (decreasing difficulty).
 
-	\item \textbf{Performance}: Deaths is the number of times that a player’s health became so low that they died and respawned within a condition. Kills are the number of zombies that a player killed in a condition.
+	\item \textbf{Performance}: Deaths is the number of times that a player's health became so low that they died and respawned within a condition. Kills are the number of zombies that a player killed in a condition.
 
 	\item \textbf{Experience}: Mean GSR is a normalized measure of the galvanic skin response of a player over a whole condition. It is normalized by subtracting the pre-condition GSR value from each recorded GSR value (to essentially zero the signal prior to each condition). We also measured player experience using three subscales from two standardized scales. Competence is measured using the Player experience of Needs Satisfaction (PENS) scale ~\cite{ryan2006motivational} and reflects how much mastery a player feels they have over challenges in the game. Enjoyment is measured using the Intrinsic Motivation Inventory (IMI) scale ~\cite{ryan1982control} and reflects how much interest or enjoyment the game produced in the player.
 \end{itemize}
@@ -142,9 +138,21 @@ We conducted a RM-ANOVA with condition (Control, Player, NPC, Environment) as a 
 
 \subsection{How much adaptation occurred in the game?}
 
-We adapted the game difficulty using galvanic skin response. So although GSR could indicate player arousal, in our case, it is the source of the adaptation. Thus GSR Range can tell us how much span there was in the player’s experience of the game. There was a main effect of condition on GSR Range ($F_{3,45} = 4.20$, $p = .011$, $\eta^{2} = .22$). Contrasts showed that the Player and Environment conditions yielded a greater range than the control condition ($p = .007$ and $p = .028$ respectively), whereas the NPC condition did not ($p = .199$).
+We adapted the game difficulty using galvanic skin response. So although GSR could indicate player arousal, in our case, it is the source of the adaptation. Thus GSR Range can tell us how much span there was in the player's experience of the game. There was a main effect of condition on GSR Range ($F_{3,45} = 4.20$, $p = .011$, $\eta^{2} = .22$). Contrasts showed that the Player and Environment conditions yielded a greater range than the control condition ($p = .007$ and $p = .028$ respectively), whereas the NPC condition did not ($p = .199$).
 
 When looking at only the adapted conditions, there was no difference in the proportion of time spent in positive versus negative adaption ($F_{2,24} = 1.48$, $p = .248$).
+
+\img
+{Mean ratings ($\pm SD$) of GSR Range}
+{Mean ratings ($\pm SD$) of GSR Range}
+{chart-gsr-range.pdf}
+{chart-gsr-range}
+
+\img
+{Mean ($\pm SD$) of GSR}
+{Mean ($\pm SD$) of GSR}
+{chart-mean-normalized-gsr.pdf}
+{chart-mean-normalized-gsr}
 
 
 \subsection{How did adaptation affect performance in the game?}
@@ -152,56 +160,43 @@ When looking at only the adapted conditions, there was no difference in the prop
 Player performance was measured using the number of zombies killed by players (kills) and the number of times the player was killed by the zombies (deaths). There was a no effect of condition on kills ($F_{3,45} = 3.2$, $p = .032$) or deaths ($F_{3,45} = 3.0$, $p = .042$). However, planned contrasts revealed that the NPC condition resulted in marginally fewer kills ($p = .081$) and more deaths ($p = .023$) than the control condition. In addition, when examining each adaptation direction individually, we see a main effect of condition on number of kills during positive adaptation ($F_{2,30} = 9.43$, $p = .001$, $\eta^{2} = .39$), in which NPC adaption had fewer kills than Player ($p = .007$) or Environment ($p = .001$). This is expected as the NPC condition presents fewer zombies spawning as its adaptive mechanism, giving fewer zombies for players to kill.
 
 \img
-{...}
-{...}
+{Zombie Kill Count}
+{Number of zombies killed (dark bar shows proportion of kills during positive adaptation)}
 {chart-zombie-kill-count.pdf}
 {chart-zombie-kill-count}
 
 \img
-{...}
-{...}
+{Player deaths}
+{Player deaths}
 {chart-death-count.pdf}
 {chart-death-count}
 
 \subsection{How did adaptation affect player experience?}
 
-Although GSR was used to adapt the game, and is thus expected to vary both with the player’s response to the game and with their response to the adaptation, it can be used as a general estimate of player arousal during play. There was a main effect of condition on mean GSR ($F_{3,45} = 13.59$, $p \approx .000$, $\eta^{2} = .48$); contrasts showed that GSR was higher in each condition than in Control (all $p \approx .000$).
+Although GSR was used to adapt the game, and is thus expected to vary both with the player's response to the game and with their response to the adaptation, it can be used as a general estimate of player arousal during play. There was a main effect of condition on mean GSR ($F_{3,45} = 13.59$, $p \approx .000$, $\eta^{2} = .48$); contrasts showed that GSR was higher in each condition than in Control (all $p \approx .000$).
 
 Player experience was also measured using the PENS scales for competence and autonomy and the IMI scale for interest/enjoyment. There were no main effects of condition on experienced competence ($F_{3,45} = 1.47$, $p = .235$), or enjoyment ($F_{3,45} = 2.24$, $p = .097$); however, contrasts showed that there was lower experienced competence and enjoyment in the NPC condition than in Control ($p = .041$ and $p = .006$ respectively). There were no significant contrasts for Player or Enjoyment as compared to Control (all $p > 0.1$).
 
 \subsection{Did participants notice the adaptations?}
 
-We asked players after each condition to comments on the game and their performance. Although not asked specifically about adaptation, players often made comments about how the game was changing. When adapting the player, 50\% commented that they noticed changed to their player; when adapting the NPCs, 31\% of participants commented that they noticed changes to the zombies’ behaviours; when adapting the environment, only 13\% of players declared that they noticed environmental changes.
+We asked players after each condition to comments on the game and their performance. Although not asked specifically about adaptation, players often made comments about how the game was changing. When adapting the player, 50\% commented that they noticed changed to their player; when adapting the NPCs, 31\% of participants commented that they noticed changes to the zombies' behaviors; when adapting the environment, only 13\% of players declared that they noticed environmental changes.
 
-\subsection{Summary of Results}
-
-Our results showed that GSR was higher when we adapted the game. In addition, the Range of GSR was higher in the Environment and Player conditions. Adapting the NPC resulted in fewer kills (particularly during positive adaptation) more deaths, and reduced competence and enjoyment. Finally, the environmental manipulations were least noticed, whereas adaptations made to the player were most noticed.
-
+%todo: add some of the participants comments
 
 \img
-{...}
-{...}
-{chart-gsr-range.pdf}
-{chart-gsr-range}
-
-\img
-{...}
-{...}
+{Participants enjoyment on a scale of 0-4}
+{Enjoyment on a scale of 0-4 (higher is better)}
 {chart-imi-enjoyment.pdf}
 {chart-imi-enjoyment}
 
 \img
-{...}
-{...}
-{chart-mean-normalized-gsr.pdf}
-{chart-mean-normalized-gsr}
-
-\img
-{...}
-{...}
+{Perceived competence}
+{Perceived competence}
 {chart-pens-competence.pdf}
 {chart-pens-competence}
 
+\subsection{Summary of Results}
+Our results showed that GSR was higher when we adapted the game. In addition, the Range of GSR was higher in the Environment and Player conditions. Adapting the NPC resulted in fewer kills (particularly during positive adaptation) more deaths, and reduced competence and enjoyment. Finally, the environmental manipulations were least noticed, whereas adaptations made to the player were most noticed.
 
 
 % \section{Results}

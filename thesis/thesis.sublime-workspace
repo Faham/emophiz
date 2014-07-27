@@ -72,50 +72,10 @@
 	"buffers":
 	[
 		{
-			"file": "/D/desktop/temp/tasks.txt",
+			"file": "/D/temp/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 3774,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "content/bibliography.bib",
-			"settings":
-			{
-				"buffer_size": 31828,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/chp-1-intro.tex",
-			"settings":
-			{
-				"buffer_size": 10716,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/chp-2-emotion.tex",
-			"settings":
-			{
-				"buffer_size": 33744,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/chp-3-video-games.tex",
-			"settings":
-			{
-				"buffer_size": 44485,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/chp-4-impl.tex",
-			"settings":
-			{
-				"buffer_size": 18166,
+				"buffer_size": 3765,
 				"line_ending": "Windows"
 			}
 		},
@@ -128,20 +88,53 @@
 			}
 		},
 		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/chl929.java",
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/smj146.java",
 			"settings":
 			{
-				"buffer_size": 8019,
+				"buffer_size": 13076,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "d34c71v473d\n\nhttps://www.facebook.com/profile.php?id=100006802961301	",
+			"settings":
+			{
+				"buffer_size": 69,
+				"line_ending": "Windows",
+				"name": "d34c71v473d"
+			}
+		},
+		{
+			"file": "/D/scripts/active-ips.sh",
+			"settings":
+			{
+				"buffer_size": 166,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/scripts/test.txt",
+			"settings":
+			{
+				"buffer_size": 673,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 219.0,
+		"height": 173.0,
 		"selected_items":
 		[
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disap",
+				"Package Control: Disable Package"
+			],
 			[
 				"enabl",
 				"Package Control: Enable Package"
@@ -157,10 +150,6 @@
 			[
 				"disab",
 				"Package Control: Disable Package"
-			],
-			[
-				"enable",
-				"Package Control: Enable Package"
 			],
 			[
 				"disa",
@@ -239,6 +228,35 @@
 	},
 	"file_history":
 	[
+		"/D/scripts/test.txt",
+		"/D/scripts/mov-to-mp4.sh",
+		"/C/Users/Faham/Desktop/trip-to-black-strap",
+		"/D/projects/emophiz/thesis/thesis.tex",
+		"/D/projects/emophiz/thesis/content/bibliography.bib",
+		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
+		"/D/projects/emophiz/thesis/content/chp-1-intro.tex",
+		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex",
+		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
+		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
+		"/D/projects/emophiz/thesis/content/chp-6-discus.tex",
+		"/D/projects/emophiz/thesis/content/chp-7-conclusion.tex",
+		"/D/projects/emophiz/thesis/content/toremove/ch04-implementation.tex",
+		"/D/projects/emophiz/thesis/content/app-av-to-emotion.tex",
+		"/D/projects/emophiz/thesis/content/app-gsr-hr-to-arousal.tex",
+		"/D/projects/emophiz/thesis/content/app-phys-to-av.tex",
+		"/C/Users/Faham/Desktop/resources/resources/fuzzy-engine-challenge.xml",
+		"/C/Users/Faham/Desktop/resources/resources/fuzzy-engine-arousal.xml",
+		"/D/projects/emophiz/data/variables.txt",
+		"/D/temp/user-pass.txt",
+		"/D/desktop/temp/tasks.txt",
+		"/D/projects/emophiz/paper/main.tex",
+		"/D/projects/emophiz/thesis/content/common.tex",
+		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_metrics_2.csv",
+		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_metrics_1.csv",
+		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_gsr_2.csv",
+		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_gsr_1.csv",
+		"/D/projects/emophiz/thesis/content/abbreviations.tex",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/chl929.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
 		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-2.txt",
@@ -286,22 +304,13 @@
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/bwr040/DoubleList280.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jkp323/Asn1Q3 (1).java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/bwr040/Asn1Q3 (1).java",
-		"/D/desktop/temp/tasks.txt",
-		"/D/projects/emophiz/thesis/content/bibliography.bib",
-		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/ann315/DoubleList280.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/ann315/Asn1Q3.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/lib280-asn1/lib280-asn1/src/lib280/list/DoubleNode280.java",
 		"/C/Users/Faham/AppData/Local/Temp/7zO33DA.tmp/DoubleList280.java",
-		"/D/projects/emophiz/thesis/content/abbreviations.tex",
-		"/D/projects/emophiz/thesis/thesis.tex",
-		"/D/projects/emophiz/thesis/content/chp-1-intro.tex",
 		"/D/projects/emophiz/thesis/content/abstract.tex",
-		"/D/projects/emophiz/thesis/content/chp-7-conclusion.tex",
-		"/D/projects/emophiz/thesis/content/chp-6-discus.tex",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/cns727/Asn1Q3.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/cns727/DoubleList280.java",
-		"/D/scripts/mov-to-mp4.sh",
 		"/F/video/private/mov-to-mp4.sh",
 		"/F/video/private/2013-june-28/mov-to-mp4.sh",
 		"/D/documents/vecima/misc info/Bayside map.eml",
@@ -346,31 +355,11 @@
 		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/SimpleLL.java",
 		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/StartUpJFrame.java",
 		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/Thesis.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/CreateNewStudent.java",
-		"/C/Users/Faham/AppData/Local/Temp/7zODB43.tmp/Thesis.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tpq921/StorageForUndergrad.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tpq921/StorageForPerson.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tpq921/StorageForGrad.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/LlistAll.java",
-		"/C/Users/Faham/AppData/Local/Temp/7zO9759.tmp/README.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/PersonTest.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/oea313/Frame.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/Person.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/UndergradStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/Thesis.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/GradStGUI.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/GraduateStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qim844/Source Code/PersonGUI.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/oea313/GUIGraduateStudentClass.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/MainMenu.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/PeopleList.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/GradStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/PeopleListTest.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/qjp600/Person.java"
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/CreateNewStudent.java"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -395,134 +384,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"91",
-			"public ",
-			"/6",
-			"6",
-			"10",
-			"20",
-			"/6",
-			"----------------------",
-			"\n",
-			".java  ",
-			"-a",
-			"q4",
-			"source",
-			"editor",
-			"each",
-			"this.t[i]",
-			"this.t.",
-			"bio",
-			"images",
-			"this.t",
-			"each",
-			"this.t",
-			".t",
-			"obj.id",
-			"! =",
-			"+ =",
-			"=  =",
-			"= =",
-			"p>",
-			"p",
-			"descr",
-			"item",
-			"  ",
-			"  xuz765",
-			"   ",
-			"     ",
-			"    ",
-			"   ",
-			"  ",
-			"deleteItem",
-			"\\\\t",
-			"\\\\n",
-			"\\n",
-			"error",
-			"session",
-			"['session']['user']",
-			"['user']",
-			"$g['user']",
-			"80",
-			"172",
-			"80",
-			"172",
-			"deleteFirs",
-			"void deleteItem",
-			"insertFirst",
-			"- ",
-			"q",
-			"q3",
-			"insertLast",
-			"insertFirst",
-			"todo",
-			"TODO",
-			"itemExists",
-			"TODO",
-			"setNextNode",
-			"createNewNode",
-			"setPreviousNode",
-			"TODO",
-			"insertfirst",
-			"q3 /5\n",
-			"todo",
-			"\n----------------------------\n",
-			"\n",
-			"  ",
-			"\\",
-			"@mail.usask.ca",
-			"@",
-			", ",
-			"<",
+			"'",
+			"\\\"",
 			"\"",
-			">,",
-			".*<",
-			"noisy signals",
-			"due to noisy signals and difficulties with",
-			"[20]	Lang",
-			"Ekman",
-			"[10]	Ekman",
-			"Cognition",
-			"Cognition & Emotion",
-			"argument  for  basic  emotions, Cognition & Emotion",
-			"Methods of describing emotions in the psychology literature include",
-			"responses to adapt interaction with",
-			"Using emotional responses to adapt interaction with",
-			"Using emotional responses to adapt interaction with ",
-			"ﬂ",
-			"texti",
-			"Lippold",
-			"\\url{",
-			". ",
-			"- ",
-			"-",
-			"Section",
-			"balance",
-			"balanc",
-			"tijs",
-			")",
-			"(",
+			"$1",
+			".",
+			" ",
+			"8:",
+			"               \n",
+			"                      \n    ",
+			"	",
+			"\n",
+			"FriendFriends",
+			"University",
+			"Saskatoon",
+			"\nAdd Friend\n",
+			", ",
+			"’",
 			"ﬁ",
-			"%",
-			"q1",
-			"str",
-			"website",
-			"FILENAME",
-			"---------------------------------",
-			" ",
-			"SaveQuitBtnActionPerformed",
-			"save",
-			" ",
-			"save",
-			" ",
-			"save",
-			"outputValues",
-			"getName",
-			"save",
-			"                                ",
-			"</p>",
-			"<strong>",
-			"</strong>"
+			"’",
+			"‘",
+			"’",
+			"wientjes1992respiration",
+			"yannakakis2008entertainment",
+			"Contributions of Psychophysiology to Media Research",
+			"Ravaja",
+			"effects",
+			"music",
+			"narrative",
+			"’",
+			"[14]",
+			"holder",
+			"todo",
+			"Engine Proxies",
+			"Administration Panel",
+			")(",
+			"and",
+			"then",
+			"If",
+			"todo",
+			"xml",
+			"revision",
+			"todo",
+			"talk about",
+			"todo",
+			"[",
+			"[21]",
+			"[27]",
+			"przybylski2013competence",
+			"[31]",
+			"ryan2000self",
+			"ryan2006motivational",
+			"  ",
+			"[30]",
+			"ryan2000self",
+			"[4]",
+			"[35]",
+			"bateman2011target",
+			"vicencio2014effectiveness",
+			"Target assistance",
+			"Target assistance for subtly balancing competitive play",
+			"’",
+			"bersak2001intelligent",
+			"\\img",
+			"fig",
+			"Fig",
+			"sample-signal",
+			"todo",
+			"BioTetris",
+			"url",
+			"rani2005maintaining",
+			"takahashi1994experimental",
+			"schaefer2008usability",
+			"Takahashi",
+			"[",
+			"saari2005emotional",
+			"saari2010technological",
+			"Emotional Regulation System for Emotionally Adapted Game",
+			"i)",
+			"ii",
+			"thre",
+			"i)",
+			")",
+			"flow",
+			"\\subsection",
+			"\\section",
+			"img",
+			"mandryk2008physiological",
+			"todo",
+			"contin",
+			"todo",
+			"[",
+			"mandryk2008physiological",
+			"[25]	Partala",
+			"chose to use `measurement",
+			"detection",
+			"[",
+			"todo",
+			"zombi",
+			"&",
+			"\\begin{tabular}",
+			"r^",
+			"tbl:",
+			"todo",
+			"onlin2014bartle",
+			"sundstrom2005user",
+			"malone1982makes",
+			"onlin2014bartle",
+			"label",
+			"{mylabel}{My Caption}",
+			"Example",
+			"{log",
+			"Verbatim",
+			".25",
+			"=0",
+			"Verbatim",
+			"\\end",
+			"verbatim",
+			",",
+			"\\_",
+			"_",
+			"todo",
+			"largeimg",
+			"vlargeimg",
+			"sidewaystable",
+			"largeimg",
+			"large",
+			"=",
+			"(F"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -588,24 +577,24 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/desktop/temp/tasks.txt",
+					"file": "/D/temp/tasks.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3774,
+						"buffer_size": 3765,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								573,
-								597
+								136,
+								136
 							]
 						],
 						"settings":
@@ -617,19 +606,50 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "content/bibliography.bib",
+					"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 31828,
+						"buffer_size": 888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								524,
+								524
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/smj146.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13076,
 						"regions":
 						{
 						},
@@ -645,94 +665,60 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "content/chp-1-intro.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10716,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1027,
-								1027
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 126.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "content/chp-2-emotion.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 33744,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								18029,
-								18033
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2697.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "content/chp-3-video-games.tex",
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 44485,
+						"buffer_size": 69,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3370,
-								3061
+								68,
+								13
+							]
+						],
+						"settings":
+						{
+							"auto_name": "d34c71v473d",
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/scripts/active-ips.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82,
+								82
 							]
 						],
 						"settings":
@@ -740,61 +726,30 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 177.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "content/chp-4-impl.tex",
+					"file": "/D/scripts/test.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 18166,
+						"buffer_size": 673,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1543,
-								1543
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 888,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								541,
-								541
+								12,
+								12
 							]
 						],
 						"settings":
@@ -808,38 +763,6 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/chl929.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8019,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4325,
-								4325
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 6102.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 1,
 					"type": "text"
 				}
@@ -848,7 +771,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -888,7 +811,7 @@
 	"project": "thesis.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

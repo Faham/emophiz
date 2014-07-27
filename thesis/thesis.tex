@@ -8,7 +8,33 @@
 \usepackage{array}
 \usepackage{svg}
 \usepackage{wallpaper}
-\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{textcomp}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=2,
+	rulecolor=,
+	language=matlab,
+        basicstyle=\scriptsize,
+        upquote=true,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
 
 %------------------------------------------------------------------------------
 
@@ -90,8 +116,9 @@ S7N 5C9
 % APPENDICES
 \uofsappendix
 \chapter{Transforming physiological variables into arousal-valence space} \label{app:phys-to-av}    \input{content/app-phys-to-av.tex}
-\chapter{Transforming physiological variables into arousal-valence space} \label{app:phys-to-av}    \input{content/app-phys-to-av.tex}
 \chapter{Transforming arousal-valence space into emotional states}        \label{app:av-to-emotion} \input{content/app-av-to-emotion.tex}
+\chapter{Sample XML resource describing GSR and HR transformation into Arousal}
+                                                                          \label{app:gsr-hr-to-arousal} \input{content/app-gsr-hr-to-arousal.tex}
 \chapter{Consent Form}                                                    \label{app:consent}       \addtolength{\wpYoffset}{-1.6cm}\ThisCenterWallPaper{0.85}{content/app-consent-form.pdf}
 \chapter{Demographics Questionnaire}                                      \label{app:q-dmg}         \noindent\makebox[\textwidth][c]{\includegraphics[page=1,width=\textwidth,height=\textheight,keepaspectratio]{content/app-q-dmg.pdf}}\newpage
                                                                                                     \noindent\makebox[\textwidth][c]{\includegraphics[page=2,width=\textwidth,height=\textheight,keepaspectratio]{content/app-q-dmg.pdf}}\newpage
