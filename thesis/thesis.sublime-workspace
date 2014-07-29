@@ -96,28 +96,59 @@
 			}
 		},
 		{
-			"contents": "d34c71v473d\n\nhttps://www.facebook.com/profile.php?id=100006802961301	",
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/tab608.java",
 			"settings":
 			{
-				"buffer_size": 69,
-				"line_ending": "Windows",
-				"name": "d34c71v473d"
+				"buffer_size": 22721,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/D/scripts/active-ips.sh",
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/toc753.java",
 			"settings":
 			{
-				"buffer_size": 166,
+				"buffer_size": 18721,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/wdg898.java",
+			"settings":
+			{
+				"buffer_size": 9490,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/scripts/test.txt",
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/yih948.java",
 			"settings":
 			{
-				"buffer_size": 673,
+				"buffer_size": 10263,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
+			"settings":
+			{
+				"buffer_size": 15751,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/nal827.java",
+			"settings":
+			{
+				"buffer_size": 16087,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
+			"settings":
+			{
+				"buffer_size": 10547,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -228,16 +259,24 @@
 	},
 	"file_history":
 	[
-		"/D/scripts/test.txt",
-		"/D/scripts/mov-to-mp4.sh",
-		"/C/Users/Faham/Desktop/trip-to-black-strap",
 		"/D/projects/emophiz/thesis/thesis.tex",
+		"/D/projects/emophiz/thesis/content/dedication.tex",
+		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
+		"/D/projects/emophiz/thesis/content/chp-1-intro.tex",
+		"/D/projects/emophiz/thesis/content/abbreviations.tex",
+		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex",
+		"/D/projects/emophiz/thesis/make.sh",
+		"/C/Users/Faham/Desktop/thesis-chp1,2,5.docx",
+		"/C/Users/Faham/Desktop/thesis-chp1,2,5.xml",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/chl929.java",
+		"/C/Users/Faham/Desktop/trip-to-black-strap",
+		"/D/scripts/active-ips.sh",
+		"/D/scripts/test.txt",
+		"/C/Users/Faham/Desktop/discussions/jerusalem-in-quran.txt",
+		"/D/scripts/mov-to-mp4.sh",
 		"/D/projects/emophiz/thesis/content/bibliography.bib",
 		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
-		"/D/projects/emophiz/thesis/content/chp-1-intro.tex",
-		"/D/projects/emophiz/thesis/content/chp-2-emotion.tex",
 		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
-		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
 		"/D/projects/emophiz/thesis/content/chp-6-discus.tex",
 		"/D/projects/emophiz/thesis/content/chp-7-conclusion.tex",
 		"/D/projects/emophiz/thesis/content/toremove/ch04-implementation.tex",
@@ -255,8 +294,6 @@
 		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_metrics_1.csv",
 		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_gsr_2.csv",
 		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_gsr_1.csv",
-		"/D/projects/emophiz/thesis/content/abbreviations.tex",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/chl929.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
 		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-2.txt",
@@ -274,7 +311,6 @@
 		"/D/projects/mycms/templates/snippets/research_default.tpl",
 		"/D/projects/mycms/temp/tinyeditor/tiny.editor.packed.js",
 		"/D/projects/mycms/temp/xing-wysihtml5-fb0cfe4/examples/simple.html",
-		"/D/projects/emophiz/thesis/make.sh",
 		"/D/projects/mycms/static/css/main.css",
 		"/D/projects/mycms/templates/snippets/publication_default.tpl",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/lib280-asn1/lib280-asn1/src/lib280/list/LinkedList280.java",
@@ -350,16 +386,11 @@
 		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/GraduateStudent.java",
 		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/DisplayFrame.java",
 		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/UnderGradStudentFrame.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/GraduateStudentFrame.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/Person.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/SimpleLL.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/StartUpJFrame.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/Thesis.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/CreateNewStudent.java"
+		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/GraduateStudentFrame.java"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -384,6 +415,79 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"’",
+			"[",
+			"d",
+			"c &",
+			"& C",
+			"& c",
+			"c",
+			"b",
+			"a",
+			"%",
+			"’",
+			"‘",
+			"’",
+			"researches",
+			"  ~\\cite",
+			"[",
+			"~\\cite",
+			"todo",
+			"  ~\\cite",
+			"[",
+			"~\\cite",
+			"  ~\\cite",
+			"[",
+			"~\\cite",
+			"[",
+			"~\\cite",
+			"  ~\\cite",
+			"[",
+			"~\\cite",
+			"  ~\\cite",
+			"~\\cite",
+			"[",
+			"~\\cite",
+			"  ~\\cite",
+			"[",
+			"~\\cite",
+			"  ~\\cite",
+			"[",
+			"~\\cite",
+			"[",
+			"~\\cite",
+			"[",
+			"~\\cite",
+			"  ~\\cite",
+			"[",
+			"~\\cite{",
+			"~\\cite",
+			"  ~\\cite",
+			"[",
+			" [",
+			"[",
+			"~\\cite",
+			"[",
+			"~\\cite",
+			" [17]",
+			"[70]",
+			"protected",
+			"The results of our design probe suggest that affectively-adapting games increases a player's arousal during play; however, there were differences between the three approaches. Results suggest that decreasing the challenge by adapting the number and strength of the NPC enemies is not as effective as giving the players the tools needed to overcome greater challenges, as we did when adapting the strengths of the player or the supportiveness of the environment. These results are in line with recent work that suggests that thwarting the need for competence within the context of a game affects player experience ~\\cite{przybylski2013competence}. Game designers can use our results to inform their decisions on how to support players to experience competence while still optimizing player engagement.",
+			"’",
+			"  [",
+			"  [63",
+			"[",
+			"[124]",
+			"[2]",
+			"[110]",
+			"[87]",
+			"  [",
+			" [",
+			"speed",
+			" [76]",
+			" [51]",
+			"While it is possible to adapt a game to the measured performance of a player, it is harder to react to the player’s mood",
+			"@",
 			"'",
 			"\\\"",
 			"\"",
@@ -438,80 +542,7 @@
 			"  ",
 			"[30]",
 			"ryan2000self",
-			"[4]",
-			"[35]",
-			"bateman2011target",
-			"vicencio2014effectiveness",
-			"Target assistance",
-			"Target assistance for subtly balancing competitive play",
-			"’",
-			"bersak2001intelligent",
-			"\\img",
-			"fig",
-			"Fig",
-			"sample-signal",
-			"todo",
-			"BioTetris",
-			"url",
-			"rani2005maintaining",
-			"takahashi1994experimental",
-			"schaefer2008usability",
-			"Takahashi",
-			"[",
-			"saari2005emotional",
-			"saari2010technological",
-			"Emotional Regulation System for Emotionally Adapted Game",
-			"i)",
-			"ii",
-			"thre",
-			"i)",
-			")",
-			"flow",
-			"\\subsection",
-			"\\section",
-			"img",
-			"mandryk2008physiological",
-			"todo",
-			"contin",
-			"todo",
-			"[",
-			"mandryk2008physiological",
-			"[25]	Partala",
-			"chose to use `measurement",
-			"detection",
-			"[",
-			"todo",
-			"zombi",
-			"&",
-			"\\begin{tabular}",
-			"r^",
-			"tbl:",
-			"todo",
-			"onlin2014bartle",
-			"sundstrom2005user",
-			"malone1982makes",
-			"onlin2014bartle",
-			"label",
-			"{mylabel}{My Caption}",
-			"Example",
-			"{log",
-			"Verbatim",
-			".25",
-			"=0",
-			"Verbatim",
-			"\\end",
-			"verbatim",
-			",",
-			"\\_",
-			"_",
-			"todo",
-			"largeimg",
-			"vlargeimg",
-			"sidewaystable",
-			"largeimg",
-			"large",
-			"=",
-			"(F"
+			"[4]"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -577,7 +608,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -609,7 +640,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -625,8 +656,8 @@
 						"selection":
 						[
 							[
-								524,
-								524
+								29,
+								23
 							]
 						],
 						"settings":
@@ -640,7 +671,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -672,30 +703,129 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/tab608.java",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 69,
+						"buffer_size": 22721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								68,
-								13
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "d34c71v473d",
 							"incomplete_sync": null,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/toc753.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/wdg898.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9490,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/yih948.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -705,20 +835,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/D/scripts/active-ips.sh",
+					"buffer": 7,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 166,
+						"buffer_size": 15751,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								82,
-								82
+								436,
+								436
 							]
 						],
 						"settings":
@@ -726,44 +856,77 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/D/scripts/test.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 673,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								12,
-								12
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 219.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/nal827.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16087,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1350.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -771,7 +934,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -811,7 +974,7 @@
 	"project": "thesis.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
