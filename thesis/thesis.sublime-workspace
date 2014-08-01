@@ -75,79 +75,15 @@
 			"file": "/D/temp/tasks.txt",
 			"settings":
 			{
-				"buffer_size": 3765,
+				"buffer_size": 3797,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
+			"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-7.txt",
 			"settings":
 			{
-				"buffer_size": 888,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/smj146.java",
-			"settings":
-			{
-				"buffer_size": 13076,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/tab608.java",
-			"settings":
-			{
-				"buffer_size": 22721,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/toc753.java",
-			"settings":
-			{
-				"buffer_size": 18721,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/wdg898.java",
-			"settings":
-			{
-				"buffer_size": 9490,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/yih948.java",
-			"settings":
-			{
-				"buffer_size": 10263,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
-			"settings":
-			{
-				"buffer_size": 15751,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/nal827.java",
-			"settings":
-			{
-				"buffer_size": 16087,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
-			"settings":
-			{
-				"buffer_size": 10547,
+				"buffer_size": 923,
 				"line_ending": "Windows"
 			}
 		}
@@ -155,11 +91,75 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 173.0,
+		"height": 58.0,
 		"selected_items":
 		[
 			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
 				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"brose",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mkd header",
+				"Snippet: Markdown_header_(mdh3)"
+			],
+			[
+				"view",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"md",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"item",
+				"Snippet: Markdown_link_(mdl)"
+			],
+			[
+				"markdown",
+				"MarkdownEditing: Fix Underlined Headers"
+			],
+			[
+				"header",
+				"Snippet: Markdown_header_(mdh2)"
+			],
+			[
+				"head	",
+				"Snippet: Markdown_header_(mdh1)"
+			],
+			[
+				"head",
+				"Snippet: Markdown_header_(mdh2)"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"markdown pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"enab",
 				"Package Control: Enable Package"
 			],
 			[
@@ -181,14 +181,6 @@
 			[
 				"disab",
 				"Package Control: Disable Package"
-			],
-			[
-				"disa",
-				"Package Control: Disable Package"
-			],
-			[
-				"enab",
-				"Package Control: Enable Package"
 			],
 			[
 				"ena",
@@ -219,14 +211,6 @@
 				"Package Control: Enable Package"
 			],
 			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"packa",
 				"Package Control: Remove Package"
 			],
@@ -250,7 +234,7 @@
 	},
 	"distraction_free":
 	{
-		"menu_visible": true,
+		"menu_visible": false,
 		"show_minimap": false,
 		"show_open_files": false,
 		"show_tabs": false,
@@ -259,6 +243,92 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/solution.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/ziy773.java",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-6.txt",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/yiz540.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/yih948.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/xuz765.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/vcw542.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/tpq921.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/toc753.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/tkq465.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/tds030.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/solution.java",
+		"/D/projects/emophiz/thesis/content/bibliography.bib",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-5.txt",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/smj146.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/qjp600.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/qim853.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/nal827.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/key053.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/jkp323.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/wdg898.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/hew351.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/gaj419.java",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-4.txt",
+		"/D/projects/emophiz/thesis/content/all-pure.txt",
+		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
+		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
+		"/D/projects/emophiz/thesis/content/app-av-to-emotion.tex",
+		"/D/projects/emophiz/thesis/content/app-gsr-hr-to-arousal.tex",
+		"/D/projects/emophiz/thesis/content/app-phys-to-av.tex",
+		"/D/projects/emophiz/thesis/content/chp-6-discus.tex",
+		"/D/projects/emophiz/thesis/content/chp-7-conclusion.tex",
+		"/D/projects/emophiz/thesis/content/common.tex",
+		"/D/documents/resume-faham/resume.tex",
+		"/D/documents/resume-faham/make.sh",
+		"/C/Users/Faham/Desktop/proof of God.txt",
+		"/C/Users/Faham/Desktop/mashinha.txt",
+		"/D/projects/mycms/README.md",
+		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/C/Users/Faham/AppData/Local/Temp/16.html",
+		"/D/projects/mycms/config.ini",
+		"/D/projects/mycms/create-schema.sh",
+		"/D/projects/mycms/.htaccess",
+		"/D/projects/mycms/_config.ini_",
+		"/D/projects/mycms/_.htaccess_",
+		"/C/Users/Faham/Desktop/mycms.sql",
+		"/D/projects/mycms/database.sql",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/solution/lib280-asn4-soln/src/lib280/expressionTree/PostorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/solution/lib280-asn4-soln/src/lib280/expressionTree/PreorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/solution/lib280-asn4-soln/src/lib280/expressionTree/ExpressionTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/hew351/ExpressionTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/erm643/ExpressionTree280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/erm643/PostorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/erm643/PreorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/dar818/ExpressionTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/dar818/PostorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/dar818/PreorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/cab811/ExpressionTree280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/cab811/PostorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/cab811/PreorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/chl929/ExpressionTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/cns727/ExpressionTree280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/cns727/PostorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/cns727/PreorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/bwr040/ExpressionTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/bwr040/PostorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/bwr040/PreorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/bjk386/ExpressionTree280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/bjk386/PostorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/bjk386/PreorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/ann315/ExpressionTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/ann315/PostorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/ann315/PreorderTraversal280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/marking-key.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/wdg898.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/tab608.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/nal827.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/yih948.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/toc753.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/smj146.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
+		"/D/projects/emophiz/data/logs/experiment/.gitignore",
+		"/D/projects/emophiz/.gitignore",
+		"/C/Users/Faham/Desktop/test.html",
 		"/D/projects/emophiz/thesis/thesis.tex",
 		"/D/projects/emophiz/thesis/content/dedication.tex",
 		"/D/projects/emophiz/thesis/content/chp-5-exprm.tex",
@@ -274,31 +344,19 @@
 		"/D/scripts/test.txt",
 		"/C/Users/Faham/Desktop/discussions/jerusalem-in-quran.txt",
 		"/D/scripts/mov-to-mp4.sh",
-		"/D/projects/emophiz/thesis/content/bibliography.bib",
-		"/D/projects/emophiz/thesis/content/chp-3-video-games.tex",
-		"/D/projects/emophiz/thesis/content/chp-4-impl.tex",
-		"/D/projects/emophiz/thesis/content/chp-6-discus.tex",
-		"/D/projects/emophiz/thesis/content/chp-7-conclusion.tex",
 		"/D/projects/emophiz/thesis/content/toremove/ch04-implementation.tex",
-		"/D/projects/emophiz/thesis/content/app-av-to-emotion.tex",
-		"/D/projects/emophiz/thesis/content/app-gsr-hr-to-arousal.tex",
-		"/D/projects/emophiz/thesis/content/app-phys-to-av.tex",
 		"/C/Users/Faham/Desktop/resources/resources/fuzzy-engine-challenge.xml",
 		"/C/Users/Faham/Desktop/resources/resources/fuzzy-engine-arousal.xml",
 		"/D/projects/emophiz/data/variables.txt",
 		"/D/temp/user-pass.txt",
 		"/D/desktop/temp/tasks.txt",
 		"/D/projects/emophiz/paper/main.tex",
-		"/D/projects/emophiz/thesis/content/common.tex",
 		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_metrics_2.csv",
 		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_metrics_1.csv",
 		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_gsr_2.csv",
 		"/D/projects/emophiz/data/logs/experiment/adaptation_values/10_gsr_1.csv",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
 		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-2.txt",
 		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-1.txt",
-		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
 		"/D/projects/mycms/templates/research_admin_edit.tpl",
 		"/D/projects/mycms/static/js/main.js",
 		"/D/projects/mycms/templates/people_admin_edit.tpl",
@@ -312,81 +370,7 @@
 		"/D/projects/mycms/temp/tinyeditor/tiny.editor.packed.js",
 		"/D/projects/mycms/temp/xing-wysihtml5-fb0cfe4/examples/simple.html",
 		"/D/projects/mycms/static/css/main.css",
-		"/D/projects/mycms/templates/snippets/publication_default.tpl",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/lib280-asn1/lib280-asn1/src/lib280/list/LinkedList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/erm643/DoubleList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/erm643/Asn1Q3.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/tpq921/DoubleList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/tpq921/Asn1Q3.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/tkq465/DoubleList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/tkq465/A1Q3.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/qjp600/DoubleList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/qjp600/Asn1Q3.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jlm012/DoubleList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jlm012/Answer1Q3.java",
-		"/C/Program Files (x86)/Git/doc/git/html/git-log.html",
-		"/D/projects/mycms/classes/auth.php",
-		"/D/projects/mycms/classes/error.php",
-		"/D/projects/mycms/modules/pages/pages.php",
-		"/D/projects/mycms/config.ini",
-		"/D/projects/mycms/modules/admin/admin.php",
-		"/D/projects/mycms/config.php",
-		"/D/projects/mycms/index.php",
-		"/D/projects/mycms/modules/admin/admin.class.php",
-		"/D/documents/internet-network.txt",
-		"/F/video/islam-talks/yasir-qadhi/links.txt",
-		"/F/video/islam-talks/yasir-qadhi/playlists.txt",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jkp323/DoubleList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/bwr040/DoubleList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/jkp323/Asn1Q3 (1).java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/bwr040/Asn1Q3 (1).java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/ann315/DoubleList280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/ann315/Asn1Q3.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/lib280-asn1/lib280-asn1/src/lib280/list/DoubleNode280.java",
-		"/C/Users/Faham/AppData/Local/Temp/7zO33DA.tmp/DoubleList280.java",
-		"/D/projects/emophiz/thesis/content/abstract.tex",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/cns727/Asn1Q3.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-1/cns727/DoubleList280.java",
-		"/F/video/private/mov-to-mp4.sh",
-		"/F/video/private/2013-june-28/mov-to-mp4.sh",
-		"/D/documents/vecima/misc info/Bayside map.eml",
-		"/C/Users/Faham/Desktop/tmp.tmp",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/vcw542/Assignment4/Assignment4/src/assignment4/UndergradStudentWindow.java",
-		"/C/Users/Faham/Downloads/cmpt270/marks-assignment-4.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/vcw542/Assignment4/Assignment4/src/assignment4/GradStudentWindow.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/vcw542/Assignment4/Assignment4/src/assignment4/Thesis.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/vcw542/Assignment4/Assignment4/src/assignment4/PersonWindow.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/ManagementWindow.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/UndergradStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/GraduateStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/Person.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/filedata.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/toc753/A4_StudentM.jarfiledata.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/src/a4/Database.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/src/a4/PersonGUI.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/src/a4/Person.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/README.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tjp873/TJP873_A4/database.ser",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/MainWindow.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/Person.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/documentation.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/GradStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/ThesisTest.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/tds030/data.txt",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/EveryoneLists.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/ViewEditUI.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/UndergradStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/ChangeRoleUI.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/Thesis.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/Storage.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/Person.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/ssd843/Assignment4-handIn/Assignment4/src/assignment4/InitialUI.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/ListJFrame.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/UndergradStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/GraduateStudent.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/DisplayFrame.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/UnderGradStudentFrame.java",
-		"/C/Users/Faham/Downloads/cmpt270/submissions-assignment-4/smj146/GraduateStudentFrame.java"
+		"/D/projects/mycms/templates/snippets/publication_default.tpl"
 	],
 	"find":
 	{
@@ -415,134 +399,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"’",
-			"[",
-			"d",
-			"c &",
-			"& C",
-			"& c",
-			"c",
-			"b",
-			"a",
-			"%",
-			"’",
-			"‘",
-			"’",
-			"researches",
-			"  ~\\cite",
-			"[",
-			"~\\cite",
-			"todo",
-			"  ~\\cite",
-			"[",
-			"~\\cite",
-			"  ~\\cite",
-			"[",
-			"~\\cite",
-			"[",
-			"~\\cite",
-			"  ~\\cite",
-			"[",
-			"~\\cite",
-			"  ~\\cite",
-			"~\\cite",
-			"[",
-			"~\\cite",
-			"  ~\\cite",
-			"[",
-			"~\\cite",
-			"  ~\\cite",
-			"[",
-			"~\\cite",
-			"[",
-			"~\\cite",
-			"[",
-			"~\\cite",
-			"  ~\\cite",
-			"[",
-			"~\\cite{",
-			"~\\cite",
-			"  ~\\cite",
-			"[",
-			" [",
-			"[",
-			"~\\cite",
-			"[",
-			"~\\cite",
-			" [17]",
-			"[70]",
-			"protected",
-			"The results of our design probe suggest that affectively-adapting games increases a player's arousal during play; however, there were differences between the three approaches. Results suggest that decreasing the challenge by adapting the number and strength of the NPC enemies is not as effective as giving the players the tools needed to overcome greater challenges, as we did when adapting the strengths of the player or the supportiveness of the environment. These results are in line with recent work that suggests that thwarting the need for competence within the context of a game affects player experience ~\\cite{przybylski2013competence}. Game designers can use our results to inform their decisions on how to support players to experience competence while still optimizing player engagement.",
-			"’",
-			"  [",
-			"  [63",
-			"[",
-			"[124]",
-			"[2]",
-			"[110]",
-			"[87]",
-			"  [",
-			" [",
-			"speed",
-			" [76]",
-			" [51]",
-			"While it is possible to adapt a game to the measured performance of a player, it is harder to react to the player’s mood",
-			"@",
-			"'",
-			"\\\"",
-			"\"",
-			"$1",
-			".",
-			" ",
-			"8:",
-			"               \n",
-			"                      \n    ",
-			"	",
+			"----------------------",
 			"\n",
-			"FriendFriends",
-			"University",
-			"Saskatoon",
-			"\nAdd Friend\n",
-			", ",
-			"’",
-			"ﬁ",
-			"’",
-			"‘",
-			"’",
-			"wientjes1992respiration",
-			"yannakakis2008entertainment",
-			"Contributions of Psychophysiology to Media Research",
-			"Ravaja",
-			"effects",
-			"music",
-			"narrative",
-			"’",
-			"[14]",
-			"holder",
+			"@mail.usask.ca",
+			"signedImbalance",
+			"rotateRL",
+			"get",
+			"replaceMatchingChild",
+			"Left",
+			"signedImbalance",
+			"rotateLeft",
+			"rootNode",
+			"signedImbalance",
 			"todo",
-			"Engine Proxies",
-			"Administration Panel",
-			")(",
-			"and",
-			"then",
-			"If",
-			"todo",
-			"xml",
-			"revision",
-			"todo",
-			"talk about",
-			"todo",
-			"[",
-			"[21]",
-			"[27]",
-			"przybylski2013competence",
-			"[31]",
-			"ryan2000self",
-			"ryan2006motivational",
-			"  ",
-			"[30]",
-			"ryan2000self",
-			"[4]"
+			"setRootNode",
+			"getLtHeight",
+			"signedImbalance",
+			"\n",
+			"@mail",
+			" ",
+			"$",
+			"eective",
+			"dierences",
+			"ndings",
+			"specic",
+			"Specic",
+			"specic",
+			"Specic",
+			"specic",
+			"aect",
+			"Aect",
+			"aect",
+			"Aect",
+			"aect",
+			"Aect",
+			"aect",
+			"Aect",
+			"aect",
+			"Aect",
+			"aect",
+			"Aect",
+			"aect",
+			"Aect",
+			"aect",
+			"Aect",
+			"aect",
+			"Aect",
+			"aect",
+			"signicant",
+			"dierent",
+			"Dierent",
+			"dierent",
+			"Dierent",
+			"dierent",
+			"Dierent",
+			"dierent",
+			"Dierent",
+			"dierent",
+			"Dierent",
+			"dierent",
+			"Dierent",
+			"dierent",
+			"rst",
+			"dicult",
+			"Dicult",
+			"dicult",
+			"Dicult",
+			"dicult",
+			"Dicult",
+			"dicult",
+			"aective",
+			"Aective",
+			"aective",
+			"Aective",
+			"aective",
+			"very high",
+			"very low",
+			"mid-high",
+			"mid-low",
+			"  is",
+			" is",
+			" )",
+			"[language=csv]",
+			"???",
+			"Fig.",
+			"	",
+			"evidance",
+			"create-schema",
+			"```",
+			"loop",
+			"1700x2200",
+			"'",
+			"′",
+			"----------------------",
+			"\n",
+			"@mail.usask.ca",
+			"throw",
+			"Throw",
+			"throw",
+			"Throw",
+			"throw",
+			"Throw",
+			"throw",
+			"Throw",
+			"throw",
+			"Throw",
+			"throw",
+			"toExpression",
+			"toInfixExpression",
+			"----------------------",
+			"@mail.usask.ca\n",
+			"@mail.usask.ca",
+			"public ",
+			"itemExists",
+			"findRightChild",
+			"itemExists",
+			"ItemExists",
+			"itemExists",
+			"item(",
+			"item",
+			"isEmpty",
+			"this.cap",
+			"isFull",
+			"findRightChild",
+			"findParent",
+			"-",
+			"-5",
+			"this.root",
+			"findLeftChild"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -617,15 +601,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3765,
+						"buffer_size": 3797,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								136,
-								136
+								596,
+								596
 							]
 						],
 						"settings":
@@ -640,16 +624,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-3.txt",
+					"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-7.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 888,
+						"buffer_size": 923,
 						"regions":
 						{
 						},
@@ -657,7 +641,7 @@
 						[
 							[
 								29,
-								23
+								29
 							]
 						],
 						"settings":
@@ -673,268 +657,13 @@
 					},
 					"stack_index": 0,
 					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/smj146.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13076,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/tab608.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22721,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/toc753.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18721,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/wdg898.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9490,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/yih948.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10263,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/cab811.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15751,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								436,
-								436
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 219.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/nal827.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16087,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-3/bjk386.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10547,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1350.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -974,7 +703,7 @@
 	"project": "thesis.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

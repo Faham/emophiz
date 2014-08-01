@@ -1,7 +1,12 @@
 
 The following 67 rules were used as described in Section ~\ref{subsec:fuzzi} to convert arousal and valence into boredom, challenge, excitement, frustration, and fun:
 
-\begin{lstlisting}[language=c]
+\lstset{emph={%
+    if, is, and, then%
+    },emphstyle={\color{blue}\bfseries}%
+}%
+
+\begin{lstlisting}[frame=none]
 if (valence is veryHigh)    then (fun is high)
 if (valence is veryLow)     then (fun is veryLow) (challenge is veryLow)
 if (valence is low)         then (fun is veryLow) (challenge is veryLow)

@@ -1,27 +1,32 @@
 
 The following 22 rules were used as described in Section ~\ref{subsec:fuzzi} to transform physiological variables into arousal-valence space:
 
-\begin{lstlisting}[language=python]
-if (GSR      is high     )                        then (arousal is high     )
-if (GSR      is mid-high )                        then (arousal is mid-high )
-if (GSR      is mid-low  )                        then (arousal is mid-low  )
-if (GSR      is low      )                        then (arousal is low      )
-if (HR       is low      )                        then (arousal is low      )
-if (HR       is high     )                        then (arousal is high     )
-if (EMGfrown is high     )                        then (valence is very low )
-if (EMGfrown is mid      )                        then (valence is low      )
-if (EMGsmile is mid      )                        then (valence is high     )
-if (EMGsmile is high     )                        then (valence is very high)
-if (GSR      is low      ) and (HR is high)       then (arousal is midlow   )
-if (GSR      is high     ) and (HR is low )       then (arousal is midhigh  )
-if (GSR      is high     ) and (HR is mid )       then (arousal is high     )
-if (GSR      is mid-high ) and (HR is mid )       then (arousal is mid-high )
-if (GSR      is mid-low  ) and (HR is mid )       then (arousal is mid-low  )
-if (EMGsmile is low      ) and (EMGfrown is low ) then (valence is neutral  )
-if (EMGsmile is high     ) and (EMGfrown is low ) then (valence is very high)
-if (EMGsmile is high     ) and (EMGfrown is mid ) then (valence is high     )
-if (EMGsmile is low      ) and (EMGfrown is high) then (valence is very low )
-if (EMGsmile is mid      ) and (EMGfrown is high) then (valence is low      )
-if (EMGsmile is low      ) and (EMGfrown is low ) and (HR is low)  then (valence is low)
-if (EMGsmile is low      ) and (EMGfrown is low ) and (HR is high) then (valence is high)
+\lstset{emph={%
+    if, is, and, then%
+    },emphstyle={\color{blue}\bfseries}%
+}%
+
+\begin{lstlisting}[frame=none]
+if (GSR is high)                             then (arousal is high)
+if (GSR is midHigh)                          then (arousal is midHigh)
+if (GSR is midLow)                           then (arousal is midLow)
+if (GSR is low)                              then (arousal is low)
+if (HR is low)                               then (arousal is low)
+if (HR is high)                              then (arousal is high)
+if (EMGfrown is high)                        then (valence is veryLow)
+if (EMGfrown is mid)                         then (valence is low)
+if (EMGsmile is mid)                         then (valence is high)
+if (EMGsmile is high)                        then (valence is veryHigh)
+if (GSR is low)       and (HR is high)       then (arousal is midlow)
+if (GSR is high)      and (HR is low)        then (arousal is midhigh)
+if (GSR is high)      and (HR is mid)        then (arousal is high)
+if (GSR is midHigh)   and (HR is mid)        then (arousal is midHigh)
+if (GSR is midLow)    and (HR is mid)        then (arousal is midLow)
+if (EMGsmile is low)  and (EMGfrown is low)  then (valence is neutral)
+if (EMGsmile is high) and (EMGfrown is low)  then (valence is veryHigh)
+if (EMGsmile is high) and (EMGfrown is mid)  then (valence is high)
+if (EMGsmile is low)  and (EMGfrown is high) then (valence is veryLow)
+if (EMGsmile is mid)  and (EMGfrown is high) then (valence is low)
+if (EMGsmile is low)  and (EMGfrown is low) and (HR is low)  then (valence is low)
+if (EMGsmile is low)  and (EMGfrown is low) and (HR is high) then (valence is high)
 \end{lstlisting}
