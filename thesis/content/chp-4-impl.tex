@@ -49,11 +49,11 @@ The Affect Middleware Engine or AME is the software unit developed to transform 
 {affect-engine.pdf}
 {affect-engine}
 
-\largeimg
-{UML diagram of the Affect Middleware Engine}
-{UML diagram of the Affect Middleware Engine}
-{placeholder.png}
-{affect-engine-uml}
+% \largeimg
+% {UML diagram of the Affect Middleware Engine}
+% {UML diagram of the Affect Middleware Engine}
+% {placeholder.png}
+% {affect-engine-uml}
 
 % Using emotional responses to increase the level of users interaction with a real-time play technology requires an effective technique to identifying specific emotion states within an emotional space. Major existing emotion models in the psychology literature includes: basic emotion theory ~\cite{ekman1992argument, ekman1992there} , dimensional emotion theory ~\cite{lang1995emotion, russell1980circumplex} and models from appraisal theory (e.g.,~\cite{roseman2001model}) ~\cite{zhang2010service}
 
@@ -88,11 +88,11 @@ Because their system responded in near real-time, it is a promising candidate fo
 \subsection{Emotion Monitor}
 Emotion monitor is a debugging and adjustment module. Using this module emotion values along with basic physiological signals and transformed arousal and valence variables can monitored in real-time. This module also shows AME state while switching between calibration and adaptation states making it easier for designers to see how changes in AME states might affect various game-play situations.
 
-\largeimg
-{Emotion Monitor}
-{Emotion Monitor}
-{placeholder.png}
-{emotion-monitor}
+% \largeimg
+% {Emotion Monitor}
+% {Emotion Monitor}
+% {placeholder.png}
+% {emotion-monitor}
 
 % \section{Sensors}
 % While the modular design of the Affect Engine allows its expansion for support of any physiological measures, currently the system uses Blood Volume Pulse (BVP), Galvanic Skin Response (GSR) and Electromyography (EMG; for frowning and smiling), to classify human affective states in 2-dimensional valence/arousal space (Figure \ref{fig:russel-av-space}).
@@ -106,7 +106,7 @@ Emotion monitor is a debugging and adjustment module. Using this module emotion 
 % \subsection{Facial Electromyography}
 
 \section{Game Environment}
-To evaluate the impact of feedback on player experience, it was also necessary to implement a game environment that could be linked to the output of the AME. I chose to implement a straightforward zombie survival game based on the Half Life 2 engine in the genre of first-person shooters (FPS). A custom map (shown in Fig. ~\ref{fig:map-of-level}) was implemented. Using the Source Software Development Kit (Source SDK). The map was composed of a small outdoor area and three buildings. Zombies (Fig. ~\ref{fig:zombie}) spawned in waves from one of 10 points, and would undertake standard Half Life 2 zombie AI behavior, looking for the player and attacking with either thrown objects when distant (weakly damaging the player) or a melee attack when close (heavily damaging the player). A good default strategy for the player was to keep the zombies at a distance, eliminating them with their moderately powerful machine gun, and not allowing them to close to melee range. The player is tasked with surviving as many waves of zombies as possible, and accrues a score based on the number of zombies killed. The player is equipped with a machine gun with unlimited ammunition and a limited number of grenades. Health packs, which restore players from received damage, and additional grenades are available at defined locations. If a player presses a button at that location, a health pack will dispense and the button will be disabled until a cool down timer has expired (Fig. ~\ref{fig:health-pack-button}).
+To evaluate the impact of feedback on player experience, it was also necessary to implement a game environment that could be linked to the output of the AME. I chose to implement a straightforward zombie survival game based on the Half Life 2 engine in the genre of first-person shooters (FPS). A custom map (shown in Fig. ~\ref{fig:map-of-level}) was implemented. Using the Source Software Development Kit (Source SDK). The map was composed of a small outdoor area and three buildings. Zombies (Fig. ~\ref{fig:zombie}) spawned in waves from one of 10 points, and would undertake standard Half Life 2 zombie AI behavior, looking for the player and attacking with either thrown objects when distant (weakly damaging the player) or a melee attack when close (heavily damaging the player). A good default strategy for the player was to keep the zombies at a distance, eliminating them with their moderately powerful machine gun, and not allowing them to close to melee range. The player is tasked with surviving as many waves of zombies as possible, and accrues a score based on the number of zombies killed. The player is equipped with a machine gun with unlimited ammunition and a limited number of grenades. Health packs, which restore players from received damage, and additional grenades are available at defined locations. If a player presses a button at that location, a health pack will dispense and the button will be disabled until a cool down timer has expired.% (Figure ~\ref{fig:health-pack-button}).
 
 \largeimg
 {My custom map level created using the Source SDK and Half-Life 2}
@@ -147,11 +147,11 @@ equation             & $P_{speed} = 0.65 + 1.35 * Arousal$    \newline $G_{delay
 {zombie.png}
 {zombie}
 
-\largeimg
-{Health pack dispense button}
-{Health pack dispense button}
-{placeholder.png}
-{health-pack-button}
+% \largeimg
+% {Health pack dispense button}
+% {Health pack dispense button}
+% {placeholder.png}
+% {health-pack-button}
 
 %\subsection{Level Design}
 %todo: talk about Modding Half Life EP2
