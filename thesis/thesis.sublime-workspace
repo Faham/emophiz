@@ -71,65 +71,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/temp/tasks.txt",
-			"settings":
-			{
-				"buffer_size": 3856,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "----------------------\nkey053\n-1 DisjointSets280: instead of the for loop should call ensureVertices\n-1 find: should use goVertex instead of item assignments\n-2 find: should use this.eItem().getTerminal() instead of this.eItemAdjacentVertex() in the while loop\n-1 MinimumSpanningTree280: instead of the for loop should call ensureVertices\n----------------------\njkp323\n-1 constructor should call this.ensureVertices(capacity);\n-1 find: you don't need the this.eGoForth();\n-1 find: in the while loop should use this.eItem().getTerminal() instead of item().index()\n-1 MinimumSpanningTree280: should call this.ensureVertices(cap);\n-1 fillUsingKruskals: should accept a GraphWithCursors280 param\n-2 fillUsingKruskals: should do goFirst and eGoFirst before while loops respectively\n-2 fillUsingKruskals: instead of adjMatrixSetEntry should do:\n		this.addEdge(v1, v2);\n		this.setEdgeWeight(v1, v2, smallest.getWeight());\n-1 fillUsingKruskals: should directly use getInitial and getTerminal on smallest\n----------------------\ntkq465\n-1 fillUsingKruskals: should do other.eGoFirst(v); before entering the inner for loop\n-1 fillUsingKruskals: should deleteItem from the heap in each iteration of the while loop\n----------------------\ndar818\n-1 DisjointSets280: should call this.ensureVertices(capacity);\n-1 find: should do this.eGoFirst(); instead of this.eGoForth(); in the while loop\n-2 MinimumSpanningTree280: params are incorrect, should call this.ensureVertices(cap);\n-1 fillUsingKruskals: should do other.eGoFirst(v); before entering the inner while loop\n-1 fillUsingKruskals: also should do setEdgeWeight in the third loop\n----------------------\nann315\n-1 DisjointSets280: should call this.ensureVertices(capacity); instead of createNewVertex\n-1 find: why do you do clear() in te end!\n-3 main: incomplete test cases\n-2 MinimumSpanningTree280: params are incorrect, should call this.ensureVertices(cap);\n-1 fillUsingKruskals: params are incorrect\n-15 fillUsingKruskals: incomplete implementation\n-1 fillUsingKruskals: should also call setEdgeWeight in the last while loop\n----------------------\nbjk386\n\n----------------------\nbwr040\n----------------------\ncab811\n----------------------\nhew351\n----------------------\nkkr079\n----------------------\nsmj146\n----------------------\ntds030\n----------------------\ntoc753\n----------------------\ntpq921\n----------------------\nvcw542\n----------------------\nxuz765\n----------------------\nyih948\n----------------------\nyiz540\n----------------------\nziy773\n----------------------\nqim853\n----------------------\nchl929\n----------------------\nerm643\n----------------------\ntab608\n----------------------\nwdg898\n----------------------\n",
-			"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-10.txt",
-			"file_size": 2739,
-			"file_write_time": 130528854660873651,
-			"settings":
-			{
-				"buffer_size": 2663,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-7.txt",
-			"settings":
-			{
-				"buffer_size": 9852,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/sln_DisjointSets280.java",
-			"settings":
-			{
-				"buffer_size": 2337,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/sln_MinimumSpanningTree280.java",
-			"settings":
-			{
-				"buffer_size": 2458,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/bjk386/DisjointSet280 (1).java",
-			"settings":
-			{
-				"buffer_size": 3204,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/bjk386/MinimumSpanningTree280.java",
-			"settings":
-			{
-				"buffer_size": 3305,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -286,7 +227,60 @@
 	},
 	"file_history":
 	[
+		"/D/projects/library/lod/data/gistdata.rdf",
+		"/D/projects/library/lod/modules/resource/resource.php",
+		"/D/projects/library/lod/data/sample_data.rdf",
+		"/D/projects/library/lod/modules/page/page.php",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-7.txt",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/key053/A7Q3.txt",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/key053/CompareDispenserInsertion.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/sln_CompareDispenserInsertion.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/key053/TwoThreeKeylessTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/sln_TwoThreeKeylessTree280.java",
+		"/D/islam/math-in-quran.txt",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/sln_MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/sln_DisjointSets280.java",
+		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-10.txt",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/wdg898/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/wdg898/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/tab608/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/tab608/DisjointSet280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/erm643/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/erm643/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/chl929/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/chl929/DisjointSet280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/qim853/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/qim853/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/ziy773/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/ziy773/DisjointSet280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/yiz540/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/yiz540/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/yih948/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/yih948/DisjoinSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/xuz765/DisjointSet280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/xuz765/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/vcw542/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/vcw542/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/tpq921/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/toc753/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/toc753/MinimunSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/tpq921/DisjointSet280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/tds030/DisjointSet280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/tds030/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/smj146/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/smj146/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/kkr079/DisjointedSets280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/kkr079/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/hew351/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/hew351/DisjointSet280.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/ann315/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/cab811/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/cab811/DisjointSet280 (1).java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/bwr040/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/bwr040/DisjointSet280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/bjk386/MinimumSpanningTree280.java",
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/bjk386/DisjointSet280 (1).java",
+		"/D/projects/emophiz/thesis/content/abstract.tex",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/ann315/MinimumSpanningTree.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/dar818/DisjointSet280 (1).java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/dar818/MinimumSpanningTree280.java",
@@ -299,9 +293,6 @@
 		"/C/Users/Faham/Desktop/christianity.txt",
 		"/F/navigator.log.txt",
 		"/D/documents/internet-network.txt",
-		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-7.txt",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/sln_CompareDispenserInsertion.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/sln_TwoThreeKeylessTree280.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/yiz540/CompareDispenserInsertion.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/yiz540/TwoThreeKeylessTree280.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/yih948/asn7Q3.txt",
@@ -320,9 +311,6 @@
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/tkq465/TwoThreeKeylessTree280.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/qim853/TwoThreeKeylessTree280.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/qim853/CompareDispenserInsertion (1).java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/key053/TwoThreeKeylessTree280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/key053/CompareDispenserInsertion.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/key053/A7Q3.txt",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/jkp323/CompareDispenserInsertion.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/jkp323/TwoThreeKeylessTree280.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-7/hew351/TwoThreeKeylessTree280.java",
@@ -366,54 +354,7 @@
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/solution.java",
 		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/ziy773.java",
 		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-6.txt",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/yiz540.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/yih948.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/xuz765.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/vcw542.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/tpq921.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/toc753.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/tkq465.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/tds030.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/solution.java",
-		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-5.txt",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/smj146.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/qjp600.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/qim853.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/nal827.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/key053.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/jkp323.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/wdg898.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/hew351.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-5/gaj419.java",
-		"/C/Users/Faham/Downloads/cmpt280/marks-assignment-4.txt",
-		"/D/projects/emophiz/thesis/content/all-pure.txt",
-		"/D/projects/emophiz/thesis/content/app-av-to-emotion.tex",
-		"/D/projects/emophiz/thesis/content/app-gsr-hr-to-arousal.tex",
-		"/D/projects/emophiz/thesis/content/app-phys-to-av.tex",
-		"/D/documents/resume-faham/resume.tex",
-		"/D/documents/resume-faham/make.sh",
-		"/C/Users/Faham/Desktop/mashinha.txt",
-		"/D/projects/mycms/README.md",
-		"/C/Users/Faham/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
-		"/C/Users/Faham/AppData/Local/Temp/16.html",
-		"/D/projects/mycms/config.ini",
-		"/D/projects/mycms/create-schema.sh",
-		"/D/projects/mycms/.htaccess",
-		"/D/projects/mycms/_config.ini_",
-		"/D/projects/mycms/_.htaccess_",
-		"/D/projects/mycms/database.sql",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/solution/lib280-asn4-soln/src/lib280/expressionTree/PostorderTraversal280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/solution/lib280-asn4-soln/src/lib280/expressionTree/PreorderTraversal280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/solution/lib280-asn4-soln/src/lib280/expressionTree/ExpressionTree280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/hew351/ExpressionTree280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/erm643/ExpressionTree280 (1).java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/erm643/PostorderTraversal280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/erm643/PreorderTraversal280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/dar818/ExpressionTree280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/dar818/PostorderTraversal280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/dar818/PreorderTraversal280.java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/cab811/ExpressionTree280 (1).java",
-		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-4/cab811/PostorderTraversal280.java"
+		"/C/Users/Faham/Downloads/cmpt280/submissions-assignment-6/yiz540.java"
 	],
 	"find":
 	{
@@ -442,6 +383,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"use_static_rdf",
+			"static_rdf_resource",
+			"ken",
+			"goFirst",
+			"params",
+			"----------------------",
+			"-",
+			"----------------------",
+			"invalid",
+			"----------------------",
+			"connect",
+			"----------------------",
+			"main",
+			"----------------------",
+			"We created an affective game engine, using it to deploy a design probe into how adapting the ",
+			"state leaves game designers with little guidance on how to incorporate affect into their games",
+			"’",
 			"<",
 			">",
 			"should",
@@ -552,24 +510,7 @@
 			"signedImbalance",
 			"todo",
 			"setRootNode",
-			"getLtHeight",
-			"signedImbalance",
-			"\n",
-			"@mail",
-			" ",
-			"$",
-			"eective",
-			"dierences",
-			"ndings",
-			"specic",
-			"Specic",
-			"specic",
-			"Specic",
-			"specic",
-			"aect",
-			"Aect",
-			"aect",
-			"Aect"
+			"getLtHeight"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -635,238 +576,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/temp/tasks.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3856,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-10.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2663,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2099,
-								2099
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 84.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/Faham/Downloads/cmpt280/marks-assignment-7.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9852,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5615,
-								5206
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1859.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/sln_DisjointSets280.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2337,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								967,
-								967
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 84.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/sln_MinimumSpanningTree280.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2458,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1247,
-								1247
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 210.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 5,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/bjk386/DisjointSet280 (1).java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3204,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/Faham/Downloads/cmpt280/submissions-assignment-10/bjk386/MinimumSpanningTree280.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3305,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								434,
-								434
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -887,18 +598,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
